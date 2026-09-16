@@ -67,24 +67,24 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
   {showPurchaseCtas && (leftCta || rightCta) ? (
     <div class="next-step__grid">
       {leftCta ? (
-        <>
+        <div class="next-step__product">
           <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
             {leftImage && <Picture class="next-step__buy-image" src={leftImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
             <span class="next-step__buy-name">{left.label}</span>
             <span class="next-step__buy-action">楽天市場で購入先を見る{leftAffiliate && <span class="ad-note">（広告）</span>}</span>
           </a>
           {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
-        </>
+        </div>
       ) : null}
       {rightCta ? (
-        <>
+        <div class="next-step__product">
           <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
             {rightImage && <Picture class="next-step__buy-image" src={rightImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
             <span class="next-step__buy-name">{right.label}</span>
             <span class="next-step__buy-action">楽天市場で購入先を見る{rightAffiliate && <span class="ad-note">（広告）</span>}</span>
           </a>
           {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
-        </>
+        </div>
       ) : null}
     </div>
   ) : showPurchaseCtas && purchaseLinkStatus !== "unavailable" ? (
@@ -125,6 +125,11 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
+  .next-step__product {
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+  }
   .next-step__buy {
     --product-color: var(--product-left);
     display: grid;
@@ -140,11 +145,18 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .next-step__amazon {
-    display: block;
-    padding: 0.35rem 0.5rem 0.15rem;
-    color: var(--muted);
-    font-size: 0.82rem;
-    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: var(--radius-md);
+    background: var(--surface, #fff);
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
   }
   .next-step__buy--right {
     --product-color: var(--product-right);
