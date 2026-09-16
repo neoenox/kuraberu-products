@@ -102,7 +102,11 @@ if (
 }
 const leftOfficialHref = seed.officialSources?.[0]?.url ?? '';
 const rightOfficialHref = seed.officialSources?.[1]?.url ?? '';
-const hasHeroSources = Boolean(leftOfficialHref && rightOfficialHref);
+// Render the comparison hero whenever both product images are available.
+// Official links are optional metadata and must not suppress the visual hero.
+const hasHeroSources = seed.sourceLinks?.length
+  ? Boolean(images.left && images.right)
+  : Boolean(leftOfficialHref && rightOfficialHref);
 const splitProduct = (name: string) => {
   const [brand, ...rest] = name.split(/\s+/);
   return { brand, line: rest.join(' ') || brand };
