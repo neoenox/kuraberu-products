@@ -73,5 +73,3 @@ type CommercialArticleSeed = {
 };
 
 export type { CommercialArticleSeed };
-
-
