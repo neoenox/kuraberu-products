@@ -73,9 +73,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
             <span class="next-step__buy-name">{left.label}</span>
           </div>
           <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
-            <span class="next-step__buy-action">楽天市場で購入先を見る{leftAffiliate && <span class="ad-note">（広告）</span>}</span>
+            <span class="next-step__buy-action">楽天市場で購入先を見る</span>
           </a>
-          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
+          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
         </div>
       ) : null}
       {rightCta ? (
@@ -85,9 +85,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
             <span class="next-step__buy-name">{right.label}</span>
           </div>
           <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
-            <span class="next-step__buy-action">楽天市場で購入先を見る{rightAffiliate && <span class="ad-note">（広告）</span>}</span>
+            <span class="next-step__buy-action">楽天市場で購入先を見る</span>
           </a>
-          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
+          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
         </div>
       ) : null}
     </div>
