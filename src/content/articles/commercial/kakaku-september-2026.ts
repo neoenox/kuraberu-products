@@ -3,13 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 const ranking = "https://kakaku.com/ranking/kaden/";
 const date = "2026-09-16";
 const rows = (left: string, right: string) => [
-  { label: "公式で確認するポイント", left, right },
-  {
-    label: "選び方",
-    left: "仕様を公式ページで確認",
-    right: "仕様を公式ページで確認",
-  },
-  { label: "価格・在庫", left: "販売先で確認", right: "販売先で確認" },
+  { label: "比較ポイント", left, right },
 ];
 const faq = (left: string, right: string) => [
   {
@@ -54,8 +48,51 @@ const make = (
   rightProduct: right,
   leftPoint,
   rightPoint,
-  verifiedRows: rows(leftPoint, rightPoint),
+  verifiedRows:
+    id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
+      ? [
+          { label: "標準質量", left: "1.1kg", right: "2.2kg" },
+          { label: "集じん容積", left: "0.15L", right: "0.35L" },
+          { label: "充電時間", left: "約2時間", right: "3.5時間" },
+          {
+            label: "公称運転時間",
+            left: "強：約8分／標準：約30分",
+            right: "最大60分※",
+          },
+          {
+            label: "主なヘッド",
+            left: "自走コンパクトヘッド D-DP34",
+            right: "Fluffy Opticクリーナーヘッド",
+          },
+          {
+            label: "収納",
+            left: "スティックスタンド",
+            right: "壁付け式ブラケット",
+          },
+        ]
+      : rows(leftPoint, rightPoint),
   faqEntries: faq(left, right),
+  officialProse:
+    id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
+      ? [
+          {
+            heading: "日立 PV-BL1C4",
+            items: [
+              "日立公式取扱説明書で標準質量1.1kg、集じん容積0.15L、約2時間充電を確認。",
+              "標準モードはパワーヘッド使用時約30分、ヘッドなし約45分。",
+              "自走コンパクトヘッド D-DP34、ファブリックヘッド、スティックスタンドが付属。",
+            ],
+          },
+          {
+            heading: "Dyson V12 Detect Slim Fluffy SV46 FF",
+            items: [
+              "Dyson公式ページで質量2.2kg、集じん容積0.35L、充電3.5時間を確認。",
+              "Fluffy Optic、ピエゾセンサー、吸引力自動調整、液晶表示を搭載。",
+              "最大60分はエコモードかつモーター駆動のないツール使用時。公式では販売終了モデル。",
+            ],
+          },
+        ]
+      : undefined,
   socialProofHasPosts: Boolean(embeds?.length),
   socialProofBestMatch: embeds?.length ? "model" : undefined,
   embeds,
@@ -108,8 +145,8 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     "日立・ダイソン",
     "ラクかるスティック PV-BL1C4",
     "Dyson V12 Detect Slim Fluffy SV46 FF",
-    "本体の軽さと手入れ方法を確認",
-    "ヘッド機能と運転時間を確認",
+    "1.1kg・自走ヘッド・約2時間充電",
+    "2.2kg・ホコリ可視化・最大60分",
     "https://kadenfan.hitachi.co.jp/clean/",
     [
       {
