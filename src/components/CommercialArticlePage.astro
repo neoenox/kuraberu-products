@@ -140,13 +140,13 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     {hasHeroSources && (
       <nav class="jump-nav" aria-label="ページ内ジャンプ">
         <p class="jump-nav__label">この記事の目次</p>
-        <ul class="jump-nav__list">
+        <ol class="jump-nav__list">
           <li><a href="#decision-guide">結論</a></li>
           <li><a href="#key-differences">比較ポイント</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#next-step">購入先</a></li>
           {hasSocialProof && <li><a href="#sns">SNSでの感想</a></li>}
-        </ul>
+        </ol>
       </nav>
     )}
     <p class="lead">{seed.lead ?? article.summary}</p>

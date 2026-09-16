@@ -682,9 +682,8 @@ a {
   font-weight: 800;
 }
 .jump-nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
+  display: grid;
+  gap: 0.3rem;
   width: 100%;
   margin: 0;
   padding-left: 1.25rem;
@@ -693,21 +692,13 @@ a {
   padding-left: 0.15rem;
 }
 .jump-nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.25rem;
-  padding: 0.35rem 0.8rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--paper);
   color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 700;
-  text-decoration: none;
+  font-size: 0.92rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 .jump-nav a:hover,
 .jump-nav a:focus-visible {
-  border-color: var(--accent);
   color: var(--accent);
 }
 .editor-note {
