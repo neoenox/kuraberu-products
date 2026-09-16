@@ -166,19 +166,6 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
       />
     ) : <h2 id="key-differences">違いを確認する</h2>}
 
-    <details class="fold-section" id="specs" open>
-      <summary>詳細仕様（公式ページで確認した項目）</summary>
-      <div class="table-scroll">
-        <table class="comparison">
-          <thead><tr><th scope="col">比較項目</th><th scope="col">{seed.leftProduct}</th><th scope="col">{seed.rightProduct}</th></tr></thead>
-          <tbody>
-            {rows.map((row) => <tr><th scope="row">{row.label}</th><td data-label={seed.leftProduct}>{row.left}</td><td data-label={seed.rightProduct}>{row.right}</td></tr>)}
-          </tbody>
-        </table>
-      </div>
-    </details>
-    <p class="meta">商品仕様・価格・在庫は変更される可能性があります。購入時点の公式ページと販売ページをご確認ください。</p>
-
     <h2 id="faq">よくある質問</h2>
     <div class="faq-list">
       {faq.map((entry) => <details class="faq-item"><summary><h3>{entry.question}</h3></summary><p>{entry.answer}</p></details>)}
