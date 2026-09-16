@@ -8,14 +8,21 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   productInfoCheckedAt: "",
   purchaseLinksCheckedAt: "2026-09-16",
   purchaseLinkStatus: "verified",
-  title: "Soundcore Liberty 5 ProとLiberty 4 Proの違いを比較｜新旧Proモデルはどっちが合う？",
-  headline: "Soundcore Liberty 5 ProとLiberty 4 Proを比較。ANC・再生時間・接続台数の違い",
-  description: "Soundcore Liberty 5 ProとLiberty 4 Proを、公式仕様のノイズキャンセリング・再生時間・接続機能で比較します。",
+  title:
+    "Soundcore Liberty 5 ProとLiberty 4 Proの違いを比較｜新旧Proモデルはどっちが合う？",
+  headline:
+    "Soundcore Liberty 5 ProとLiberty 4 Proを比較。ANC・再生時間・接続台数の違い",
+  description:
+    "Soundcore Liberty 5 ProとLiberty 4 Proを、公式仕様のノイズキャンセリング・再生時間・接続機能で比較します。",
   category: "オーディオ",
   tags: ["ワイヤレスイヤホン", "ノイズキャンセリング", "Soundcore"],
-  audiences: ["Libertyシリーズの新旧モデルを比べたい人", "ANC・再生時間・接続台数で選びたい人"],
+  audiences: [
+    "Libertyシリーズの新旧モデルを比べたい人",
+    "ANC・再生時間・接続台数で選びたい人",
+  ],
   uses: ["音楽再生", "通話", "移動中のリスニング"],
-  summary: "Liberty 5 ProはANC・通話・3台マルチポイントを強化し、Liberty 4 Proは軽さ・ANCオン時の再生時間・価格にメリットがあります。",
+  summary:
+    "Liberty 5 ProはANC・通話・3台マルチポイントを強化し、Liberty 4 Proは軽さ・ANCオン時の再生時間・価格にメリットがあります。",
   lead: "結論：ANC・通話・3台接続ならLiberty 5 Pro、軽さ・ANCオンの長時間再生・価格ならLiberty 4 Proです。",
   leftProduct: "Soundcore Liberty 5 Pro D1203N11",
   rightProduct: "Soundcore Liberty 4 Pro A3954N11",
@@ -24,44 +31,191 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   leftImage: "/products/soundcore-liberty-5-pro.png",
   rightImage: "/products/soundcore-liberty-4-pro.jpg",
   verifiedRows: [
-    { label: "ノイズキャンセリング", left: "ウルトラノイズキャンセリング4.0・Thus AI", right: "ウルトラノイズキャンセリング3.5", highlight: "left", highlightNote: "世代が新しい" },
-    { label: "通常再生（本体／ケース込み）", left: "最大12時間／50時間", right: "最大10時間／40時間", highlight: "left", highlightNote: "通常時が長い" },
-    { label: "ANCオン（本体／ケース込み）", left: "最大6.5時間／28時間", right: "最大7.5時間／30時間", highlight: "right", highlightNote: "ANCオンが長い" },
-    { label: "マルチポイント", left: "最大3台（LDAC時2台）", right: "最大2台", highlight: "left" },
-    { label: "片耳重量", left: "約5.9g", right: "約5.5g", highlight: "right", highlightNote: "約0.4g軽い", direction: "lower-is-better" },
-    { label: "公式価格（2026年9月16日確認）", left: "26,990円", right: "19,990円", highlight: "right", highlightNote: "7,000円安い", direction: "lower-is-better" },
+    {
+      label: "ノイズキャンセリング",
+      left: "ウルトラノイズキャンセリング4.0・Thus AI",
+      right: "ウルトラノイズキャンセリング3.5",
+      highlight: "left",
+      highlightNote: "世代が新しい",
+    },
+    {
+      label: "通常再生（本体／ケース込み）",
+      left: "最大12時間／50時間",
+      right: "最大10時間／40時間",
+      highlight: "left",
+      highlightNote: "通常時が長い",
+    },
+    {
+      label: "ANCオン（本体／ケース込み）",
+      left: "最大6.5時間／28時間",
+      right: "最大7.5時間／30時間",
+      highlight: "right",
+      highlightNote: "ANCオンが長い",
+    },
+    {
+      label: "マルチポイント",
+      left: "最大3台（LDAC時2台）",
+      right: "最大2台",
+      highlight: "left",
+    },
+    {
+      label: "片耳重量",
+      left: "約5.9g",
+      right: "約5.5g",
+      highlight: "right",
+      highlightNote: "約0.4g軽い",
+      direction: "lower-is-better",
+    },
+    {
+      label: "公式価格（2026年9月16日確認）",
+      left: "26,990円",
+      right: "19,990円",
+      highlight: "right",
+      highlightNote: "7,000円安い",
+      direction: "lower-is-better",
+    },
   ],
   faqEntries: [
-    { question: "ノイズキャンセリングが強いのはどちら？", answer: "公式の世代表記と自社比較ではLiberty 5 Proです。AnkerはLiberty 4 Pro比で約2倍のノイズ低減と説明していますが、自社試験の値です。" },
-    { question: "ANCをオンにした再生時間が長いのは？", answer: "Liberty 4 Proです。イヤホン本体は最大7.5時間、ケース込みは最大30時間で、5 Proの6.5時間・28時間を上回ります。" },
-    { question: "3台の端末を同時接続できるのは？", answer: "Liberty 5 Proです。最大3台に対応します。ただしLDAC併用時は2台までです。" },
-    { question: "どちらが軽い？", answer: "Liberty 4 Proです。片耳約5.5gで、Liberty 5 Proは約5.9gです。" },
+    {
+      question: "ノイズキャンセリングが強いのはどちら？",
+      answer:
+        "公式の世代表記と自社比較ではLiberty 5 Proです。AnkerはLiberty 4 Pro比で約2倍のノイズ低減と説明していますが、自社試験の値です。",
+    },
+    {
+      question: "ANCをオンにした再生時間が長いのは？",
+      answer:
+        "Liberty 4 Proです。イヤホン本体は最大7.5時間、ケース込みは最大30時間で、5 Proの6.5時間・28時間を上回ります。",
+    },
+    {
+      question: "3台の端末を同時接続できるのは？",
+      answer:
+        "Liberty 5 Proです。最大3台に対応します。ただしLDAC併用時は2台までです。",
+    },
+    {
+      question: "どちらが軽い？",
+      answer: "Liberty 4 Proです。片耳約5.5gで、Liberty 5 Proは約5.9gです。",
+    },
   ],
   officialProse: [
-    { heading: "Soundcore Liberty 5 Pro D1203N11", items: ["ANC 4.0・Thus AI、8マイク＋2骨伝導センサー、最大3台マルチポイント、Bluetooth 6.1を搭載。", "通常再生は本体最大12時間・ケース込み最大50時間。ANCオンは最大6.5時間・28時間。"] },
-    { heading: "Soundcore Liberty 4 Pro A3954N11", items: ["ANC 3.5、6マイク＋AI、最大2台マルチポイント、Bluetooth 5.3を搭載。", "通常再生は本体最大10時間・ケース込み最大40時間。ANCオンは最大7.5時間・30時間。"] },
+    {
+      heading: "Soundcore Liberty 5 Pro D1203N11",
+      items: [
+        "ANC 4.0・Thus AI、8マイク＋2骨伝導センサー、最大3台マルチポイント、Bluetooth 6.1を搭載。",
+        "通常再生は本体最大12時間・ケース込み最大50時間。ANCオンは最大6.5時間・28時間。",
+      ],
+    },
+    {
+      heading: "Soundcore Liberty 4 Pro A3954N11",
+      items: [
+        "ANC 3.5、6マイク＋AI、最大2台マルチポイント、Bluetooth 5.3を搭載。",
+        "通常再生は本体最大10時間・ケース込み最大40時間。ANCオンは最大7.5時間・30時間。",
+      ],
+    },
   ],
   socialProofCheckedAt: "2026-09-16",
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   embeds: [
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1tpi8nw/my_soundcore_liberty_5_pro_review/", title: "Liberty 5 Proの実使用レビュー", match: "model", purpose: "購入して使ったユーザーによるレビュー。ANC・通話・装着感を評価し、標準音は低音が強いとしています。", tone: "mixed", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1ulvcsy/liberty_5_pro_the_most_complete_balanced_buds_ive/", title: "Liberty 5 Proを日常使用した感想", match: "model", purpose: "購入者による日常使用の感想。ANC・通話・快適性・3台接続を評価しています。", tone: "good", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1tpcmxu/soundcore_liberty_5_pro_is_disappointing/", title: "Liberty 5 Proに不満を感じたレビュー", match: "model", purpose: "到着後に使ったユーザーの感想。マイクは高評価ですが、音質とANCは期待以下としています。", tone: "bad", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1fw6ye0/liberty_4_pro/", title: "Liberty 4 Proを購入した感想", match: "model", purpose: "購入直後から使ったユーザーの感想。音質・音量を評価し、ケースの大きさを気にしています。", tone: "mixed", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1pgvan6/soundcore_liberty_4_pro_is_it_worth_it/", title: "Liberty 4 Proの音質・装着感レビュー", match: "model", purpose: "購入者がLDACとANCを使った感想。音質・フィット・ANC・EQの自由度を評価しています。", tone: "good", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1k5e8eo/i_regret_buying_the_soundcore_liberty_4_pros_im/", title: "Liberty 4 Proの装着感とANCへの不満", match: "model", purpose: "購入後2日で返品したユーザーの感想。耳の痛みとANC性能への不満を挙げています。", tone: "bad", compact: true, autoDisplay: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1o0cgvb/liberty_4_pro_battery_life_way_shorter_than/", title: "Liberty 4 Proのバッテリー実使用報告", match: "model", purpose: "購入者による個別報告。ANC使用時に約3.5時間で低電池警告が出たとしています。", tone: "bad", compact: true, autoDisplay: true },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/soundcore/comments/1tpi8nw/my_soundcore_liberty_5_pro_review/",
+      title: "Liberty 5 Proの実使用レビュー",
+      match: "model",
+      purpose:
+        "購入して使ったユーザーによるレビュー。ANC・通話・装着感を評価し、標準音は低音が強いとしています。",
+      tone: "mixed",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/soundcore/comments/1ulvcsy/liberty_5_pro_the_most_complete_balanced_buds_ive/",
+      title: "Liberty 5 Proを日常使用した感想",
+      match: "model",
+      purpose:
+        "購入者による日常使用の感想。ANC・通話・快適性・3台接続を評価しています。",
+      tone: "good",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/Earbuds/comments/1tpcmxu/soundcore_liberty_5_pro_is_disappointing/",
+      title: "Liberty 5 Proに不満を感じたレビュー",
+      match: "model",
+      purpose:
+        "到着後に使ったユーザーの感想。マイクは高評価ですが、音質とANCは期待以下としています。",
+      tone: "bad",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/soundcore/comments/1fw6ye0/liberty_4_pro/",
+      title: "Liberty 4 Proを購入した感想",
+      match: "model",
+      purpose:
+        "購入直後から使ったユーザーの感想。音質・音量を評価し、ケースの大きさを気にしています。",
+      tone: "mixed",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/soundcore/comments/1pgvan6/soundcore_liberty_4_pro_is_it_worth_it/",
+      title: "Liberty 4 Proの音質・装着感レビュー",
+      match: "model",
+      purpose:
+        "購入者がLDACとANCを使った感想。音質・フィット・ANC・EQの自由度を評価しています。",
+      tone: "good",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/Earbuds/comments/1k5e8eo/i_regret_buying_the_soundcore_liberty_4_pros_im/",
+      title: "Liberty 4 Proの装着感とANCへの不満",
+      match: "model",
+      purpose:
+        "購入後2日で返品したユーザーの感想。耳の痛みとANC性能への不満を挙げています。",
+      tone: "bad",
+      compact: true,
+      autoDisplay: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/soundcore/comments/1o0cgvb/liberty_4_pro_battery_life_way_shorter_than/",
+      title: "Liberty 4 Proのバッテリー実使用報告",
+      match: "model",
+      purpose:
+        "購入者による個別報告。ANC使用時に約3.5時間で低電池警告が出たとしています。",
+      tone: "bad",
+      compact: true,
+      autoDisplay: true,
+    },
   ],
   officialSources: [
-    { label: "Soundcore Liberty 5 Pro 公式ページ", url: "https://www.ankerjapan.com/products/d1203" },
-    { label: "Soundcore Liberty 4 Pro 公式ページ", url: "https://www.ankerjapan.com/products/a3954" },
+    {
+      label: "Soundcore Liberty 5 Pro 公式ページ",
+      url: "https://www.ankerjapan.com/products/d1203",
+    },
+    {
+      label: "Soundcore Liberty 4 Pro 公式ページ",
+      url: "https://www.ankerjapan.com/products/a3954",
+    },
   ],
   sourceLinks: [
-    { label: "Soundcore Liberty 5 Pro 公式ページ", url: "https://www.ankerjapan.com/products/d1203", date: "2026-09-16" },
-    { label: "Soundcore Liberty 4 Pro 公式ページ", url: "https://www.ankerjapan.com/products/a3954", date: "2026-09-16" },
+    {
+      label: "Soundcore Liberty 5 Pro 公式ページ",
+      url: "https://www.ankerjapan.com/products/d1203",
+      date: "2026-09-16",
+    },
+    {
+      label: "Soundcore Liberty 4 Pro 公式ページ",
+      url: "https://www.ankerjapan.com/products/a3954",
+      date: "2026-09-16",
+    },
   ],
-  disclaimer: "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想であり、比較結論の根拠には使用していません。",
+  disclaimer:
+    "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想であり、比較結論の根拠には使用していません。",
 };
-
-

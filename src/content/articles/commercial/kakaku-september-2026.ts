@@ -57,9 +57,29 @@ const make = (
   verifiedRows:
     id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
       ? [
-          { label: "標準質量", left: "1.1kg", right: "2.2kg", highlight: "left", highlightNote: "1.1kg軽い", direction: "lower-is-better" },
-          { label: "集じん容積", left: "0.15L", right: "0.35L", highlight: "right", highlightNote: "容量が大きい" },
-          { label: "充電時間", left: "約2時間", right: "3.5時間", highlight: "left", highlightNote: "約1.5時間短い", direction: "lower-is-better" },
+          {
+            label: "標準質量",
+            left: "1.1kg",
+            right: "2.2kg",
+            highlight: "left",
+            highlightNote: "1.1kg軽い",
+            direction: "lower-is-better",
+          },
+          {
+            label: "集じん容積",
+            left: "0.15L",
+            right: "0.35L",
+            highlight: "right",
+            highlightNote: "容量が大きい",
+          },
+          {
+            label: "充電時間",
+            left: "約2時間",
+            right: "3.5時間",
+            highlight: "left",
+            highlightNote: "約1.5時間短い",
+            direction: "lower-is-better",
+          },
           {
             label: "公称運転時間",
             left: "強：約8分／標準：約30分",
@@ -84,19 +104,23 @@ const make = (
       ? [
           {
             question: "軽いのはどちら？",
-            answer: "PV-BL1C4です。標準質量1.1kgで、SV46 FFの2.2kgより1.1kg軽い仕様です。",
+            answer:
+              "PV-BL1C4です。標準質量1.1kgで、SV46 FFの2.2kgより1.1kg軽い仕様です。",
           },
           {
             question: "ホコリをライトで確認できるのは？",
-            answer: "SV46 FFです。Fluffy Opticクリーナーヘッドで床面の見えにくいホコリを可視化します。",
+            answer:
+              "SV46 FFです。Fluffy Opticクリーナーヘッドで床面の見えにくいホコリを可視化します。",
           },
           {
             question: "運転時間はDysonの方が長い？",
-            answer: "公称上限はSV46 FFが60分ですが、エコモードかつモーター駆動のないツール使用時です。PV-BL1C4の標準＋パワーヘッド使用時は約30分で、条件が異なるため単純比較はできません。",
+            answer:
+              "公称上限はSV46 FFが60分ですが、エコモードかつモーター駆動のないツール使用時です。PV-BL1C4の標準＋パワーヘッド使用時は約30分で、条件が異なるため単純比較はできません。",
           },
           {
             question: "SV46 FFは現在も現行モデル？",
-            answer: "Dyson公式では販売終了モデルです。後継としてSV46 FF2が案内されています。",
+            answer:
+              "Dyson公式では販売終了モデルです。後継としてSV46 FF2が案内されています。",
           },
         ]
       : faq(left, right),

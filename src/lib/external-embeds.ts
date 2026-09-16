@@ -187,7 +187,9 @@ export function createExternalEmbedConfig(
       throw new Error("Redditの公式ホスト以外は埋め込みできません。");
     }
 
-    const match = url.pathname.match(/^\/r\/([A-Za-z0-9_]+)\/comments\/([A-Za-z0-9]+)(?:\/|$)/i);
+    const match = url.pathname.match(
+      /^\/r\/([A-Za-z0-9_]+)\/comments\/([A-Za-z0-9]+)(?:\/|$)/i,
+    );
     if (!match) {
       throw new Error("Redditの公開投稿URLを指定してください。");
     }
@@ -226,5 +228,3 @@ export function createExternalEmbedConfig(
     minimumHeight: 420,
   };
 }
-
-

@@ -298,4 +298,3 @@ BaseLayout が `<meta name="article:content-type" content="guide|comparison">` �
 - `/tools/product-finder/` など記事メタデータの無いページは、従来どおり同カテゴリを上限件数で表示する。
 - 品質ゲート（`scripts/check-rendered-html.mjs`）がビルド後 HTML の両セクション件数を
   `relatedSelection` と照合する。
-
