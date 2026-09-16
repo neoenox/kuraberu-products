@@ -4,6 +4,7 @@ import {
   publicArticleMetadata,
   articleMetadata,
 } from "../src/content/articles";
+import { comparisonSubjects } from "../src/lib/article-subjects";
 import { contentTypeFor, ARTICLE_LAYOUT } from "../config/article-layout.mjs";
 
 // 実ビルド（astro build）後の dist を検証する。verify チェーンは build の後に
@@ -252,6 +253,41 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
         expect(card).toContain(`data-thumb="${expected}"`);
       }
     }
+  });
+
+  it("uses subject-based alt text on image cards (#852)", () => {
+    // Astro は属性値を HTML エスケープする（& → &amp; 等）ため比較前に戻す
+    const decodeHtmlAttr = (value: string): string =>
+      value
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;|&#x27;/g, "'");
+    let imageCount = 0;
+    for (const [page, html] of cardPages()) {
+      for (const card of cards(html)) {
+        if (!isArticleCard(card)) continue;
+        const img = card.match(
+          /<img\b[^>]*class="[^"]*\bcard-thumb\b[^"]*"[^>]*>/,
+        );
+        if (!img) continue;
+        imageCount += 1;
+        const rawAlt = img[0].match(/\balt="([^"]*)"/)?.[1];
+        expect(
+          rawAlt,
+          `${page}: card image alt must be non-empty`,
+        ).toBeTruthy();
+        const alt = decodeHtmlAttr(rawAlt ?? "");
+        const href = card.match(/<h[23]><a href="([^"]+)"/)?.[1];
+        const article = articleMetadata.find((entry) => entry.path === href);
+        expect(article, `unknown article path ${href}`).toBeDefined();
+        const subjects = comparisonSubjects(article!);
+        const expected = subjects ? subjects.join(" / ") : article!.headline;
+        expect(alt, `${page}: unexpected card image alt`).toBe(expected);
+      }
+    }
+    expect(imageCount).toBeGreaterThan(0);
   });
 
   it("statically generates all /articles/page/<N> pages (#556)", () => {
