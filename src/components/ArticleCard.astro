@@ -9,15 +9,21 @@ import {resolveImage} from '../lib/image-resolver';
 interface Props {
   article: ArticleMetadata;
   /**
+   * カード見出しのレベル。既定は h2（一覧頁など h1 直下で使う場合）。
+   * トップページのように h2 セクション見出し配下で使う場合は h3 を渡す。
+   */
+  headingLevel?: 'h2' | 'h3';
+  /**
    * 記事カードに付与する追加の data-* 属性（記事一覧の検索フィルタ用）。
    * 例: {'data-article-card': '', 'data-search': '…', 'data-category': '…', 'data-tags': '…'}
    */
   data?: Record<string, string>;
 }
 
-const {article, data} = Astro.props;
+const {article, headingLevel = 'h2', data} = Astro.props;
 const subjects = comparisonSubjects(article);
 const resolvedImage = resolveImage(article.imagePath);
+const Heading = headingLevel;
 ---
 
 <article
@@ -38,7 +44,7 @@ const resolvedImage = resolveImage(article.imagePath);
       <span class="tag">{article.category}</span>
       <span class="tag tag--type">{contentTypeLabel(article.productCount)}</span>
     </span>
-    <h2><a href={article.path}>{article.headline}</a></h2>
+    <Heading><a href={article.path}>{article.headline}</a></Heading>
     {subjects && <p class="card-subjects">{subjects.join(' / ')}</p>}
     {article.audiences.length > 0 && (
       <p class="card-audiences">向き: {article.audiences.join('・')}</p>

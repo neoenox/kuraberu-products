@@ -235,7 +235,7 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
     for (const [, html] of cardPages()) {
       for (const card of cards(html)) {
         if (!isArticleCard(card)) continue;
-        const href = card.match(/<h2><a href="([^"]+)"/)?.[1];
+        const href = card.match(/<h[23]><a href="([^"]+)"/)?.[1];
         expect(href).toBeDefined();
         const article = articleMetadata.find((entry) => entry.path === href);
         expect(article, `unknown article path ${href}`).toBeDefined();
@@ -266,6 +266,37 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
       if (!isProduction) {
         expect(html).toContain('content="noindex');
       }
+    }
+  });
+});
+
+describe.skipIf(!hasDist)("article card heading levels (rendered dist)", () => {
+  beforeAll(loadRenderedPages);
+
+  // 商品診断カード（/tools/ へのリンク）は記事ではないため対象外
+  const cardHeadings = (html: string) =>
+    [
+      ...html.matchAll(
+        /<article\b[^>]*class="[^"]*\barticle-list-card\b[^"]*"[^>]*>[\s\S]*?<\/article>/g,
+      ),
+    ]
+      .map((match) => match[0])
+      .filter((card) => !card.includes('href="/tools/'))
+      .map((card) => card.match(/<(h[1-6])><a href="/)?.[1]);
+
+  it("renders top page cards as h3 under the h2 section heading (#834)", () => {
+    const headings = cardHeadings(topHtml);
+    expect(headings.length).toBeGreaterThan(0);
+    for (const heading of headings) {
+      expect(heading).toBe("h3");
+    }
+  });
+
+  it("keeps articles index cards as h2 under the h1 page heading (#834)", () => {
+    const headings = cardHeadings(articlesIndexHtml);
+    expect(headings.length).toBeGreaterThan(0);
+    for (const heading of headings) {
+      expect(heading).toBe("h2");
     }
   });
 });
