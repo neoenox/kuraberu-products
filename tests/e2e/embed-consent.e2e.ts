@@ -49,6 +49,39 @@ function isThirdPartyRequest(url: string): boolean {
 const ARTICLE_PATH = "/articles/babybjorn/";
 
 test.describe("consent-before-embed (network level)", () => {
+  test("renders the curated X post only after the reader requests it", async ({
+    page,
+  }) => {
+    test.setTimeout(45_000);
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (isThirdPartyRequest(request.url())) {
+        thirdPartyRequests.push(request.url());
+      }
+    });
+
+    await page.goto("/articles/thermos-tiger-bottle/", {
+      waitUntil: "networkidle",
+    });
+    const embed = page.locator('#sns [data-external-embed][data-provider="x"]');
+    await expect(embed).toBeVisible();
+    await expect(embed).toContainText("JNL-503（旧型）");
+    await expect(embed.locator("[data-external-embed-load]")).toBeVisible();
+    expect(thirdPartyRequests).toHaveLength(0);
+
+    await embed.locator("[data-external-embed-load]").click();
+    await expect(embed).toHaveAttribute("data-embed-state", "loaded", {
+      timeout: 30_000,
+    });
+    await expect(embed.locator("iframe").first()).toBeVisible();
+    await expect(embed.locator("[data-external-embed-status]")).toHaveText(
+      "外部コンテンツを表示しました。",
+    );
+    expect(
+      thirdPartyRequests.some((url) => url.includes("platform.twitter.com")),
+    ).toBe(true);
+  });
+
   test("blocks all third-party requests until user grants consent", async ({
     page,
   }) => {

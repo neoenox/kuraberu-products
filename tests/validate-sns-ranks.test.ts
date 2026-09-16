@@ -78,6 +78,17 @@ ${embed('provider="x" match="series" url="https://x.com/a/status/1" title="t"')}
     expect(findSnsRankViolations(sources(src))).toEqual([]);
   });
 
+  it("accepts an embedded post supplied through an article social-proof slot", () => {
+    const src = sourceFor(
+      `<ArticleComparisonPage socialProofQuery="q">
+<ArticleSocialProof slot="social-proof" query="q" hasPosts={true} bestMatch="series">
+${embed('provider="x" match="series" url="https://x.com/a/status/1" title="t"')}
+</ArticleSocialProof>
+</ArticleComparisonPage>`,
+    );
+    expect(findSnsRankViolations(sources(src))).toEqual([]);
+  });
+
   it("accepts an empty social proof section (no posts found)", () => {
     const src = sourceFor(
       `<ArticleSocialProof query="q" checkedAt="2026-08-12" hasPosts={false} />`,

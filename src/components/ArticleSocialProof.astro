@@ -18,6 +18,7 @@ interface Props {
 
 const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption } = Astro.props;
 const visible = Boolean(Astro.props.query?.trim());
+const hasEmbeddedPosts = Astro.slots.has("default");
 const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
 const curatedPosts = directPosts.map((post) => ({
   ...post,
@@ -48,7 +49,7 @@ const curatedPosts = directPosts.map((post) => ({
           ))}
         </ul>
       </div>
-    ) : !hasPosts || !bestMatch || bestMatch === "brand" || curatedPosts.length === 0 ? (
+    ) : (!hasPosts || !bestMatch || bestMatch === "brand" || curatedPosts.length === 0) && !hasEmbeddedPosts ? (
       <div class="sns-empty-state">
         <p class="sns-posts-note">個別に確認した投稿はまだ掲載していません。Xで関連する投稿を検索できます。</p>
       </div>
