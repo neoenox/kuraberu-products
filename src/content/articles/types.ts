@@ -89,6 +89,7 @@ export type ArticleMetadataBase = {
   /** SNS投稿の存在・採用ランク・公式埋め込み。 */
   socialProofHasPosts?: boolean;
   socialProofBestMatch?: "model" | "series" | "brand";
+  socialProofDirectPosts?: readonly { label: string; href: string; note?: string }[];
   embeds?: readonly {
     provider: string;
     url: string;

@@ -20,7 +20,9 @@ const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaptio
 const hasEmbeddedPosts = Astro.slots.has("default");
 const curatedPosts = directPosts.map((post) => ({
   ...post,
-  href: createExternalEmbedConfig("x", post.href).canonicalUrl,
+  href: post.href.includes("x.com/")
+    ? createExternalEmbedConfig("x", post.href).canonicalUrl
+    : post.href,
 }));
 const visible = Boolean(Astro.props.query?.trim()) &&
   (hasPosts || hasEmbeddedPosts || curatedPosts.length > 0);
