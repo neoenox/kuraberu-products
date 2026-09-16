@@ -75,7 +75,7 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
           <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
             <span class="next-step__buy-action">楽天市場で購入先を見る</span>
           </a>
-          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
+          {leftAmazonHref && <a class="next-step__amazon next-step__amazon--left" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
         </div>
       ) : null}
       {rightCta ? (
@@ -87,7 +87,7 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
           <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
             <span class="next-step__buy-action">楽天市場で購入先を見る</span>
           </a>
-          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
+          {rightAmazonHref && <a class="next-step__amazon next-step__amazon--right" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る</a>}
         </div>
       ) : null}
     </div>
@@ -165,19 +165,22 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
   .next-step__amazon {
+    --product-color: var(--product-left);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 42px;
-    padding: 0.65rem 0.8rem;
+    min-height: 64px;
+    padding: 0.8rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.16);
+    border-top: 4px solid var(--product-color);
     border-radius: var(--radius-md);
     background: var(--surface, #fff);
-    color: var(--ink);
-    font-size: 0.9rem;
-    font-weight: 600;
+    color: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
     text-decoration: none;
   }
+  .next-step__amazon--right { --product-color: var(--product-right); }
   .next-step__buy--right {
     --product-color: var(--product-right);
   }
