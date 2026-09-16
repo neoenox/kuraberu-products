@@ -118,7 +118,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   } from "../lib/embed-consent";
 
   type EmbedConfig = {
-    provider: "x" | "youtube" | "tiktok" | "pinterest";
+    provider: "x" | "youtube" | "tiktok" | "pinterest" | "reddit";
     canonicalUrl: string;
     renderer: "iframe" | "widget";
     embedUrl?: string;
@@ -454,8 +454,8 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     strong.textContent = "外部コンテンツの表示";
     title.append(strong);
     const body = document.createElement("p");
-    body.textContent =
-      "この記事にはX・YouTubeなどの外部投稿が含まれています。表示すると、IPアドレスや閲覧環境などの情報が外部サービスに送信される場合があります。";
+      body.textContent =
+      "この記事にはX・YouTube・Redditなどの外部投稿が含まれています。表示すると、IPアドレスや閲覧環境などの情報が外部サービスに送信される場合があります。";
     text.append(title, body);
 
     const actions = document.createElement("div");

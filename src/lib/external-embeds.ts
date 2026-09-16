@@ -3,6 +3,7 @@ export const EXTERNAL_EMBED_PROVIDERS = [
   "youtube",
   "tiktok",
   "pinterest",
+  "reddit",
 ] as const;
 
 export type ExternalEmbedProvider = (typeof EXTERNAL_EMBED_PROVIDERS)[number];
@@ -45,6 +46,7 @@ const providerLabels: Record<ExternalEmbedProvider, string> = {
   youtube: "YouTube",
   tiktok: "TikTok",
   pinterest: "Pinterest",
+  reddit: "Reddit",
 };
 
 function parseHttpsUrl(input: string): URL {
@@ -177,6 +179,26 @@ export function createExternalEmbedConfig(
       renderer: "iframe",
       embedUrl: `https://www.tiktok.com/player/v1/${match[1]}`,
       minimumHeight: 560,
+    };
+  }
+
+  if (provider === "reddit") {
+    if (!hasHostname(url, ["reddit.com", "www.reddit.com", "old.reddit.com"])) {
+      throw new Error("Redditの公式ホスト以外は埋め込みできません。");
+    }
+
+    const match = url.pathname.match(/^\/r\/([A-Za-z0-9_]+)\/comments\/([A-Za-z0-9]+)(?:\/|$)/i);
+    if (!match) {
+      throw new Error("Redditの公開投稿URLを指定してください。");
+    }
+
+    const path = url.pathname.replace(/\/$/, "");
+    return {
+      provider,
+      canonicalUrl: `https://www.reddit.com${path}/`,
+      renderer: "iframe",
+      embedUrl: `https://www.redditmedia.com${path}/?embed=true&ref_source=embed&ref=share`,
+      minimumHeight: 360,
     };
   }
 
