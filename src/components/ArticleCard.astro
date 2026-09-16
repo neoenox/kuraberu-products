@@ -18,6 +18,9 @@ interface Props {
 const {article, data} = Astro.props;
 const subjects = comparisonSubjects(article);
 const resolvedImage = resolveImage(article.imagePath);
+// 画像altは型番中心に短くする。見出しリンクと同文の headline 全文は冗長なため、
+// subjects（型番並び）がある場合はそれを使い、ない場合のみ headline に戻す。
+const thumbAlt = subjects ? subjects.join(' / ') : article.headline;
 ---
 
 <article
@@ -27,7 +30,7 @@ const resolvedImage = resolveImage(article.imagePath);
   {...data}
 >
   {resolvedImage ? (
-    <Picture class="card-thumb" src={resolvedImage} alt={article.headline} width={132} height={132} loading="lazy" formats={["avif", "webp"]} />
+    <Picture class="card-thumb" src={resolvedImage} alt={thumbAlt} width={132} height={132} loading="lazy" formats={["avif", "webp"]} />
   ) : (
     <div class="card-tile" role="img" aria-label={`商品比較：${article.category}`}>
       <span class="card-tile-label">{article.category}</span>
