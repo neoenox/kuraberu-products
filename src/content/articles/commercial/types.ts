@@ -46,6 +46,12 @@ type CommercialArticleSeed = {
   socialProofCheckedAt?: string;
   /** ソーシャルプルーフの投稿があるか */
   socialProofHasPosts?: boolean;
+  /** 確認済み公開投稿への直接リンク */
+  socialProofDirectPosts?: readonly {
+    label: string;
+    href: string;
+    note?: string;
+  }[];
   /** 埋め込み投稿の採用基準ランク（model / series / brand） */
   socialProofBestMatch?: string;
   /** 外部埋め込み（X/Twitter等） */
