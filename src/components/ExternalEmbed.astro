@@ -348,6 +348,13 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         const iframe = document.createElement("iframe");
         iframe.src = embedConfig.embedUrl;
         iframe.title = embedTitle || title;
+        // 動的に生成したiframeにはAstroのスコープ属性が付かないため、
+        // CSSだけに任せず表示サイズを直接指定する（Reddit側のwidth=300対策）。
+        iframe.style.display = "block";
+        iframe.style.width = "100%";
+        iframe.style.minHeight = `${embedConfig.minimumHeight}px`;
+        iframe.style.height = `${embedConfig.minimumHeight}px`;
+        iframe.style.border = "0";
         iframe.referrerPolicy = "strict-origin-when-cross-origin";
         iframe.allow =
           embedConfig.provider === "youtube"
