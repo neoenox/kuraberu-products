@@ -207,6 +207,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
                 purpose={embed.purpose}
                 tone={embed.tone as any}
                 autoload={embed.autoload}
+                autoDisplay={embed.autoDisplay ?? embed.autoload}
                 compact={embed.compact}
               />
             ))}
