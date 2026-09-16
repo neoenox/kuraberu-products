@@ -21,7 +21,14 @@ type CommercialArticleSeed = {
     label: string;
     url: `https://${string}`;
   }[];
-  verifiedRows?: readonly {`n    label: string;`n    left: string;`n    right: string;`n    highlight?: "left" | "right" | null;`n    highlightNote?: string;`n    direction?: "higher-is-better" | "lower-is-better";`n  }[];
+  verifiedRows?: readonly {
+    label: string;
+    left: string;
+    right: string;
+    highlight?: "left" | "right" | null;
+    highlightNote?: string;
+    direction?: "higher-is-better" | "lower-is-better";
+  }[];
   /** 左側商品の画像パス（"/products/..."）。省略時は hero セクションの画像をスキップ。 */
   leftImage?: `/${string}`;
   /** 右側商品の画像パス（"/products/..."）。省略時は hero セクションの画像をスキップ。 */
@@ -66,4 +73,5 @@ type CommercialArticleSeed = {
 };
 
 export type { CommercialArticleSeed };
+
 
