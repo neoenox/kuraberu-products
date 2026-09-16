@@ -2,6 +2,7 @@ import type { CommercialArticleSeed } from "./types";
 
 const ranking = "https://kakaku.com/ranking/kaden/";
 const date = "2026-09-16";
+const socialProofDate = "2026-09-17";
 const rows = (left: string, right: string) => [
   { label: "公式で確認するポイント", left, right },
   {
@@ -59,6 +60,7 @@ const make = (
   faqEntries: faq(left, right),
   socialProofHasPosts: Boolean(embeds?.length),
   socialProofBestMatch: embeds?.length ? "model" : undefined,
+  socialProofCheckedAt: directPosts?.length ? socialProofDate : undefined,
   embeds,
   socialProofDirectPosts: directPosts,
   officialSources: [

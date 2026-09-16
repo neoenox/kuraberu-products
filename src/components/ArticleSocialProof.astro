@@ -16,7 +16,7 @@ interface Props {
   searchCaption?: string;
 }
 
-const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption } = Astro.props;
+const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption, checkedAt } = Astro.props;
 const visible = Boolean(Astro.props.query?.trim());
 const hasEmbeddedPosts = Astro.slots.has("default");
 const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
@@ -34,6 +34,7 @@ const curatedPosts = directPosts.map((post) => ({
     data-best-match={bestMatch}
   >
     <h2>SNS での感想（参考情報）</h2>
+    {checkedAt && <p class="sns-checked-at">調査日：{checkedAt}</p>}
     <p>
       SNS投稿は実際の利用者の感想を知るための参考情報です。商品の仕様や比較結論の根拠には使用していません。比較の根拠はメーカー公式情報のみです。
     </p>
