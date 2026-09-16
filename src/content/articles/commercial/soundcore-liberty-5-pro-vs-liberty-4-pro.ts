@@ -29,7 +29,7 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
     { label: "ANCオン（本体／ケース込み）", left: "最大6.5時間／28時間", right: "最大7.5時間／30時間", highlight: "right", highlightNote: "ANCオンが長い" },
     { label: "マルチポイント", left: "最大3台（LDAC時2台）", right: "最大2台", highlight: "left" },
     { label: "片耳重量", left: "約5.9g", right: "約5.5g", highlight: "right", highlightNote: "約0.4g軽い", direction: "lower-is-better" },
-    { label: "公式価格（確認日）", left: "26,990円", right: "19,990円", highlight: "right", highlightNote: "7,000円安い", direction: "lower-is-better" },
+    { label: "公式価格（2026年9月16日確認）", left: "26,990円", right: "19,990円", highlight: "right", highlightNote: "7,000円安い", direction: "lower-is-better" },
   ],
   faqEntries: [
     { question: "ノイズキャンセリングが強いのはどちら？", answer: "公式の世代表記と自社比較ではLiberty 5 Proです。AnkerはLiberty 4 Pro比で約2倍のノイズ低減と説明していますが、自社試験の値です。" },
