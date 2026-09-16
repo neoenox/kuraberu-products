@@ -104,6 +104,15 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
     );
     expect(hrefs).toEqual(expected);
   });
+
+  it("renders the comparison memo entry linking to /memo/ (#850)", () => {
+    const section = topHtml.match(
+      /<section\b[^>]*data-top-memo[^>]*>([\s\S]*?)<\/section\s*>/i,
+    );
+    expect(section).not.toBeNull();
+    expect(section![1]).toMatch(/<h2>.*<\/h2>/);
+    expect(section![1]).toContain('href="/memo/"');
+  });
 });
 
 describe.skipIf(!hasDist)("article card content types (rendered dist)", () => {
