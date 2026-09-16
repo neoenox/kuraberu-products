@@ -6,7 +6,7 @@ const commercialArticleImages: Readonly<
     right: "/products/dyson-sv46-ff.jpg",
   },
   "roborock-qrevo-curv-vs-dreame-x50": {
-    left: "/products/roborock-qrevo-curv-vs-dreame-x50-left.jpg",
+    left: "/products/roborock-qrevo-curv.jpg",
     right: "/products/roborock-qrevo-curv-vs-dreame-x50-right.jpg",
   },
   "makita-cl107-vs-cl286": {
