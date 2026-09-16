@@ -374,7 +374,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         if (embedConfig.provider === "reddit") {
           const fallback = document.createElement("p");
           fallback.className = "reddit-embed-fallback";
-          fallback.textContent = "投稿本文が表示されない場合は";
+          fallback.textContent = `${title}（投稿を読み込み中）　`;
           const fallbackLink = document.createElement("a");
           fallbackLink.href = embedConfig.canonicalUrl;
           fallbackLink.target = "_blank";
