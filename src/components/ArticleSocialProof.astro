@@ -46,6 +46,9 @@ const curatedPosts = directPosts.map((post) => ({
         </ul>
       </div>
     )}
+    {!hasEmbeddedPosts && curatedPosts.length === 0 && (
+      <p class="sns-no-posts">対象型番を確認できるSNS投稿はありませんでした。</p>
+    )}
     <slot />
   </section>
 ) : null}
@@ -56,6 +59,12 @@ const curatedPosts = directPosts.map((post) => ({
   }
 
   .sns-posts-note {
+    margin: 0;
+    color: var(--text-muted, #666);
+    font-size: 0.9rem;
+  }
+
+  .sns-no-posts {
     margin: 0;
     color: var(--text-muted, #666);
     font-size: 0.9rem;
