@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { publicArticleMetadata } from '../content/articles';
+import { site } from '../config/site';
+import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
 
 // 新着比較：公開日が新しい記事を自動表示する。手動選定の注目記事とは
@@ -14,6 +16,19 @@ const latest = [...publicArticleMetadata]
       a.path.localeCompare(b.path),
   )
   .slice(0, 6);
+
+// 新着リストの構造化データ（ItemList）。表示対象の latest から導出するため、
+// 記事追加・更新時は自動で追従する（ハードコードしない）。
+const latestItemListJson = safeJsonForScript({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: latest.map((article, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: new URL(article.path, `${site.url}/`).toString(),
+    name: article.headline,
+  })),
+});
 
 // カテゴリ入口：記事数が topPage.categoryMinArticles 以上のカテゴリを表示。
 // 件数が多い順 → 名前順。リンク先は /articles/category/…（カテゴリページの
@@ -57,6 +72,7 @@ const categories = [...categoryCounts.entries()]
         <ArticleCard article={article} />
       ))}
     </div>
+    <script is:inline type="application/ld+json" set:html={latestItemListJson}></script>
   </section>
   <p class="meta wrap"><a href="/articles/">全比較記事を見る →</a></p>
 
