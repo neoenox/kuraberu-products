@@ -45,6 +45,10 @@ const make = (
   ],
   uses: ["購入前の比較", "仕様確認", "選び方の整理"],
   summary: `${left}と${right}について、公式ページで確認できる項目を比較し、価格.comランキングを候補選びの参考として整理します。`,
+  lead:
+    id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
+      ? "結論：軽さ・取り回しなら日立 PV-BL1C4、ホコリ可視化やセンサー機能ならDyson SV46 FFです。"
+      : undefined,
   leftProduct: left,
   rightProduct: right,
   leftPoint,
@@ -148,8 +152,8 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     "日立・ダイソン",
     "ラクかるスティック PV-BL1C4",
     "Dyson V12 Detect Slim Fluffy SV46 FF",
-    "1.1kg・自走ヘッド・約2時間充電",
-    "2.2kg・ホコリ可視化・最大60分",
+    "軽さ重視ならこちら：1.1kg・自走ヘッド・約2時間充電",
+    "掃除支援機能重視ならこちら：2.2kg・ホコリ可視化・最大60分",
     "https://kadenfan.hitachi.co.jp/clean/",
     [
       {
