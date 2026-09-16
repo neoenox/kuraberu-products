@@ -31,6 +31,7 @@ const make = (
   leftPoint: string,
   rightPoint: string,
   official: string,
+  embeds?: CommercialArticleSeed["embeds"],
 ): CommercialArticleSeed => ({
   id,
   publishedAt: date,
@@ -55,7 +56,9 @@ const make = (
   rightPoint,
   verifiedRows: rows(leftPoint, rightPoint),
   faqEntries: faq(left, right),
-  socialProofHasPosts: false,
+  socialProofHasPosts: Boolean(embeds?.length),
+  socialProofBestMatch: embeds?.length ? "model" : undefined,
+  embeds,
   officialSources: [
     { label: `${brand}公式サイト`, url: official as `https://${string}` },
   ],
@@ -88,6 +91,18 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     "連携機能と装着感を確認",
     "ノイズキャンセリングと再生時間を確認",
     "https://www.apple.com/jp/airpods-pro/",
+    [
+      {
+        provider: "x",
+        url: "https://x.com/san_san_santa/status/2030539753985315191",
+        title: "WF-1000XM6を使った感想",
+        match: "model",
+        purpose: "WF-1000XM6の音質調整と使用感に関する公開投稿です。",
+        tone: "good",
+        autoload: true,
+        compact: true,
+      },
+    ],
   ),
   make(
     "regza-32v35s-vs-regza-43m550m",
