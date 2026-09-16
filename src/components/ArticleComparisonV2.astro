@@ -60,7 +60,7 @@ const { left, right, rows, checkedAt, diagnosisHref, commonNote, purchaseLinkSta
     items={rows}
     commonNote={commonNote}
   />
-  {purchaseLinkStatus !== "unavailable" && (
+  {purchaseLinkStatus !== "unavailable" && showNextStepPurchaseCtas && (
     <NextStepBlock
       left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
       right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
