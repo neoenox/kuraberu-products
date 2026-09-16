@@ -14,13 +14,24 @@ interface Props {
   match: ExternalEmbedMatchRank;
   purpose?: string;
   autoload?: boolean;
+  /** ページ表示時に自動表示する（読者が拒否済みの場合を除く） */
+  autoDisplay?: boolean;
   tone?: "good" | "bad" | "mixed";
   /** compact: 埋め込みの会話（返信）を隠して高さを抑える */
   compact?: boolean;
 }
 
-const { provider, url, title, purpose, autoload, tone, compact, match } =
-  Astro.props;
+const {
+  provider,
+  url,
+  title,
+  purpose,
+  autoload,
+  autoDisplay,
+  tone,
+  compact,
+  match,
+} = Astro.props;
 const config = createExternalEmbedConfig(provider, url);
 const providerLabel = externalEmbedProviderLabel(provider);
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
@@ -39,6 +50,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-tone={tone}
   data-embed-state="idle"
   data-autoload={autoload ? "true" : undefined}
+  data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
   aria-label={`${providerLabel}の外部コンテンツ`}
 >
@@ -48,8 +60,21 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     <h3>{title}</h3>
     {purpose && <p>{purpose}</p>}
     <p class="external-embed__privacy">
-      表示すると、{providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。
+      {autoDisplay
+        ? `このページを開くと、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`
+        : `表示すると、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`}
     </p>
+    {
+      autoDisplay && (
+        <button
+          class="external-embed__stop"
+          type="button"
+          data-external-embed-stop
+        >
+          このブラウザでは表示しない
+        </button>
+      )
+    }
     <div class="external-embed__actions">
       <button type="button" data-external-embed-load>{providerLabel}の投稿を表示</button>
       <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">
@@ -532,6 +557,13 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     const onClick = () => {
       if (disposed) return;
+      if (
+        root.dataset.autoDisplay === "true" &&
+        getCachedConsent() === "denied"
+      ) {
+        status.textContent = "このブラウザでは外部投稿を表示しない設定です。";
+        return;
+      }
       if (actionPromise) return;
       const generationAtStart = resetGeneration;
 
@@ -583,29 +615,48 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     button.addEventListener("click", onClick);
 
-    if (root.dataset.autoload === "true") {
-      // autoload: 同意済みなら自動で読み込む。未同意なら同意バナーを表示。
+    const stopButton = root.querySelector<HTMLButtonElement>(
+      "[data-external-embed-stop]",
+    );
+    stopButton?.addEventListener("click", () => {
+      setConsent("denied");
+      resetToPlaceholder();
+      stopButton.textContent = "このブラウザでは表示しない設定です";
+      stopButton.disabled = true;
+    });
+
+    if (
+      root.dataset.autoload === "true" ||
+      root.dataset.autoDisplay === "true"
+    ) {
       const handleConsentChange = (consent: EmbedConsent | undefined) => {
         if (consent === "granted" && root.dataset.embedState === "idle") {
           onClick();
         } else if (
-          consent === undefined &&
+          (consent === undefined || consent === "denied") &&
           root.dataset.embedState !== "idle"
         ) {
           // 撤回: localStorage の同意キーを削除し、埋め込みを
           // 手動読み込みのプレースホルダーへ戻す。
           resetToPlaceholder();
         }
+        if (consent === "denied" && stopButton) {
+          stopButton.textContent = "このブラウザでは表示しない設定です";
+          stopButton.disabled = true;
+        }
       };
       onConsentChange(handleConsentChange);
 
       const consent = getCachedConsent();
-      if (consent === "granted") {
-        // 同意済み: 即座に読み込む。
+      if (
+        consent === "granted" ||
+        (consent === undefined && root.dataset.autoDisplay === "true")
+      ) {
+        // 同意済み、または記事単位の自動表示: 即座に読み込む。
         onClick();
       } else if (consent === undefined) {
         // 未同意: 同意バナーを1枚だけ注入し、ユーザーの選択を待つ。
-        showConsentBanner();
+        if (root.dataset.autoDisplay !== "true") showConsentBanner();
       } else {
         // granted / denied 済み: 撤回（設定変更）UIを1枚だけ出す。
         showWithdrawControl();
@@ -742,5 +793,25 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__actions,
   .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__status {
     display: none;
+  }
+
+  .external-embed[data-auto-display="true"][data-embed-state="loaded"] .external-embed__actions,
+  .external-embed[data-auto-display="true"][data-embed-state="loaded"] .external-embed__status {
+    display: none;
+  }
+
+  .external-embed__stop {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.7rem;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+
+  .external-embed__stop:disabled {
+    cursor: default;
   }
 </style>
