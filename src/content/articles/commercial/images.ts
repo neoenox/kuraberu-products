@@ -39,7 +39,7 @@ const commercialArticleImages: Readonly<
   },
   "hitachi-pv-bl1c4-vs-dyson-sv46-ff": {
     left: "/products/hitachi-pv-bl1c4.jpg",
-    right: "/products/dyson-sv46-ff.jpg",
+    right: "/products/dyson-sv46-ff.png",
   },
   "roborock-qrevo-curv-vs-dreame-x50": {
     left: "/products/roborock-qrevo-curv.jpg",
