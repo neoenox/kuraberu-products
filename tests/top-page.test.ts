@@ -270,6 +270,66 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
   });
 });
 
+describe.skipIf(!hasDist)(
+  "top page ItemList structured data (rendered dist)",
+  () => {
+    beforeAll(loadRenderedPages);
+
+    it("lists the six newest articles as ListItems (#846)", () => {
+      const expected = [...publicArticleMetadata]
+        .sort(
+          (a, b) =>
+            b.publishedAt.localeCompare(a.publishedAt) ||
+            b.modifiedAt.localeCompare(a.modifiedAt) ||
+            a.path.localeCompare(b.path),
+        )
+        .slice(0, 6);
+      const scripts = [
+        ...topHtml.matchAll(
+          /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+        ),
+      ].map((match) => match[1]);
+      const itemLists = scripts
+        .map((json) => {
+          try {
+            return JSON.parse(json) as {
+              "@type"?: string;
+              itemListElement?: Array<{
+                position?: number;
+                url?: string;
+                name?: string;
+              }>;
+            };
+          } catch {
+            return null;
+          }
+        })
+        .filter(
+          (data): data is { "@type": string; itemListElement: Array<object> } =>
+            data !== null && data["@type"] === "ItemList",
+        );
+      // トップの JSON-LD は WebPage + ItemList の2件
+      expect(itemLists).toHaveLength(1);
+      const elements = itemLists[0].itemListElement as Array<{
+        position: number;
+        url: string;
+        name: string;
+      }>;
+      expect(elements).toHaveLength(expected.length);
+      expect(elements.map((entry) => entry.position)).toEqual(
+        expected.map((_, index) => index + 1),
+      );
+      // 絶対URLのパス部分が新着記事の path と一致する
+      expect(
+        elements.map((entry) => entry.url.replace(/^https?:\/\/[^/]+/, "")),
+      ).toEqual(expected.map((article) => article.path));
+      expect(elements.map((entry) => entry.name)).toEqual(
+        expected.map((article) => article.headline),
+      );
+    });
+  },
+);
+
 describe.skipIf(!hasDist)("top page OGP (rendered dist)", () => {
   beforeAll(loadRenderedPages);
 
