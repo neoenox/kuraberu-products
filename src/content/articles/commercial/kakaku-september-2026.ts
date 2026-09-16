@@ -52,13 +52,15 @@ const make = (
   verifiedRows:
     id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
       ? [
-          { label: "標準質量", left: "1.1kg", right: "2.2kg" },
-          { label: "集じん容積", left: "0.15L", right: "0.35L" },
-          { label: "充電時間", left: "約2時間", right: "3.5時間" },
+          { label: "標準質量", left: "1.1kg", right: "2.2kg", highlight: "left", highlightNote: "1.1kg軽い", direction: "lower-is-better" },
+          { label: "集じん容積", left: "0.15L", right: "0.35L", highlight: "right", highlightNote: "容量が大きい" },
+          { label: "充電時間", left: "約2時間", right: "3.5時間", highlight: "left", highlightNote: "約1.5時間短い", direction: "lower-is-better" },
           {
             label: "公称運転時間",
             left: "強：約8分／標準：約30分",
             right: "最大60分※",
+            highlight: "right",
+            highlightNote: "条件付きの最大値",
           },
           {
             label: "主なヘッド",

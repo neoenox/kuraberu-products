@@ -25,6 +25,10 @@ type CommercialArticleSeed = {
     label: string;
     left: string;
     right: string;
+    highlight?: "left" | "right" | null;
+    highlightNote?: string;
+    bar?: { left: number; right: number };
+    direction?: "higher-is-better" | "lower-is-better";
   }[];
   /** 左側商品の画像パス（"/products/..."）。省略時は hero セクションの画像をスキップ。 */
   leftImage?: `/${string}`;
