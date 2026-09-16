@@ -60,12 +60,14 @@ const { left, right, rows, checkedAt, diagnosisHref, commonNote, purchaseLinkSta
     items={rows}
     commonNote={commonNote}
   />
-  <NextStepBlock
-    left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
-    right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
-    diagnosisHref={diagnosisHref}
-    purchaseLinkStatus={purchaseLinkStatus}
-    showPurchaseCtas={showNextStepPurchaseCtas}
-  />
+  {purchaseLinkStatus !== "unavailable" && (
+    <NextStepBlock
+      left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
+      right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
+      diagnosisHref={diagnosisHref}
+      purchaseLinkStatus={purchaseLinkStatus}
+      showPurchaseCtas={showNextStepPurchaseCtas}
+    />
+  )}
   <TrustLine checkedAt={checkedAt} />
 </section>
