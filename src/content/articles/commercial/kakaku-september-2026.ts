@@ -36,7 +36,7 @@ const make = (
   id,
   publishedAt: date,
   modifiedAt: date,
-  productInfoCheckedAt: date,
+  productInfoCheckedAt: "",
   purchaseLinksCheckedAt: date,
   purchaseLinkStatus: "unverified",
   title: `${brand} ${left}と${right}、どっち？｜くらべる商品メモ`,

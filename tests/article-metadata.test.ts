@@ -97,7 +97,7 @@ function articleSlugs(): string[] {
 
 describe("article metadata", () => {
   it("includes verified commercial articles in public discovery surfaces", () => {
-    expect(publicArticleMetadata).toHaveLength(118);
+    expect(publicArticleMetadata).toHaveLength(108);
     const newlyPublishedIds = [
       "yamazaki-dishwasher-rack-241925-vs-241926",
       "panasonic-mc-nx810km-vs-mc-nx700k",
@@ -139,16 +139,6 @@ describe("article metadata", () => {
       "omron-mc-681-vs-terumo-c205",
       "fitbit-charge-6-vs-xiaomi-smart-band-9",
       "zojirushi-cv-gb22-vs-tiger-pim-g220",
-      "toshiba-tw-127xm5l-vs-panasonic-na-lx127el",
-      "airpods-pro-3-vs-sony-wf-1000xm6",
-      "regza-32v35s-vs-regza-43m550m",
-      "hitachi-pv-bl1c4-vs-dyson-sv46-ff",
-      "toshiba-er-d3000b-vs-aladdin-agt-g13b",
-      "zojirushi-nx-ab10-vs-nw-wd10",
-      "hitachi-ras-aj2226s-vs-daikin-s406atep",
-      "sony-wh-1000xm6-vs-airpods-max",
-      "switch-2-vs-switch-2-zelda",
-      "panasonic-eh-na0k-vs-panasonic-eh-na9m",
     ];
     for (const id of newlyPublishedIds) {
       expect(publicArticleMetadata.some((article) => article.id === id)).toBe(
