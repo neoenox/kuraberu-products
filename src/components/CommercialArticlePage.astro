@@ -130,7 +130,6 @@ const faq = seed.faqEntries?.length
     ];
 const socialProofQuery = seed.socialProofQuery ?? `${seed.leftProduct} ${seed.rightProduct}`;
 const hasSocialProof = Boolean(socialProofQuery);
-const hasOfficialProse = seed.officialProse && seed.officialProse.length > 0;
 const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
 ---
 <BaseLayout title={article.title} description={article.description} article={article} faq={faq} robots={isPublicArticle ? undefined : 'noindex,nofollow'}>
@@ -166,20 +165,6 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         showNextStepPurchaseCtas={false}
       />
     ) : <h2 id="key-differences">違いを確認する</h2>}
-
-    {hasOfficialProse && (
-      <details class="fold-section" id="official">
-        <summary>公式情報（確認できた項目）</summary>
-        {seed.officialProse!.map((section) => (
-          <>
-            <h3>{section.heading}</h3>
-            <ul class="official-list">
-              {section.items.map((item) => <li>{item}</li>)}
-            </ul>
-          </>
-        ))}
-      </details>
-    )}
 
     <details class="fold-section" id="specs" open>
       <summary>詳細仕様（公式ページで確認した項目）</summary>
