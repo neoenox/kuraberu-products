@@ -78,7 +78,27 @@ const make = (
           },
         ]
       : rows(leftPoint, rightPoint),
-  faqEntries: faq(left, right),
+  faqEntries:
+    id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
+      ? [
+          {
+            question: "軽いのはどちら？",
+            answer: "PV-BL1C4です。標準質量1.1kgで、SV46 FFの2.2kgより1.1kg軽い仕様です。",
+          },
+          {
+            question: "ホコリをライトで確認できるのは？",
+            answer: "SV46 FFです。Fluffy Opticクリーナーヘッドで床面の見えにくいホコリを可視化します。",
+          },
+          {
+            question: "運転時間はDysonの方が長い？",
+            answer: "公称上限はSV46 FFが60分ですが、エコモードかつモーター駆動のないツール使用時です。PV-BL1C4の標準＋パワーヘッド使用時は約30分で、条件が異なるため単純比較はできません。",
+          },
+          {
+            question: "SV46 FFは現在も現行モデル？",
+            answer: "Dyson公式では販売終了モデルです。後継としてSV46 FF2が案内されています。",
+          },
+        ]
+      : faq(left, right),
   officialProse:
     id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff"
       ? [
