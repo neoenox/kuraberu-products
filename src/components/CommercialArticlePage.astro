@@ -79,8 +79,6 @@ const rows: readonly DifferenceRow[] = seed.verifiedRows?.length
   ? seed.verifiedRows
   : [
       { label: '主な比較軸', left: seed.leftPoint, right: seed.rightPoint },
-      { label: '公式情報で確認する項目', left: '仕様・サイズ・対応機能', right: '仕様・サイズ・対応機能' },
-      { label: '価格・在庫', left: '販売ページで確認', right: '販売ページで確認' },
     ];
 const comparisonValues = (seed.verifiedRows ?? []).flatMap((row) => [
   row.label,
@@ -236,7 +234,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
 
     <h2>購入前の注意</h2>
     <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
-    {articleId !== "hitachi-pv-bl1c4-vs-dyson-sv46-ff" && (
+    {!hasHeroSources && (
       <div class="purchase-cards">
         <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
         <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
