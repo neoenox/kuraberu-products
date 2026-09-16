@@ -17,12 +17,13 @@ interface Props {
 }
 
 const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption } = Astro.props;
-const visible = Boolean(Astro.props.query?.trim());
 const hasEmbeddedPosts = Astro.slots.has("default");
 const curatedPosts = directPosts.map((post) => ({
   ...post,
   href: createExternalEmbedConfig("x", post.href).canonicalUrl,
 }));
+const visible = Boolean(Astro.props.query?.trim()) &&
+  (hasPosts || hasEmbeddedPosts || curatedPosts.length > 0);
 ---
 {visible ? (
   <section
@@ -46,9 +47,6 @@ const curatedPosts = directPosts.map((post) => ({
         </ul>
       </div>
     )}
-    {!hasEmbeddedPosts && curatedPosts.length === 0 && (
-      <p class="sns-no-posts">対象型番を確認できるSNS投稿はありませんでした。</p>
-    )}
     <slot />
   </section>
 ) : null}
@@ -59,12 +57,6 @@ const curatedPosts = directPosts.map((post) => ({
   }
 
   .sns-posts-note {
-    margin: 0;
-    color: var(--text-muted, #666);
-    font-size: 0.9rem;
-  }
-
-  .sns-no-posts {
     margin: 0;
     color: var(--text-muted, #666);
     font-size: 0.9rem;
