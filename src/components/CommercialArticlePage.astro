@@ -137,7 +137,6 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <p class="meta"><a href="/articles/">比較記事一覧</a> / {article.category} · 公開日 <time datetime={article.publishedAt}>{article.publishedAt}</time> · 更新日 <time datetime={article.modifiedAt}>{article.modifiedAt}</time></p>
     <h1>{article.headline}</h1>
     <ComparisonMemoButton articleId={article.id} />
-    <p class="lead">{seed.lead ?? article.summary}</p>
     {hasHeroSources && (
       <nav class="jump-nav" aria-label="ページ内ジャンプ">
         <p class="jump-nav__label">この記事の目次</p>
@@ -150,6 +149,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         </ul>
       </nav>
     )}
+    <p class="lead">{seed.lead ?? article.summary}</p>
     {!hasHeroSources && <TrustLine checkedAt={article.productInfoCheckedAt} />}
     {seed.officialSources?.length ? (
       <details class="fold-section source-note" aria-labelledby="official-sources">
