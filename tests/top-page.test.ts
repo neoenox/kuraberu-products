@@ -105,6 +105,15 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
     );
     expect(hrefs).toEqual(expected);
   });
+
+  it("renders the comparison memo entry linking to /memo/ (#850)", () => {
+    const section = topHtml.match(
+      /<section\b[^>]*data-top-memo[^>]*>([\s\S]*?)<\/section\s*>/i,
+    );
+    expect(section).not.toBeNull();
+    expect(section![1]).toMatch(/<h2>.*<\/h2>/);
+    expect(section![1]).toContain('href="/memo/"');
+  });
 });
 
 describe.skipIf(!hasDist)("article card content types (rendered dist)", () => {
@@ -236,7 +245,7 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
     for (const [, html] of cardPages()) {
       for (const card of cards(html)) {
         if (!isArticleCard(card)) continue;
-        const href = card.match(/<h2><a href="([^"]+)"/)?.[1];
+        const href = card.match(/<h[23]><a href="([^"]+)"/)?.[1];
         expect(href).toBeDefined();
         const article = articleMetadata.find((entry) => entry.path === href);
         expect(article, `unknown article path ${href}`).toBeDefined();
@@ -270,7 +279,7 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
           `${page}: card image alt must be non-empty`,
         ).toBeTruthy();
         const alt = decodeHtmlAttr(rawAlt ?? "");
-        const href = card.match(/<h2><a href="([^"]+)"/)?.[1];
+        const href = card.match(/<h[23]><a href="([^"]+)"/)?.[1];
         const article = articleMetadata.find((entry) => entry.path === href);
         expect(article, `unknown article path ${href}`).toBeDefined();
         const subjects = comparisonSubjects(article!);
@@ -302,6 +311,115 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
       if (!isProduction) {
         expect(html).toContain('content="noindex');
       }
+    }
+  });
+});
+
+describe.skipIf(!hasDist)(
+  "top page ItemList structured data (rendered dist)",
+  () => {
+    beforeAll(loadRenderedPages);
+
+    it("lists the six newest articles as ListItems (#846)", () => {
+      const expected = [...publicArticleMetadata]
+        .sort(
+          (a, b) =>
+            b.publishedAt.localeCompare(a.publishedAt) ||
+            b.modifiedAt.localeCompare(a.modifiedAt) ||
+            a.path.localeCompare(b.path),
+        )
+        .slice(0, 6);
+      const scripts = [
+        ...topHtml.matchAll(
+          /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+        ),
+      ].map((match) => match[1]);
+      const itemLists = scripts
+        .map((json) => {
+          try {
+            return JSON.parse(json) as {
+              "@type"?: string;
+              itemListElement?: Array<{
+                position?: number;
+                url?: string;
+                name?: string;
+              }>;
+            };
+          } catch {
+            return null;
+          }
+        })
+        .filter(
+          (data): data is { "@type": string; itemListElement: Array<object> } =>
+            data !== null && data["@type"] === "ItemList",
+        );
+      // トップの JSON-LD は WebPage + ItemList の2件
+      expect(itemLists).toHaveLength(1);
+      const elements = itemLists[0].itemListElement as Array<{
+        position: number;
+        url: string;
+        name: string;
+      }>;
+      expect(elements).toHaveLength(expected.length);
+      expect(elements.map((entry) => entry.position)).toEqual(
+        expected.map((_, index) => index + 1),
+      );
+      // 絶対URLのパス部分が新着記事の path と一致する
+      expect(
+        elements.map((entry) => entry.url.replace(/^https?:\/\/[^/]+/, "")),
+      ).toEqual(expected.map((article) => article.path));
+      expect(elements.map((entry) => entry.name)).toEqual(
+        expected.map((article) => article.headline),
+      );
+    });
+  },
+);
+
+describe.skipIf(!hasDist)("top page OGP (rendered dist)", () => {
+  beforeAll(loadRenderedPages);
+
+  it("exposes the default OGP image with 1200x630 dimensions (#835)", () => {
+    expect(topHtml).toMatch(
+      /<meta property="og:image" content="[^"]*\/ogp-top\.png"/,
+    );
+    expect(topHtml).toContain('<meta property="og:image:width" content="1200"');
+    expect(topHtml).toContain('<meta property="og:image:height" content="630"');
+    expect(topHtml).toContain(
+      '<meta name="twitter:card" content="summary_large_image"',
+    );
+    expect(topHtml).toMatch(
+      /<meta name="twitter:image" content="[^"]*\/ogp-top\.png"/,
+    );
+  });
+});
+
+describe.skipIf(!hasDist)("article card heading levels (rendered dist)", () => {
+  beforeAll(loadRenderedPages);
+
+  // 商品診断カード（/tools/ へのリンク）は記事ではないため対象外
+  const cardHeadings = (html: string) =>
+    [
+      ...html.matchAll(
+        /<article\b[^>]*class="[^"]*\barticle-list-card\b[^"]*"[^>]*>[\s\S]*?<\/article>/g,
+      ),
+    ]
+      .map((match) => match[0])
+      .filter((card) => !card.includes('href="/tools/'))
+      .map((card) => card.match(/<(h[1-6])><a href="/)?.[1]);
+
+  it("renders top page cards as h3 under the h2 section heading (#834)", () => {
+    const headings = cardHeadings(topHtml);
+    expect(headings.length).toBeGreaterThan(0);
+    for (const heading of headings) {
+      expect(heading).toBe("h3");
+    }
+  });
+
+  it("keeps articles index cards as h2 under the h1 page heading (#834)", () => {
+    const headings = cardHeadings(articlesIndexHtml);
+    expect(headings.length).toBeGreaterThan(0);
+    for (const heading of headings) {
+      expect(heading).toBe("h2");
     }
   });
 });

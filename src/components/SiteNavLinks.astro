@@ -1,0 +1,9 @@
+---
+// 主要メニュー4リンク。デスクトップ用 nav とモバイル用ドロワー nav で共用し、
+// 表記と aria-current の分岐を一元化する。
+const currentPath = Astro.url.pathname;
+---
+<a href="/articles/" aria-current={currentPath.startsWith('/articles/') ? 'page' : undefined}>比較記事</a>
+<a href="/memo/" aria-current={currentPath === '/memo/' ? 'page' : undefined}>比較メモ</a>
+<a href="/tools/product-finder/" aria-current={currentPath.startsWith('/tools/product-finder/') ? 'page' : undefined}>商品診断</a>
+<a href="/about/" aria-current={currentPath === '/about/' ? 'page' : undefined}>運営者情報</a>
