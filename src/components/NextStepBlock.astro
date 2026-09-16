@@ -73,9 +73,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
             <span class="next-step__buy-name">{left.label}</span>
           </div>
           <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
-            <span class="next-step__buy-action">楽天市場で購入先を見る</span>
+            <span class="next-step__buy-action"><span class="market-icon market-icon--rakuten" aria-hidden="true">R</span>楽天市場で購入先を見る</span>
           </a>
-          {leftAmazonHref && <a class="next-step__amazon next-step__amazon--left" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer"><span class="next-step__buy-action">Amazonで購入先を見る</span></a>}
+          {leftAmazonHref && <a class="next-step__amazon next-step__amazon--left" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer"><span class="next-step__buy-action"><span class="market-icon market-icon--amazon" aria-hidden="true">a</span>Amazonで購入先を見る</span></a>}
         </div>
       ) : null}
       {rightCta ? (
@@ -85,9 +85,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
             <span class="next-step__buy-name">{right.label}</span>
           </div>
           <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
-            <span class="next-step__buy-action">楽天市場で購入先を見る</span>
+            <span class="next-step__buy-action"><span class="market-icon market-icon--rakuten" aria-hidden="true">R</span>楽天市場で購入先を見る</span>
           </a>
-          {rightAmazonHref && <a class="next-step__amazon next-step__amazon--right" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer"><span class="next-step__buy-action">Amazonで購入先を見る</span></a>}
+          {rightAmazonHref && <a class="next-step__amazon next-step__amazon--right" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer"><span class="next-step__buy-action"><span class="market-icon market-icon--amazon" aria-hidden="true">a</span>Amazonで購入先を見る</span></a>}
         </div>
       ) : null}
     </div>
@@ -215,6 +215,21 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
     align-items: center;
     gap: 0.3rem;
   }
+  .market-icon {
+    display: inline-grid;
+    width: 1.45rem;
+    height: 1.45rem;
+    place-items: center;
+    margin-right: 0.35rem;
+    border-radius: 0.35rem;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .market-icon--rakuten { background: #bf0000; }
+  .market-icon--amazon { background: #232f3e; font-size: 1.2rem; }
   .next-step__buy--missing {
     color: var(--muted);
     font-size: 0.85rem;
