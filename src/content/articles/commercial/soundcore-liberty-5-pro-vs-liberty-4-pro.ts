@@ -1,0 +1,54 @@
+import type { CommercialArticleSeed } from "./types";
+
+export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
+  id: "soundcore-liberty-5-pro-vs-liberty-4-pro",
+  publishedAt: "2026-09-16",
+  modifiedAt: "2026-09-16",
+  // 楽天アフィリエイトURLがChatGPT調査結果で未生成のため、公開待ち草稿として扱う。
+  productInfoCheckedAt: "",
+  purchaseLinksCheckedAt: "2026-09-16",
+  purchaseLinkStatus: "unverified",
+  title: "Soundcore Liberty 5 ProとLiberty 4 Proの違いを比較｜新旧Proモデルはどっちが合う？",
+  headline: "Soundcore Liberty 5 ProとLiberty 4 Proを比較。ANC・再生時間・接続台数の違い",
+  description: "Soundcore Liberty 5 ProとLiberty 4 Proを、公式仕様のノイズキャンセリング・再生時間・接続機能で比較します。",
+  category: "オーディオ",
+  tags: ["ワイヤレスイヤホン", "ノイズキャンセリング", "Soundcore"],
+  audiences: ["Libertyシリーズの新旧モデルを比べたい人", "ANC・再生時間・接続台数で選びたい人"],
+  uses: ["音楽再生", "通話", "移動中のリスニング"],
+  summary: "Liberty 5 ProはANC・通話・3台マルチポイントを強化し、Liberty 4 Proは軽さ・ANCオン時の再生時間・価格にメリットがあります。",
+  lead: "結論：ANC・通話・3台接続ならLiberty 5 Pro、軽さ・ANCオンの長時間再生・価格ならLiberty 4 Proです。",
+  leftProduct: "Soundcore Liberty 5 Pro D1203N11",
+  rightProduct: "Soundcore Liberty 4 Pro A3954N11",
+  leftPoint: "ANC・通話・3台接続を重視する人向け",
+  rightPoint: "軽さ・ANCオン再生・価格を重視する人向け",
+  leftImage: "/products/soundcore-liberty-5-pro.png",
+  rightImage: "/products/soundcore-liberty-4-pro.jpg",
+  verifiedRows: [
+    { label: "ノイズキャンセリング", left: "ウルトラノイズキャンセリング4.0・Thus AI", right: "ウルトラノイズキャンセリング3.5", highlight: "left", highlightNote: "世代が新しい" },
+    { label: "通常再生（本体／ケース込み）", left: "最大12時間／50時間", right: "最大10時間／40時間", highlight: "left", highlightNote: "通常時が長い" },
+    { label: "ANCオン（本体／ケース込み）", left: "最大6.5時間／28時間", right: "最大7.5時間／30時間", highlight: "right", highlightNote: "ANCオンが長い" },
+    { label: "マルチポイント", left: "最大3台（LDAC時2台）", right: "最大2台", highlight: "left" },
+    { label: "片耳重量", left: "約5.9g", right: "約5.5g", highlight: "right", highlightNote: "約0.4g軽い", direction: "lower-is-better" },
+    { label: "公式価格（確認日）", left: "26,990円", right: "19,990円", highlight: "right", highlightNote: "7,000円安い", direction: "lower-is-better" },
+  ],
+  faqEntries: [
+    { question: "ノイズキャンセリングが強いのはどちら？", answer: "公式の世代表記と自社比較ではLiberty 5 Proです。AnkerはLiberty 4 Pro比で約2倍のノイズ低減と説明していますが、自社試験の値です。" },
+    { question: "ANCをオンにした再生時間が長いのは？", answer: "Liberty 4 Proです。イヤホン本体は最大7.5時間、ケース込みは最大30時間で、5 Proの6.5時間・28時間を上回ります。" },
+    { question: "3台の端末を同時接続できるのは？", answer: "Liberty 5 Proです。最大3台に対応します。ただしLDAC併用時は2台までです。" },
+    { question: "どちらが軽い？", answer: "Liberty 4 Proです。片耳約5.5gで、Liberty 5 Proは約5.9gです。" },
+  ],
+  officialProse: [
+    { heading: "Soundcore Liberty 5 Pro D1203N11", items: ["ANC 4.0・Thus AI、8マイク＋2骨伝導センサー、最大3台マルチポイント、Bluetooth 6.1を搭載。", "通常再生は本体最大12時間・ケース込み最大50時間。ANCオンは最大6.5時間・28時間。"] },
+    { heading: "Soundcore Liberty 4 Pro A3954N11", items: ["ANC 3.5、6マイク＋AI、最大2台マルチポイント、Bluetooth 5.3を搭載。", "通常再生は本体最大10時間・ケース込み最大40時間。ANCオンは最大7.5時間・30時間。"] },
+  ],
+  socialProofHasPosts: false,
+  officialSources: [
+    { label: "Soundcore Liberty 5 Pro 公式ページ", url: "https://www.ankerjapan.com/products/d1203" },
+    { label: "Soundcore Liberty 4 Pro 公式ページ", url: "https://www.ankerjapan.com/products/a3954" },
+  ],
+  sourceLinks: [
+    { label: "Soundcore Liberty 5 Pro 公式ページ", url: "https://www.ankerjapan.com/products/d1203", date: "2026-09-16" },
+    { label: "Soundcore Liberty 4 Pro 公式ページ", url: "https://www.ankerjapan.com/products/a3954", date: "2026-09-16" },
+  ],
+  disclaimer: "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想であり、比較結論の根拠には使用していません。",
+};
