@@ -2,16 +2,16 @@ const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
-    left: "/products/toshiba-tw-127xm5l-vs-panasonic-na-lx127el.png",
-    right: "/products/toshiba-tw-127xm5l-vs-panasonic-na-lx127el.png",
+    left: "/products/toshiba-tw-127xm5l-vs-panasonic-na-lx127el.jpg",
+    right: "/products/toshiba-tw-127xm5l-vs-panasonic-na-lx127el.jpg",
   },
   "airpods-pro-3-vs-sony-wf-1000xm6": {
-    left: "/products/airpods-pro-3-vs-sony-wf-1000xm6.png",
-    right: "/products/airpods-pro-3-vs-sony-wf-1000xm6.png",
+    left: "/products/airpods-pro-3-vs-sony-wf-1000xm6.jpg",
+    right: "/products/airpods-pro-3-vs-sony-wf-1000xm6.jpg",
   },
   "regza-32v35s-vs-regza-43m550m": {
-    left: "/products/regza-32v35s-vs-regza-43m550m.png",
-    right: "/products/regza-32v35s-vs-regza-43m550m.png",
+    left: "/products/regza-32v35s-vs-regza-43m550m.jpg",
+    right: "/products/regza-32v35s-vs-regza-43m550m.jpg",
   },
   "hitachi-pv-bl1c4-vs-dyson-sv46-ff": {
     left: "/products/hitachi-pv-bl1c4-vs-dyson-sv46-ff.png",
@@ -38,8 +38,8 @@ const commercialArticleImages: Readonly<
     right: "/products/switch-2-vs-switch-2-zelda.png",
   },
   "panasonic-eh-na0k-vs-panasonic-eh-na9m": {
-    left: "/products/panasonic-eh-na0k-vs-panasonic-eh-na9m.png",
-    right: "/products/panasonic-eh-na0k-vs-panasonic-eh-na9m.png",
+    left: "/products/panasonic-eh-na0k-vs-panasonic-eh-na9m.jpg",
+    right: "/products/panasonic-eh-na0k-vs-panasonic-eh-na9m.jpg",
   },
   "roborock-qrevo-curv-vs-dreame-x50": {
     left: "/products/roborock-qrevo-curv-vs-dreame-x50-left.jpg",
@@ -245,3 +245,4 @@ const commercialArticleImages: Readonly<
 };
 
 export { commercialArticleImages };
+
