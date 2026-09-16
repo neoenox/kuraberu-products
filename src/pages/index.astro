@@ -33,13 +33,13 @@ const categories = [...categoryCounts.entries()]
 ---
 
 <BaseLayout
-  title="くらべる商品メモ｜商品比較"
-  description="商品やサービスを、公式情報と確認状況を分けて比べるサイトです。確認できない数値や体験談は掲載しません。"
+  title="家電・日用品の2商品比較｜くらべる商品メモ"
+  description="掃除機・キッチン家電・イヤホン・ベビー用品など100件以上の2商品比較。メーカー公式情報中心に違いと「どっち向き？」を整理します。確認できない数値・体験談は掲載しません。"
   ogImage="/ogp-top.png"
 >
   <section class="wrap section section-intro hero-section">
     <p class="eyebrow">くらべる商品メモ</p>
-    <h1 class="hero-heading">くらべて、<br class="hero-br" />選ぶ。</h1>
+    <h1 class="hero-heading">家電・日用品を<br class="hero-br" />くらべて、選ぶ。</h1>
     <p class="lead">似ていて迷う2商品を、違いと「<strong>どっち向き？</strong>」で比較します。<br />メーカー公式情報を中心に確認しています。</p>
     <form class="top-search" role="search" aria-label="比較記事を検索" data-top-search action="/articles/" method="get">
       <input type="search" name="q" maxlength="100" autocomplete="off" placeholder="商品名・用途・悩みで検索（例: 電気ケトル、軽い）" aria-label="商品名・用途・悩みで検索" />
@@ -55,7 +55,7 @@ const categories = [...categoryCounts.entries()]
     <p class="lead">新しく追加した比較記事を、公開日の新しい順に紹介します。</p>
     <div class="article-list top-article-list">
       {latest.map((article) => (
-        <ArticleCard article={article} />
+        <ArticleCard article={article} headingLevel="h3" />
       ))}
     </div>
   </section>
@@ -144,7 +144,7 @@ const categories = [...categoryCounts.entries()]
     height: 88px;
   }
 
-  .top-article-list .article-list-card h2 {
+  .top-article-list .article-list-card h3 {
     margin: 0.15rem 0 0.35rem;
     font-size: clamp(1.05rem, 2vw, 1.35rem);
     line-height: 1.35;
