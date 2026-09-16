@@ -195,6 +195,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         checkedAt={seed.socialProofCheckedAt}
         hasPosts={seed.socialProofHasPosts}
         bestMatch={seed.socialProofBestMatch as any}
+        directPosts={seed.socialProofDirectPosts}
       >
         {seed.embeds && seed.embeds.length > 0 && (
           <div class="sns-embeds">
