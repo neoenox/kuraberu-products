@@ -100,7 +100,7 @@ const rightCta = showCta ? rightHref : undefined;
         </a>
       ) : null}
     </div>
-  ) : showPurchaseCtas ? (
+  ) : showPurchaseCtas && purchaseLinkStatus !== "unavailable" ? (
     <p class="next-step__buy next-step__buy--missing next-step__buy--single" data-purchase-status={purchaseLinkStatus}>
       販売先を確認中です
     </p>
