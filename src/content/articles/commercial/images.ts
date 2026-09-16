@@ -1,6 +1,42 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
+    left: "/products/toshiba-tw-127xm5l.jpg",
+    right: "/products/panasonic-na-lx127el.jpg",
+  },
+  "airpods-pro-3-vs-sony-wf-1000xm6": {
+    left: "/products/airpods-pro-3.jpg",
+    right: "/products/sony-wf-1000xm6.jpg",
+  },
+  "regza-32v35s-vs-regza-43m550m": {
+    left: "/products/regza-32v35s.jpg",
+    right: "/products/regza-43m550m.jpg",
+  },
+  "toshiba-er-d3000b-vs-aladdin-agt-g13b": {
+    left: "/products/toshiba-er-d3000b.jpg",
+    right: "/products/aladdin-agt-g13b.jpg",
+  },
+  "zojirushi-nx-ab10-vs-nw-wd10": {
+    left: "/products/zojirushi-nx-ab10.jpg",
+    right: "/products/zojirushi-nw-wd10.jpg",
+  },
+  "hitachi-ras-aj2226s-vs-daikin-s406atep": {
+    left: "/products/hitachi-ras-aj2226s.jpg",
+    right: "/products/daikin-s406atep.jpg",
+  },
+  "sony-wh-1000xm6-vs-airpods-max": {
+    left: "/products/sony-wh-1000xm6.jpg",
+    right: "/products/airpods-max.jpg",
+  },
+  "switch-2-vs-switch-2-zelda": {
+    left: "/products/switch-2.jpg",
+    right: "/products/switch-2-zelda.jpg",
+  },
+  "panasonic-eh-na0k-vs-panasonic-eh-na9m": {
+    left: "/products/panasonic-eh-na0k.jpg",
+    right: "/products/panasonic-eh-na9m.jpg",
+  },
   "hitachi-pv-bl1c4-vs-dyson-sv46-ff": {
     left: "/products/hitachi-pv-bl1c4.jpg",
     right: "/products/dyson-sv46-ff.jpg",
