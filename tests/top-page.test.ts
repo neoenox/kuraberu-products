@@ -270,6 +270,24 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
   });
 });
 
+describe.skipIf(!hasDist)("top page OGP (rendered dist)", () => {
+  beforeAll(loadRenderedPages);
+
+  it("exposes the default OGP image with 1200x630 dimensions (#835)", () => {
+    expect(topHtml).toMatch(
+      /<meta property="og:image" content="[^"]*\/ogp-top\.png"/,
+    );
+    expect(topHtml).toContain('<meta property="og:image:width" content="1200"');
+    expect(topHtml).toContain('<meta property="og:image:height" content="630"');
+    expect(topHtml).toContain(
+      '<meta name="twitter:card" content="summary_large_image"',
+    );
+    expect(topHtml).toMatch(
+      /<meta name="twitter:image" content="[^"]*\/ogp-top\.png"/,
+    );
+  });
+});
+
 describe.skipIf(!hasDist)("article card heading levels (rendered dist)", () => {
   beforeAll(loadRenderedPages);
 
