@@ -16,7 +16,7 @@ interface Props {
   searchCaption?: string;
 }
 
-const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption } = Astro.props;
+const { hasPosts = false, bestMatch, directPosts = [] } = Astro.props;
 const hasEmbeddedPosts = Astro.slots.has("default");
 const curatedPosts = directPosts.map((post) => ({
   ...post,
