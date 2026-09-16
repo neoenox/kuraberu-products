@@ -45,13 +45,13 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   embeds: [
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1tpi8nw/my_soundcore_liberty_5_pro_review/", title: "Liberty 5 Proの実使用レビュー", match: "model", purpose: "購入して使ったユーザーによるレビュー。ANC・通話・装着感を評価し、標準音は低音が強いとしています。", tone: "mixed", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1ulvcsy/liberty_5_pro_the_most_complete_balanced_buds_ive/", title: "Liberty 5 Proを日常使用した感想", match: "model", purpose: "購入者による日常使用の感想。ANC・通話・快適性・3台接続を評価しています。", tone: "good", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1tpcmxu/soundcore_liberty_5_pro_is_disappointing/", title: "Liberty 5 Proに不満を感じたレビュー", match: "model", purpose: "到着後に使ったユーザーの感想。マイクは高評価ですが、音質とANCは期待以下としています。", tone: "bad", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1fw6ye0/liberty_4_pro/", title: "Liberty 4 Proを購入した感想", match: "model", purpose: "購入直後から使ったユーザーの感想。音質・音量を評価し、ケースの大きさを気にしています。", tone: "mixed", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1pgvan6/soundcore_liberty_4_pro_is_it_worth_it/", title: "Liberty 4 Proの音質・装着感レビュー", match: "model", purpose: "購入者がLDACとANCを使った感想。音質・フィット・ANC・EQの自由度を評価しています。", tone: "good", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1k5e8eo/i_regret_buying_the_soundcore_liberty_4_pros_im/", title: "Liberty 4 Proの装着感とANCへの不満", match: "model", purpose: "購入後2日で返品したユーザーの感想。耳の痛みとANC性能への不満を挙げています。", tone: "bad", compact: true },
-    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1o0cgvb/liberty_4_pro_battery_life_way_shorter_than/", title: "Liberty 4 Proのバッテリー実使用報告", match: "model", purpose: "購入者による個別報告。ANC使用時に約3.5時間で低電池警告が出たとしています。", tone: "bad", compact: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1tpi8nw/my_soundcore_liberty_5_pro_review/", title: "Liberty 5 Proの実使用レビュー", match: "model", purpose: "購入して使ったユーザーによるレビュー。ANC・通話・装着感を評価し、標準音は低音が強いとしています。", tone: "mixed", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1ulvcsy/liberty_5_pro_the_most_complete_balanced_buds_ive/", title: "Liberty 5 Proを日常使用した感想", match: "model", purpose: "購入者による日常使用の感想。ANC・通話・快適性・3台接続を評価しています。", tone: "good", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1tpcmxu/soundcore_liberty_5_pro_is_disappointing/", title: "Liberty 5 Proに不満を感じたレビュー", match: "model", purpose: "到着後に使ったユーザーの感想。マイクは高評価ですが、音質とANCは期待以下としています。", tone: "bad", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1fw6ye0/liberty_4_pro/", title: "Liberty 4 Proを購入した感想", match: "model", purpose: "購入直後から使ったユーザーの感想。音質・音量を評価し、ケースの大きさを気にしています。", tone: "mixed", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1pgvan6/soundcore_liberty_4_pro_is_it_worth_it/", title: "Liberty 4 Proの音質・装着感レビュー", match: "model", purpose: "購入者がLDACとANCを使った感想。音質・フィット・ANC・EQの自由度を評価しています。", tone: "good", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/Earbuds/comments/1k5e8eo/i_regret_buying_the_soundcore_liberty_4_pros_im/", title: "Liberty 4 Proの装着感とANCへの不満", match: "model", purpose: "購入後2日で返品したユーザーの感想。耳の痛みとANC性能への不満を挙げています。", tone: "bad", compact: true, autoDisplay: true },
+    { provider: "reddit", url: "https://www.reddit.com/r/soundcore/comments/1o0cgvb/liberty_4_pro_battery_life_way_shorter_than/", title: "Liberty 4 Proのバッテリー実使用報告", match: "model", purpose: "購入者による個別報告。ANC使用時に約3.5時間で低電池警告が出たとしています。", tone: "bad", compact: true, autoDisplay: true },
   ],
   officialSources: [
     { label: "Soundcore Liberty 5 Pro 公式ページ", url: "https://www.ankerjapan.com/products/d1203" },
@@ -63,3 +63,4 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   ],
   disclaimer: "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想であり、比較結論の根拠には使用していません。",
 };
+
