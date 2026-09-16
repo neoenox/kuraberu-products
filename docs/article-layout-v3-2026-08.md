@@ -30,7 +30,7 @@ v2（`docs/article-layout-v2-2026-08.md`）の後継。サイト監査（2026-08
    A/B カード = 画像 + 型番 + 「こんな人に」1 行 + ✓おすすめポイント。
    2026-08-18 更新で 30秒比較と条件別結論を 1 つに統合）
 3. **主な違い（3〜5 個）** — VisualKeyDifferences。記事の主役として結論直後に置く
-4. **「次にすること」1 ブロック**（NextStepBlock: A/B 購入 + 30秒診断）
+4. **「購入先」1 ブロック**（NextStepBlock: A/B 購入 + 30秒診断）
 5. 詳細比較（全仕様が長い記事は `<details>` 折りたたみ）
 6. 公式情報・根拠
 7. FAQ
@@ -76,7 +76,7 @@ v2（`docs/article-layout-v2-2026-08.md`）の後継。サイト監査（2026-08
 - 品質ゲート（`validateArticleTrustLine`）が、全記事で信頼行がちょうど 1 つ・
   `YYYY-MM-DD` 付きであることと、旧形式の残存を fail-closed で検出する。
 
-## 結論直後の「次にすること」1ブロック（NextStepBlock）
+## 結論直後の「購入先」1ブロック（NextStepBlock）
 
 比較記事の結論直後（「どっち向き？」の判定直後）に、**A/B 購入 + 30秒診断を
 1 つのブロック**として置く。それまで別々の箱だった「購入CTA」と「診断誘導」を
@@ -294,3 +294,4 @@ BaseLayout が `<meta name="article:content-type" content="guide|comparison">` �
 - `/tools/product-finder/` など記事メタデータの無いページは、従来どおり同カテゴリを上限件数で表示する。
 - 品質ゲート（`scripts/check-rendered-html.mjs`）がビルド後 HTML の両セクション件数を
   `relatedSelection` と照合する。
+
