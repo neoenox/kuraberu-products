@@ -265,7 +265,10 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
         if (!img) continue;
         imageCount += 1;
         const rawAlt = img[0].match(/\balt="([^"]*)"/)?.[1];
-        expect(rawAlt, `${page}: card image alt must be non-empty`).toBeTruthy();
+        expect(
+          rawAlt,
+          `${page}: card image alt must be non-empty`,
+        ).toBeTruthy();
         const alt = decodeHtmlAttr(rawAlt ?? "");
         const href = card.match(/<h2><a href="([^"]+)"/)?.[1];
         const article = articleMetadata.find((entry) => entry.path === href);
