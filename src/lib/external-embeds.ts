@@ -198,7 +198,7 @@ export function createExternalEmbedConfig(
       canonicalUrl: `https://www.reddit.com${path}/`,
       renderer: "iframe",
       embedUrl: `https://www.redditmedia.com${path}/?embed=true&ref_source=embed&ref=share`,
-      minimumHeight: 520,
+      minimumHeight: 360,
     };
   }
 
@@ -226,4 +226,5 @@ export function createExternalEmbedConfig(
     minimumHeight: 420,
   };
 }
+
 
