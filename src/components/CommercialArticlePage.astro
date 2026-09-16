@@ -140,9 +140,12 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <p class="lead">{seed.lead ?? article.summary}</p>
     {hasHeroSources && (
       <nav class="jump-nav" aria-label="ページ内ジャンプ">
-        <a href="#key-differences">違い</a>
-        <a href="#decision-guide">結局どっち？</a>
+        <span class="jump-nav__label">目次</span>
+        <a href="#decision-guide">結論</a>
+        <a href="#key-differences">比較ポイント</a>
         <a href="#faq">FAQ</a>
+        <a href="#next-step">購入先</a>
+        {hasSocialProof && <a href="#sns">SNS</a>}
       </nav>
     )}
     {!hasHeroSources && <TrustLine checkedAt={article.productInfoCheckedAt} />}
