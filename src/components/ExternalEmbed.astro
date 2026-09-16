@@ -371,6 +371,18 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           },
         );
         activeCancel = waiter.cancel;
+        if (embedConfig.provider === "reddit") {
+          const fallback = document.createElement("p");
+          fallback.className = "reddit-embed-fallback";
+          fallback.textContent = "投稿本文が表示されない場合は";
+          const fallbackLink = document.createElement("a");
+          fallbackLink.href = embedConfig.canonicalUrl;
+          fallbackLink.target = "_blank";
+          fallbackLink.rel = "noopener noreferrer";
+          fallbackLink.textContent = "Redditで直接見る";
+          fallback.append(fallbackLink);
+          target.append(fallback);
+        }
         target.append(iframe);
         const loadPromise = waiter.promise.finally(() => {
           if (activeCancel === waiter.cancel) activeCancel = undefined;
@@ -769,6 +781,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     width: 100%;
     min-height: var(--external-embed-min-height);
     border: 0;
+  }
+
+  .reddit-embed-fallback {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+    font-size: 0.85rem;
   }
 
   .external-embed[data-provider="youtube"] .external-embed__target iframe {
