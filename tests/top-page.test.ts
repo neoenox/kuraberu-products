@@ -247,6 +247,14 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
   });
 
   it("uses subject-based alt text on image cards (#852)", () => {
+    // Astro は属性値を HTML エスケープする（& → &amp; 等）ため比較前に戻す
+    const decodeHtmlAttr = (value: string): string =>
+      value
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;|&#x27;/g, "'");
     let imageCount = 0;
     for (const [page, html] of cardPages()) {
       for (const card of cards(html)) {
@@ -256,8 +264,9 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
         );
         if (!img) continue;
         imageCount += 1;
-        const alt = img[0].match(/\balt="([^"]*)"/)?.[1];
-        expect(alt, `${page}: card image alt must be non-empty`).toBeTruthy();
+        const rawAlt = img[0].match(/\balt="([^"]*)"/)?.[1];
+        expect(rawAlt, `${page}: card image alt must be non-empty`).toBeTruthy();
+        const alt = decodeHtmlAttr(rawAlt ?? "");
         const href = card.match(/<h2><a href="([^"]+)"/)?.[1];
         const article = articleMetadata.find((entry) => entry.path === href);
         expect(article, `unknown article path ${href}`).toBeDefined();
