@@ -138,4 +138,3 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   fitbitCharge6VsXiaomiSmartBand9Seed,
   zojirushiCvGb22VsTigerPimG220Seed,
 ];
-
