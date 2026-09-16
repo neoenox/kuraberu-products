@@ -15,6 +15,11 @@ interface Props {
   ogType?: 'website' | 'article';
   article?: ArticleMetadata;
   faq?: readonly { question: string; answer: string }[];
+  /**
+   * 記事画像がない頁向けの OGP 画像（サイト相対パス、例: '/ogp-top.png'）。
+   * 記事画像（article.imagePath）がある場合はそちらが優先される。
+   */
+  ogImage?: string;
 }
 
 const {
@@ -24,6 +29,7 @@ const {
   ogType,
   article,
   faq,
+  ogImage,
 } = Astro.props;
 const isProduction = import.meta.env.DEPLOYMENT_ENV === 'production';
 // 本番デプロイ時のみ tools/production が注入するビルド元コミットSHA（PostDeploy検証で照合）。未設定時は出力しない。
@@ -35,6 +41,11 @@ const currentPath = Astro.url.pathname;
 const articleImage = article?.imagePath
   ? new URL(article.imagePath, `${site.url}/`).toString()
   : undefined;
+// 記事画像がない頁向けの既定 OGP 画像（トップページ等が ogImage で指定）。
+const pageOgImage = ogImage
+  ? new URL(ogImage.replace(/^\//, ''), `${site.url}/`).toString()
+  : undefined;
+const resolvedOgImage = articleImage ?? pageOgImage;
 // 記事の JSON-LD 分化（article:content-type と同一の contentTypeFor から導出）。
 // 商品名を宣言した記事だけ about（schema.org Product）を出力する:
 // 商品ガイド = 1 商品、比較記事 = 2 商品。未宣言の比較記事は about を出さない。
@@ -134,9 +145,9 @@ const faqStructuredData = faq && faq.length > 0
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {articleImage && (
+    {resolvedOgImage && (
       <>
-        <meta property="og:image" content={articleImage} />
+        <meta property="og:image" content={resolvedOgImage} />
         {/* OGP バリデータ警告回避のため summary_large_image 推奨サイズ (1200x630) を併記。
             記事画像の実寸は記事ごとに異なるが、実寸不明の状態でもバリデータは warning のみ。
             正確な実寸は記事画像アセット側に imageWidth/imageHeight が追加された時点で
@@ -156,8 +167,8 @@ const faqStructuredData = faq && faq.length > 0
     {article?.productInfoCheckedAt && (
       <meta name="article:product-info-checked-at" content={article.productInfoCheckedAt} />
     )}
-    <meta name="twitter:card" content={articleImage ? 'summary_large_image' : 'summary'} />
-    {articleImage && <meta name="twitter:image" content={articleImage} />}
+    <meta name="twitter:card" content={resolvedOgImage ? 'summary_large_image' : 'summary'} />
+    {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
     <script is:inline type="application/ld+json" set:html={structuredDataJson} />
     {breadcrumbStructuredData && <script is:inline type="application/ld+json" set:html={breadcrumbStructuredData} />}
     {faqStructuredData && <script is:inline type="application/ld+json" set:html={faqStructuredData} />}
