@@ -672,6 +672,10 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     background: var(--paper);
   }
 
+  .external-embed[data-auto-display="true"] .external-embed__intro {
+    display: none;
+  }
+
   .external-embed__intro {
     padding: clamp(1rem, 3vw, 1.5rem);
   }

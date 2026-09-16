@@ -31,9 +31,6 @@ const curatedPosts = directPosts.map((post) => ({
     data-best-match={bestMatch}
   >
     <h2>SNS での感想（参考情報）</h2>
-    <p>
-      SNS投稿は実際の利用者の感想を知るための参考情報です。商品の仕様や比較結論の根拠には使用していません。比較の根拠はメーカー公式情報のみです。
-    </p>
     {hasPosts && bestMatch && bestMatch !== "brand" && curatedPosts.length > 0 && (
       <div class="sns-curated-posts">
         <p class="sns-posts-note">対象商品または同シリーズについて確認できる公開投稿へのリンクです。投稿内容は参考情報としてご覧ください。</p>
