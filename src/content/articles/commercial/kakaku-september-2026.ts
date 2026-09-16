@@ -32,6 +32,7 @@ const make = (
   rightPoint: string,
   official: string,
   embeds?: CommercialArticleSeed["embeds"],
+  directPosts?: CommercialArticleSeed["socialProofDirectPosts"],
 ): CommercialArticleSeed => ({
   id,
   publishedAt: date,
@@ -59,6 +60,7 @@ const make = (
   socialProofHasPosts: Boolean(embeds?.length),
   socialProofBestMatch: embeds?.length ? "model" : undefined,
   embeds,
+  socialProofDirectPosts: directPosts,
   officialSources: [
     { label: `${brand}公式サイト`, url: official as `https://${string}` },
   ],
@@ -122,6 +124,28 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
         tone: "good",
         autoload: true,
         compact: true,
+      },
+    ],
+    [
+      {
+        label: "日立 PV-BL1C4を2台購入したnote投稿",
+        href: "https://note.com/ongaechi_channel/n/nd3981e73876c",
+        note: "軽さ、スイッチ式、ゴミ捨て・水洗いのしやすさについての実利用感想。広告リンクを含みます。",
+      },
+      {
+        label: "Dyson SV46 FFを1か月使用したnote投稿",
+        href: "https://note.com/fresh_duck2151/n/nd65060ae9eae",
+        note: "1か月毎日使用したホコリ可視化や取り回しの感想。Amazonリンクを含みます。",
+      },
+      {
+        label: "Dyson SV46 FF EXを約4か月使用したnote投稿",
+        href: "https://note.com/kanu8240/n/n4d76099bf428",
+        note: "緑色ライト、吸引力、取り回し、ゴミ捨てについての感想。EXバリエーションです。",
+      },
+      {
+        label: "Dyson SV46 FF EX AMを1週間使用したnote投稿",
+        href: "https://note.com/ready_panda871/n/n4a2708a61f37",
+        note: "Fluffy Opticの見え方や取り回しの感想。EX AMバリエーションです。",
       },
     ],
   ),
