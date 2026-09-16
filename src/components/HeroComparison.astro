@@ -49,11 +49,11 @@ const resolvedRightImage = right ? resolveImage(right.image) : undefined;
 <section class="hero-compare" aria-label={eyebrow}>
   {heading ? (
     <div class="subsection-heading">
-      {eyebrow ? <p class="section-label">{eyebrow}</p> : null}
+      {eyebrow ? (<p class="section-label">{eyebrow}</p>) : null}
       <h2 id={anchorId}>{heading}</h2>
     </div>
   ) : (
-    {eyebrow ? <p class="section-label">{eyebrow}</p> : null}
+    {eyebrow ? (<p class="section-label">{eyebrow}</p>) : null}
   )}
   <div class={`hero-compare-grid${right ? '' : ' is-single'}`}>
     {/* チェックリストは「こんな人に」の1行（tagline）と重複する要素を除いて表示する
