@@ -4,10 +4,9 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   id: "soundcore-liberty-5-pro-vs-liberty-4-pro",
   publishedAt: "2026-09-16",
   modifiedAt: "2026-09-16",
-  // 楽天アフィリエイトURLがChatGPT調査結果で未生成のため、公開待ち草稿として扱う。
-  productInfoCheckedAt: "",
+  productInfoCheckedAt: "2026-09-16",
   purchaseLinksCheckedAt: "2026-09-16",
-  purchaseLinkStatus: "unverified",
+  purchaseLinkStatus: "verified",
   title: "Soundcore Liberty 5 ProとLiberty 4 Proの違いを比較｜新旧Proモデルはどっちが合う？",
   headline: "Soundcore Liberty 5 ProとLiberty 4 Proを比較。ANC・再生時間・接続台数の違い",
   description: "Soundcore Liberty 5 ProとLiberty 4 Proを、公式仕様のノイズキャンセリング・再生時間・接続機能で比較します。",
@@ -52,3 +51,4 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   ],
   disclaimer: "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想であり、比較結論の根拠には使用していません。",
 };
+
