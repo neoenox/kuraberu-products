@@ -11,9 +11,5 @@ interface Props {
 const { checkedAt } = Astro.props;
 ---
 
-{/* 記事冒頭の信頼表示を 1 行に圧縮したもの（docs/article-layout-v3-2026-08.md）。 */}
-{checkedAt ? (
-  <p class="trust-line">✓ 公式確認済み（{checkedAt}）・広告を含みます</p>
-) : (
-  <p class="trust-line">広告を含みます</p>
-)}
+{/* 記事冒頭の確認日だけを表示する。広告表記は購入導線と免責ページで案内する。 */}
+{checkedAt && <p class="trust-line">✓ 公式確認済み（{checkedAt}）</p>}
