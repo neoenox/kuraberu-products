@@ -94,10 +94,11 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     [
       {
         provider: "x",
-        url: "https://x.com/san_san_santa/status/2030539753985315191",
-        title: "WF-1000XM6を使った感想",
+        url: "https://x.com/Chiloly/status/1893934469226156409",
+        title: "Dyson V12 Detect Slim Fluffy (SV46 FF) 開封投稿",
         match: "model",
-        purpose: "WF-1000XM6の音質調整と使用感に関する公開投稿です。",
+        purpose:
+          "対象型番を実際に開封した個人ユーザーの公開投稿です。性能比較の根拠には使用しません。",
         tone: "good",
         autoload: true,
         compact: true,
