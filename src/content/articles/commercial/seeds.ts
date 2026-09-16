@@ -2,7 +2,6 @@
  * All commercial article seeds — aggregated for iteration.
  */
 import type { CommercialArticleSeed } from "./types";
-import { kakakuSeptember2026Seeds } from "./kakaku-september-2026";
 
 import { roborockQrevoCurvVsDreameX50Seed } from "./roborock-qrevo-curv-vs-dreame-x50";
 import { makitaCl107VsCl286Seed } from "./makita-cl107-vs-cl286";
@@ -72,7 +71,6 @@ import { panasonicBeFd633VsBridgestoneA6xc41Seed } from "./panasonic-be-fd633-vs
 import { irisFkC5VsPanasonicFdF06x2Seed } from "./iris-fk-c5-vs-panasonic-fd-f06x2";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
-  ...kakakuSeptember2026Seeds,
   roborockQrevoCurvVsDreameX50Seed,
   makitaCl107VsCl286Seed,
   recolteAutomaticCookerVsPanasonicNfPc400Seed,
@@ -140,3 +138,4 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   fitbitCharge6VsXiaomiSmartBand9Seed,
   zojirushiCvGb22VsTigerPimG220Seed,
 ];
+
