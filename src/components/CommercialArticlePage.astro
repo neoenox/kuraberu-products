@@ -236,10 +236,12 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
 
     <h2>購入前の注意</h2>
     <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
-    <div class="purchase-cards">
-      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-    </div>
+    {articleId !== "hitachi-pv-bl1c4-vs-dyson-sv46-ff" && (
+      <div class="purchase-cards">
+        <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+        <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+      </div>
+    )}
 
     <h2>更新履歴</h2>
     <ol class="change-log">
