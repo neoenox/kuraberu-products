@@ -126,8 +126,12 @@ a {
   text-underline-offset: 0.35rem;
 }
 /* スマホ用ハンバーガーメニュー（<560px）。
-   デスクトップでは summary を非表示にして navlinks を通常の横並び表示のままにする。
+   デスクトップでは details 全体を非表示にし、details 外の navlinks--desktop を
+   通常の横並び表示にする（JS 無効でも到達可能にするため）。
    モバイルでは details のネイティブ開閉でリンクをドロワーパネルに出す（JS 不要）。 */
+.nav-toggle {
+  display: none;
+}
 .nav-toggle summary {
   display: none;
   list-style: none;
@@ -808,8 +812,12 @@ a {
     align-items: flex-start;
     flex-direction: column;
   }
-  /* モバイル: ロゴ + ☰。リンクはドロワーに格納し、4リンクを横並べしない。 */
+  /* モバイル: ロゴ + ☰。デスクトップ用ナビを隠し、ドロワーを出す。 */
+  .navlinks--desktop {
+    display: none;
+  }
   .nav-toggle {
+    display: block;
     position: relative;
   }
   .nav-toggle summary {

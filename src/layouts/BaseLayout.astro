@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/accessibility.css';
 import '../styles/diagnosis-memo.css';
 import {site} from '../config/site';
+import SiteNavLinks from '../components/SiteNavLinks.astro';
 import type {ArticleMetadata} from '../content/articles';
 import {contentTypeFor} from '../../config/article-layout.mjs';
 import {safeJsonForScript} from '../lib/safe-json';
@@ -177,17 +178,17 @@ const faqStructuredData = faq && faq.length > 0
     <header class="site-header">
       <div class="wrap nav">
         <a class="brand" href="/">{site.name}</a>
-        <!-- スマホ（<560px）では ロゴ + ☰ になり、リンクはドロワーパネルに格納される。
-              details/summary のネイティブ開閉を使うため JS 不要。
-              デスクトップ（≥561px）では summary が display:none のため、閉じた details の
-              中身は描画されない。下のインラインスクリプトが幅に応じて open を同期する。 -->
+        {/* デスクトップ（≥561px）用ナビ。details の外に置くことで JS 無効でも常時表示される。
+            閉じた details の中身は CSS では再表示できないため、モバイル用とは別要素にする。 */}
+        <nav class="navlinks navlinks--desktop" aria-label="主要メニュー">
+          <SiteNavLinks />
+        </nav>
+        {/* モバイル（≤560px）用ドロワー。details/summary のネイティブ開閉で表示する（JS 不要）。
+            nav-toggle.js は summary のラベル同期と幅変更時の開閉同期のための漸進的強調。 */}
         <details class="nav-toggle" data-nav-toggle>
           <summary aria-label="メニューを開く"><span class="nav-toggle-icon" aria-hidden="true"></span></summary>
           <nav class="navlinks" aria-label="主要メニュー">
-            <a href="/articles/" aria-current={currentPath.startsWith('/articles/') ? 'page' : undefined}>比較記事</a>
-            <a href="/memo/" aria-current={currentPath === '/memo/' ? 'page' : undefined}>比較メモ</a>
-            <a href="/tools/product-finder/" aria-current={currentPath.startsWith('/tools/product-finder/') ? 'page' : undefined}>商品診断</a>
-            <a href="/about/" aria-current={currentPath === '/about/' ? 'page' : undefined}>運営者情報</a>
+            <SiteNavLinks />
           </nav>
         </details>
       </div>
@@ -202,10 +203,9 @@ const faqStructuredData = faq && faq.length > 0
         <p><a href="/privacy/">プライバシーポリシー</a> · <a href="/disclaimer/">広告・免責事項</a> · <a href="/about/">運営者情報</a></p>
       </div>
     </footer>
-    <!-- グローバルナビの開閉状態をビューポート幅へ同期する。
-          summary はデスクトップで display:none のため、閉じた details の中身
-          （navlinks）は CSS では再表示できない。広い幅では details を open にして
-          ナビを常時表示し、狭い幅では閉じてモバイルのドロワー挙動（ネイティブ開閉）を維持する。
+    <!-- モバイル用ドロワー（details.nav-toggle）の開閉状態をビューポート幅へ同期する。
+          デスクトップ用ナビ（nav.navlinks--desktop）は details の外にあるため JS 不要で常時表示される。
+          このスクリプトは summary のラベル同期と、幅変更時のドロワー開閉同期のための漸進的強調。
           外部JS化: inline script は Production CSP（script-src 'self'）で実行不可のため、
           同一オリジンの /nav-toggle.js として外部化。
           marker: nav-toggle-sync -->
