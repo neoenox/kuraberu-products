@@ -199,7 +199,13 @@ for (const file of htmlFiles) {
       }
     }
     for (const block of structuredBlocks) {
-      const allowedTypes = ["Article", "WebPage", "BreadcrumbList", "FAQPage"];
+      const allowedTypes = [
+        "Article",
+        "WebPage",
+        "BreadcrumbList",
+        "FAQPage",
+        "ItemList",
+      ];
       if (!allowedTypes.includes(block["@type"])) {
         errors.push(`${file}: unsupported JSON-LD type ${block["@type"]}`);
       }
@@ -222,6 +228,35 @@ for (const file of htmlFiles) {
             errors.push(
               `${file}: FAQPage contains an invalid Question/Answer entry`,
             );
+          }
+        }
+      }
+      if (block["@type"] === "ItemList") {
+        if (
+          !Array.isArray(block.itemListElement) ||
+          block.itemListElement.length === 0
+        ) {
+          errors.push(
+            `${file}: ItemList itemListElement must be a non-empty array`,
+          );
+        }
+        for (const entry of block.itemListElement ?? []) {
+          let urlOk = false;
+          try {
+            urlOk =
+              typeof entry.url === "string" &&
+              new URL(entry.url).protocol.startsWith("http");
+          } catch {
+            urlOk = false;
+          }
+          if (
+            entry?.["@type"] !== "ListItem" ||
+            typeof entry.position !== "number" ||
+            !urlOk ||
+            typeof entry.name !== "string" ||
+            entry.name.length === 0
+          ) {
+            errors.push(`${file}: ItemList contains an invalid ListItem entry`);
           }
         }
       }

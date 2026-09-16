@@ -21,10 +21,13 @@ describe("site config", () => {
   it("keeps article discovery and keyboard entry contracts", () => {
     const sitemap = readFileSync("src/pages/sitemap.xml.ts", "utf8");
     const layout = readFileSync("src/layouts/BaseLayout.astro", "utf8");
+    const navLinks = readFileSync("src/components/SiteNavLinks.astro", "utf8");
     expect(sitemap).toContain("publicArticleMetadata");
     expect(sitemap).toContain("article.path");
     expect(layout).toContain('href="#main-content"');
     expect(layout).toContain('id="main-content"');
-    expect(layout).toContain("aria-current");
+    // 主要メニューは SiteNavLinks に共通化し、BaseLayout の新旧両ナビから使う (#836)
+    expect(layout).toContain("SiteNavLinks");
+    expect(navLinks).toContain("aria-current");
   });
 });

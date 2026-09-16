@@ -1,7 +1,6 @@
-// ナビゲーション開閉のビューポート同期。
-// summary はデスクトップ（≥561px）で display:none のため、
-// 閉じた details の中身（navlinks）は CSS では再表示できない。
-// 広い幅では details を open にしてナビを常時表示し、
+// モバイル用ドロワー（details.nav-toggle）の開閉のビューポート同期。
+// デスクトップ（≥561px）用ナビは details の外（nav.navlinks--desktop）にあり
+// CSS のみで常時表示されるため、このスクリプトはドロワー側の漸進的強調である。
 // 狭い幅では閉じてモバイルのドロワー挙動（ネイティブ開閉）を維持する。
 //
 // marker: nav-toggle-sync

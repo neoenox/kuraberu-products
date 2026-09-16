@@ -69,23 +69,21 @@ test.describe("CSP + nav toggle (1440px)", () => {
     const navToggleScript = page.locator('script[src="/nav-toggle.js"]');
     await expect(navToggleScript).toHaveCount(1);
 
-    // Assert: the nav <details> element is open at 1440px (≥561px threshold)
-    const navDetails = page.locator("[data-nav-toggle]");
-    await expect(navDetails).toBeAttached();
-    const isOpen = await navDetails.getAttribute("open");
-    expect(
-      isOpen,
-      "Nav details should be open at 1440px viewport (≥561px breakpoint)",
-    ).not.toBeNull();
-
-    // Assert: nav links are visible (not hidden behind a collapsed drawer)
-    const navLinks = navDetails.locator("a");
-    const linkCount = await navLinks.count();
-    expect(linkCount, "Nav should contain links").toBeGreaterThan(0);
+    // Assert: the desktop nav (outside <details>) is visible at 1440px (≥561px
+    // threshold) without depending on the drawer state (#836)
+    const desktopNav = page.locator("nav.navlinks--desktop");
+    await expect(desktopNav).toBeVisible();
+    const navLinks = desktopNav.locator("a");
+    await expect(navLinks).toHaveCount(4);
 
     // Assert: at least the first nav link is visible on screen
     const firstLink = navLinks.first();
     await expect(firstLink).toBeVisible();
+
+    // Assert: the mobile drawer <details> stays in the DOM for narrow viewports
+    // (JS still syncs it, but desktop display must not depend on it)
+    const navDetails = page.locator("[data-nav-toggle]");
+    await expect(navDetails).toBeAttached();
   });
 
   test("nav closes at narrow viewport and re-opens at wide viewport", async ({
@@ -114,19 +112,20 @@ test.describe("CSP + nav toggle (1440px)", () => {
 
     const navDetails = page.locator("[data-nav-toggle]");
 
-    // At 375px the nav should NOT be open (it's a drawer)
+    // At 375px the drawer should NOT be open, and the desktop nav is hidden
     const isOpenNarrow = await navDetails.getAttribute("open");
     expect(isOpenNarrow, "Nav should be closed at 375px").toBeNull();
+    await expect(page.locator("nav.navlinks--desktop")).toBeHidden();
 
-    // Resize to desktop — nav-toggle.js should open it
+    // Tap the hamburger — the drawer opens via native <details> behavior
+    await page.locator("[data-nav-toggle] > summary").click();
+    await expect(navDetails).toHaveAttribute("open", "");
+    await expect(navDetails.locator("a").first()).toBeVisible();
+
+    // Resize to desktop — the desktop nav appears via CSS alone
     await page.setViewportSize({ width: 1440, height: 900 });
-
-    // Wait for the media query change handler to fire
-    await expect
-      .poll(async () => await navDetails.getAttribute("open"), {
-        timeout: 3_000,
-      })
-      .not.toBeNull();
+    await expect(page.locator("nav.navlinks--desktop")).toBeVisible();
+    await expect(page.locator("nav.navlinks--desktop a").first()).toBeVisible();
 
     // Still no CSP errors after resize
     const cspViolationsAfterResize = consoleErrors.filter(
@@ -163,5 +162,38 @@ test.describe("CSP + nav toggle (1440px)", () => {
       executableInlineScripts,
       `Found executable inline scripts that would be blocked by CSP:\n${JSON.stringify(executableInlineScripts, null, 2)}`,
     ).toHaveLength(0);
+  });
+});
+
+test.describe("nav without JavaScript (#836)", () => {
+  test.use({ javaScriptEnabled: false });
+
+  test("desktop nav is visible and usable at 1440px", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/", { waitUntil: "networkidle" });
+
+    const desktopNav = page.locator("nav.navlinks--desktop");
+    await expect(desktopNav).toBeVisible();
+    await expect(desktopNav.locator("a")).toHaveCount(4);
+
+    // The first link (比較記事) navigates without JS
+    await desktopNav.locator("a").first().click();
+    await expect(page).toHaveURL(/\/articles\//);
+  });
+
+  test("mobile drawer opens natively at 375px", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/", { waitUntil: "networkidle" });
+
+    // Desktop nav is hidden; hamburger is shown instead
+    await expect(page.locator("nav.navlinks--desktop")).toBeHidden();
+    const summary = page.locator("[data-nav-toggle] > summary");
+    await expect(summary).toBeVisible();
+
+    // Native <details> toggle (no JS involved)
+    await summary.click();
+    const drawerLinks = page.locator("[data-nav-toggle] nav.navlinks a");
+    await expect(drawerLinks).toHaveCount(4);
+    await expect(drawerLinks.first()).toBeVisible();
   });
 });
