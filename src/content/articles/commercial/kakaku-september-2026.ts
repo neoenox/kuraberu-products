@@ -32,7 +32,8 @@ const make = (
   modifiedAt: date,
   productInfoCheckedAt: "",
   purchaseLinksCheckedAt: date,
-  purchaseLinkStatus: "unverified",
+  purchaseLinkStatus:
+    id === "hitachi-pv-bl1c4-vs-dyson-sv46-ff" ? "unavailable" : "unverified",
   title: `${brand} ${left}と${right}、どっち？｜くらべる商品メモ`,
   headline: `${brand} ${left}と${right}を比較。価格.com売れ筋を参考に選び方を整理`,
   description: `${left}と${right}を、メーカー公式情報と価格.com売れ筋ランキングを分けて確認します。`,

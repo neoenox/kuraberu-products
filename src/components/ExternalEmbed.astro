@@ -654,10 +654,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
       ) {
         // 同意済み、または記事単位の自動表示: 即座に読み込む。
         onClick();
-      } else if (consent === undefined) {
-        // 未同意: 同意バナーを1枚だけ注入し、ユーザーの選択を待つ。
-        if (root.dataset.autoDisplay !== "true") showConsentBanner();
-      } else {
+      } else if (consent !== undefined) {
         // granted / denied 済み: 撤回（設定変更）UIを1枚だけ出す。
         showWithdrawControl();
       }
