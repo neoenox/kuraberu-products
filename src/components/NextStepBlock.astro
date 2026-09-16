@@ -71,9 +71,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
           <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
             {leftImage && <Picture class="next-step__buy-image" src={leftImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
             <span class="next-step__buy-name">{left.label}</span>
-            <span class="next-step__buy-action">販売ページを見る{leftAffiliate && <span class="ad-note">（広告）</span>}</span>
+            <span class="next-step__buy-action">楽天市場で購入先を見る{leftAffiliate && <span class="ad-note">（広告）</span>}</span>
           </a>
-          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで商品を確認（広告）</a>}
+          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
         </>
       ) : null}
       {rightCta ? (
@@ -81,9 +81,9 @@ const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.
           <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
             {rightImage && <Picture class="next-step__buy-image" src={rightImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
             <span class="next-step__buy-name">{right.label}</span>
-            <span class="next-step__buy-action">販売ページを見る{rightAffiliate && <span class="ad-note">（広告）</span>}</span>
+            <span class="next-step__buy-action">楽天市場で購入先を見る{rightAffiliate && <span class="ad-note">（広告）</span>}</span>
           </a>
-          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで商品を確認（広告）</a>}
+          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで購入先を見る<span class="ad-note">（広告）</span></a>}
         </>
       ) : null}
     </div>

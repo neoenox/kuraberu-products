@@ -79,7 +79,7 @@ const valid = isVerifiedRakutenPurchaseDestination(resolvedHref) && (isRakutenPr
 const ctaRel = isAffiliateHref
   ? 'sponsored nofollow noopener noreferrer'
   : 'nofollow noopener noreferrer';
-const ctaLabel = label ?? '楽天市場で商品ページを見る';
+const ctaLabel = label ?? '楽天市場で購入先を見る';
 const ctaSubLabel = isAffiliateHref ? (subLabel ?? '') : '';
 const resolvedImage = resolveImage(imagePath);
 ---
