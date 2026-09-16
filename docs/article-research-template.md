@@ -2,6 +2,10 @@
 
 新規記事は、この記事台帳を埋めてからseedを追加する。検索結果の断片、推測URL、既存商品のURL流用は証跡として認めない。
 
+ChatGPTチャットモードで商品選定から調査まで行う場合は、先に
+[`chatgpt-article-research-prompt.md`](./chatgpt-article-research-prompt.md)を使い、返答を
+`research/inbox/YYYY-MM-DD-<slug>.md`へ保存してから、この台帳へ転記する。返答が未受領の状態で記事実装を開始しない。
+
 ## 1. 記事候補
 
 - slug:
@@ -52,6 +56,18 @@
 | `rel="nofollow sponsored noopener"`   |        |        |
 
 ショップ不一致、検索結果URL、最終遷移先を特定できない短縮URL、既存URLの流用は `unverified` とし、CTAを表示しない。
+
+## 3.1 Amazon導線証跡
+
+| 項目                                  | 左商品 | 右商品 |
+| ------------------------------------- | ------ | ------ |
+| Amazon商品詳細URL                     |        |        |
+| ASIN                                  |        |        |
+| 商品名・型番一致                      |        |        |
+| ストアID付きURL                       |        |        |
+| `rel="nofollow sponsored noopener"`   |        |        |
+
+AmazonはストアID（例：`kuraberuprodu-22`）を使う。商品詳細URLまたはASINが確認できない場合は検索リンクにフォールバックせず、`unverified`として扱う。
 
 ## 4. 実装チェック
 
