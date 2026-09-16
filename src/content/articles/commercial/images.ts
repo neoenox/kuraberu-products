@@ -41,6 +41,10 @@ const commercialArticleImages: Readonly<
     left: "/products/hitachi-pv-bl1c4.jpg",
     right: "/products/dyson-sv46-ff.jpg",
   },
+  "soundcore-liberty-5-pro-vs-liberty-4-pro": {
+    left: "/products/soundcore-liberty-5-pro.png",
+    right: "/products/soundcore-liberty-4-pro.jpg",
+  },
   "roborock-qrevo-curv-vs-dreame-x50": {
     left: "/products/roborock-qrevo-curv.jpg",
     right: "/products/roborock-qrevo-curv-vs-dreame-x50-right.jpg",
