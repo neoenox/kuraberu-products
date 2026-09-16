@@ -105,6 +105,15 @@ const categories = [...categoryCounts.entries()]
     <p class="diagnosis-actions"><a class="primary-button" href="/tools/product-finder/">商品選択診断を始める →</a></p>
   </section>
 
+  <section class="wrap section" data-top-memo>
+    <div class="subsection-heading">
+      <p class="section-label">比較メモ</p>
+      <h2>候補をブラウザにメモ</h2>
+    </div>
+    <p class="lead">目的・条件・候補・決定理由をこのブラウザに記録できます。保存は端末内だけです。</p>
+    <p class="diagnosis-actions"><a class="primary-button" href="/memo/">比較メモを開く →</a></p>
+  </section>
+
   <section class="section section-rule"><div class="wrap editor-note"><p class="section-label">このサイトの見方</p><h2>判断材料を、盛らない。</h2><p>メーカー公式の商品ページ・公式Q&Aで確認できる情報だけを分けて整理し、確認できない数字や体験談は掲載しません。</p><a class="text-link" href="/about/">運営方針を見る →</a></div></section>
 </BaseLayout>
 
@@ -138,13 +147,15 @@ const categories = [...categoryCounts.entries()]
   /* セクション見出しを、左寄せのカード列（max-width: 900px）に揃える。 */
   [data-top-latest] .subsection-heading,
   [data-top-categories] .subsection-heading,
-  [data-top-diagnosis] .subsection-heading {
+  [data-top-diagnosis] .subsection-heading,
+  [data-top-memo] .subsection-heading {
     max-width: 900px;
   }
 
   [data-top-latest] .subsection-heading h2,
   [data-top-categories] .subsection-heading h2,
-  [data-top-diagnosis] .subsection-heading h2 {
+  [data-top-diagnosis] .subsection-heading h2,
+  [data-top-memo] .subsection-heading h2 {
     margin-bottom: 0.75rem;
   }
 
