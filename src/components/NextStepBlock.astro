@@ -10,7 +10,7 @@
 //
 // 配置・枚数の機械的契約は config/article-layout.mjs（next-step set）が唯一の定義で、
 // 品質ゲート scripts/check-rendered-html.mjs（validateArticleNextStep）が照合する。
-import {isAffiliateRakutenUrl, isVerifiedRakutenPurchaseDestination, toAffiliateRakutenUrl} from '../../config/runtime-env.mjs';
+import {isAffiliateRakutenUrl, isVerifiedRakutenPurchaseDestination, toAffiliateRakutenUrl, toAmazonAssociateSearchUrl} from '../../config/runtime-env.mjs';
 import { Picture } from 'astro:assets';
 import { resolveImage } from '../lib/image-resolver';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
@@ -54,6 +54,9 @@ const showCta =
   purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct";
 const leftCta = showCta ? leftHref : undefined;
 const rightCta = showCta ? rightHref : undefined;
+const amazonTag = import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG?.trim();
+const leftAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(left.label, amazonTag) : undefined;
+const rightAmazonHref = showCta && amazonTag ? toAmazonAssociateSearchUrl(right.label, amazonTag) : undefined;
 ---
 
 <section class="next-step" aria-label="次にすること" data-next-step data-next-step-purchase={showPurchaseCtas ? "enabled" : "disabled"}>
@@ -64,40 +67,24 @@ const rightCta = showCta ? rightHref : undefined;
   {showPurchaseCtas && (leftCta || rightCta) ? (
     <div class="next-step__grid">
       {leftCta ? (
-        <a
-          class="next-step__buy next-step__buy--left"
-          href={leftCta}
-          target="_blank"
-          rel={buyRel(leftAffiliate)}
-          data-cta-event={ARTICLE_LAYOUT.ctaEvent}
-          data-placement="next-step"
-          data-product-id={left.productId}
-        >
-          {leftImage && <Picture class="next-step__buy-image" src={leftImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
-          <span class="next-step__buy-name">{left.label}</span>
-          <span class="next-step__buy-action">
-            販売ページを見る
-            {leftAffiliate && <span class="ad-note">（広告）</span>}
-          </span>
-        </a>
+        <>
+          <a class="next-step__buy next-step__buy--left" href={leftCta} target="_blank" rel={buyRel(leftAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={left.productId}>
+            {leftImage && <Picture class="next-step__buy-image" src={leftImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
+            <span class="next-step__buy-name">{left.label}</span>
+            <span class="next-step__buy-action">販売ページを見る{leftAffiliate && <span class="ad-note">（広告）</span>}</span>
+          </a>
+          {leftAmazonHref && <a class="next-step__amazon" href={leftAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで商品を確認（広告）</a>}
+        </>
       ) : null}
       {rightCta ? (
-        <a
-          class="next-step__buy next-step__buy--right"
-          href={rightCta}
-          target="_blank"
-          rel={buyRel(rightAffiliate)}
-          data-cta-event={ARTICLE_LAYOUT.ctaEvent}
-          data-placement="next-step"
-          data-product-id={right.productId}
-        >
-          {rightImage && <Picture class="next-step__buy-image" src={rightImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
-          <span class="next-step__buy-name">{right.label}</span>
-          <span class="next-step__buy-action">
-            販売ページを見る
-            {rightAffiliate && <span class="ad-note">（広告）</span>}
-          </span>
-        </a>
+        <>
+          <a class="next-step__buy next-step__buy--right" href={rightCta} target="_blank" rel={buyRel(rightAffiliate)} data-cta-event={ARTICLE_LAYOUT.ctaEvent} data-placement="next-step" data-product-id={right.productId}>
+            {rightImage && <Picture class="next-step__buy-image" src={rightImage} alt="" width={96} height={96} loading="lazy" formats={["avif", "webp"]} />}
+            <span class="next-step__buy-name">{right.label}</span>
+            <span class="next-step__buy-action">販売ページを見る{rightAffiliate && <span class="ad-note">（広告）</span>}</span>
+          </a>
+          {rightAmazonHref && <a class="next-step__amazon" href={rightAmazonHref} target="_blank" rel="sponsored nofollow noopener noreferrer">Amazonで商品を確認（広告）</a>}
+        </>
       ) : null}
     </div>
   ) : showPurchaseCtas && purchaseLinkStatus !== "unavailable" ? (
@@ -151,6 +138,13 @@ const rightCta = showCta ? rightHref : undefined;
     color: var(--ink);
     text-decoration: none;
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .next-step__amazon {
+    display: block;
+    padding: 0.35rem 0.5rem 0.15rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    text-decoration: underline;
   }
   .next-step__buy--right {
     --product-color: var(--product-right);
