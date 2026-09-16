@@ -91,18 +91,6 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     "連携機能と装着感を確認",
     "ノイズキャンセリングと再生時間を確認",
     "https://www.apple.com/jp/airpods-pro/",
-    [
-      {
-        provider: "x",
-        url: "https://x.com/san_san_santa/status/2030539753985315191",
-        title: "WF-1000XM6を使った感想",
-        match: "model",
-        purpose: "WF-1000XM6の音質調整と使用感に関する公開投稿です。",
-        tone: "good",
-        autoload: true,
-        compact: true,
-      },
-    ],
   ),
   make(
     "regza-32v35s-vs-regza-43m550m",
@@ -123,6 +111,19 @@ export const kakakuSeptember2026Seeds: readonly CommercialArticleSeed[] = [
     "本体の軽さと手入れ方法を確認",
     "ヘッド機能と運転時間を確認",
     "https://kadenfan.hitachi.co.jp/clean/",
+    [
+      {
+        provider: "x",
+        url: "https://x.com/Chiloly/status/1893934469226156409",
+        title: "Dyson V12 Detect Slim Fluffy (SV46 FF) 開封投稿",
+        match: "model",
+        purpose:
+          "対象型番を実際に開封した個人ユーザーの公開投稿です。性能比較の根拠には使用しません。",
+        tone: "good",
+        autoload: true,
+        compact: true,
+      },
+    ],
   ),
   make(
     "toshiba-er-d3000b-vs-aladdin-agt-g13b",
