@@ -386,32 +386,36 @@ const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left
       </>
     )}
     {resolved.socialProofQuery && (
-      <ArticleSocialProof
-        query={resolved.socialProofQuery}
-        checkedAt={resolved.socialProofCheckedAt}
-        hasPosts={resolved.socialProofHasPosts}
-        bestMatch={resolved.socialProofBestMatch as any}
-        directPosts={resolved.socialProofLinks}
-        searchLabel={resolved.socialProofSearchLabel}
-        searchCaption={resolved.socialProofSearchCaption}
-      >
-        {resolved.embeds && resolved.embeds.length > 0 && (
-          <div class="sns-embeds">
-            {resolved.embeds.map((embed: { provider: string; url: string; title: string; match: string; purpose?: string; tone?: string; autoload?: boolean; compact?: boolean }) => (
-              <ExternalEmbed
-                provider={embed.provider as any}
-                url={embed.url}
-                title={embed.title}
-                match={embed.match as any}
-                purpose={embed.purpose}
-                tone={embed.tone as any}
-                autoload={embed.autoload}
-                compact={embed.compact}
-              />
-            ))}
-          </div>
-        )}
-      </ArticleSocialProof>
+      Astro.slots.has("social-proof") ? (
+        <slot name="social-proof" />
+      ) : (
+        <ArticleSocialProof
+          query={resolved.socialProofQuery}
+          checkedAt={resolved.socialProofCheckedAt}
+          hasPosts={resolved.socialProofHasPosts}
+          bestMatch={resolved.socialProofBestMatch as any}
+          directPosts={resolved.socialProofLinks}
+          searchLabel={resolved.socialProofSearchLabel}
+          searchCaption={resolved.socialProofSearchCaption}
+        >
+          {resolved.embeds && resolved.embeds.length > 0 && (
+            <div class="sns-embeds">
+              {resolved.embeds.map((embed: { provider: string; url: string; title: string; match: string; purpose?: string; tone?: string; autoload?: boolean; compact?: boolean }) => (
+                <ExternalEmbed
+                  provider={embed.provider as any}
+                  url={embed.url}
+                  title={embed.title}
+                  match={embed.match as any}
+                  purpose={embed.purpose}
+                  tone={embed.tone as any}
+                  autoload={embed.autoload}
+                  compact={embed.compact}
+                />
+              ))}
+            </div>
+          )}
+        </ArticleSocialProof>
+      )
     )}
     <h2 id="faq">よくある質問</h2>
     <div class="faq-list">

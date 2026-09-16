@@ -1,6 +1,8 @@
 ---
 import { articlePurchaseLinks, thermosJnlS500, tigerMtaJ050,} from '../../../lib/products';
 import ArticleComparisonPage from '../../../components/ArticleComparisonPage.astro';
+import ArticleSocialProof from '../../../components/ArticleSocialProof.astro';
+import ExternalEmbed from '../../../components/ExternalEmbed.astro';
 import type { KeyDiffRow } from '../../../components/VisualKeyDifferences.astro';
 import {thermosTigerBottleArticle as articleMetadata} from '../../../content/articles';
 
@@ -140,22 +142,30 @@ const keyDiffRows: KeyDiffRow[] = [
   rightPurchaseAudience={"保冷力・ハンドル・大きめの飲み口を優先する人向け"}
   showAmazon={true}
   showNextStepPurchaseCtas={false}
-  socialProofQuery={'"MTA-J050" -PR -AD'}
-  socialProofHasPosts={true}
-  socialProofBestMatch="series"
-  socialProofSearchLabel="タイガー MTA-J050 の投稿をXで探す →"
-  socialProofSearchCaption="MTA-J050の個別投稿は今回確認できませんでした。検索結果には対象型番と一致しない投稿が含まれる場合があります。"
-  socialProofLinks={[
-    {
-      label: "JNL-503（旧型）を使った方の感想",
-      href: "https://x.com/yoruno_nagi/status/1119572813419925504",
-      note: "2019年の投稿です。JNL-S500そのものではなく、同じJNLシリーズの旧型についての感想です。",
-    },
-  ]}
   sourceLinks={[
     { label:`サーモス：${thermosJnlS500.seriesName}`, href:thermosOfficial, checkedAt:"2026-08-12" },
     { label:`タイガー：${tigerMtaJ050.seriesName}`, href:tigerOfficial, checkedAt:"2026-08-12" },
     { label:"楽天市場：サーモス JNL-S500 商品ページ", href:thermosRakuten, checkedAt:"商品単体ページ確認" },
     { label:"楽天市場：タイガー MTA-J050 商品ページ", href:tigerRakuten, checkedAt:"商品単体ページ確認" },
   ]}
-/>
+>
+  <ArticleSocialProof
+    slot="social-proof"
+    query={'"MTA-J050" -PR -AD'}
+    hasPosts={true}
+    bestMatch="series"
+    searchLabel="タイガー MTA-J050 の投稿をXで探す →"
+    searchCaption="MTA-J050の個別投稿は今回確認できませんでした。検索結果には対象型番と一致しない投稿が含まれる場合があります。"
+  >
+    <div class="sns-embeds">
+      <ExternalEmbed
+        provider="x"
+        url="https://x.com/yoruno_nagi/status/1119572813419925504"
+        title="JNL-503（旧型）を使った方の感想"
+        match="series"
+        purpose="2019年の公開投稿です。現行JNL-S500そのものではなく、同じJNLシリーズの旧型についての感想です。"
+        compact={true}
+      />
+    </div>
+  </ArticleSocialProof>
+</ArticleComparisonPage>

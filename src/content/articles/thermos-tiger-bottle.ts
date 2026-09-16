@@ -16,12 +16,17 @@ export const thermosTigerBottleArticle = defineArticleMetadata({
   summary:
     "「JNL-S500」と「MTA-J050」を、公式の保温・保冷効力とサイズ・お手入れ方法に分けて比較します。",
   publishedAt: "2026-08-12",
-  modifiedAt: "2026-09-15",
+  modifiedAt: "2026-09-16",
   productInfoCheckedAt: "2026-09-01",
   purchaseLinkStatus: "verified",
   purchaseLinksCheckedAt: "2026-09-01",
   imagePath: "/products/thermos-jnl-s500.jpg",
   changeLog: [
+    {
+      date: "2026-09-16",
+      summary:
+        "SNS欄にJNL-503（旧型）の利用者投稿をX公式ウィジェットで表示できるよう追加。表示は読者の操作後に読み込みます。",
+    },
     {
       date: "2026-09-15",
       summary:
