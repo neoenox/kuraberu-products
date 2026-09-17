@@ -15,6 +15,8 @@ import { ARTICLE_PAGE_PATTERN } from "./sections.mjs";
 // レイアウト変更時は config だけを直し、ここに枚数をハードコードしない。
 const AFFILIATE_URL_PATTERN =
   /https:\/\/(?:[^./]+\.)?(?:a\.r10\.to|r10\.to|hb\.afl\.rakuten\.co\.jp)(?:\/|$)/i;
+const CONCATENATED_PURCHASE_LABEL_PATTERN =
+  /商品ページ(?:を)?見る\s*商品ページ(?:を)?確認する/;
 
 /**
  * 記事ページの購入 CTA を検査する。
@@ -68,6 +70,12 @@ export function validateArticleCtas(
     const href = tag.match(/\bhref="([^"]+)"/i)?.[1] ?? "";
     const rel = tag.match(/\brel="([^"]+)"/i)?.[1] ?? "";
     const placement = tag.match(/\bdata-placement="([^"]+)"/i)?.[1] ?? "";
+    const visibleText = tag.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    if (CONCATENATED_PURCHASE_LABEL_PATTERN.test(visibleText)) {
+      errors.push(
+        `${relative}: CTA ${index + 1} contains concatenated purchase labels: ${visibleText}`,
+      );
+    }
     if (!ARTICLE_LAYOUT.placements.includes(placement)) {
       errors.push(
         `${relative}: CTA ${index + 1} has unrecognized placement${
