@@ -15,6 +15,8 @@ type CommercialArticleSeed = {
   publishedAt: string;
   productInfoCheckedAt?: string;
   modifiedAt?: string;
+  /** ChatGPT調査結果と記事データの突合記録。現行記事では必須。 */
+  handoffManifestId?: string;
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */

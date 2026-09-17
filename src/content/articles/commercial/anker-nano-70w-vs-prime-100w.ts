@@ -4,6 +4,7 @@ export const ankerNano70wVsPrime100wSeed: CommercialArticleSeed = {
   id: "anker-nano-70w-vs-prime-100w",
   publishedAt: "2026-09-17",
   modifiedAt: "2026-09-17",
+  handoffManifestId: "anker-nano-70w-vs-prime-100w-2026-09-17",
   productInfoCheckedAt: "2026-09-17",
   purchaseLinksCheckedAt: "2026-09-17",
   purchaseLinkStatus: "verified",
