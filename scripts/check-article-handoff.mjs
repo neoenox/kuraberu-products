@@ -38,8 +38,17 @@ for (const file of files) {
   if (manifest.articleId !== articleId || manifest.id !== manifestId) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
+  if (JSON.stringify(manifest).includes("sourceRef")) {
+    errors.push(
+      `${manifestPath}: opaque sourceRef values are not article URLs`,
+    );
+  }
+  const isHttpUrl = (value) =>
+    typeof value === "string" && /^https:\/\//.test(value);
   for (const side of ["left", "right"]) {
     const amazon = manifest.amazon?.[side];
+    if (amazon && !isHttpUrl(amazon))
+      errors.push(`${articleId}: Amazon ${side} must be a direct https URL`);
     if (amazon && !source.includes(amazon))
       errors.push(`${articleId}: Amazon ${side} URL is missing from the seed`);
     const rakuten = manifest.rakuten?.[side];
@@ -70,8 +79,15 @@ for (const file of files) {
       ...(manifest.social.directPostUrls ?? []),
       ...(manifest.social.embedUrls ?? []),
     ];
+    const directUrls = manifest.social.directPostUrls ?? [];
+    if (directUrls.length === 0)
+      errors.push(
+        `${articleId}: adopted SNS handoff requires direct post URLs`,
+      );
     for (const url of urls)
-      if (!source.includes(url))
+      if (!isHttpUrl(url))
+        errors.push(`${articleId}: SNS entries must be direct https URLs`);
+      else if (!source.includes(url))
         errors.push(`${articleId}: SNS URL is missing from the seed: ${url}`);
   }
   if (
@@ -81,6 +97,13 @@ for (const file of files) {
     errors.push(
       `${articleId}: SNS handoff says none but the seed enables posts`,
     );
+  }
+  if (
+    manifest.social?.status === "none" &&
+    ((manifest.social.directPostUrls ?? []).length > 0 ||
+      (manifest.social.embedUrls ?? []).length > 0)
+  ) {
+    errors.push(`${articleId}: SNS status none cannot contain post URLs`);
   }
 }
 

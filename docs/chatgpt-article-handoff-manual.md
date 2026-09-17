@@ -30,7 +30,7 @@
 
 ## 3. Codexでの記事化
 
-`docs/article-research-template.md` の台帳を埋め、`CommercialArticleSeed`へ結果を移す。記事本文には確認日を表示し、SNSの直接リンクと埋め込み対象を分ける。購入先は商品カード内に楽天・Amazonの同一スタイルのボタンを置き、重複導線を作らない。さらに `docs/article-handoffs/<handoffManifestId>.json` にChatGPTの最終調査結果と採否を記録し、seedの `handoffManifestId` と一致させる。
+`docs/article-research-template.md` の台帳を埋め、`CommercialArticleSeed`へ結果を移す。記事本文には確認日を表示し、SNSの直接リンクと埋め込み対象を分ける。購入先は商品カード内に楽天・Amazonの同一スタイルのボタンを置き、重複導線を作らない。さらに `docs/article-handoffs/<handoffManifestId>.json` にChatGPTの最終調査結果と採否を記録し、seedの `handoffManifestId` と一致させる。参照記号（`turn...`、`sourceRef`）はURLとして使わず、必ず`https://`で始まる実URLを記録する。
 
 ### テンプレート固定ルール
 
@@ -64,4 +64,4 @@
 
 ### 調査結果の反映ゲート
 
-`pnpm verify:lint` の `check-article-handoff.mjs` が、現行記事のChatGPT調査記録と記事データを突合する。Amazon・楽天・SNSの採否を調査記録に書かず、また記録したURLをseedへ移していない場合は検査で停止する。調査結果を「なし」とする場合も、未確認なのか採用対象なしなのかをmanifestに明記する。手順書の確認だけで公開へ進めてはいけない。
+`pnpm verify:lint` の `check-article-handoff.mjs` が、現行記事のChatGPT調査記録と記事データを突合する。Amazon・楽天・SNSの採否を調査記録に書かず、また記録したURLをseedへ移していない場合は検査で停止する。SNSを採用する場合は、直接投稿URLを1件以上必須とする。調査結果を「なし」とする場合も、未確認なのか採用対象なしなのかをmanifestに明記する。手順書の確認だけで公開へ進めてはいけない。
