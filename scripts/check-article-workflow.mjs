@@ -1,0 +1,42 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const manualPath = path.join(root, "docs", "chatgpt-article-handoff-manual.md");
+const manual = fs.existsSync(manualPath)
+  ? fs.readFileSync(manualPath, "utf8")
+  : "";
+
+const requiredRules = [
+  "ChatGPTには成果用アフィリエイトURLの取得を要求しない",
+  "楽天の成果URLはCodex側の楽天Ichiba API",
+  "`articleReady` は、記事に表示する購入ボタン用のURLが揃った時点でCodex側が判定する",
+  "毎回、商品選定から始める完全新規の依頼を送る",
+];
+const forbiddenRules = [
+  "必要な場合はユーザーが生成して後から渡す",
+  "楽天の完全な成果URLはログイン済みの本人だけが生成できるため",
+];
+const errors = [];
+
+if (!manual) errors.push("article workflow manual is missing");
+for (const rule of requiredRules) {
+  if (!manual.includes(rule)) {
+    errors.push(`manual is missing required rule: ${rule}`);
+  }
+}
+for (const rule of forbiddenRules) {
+  if (manual.includes(rule)) {
+    errors.push(`manual contains obsolete rule: ${rule}`);
+  }
+}
+
+if (errors.length) {
+  console.error("Article workflow policy check failed:");
+  for (const error of errors) console.error(`- ${error}`);
+  process.exit(1);
+}
+
+console.log("Article workflow policy check passed.");
+console.log("- Start every run with fresh product selection.");
+console.log("- ChatGPT researches; Codex validates, uses Rakuten API, and builds the article.");
