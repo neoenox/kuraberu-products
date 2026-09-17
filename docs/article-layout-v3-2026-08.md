@@ -294,3 +294,7 @@ BaseLayout が `<meta name="article:content-type" content="guide|comparison">` �
 - `/tools/product-finder/` など記事メタデータの無いページは、従来どおり同カテゴリを上限件数で表示する。
 - 品質ゲート（`scripts/check-rendered-html.mjs`）がビルド後 HTML の両セクション件数を
   `relatedSelection` と照合する。
+
+## 本番基準への更新（2026-09-17）
+
+実装済みの本番記事に合わせ、標準構成は「結局どっち？ → 主な比較ポイント → 購入前の注意 → 購入先 → SNS」の順とする。30秒表示、独立した詳細仕様・公式確認項目、外部コンテンツ注意文、空のSNS欄、重複CTAは新記事で使用しない。比較行の勝者は `highlight` / `highlightNote` で示し、SNSは採用投稿がある場合だけ表示する。
