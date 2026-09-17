@@ -7,23 +7,41 @@ import {
 
 const pagesRoot = join(process.cwd(), "src", "pages", "articles");
 const violations = [];
-for (const entry of readdirSync(pagesRoot, { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue;
-  const pagePath = join(pagesRoot, entry.name, "index.astro");
-  if (!existsSync(pagePath)) continue;
+const routes = readdirSync(pagesRoot, { withFileTypes: true }).flatMap(
+  (entry) => {
+    if (entry.isDirectory()) {
+      const pagePath = join(pagesRoot, entry.name, "index.astro");
+      return existsSync(pagePath) ? [{ slug: entry.name, pagePath }] : [];
+    }
+    if (
+      entry.isFile() &&
+      entry.name.endsWith(".astro") &&
+      entry.name !== "index.astro"
+    ) {
+      return [
+        {
+          slug: entry.name.slice(0, -".astro".length),
+          pagePath: join(pagesRoot, entry.name),
+        },
+      ];
+    }
+    return [];
+  },
+);
+for (const { slug, pagePath } of routes) {
   const source = readFileSync(pagePath, "utf8");
-  if (LEGACY_ARTICLE_PAGE_SLUGS.has(entry.name)) {
+  if (LEGACY_ARTICLE_PAGE_SLUGS.has(slug)) {
     if (!/ArticleComparisonPage/.test(source)) {
       violations.push(
-        `src/pages/articles/${entry.name}/index.astro is allowlisted as legacy but no longer uses ArticleComparisonPage`,
+        `${pagePath} is allowlisted as legacy but no longer uses ArticleComparisonPage`,
       );
     }
     continue;
   }
-  if (CUSTOM_ARTICLE_PAGE_SLUGS.has(entry.name)) continue;
+  if (CUSTOM_ARTICLE_PAGE_SLUGS.has(slug)) continue;
   if (!/<CommercialArticlePage\b/.test(source)) {
     violations.push(
-      `src/pages/articles/${entry.name}/index.astro must use CommercialArticlePage; add an explicit compatibility exception only for an existing custom page`,
+      `${pagePath} must use CommercialArticlePage; add an explicit compatibility exception only for an existing custom page`,
     );
   }
 }
