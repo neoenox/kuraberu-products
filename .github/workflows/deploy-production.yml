@@ -11,6 +11,11 @@ on:
         description: Type DEPLOY
         required: true
         type: string
+      articles_offline:
+        description: Take all article URLs offline while rebuilding content
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -36,6 +41,7 @@ jobs:
       # 攻撃面になるため、env 経由でのみ参照する。
       EXPECTED_SHA: ${{ inputs.expected_sha }}
       DEPLOY_CONFIRM: ${{ inputs.confirm }}
+      ARTICLES_OFFLINE: ${{ inputs.articles_offline }}
       PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
       PUBLIC_CONTACT_URL: ${{ vars.PUBLIC_CONTACT_URL }}
       PUBLIC_AMAZON_ASSOCIATE_TAG: ${{ vars.PUBLIC_AMAZON_ASSOCIATE_TAG }}
@@ -159,11 +165,41 @@ jobs:
       - name: Verify public deployment
         shell: pwsh
         run: |
-          & ./tools/production/Invoke-PostDeployVerification.ps1 `
-            -BaseUrl $env:PUBLIC_SITE_URL `
-            -ExpectedCommitSha $env:EXPECTED_SHA `
-            -MaxAttempts 4 `
-            -RetryDelaySeconds 15
+          if ($env:ARTICLES_OFFLINE -eq 'true') {
+            # During a content rebuild, the normal article smoke suite would
+            # correctly fail because it expects representative articles to be
+            # live. Keep core-site checks, then explicitly verify the offline
+            # contract for the article namespace.
+            $required = @('/', '/memo/', '/about/', '/privacy/', '/disclaimer/', '/robots.txt', '/sitemap.xml')
+            & ./tools/production/Invoke-PostDeployVerification.ps1 `
+              -BaseUrl $env:PUBLIC_SITE_URL `
+              -ExpectedCommitSha $env:EXPECTED_SHA `
+              -RequiredPaths $required `
+              -ArticlePaths @() `
+              -MaxAttempts 4 `
+              -RetryDelaySeconds 15
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+            $probes = @('/articles/', '/articles/soundcore-liberty-5-pro-vs-liberty-4-pro/', '/articles/hitachi-pv-bl1c4-vs-dyson-sv46-ff/', '/articles/sony-wh-1000xm6-vs-bose-quietcomfort-ultra-headphones-2nd-gen/')
+            foreach ($path in $probes) {
+              try {
+                $response = Invoke-WebRequest -Uri ([uri]::new($env:PUBLIC_SITE_URL, $path)) -MaximumRedirection 0 -UseBasicParsing -ErrorAction Stop
+                $status = [int]$response.StatusCode
+              } catch {
+                if ($_.Exception.Response) { $status = [int]$_.Exception.Response.StatusCode } else { throw }
+              }
+              if ($status -notin @(302, 404)) {
+                throw "Article offline probe failed: $path returned HTTP $status"
+              }
+              Write-Host "Article offline probe passed: $path returned HTTP $status"
+            }
+          } else {
+            & ./tools/production/Invoke-PostDeployVerification.ps1 `
+              -BaseUrl $env:PUBLIC_SITE_URL `
+              -ExpectedCommitSha $env:EXPECTED_SHA `
+              -MaxAttempts 4 `
+              -RetryDelaySeconds 15
+          }
 
       - name: Publish privacy-safe summary
         if: always()
