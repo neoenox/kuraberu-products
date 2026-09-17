@@ -113,7 +113,7 @@ const splitProduct = (name: string) => {
 };
 const leftHero = splitProduct(seed.leftProduct);
 const rightHero = splitProduct(seed.rightProduct);
-const heroRows = seed.verifiedRows ?? rows;
+const heroRows = Array.from(seed.verifiedRows ?? rows);
 const faq = seed.faqEntries?.length
   ? seed.faqEntries
   : [
