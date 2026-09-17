@@ -11,6 +11,7 @@ import RelatedArticles from './RelatedArticles.astro';
 import { articleMetadata, additionalCommercialArticleSeeds, publicArticleMetadata } from '../content/articles';
 import { articlePurchaseLinks } from '../lib/products';
 import { commercialArticleImages } from '../content/articles/commercial/images';
+import type { CommercialArticleSeed } from '../content/articles/commercial/types';
 import type { DifferenceRow } from '../lib/comparison';
 import { resolvePurchaseHref } from '../lib/rakuten';
 import {
@@ -24,7 +25,45 @@ interface Props {
 
 const { articleId } = Astro.props;
 const article = articleMetadata.find((item) => item.id === articleId);
-const seed = additionalCommercialArticleSeeds.find((item) => item.id === articleId);
+const registeredSeed = additionalCommercialArticleSeeds.find((item) => item.id === articleId);
+const fallbackSeed: CommercialArticleSeed | undefined = article?.leftModel && article?.rightModel
+  ? {
+      id: article.id,
+      title: article.title,
+      headline: article.headline,
+      description: article.description,
+      category: article.category,
+      tags: article.tags,
+      audiences: article.audiences,
+      uses: article.uses,
+      summary: article.summary,
+      leftProduct: `${article.leftModel.brand} ${article.leftModel.line}`,
+      rightProduct: `${article.rightModel.brand} ${article.rightModel.line}`,
+      leftPoint: article.leftModel.tagline,
+      rightPoint: article.rightModel.tagline,
+      publishedAt: article.publishedAt,
+      modifiedAt: article.modifiedAt,
+      productInfoCheckedAt: article.productInfoCheckedAt,
+      purchaseLinksCheckedAt: article.purchaseLinksCheckedAt,
+      purchaseLinkStatus: article.purchaseLinkStatus,
+      officialSources: article.officialSources,
+      verifiedRows: article.keyDiffRows,
+      leftImage: article.leftModel.image as `/${string}`,
+      rightImage: article.rightModel.image as `/${string}`,
+      faqEntries: article.faqEntries,
+      lead: article.lead,
+      socialProofQuery: article.socialProofQuery,
+      socialProofCheckedAt: article.socialProofCheckedAt,
+      socialProofHasPosts: article.socialProofHasPosts,
+      socialProofDirectPosts: article.socialProofDirectPosts,
+      socialProofBestMatch: article.socialProofBestMatch,
+      embeds: article.embeds,
+      disclaimer: article.disclaimer,
+      officialProse: undefined,
+      sourceLinks: undefined,
+    }
+  : undefined;
+const seed = registeredSeed ?? fallbackSeed;
 
 if (!article || !seed) {
   throw new Error(`Unknown commercial article: ${articleId}`);
