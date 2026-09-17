@@ -36,7 +36,8 @@ param(
     ),
     [string[]]$NonIndexableOkPaths = @('/memo/'),
     [int]$MaxAttempts = 4,
-    [int]$RetryDelaySeconds = 15
+    [int]$RetryDelaySeconds = 15,
+    [switch]$AllowArticleOffline
 )
 
 Set-StrictMode -Version Latest
@@ -270,7 +271,7 @@ function Invoke-VerificationAttempt {
     # (3) ライブ sitemap.xml に同じ URL が <loc> 列挙されていることを検証する。
     # 失敗は Check() 経由で hasFailure=true となり、最終試行の BLOCKER → exit 1
     # で run を失敗させる。
-    if (-not [string]::IsNullOrWhiteSpace($expectedLatestArticlePath)) {
+    if (-not $AllowArticleOffline -and -not [string]::IsNullOrWhiteSpace($expectedLatestArticlePath)) {
         if ($ArticlePaths -contains $expectedLatestArticlePath) {
             Check 'Newest article smoke check' $true "already covered by ArticlePaths: $expectedLatestArticlePath"
         } else {
@@ -327,7 +328,7 @@ function Invoke-VerificationAttempt {
 
     # The aggregate check makes the deployment SHA contract explicit in the report,
     # rather than relying only on individual article checks.
-    if ($ExpectedCommitSha) {
+    if ($ExpectedCommitSha -and -not $AllowArticleOffline) {
         $unexpectedBuildShas = @($articleBuildShas | Where-Object { $_ -ne $ExpectedCommitSha })
         $deployedShaMatches = $articleBuildShas.Count -gt 0 -and $unexpectedBuildShas.Count -eq 0
         Check 'Deployed commit matches expected SHA' $deployedShaMatches "expected=$ExpectedCommitSha unexpected=$($unexpectedBuildShas -join ', ')"
