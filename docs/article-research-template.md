@@ -117,6 +117,8 @@ import CommercialArticlePage from "../../../components/CommercialArticlePage.ast
 
 > 旧 `ArticleComparisonPage` と `explicit` 方式は過去記事互換用であり、新規記事では使用しない。新規記事は `CommercialArticlePage` のみを使用する。
 
+新規ページのテンプレート判定は `scripts/check-article-template-policy.mjs` で行う。過去記事の互換ページだけを許可リストに残し、許可リストにないページで `ArticleComparisonPage` を使うと検証に失敗する。過去記事の互換ページを現行テンプレートへ自動変換して表示を変えることはしない。
+
 ### 4.2 商業記事（commercial）の新規作成
 
 - [ ] `CommercialArticleSeed`へ商品名・公式URL・確認日・仕様を追加

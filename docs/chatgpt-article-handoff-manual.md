@@ -32,6 +32,13 @@
 
 `docs/article-research-template.md` の台帳を埋め、`CommercialArticleSeed`へ結果を移す。記事本文には確認日を表示し、SNSの直接リンクと埋め込み対象を分ける。購入先は商品カード内に楽天・Amazonの同一スタイルのボタンを置き、重複導線を作らない。
 
+### テンプレート固定ルール
+
+- 新規記事のページラッパーは必ず `CommercialArticlePage` を使う。`pnpm article:add` の出力を手書きで旧形式へ戻さない。
+- `ArticleComparisonPage` は過去記事の互換表示専用。既存の互換ページは変更せず、新規記事へコピーしない。
+- `pnpm verify:lint` のテンプレートポリシー検査で、許可リストにない新規の旧テンプレート使用を止める。
+- レイアウトを変更するときは現行テンプレートとこの手順書を同じPRで更新し、過去記事の互換コードは別の変更として扱わない。
+
 ## 4. 公開前ゲート
 
 1. `pnpm verify` がPASS。
