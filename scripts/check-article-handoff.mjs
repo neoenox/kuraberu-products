@@ -38,6 +38,11 @@ for (const file of files) {
   if (manifest.articleId !== articleId || manifest.id !== manifestId) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
+  if (manifest.articleReady === false) {
+    errors.push(
+      `${manifestPath}: articleReady is false; do not generate the article`,
+    );
+  }
   const serializedManifest = JSON.stringify(manifest);
   if (serializedManifest.includes("sourceRef")) {
     errors.push(
