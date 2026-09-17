@@ -335,9 +335,9 @@ ${input.faq
 /** articleId 1行ページを描画する */
 export function renderPageAstro(input) {
   return `---
-import ArticleComparisonPage from '../../../components/ArticleComparisonPage.astro';
+import CommercialArticlePage from '../../../components/CommercialArticlePage.astro';
 ---
-<ArticleComparisonPage articleId="${input.slug}" />
+<CommercialArticlePage articleId="${input.slug}" />
 `;
 }
 
