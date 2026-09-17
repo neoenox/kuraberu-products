@@ -72,6 +72,16 @@ for (const file of files) {
         `${articleId}: verified Rakuten ${side} URL is missing from the seed`,
       );
     }
+    if (manifest.articleReady === true) {
+      const hasAmazon = isHttpUrl(amazon);
+      const hasRakuten =
+        manifest.rakuten?.status === "verified" && isHttpUrl(rakuten);
+      if (!hasAmazon && !hasRakuten) {
+        errors.push(
+          `${articleId}: articleReady requires one confirmed Amazon or Rakuten URL for ${side}`,
+        );
+      }
+    }
   }
   if (
     manifest.rakuten?.status === "verified" &&
