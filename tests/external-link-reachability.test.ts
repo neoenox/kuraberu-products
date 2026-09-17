@@ -411,6 +411,124 @@ describe("external link state tracking (P2 consecutive failures)", () => {
     }
   });
 
+  it.each(["", '<a href="https://example.test/current">current</a>'])(
+    "resets a removed URL's streak after a completed scan: %s",
+    async (html) => {
+      const directory = mkdtempSync(join(tmpdir(), "link-removed-"));
+      try {
+        const statePath = join(directory, "state.json");
+        const htmlPath = join(directory, "index.html");
+        const url = "https://example.test/removed";
+        const fetchImpl = vi.fn(
+          async () => new Response(null, { status: 403 }),
+        );
+        writeFileSync(htmlPath, `<a href="${url}">link</a>`);
+        for (let count = 1; count <= 6; count += 1) {
+          await checkExternalLinkReachability({
+            directory,
+            statePath,
+            fetchImpl,
+          });
+          expect(
+            loadLinkState(statePath).urls[url].consecutiveInconclusive,
+          ).toBe(count);
+        }
+        writeFileSync(htmlPath, html);
+        fetchImpl.mockClear();
+        await checkExternalLinkReachability({
+          directory,
+          statePath,
+          fetchImpl,
+        });
+        expect(fetchImpl).toHaveBeenCalledTimes(html ? 1 : 0);
+        expect(loadLinkState(statePath).urls[url]).toBeUndefined();
+        if (html) {
+          expect(
+            loadLinkState(statePath).urls["https://example.test/current"]
+              .consecutiveInconclusive,
+          ).toBe(1);
+        }
+        writeFileSync(htmlPath, `<a href="${url}">link</a>`);
+        await checkExternalLinkReachability({
+          directory,
+          statePath,
+          fetchImpl,
+        });
+        expect(loadLinkState(statePath).urls[url].consecutiveInconclusive).toBe(
+          1,
+        );
+      } finally {
+        rmSync(directory, { recursive: true, force: true });
+      }
+    },
+  );
+
+  it("preserves saved state until all probes complete", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "link-pending-"));
+    try {
+      const statePath = join(directory, "state.json");
+      const original = JSON.stringify({
+        urls: {
+          "https://example.test/removed": { consecutiveInconclusive: 6 },
+        },
+      });
+      writeFileSync(statePath, original);
+      writeFileSync(
+        join(directory, "index.html"),
+        '<a href="https://example.test/current">current</a>',
+      );
+      let finishProbe!: (response: Response) => void;
+      const fetchImpl = vi.fn(
+        () =>
+          new Promise<Response>((resolve) => {
+            finishProbe = resolve;
+          }),
+      );
+      const scan = checkExternalLinkReachability({
+        directory,
+        statePath,
+        fetchImpl,
+      });
+      try {
+        expect(fetchImpl).toHaveBeenCalledTimes(1);
+        expect(readFileSync(statePath, "utf8")).toBe(original);
+      } finally {
+        finishProbe(new Response(null, { status: 200 }));
+        await scan;
+      }
+      expect(
+        loadLinkState(statePath).urls["https://example.test/removed"],
+      ).toBeUndefined();
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("preserves saved state when URL collection fails", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "link-incomplete-"));
+    try {
+      const statePath = join(directory, "state.json");
+      const original = JSON.stringify({
+        urls: {
+          "https://example.test/removed": { consecutiveInconclusive: 6 },
+        },
+      });
+      writeFileSync(statePath, original);
+      const fetchImpl = vi.fn();
+      await expect(
+        checkExternalLinkReachability({
+          directory: join(directory, "missing"),
+          statePath,
+          fetchImpl,
+        }),
+      ).rejects.toThrow(/ENOENT/);
+      expect(fetchImpl).not.toHaveBeenCalled();
+      expect(readFileSync(statePath, "utf8")).toBe(original);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
   it("updateLinkEntry resets counter on reachable", () => {
     const entry = { consecutiveInconclusive: 5, lastOutcome: "inconclusive" };
     const updated = updateLinkEntry(entry, "reachable", undefined);

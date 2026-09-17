@@ -281,6 +281,11 @@ export async function checkExternalLinkReachability({
     console.log(`${result.outcome}: ${result.url} (${detail})`);
   }
 
+  const currentUrls = new Set(urls);
+  for (const url of Object.keys(state.urls)) {
+    if (!currentUrls.has(url)) delete state.urls[url];
+  }
+
   // Persist state for next run
   saveLinkState(state, statePath);
 
