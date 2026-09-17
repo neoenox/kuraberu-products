@@ -1,5 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import {
+  checkExternalLinkReachability,
+  restoreLinkStateArtifact,
   classifyExternalStatus,
   decodeHtmlAttribute,
   INCONCLUSIVE_FAIL_THRESHOLD,
@@ -8,9 +10,277 @@ import {
   probeExternalUrl,
   updateLinkEntry,
 } from "../scripts/check-external-link-reachability.mjs";
-import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
+import { mkdtempSync, writeFileSync, rmSync, readFileSync } from "node:fs";
+import { parse } from "yaml";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
+
+describe("external link workflow persistence", () => {
+  const workflow = parse(
+    readFileSync(".github/workflows/check-external-links.yml", "utf8"),
+  );
+
+  it("serializes state updates without cancelling running checks", () => {
+    expect(workflow.concurrency).toEqual({
+      group: "${{ github.workflow }}-${{ github.ref }}",
+      "cancel-in-progress": false,
+    });
+    expect(workflow.permissions).toEqual({ contents: "read", actions: "read" });
+  });
+
+  it("restores before checking and uploads failed checks only on the default branch", () => {
+    const steps = workflow.jobs.check.steps;
+    const restore = steps.findIndex(
+      (step: { id?: string }) => step.id === "restore-state",
+    );
+    const check = steps.findIndex(
+      (step: { id?: string }) => step.id === "reachability",
+    );
+    const upload = steps.findIndex((step: { uses?: string }) =>
+      step.uses?.startsWith("actions/upload-artifact@"),
+    );
+    expect(restore).toBeGreaterThan(-1);
+    expect(check).toBeGreaterThan(restore);
+    expect(upload).toBeGreaterThan(check);
+    expect(steps[restore].if).toBe(
+      "github.ref == format('refs/heads/{0}', github.event.repository.default_branch)",
+    );
+    expect(steps[restore].run).toBe(
+      "node scripts/check-external-link-reachability.mjs --restore-state",
+    );
+    expect(steps[upload].if).toBe(
+      "${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && steps.restore-state.outcome == 'success' && (steps.reachability.outcome == 'success' || steps.reachability.outcome == 'failure') }}",
+    );
+    expect(steps[upload].uses).toMatch(/@[a-f0-9]{40}$/);
+    expect(steps[upload].with).toMatchObject({
+      name: "external-link-state",
+      path: "data/external-link-state.json",
+      "retention-days": 90,
+      "if-no-files-found": "error",
+      overwrite: true,
+    });
+    expect(steps[check]["continue-on-error"]).toBeUndefined();
+  });
+});
+
+describe("external link artifact restore", () => {
+  const context = {
+    repository: "owner/repo",
+    defaultBranch: "main",
+    runId: "100",
+  };
+  const artifact = (
+    id: number,
+    runId: number,
+    branch = "main",
+    expired = false,
+  ) => ({
+    id,
+    name: "external-link-state",
+    expired,
+    created_at: `2026-09-${String(id).padStart(2, "0")}T00:00:00Z`,
+    workflow_run: { id: runId, head_branch: branch },
+  });
+
+  function fixture(
+    artifacts: ReturnType<typeof artifact>[],
+    downloadError?: Error,
+  ) {
+    return vi.fn((args: string[]) => {
+      if (args[0] === "run") {
+        if (downloadError) throw downloadError;
+        const directory = args[args.indexOf("--dir") + 1];
+        writeFileSync(
+          join(directory, "external-link-state.json"),
+          JSON.stringify({
+            urls: { "https://example.test/": { consecutiveInconclusive: 6 } },
+          }),
+        );
+        return "";
+      }
+      if (args[1].includes("/artifacts"))
+        return JSON.stringify([{ artifacts }]);
+      const id = Number(args[1].split("/").at(-1));
+      return JSON.stringify({
+        workflow_id: id === 80 ? 2 : 1,
+        status: "completed",
+        conclusion: "failure",
+        head_branch: "main",
+        head_repository: { full_name: "owner/repo" },
+      });
+    });
+  }
+
+  it("restores the newest same-workflow default-branch artifact even from a failed run", () => {
+    const directory = mkdtempSync(join(tmpdir(), "link-artifact-"));
+    try {
+      const runGh = fixture([
+        artifact(1, 70),
+        artifact(4, 90, "feature"),
+        artifact(3, 80),
+        artifact(2, 75),
+      ]);
+      const statePath = join(directory, "state.json");
+      restoreLinkStateArtifact({ ...context, statePath, runGh });
+      expect(runGh).toHaveBeenCalledWith(
+        expect.arrayContaining(["run", "download", "75"]),
+      );
+      expect(
+        loadLinkState(statePath).urls["https://example.test/"]
+          .consecutiveInconclusive,
+      ).toBe(6);
+      expect(runGh.mock.calls.some(([args]) => args.includes("success"))).toBe(
+        false,
+      );
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("allows a first run with no artifact", () => {
+    expect(() =>
+      restoreLinkStateArtifact({ ...context, runGh: fixture([]) }),
+    ).not.toThrow();
+  });
+
+  it("propagates listing failures instead of resetting state", () => {
+    const runGh = fixture([]);
+    expect(() =>
+      restoreLinkStateArtifact({
+        ...context,
+        runGh: (args) => {
+          if (args[1].includes("/artifacts"))
+            throw new Error("API unavailable");
+          return runGh(args);
+        },
+      }),
+    ).toThrow("API unavailable");
+  });
+
+  it("searches all artifact pages and can restore a previous attempt of the current run", () => {
+    const directory = mkdtempSync(join(tmpdir(), "link-pages-"));
+    const runGh = fixture([]);
+    try {
+      restoreLinkStateArtifact({
+        ...context,
+        statePath: join(directory, "state.json"),
+        runGh: (args) => {
+          if (args[1].includes("/artifacts")) {
+            expect(args).toContain("--paginate");
+            expect(args).toContain("--slurp");
+            return JSON.stringify([
+              { artifacts: [artifact(4, 90, "feature")] },
+              { artifacts: [artifact(2, 100)] },
+            ]);
+          }
+          return runGh(args);
+        },
+      });
+      expect(runGh).toHaveBeenCalledWith(
+        expect.arrayContaining(["run", "download", "100"]),
+      );
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
+  it.each([undefined, "invalid json"])(
+    "rejects missing or corrupt downloaded files without replacing state: %s",
+    (content) => {
+      const directory = mkdtempSync(join(tmpdir(), "link-download-"));
+      const statePath = join(directory, "state.json");
+      writeFileSync(statePath, '{"urls":{}}');
+      const runGh = fixture([artifact(2, 75)]);
+      try {
+        expect(() =>
+          restoreLinkStateArtifact({
+            ...context,
+            statePath,
+            runGh: (args) => {
+              if (args[0] !== "run") return runGh(args);
+              if (content !== undefined)
+                writeFileSync(
+                  join(
+                    args[args.indexOf("--dir") + 1],
+                    "external-link-state.json",
+                  ),
+                  content,
+                );
+              return "";
+            },
+          }),
+        ).toThrow();
+        expect(readFileSync(statePath, "utf8")).toBe('{"urls":{}}');
+      } finally {
+        rmSync(directory, { recursive: true, force: true });
+      }
+    },
+  );
+
+  it("propagates download failures without falling back to older state", () => {
+    const runGh = fixture(
+      [artifact(2, 75), artifact(1, 70)],
+      new Error("download failed"),
+    );
+    expect(() => restoreLinkStateArtifact({ ...context, runGh })).toThrow(
+      "download failed",
+    );
+    expect(runGh.mock.calls.filter(([args]) => args[0] === "run")).toHaveLength(
+      1,
+    );
+  });
+
+  it("does not silently reset when the latest state has expired", () => {
+    expect(() =>
+      restoreLinkStateArtifact({
+        ...context,
+        runGh: fixture([artifact(2, 75, "main", true), artifact(1, 70)]),
+      }),
+    ).toThrow(/expired/);
+  });
+
+  it.each(["not json", "{}", '{"urls":null}', '{"urls":[]}'])(
+    "rejects corrupt restored state: %s",
+    (content) => {
+      const directory = mkdtempSync(join(tmpdir(), "link-invalid-"));
+      try {
+        const statePath = join(directory, "state.json");
+        writeFileSync(statePath, content);
+        expect(() => loadLinkState(statePath)).toThrow();
+      } finally {
+        rmSync(directory, { recursive: true, force: true });
+      }
+    },
+  );
+
+  it("persists incremented counters before a threshold failure and resumes them next run", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "link-resume-"));
+    try {
+      const statePath = join(directory, "state.json");
+      writeFileSync(
+        join(directory, "index.html"),
+        '<a href="https://example.test/">link</a>',
+      );
+      restoreLinkStateArtifact({
+        ...context,
+        statePath,
+        runGh: fixture([artifact(2, 75)]),
+      });
+      const fetchImpl = vi.fn(async () => new Response(null, { status: 403 }));
+      for (const count of [7, 8]) {
+        await expect(
+          checkExternalLinkReachability({ directory, statePath, fetchImpl }),
+        ).rejects.toThrow("persistent inconclusive");
+        expect(
+          loadLinkState(statePath).urls["https://example.test/"]
+            .consecutiveInconclusive,
+        ).toBe(count);
+      }
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+});
 
 describe("external link reachability classification", () => {
   it("decodes generated HTML attribute entities", () => {

@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   check:
@@ -28,5 +33,22 @@ jobs:
         env:
           DEPLOYMENT_ENV: preview
         run: pnpm build
+      - name: Restore external link state
+        id: restore-state
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: node scripts/check-external-link-reachability.mjs --restore-state
       - name: Check external link reachability
+        id: reachability
         run: pnpm check:external-link-reachability
+      - name: Preserve external link state
+        if: ${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && steps.restore-state.outcome == 'success' && (steps.reachability.outcome == 'success' || steps.reachability.outcome == 'failure') }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: external-link-state
+          path: data/external-link-state.json
+          retention-days: 90
+          if-no-files-found: error
+          overwrite: true
