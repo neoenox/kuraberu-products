@@ -1,0 +1,24 @@
+{
+  "id": "anker-nano-power-bank-vs-zolo-a1688-2026-09-17",
+  "articleId": "anker-nano-power-bank-vs-zolo-a1688",
+  "source": "ChatGPT chat mode",
+  "checkedAt": "2026-09-17",
+  "articleReady": true,
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0CDBY9P5Q",
+    "right": "https://www.amazon.co.jp/dp/B0DRFR2YT3"
+  },
+  "rakuten": {
+    "status": "unconfirmed",
+    "left": "https://item.rakuten.co.jp/anker/a1259/",
+    "right": "https://item.rakuten.co.jp/anker/a1688/"
+  },
+  "social": {
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=ggh7n_HE5f8",
+      "https://note.com/h_________2__2/n/ne318e88e299c"
+    ],
+    "embedUrls": ["https://www.youtube.com/watch?v=ggh7n_HE5f8"]
+  }
+}

@@ -71,8 +71,10 @@ import { zojirushiCvGb22VsTigerPimG220Seed } from "./zojirushi-cv-gb22-vs-tiger-
 import { panasonicBeFd633VsBridgestoneA6xc41Seed } from "./panasonic-be-fd633-vs-bridgestone-a6xc41";
 import { irisFkC5VsPanasonicFdF06x2Seed } from "./iris-fk-c5-vs-panasonic-fd-f06x2";
 import { soundcoreLiberty5ProVsLiberty4ProSeed } from "./soundcore-liberty-5-pro-vs-liberty-4-pro";
+import { ankerNanoPowerBankVsZoloA1688Seed } from "./anker-nano-power-bank-vs-zolo-a1688";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
+  ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,
   roborockQrevoCurvVsDreameX50Seed,
