@@ -193,7 +193,7 @@ describe("renderers", () => {
   it("renders a one-line articleId page", () => {
     const astro = renderPageAstro(validInput());
     expect(astro).toContain(
-      '<ArticleComparisonPage articleId="panasonic-ne-ms4c-vs-ne-bs5c" />',
+        '<CommercialArticlePage articleId="panasonic-ne-ms4c-vs-ne-bs5c" />',
     );
   });
 });
