@@ -35,7 +35,7 @@ interface Props {
 const {
   left,
   right,
-  eyebrow = '30秒でわかる',
+  eyebrow = '',
   heading,
   anchorId,
   leftPoints,
@@ -46,14 +46,14 @@ const resolvedLeftImage = resolveImage(left.image);
 const resolvedRightImage = right ? resolveImage(right.image) : undefined;
 ---
 
-<section class="hero-compare" aria-label={eyebrow}>
+<section class="hero-compare" aria-label={eyebrow || heading || '商品の比較'}>
   {heading ? (
     <div class="subsection-heading">
-      <p class="section-label">{eyebrow}</p>
+      {eyebrow && <p class="section-label">{eyebrow}</p>}
       <h2 id={anchorId}>{heading}</h2>
     </div>
   ) : (
-    <p class="section-label">{eyebrow}</p>
+    eyebrow && <p class="section-label">{eyebrow}</p>
   )}
   <div class={`hero-compare-grid${right ? '' : ' is-single'}`}>
     {/* チェックリストは「こんな人に」の1行（tagline）と重複する要素を除いて表示する

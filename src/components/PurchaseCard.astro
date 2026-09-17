@@ -1,6 +1,6 @@
 ---
 // PurchaseCard.astro
-// 全記事の標準購入カード（Article Layout v3: docs/article-layout-v3-2026-08.md）
+// 全記事の標準購入カード。現行レイアウトは config/article-layout.mjs を基準にする。
 // 配置: 記事末尾（article-end）。比較記事の結論直後は NextStepBlock が担当。
 // 要素: 商品画像 / 商品名 / 「こんな人向け」の1文 / 販売先確認CTA / 価格・在庫の注意書き
 // 配置・枚数の機械的契約は config/article-layout.mjs が唯一の定義。
@@ -50,17 +50,24 @@ const {
 // unverified / unavailable の購入リンクは CTA を表示しない (#549)。
 // verified / direct のみ実際の購入ボタンを表示する。
 // カード本体 (商品画像・名前・audience) は全ステータスで表示する。
-const showCta =
+const showRakutenCta =
   Boolean(href) &&
   (purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct");
+const showAmazonCta =
+  (showAmazon || Boolean(amazonHref)) &&
+  (purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct") &&
+  Boolean(amazonHref || name);
+const showCta = showRakutenCta || showAmazonCta;
 const showPending =
   !showCta && (purchaseLinkStatus === "unverified" || !purchaseLinkStatus);
 const amazonProductUrl =
-  showAmazon && showCta && purchaseLinkStatus === "verified" && amazonHref
-    ? toAmazonAssociateProductUrl(amazonHref, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
+  showAmazonCta && amazonHref
+    ? /[?&]tag=[A-Za-z0-9-]+/.test(amazonHref)
+      ? amazonHref
+      : toAmazonAssociateProductUrl(amazonHref, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
     : undefined;
 const amazonSearchUrl =
-  showAmazon && showCta && purchaseLinkStatus === "verified" && !amazonHref
+  showAmazonCta && !amazonHref
     ? toAmazonAssociateSearchUrl(name, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
     : undefined;
 const resolvedImage = resolveImage(imagePath);
@@ -80,16 +87,18 @@ const resolvedImage = resolveImage(imagePath);
       <p class="purchase-card__audience">{audience}</p>
     </div>
   </div>
-  {showCta && href ? (
+  {showCta ? (
     <>
-      <AffiliateButton
-        href={href}
-        productId={productId}
-        label="楽天市場で商品ページを見る"
-        placement={placement}
-        searchQuery={searchQuery}
-        requiredTerms={requiredTerms}
-      />
+      {showRakutenCta && href && (
+        <AffiliateButton
+          href={href}
+          productId={productId}
+          label="楽天市場で商品ページを見る"
+          placement={placement}
+          searchQuery={searchQuery}
+          requiredTerms={requiredTerms}
+        />
+      )}
       {(amazonProductUrl ?? amazonSearchUrl) && (
         <a
           class="cta cta-card amazon-purchase-link"
@@ -102,7 +111,7 @@ const resolvedImage = resolveImage(imagePath);
         >
           <span class="cta-card-body">
             <span class="cta-card-label">Amazonで商品を確認</span>
-            <span class="cta-card-sub"><span class="ad-note">（広告）</span> →</span>
+            <span class="cta-card-sub">→</span>
           </span>
         </a>
       )}

@@ -1,4 +1,4 @@
-// 標準記事レイアウト（docs/article-layout-v3-2026-08.md）の機械的定義。
+// 標準記事レイアウト（docs/chatgpt-article-handoff-manual.md）の機械的定義。
 // 購入 CTA の「何個・どこに置くか」の唯一の情報源で、
 // 品質ゲート scripts/check-rendered-html.mjs と CTA コンポーネント
 // （PurchaseCard / AffiliateButton）がここから値を導出する。

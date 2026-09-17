@@ -1,6 +1,10 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "anker-nano-70w-vs-prime-100w": {
+    left: "/products/anker-nano-a121a.jpg",
+    right: "/products/anker-prime-a2688.jpg",
+  },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
     right: "/products/panasonic-na-lx127el.jpg",

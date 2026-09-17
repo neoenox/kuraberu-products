@@ -17,6 +17,12 @@ type CommercialArticleSeed = {
   modifiedAt?: string;
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */
+  leftAmazonUrl?: `https://${string}`;
+  rightAmazonUrl?: `https://${string}`;
+  /** 楽天商品詳細URL。nullを設定した場合は楽天リンクを自動検索しない。 */
+  leftRakutenUrl?: `https://${string}` | null;
+  rightRakutenUrl?: `https://${string}` | null;
   officialSources?: readonly {
     label: string;
     url: `https://${string}`;
