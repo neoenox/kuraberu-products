@@ -22,7 +22,7 @@ export const panasonicEhNc80VsEhNc50Seed: CommercialArticleSeed = {
   leftPoint: "4つのメニューと第2世代高浸透ナノイーを重視する人向け",
   rightPoint: "3つのメニューで基本ケアを選びたい人向け",
   productInfoCheckedAt: "2026-08-18",
-  modifiedAt: "2026-09-01",
+  modifiedAt: "2026-09-17",
   purchaseLinksCheckedAt: "2026-09-01",
   purchaseLinkStatus: "verified",
   officialSources: [
@@ -63,11 +63,6 @@ export const panasonicEhNc80VsEhNc50Seed: CommercialArticleSeed = {
       label: "付属品・表示",
       left: "アタッチメント、スタンド、液晶表示の公式説明あり",
       right: "公式ページで本体機能・モードを説明",
-    },
-    {
-      label: "数値仕様",
-      left: "商品ページ本文で寸法・質量・風量数値を確認できず",
-      right: "商品ページ本文で寸法・質量・風量数値を確認できず",
     },
   ],
 };
