@@ -1,5 +1,6 @@
 export const DEFAULT_LINK_TIMEOUT_MS: number;
 export const LINK_STATE_FILE: string;
+export const LINK_STATE_ARTIFACT_NAME: string;
 export const INCONCLUSIVE_WARN_THRESHOLD: number;
 export const INCONCLUSIVE_FAIL_THRESHOLD: number;
 
@@ -22,6 +23,13 @@ export interface ProbeResult {
   reason?: string;
 }
 
+export function restoreLinkStateArtifact(options?: {
+  repository?: string;
+  defaultBranch?: string;
+  runId?: string;
+  statePath?: string;
+  runGh?: (args: string[]) => string;
+}): void;
 export function loadLinkState(statePath?: string): LinkState;
 export function saveLinkState(state: LinkState, statePath?: string): void;
 export function updateLinkEntry(

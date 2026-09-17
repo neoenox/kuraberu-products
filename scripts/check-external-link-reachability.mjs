@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { execFileSync } from "node:child_process";
+import { tmpdir } from "node:os";
 
 export const DEFAULT_LINK_TIMEOUT_MS = 10_000;
 
@@ -8,6 +10,7 @@ export const DEFAULT_LINK_TIMEOUT_MS = 10_000;
 // A single 403/429/500 is normal (bot defense, transient). But if a URL
 // stays inconclusive across multiple weekly runs, it needs human review.
 export const LINK_STATE_FILE = "data/external-link-state.json";
+export const LINK_STATE_ARTIFACT_NAME = "external-link-state";
 export const INCONCLUSIVE_WARN_THRESHOLD = 3; // consecutive inconclusive → warning
 export const INCONCLUSIVE_FAIL_THRESHOLD = 7; // consecutive inconclusive → BLOCKER
 
@@ -17,11 +20,103 @@ export const INCONCLUSIVE_FAIL_THRESHOLD = 7; // consecutive inconclusive → BL
 export function loadLinkState(statePath = LINK_STATE_FILE) {
   try {
     const raw = JSON.parse(fs.readFileSync(statePath, "utf8"));
-    if (raw && typeof raw.urls === "object") return raw;
-    return { urls: {} };
-  } catch {
-    return { urls: {} };
+    if (
+      raw &&
+      raw.urls &&
+      typeof raw.urls === "object" &&
+      !Array.isArray(raw.urls)
+    )
+      return raw;
+    throw new Error(`Invalid external link state: ${statePath}`);
+  } catch (error) {
+    if (error.code === "ENOENT") return { urls: {} };
+    throw error;
   }
+}
+
+export function restoreLinkStateArtifact({
+  repository = process.env.GITHUB_REPOSITORY,
+  defaultBranch = process.env.DEFAULT_BRANCH,
+  runId = process.env.GITHUB_RUN_ID,
+  statePath = LINK_STATE_FILE,
+  runGh = (args) =>
+    execFileSync("gh", args, {
+      encoding: "utf8",
+      timeout: 120_000,
+      maxBuffer: 16 * 1024 * 1024,
+    }),
+} = {}) {
+  if (!repository || !defaultBranch || !runId) {
+    throw new Error(
+      "Artifact restore requires repository, default branch and run ID",
+    );
+  }
+  const api = (endpoint, ...args) =>
+    JSON.parse(runGh(["api", endpoint, ...args]));
+  const currentRun = api(`repos/${repository}/actions/runs/${runId}`);
+  const pages = api(
+    `repos/${repository}/actions/artifacts?name=${LINK_STATE_ARTIFACT_NAME}&per_page=100`,
+    "--paginate",
+    "--slurp",
+  );
+  const artifacts = pages
+    .flatMap((page) => page.artifacts)
+    .filter(
+      (artifact) =>
+        artifact.name === LINK_STATE_ARTIFACT_NAME &&
+        artifact.workflow_run?.head_branch === defaultBranch,
+    )
+    .sort((a, b) => b.created_at.localeCompare(a.created_at) || b.id - a.id);
+
+  for (const artifact of artifacts) {
+    const run = api(
+      `repos/${repository}/actions/runs/${artifact.workflow_run.id}`,
+    );
+    if (
+      run.workflow_id !== currentRun.workflow_id ||
+      run.head_branch !== defaultBranch ||
+      run.head_repository?.full_name !== repository
+    )
+      continue;
+    if (artifact.expired)
+      throw new Error(
+        `Latest external link state artifact ${artifact.id} has expired`,
+      );
+    const directory = fs.mkdtempSync(
+      path.join(tmpdir(), "external-link-state-"),
+    );
+    try {
+      runGh([
+        "run",
+        "download",
+        String(artifact.workflow_run.id),
+        "--repo",
+        repository,
+        "--name",
+        LINK_STATE_ARTIFACT_NAME,
+        "--dir",
+        directory,
+      ]);
+      const downloadedPath = path.join(
+        directory,
+        path.basename(LINK_STATE_FILE),
+      );
+      if (!fs.existsSync(downloadedPath))
+        throw new Error(
+          "Downloaded artifact is missing external-link-state.json",
+        );
+      saveLinkState(loadLinkState(downloadedPath), statePath);
+      console.log(
+        `Restored external link state from run ${artifact.workflow_run.id}`,
+      );
+      return;
+    } finally {
+      fs.rmSync(directory, { recursive: true, force: true });
+    }
+  }
+  console.log(
+    "No prior external link state artifact found; starting first-run state",
+  );
 }
 
 /**
@@ -186,6 +281,11 @@ export async function checkExternalLinkReachability({
     console.log(`${result.outcome}: ${result.url} (${detail})`);
   }
 
+  const currentUrls = new Set(urls);
+  for (const url of Object.keys(state.urls)) {
+    if (!currentUrls.has(url)) delete state.urls[url];
+  }
+
   // Persist state for next run
   saveLinkState(state, statePath);
 
@@ -221,5 +321,6 @@ const invokedPath = process.argv[1]
   ? pathToFileURL(path.resolve(process.argv[1])).href
   : undefined;
 if (invokedPath === import.meta.url) {
-  await checkExternalLinkReachability();
+  if (process.argv.includes("--restore-state")) restoreLinkStateArtifact();
+  else await checkExternalLinkReachability();
 }
