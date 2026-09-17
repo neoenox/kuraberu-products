@@ -25,8 +25,9 @@ export const ankerNanoPowerBankVsZoloA1688Seed: CommercialArticleSeed = {
   rightImage: "/products/anker-zolo-power-bank-a1688.jpg",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CDBY9P5Q",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DRFR2YT3",
-  leftRakutenUrl: "https://item.rakuten.co.jp/anker/a1259/",
-  rightRakutenUrl: "https://item.rakuten.co.jp/anker/a1688/",
+  // 楽天は商品詳細URLまでは確認できたが、APIのaffiliateUrlを確認できるまで表示しない。
+  leftRakutenUrl: null,
+  rightRakutenUrl: null,
   officialSources: [
     { label: "Anker Nano Power Bank 公式商品ページ", url: "https://www.ankerjapan.com/products/a1259" },
     { label: "Anker Zolo Power Bank 公式商品ページ", url: "https://www.ankerjapan.com/products/a1688" },
