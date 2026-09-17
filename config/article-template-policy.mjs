@@ -58,3 +58,9 @@ export const LEGACY_ARTICLE_PAGE_SLUGS = new Set([
   "zojirushi-eq-aa22-vs-eq-sa22",
   "zojirushi-eq-sb22-vs-eq-ah22",
 ]);
+
+/** Purpose-built non-comparison pages that are not article comparison templates. */
+export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
+  "panasonic-baby-monitor-kx-hc705",
+  "panasonic-eh-na9m-guide",
+]);
