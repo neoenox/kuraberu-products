@@ -38,9 +38,15 @@ for (const file of files) {
   if (manifest.articleId !== articleId || manifest.id !== manifestId) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
-  if (JSON.stringify(manifest).includes("sourceRef")) {
+  const serializedManifest = JSON.stringify(manifest);
+  if (serializedManifest.includes("sourceRef")) {
     errors.push(
       `${manifestPath}: opaque sourceRef values are not article URLs`,
+    );
+  }
+  if (/\[[^\]]+\]\(https?:\/\/[^)]+\)/.test(serializedManifest)) {
+    errors.push(
+      `${manifestPath}: Markdown links are not article URLs; use raw https URLs`,
     );
   }
   const isHttpUrl = (value) =>
