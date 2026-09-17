@@ -1,3 +1,5 @@
+import "./manual-seed-quality-overrides";
+
 export {
   comparisonV2,
   type ComparisonV2ArticleId,
