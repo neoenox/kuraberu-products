@@ -64,4 +64,4 @@
 
 ### 調査結果の反映ゲート
 
-`pnpm verify:lint` の `check-article-handoff.mjs` が、現行記事のChatGPT調査記録と記事データを突合する。Amazon・楽天・SNSの採否を調査記録に書かず、また記録したURLをseedへ移していない場合は検査で停止する。SNSを採用する場合は、直接投稿URLを1件以上必須とする。調査結果を「なし」とする場合も、未確認なのか採用対象なしなのかをmanifestに明記する。手順書の確認だけで公開へ進めてはいけない。
+`pnpm verify:lint` の `check-article-handoff.mjs` が、現行記事のChatGPT調査記録と記事データを突合する。公式ページURL・公式画像URL・Amazon・楽天・SNSの採否を調査記録に書かず、また記録したURLをseedへ移していない場合は検査で停止する。SNSを採用する場合は、直接投稿URLを1件以上必須とする。記事用JSONに`turn...`や`sourceRef`が残っている場合も停止する。調査結果を「なし」とする場合も、未確認なのか採用対象なしなのかをmanifestに明記する。手順書の確認だけで公開へ進めてはいけない。
