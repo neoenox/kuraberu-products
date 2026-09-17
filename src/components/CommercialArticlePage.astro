@@ -162,7 +162,15 @@ const splitProduct = (name: string) => {
 };
 const leftHero = splitProduct(seed.leftProduct);
 const rightHero = splitProduct(seed.rightProduct);
-const heroRows = rows.map((row) => ({ label: row.label, left: row.left, right: row.right }));
+// VisualKeyDifferences が勝っている側を表示できるよう、比較行の強調情報を維持する。
+// ここで label/left/right だけに絞ると、記事データに設定した highlight が消えてしまう。
+const heroRows = rows.map((row) => ({
+  label: row.label,
+  left: row.left,
+  right: row.right,
+  highlight: row.highlight,
+  highlightNote: row.highlightNote,
+}));
 const faq = seed.faqEntries?.length
   ? seed.faqEntries
   : [
