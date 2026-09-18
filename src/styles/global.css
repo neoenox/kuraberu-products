@@ -1137,10 +1137,6 @@ a {
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
-.ad-note {
-  font-size: 0.78rem;
-  color: rgba(0, 0, 0, 0.62);
-}
 @media (max-width: 520px) {
   .cta.cta-card {
     width: 100%;
@@ -1239,17 +1235,12 @@ a {
   border-left-color: #b88600;
   box-shadow: 0 2px 8px rgba(120, 82, 0, 0.18);
 }
-.purchase-card .amazon-purchase-link .cta-card-sub,
-.purchase-card .amazon-purchase-link .ad-note {
+.purchase-card .amazon-purchase-link .cta-card-sub {
   color: #51472f;
 }
 .purchase-card .cta-card-sub {
   color: rgba(255, 255, 255, 0.75);
 }
-.purchase-card .ad-note {
-  color: rgba(255, 255, 255, 0.72);
-}
-
 /* 商品選択診断（/tools/product-finder/） */
 .primary-button {
   min-height: 48px;
