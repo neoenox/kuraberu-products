@@ -64,17 +64,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         ? `このページを開くと、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`
         : `表示すると、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`}
     </p>
-    {
-      autoDisplay && (
-        <button
-          class="external-embed__stop"
-          type="button"
-          data-external-embed-stop
-        >
-          このブラウザでは表示しない
-        </button>
-      )
-    }
     <div class="external-embed__actions">
       <button type="button" data-external-embed-load>{providerLabel}の投稿を表示</button>
       <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">
@@ -615,16 +604,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     button.addEventListener("click", onClick);
 
-    const stopButton = root.querySelector<HTMLButtonElement>(
-      "[data-external-embed-stop]",
-    );
-    stopButton?.addEventListener("click", () => {
-      setConsent("denied");
-      resetToPlaceholder();
-      stopButton.textContent = "このブラウザでは表示しない設定です";
-      stopButton.disabled = true;
-    });
-
     if (
       root.dataset.autoload === "true" ||
       root.dataset.autoDisplay === "true"
@@ -639,10 +618,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           // 撤回: localStorage の同意キーを削除し、埋め込みを
           // 手動読み込みのプレースホルダーへ戻す。
           resetToPlaceholder();
-        }
-        if (consent === "denied" && stopButton) {
-          stopButton.textContent = "このブラウザでは表示しない設定です";
-          stopButton.disabled = true;
         }
       };
       onConsentChange(handleConsentChange);
@@ -806,18 +781,4 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  .external-embed__stop {
-    border: 1px solid var(--line);
-    border-radius: var(--radius-sm);
-    padding: 0.35rem 0.7rem;
-    background: transparent;
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-
-  .external-embed__stop:disabled {
-    cursor: default;
-  }
 </style>
