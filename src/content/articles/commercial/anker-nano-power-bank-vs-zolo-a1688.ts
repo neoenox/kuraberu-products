@@ -57,7 +57,7 @@ export const ankerNanoPowerBankVsZoloA1688Seed: CommercialArticleSeed = {
     { label: "note：Anker Zolo Power Bank使用感", href: "https://note.com/h_________2__2/n/ne318e88e299c", note: "本人購入・約1か月使用、非アフィリエイト明記。" },
   ],
   embeds: [
-    { provider: "youtube", url: "https://www.youtube.com/watch?v=ggh7n_HE5f8", title: "Anker Nano Power Bankレビュー", match: "正式商品名の一致と実機レビューを確認", purpose: "実利用者の感想", autoload: false, compact: true },
+    { provider: "youtube", url: "https://www.youtube.com/watch?v=ggh7n_HE5f8", title: "Anker Nano Power Bankレビュー", match: "正式商品名の一致と実機レビューを確認", purpose: "実利用者の感想", autoload: true, autoDisplay: true, compact: true },
   ],
   sourceLinks: [
     { label: "Anker Nano Power Bank 公式商品ページ", url: "https://www.ankerjapan.com/products/a1259", date: "2026-09-17" },
