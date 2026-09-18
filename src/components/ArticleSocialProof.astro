@@ -1,5 +1,5 @@
 ---
-// SNS投稿が確認できた場合は投稿または直接リンクを表示し、ない場合も検索先を案内する。
+// SNS投稿が確認できた場合は、埋め込みを優先し、埋め込みがない場合だけ直接リンクを表示する。
 // 比較の根拠は常にメーカー公式情報であり、SNSは参考情報に限定する。
 import type { ExternalEmbedMatchRank } from "../lib/external-embeds";
 import { createExternalEmbedConfig, createXSearchUrl } from "../lib/external-embeds";
@@ -38,7 +38,7 @@ const curatedPosts = directPosts.map((post) => ({
     <p>
       SNS投稿は実際の利用者の感想を知るための参考情報です。商品の仕様や比較結論の根拠には使用していません。比較の根拠はメーカー公式情報のみです。
     </p>
-    {hasPosts && bestMatch && bestMatch !== "brand" && curatedPosts.length > 0 ? (
+    {hasPosts && bestMatch && bestMatch !== "brand" && curatedPosts.length > 0 && !hasEmbeddedPosts ? (
       <div class="sns-curated-posts">
         <p class="sns-posts-note">対象商品または同シリーズについて確認できる公開投稿へのリンクです。投稿内容は参考情報としてご覧ください。</p>
         <ul>
@@ -57,7 +57,7 @@ const curatedPosts = directPosts.map((post) => ({
         <p class="sns-posts-note">個別に確認した投稿はまだ掲載していません。Xで関連する投稿を検索できます。</p>
       </div>
     ) : null}
-    {xSearchUrl && (
+    {xSearchUrl && !hasEmbeddedPosts && (
       <div class="sns-search-fallback">
         <a class="card-link sns-search-link" href={xSearchUrl} target="_blank" rel="noopener noreferrer">
           {searchLabel ?? (curatedPosts.length > 0 ? "Xでほかの投稿を探す →" : "Xで関連する投稿を探す →")}

@@ -1,0 +1,30 @@
+{
+  "id": "logicool-mx-master-4-vs-mx-master-3s-2026-09-18",
+  "articleId": "logicool-mx-master-4-vs-mx-master-3s",
+  "source": "Codex research",
+  "checkedAt": "2026-09-18",
+  "articleReady": true,
+  "officialSources": [
+    "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-4",
+    "https://press.logicool.co.jp/ja-jp/mx-master-4/",
+    "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-3s",
+    "https://press.logicool.co.jp/ja-jp/mx_master_3S/"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0FR8M3WS8",
+    "right": "https://www.amazon.co.jp/dp/B0B1Q6VB16"
+  },
+  "rakuten": {
+    "status": "direct",
+    "left": "https://item.rakuten.co.jp/logicool/mx2400gr/",
+    "right": "https://item.rakuten.co.jp/logicool/mx2300gr/"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": []
+  },
+  "caveats": [
+    "確認できた動画は販売リンクまたは提供品の記載があるため、SNS欄には採用しない。"
+  ]
+}

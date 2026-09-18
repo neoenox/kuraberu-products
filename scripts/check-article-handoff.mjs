@@ -101,15 +101,24 @@ for (const file of files) {
       ...(manifest.social.embedUrls ?? []),
     ];
     const directUrls = manifest.social.directPostUrls ?? [];
+    const embedUrls = manifest.social.embedUrls ?? [];
     if (directUrls.length === 0)
       errors.push(
         `${articleId}: adopted SNS handoff requires direct post URLs`,
+      );
+    if (embedUrls.length === 0)
+      errors.push(
+        `${articleId}: adopted SNS handoff requires at least one X or YouTube embed URL`,
       );
     for (const url of urls)
       if (!isHttpUrl(url))
         errors.push(`${articleId}: SNS entries must be direct https URLs`);
       else if (!source.includes(url))
         errors.push(`${articleId}: SNS URL is missing from the seed: ${url}`);
+    if (embedUrls.length > 0 && !/embeds:\s*\[/.test(source))
+      errors.push(
+        `${articleId}: SNS embed URLs are missing from the seed embeds array`,
+      );
   }
   if (
     manifest.social?.status === "none" &&

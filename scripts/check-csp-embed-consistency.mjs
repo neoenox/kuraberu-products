@@ -19,14 +19,14 @@ const HEADERS_FILE = "public/_headers";
 // 実行時に取得する third-party リソースと、許可が必要な CSP ディレクティブ。
 // src/lib/external-embeds.ts の実装と対応付けること:
 // - X: platform.twitter.com/widgets.js（scriptSrc）
-// - YouTube: www.youtube-nocookie.com/embed（embedUrl）
+// - YouTube: www.youtube.com/embed（embedUrl）
 // - TikTok: www.tiktok.com/player（embedUrl）
 // - Pinterest: assets.pinterest.com/js/pinit.js（scriptSrc）
 export const REQUIRED_RESOURCES = [
   { host: "platform.twitter.com", directives: ["script-src"] },
   { host: "assets.pinterest.com", directives: ["script-src"] },
   {
-    host: "www.youtube-nocookie.com",
+    host: "www.youtube.com",
     directives: ["frame-src", "media-src"],
   },
   { host: "www.tiktok.com", directives: ["frame-src", "media-src"] },

@@ -27,7 +27,7 @@ describe("external embed URL validation", () => {
       ),
     ).toMatchObject({
       canonicalUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      embedUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       renderer: "iframe",
     });
 
