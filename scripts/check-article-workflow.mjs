@@ -12,12 +12,21 @@ const requiredRules = [
   "楽天の成果URLは、Codex側がChromeのログイン済み楽天アフィリエイト管理画面",
   "`articleReady` は、記事に表示する購入ボタン用のURLが揃った時点でCodex側が判定する",
   "毎回、商品選定から始める完全新規の依頼を送る",
+  "上部に枠付きの見出し「目次」と番号付きの`<ol>`",
+  "本文の順番は「結論 → 主な比較ポイント → よくある質問 → 購入先 → SNSでの感想 → 更新履歴・情報源」",
+  "CTA横の「（広告）」、動画前の「外部コンテンツの表示」",
 ];
 const forbiddenRules = [
   "必要な場合はユーザーが生成して後から渡す",
   "楽天の完全な成果URLはログイン済みの本人だけが生成できるため",
 ];
 const errors = [];
+
+const sourceRules = [
+  ["src/components/ExternalEmbed.astro", ":global(.external-embed__target iframe)"],
+  ["src/components/ExternalEmbed.astro", "aspect-ratio: 16 / 9"],
+  ["src/components/CommercialArticlePage.astro", "id=\"purchase\""],
+];
 
 if (!manual) errors.push("article workflow manual is missing");
 for (const rule of requiredRules) {
@@ -28,6 +37,27 @@ for (const rule of requiredRules) {
 for (const rule of forbiddenRules) {
   if (manual.includes(rule)) {
     errors.push(`manual contains obsolete rule: ${rule}`);
+  }
+}
+for (const [relativePath, rule] of sourceRules) {
+  const sourcePath = path.join(root, relativePath);
+  const source = fs.existsSync(sourcePath) ? fs.readFileSync(sourcePath, "utf8") : "";
+  if (!source.includes(rule)) {
+    errors.push(`current template is missing required implementation: ${relativePath} -> ${rule}`);
+  }
+}
+
+const embedSource = fs.existsSync(path.join(root, "src/components/ExternalEmbed.astro"))
+  ? fs.readFileSync(path.join(root, "src/components/ExternalEmbed.astro"), "utf8")
+  : "";
+if (embedSource.includes("data-external-embed-stop") || embedSource.includes("external-embed__privacy")) {
+  errors.push("current embed template still contains removed privacy/opt-out UI");
+}
+for (const relativePath of ["src/components/AffiliateButton.astro", "src/components/NextStepBlock.astro"]) {
+  const sourcePath = path.join(root, relativePath);
+  const source = fs.existsSync(sourcePath) ? fs.readFileSync(sourcePath, "utf8") : "";
+  if (source.includes("ad-note") || source.includes("（広告）")) {
+    errors.push(`current CTA template still contains removed ad label: ${relativePath}`);
   }
 }
 
