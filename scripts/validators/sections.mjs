@@ -46,9 +46,6 @@ export function validateArticleSectionOrder(relative, html) {
   if (!ARTICLE_PAGE_PATTERN.test(relative)) return [];
   if (readComparisonContentType(html) !== "comparison") return [];
   const template = detectArticleTemplate(html);
-  // 現行テンプレートは記事目次を必ず持つ。旧テンプレートは過去記事用
-  // の静的HTMLとして扱い、現行のセクション契約を適用しない。
-  if (!html.includes('class="article-toc"')) return [];
   if (template === null) return [];
   const order = ARTICLE_LAYOUT.sectionOrder?.[template];
   if (!order) return [];
@@ -140,7 +137,6 @@ export function validateRequiredSections(relative, html) {
   if (readComparisonContentType(html) !== "comparison") return [];
   const template = detectArticleTemplate(html);
   if (template === null) return [];
-  if (!html.includes('class="article-toc"')) return [];
   const order = ARTICLE_LAYOUT.sectionOrder?.[template];
   if (!order) return [];
   const errors = [];

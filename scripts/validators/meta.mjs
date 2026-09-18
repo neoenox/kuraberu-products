@@ -109,8 +109,6 @@ const LEGACY_AD_NOTICE = "広告表示：この記事には広告リンクを含
 
 export function validateArticleTrustLine(relative, html) {
   if (!ARTICLE_PAGE_PATTERN.test(relative)) return [];
-  // 旧形式の静的記事は現行テンプレートの信頼行契約の対象外。
-  if (!html.includes('class="article-toc"')) return [];
   const errors = [];
   const trustLines = [...html.matchAll(/<p class="trust-line">[\s\S]*?<\/p>/g)];
   const checkedAt = readArticleCheckedAt(html);
