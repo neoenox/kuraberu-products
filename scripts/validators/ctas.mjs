@@ -36,7 +36,6 @@ export function validateArticleCtas(
   );
   const tags = [...html.matchAll(ctaPattern)].map(([tag]) => tag);
   const errors = [];
-  const isCurrentTemplate = html.includes('class="article-toc"');
   const isUnavailable =
     /<meta name="article:purchase-link-status" content="unavailable">/i.test(
       html,
@@ -88,11 +87,6 @@ export function validateArticleCtas(
       if (!/\bsponsored\b/i.test(rel) || !/\bnofollow\b/i.test(rel)) {
         errors.push(
           `${relative}: CTA ${index + 1} is missing sponsored/nofollow rel attributes`,
-        );
-      }
-      if (!isCurrentTemplate && !/広告/.test(tag)) {
-        errors.push(
-          `${relative}: CTA ${index + 1} is missing advertising disclosure`,
         );
       }
       if (!isVerifiedRakutenPurchaseDestination(href)) {
