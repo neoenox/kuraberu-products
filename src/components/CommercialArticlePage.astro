@@ -81,6 +81,8 @@ const rightTerms = seed.rightProduct.split(/\s+/).filter(Boolean);
 const staticPurchaseLinks = articlePurchaseLinks as Record<string, { purchaseUrl: string }>;
 const leftStaticPurchaseUrl = staticPurchaseLinks[`${articleId}:left`]?.purchaseUrl;
 const rightStaticPurchaseUrl = staticPurchaseLinks[`${articleId}:right`]?.purchaseUrl;
+const leftRakutenOverride = 'leftRakutenUrl' in seed ? seed.leftRakutenUrl : undefined;
+const rightRakutenOverride = 'rightRakutenUrl' in seed ? seed.rightRakutenUrl : undefined;
 // 検証済み購入URLの判定は1関数へ集約する（#436）: item.rakuten.co.jp 直リンク、
 // または pc 到達先が商品詳細ページのアフィリエイトURLのみ許可する。
 // 検索結果ページへのリダイレクト・裸の短縮URLは未確認扱いとする。
@@ -91,7 +93,11 @@ const isVerifiedPurchaseUrl = (value: string | undefined) =>
 // 確認済み商品詳細URL（レジストリ or API選択）が無い場合は href を空にし、
 // purchaseLinkStatus の契約（verified/direct以外はCTA非表示）で fail-closed にする。
 const [leftResolved, rightResolved] = await Promise.all([
-  leftStaticPurchaseUrl && isVerifiedPurchaseUrl(leftStaticPurchaseUrl)
+  leftRakutenOverride === null
+    ? Promise.resolve({ href: undefined, isAffiliate: false, product: undefined })
+    : leftRakutenOverride && isVerifiedPurchaseUrl(leftRakutenOverride)
+    ? Promise.resolve({ href: leftRakutenOverride, isAffiliate: isAffiliateRakutenUrl(leftRakutenOverride), product: undefined })
+    : leftStaticPurchaseUrl && isVerifiedPurchaseUrl(leftStaticPurchaseUrl)
     ? Promise.resolve({
         href: leftStaticPurchaseUrl,
         isAffiliate: isAffiliateRakutenUrl(leftStaticPurchaseUrl),
@@ -101,7 +107,11 @@ const [leftResolved, rightResolved] = await Promise.all([
         keyword: seed.leftProduct,
         requiredTerms: leftTerms,
       }),
-  rightStaticPurchaseUrl && isVerifiedPurchaseUrl(rightStaticPurchaseUrl)
+  rightRakutenOverride === null
+    ? Promise.resolve({ href: undefined, isAffiliate: false, product: undefined })
+    : rightRakutenOverride && isVerifiedPurchaseUrl(rightRakutenOverride)
+    ? Promise.resolve({ href: rightRakutenOverride, isAffiliate: isAffiliateRakutenUrl(rightRakutenOverride), product: undefined })
+    : rightStaticPurchaseUrl && isVerifiedPurchaseUrl(rightStaticPurchaseUrl)
     ? Promise.resolve({
         href: rightStaticPurchaseUrl,
         isAffiliate: isAffiliateRakutenUrl(rightStaticPurchaseUrl),
@@ -152,7 +162,15 @@ const splitProduct = (name: string) => {
 };
 const leftHero = splitProduct(seed.leftProduct);
 const rightHero = splitProduct(seed.rightProduct);
-const heroRows = rows.map((row) => ({ label: row.label, left: row.left, right: row.right }));
+// VisualKeyDifferences が勝っている側を表示できるよう、比較行の強調情報を維持する。
+// ここで label/left/right だけに絞ると、記事データに設定した highlight が消えてしまう。
+const heroRows = rows.map((row) => ({
+  label: row.label,
+  left: row.left,
+  right: row.right,
+  highlight: row.highlight,
+  highlightNote: row.highlightNote,
+}));
 const faq = seed.faqEntries?.length
   ? seed.faqEntries
   : [
@@ -170,8 +188,12 @@ const faq = seed.faqEntries?.length
       },
     ];
 const socialProofQuery = seed.socialProofQuery ?? `${seed.leftProduct} ${seed.rightProduct}`;
-const hasSocialProof = Boolean(socialProofQuery);
-const hasOfficialProse = seed.officialProse && seed.officialProse.length > 0;
+const hasSocialProof = Boolean(
+  seed.socialProofHasPosts &&
+    ((seed.socialProofDirectPosts?.length ?? 0) > 0 ||
+      (seed.embeds?.length ?? 0) > 0 ||
+      seed.socialProofBestMatch),
+);
 const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
 ---
 <BaseLayout title={article.title} description={article.description} article={article} faq={faq} robots={isPublicArticle ? undefined : 'noindex,nofollow'}>
@@ -181,22 +203,18 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <ComparisonMemoButton articleId={article.id} />
     <p class="lead">{seed.lead ?? article.summary}</p>
     {hasHeroSources && (
-      <nav class="jump-nav" aria-label="ページ内ジャンプ">
-        <a href="#key-differences">違い</a>
-        <a href="#decision-guide">結局どっち？</a>
-        <a href="#faq">FAQ</a>
+      <nav class="article-toc" aria-label="目次">
+        <h2>目次</h2>
+        <ol>
+          <li><a href="#decision-guide">結論</a></li>
+          <li><a href="#key-differences">比較ポイント</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#purchase">購入先</a></li>
+          {hasSocialProof && <li><a href="#sns">SNSでの感想</a></li>}
+        </ol>
       </nav>
     )}
     {!hasHeroSources && <TrustLine checkedAt={article.productInfoCheckedAt} />}
-    {seed.officialSources?.length ? (
-      <details class="fold-section source-note" aria-labelledby="official-sources">
-        <summary id="official-sources">公式の確認先</summary>
-        <ul>
-          {seed.officialSources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}
-        </ul>
-      </details>
-    ) : null}
-
     {hasHeroSources ? (
       <ArticleComparisonV2
         left={{ brand: leftHero.brand, line: leftHero.line, tagline: seed.leftPoint, image: images.left ?? '', imageAlt: seed.leftProduct, officialHref: leftOfficialHref, guidePoints: [seed.leftPoint], purchaseHref: leftProductHref }}
@@ -204,6 +222,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         rows={heroRows}
         checkedAt={seed.productInfoCheckedAt}
         purchaseLinkStatus={article.purchaseLinkStatus}
+        showNextStepBlock={false}
       />
     ) : <h2 id="key-differences">違いを確認する</h2>}
     {!hasHeroSources && (
@@ -214,19 +233,18 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
       />
     )}
 
-    {hasOfficialProse && (
-      <details class="fold-section" id="official">
-        <summary>公式情報（確認できた項目）</summary>
-        {seed.officialProse!.map((section) => (
-          <>
-            <h3>{section.heading}</h3>
-            <ul class="official-list">
-              {section.items.map((item) => <li>{item}</li>)}
-            </ul>
-          </>
-        ))}
-      </details>
-    )}
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-list">
+      {faq.map((entry) => <details class="faq-item"><summary><h3>{entry.question}</h3></summary><p>{entry.answer}</p></details>)}
+    </div>
+
+    <h2 id="purchase">購入先</h2>
+    <h3>購入前の注意</h3>
+    <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
+    <div class="purchase-cards">
+      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} amazonHref={seed.leftAmazonUrl} showAmazon={true} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} amazonHref={seed.rightAmazonUrl} showAmazon={true} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+    </div>
 
     {hasSocialProof && (
       <ArticleSocialProof
@@ -247,6 +265,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
                 purpose={embed.purpose}
                 tone={embed.tone as any}
                 autoload={embed.autoload}
+                autoDisplay={embed.autoDisplay}
                 compact={embed.compact}
               />
             ))}
@@ -254,31 +273,6 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         )}
       </ArticleSocialProof>
     )}
-
-    <details class="fold-section" id="specs" open>
-      <summary>詳細仕様（公式ページで確認した項目）</summary>
-      <div class="table-scroll">
-        <table class="comparison">
-          <thead><tr><th scope="col">比較項目</th><th scope="col">{seed.leftProduct}</th><th scope="col">{seed.rightProduct}</th></tr></thead>
-          <tbody>
-            {rows.map((row) => <tr><th scope="row">{row.label}</th><td data-label={seed.leftProduct}>{row.left}</td><td data-label={seed.rightProduct}>{row.right}</td></tr>)}
-          </tbody>
-        </table>
-      </div>
-    </details>
-    <p class="meta">商品仕様・価格・在庫は変更される可能性があります。購入時点の公式ページと販売ページをご確認ください。</p>
-
-    <h2 id="faq">よくある質問</h2>
-    <div class="faq-list">
-      {faq.map((entry) => <details class="faq-item"><summary><h3>{entry.question}</h3></summary><p>{entry.answer}</p></details>)}
-    </div>
-
-    <h2>購入前の注意</h2>
-    <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
-    <div class="purchase-cards">
-      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-    </div>
 
     <h2>更新履歴</h2>
     <ol class="change-log">
@@ -301,3 +295,22 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
   </article>
   <RelatedArticles currentPath={article.path} currentCategory={article.category} />
 </BaseLayout>
+
+<style>
+  .article-toc {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--line, #d8d8d8);
+    border-radius: var(--radius-md);
+    background: var(--surface-muted, #fafafa);
+  }
+  .article-toc h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+  }
+  .article-toc ol {
+    margin: 0;
+    padding-left: 1.35rem;
+  }
+  .article-toc li + li { margin-top: 0.3rem; }
+</style>

@@ -34,6 +34,11 @@ const {
 } = Astro.props;
 const config = createExternalEmbedConfig(provider, url);
 const providerLabel = externalEmbedProviderLabel(provider);
+// YouTubeはautoload/autoDisplayの採用投稿なら、JSの読み込み完了を待たず
+// 記事HTMLへiframeを直接出す。これで「埋め込み対象はあるが、空の枠だけ」
+// になる状態を防ぎ、静的HTMLの時点で埋め込みであることを検査できる。
+const serverRenderYoutube =
+  provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -48,7 +53,8 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-provider={provider}
   data-match={match}
   data-tone={tone}
-  data-embed-state="idle"
+  data-embed-state={serverRenderYoutube ? "loaded" : "idle"}
+  data-server-embed={serverRenderYoutube ? "true" : undefined}
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
@@ -59,22 +65,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     {tone && <p class="external-embed__tone" data-external-embed-tone={tone}>{toneLabel[tone]}</p>}
     <h3>{title}</h3>
     {purpose && <p>{purpose}</p>}
-    <p class="external-embed__privacy">
-      {autoDisplay
-        ? `このページを開くと、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`
-        : `表示すると、${providerLabel}へIPアドレスや閲覧環境などの情報が送信される場合があります。`}
-    </p>
-    {
-      autoDisplay && (
-        <button
-          class="external-embed__stop"
-          type="button"
-          data-external-embed-stop
-        >
-          このブラウザでは表示しない
-        </button>
-      )
-    }
     <div class="external-embed__actions">
       <button type="button" data-external-embed-load>{providerLabel}の投稿を表示</button>
       <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">
@@ -89,8 +79,19 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     tabindex="-1"
     aria-label={`${providerLabel}の埋め込み結果`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
-    hidden
-  ></div>
+    hidden={!serverRenderYoutube}
+  >
+    {serverRenderYoutube && config.embedUrl && (
+      <iframe
+        src={config.embedUrl}
+        title={title}
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    )}
+  </div>
   <noscript>
     <p>埋め込み表示にはJavaScriptが必要です。上のリンクから元の投稿を確認できます。</p>
   </noscript>
@@ -504,6 +505,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   if (document.querySelector("[data-external-embed]")) {
   for (const root of document.querySelectorAll<HTMLElement>("[data-external-embed]")) {
     if (root.dataset.initialized === "true") continue;
+    // serverRenderYoutube がiframeをすでに出しているため、runtimeでtargetを
+    // clearして空に戻さない。直接表示したiframeはそのまま維持する。
+    if (root.dataset.serverEmbed === "true") continue;
     root.dataset.initialized = "true";
 
     const button = root.querySelector<HTMLButtonElement>("[data-external-embed-load]");
@@ -615,16 +619,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     button.addEventListener("click", onClick);
 
-    const stopButton = root.querySelector<HTMLButtonElement>(
-      "[data-external-embed-stop]",
-    );
-    stopButton?.addEventListener("click", () => {
-      setConsent("denied");
-      resetToPlaceholder();
-      stopButton.textContent = "このブラウザでは表示しない設定です";
-      stopButton.disabled = true;
-    });
-
     if (
       root.dataset.autoload === "true" ||
       root.dataset.autoDisplay === "true"
@@ -639,10 +633,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           // 撤回: localStorage の同意キーを削除し、埋め込みを
           // 手動読み込みのプレースホルダーへ戻す。
           resetToPlaceholder();
-        }
-        if (consent === "denied" && stopButton) {
-          stopButton.textContent = "このブラウザでは表示しない設定です";
-          stopButton.disabled = true;
         }
       };
       onConsentChange(handleConsentChange);
@@ -715,7 +705,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     margin: 0 0 0.75rem;
   }
 
-  .external-embed__privacy,
   .external-embed__status {
     color: var(--muted);
     font-size: 0.88rem;
@@ -756,19 +745,25 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  .external-embed__target iframe {
+  :global(.external-embed__target iframe) {
     display: block;
     width: 100%;
     min-height: var(--external-embed-min-height);
     border: 0;
   }
 
-  .external-embed[data-provider="youtube"] .external-embed__target iframe {
+  :global(.external-embed[data-provider="youtube"] .external-embed__target iframe) {
     aspect-ratio: 16 / 9;
     min-height: auto;
   }
 
-  .external-embed[data-provider="tiktok"] .external-embed__target iframe {
+  /* YouTubeはiframeの16:9比率だけで高さが決まるため、
+     共通の最低高さを親に残すと動画の下に大きな空白ができる。 */
+  .external-embed[data-provider="youtube"] .external-embed__target {
+    min-height: auto;
+  }
+
+  :global(.external-embed[data-provider="tiktok"] .external-embed__target iframe) {
     max-width: 420px;
     margin-inline: auto;
   }
@@ -789,7 +784,6 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
      「外部コンテンツ」ラベルは出さない。タイトルと説明のみ残す。
      同意前は通常の手動読み込みUIを表示する。 */
   .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__label,
-  .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__privacy,
   .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__actions,
   .external-embed[data-autoload="true"][data-embed-state="loaded"] .external-embed__status {
     display: none;
@@ -800,18 +794,14 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  .external-embed__stop {
-    border: 1px solid var(--line);
-    border-radius: var(--radius-sm);
-    padding: 0.35rem 0.7rem;
-    background: transparent;
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.8rem;
-    cursor: pointer;
+  /* 自動表示する埋め込みは投稿そのものを主役にし、
+     「外部コンテンツ」や読み込みボタンを記事本文へ出さない。 */
+  .external-embed[data-auto-display="true"] .external-embed__intro {
+    display: none;
+  }
+  .external-embed[data-auto-display="true"] .external-embed__target {
+    border-top: 0;
+    padding: 0;
   }
 
-  .external-embed__stop:disabled {
-    cursor: default;
-  }
 </style>

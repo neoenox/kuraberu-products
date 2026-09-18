@@ -4,6 +4,7 @@ export const soundcoreLiberty5ProVsLiberty4ProSeed: CommercialArticleSeed = {
   id: "soundcore-liberty-5-pro-vs-liberty-4-pro",
   publishedAt: "2026-09-16",
   modifiedAt: "2026-09-16",
+  handoffManifestId: "soundcore-liberty-5-pro-vs-liberty-4-pro-2026-09-16",
   productInfoCheckedAt: "2026-09-16",
   purchaseLinksCheckedAt: "2026-09-16",
   purchaseLinkStatus: "verified",

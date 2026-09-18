@@ -96,6 +96,15 @@ export function findEmptySections(html) {
     if (heading.tagName.toLowerCase() === "h1") continue;
     if (isInSummary(heading)) continue;
     const token = nextMeaningfulSibling(heading);
+    // 「購入先」には、本文の導入として「購入前の注意」などの
+    // h3小見出しが続く標準構成がある。これは空セクションではない。
+    if (
+      heading.text.trim() === "購入先" &&
+      token.type === "heading" &&
+      token.name === "h3"
+    ) {
+      continue;
+    }
     const isEmpty =
       token.type === "end" ||
       token.type === "heading" ||

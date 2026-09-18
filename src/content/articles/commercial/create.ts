@@ -19,7 +19,7 @@ const createCommercialArticle = (
     uses: seed.uses,
     summary: seed.summary,
     publishedAt: seed.publishedAt,
-    modifiedAt: seed.modifiedAt ?? "2026-08-17",
+    modifiedAt: seed.modifiedAt ?? seed.publishedAt,
     productInfoCheckedAt: seed.productInfoCheckedAt,
     purchaseLinksCheckedAt: seed.purchaseLinksCheckedAt,
     purchaseLinkStatus: seed.purchaseLinkStatus ?? "unverified",
@@ -31,7 +31,7 @@ const createCommercialArticle = (
     aboutProductNames: [seed.leftProduct, seed.rightProduct],
     changeLog: [
       {
-        date: "2026-08-17",
+        date: seed.modifiedAt ?? seed.publishedAt,
         summary:
           "公式仕様の比較表を更新。購入前に公式仕様と販売ページを確認する構成。",
       },

@@ -15,8 +15,16 @@ type CommercialArticleSeed = {
   publishedAt: string;
   productInfoCheckedAt?: string;
   modifiedAt?: string;
+  /** ChatGPT調査結果と記事データの突合記録。現行記事では必須。 */
+  handoffManifestId?: string;
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */
+  leftAmazonUrl?: `https://${string}`;
+  rightAmazonUrl?: `https://${string}`;
+  /** 楽天商品詳細URL。nullを設定した場合は楽天リンクを自動検索しない。 */
+  leftRakutenUrl?: `https://${string}` | null;
+  rightRakutenUrl?: `https://${string}` | null;
   officialSources?: readonly {
     label: string;
     url: `https://${string}`;
@@ -62,6 +70,7 @@ type CommercialArticleSeed = {
     purpose?: string;
     tone?: string;
     autoload?: boolean;
+    autoDisplay?: boolean;
     compact?: boolean;
   }[];
   /** 公式情報セクションの説明文（各商品ごとの詳細プロス） */

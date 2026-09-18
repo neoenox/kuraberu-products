@@ -112,6 +112,21 @@ export function validateArticleTrustLine(relative, html) {
   const errors = [];
   const trustLines = [...html.matchAll(/<p class="trust-line">[\s\S]*?<\/p>/g)];
   const checkedAt = readArticleCheckedAt(html);
+  if (html.includes('class="article-toc"')) {
+    const expected = checkedAt
+      ? `<p class="trust-line">✓ 公式確認済み（${checkedAt}）</p>`
+      : null;
+    if (trustLines.length !== (expected ? 1 : 0)) {
+      errors.push(
+        `${relative}: expected ${expected ? "one" : "no"} trust-line for the current template, found ${trustLines.length}`,
+      );
+    } else if (expected && trustLines[0][0] !== expected) {
+      errors.push(
+        `${relative}: trust-line must be ${JSON.stringify(expected)} (meta checkedAt=${JSON.stringify(checkedAt)})`,
+      );
+    }
+    return errors;
+  }
   const expected = checkedAt
     ? `<p class="trust-line">✓ 公式確認済み（${checkedAt}）・広告を含みます</p>`
     : '<p class="trust-line">広告を含みます</p>';

@@ -49,6 +49,14 @@ export function validateArticleNextStep(relative, html) {
     return errors;
   }
 
+  if (
+    html.includes('class="article-toc"') &&
+    html.includes('class="article-comparison-v2"') &&
+    html.includes('data-next-step-purchase="disabled"')
+  ) {
+    return errors;
+  }
+
   if (blocks.length !== 1) {
     errors.push(
       `${relative}: comparison article must render exactly one next-step block (section.next-step[data-next-step]), found ${blocks.length}`,

@@ -17,19 +17,19 @@ export const ARTICLE_PAGE_PATTERN = /^articles\/[^/]+\/index\.html$/;
 // 実ビルド済み HTML からセクションマーカーの出現位置を抽出し、
 // 定義された順序と照合する。順序違反は error として報告する。
 export const SECTION_MARKERS = {
-  meta: /<p class="meta">/,
+  meta: /<p class="meta"(?:\s|>)/,
   h1: /<h1[^>]*>/,
-  lead: /<p class="lead">/,
-  "jump-nav": /<nav class="jump-nav"/,
+  lead: /<p class="lead"(?:\s|>)/,
+  "jump-nav": /<nav class="(?:jump-nav|article-toc)"(?:\s|>)/,
   "comparison-v2": /<section[^>]*class="[^"]*\barticle-comparison-v2/,
   specs: /<details[^>]*id="specs"/,
   official: /<h2 id="official">/,
   "trust-line": /<p class="trust-line">/,
   "next-step": /<section[^>]*data-next-step/,
-  faq: /<h2 id="faq">/,
-  "purchase-cards": /<div class="purchase-cards">/,
-  "change-log": /<ol class="change-log">/,
-  "source-list": /<ul class="source-list">/,
+  faq: /<h2 id="faq"[^>]*>/,
+  "purchase-cards": /<div class="purchase-cards"(?:\s|>)/,
+  "change-log": /<ol class="change-log"(?:\s|>)/,
+  "source-list": /<ul class="source-list"(?:\s|>)/,
 };
 
 // 比較記事テンプレート（productCount >= 2）のみがセクション契約の対象。
@@ -112,6 +112,9 @@ export function validateArticleSectionOrder(relative, html) {
  * - どちらも無い（商品ガイド等） → null（セクション契約の対象外）
  */
 export function detectArticleTemplate(html) {
+  // 目次は現行テンプレートの識別子。source-note の有無に左右されず、
+  // 現行ページには常に commercialPage 契約を適用する。
+  if (html.includes('class="article-toc"')) return "commercialPage";
   const hasCommercialSourceNote =
     /<details\b[^>]*class="[^"]*\bfold-section\b[^"]*\bsource-note\b/.test(
       html,

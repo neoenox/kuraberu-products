@@ -3,17 +3,19 @@ interface Props {
   /**
    * 商品情報確認日（productInfoCheckedAt）。
    * 確認日が未宣言の記事（公開待ちの初稿テンプレート記事）は、
-   * 確認済みを主張せず「広告を含みます」のみ表示する。
+   * 確認日がない記事では確認済み表示を出さない。
    */
   checkedAt?: string;
+  /** 現行の比較テンプレートでは広告文言を本文に重ねて表示しない。 */
+  showDisclosure?: boolean;
 }
 
-const { checkedAt } = Astro.props;
+const { checkedAt, showDisclosure = true } = Astro.props;
 ---
 
-{/* 記事冒頭の信頼表示を 1 行に圧縮したもの（docs/article-layout-v3-2026-08.md）。 */}
+{/* 記事冒頭の確認日表示。 */}
 {checkedAt ? (
-  <p class="trust-line">✓ 公式確認済み（{checkedAt}）・広告を含みます</p>
-) : (
+  <p class="trust-line">✓ 公式確認済み（{checkedAt}）{showDisclosure ? '・広告を含みます' : ''}</p>
+) : showDisclosure ? (
   <p class="trust-line">広告を含みます</p>
-)}
+) : null}

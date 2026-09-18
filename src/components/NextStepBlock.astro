@@ -1,7 +1,7 @@
 ---
-// NextStepBlock — 結論直後の「次にすること」1ブロック（Article Layout v3）。
+// NextStepBlock — 結論直後の「次にすること」1ブロック（過去記事互換用）。
 // それまで別々の箱だった「購入CTA」と「30秒診断」を1つのコンテナへ統合し、
-// 記事のビジュアルリズムを整える（docs/article-layout-v3-2026-08.md 4.x）。
+// 記事のビジュアルリズムを整える（現行テンプレートでは新規記事に使用しない）。
 //
 // 構成:
 //   1. A/B の購入ボタン（アフィリエイトURL、data-cta-event="purchase" /
@@ -77,7 +77,6 @@ const rightCta = showCta ? rightHref : undefined;
           <span class="next-step__buy-name">{left.label}</span>
           <span class="next-step__buy-action">
             販売ページを見る
-            {leftAffiliate && <span class="ad-note">（広告）</span>}
           </span>
         </a>
       ) : null}
@@ -95,7 +94,6 @@ const rightCta = showCta ? rightHref : undefined;
           <span class="next-step__buy-name">{right.label}</span>
           <span class="next-step__buy-action">
             販売ページを見る
-            {rightAffiliate && <span class="ad-note">（広告）</span>}
           </span>
         </a>
       ) : null}

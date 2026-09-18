@@ -21,7 +21,6 @@ interface Props {
   items: KeyDiffRow[];
   leftLabel: string;
   rightLabel: string;
-  eyebrow?: string;
   heading?: string;
   /**
    * 「この一覧以外は両商品とも同じ」の注記。商品固有の文言は記事側から渡す。
@@ -34,15 +33,13 @@ const {
   items,
   leftLabel,
   rightLabel,
-  eyebrow = '主な違い',
   heading = '主な比較ポイント',
   commonNote = '',
 } = Astro.props;
 ---
 
-<section class="key-diffs" aria-label={eyebrow}>
+<section class="key-diffs" aria-label={heading}>
   <div class="subsection-heading">
-    <p class="section-label">{eyebrow}</p>
     <h2 id="key-differences">{heading}</h2>
   </div>
   {commonNote.trim() && <p class="key-diffs-common">{commonNote}</p>}

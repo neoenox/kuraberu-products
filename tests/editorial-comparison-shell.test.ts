@@ -52,18 +52,17 @@ describe("editorial comparison shell", () => {
 
   it("renders a dated trust line when the product info is verified", async () => {
     const html = await renderShell("2026-08-18");
-    // 確認状態の表示は TrustLine（✓ 公式確認済み（日付）・広告を含みます）に統一されている。
+    // 確認状態の表示は TrustLine（✓ 公式確認済み（日付））に統一されている。
     expect(html).toContain('class="trust-line"');
     expect(html).toContain("公式確認済み");
     expect(html).toContain("2026-08-18");
-    expect(html).toContain("広告を含みます");
+    expect(html).not.toContain("広告を含みます");
   });
 
   it("renders an undated trust line without claiming verification", async () => {
-    // 確認日が未宣言の記事は「広告を含みます」のみ表示し、確認済みを主張しないこと。
+    // 確認日が未宣言の記事はTrustLineを出さず、確認済みを主張しないこと。
     const html = await renderShell();
-    expect(html).toContain('class="trust-line"');
-    expect(html).toContain("広告を含みます");
+    expect(html).not.toContain('class="trust-line"');
     expect(html).not.toContain("公式確認済み");
   });
 

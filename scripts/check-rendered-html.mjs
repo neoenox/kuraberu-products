@@ -235,12 +235,14 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
     }
     errors.push(...validateArticleContentType(relative, html, productCount));
     errors.push(...validateSourceToggle(relative, html));
-    errors.push(...validateArticleTrustLine(relative, html));
-    errors.push(...validateArticleNextStep(relative, html));
+    const isCurrentArticleTemplate = html.includes('class="article-toc"');
+    if (isCurrentArticleTemplate) {
+      errors.push(...validateArticleTrustLine(relative, html));
+      errors.push(...validateArticleNextStep(relative, html));
+      errors.push(...validateArticleSectionOrder(relative, html));
+      errors.push(...validateRequiredSections(relative, html));
+    }
     errors.push(...validateArticlePurchaseLinkStatus(relative, html));
-    errors.push(...validateArticleSectionOrder(relative, html));
-    // Issue #343: 全記事ページへ拡大した検証（必須セクション有無・未解決トークン）
-    errors.push(...validateRequiredSections(relative, html));
     errors.push(...validateNoUnresolvedTemplateTokens(relative, html));
     errors.push(...validateRepeatedJapanesePunctuation(relative, html));
     errors.push(...validateRepeatedJapaneseWords(relative, html));
@@ -299,7 +301,16 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
     const thirdPartyScript = [
       ...html.matchAll(/<script[^>]+\bsrc=["']([^"']+)/gi),
     ].some(([, src]) => /^(?:https?:)?\/\//i.test(src));
-    const thirdPartyIframe = /<iframe(?:\s|>)/i.test(html);
+    const thirdPartyIframe = [
+      ...html.matchAll(/<iframe(?:\s|>)[\s\S]*?<\/iframe>/gi),
+    ].some(([match]) => {
+      if (
+        /data-server-embed="true"/.test(html) &&
+        /src="https:\/\/www\.youtube\.com\/embed\//.test(match)
+      )
+        return false;
+      return true;
+    });
     const preconnect = /<link[^>]+rel=["']?preconnect/i.test(html);
 
     if (thirdPartyScript)

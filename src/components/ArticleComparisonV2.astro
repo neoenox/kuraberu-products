@@ -32,21 +32,31 @@ interface Props {
   /** 購入リンクの検証状態。verified を明示した場合だけ CTA を表示する。 */
   purchaseLinkStatus: "verified" | "direct" | "unverified" | "unavailable";
   showNextStepPurchaseCtas?: boolean;
+  /** 現行のCommercialArticlePageでは購入先を記事末尾へまとめる。 */
+  showNextStepBlock?: boolean;
 }
 
-const { left, right, rows, checkedAt, diagnosisHref, commonNote, purchaseLinkStatus, showNextStepPurchaseCtas = true } = Astro.props;
+const {
+  left,
+  right,
+  rows,
+  checkedAt,
+  commonNote,
+  diagnosisHref,
+  purchaseLinkStatus,
+  showNextStepPurchaseCtas = true,
+  showNextStepBlock = true,
+} = Astro.props;
 ---
 {/*
-  記事比較の標準骨格（Article Layout v3、2026-08-18 更新）:
-  1. 結局どっち？（30秒でわかる + こんな人におすすめ = HeroComparison + DecisionGuide を統合）
-  2. 主な違い（VisualKeyDifferences — 記事の主役）
-  3. 次にすること（NextStepBlock: A/B 購入 + 30秒診断）
-  4. 信頼表示（TrustLine）
+  記事比較の標準骨格（現行の比較テンプレート）:
+  1. 結論（HeroComparison）
+  2. 主な比較ポイント（VisualKeyDifferences — 記事の主役）
+  3. 信頼表示（TrustLine）
   ※ #decision-guide アンカーは統合ブロックが引き継ぎ、ページ内ジャンプを維持する。
 */}
-<section class="article-comparison-v2" aria-label="商品の比較">
+<section class="article-comparison-v2" aria-label="商品の比較" data-next-step-purchase={showNextStepBlock ? "enabled" : "disabled"}>
   <HeroComparison
-    eyebrow="30秒でわかる"
     heading="結局どっち？"
     anchorId="decision-guide"
     left={left}
@@ -60,12 +70,14 @@ const { left, right, rows, checkedAt, diagnosisHref, commonNote, purchaseLinkSta
     items={rows}
     commonNote={commonNote}
   />
-  <NextStepBlock
-    left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
-    right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
-    diagnosisHref={diagnosisHref}
-    purchaseLinkStatus={purchaseLinkStatus}
-    showPurchaseCtas={showNextStepPurchaseCtas}
-  />
-  <TrustLine checkedAt={checkedAt} />
+  {showNextStepBlock && (
+    <NextStepBlock
+      left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
+      right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
+      diagnosisHref={diagnosisHref}
+      purchaseLinkStatus={purchaseLinkStatus}
+      showPurchaseCtas={showNextStepPurchaseCtas}
+    />
+  )}
+  <TrustLine checkedAt={checkedAt} showDisclosure={false} />
 </section>

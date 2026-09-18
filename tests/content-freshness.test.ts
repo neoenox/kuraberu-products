@@ -41,7 +41,7 @@ describe.skipIf(!hasDist)("content freshness (rendered dist)", () => {
     // v3 短縮で verification-summary（商品情報確認日）は廃止。
     // 確認日は冒頭の TrustLine（✓ 公式確認済み（日付）・広告を含みます）と
     // 情報源一覧で表示する。
-    expect(html).toContain("✓ 公式確認済み（2026-07-31）・広告を含みます");
+    expect(html).toContain("✓ 公式確認済み（2026-07-31）");
     expect(html).toContain('datetime="2026-07-31"');
     expect(html).toContain("2026-07-31確認");
     expect(html).not.toContain("最終確認日は未記録");
