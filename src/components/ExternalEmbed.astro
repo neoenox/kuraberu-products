@@ -756,14 +756,14 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  .external-embed__target iframe {
+  :global(.external-embed__target iframe) {
     display: block;
     width: 100%;
     min-height: var(--external-embed-min-height);
     border: 0;
   }
 
-  .external-embed[data-provider="youtube"] .external-embed__target iframe {
+  :global(.external-embed[data-provider="youtube"] .external-embed__target iframe) {
     aspect-ratio: 16 / 9;
     min-height: auto;
   }
@@ -774,7 +774,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     min-height: auto;
   }
 
-  .external-embed[data-provider="tiktok"] .external-embed__target iframe {
+  :global(.external-embed[data-provider="tiktok"] .external-embed__target iframe) {
     max-width: 420px;
     margin-inline: auto;
   }
