@@ -70,6 +70,7 @@ type CommercialArticleSeed = {
     purpose?: string;
     tone?: string;
     autoload?: boolean;
+    autoDisplay?: boolean;
     compact?: boolean;
   }[];
   /** 公式情報セクションの説明文（各商品ごとの詳細プロス） */

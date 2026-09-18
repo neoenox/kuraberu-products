@@ -233,6 +233,19 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
       />
     )}
 
+    <h2 id="faq">よくある質問</h2>
+    <div class="faq-list">
+      {faq.map((entry) => <details class="faq-item"><summary><h3>{entry.question}</h3></summary><p>{entry.answer}</p></details>)}
+    </div>
+
+    <h2 id="purchase">購入先</h2>
+    <h3>購入前の注意</h3>
+    <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
+    <div class="purchase-cards">
+      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} amazonHref={seed.leftAmazonUrl} showAmazon={true} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} amazonHref={seed.rightAmazonUrl} showAmazon={true} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+    </div>
+
     {hasSocialProof && (
       <ArticleSocialProof
         query={socialProofQuery}
@@ -252,6 +265,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
                 purpose={embed.purpose}
                 tone={embed.tone as any}
                 autoload={embed.autoload}
+                autoDisplay={embed.autoDisplay}
                 compact={embed.compact}
               />
             ))}
@@ -259,19 +273,6 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         )}
       </ArticleSocialProof>
     )}
-
-    <h2 id="faq">よくある質問</h2>
-    <div class="faq-list">
-      {faq.map((entry) => <details class="faq-item"><summary><h3>{entry.question}</h3></summary><p>{entry.answer}</p></details>)}
-    </div>
-
-    <h2 id="purchase">購入先</h2>
-    <h3>購入前の注意</h3>
-    <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
-    <div class="purchase-cards">
-      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} amazonHref={seed.leftAmazonUrl} showAmazon={true} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} amazonHref={seed.rightAmazonUrl} showAmazon={true} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-    </div>
 
     <h2>更新履歴</h2>
     <ol class="change-log">
