@@ -33,7 +33,7 @@ describe("CSP / embed consistency gate", () => {
     // 既知の実行時エンドポイントが列挙から漏れていないこと
     for (const endpoint of [
       "platform.twitter.com/widgets.js",
-      "www.youtube-nocookie.com/embed",
+      "www.youtube.com/embed",
       "www.tiktok.com/player",
       "assets.pinterest.com/js/pinit.js",
     ]) {

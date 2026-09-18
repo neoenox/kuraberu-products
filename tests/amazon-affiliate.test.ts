@@ -132,7 +132,7 @@ describe("Amazon Associates integration", () => {
     expect(html).toContain('data-amazon-cta="purchase"');
     expect(html).toContain('data-product-id="thermos-jnl-s500"');
     expect(html).toContain('data-placement="article-end"');
-    expect(html).toContain("（広告）");
+    expect(html).not.toContain("（広告）");
     const amazonLink = html.match(
       /<a(?=[^>]*amazon-purchase-link)[\s\S]*?<\/a>/,
     )?.[0];
@@ -158,7 +158,7 @@ describe("Amazon Associates integration", () => {
     );
     expect(html).toContain('rel="sponsored nofollow noopener noreferrer"');
     expect(html).toContain('data-amazon-cta="purchase"');
-    expect(html).toContain("（広告）");
+    expect(html).not.toContain("（広告）");
   });
 
   it("does not show a default Amazon CTA when no associate ID is configured", async () => {

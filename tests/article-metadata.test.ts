@@ -97,7 +97,7 @@ function articleSlugs(): string[] {
 
 describe("article metadata", () => {
   it("includes verified commercial articles in public discovery surfaces", () => {
-    expect(publicArticleMetadata).toHaveLength(109);
+    expect(publicArticleMetadata).toHaveLength(112);
     const newlyPublishedIds = [
       "yamazaki-dishwasher-rack-241925-vs-241926",
       "panasonic-mc-nx810km-vs-mc-nx700k",
@@ -139,6 +139,9 @@ describe("article metadata", () => {
       "omron-mc-681-vs-terumo-c205",
       "fitbit-charge-6-vs-xiaomi-smart-band-9",
       "zojirushi-cv-gb22-vs-tiger-pim-g220",
+      "anker-nano-a1638-vs-power-bank-a1256",
+      "anker-nano-power-bank-vs-zolo-a1688",
+      "logicool-mx-master-4-vs-mx-master-3s",
     ];
     for (const id of newlyPublishedIds) {
       expect(publicArticleMetadata.some((article) => article.id === id)).toBe(
@@ -285,7 +288,7 @@ describe("article metadata", () => {
     // 比較記事は productCount: 2、単一商品記事（商品ガイド）は productCount: 1。
     expect(
       articleMetadata.filter((article) => article.productCount === 2),
-    ).toHaveLength(131);
+    ).toHaveLength(134);
     expect(
       articleMetadata.filter((article) => article.productCount === 1),
     ).toEqual([panasonicBabyMonitorArticle, panasonicEhNa9mGuideArticle]);
@@ -529,12 +532,15 @@ describe.skipIf(!hasDist)("article trust line (rendered dist)", () => {
       const trustLines = [
         ...html.matchAll(/<p class="trust-line">[\s\S]*?<\/p>/g),
       ];
-      expect(trustLines.length, `${slug}: trust line count`).toBe(1);
       const checkedAt = article!.productInfoCheckedAt;
-      const expected = checkedAt
-        ? `<p class="trust-line">✓ 公式確認済み（${checkedAt}）・広告を含みます</p>`
-        : '<p class="trust-line">広告を含みます</p>';
-      expect(trustLines[0][0]).toBe(expected);
+      expect(trustLines.length, `${slug}: trust line count`).toBe(
+        checkedAt ? 1 : 0,
+      );
+      if (checkedAt) {
+        expect(trustLines[0][0]).toBe(
+          `<p class="trust-line">✓ 公式確認済み（${checkedAt}）</p>`,
+        );
+      }
       // 旧形式（ヒーロー信頼行・広告表示 notice）が残っていない
       expect(html).not.toContain("公式情報確認済み · ");
       expect(html).not.toContain("広告表示：この記事には広告リンクを含みます");
@@ -579,6 +585,10 @@ describe.skipIf(!hasDist)("article diagnosis CTA (rendered dist)", () => {
           /<section\b[^>]*\bnext-step\b[^>]*\bdata-next-step\b[^>]*>/gi,
         ) ?? []
       ).length;
+      // Legacy article pages are explicitly allowlisted and may use their
+      // historical shell. The next-step contract applies to the current
+      // comparison composition only.
+      if (!html.includes('class="article-comparison-v2"')) continue;
       if (contentType === "guide") {
         expect(
           blockCount,

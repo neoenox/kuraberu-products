@@ -223,8 +223,8 @@ const commercialArticleImages: Readonly<
     right: "/products/logicool-mx-master-3s-vs-mx-anywhere-3s-right.png",
   },
   "logicool-mx-master-4-vs-mx-master-3s": {
-    left: "/products/logicool-mx-master-4.jpg",
-    right: "/products/logicool-mx-master-3s.jpg",
+    left: "/products/logicool-mx-master-4.png",
+    right: "/products/logicool-mx-master-3s.png",
   },
   "logicool-lift-vs-m550": {
     left: "/products/logicool-lift-vs-m550-left.jpg",

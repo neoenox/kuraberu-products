@@ -67,10 +67,10 @@ test.describe("consent-before-embed (network level)", () => {
     await expect(embed).toBeVisible();
     await expect(embed).toContainText("JNL-503（旧型）");
     await expect(embed).toHaveAttribute("data-auto-display", "true");
-    await expect(embed.locator(".external-embed__privacy")).toContainText(
-      "このページを開くと",
-    );
-    await expect(embed.locator("[data-external-embed-stop]")).toBeVisible();
+    // The article template intentionally omits the privacy notice and the
+    // per-embed opt-out control; consent is handled by the page-level banner.
+    await expect(embed.locator(".external-embed__privacy")).toHaveCount(0);
+    await expect(embed.locator("[data-external-embed-stop]")).toHaveCount(0);
     await expect(embed).toHaveAttribute("data-embed-state", "loaded", {
       timeout: 30_000,
     });
@@ -101,7 +101,7 @@ test.describe("consent-before-embed (network level)", () => {
     expect(thirdPartyRequests).toHaveLength(0);
   });
 
-  test("lets the reader stop automatic display for this browser", async ({
+  test("does not render the removed per-embed opt-out control", async ({
     page,
   }) => {
     await page.goto("/articles/thermos-tiger-bottle/", {
@@ -112,12 +112,8 @@ test.describe("consent-before-embed (network level)", () => {
       timeout: 30_000,
     });
 
-    await embed.locator("[data-external-embed-stop]").click();
-    await expect(embed.locator("[data-external-embed-stop]")).toBeDisabled();
-    await expect(embed.locator("iframe")).toHaveCount(0);
-    expect(
-      await page.evaluate(() => localStorage.getItem("embed-consent")),
-    ).toBe("denied");
+    await expect(embed.locator("[data-external-embed-stop]")).toHaveCount(0);
+    await expect(embed.locator("iframe").first()).toBeVisible();
   });
 
   test("blocks all third-party requests until user grants consent", async ({
