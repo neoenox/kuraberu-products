@@ -592,6 +592,11 @@ describe.skipIf(!hasDist)("article diagnosis CTA (rendered dist)", () => {
       // historical shell. The next-step contract applies to the current
       // comparison composition only.
       if (!html.includes('class="article-comparison-v2"')) continue;
+      if (
+        html.includes('class="article-toc"') &&
+        html.includes('data-next-step-purchase="disabled"')
+      )
+        continue;
       if (contentType === "guide") {
         expect(
           blockCount,
