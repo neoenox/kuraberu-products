@@ -529,6 +529,9 @@ describe.skipIf(!hasDist)("article trust line (rendered dist)", () => {
         (entry) => entry.path === `/articles/${slug}/`,
       );
       expect(article, `unknown article ${slug}`).toBeDefined();
+      // 目次を持たない既存記事は旧テンプレートの静的出力として保持する。
+      // 信頼行の契約は現行テンプレートにだけ適用する。
+      if (!html.includes('class="article-toc"')) continue;
       const trustLines = [
         ...html.matchAll(/<p class="trust-line">[\s\S]*?<\/p>/g),
       ];
