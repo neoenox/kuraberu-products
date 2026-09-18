@@ -25,9 +25,11 @@ export const ankerNanoPowerBankVsZoloA1688Seed: CommercialArticleSeed = {
   rightImage: "/products/anker-zolo-power-bank-a1688.jpg",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CDBY9P5Q",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DRFR2YT3",
-  // 楽天は商品詳細URLまでは確認できたが、APIのaffiliateUrlを確認できるまで表示しない。
-  leftRakutenUrl: null,
-  rightRakutenUrl: null,
+  // Chromeの楽天アフィリエイト管理画面で生成・確認した成果URL。
+  leftRakutenUrl:
+    'https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1259%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+  rightRakutenUrl:
+    'https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
   officialSources: [
     { label: "Anker Nano Power Bank 公式商品ページ", url: "https://www.ankerjapan.com/products/a1259" },
     { label: "Anker Zolo Power Bank 公式商品ページ", url: "https://www.ankerjapan.com/products/a1688" },

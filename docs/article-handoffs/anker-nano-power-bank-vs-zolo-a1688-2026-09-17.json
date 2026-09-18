@@ -9,9 +9,9 @@
     "right": "https://www.amazon.co.jp/dp/B0DRFR2YT3"
   },
   "rakuten": {
-    "status": "unconfirmed",
-    "left": "https://item.rakuten.co.jp/anker/a1259/",
-    "right": "https://item.rakuten.co.jp/anker/a1688/"
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1259%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   "social": {
     "status": "adopted",
@@ -19,6 +19,8 @@
       "https://www.youtube.com/watch?v=ggh7n_HE5f8",
       "https://note.com/h_________2__2/n/ne318e88e299c"
     ],
-    "embedUrls": ["https://www.youtube.com/watch?v=ggh7n_HE5f8"]
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=ggh7n_HE5f8"
+    ]
   }
 }
