@@ -768,6 +768,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     min-height: auto;
   }
 
+  /* YouTubeはiframeの16:9比率だけで高さが決まるため、
+     共通の最低高さを親に残すと動画の下に大きな空白ができる。 */
+  .external-embed[data-provider="youtube"] .external-embed__target {
+    min-height: auto;
+  }
+
   .external-embed[data-provider="tiktok"] .external-embed__target iframe {
     max-width: 420px;
     margin-inline: auto;
