@@ -9,7 +9,7 @@ const manual = fs.existsSync(manualPath)
 
 const requiredRules = [
   "ChatGPTには成果用アフィリエイトURLの取得を要求しない",
-  "楽天の成果URLはCodex側の楽天Ichiba API",
+  "楽天の成果URLは、Codex側がChromeのログイン済み楽天アフィリエイト管理画面",
   "`articleReady` は、記事に表示する購入ボタン用のURLが揃った時点でCodex側が判定する",
   "毎回、商品選定から始める完全新規の依頼を送る",
 ];
@@ -39,4 +39,4 @@ if (errors.length) {
 
 console.log("Article workflow policy check passed.");
 console.log("- Start every run with fresh product selection.");
-console.log("- ChatGPT researches; Codex validates, uses Rakuten API, and builds the article.");
+console.log("- ChatGPT researches; Codex validates, uses Chrome Rakuten link creation, and builds the article.");
