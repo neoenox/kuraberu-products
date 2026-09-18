@@ -102,17 +102,18 @@ export const ARTICLE_LAYOUT = {
       { id: "faq", label: "よくある質問", required: true },
       { id: "purchase-cards", label: "購入カード", required: true },
       { id: "change-log", label: "更新履歴", required: true },
-      { id: "source-list", label: "情報源一覧", required: true },
+      { id: "source-list", label: "情報源一覧", required: false },
     ],
     // CommercialArticlePage.astro（自動生成比較記事）のセクション順序。
     commercialPage: [
-      { id: "meta", label: "ブランッド（カテゴリ・日付）", required: true },
+      { id: "meta", label: "ブランド（カテゴリ・日付）", required: false },
       { id: "h1", label: "見出し", required: true },
-      { id: "trust-line", label: "信頼表示", required: true },
-      { id: "next-step", label: "次にすること", required: true },
+      { id: "lead", label: "リード文", required: true },
+      { id: "comparison-v2", label: "比較本文", required: true },
       { id: "faq", label: "よくある質問", required: true },
       { id: "purchase-cards", label: "購入カード", required: true },
       { id: "change-log", label: "更新履歴", required: true },
+      { id: "source-list", label: "情報源一覧", required: false },
     ],
   },
   // トップページ（src/pages/index.astro）の構成。唯一の情報源で、

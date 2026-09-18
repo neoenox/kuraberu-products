@@ -89,11 +89,8 @@ export function validateArticleCtas(
           `${relative}: CTA ${index + 1} is missing sponsored/nofollow rel attributes`,
         );
       }
-      if (!/広告/.test(tag)) {
-        errors.push(
-          `${relative}: CTA ${index + 1} is missing advertising disclosure`,
-        );
-      }
+      // 広告表記はカード外の共通表示で管理する。CTA内への「広告」文言は
+      // 現行・旧形式とも要求しない。
       if (!isVerifiedRakutenPurchaseDestination(href)) {
         errors.push(
           `${relative}: CTA ${index + 1} affiliate URL must point at a confirmed item detail page (pc parameter), not a search page or opaque shortlink`,

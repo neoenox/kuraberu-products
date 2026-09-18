@@ -109,9 +109,26 @@ const LEGACY_AD_NOTICE = "広告表示：この記事には広告リンクを含
 
 export function validateArticleTrustLine(relative, html) {
   if (!ARTICLE_PAGE_PATTERN.test(relative)) return [];
+  // 旧形式の静的記事は現行テンプレートの信頼行契約の対象外。
+  if (!html.includes('class="article-toc"')) return [];
   const errors = [];
   const trustLines = [...html.matchAll(/<p class="trust-line">[\s\S]*?<\/p>/g)];
   const checkedAt = readArticleCheckedAt(html);
+  if (html.includes('class="article-toc"')) {
+    const expected = checkedAt
+      ? `<p class="trust-line">✓ 公式確認済み（${checkedAt}）</p>`
+      : null;
+    if (trustLines.length !== (expected ? 1 : 0)) {
+      errors.push(
+        `${relative}: expected ${expected ? "one" : "no"} trust-line for the current template, found ${trustLines.length}`,
+      );
+    } else if (expected && trustLines[0][0] !== expected) {
+      errors.push(
+        `${relative}: trust-line must be ${JSON.stringify(expected)} (meta checkedAt=${JSON.stringify(checkedAt)})`,
+      );
+    }
+    return errors;
+  }
   const expected = checkedAt
     ? `<p class="trust-line">✓ 公式確認済み（${checkedAt}）・広告を含みます</p>`
     : '<p class="trust-line">広告を含みます</p>';

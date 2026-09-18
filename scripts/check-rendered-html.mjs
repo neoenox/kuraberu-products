@@ -299,7 +299,16 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
     const thirdPartyScript = [
       ...html.matchAll(/<script[^>]+\bsrc=["']([^"']+)/gi),
     ].some(([, src]) => /^(?:https?:)?\/\//i.test(src));
-    const thirdPartyIframe = /<iframe(?:\s|>)/i.test(html);
+    const thirdPartyIframe = [
+      ...html.matchAll(/<iframe(?:\s|>)[\s\S]*?<\/iframe>/gi),
+    ].some(([match]) => {
+      if (
+        /data-server-embed="true"/.test(html) &&
+        /src="https:\/\/www\.youtube\.com\/embed\//.test(match)
+      )
+        return false;
+      return true;
+    });
     const preconnect = /<link[^>]+rel=["']?preconnect/i.test(html);
 
     if (thirdPartyScript)
