@@ -5,10 +5,14 @@ import { publicArticleMetadata } from '../content/articles';
 import { site } from '../config/site';
 import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
+import { isTopPageArticlePath } from '../../config/article-template-policy.mjs';
 
-// 新着比較：公開日が新しい記事を自動表示する。手動選定の注目記事とは
-// 役割を分け、新規記事を追加するだけでトップから辿れるようにする。
-const latest = [...publicArticleMetadata]
+// 新着比較：旧テンプレートの互換ページを除き、公開日が新しい記事を表示する。
+// 互換ページのURLは維持しつつ、トップページの新着枠へは再掲しない。
+const topPageArticles = publicArticleMetadata.filter((article) =>
+  isTopPageArticlePath(article.path),
+);
+const latest = [...topPageArticles]
   .sort(
     (a, b) =>
       b.publishedAt.localeCompare(a.publishedAt) ||

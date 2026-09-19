@@ -64,3 +64,15 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
   "panasonic-baby-monitor-kx-hc705",
   "panasonic-eh-na9m-guide",
 ]);
+
+/**
+ * トップページの新着枠へ載せる記事かを判定する。
+ * 旧テンプレートの互換ページはURLを維持するが、新着記事としては扱わない。
+ */
+export function isTopPageArticlePath(path) {
+  const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
+  if (!slug) return false;
+  return (
+    !LEGACY_ARTICLE_PAGE_SLUGS.has(slug) && !CUSTOM_ARTICLE_PAGE_SLUGS.has(slug)
+  );
+}
