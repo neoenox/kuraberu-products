@@ -34,7 +34,7 @@ const topPageArticles = publicArticleMetadata.filter((article) =>
   isTopPageArticlePath(article.path),
 );
 const categoryCounts = new Map<string, number>();
-for (const article of topPageArticles) {
+for (const article of publicArticleMetadata) {
   categoryCounts.set(
     article.category,
     (categoryCounts.get(article.category) ?? 0) + 1,
