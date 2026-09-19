@@ -6,6 +6,7 @@ import {
 } from "../src/content/articles";
 import { comparisonSubjects } from "../src/lib/article-subjects";
 import { contentTypeFor, ARTICLE_LAYOUT } from "../config/article-layout.mjs";
+import { isTopPageArticlePath } from "../config/article-template-policy.mjs";
 
 // 実ビルド（astro build）後の dist を検証する。verify チェーンは build の後に
 // vitest を実行するため、CI では常に dist が存在する。
@@ -27,10 +28,13 @@ function loadRenderedPages(): void {
   articlesIndexHtml = readFileSync("dist/articles/index.html", "utf8");
 }
 
-// 期待するカテゴリ集合は publicArticleMetadata と config（topPage.categoryMinArticles）
-// から導出する（トップページの実装と同一ロジック）。
+// 期待するカテゴリ集合は、トップページ対象記事と config
+// （topPage.categoryMinArticles）から導出する（トップページの実装と同一ロジック）。
+const topPageArticles = publicArticleMetadata.filter((article) =>
+  isTopPageArticlePath(article.path),
+);
 const categoryCounts = new Map<string, number>();
-for (const article of publicArticleMetadata) {
+for (const article of topPageArticles) {
   categoryCounts.set(
     article.category,
     (categoryCounts.get(article.category) ?? 0) + 1,
@@ -87,7 +91,7 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
   });
 
   it("renders the six newest public articles in the latest section", () => {
-    const expected = [...publicArticleMetadata]
+    const expected = [...topPageArticles]
       .sort(
         (a, b) =>
           b.publishedAt.localeCompare(a.publishedAt) ||
@@ -321,7 +325,7 @@ describe.skipIf(!hasDist)(
     beforeAll(loadRenderedPages);
 
     it("lists the six newest articles as ListItems (#846)", () => {
-      const expected = [...publicArticleMetadata]
+      const expected = [...topPageArticles]
         .sort(
           (a, b) =>
             b.publishedAt.localeCompare(a.publishedAt) ||
