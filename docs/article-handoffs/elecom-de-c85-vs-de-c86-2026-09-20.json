@@ -1,0 +1,29 @@
+{
+  "id": "elecom-de-c85-vs-de-c86-2026-09-20",
+  "articleId": "elecom-de-c85-vs-de-c86",
+  "source": "ChatGPT chat mode",
+  "checkedAt": "2026-09-20",
+  "articleReady": true,
+  "officialSources": [
+    "https://www.elecom.co.jp/products/DE-C85-5000BK.html",
+    "https://www.elecom.co.jp/products/DE-C86-10000BK.html",
+    "https://www.elecom.co.jp/pickup/contents/00126/standard/"
+  ],
+  "amazon": { "left": null, "right": null, "status": "unconfirmed" },
+  "rakuten": {
+    "status": "direct",
+    "left": "https://item.rakuten.co.jp/elecom/4549550417372/",
+    "right": "https://item.rakuten.co.jp/elecom/4549550417396/"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "excludedCandidates": [
+      { "platform": "YouTube", "url": "https://www.youtube.com/watch?v=gSxN1XicWpc", "reason": "型番は一致するが本人の購入・実使用・提供有無を直接確認できない" },
+      { "platform": "note", "url": "https://note.com/gadget_techo/n/nddea07209607", "reason": "公式スペックと口コミ傾向を基にした記事で本人実使用を確認できない" },
+      { "platform": "GIGAZINE", "url": "https://gigazine.net/news/20260320-elecom-de-c86-10000pn/", "reason": "メーカー貸与品のレビューで一般ユーザー投稿ではない" }
+    ]
+  },
+  "caveats": ["Amazon商品詳細URLとASINは今回直接確認できなかったため登録していない。", "SNSは採用条件を満たす投稿がなかったため記事欄を非表示にする。"]
+}

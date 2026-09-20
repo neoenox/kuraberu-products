@@ -74,10 +74,12 @@ import { irisFkC5VsPanasonicFdF06x2Seed } from "./iris-fk-c5-vs-panasonic-fd-f06
 import { soundcoreLiberty5ProVsLiberty4ProSeed } from "./soundcore-liberty-5-pro-vs-liberty-4-pro";
 import { ankerNanoPowerBankVsZoloA1688Seed } from "./anker-nano-power-bank-vs-zolo-a1688";
 import { logicoolMxMaster4VsMxMaster3sSeed } from "./logicool-mx-master-4-vs-mx-master-3s";
+import { elecomDeC85VsDeC86Seed } from "./elecom-de-c85-vs-de-c86";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerNanoA1638VsA1256Seed,
   logicoolMxMaster4VsMxMaster3sSeed,
+  elecomDeC85VsDeC86Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,
