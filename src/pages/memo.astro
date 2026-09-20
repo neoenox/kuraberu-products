@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { publicArticleMetadata } from "../content/articles";
+import { publishedArticleMetadata } from "../content/articles";
 ---
 <BaseLayout title="比較メモ｜くらべる商品メモ" description="目的と候補を保存する比較メモ" robots="noindex,nofollow">
   <section class="section wrap article-index" data-memo-page>
@@ -58,7 +58,7 @@ import { publicArticleMetadata } from "../content/articles";
       <h2 id="saved-articles-heading">保存した候補記事</h2>
       <p class="meta">候補にしたい記事を先に記事ページで保存し、ここで候補として選択してください。</p>
       <div class="article-list" data-memo-list>
-        {publicArticleMetadata.map((article) => (
+        {publishedArticleMetadata.map((article) => (
           <template data-memo-template data-article-id={article.id}>
             <article class="card article-list-card" data-memo-item data-article-id={article.id}>
               <span class="tag">{article.category}</span>

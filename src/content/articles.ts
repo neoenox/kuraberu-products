@@ -79,4 +79,5 @@ export {
   additionalCommercialArticleSeeds,
   articleMetadata,
   publicArticleMetadata,
+  publishedArticleMetadata,
 } from "./articles/index";

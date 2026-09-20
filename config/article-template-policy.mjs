@@ -65,8 +65,17 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
   "panasonic-eh-na9m-guide",
 ]);
 
-/** 既存記事を取り下げ中。新記事を公開する際に true に戻す。 */
-export const SHOW_EXISTING_ARTICLES_ON_TOP_PAGE = false;
+/** PR #876 で復活させる公開記事。 */
+export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
+  "anker-nano-a1638-vs-power-bank-a1256",
+  "anker-nano-power-bank-vs-zolo-a1688",
+  "logicool-mx-master-4-vs-mx-master-3s",
+]);
+
+export function isPublishedArticlePath(path) {
+  const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
+  return Boolean(slug && PUBLISHED_ARTICLE_PAGE_SLUGS.has(slug));
+}
 
 /**
  * トップページの新着枠へ載せる記事かを判定する。

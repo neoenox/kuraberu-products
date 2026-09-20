@@ -1,10 +1,10 @@
 ---
 import ArticleListPage from '../../components/ArticleListPage.astro';
-import { publicArticleMetadata } from '../../content/articles';
+import { publishedArticleMetadata } from '../../content/articles';
 
-const categories = [...new Set(publicArticleMetadata.map((article) => article.category))].sort();
-const tags = [...new Set(publicArticleMetadata.flatMap((article) => article.tags))].sort();
-const sorted = [...publicArticleMetadata].sort((a, b) =>
+const categories = [...new Set(publishedArticleMetadata.map((article) => article.category))].sort();
+const tags = [...new Set(publishedArticleMetadata.flatMap((article) => article.tags))].sort();
+const sorted = [...publishedArticleMetadata].sort((a, b) =>
   a.modifiedAt < b.modifiedAt ? 1 : a.modifiedAt > b.modifiedAt ? -1 : 0,
 );
 const pageSize = 12;
@@ -18,7 +18,7 @@ const visibleArticles = sorted.slice(0, pageSize);
   lead="確認できる公式情報と販売ページを起点に、商品を選ぶときの判断材料を整理しています。"
   showDiagnosisNote={true}
   articles={visibleArticles}
-  totalCount={publicArticleMetadata.length}
+  totalCount={publishedArticleMetadata.length}
   categoryOptions={categories}
   tagOptions={tags}
   discoverySource={sorted}
