@@ -5,12 +5,12 @@ import { publicArticleMetadata } from '../content/articles';
 import { site } from '../config/site';
 import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
-import { isTopPageArticlePath } from '../../config/article-template-policy.mjs';
+import { isPublishedArticlePath } from '../../config/article-template-policy.mjs';
 
 // 新着比較：旧テンプレートの互換ページを除き、公開日が新しい記事を表示する。
 // 互換ページのURLは維持しつつ、トップページの新着枠へは再掲しない。
 const topPageArticles = publicArticleMetadata.filter((article) =>
-  isTopPageArticlePath(article.path),
+  isPublishedArticlePath(article.path),
 );
 const latest = [...topPageArticles]
   .sort(
@@ -38,7 +38,7 @@ const latestItemListJson = safeJsonForScript({
 // 件数が多い順 → 名前順。リンク先は /articles/category/…（カテゴリページの
 // クライアント側フィルタが URL パラメータを読んで絞り込む）。
 const categoryCounts = new Map<string, number>();
-for (const article of publicArticleMetadata) {
+for (const article of topPageArticles) {
   categoryCounts.set(article.category, (categoryCounts.get(article.category) ?? 0) + 1);
 }
 const categories = [...categoryCounts.entries()]
@@ -53,7 +53,7 @@ const categories = [...categoryCounts.entries()]
 
 <BaseLayout
   title="家電・日用品の2商品比較｜くらべる商品メモ"
-  description="掃除機・キッチン家電・イヤホン・ベビー用品など100件以上の2商品比較。メーカー公式情報中心に違いと「どっち向き？」を整理します。確認できない数値・体験談は掲載しません。"
+  description="メーカー公式情報を中心に、商品の違いと「どっち向き？」を整理する比較記事を掲載しています。確認できない数値・体験談は掲載しません。"
   ogImage="/ogp-top.png"
 >
   <section class="wrap section section-intro hero-section">
@@ -72,14 +72,17 @@ const categories = [...categoryCounts.entries()]
       <h2>最近追加した記事</h2>
     </div>
     <p class="lead">新しく追加した比較記事を、公開日の新しい順に紹介します。</p>
-    <div class="article-list top-article-list">
-      {latest.map((article) => (
-        <ArticleCard article={article} headingLevel="h3" />
-      ))}
-    </div>
+    {latest.length > 0 ? (
+      <div class="article-list top-article-list">
+        {latest.map((article) => (
+          <ArticleCard article={article} headingLevel="h3" />
+        ))}
+      </div>
+    ) : (
+      <p class="lead">現在公開中の記事はありません。</p>
+    )}
     <script is:inline type="application/ld+json" set:html={latestItemListJson}></script>
   </section>
-  <p class="meta wrap"><a href="/articles/">全比較記事を見る →</a></p>
 
   <section class="wrap section" data-top-categories>
     <div class="subsection-heading">
@@ -87,17 +90,20 @@ const categories = [...categoryCounts.entries()]
       <h2>カテゴリから探す</h2>
     </div>
     <p class="lead">比較したいジャンルから記事を探せます。</p>
-    <ul class="category-list">
-      {categories.map(([category, count]) => (
-        <li>
-          <a class="card-link" href={`/articles/category/${encodeURIComponent(category)}/`}>
-            <span class="category-list__name">{category}</span>
-            <span class="category-list__count">{count}件</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-    <p class="meta">全カテゴリは <a href="/articles/">比較記事一覧</a> から探せます。</p>
+    {categories.length > 0 ? (
+      <ul class="category-list">
+        {categories.map(([category, count]) => (
+          <li>
+            <a class="card-link" href={`/articles/category/${encodeURIComponent(category)}/`}>
+              <span class="category-list__name">{category}</span>
+              <span class="category-list__count">{count}件</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="lead">公開中のカテゴリはありません。</p>
+    )}
   </section>
 
   <section class="wrap section section-diagnosis" data-top-diagnosis>

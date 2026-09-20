@@ -1,13 +1,13 @@
 ---
 import ArticleListPage from '../../../components/ArticleListPage.astro';
-import { publicArticleMetadata } from '../../../content/articles';
+import { publishedArticleMetadata } from '../../../content/articles';
 
 // カテゴリ一覧は公開記事（publicArticleMetadata）由来に限定する。
 // 非公開記事だけが属するカテゴリで「0件ページ」が生成されるのを防ぐ。
-const allCategories = [...new Set(publicArticleMetadata.map((article) => article.category))].sort();
+const allCategories = [...new Set(publishedArticleMetadata.map((article) => article.category))].sort();
 
 export function getStaticPaths() {
-  const categories = [...new Set(publicArticleMetadata.map((article) => article.category))].sort();
+  const categories = [...new Set(publishedArticleMetadata.map((article) => article.category))].sort();
   return categories.map((category) => ({
     params: { category },
     props: { category },
@@ -15,7 +15,7 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.props;
-const articles = [...publicArticleMetadata]
+const articles = [...publishedArticleMetadata]
   .filter((article) => article.category === category)
   .sort((a, b) => (a.modifiedAt < b.modifiedAt ? 1 : a.modifiedAt > b.modifiedAt ? -1 : 0));
 ---
@@ -30,5 +30,5 @@ const articles = [...publicArticleMetadata]
   categoryOptions={allCategories}
   selectedCategory={category}
   tagOptions={[]}
-  discoverySource={publicArticleMetadata}
+  discoverySource={publishedArticleMetadata}
 />

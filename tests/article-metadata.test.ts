@@ -5,6 +5,7 @@ import { validateSourceToggle } from "../scripts/check-rendered-html.mjs";
 import {
   articleMetadata,
   publicArticleMetadata,
+  publishedArticleMetadata,
   babybjornArticle,
   babybjornBouncerArticle,
   babybjornOnekaiArticle,
@@ -174,9 +175,9 @@ describe("article metadata", () => {
     const memoPage = readFileSync("src/pages/memo.astro", "utf8");
     const sitemap = readFileSync("src/pages/sitemap.xml.ts", "utf8");
 
-    expect(articleIndex).toContain("publicArticleMetadata");
-    expect(memoPage).toContain("publicArticleMetadata");
-    expect(sitemap).toContain("publicArticleMetadata.map((article)");
+    expect(articleIndex).toContain("publishedArticleMetadata");
+    expect(memoPage).toContain("publishedArticleMetadata");
+    expect(sitemap).toContain("publishedArticleMetadata.map((article)");
     expect(sitemap).toContain("article.modifiedAt");
     expect(articleIndex).not.toContain("thermos-tiger-bottle");
     expect(memoPage).not.toContain("thermos-tiger-bottle");
@@ -190,7 +191,7 @@ describe("article metadata", () => {
     );
 
     expect(waterBottle).toBeDefined();
-    expect(memoPage).toContain("{publicArticleMetadata.map((article) => (");
+    expect(memoPage).toContain("{publishedArticleMetadata.map((article) => (");
     expect(memoPage).toContain(
       "data-memo-template data-article-id={article.id}",
     );
@@ -758,9 +759,11 @@ describe("article card audiences 向き line", () => {
       const pages = [
         "dist/index.html",
         "dist/articles/index.html",
-        ...readdirSync("dist/articles/page", { withFileTypes: true })
-          .filter((entry) => entry.isDirectory())
-          .map((entry) => `dist/articles/page/${entry.name}/index.html`),
+        ...(existsSync("dist/articles/page")
+          ? readdirSync("dist/articles/page", { withFileTypes: true })
+              .filter((entry) => entry.isDirectory())
+              .map((entry) => `dist/articles/page/${entry.name}/index.html`)
+          : []),
       ];
       let cardCount = 0;
       for (const file of pages) {
@@ -781,7 +784,7 @@ describe("article card audiences 向き line", () => {
           }
         }
       }
-      expect(cardCount).toBeGreaterThanOrEqual(publicArticleMetadata.length);
+      expect(cardCount).toBeGreaterThanOrEqual(publishedArticleMetadata.length);
     },
   );
 });

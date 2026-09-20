@@ -37,8 +37,8 @@ $script:StubArticleFetches = 0
 # 生成するため、本物のように「配信済み URL のみ」を列挙する（新記事が
 # sitemap に列挙されない退化を再現できる）。
 $script:StubArticleRegistry = [System.Collections.Generic.HashSet[string]]::new([string[]]@(
-    '/articles/thermos-tiger-bottle/',
-    '/articles/babybjorn/'
+    '/articles/anker-nano-a1638-vs-power-bank-a1256/',
+    '/articles/logicool-mx-master-4-vs-mx-master-3s/'
 ))
 $StubBaseUrl = 'https://example.test'
 # 新着記事は静的 $ArticlePaths に含まれないパスにする。本番と同じ形（新記事は
@@ -115,7 +115,7 @@ function Invoke-WebRequest {
     } elseif ($path -match '^/__acceptance_missing_') {
         $statusCode = 404
         $content = '<!doctype html><html><head><meta name="robots" content="noindex"></head><body>missing</body></html>'
-    } elseif ($path -eq '/articles/pampers-newborn/' -or $path -eq $StubLatestArticlePath) {
+    } elseif ($path -eq '/articles/anker-nano-a1638-vs-power-bank-a1256/' -or $path -eq $StubLatestArticlePath) {
         $script:StubArticleFetches++
         [void]$script:StubArticleRegistry.Add($path)
         $content = New-HtmlPage -Path $path -Sha (Get-ShaForArticle)

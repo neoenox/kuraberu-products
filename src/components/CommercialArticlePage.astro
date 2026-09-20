@@ -8,7 +8,7 @@ import ArticleComparisonV2 from './ArticleComparisonV2.astro';
 import ArticleSocialProof from './ArticleSocialProof.astro';
 import ExternalEmbed from './ExternalEmbed.astro';
 import RelatedArticles from './RelatedArticles.astro';
-import { articleMetadata, additionalCommercialArticleSeeds, publicArticleMetadata } from '../content/articles';
+import { articleMetadata, additionalCommercialArticleSeeds, publishedArticleMetadata } from '../content/articles';
 import { articlePurchaseLinks } from '../lib/products';
 import { commercialArticleImages } from '../content/articles/commercial/images';
 import type { CommercialArticleSeed } from '../content/articles/commercial/types';
@@ -73,9 +73,9 @@ const images = {
   left: seed.leftImage ?? commercialArticleImages[articleId]?.left,
   right: seed.rightImage ?? commercialArticleImages[articleId]?.right,
 };
-// 公開対象（publicArticleMetadata）に含まれない記事 = 商品情報の確認日が未設定の
+// 公開対象（publishedArticleMetadata）に含まれない記事 = 公開許可リスト外の
 // 自動生成初稿。非公開の意図のため、万一参照された場合に備えてインデックスを拒否する（fail-closed）。
-const isPublicArticle = publicArticleMetadata.some((item) => item.id === article.id);
+const isPublicArticle = publishedArticleMetadata.some((item) => item.id === article.id);
 const leftTerms = seed.leftProduct.split(/\s+/).filter(Boolean);
 const rightTerms = seed.rightProduct.split(/\s+/).filter(Boolean);
 const staticPurchaseLinks = articlePurchaseLinks as Record<string, { purchaseUrl: string }>;

@@ -65,6 +65,18 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
   "panasonic-eh-na9m-guide",
 ]);
 
+/** PR #876 で復活させる公開記事。 */
+export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
+  "anker-nano-a1638-vs-power-bank-a1256",
+  "anker-nano-power-bank-vs-zolo-a1688",
+  "logicool-mx-master-4-vs-mx-master-3s",
+]);
+
+export function isPublishedArticlePath(path) {
+  const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
+  return Boolean(slug && PUBLISHED_ARTICLE_PAGE_SLUGS.has(slug));
+}
+
 /**
  * トップページの新着枠へ載せる記事かを判定する。
  * 旧テンプレートの互換ページはURLを維持するが、新着記事としては扱わない。

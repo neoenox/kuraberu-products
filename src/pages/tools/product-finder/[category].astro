@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import RelatedArticles from '../../../components/RelatedArticles.astro';
 import { diagnosisCategories, findDiagnosisCategory } from '../../../data/diagnoses';
 import { validateDiagnosisData } from '../../../domain/diagnosis/validate';
+import { publishedArticleMetadata } from '../../../content/articles';
 
 export function getStaticPaths() {
   return diagnosisCategories.map((entry) => ({
@@ -21,6 +22,12 @@ if (!entry) {
 }
 
 const { config, products, reasons, pageContent } = entry;
+const publishedArticlePaths: Set<string> = new Set(
+  publishedArticleMetadata.map((article) => article.path),
+);
+const publishedRelatedArticles = pageContent.relatedArticles.filter((article) =>
+  publishedArticlePaths.has(article.path),
+);
 
 // ビルド時に診断データを検証する（不整合があればビルドが失敗する）
 validateDiagnosisData(config, products, reasons);
@@ -39,7 +46,7 @@ const clientData = {
     id: product.id,
     name: product.name,
     brand: product.brand,
-    articleUrls: product.articleUrls,
+    articleUrls: product.articleUrls.filter((url) => publishedArticlePaths.has(url)),
     purchaseLinks: product.purchaseLinks,
     tags: product.tags,
     attributes: product.attributes,
@@ -96,7 +103,7 @@ const clientData = {
         <h2>条件に合う商品がありませんでした</h2>
         <p>今回の条件では、診断対象商品の中にすべての条件を満たすものがありません。条件を緩めるか、比較記事をご覧ください。</p>
         <button type="button" class="primary-button" data-diagnosis-restart>条件を変えて診断する</button>
-        <a class="secondary-button" href={pageContent.relatedArticles[0]?.path ?? '/articles/'}>比較記事を見る</a>
+        <a class="secondary-button" href={publishedRelatedArticles[0]?.path ?? '/articles/'}>比較記事を見る</a>
       </section>
 
       <!-- エラー（診断データの読み込み失敗時のみ表示） -->
@@ -124,12 +131,16 @@ const clientData = {
     ))}
     <p class="diagnosis-disclaimer">{config.resultConfig.disclaimer}</p>
 
-    <h2>関連する比較記事</h2>
-    <div class="purchase-cards">
-      {pageContent.relatedArticles.map((article: (typeof pageContent.relatedArticles)[number]) => (
-        <a class="card-link" href={article.path}>{article.label} →</a>
-      ))}
-    </div>
+    {publishedRelatedArticles.length > 0 && (
+      <>
+        <h2>関連する比較記事</h2>
+        <div class="purchase-cards">
+          {publishedRelatedArticles.map((article: (typeof pageContent.relatedArticles)[number]) => (
+            <a class="card-link" href={article.path}>{article.label} →</a>
+          ))}
+        </div>
+      </>
+    )}
 
     <h2>よくある質問</h2>
     <div class="faq-list">
@@ -338,16 +349,18 @@ const clientData = {
           card.append(caseLabel, caseBody);
         }
 
-        // 比較メモに追加ボタン
-        const memoButton = document.createElement('button');
-        memoButton.type = 'button';
-        memoButton.className = 'text-button diagnosis-card__memo-button';
-        memoButton.dataset.diagnosisMemoToggle = '';
-        memoButton.dataset.productId = cardData.product.id;
-        const isInMemo = isProductInMemo(cardData.product, knownArticleIds);
-        memoButton.textContent = isInMemo ? '比較メモから外す' : '比較メモに追加';
-        memoButton.setAttribute('aria-pressed', String(isInMemo));
-        card.append(memoButton);
+        // 公開済み記事へのリンクがある商品だけ比較メモを使えるようにする。
+        if (cardData.articleLinks.length > 0) {
+          const memoButton = document.createElement('button');
+          memoButton.type = 'button';
+          memoButton.className = 'text-button diagnosis-card__memo-button';
+          memoButton.dataset.diagnosisMemoToggle = '';
+          memoButton.dataset.productId = cardData.product.id;
+          const isInMemo = isProductInMemo(cardData.product, knownArticleIds);
+          memoButton.textContent = isInMemo ? '比較メモから外す' : '比較メモに追加';
+          memoButton.setAttribute('aria-pressed', String(isInMemo));
+          card.append(memoButton);
+        }
 
         const linksContainer = document.createElement('div');
         linksContainer.className = 'diagnosis-card__links';

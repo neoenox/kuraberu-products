@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { site } from "../config/site";
-import { publicArticleMetadata } from "../content/articles";
+import { publishedArticleMetadata } from "../content/articles";
 import { diagnosisCategories } from "../data/diagnoses";
 import {
   ARTICLE_LIST_PAGE_SIZE,
@@ -18,20 +18,20 @@ type SitemapEntry = {
 // 公開記事（publicArticleMetadata）から一覧系URLを導出する。
 // カテゴリ頁は pages/articles/category/[category].astro、
 // ページネーションは pages/articles/page/[page].astro が生成するページと一致させる。
-const sortedByModifiedDesc = sortByModifiedAtDesc(publicArticleMetadata);
+const sortedByModifiedDesc = sortByModifiedAtDesc(publishedArticleMetadata);
 const latestModifiedAt = maxDate(
-  publicArticleMetadata.map((article) => article.modifiedAt),
+  publishedArticleMetadata.map((article) => article.modifiedAt),
 );
 
 const categoryEntries: SitemapEntry[] = [
-  ...new Set(publicArticleMetadata.map((article) => article.category)),
+  ...new Set(publishedArticleMetadata.map((article) => article.category)),
 ]
   .sort()
   .map((category) => ({
     path: `/articles/category/${category}/`,
     // カテゴリ内の公開記事で最も新しい modifiedAt
     lastmod: maxDate(
-      publicArticleMetadata
+      publishedArticleMetadata
         .filter((article) => article.category === category)
         .map((article) => article.modifiedAt),
     ),
@@ -61,11 +61,13 @@ const staticPaths: SitemapEntry[] = [
   })),
 ];
 
-const articleEntries: SitemapEntry[] = publicArticleMetadata.map((article) => ({
-  path: article.path,
-  lastmod: article.modifiedAt,
-  ...(article.imagePath ? { imagePath: article.imagePath } : {}),
-}));
+const articleEntries: SitemapEntry[] = publishedArticleMetadata.map(
+  (article) => ({
+    path: article.path,
+    lastmod: article.modifiedAt,
+    ...(article.imagePath ? { imagePath: article.imagePath } : {}),
+  }),
+);
 
 const publicPaths: SitemapEntry[] = [
   ...staticPaths,

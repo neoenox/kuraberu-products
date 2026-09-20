@@ -145,11 +145,17 @@ jobs:
       - name: Build and deploy exact HEAD
         shell: pwsh
         run: |
+          if ($env:ARTICLES_OFFLINE -eq 'true') {
+            Add-Content -LiteralPath 'public/_redirects' -Value '/articles/* /404.html 302'
+          }
           $parameters = @{
             SiteUrl = $env:PUBLIC_SITE_URL
             ExpectedHead = $env:EXPECTED_SHA
             ContactUrl = $env:PUBLIC_CONTACT_URL
             Apply = $true
+          }
+          if ($env:ARTICLES_OFFLINE -eq 'true') {
+            $parameters.AllowDirty = $true
           }
           if ($env:PURCHASE_LINK_MODE -eq 'api') {
             $parameters.UseRakutenApi = $true

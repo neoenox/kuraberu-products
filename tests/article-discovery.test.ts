@@ -1,8 +1,8 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
-  publicArticleMetadata,
   pampersNewbornArticle,
+  publishedArticleMetadata,
 } from "../src/content/articles";
 import {
   discoverySearchParams,
@@ -88,16 +88,19 @@ describe.skipIf(!hasDist)("article discovery (rendered dist)", () => {
   it("renders paginated article lists before JavaScript and exposes accessible filters", () => {
     const pageFiles = [
       "dist/articles/index.html",
-      "dist/articles/page/2/index.html",
-      "dist/articles/page/3/index.html",
+      ...(existsSync("dist/articles/page")
+        ? readdirSync("dist/articles/page", { withFileTypes: true })
+            .filter((entry) => entry.isDirectory())
+            .map((entry) => `dist/articles/page/${entry.name}/index.html`)
+        : []),
     ];
     const html = pageFiles.map((file) => readFileSync(file, "utf8")).join("\n");
     const firstPage = readFileSync("dist/articles/index.html", "utf8");
     expect(html).toContain('role="search"');
     expect(html).toContain("data-article-card");
-    expect(html).toContain(pampersNewbornArticle.path);
+    expect(html).toContain(publishedArticleMetadata[0].path);
     expect(html).toContain("条件に合う記事がありません");
-    expect(html).toContain("紙おむつ");
+    expect(html).toContain("モバイルバッテリー");
     expect(html).toContain(
       '<script src="/scripts/article-discovery.js" defer></script>',
     );
@@ -124,16 +127,14 @@ describe.skipIf(!hasDist)("article discovery (rendered dist)", () => {
     expect(indexMatch).not.toBeNull();
     const indexArticles = JSON.parse(indexMatch?.[1] ?? "[]");
 
-    // Both must equal the full publicArticleMetadata length,
-    // which is strictly greater than the 12-per-page card limit.
-    expect(ssrCount).toBe(publicArticleMetadata.length);
-    expect(indexArticles.length).toBe(publicArticleMetadata.length);
-    expect(publicArticleMetadata.length).toBeGreaterThan(12);
+    // Both must equal the full publishedArticleMetadata length.
+    expect(ssrCount).toBe(publishedArticleMetadata.length);
+    expect(indexArticles.length).toBe(publishedArticleMetadata.length);
 
     // The DOM card count on page 1 must be capped at 12,
     // confirming SSR does NOT render all articles inline.
     const cardCount = (firstPage.match(/data-article-card/g) ?? []).length;
     expect(cardCount).toBeLessThanOrEqual(12);
-    expect(cardCount).toBeLessThan(publicArticleMetadata.length);
+    expect(cardCount).toBeLessThanOrEqual(publishedArticleMetadata.length);
   });
 });

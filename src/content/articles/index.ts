@@ -136,6 +136,7 @@ import { tigerKettlePcjVsPcmArticle } from "./tiger-pcj-a080-vs-pcm-a080";
 import { yamajitsuFilmHolderArticle } from "./yamajitsu-film-holder-242286-vs-242287";
 import { panasonicNeMs4cVsNeBs5cArticle } from "./panasonic-ne-ms4c-vs-ne-bs5c";
 import { commercialArticleSeeds, createCommercialArticle } from "./commercial";
+import { isPublishedArticlePath } from "../../../config/article-template-policy.mjs";
 
 /** 全記事の配列（商業記事を含む） */
 const commercialIds = new Set(commercialArticleSeeds.map((seed) => seed.id));
@@ -213,4 +214,9 @@ const publicArticleMetadata = Object.freeze(
       !commercialIds.has(article.id) || Boolean(article.productInfoCheckedAt),
   ),
 );
-export { publicArticleMetadata };
+const publishedArticleMetadata = Object.freeze(
+  publicArticleMetadata.filter((article) =>
+    isPublishedArticlePath(article.path),
+  ),
+);
+export { publicArticleMetadata, publishedArticleMetadata };

@@ -1,6 +1,14 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "anker-nano-a1638-vs-power-bank-a1256": {
+    left: "/products/anker-nano-a1638.jpg",
+    right: "/products/anker-power-a1256.jpg",
+  },
+  "anker-nano-power-bank-vs-zolo-a1688": {
+    left: "/products/anker-nano-power-bank-a1259.jpg",
+    right: "/products/anker-zolo-power-bank-a1688.jpg",
+  },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
     right: "/products/panasonic-na-lx127el.jpg",

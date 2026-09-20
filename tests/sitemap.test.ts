@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { GET } from "../src/pages/sitemap.xml";
 import {
   additionalCommercialArticleSeeds,
-  publicArticleMetadata,
+  publishedArticleMetadata,
 } from "../src/content/articles";
 
 import { site } from "../src/config/site";
@@ -35,7 +35,7 @@ function categoryLoc(category: string): string {
 describe("sitemap.xml (#390)", () => {
   it("lists every published article and no unpublished slug", async () => {
     const xml = await sitemapXml();
-    for (const article of publicArticleMetadata) {
+    for (const article of publishedArticleMetadata) {
       expect(locs(xml)).toContain(`${SITE_ORIGIN}${article.path}`);
     }
     // 公開対象外の初稿（シードに確認日が無い記事）は列挙しない
@@ -51,11 +51,11 @@ describe("sitemap.xml (#390)", () => {
   it("lists category pages with the newest modifiedAt inside each category", async () => {
     const xml = await sitemapXml();
     const categories = [
-      ...new Set(publicArticleMetadata.map((article) => article.category)),
+      ...new Set(publishedArticleMetadata.map((article) => article.category)),
     ].sort();
 
     for (const category of categories) {
-      const expected = publicArticleMetadata
+      const expected = publishedArticleMetadata
         .filter((article) => article.category === category)
         .map((article) => article.modifiedAt)
         .sort()
@@ -66,12 +66,11 @@ describe("sitemap.xml (#390)", () => {
 
   it("lists pagination pages with the latest modifiedAt across articles", async () => {
     const xml = await sitemapXml();
-    const latest = publicArticleMetadata
+    const latest = publishedArticleMetadata
       .map((article) => article.modifiedAt)
       .sort()
       .at(-1)!;
-    const totalPages = Math.ceil(publicArticleMetadata.length / 12);
-    expect(totalPages).toBeGreaterThan(1);
+    const totalPages = Math.ceil(publishedArticleMetadata.length / 12);
 
     for (let page = 2; page <= totalPages; page += 1) {
       expect(lastmodOf(xml, `/articles/page/${page}/`)).toBe(latest);
@@ -82,7 +81,7 @@ describe("sitemap.xml (#390)", () => {
 
   it("keeps article entries carrying lastmod and image tags", async () => {
     const xml = await sitemapXml();
-    const withImage = publicArticleMetadata.find(
+    const withImage = publishedArticleMetadata.find(
       (article) => article.imagePath,
     )!;
     const entry = xml

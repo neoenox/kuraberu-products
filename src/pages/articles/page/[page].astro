@@ -1,16 +1,16 @@
 ---
 import ArticleListPage from '../../../components/ArticleListPage.astro';
-import { publicArticleMetadata } from '../../../content/articles';
+import { publishedArticleMetadata } from '../../../content/articles';
 import { ARTICLE_LIST_PAGE_SIZE, sortByModifiedAtDesc } from '../../../lib/article-list';
 
-const categories = [...new Set(publicArticleMetadata.map((article) => article.category))].sort();
-const tags = [...new Set(publicArticleMetadata.flatMap((article) => article.tags))].sort();
-const sorted = sortByModifiedAtDesc(publicArticleMetadata);
+const categories = [...new Set(publishedArticleMetadata.map((article) => article.category))].sort();
+const tags = [...new Set(publishedArticleMetadata.flatMap((article) => article.tags))].sort();
+const sorted = sortByModifiedAtDesc(publishedArticleMetadata);
 const pageSize = ARTICLE_LIST_PAGE_SIZE;
 
 export function getStaticPaths() {
   const pageSize = ARTICLE_LIST_PAGE_SIZE;
-  const sortedArticles = sortByModifiedAtDesc(publicArticleMetadata);
+  const sortedArticles = sortByModifiedAtDesc(publishedArticleMetadata);
   const totalPages = Math.ceil(sortedArticles.length / pageSize);
   return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
     const currentPage = index + 2;
@@ -33,7 +33,7 @@ const totalPagesForDisplay = Math.ceil(sorted.length / pageSize);
   heading="比較記事一覧"
   lead="確認できる公式情報と販売ページを起点に、商品を選ぶときの判断材料を整理しています。"
   articles={articles}
-  totalCount={publicArticleMetadata.length}
+  totalCount={publishedArticleMetadata.length}
   countNote={`（${currentPage}ページ目）`}
   categoryOptions={categories}
   tagOptions={tags}

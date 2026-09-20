@@ -23,16 +23,9 @@ param(
     # - Articles with verified purchase links
     # - Articles with unverified purchase links
     [string[]]$ArticlePaths = @(
-        '/articles/pampers-newborn/',           # verified purchase, comparison
-        '/articles/thermos-tiger-bottle/',      # comparison, verified purchase
-        '/articles/babybjorn/',                 # autoload X embed
-        '/articles/babybjorn-bouncer/',         # comparison, unverified
-        '/articles/kingjim-tepra-sr-r2500p-vs-sr-mk1/',  # YouTube autoload embed
-        '/articles/tiger-mta-j050-guide/',      # guide article
-        '/articles/shupot/',                    # multiple autoload X embeds
-        '/articles/zojirushi-ec-kv50-vs-ec-ma60/',  # comparison
-        '/articles/yamazaki-dust-wagon-45l-2division-vs-3division/',  # verified purchase
-        '/articles/merries-newborn/'            # autoload X embed, comparison
+        '/articles/anker-nano-a1638-vs-power-bank-a1256/',
+        '/articles/anker-nano-power-bank-vs-zolo-a1688/',
+        '/articles/logicool-mx-master-4-vs-mx-master-3s/'
     ),
     [string[]]$NonIndexableOkPaths = @('/memo/'),
     [int]$MaxAttempts = 4,
