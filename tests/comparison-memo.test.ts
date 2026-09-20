@@ -1,6 +1,9 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { articleMetadata } from "../src/content/articles";
+import {
+  articleMetadata,
+  publishedArticleMetadata,
+} from "../src/content/articles";
 import {
   comparisonMemoLimit,
   encodeComparisonMemo,
@@ -71,7 +74,7 @@ describe.skipIf(!hasDist)("comparison memo (rendered dist)", () => {
     expect(memoHtml).toContain("比較の目的・利用シーン");
     expect(memoHtml).toContain("Must-have（絶対条件）");
     expect(memoHtml).toContain("決定理由");
-    expect(memoHtml).toContain(articleMetadata[0].path);
+    expect(memoHtml).toContain(publishedArticleMetadata[0].path);
     expect(memoHtml).toContain("<noscript>");
   });
 });
