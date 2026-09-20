@@ -22,7 +22,7 @@ describe("site config", () => {
     const sitemap = readFileSync("src/pages/sitemap.xml.ts", "utf8");
     const layout = readFileSync("src/layouts/BaseLayout.astro", "utf8");
     const navLinks = readFileSync("src/components/SiteNavLinks.astro", "utf8");
-    expect(sitemap).toContain("publicArticleMetadata");
+    expect(sitemap).toContain("publishedArticleMetadata");
     expect(sitemap).toContain("article.path");
     expect(layout).toContain('href="#main-content"');
     expect(layout).toContain('id="main-content"');

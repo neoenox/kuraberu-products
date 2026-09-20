@@ -1,14 +1,14 @@
 ---
-import { publicArticleMetadata } from '../content/articles';
+import { publishedArticleMetadata } from '../content/articles';
 
 interface Props {
   articleId: string;
 }
 const { articleId } = Astro.props;
 
-// 全記事データ（publicArticleMetadata）をクライアントバンドルへ入れない。
+// 公開記事データ（publishedArticleMetadata）をクライアントバンドルへ入れない。
 // 代わりに保存済み ID の検証に必要な記事ID一覧を data 属性としてサーバレンダリングする。
-const knownArticleIds = publicArticleMetadata.map((article) => article.id);
+const knownArticleIds = publishedArticleMetadata.map((article) => article.id);
 ---
 <div
   class="memo-control"

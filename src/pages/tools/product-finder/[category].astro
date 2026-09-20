@@ -349,16 +349,18 @@ const clientData = {
           card.append(caseLabel, caseBody);
         }
 
-        // 比較メモに追加ボタン
-        const memoButton = document.createElement('button');
-        memoButton.type = 'button';
-        memoButton.className = 'text-button diagnosis-card__memo-button';
-        memoButton.dataset.diagnosisMemoToggle = '';
-        memoButton.dataset.productId = cardData.product.id;
-        const isInMemo = isProductInMemo(cardData.product, knownArticleIds);
-        memoButton.textContent = isInMemo ? '比較メモから外す' : '比較メモに追加';
-        memoButton.setAttribute('aria-pressed', String(isInMemo));
-        card.append(memoButton);
+        // 公開済み記事へのリンクがある商品だけ比較メモを使えるようにする。
+        if (cardData.articleLinks.length > 0) {
+          const memoButton = document.createElement('button');
+          memoButton.type = 'button';
+          memoButton.className = 'text-button diagnosis-card__memo-button';
+          memoButton.dataset.diagnosisMemoToggle = '';
+          memoButton.dataset.productId = cardData.product.id;
+          const isInMemo = isProductInMemo(cardData.product, knownArticleIds);
+          memoButton.textContent = isInMemo ? '比較メモから外す' : '比較メモに追加';
+          memoButton.setAttribute('aria-pressed', String(isInMemo));
+          card.append(memoButton);
+        }
 
         const linksContainer = document.createElement('div');
         linksContainer.className = 'diagnosis-card__links';
