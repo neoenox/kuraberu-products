@@ -5,12 +5,18 @@ import { publicArticleMetadata } from '../content/articles';
 import { site } from '../config/site';
 import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
+import {
+  isTopPageArticlePath,
+  SHOW_EXISTING_ARTICLES_ON_TOP_PAGE,
+} from '../../config/article-template-policy.mjs';
 
 // 新着比較：旧テンプレートの互換ページを除き、公開日が新しい記事を表示する。
 // 互換ページのURLは維持しつつ、トップページの新着枠へは再掲しない。
 // 既存記事は一度すべて取り下げる。新記事を公開するときは、公開用の
 // 記事ルートと _redirects を同じ変更で戻してから、この一覧に反映する。
-const topPageArticles = publicArticleMetadata.filter(() => false);
+const topPageArticles = SHOW_EXISTING_ARTICLES_ON_TOP_PAGE
+  ? publicArticleMetadata.filter((article) => isTopPageArticlePath(article.path))
+  : [];
 const latest = [...topPageArticles]
   .sort(
     (a, b) =>
