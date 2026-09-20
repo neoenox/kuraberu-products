@@ -15,7 +15,7 @@ import ArticleComparisonV2 from './ArticleComparisonV2.astro';
 import ArticleSocialProof from './ArticleSocialProof.astro';
 import ExternalEmbed from './ExternalEmbed.astro';
 import type { KeyDiffRow } from './VisualKeyDifferences.astro';
-import { articleMetadata as allArticles } from '../content/articles';
+import { articleMetadata as allArticles, publishedArticleMetadata } from '../content/articles';
 import { articlePurchaseLinks } from '../lib/products';
 import type { ArticleMetadata, ComparisonSide } from '../content/articles';
 import { getComparisonV2Entry } from '../content/articles/comparison-v2';
@@ -332,7 +332,7 @@ const {
 const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left: r.left, right: r.right }))) as SpecRow[];
 ---
 
-<BaseLayout title={articleMetadata.title} description={articleMetadata.description} article={articleMetadata} faq={faqEntries}>
+<BaseLayout title={articleMetadata.title} description={articleMetadata.description} article={articleMetadata} faq={faqEntries} robots={publishedArticleMetadata.some((item) => item.id === articleMetadata.id) ? undefined : 'noindex,nofollow'}>
   <article class="wrap section article">
     <p class="meta"><a href="/articles/">比較記事一覧</a> / {articleMetadata.category} · 公開日 <time datetime={articleMetadata.publishedAt}>{articleMetadata.publishedAt}</time> · 更新日 <time datetime={articleMetadata.modifiedAt}>{articleMetadata.modifiedAt}</time></p>
     <h1>{articleMetadata.headline}</h1>
