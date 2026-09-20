@@ -110,6 +110,38 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
     expect(hrefs).toEqual(expected);
   });
 
+  it("does not redirect latest article links to the 404 page", () => {
+    const redirects = readFileSync("dist/_redirects", "utf8");
+    const expected = [...topPageArticles]
+      .sort(
+        (a, b) =>
+          b.publishedAt.localeCompare(a.publishedAt) ||
+          b.modifiedAt.localeCompare(a.modifiedAt) ||
+          a.path.localeCompare(b.path),
+      )
+      .slice(0, 6)
+      .map((article) => article.path);
+
+    // Cloudflare Pages applies _redirects before serving static assets. A
+    // broad /articles/* -> /404.html rule therefore makes valid cards look
+    // like nonexistent articles in production even when dist contains them.
+    for (const path of expected) {
+      const shadowing404 = redirects
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter((line) => line && !line.startsWith("#"))
+        .some((line) => {
+          const [pattern, target] = line.split(/\s+/);
+          if (target !== "/404.html") return false;
+          const regex = new RegExp(
+            `^${pattern.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\\\*/g, ".*")}$`,
+          );
+          return regex.test(path);
+        });
+      expect(shadowing404, `${path} is shadowed by a 404 redirect`).toBe(false);
+    }
+  });
+
   it("renders the comparison memo entry linking to /memo/ (#850)", () => {
     const section = topHtml.match(
       /<section\b[^>]*data-top-memo[^>]*>([\s\S]*?)<\/section\s*>/i,
