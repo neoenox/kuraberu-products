@@ -22,7 +22,9 @@ if (!entry) {
 }
 
 const { config, products, reasons, pageContent } = entry;
-const publishedArticlePaths = new Set(publishedArticleMetadata.map((article) => article.path));
+const publishedArticlePaths: Set<string> = new Set(
+  publishedArticleMetadata.map((article) => article.path),
+);
 
 // ビルド時に診断データを検証する（不整合があればビルドが失敗する）
 validateDiagnosisData(config, products, reasons);
