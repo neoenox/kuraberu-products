@@ -25,6 +25,9 @@ const { config, products, reasons, pageContent } = entry;
 const publishedArticlePaths: Set<string> = new Set(
   publishedArticleMetadata.map((article) => article.path),
 );
+const publishedRelatedArticles = pageContent.relatedArticles.filter((article) =>
+  publishedArticlePaths.has(article.path),
+);
 
 // ビルド時に診断データを検証する（不整合があればビルドが失敗する）
 validateDiagnosisData(config, products, reasons);
@@ -100,7 +103,7 @@ const clientData = {
         <h2>条件に合う商品がありませんでした</h2>
         <p>今回の条件では、診断対象商品の中にすべての条件を満たすものがありません。条件を緩めるか、比較記事をご覧ください。</p>
         <button type="button" class="primary-button" data-diagnosis-restart>条件を変えて診断する</button>
-        <a class="secondary-button" href={pageContent.relatedArticles.find((article) => publishedArticlePaths.has(article.path))?.path ?? '/articles/'}>比較記事を見る</a>
+        <a class="secondary-button" href={publishedRelatedArticles[0]?.path ?? '/articles/'}>比較記事を見る</a>
       </section>
 
       <!-- エラー（診断データの読み込み失敗時のみ表示） -->
@@ -128,12 +131,16 @@ const clientData = {
     ))}
     <p class="diagnosis-disclaimer">{config.resultConfig.disclaimer}</p>
 
-    <h2>関連する比較記事</h2>
-    <div class="purchase-cards">
-      {pageContent.relatedArticles.filter((article) => publishedArticlePaths.has(article.path)).map((article: (typeof pageContent.relatedArticles)[number]) => (
-        <a class="card-link" href={article.path}>{article.label} →</a>
-      ))}
-    </div>
+    {publishedRelatedArticles.length > 0 && (
+      <>
+        <h2>関連する比較記事</h2>
+        <div class="purchase-cards">
+          {publishedRelatedArticles.map((article: (typeof pageContent.relatedArticles)[number]) => (
+            <a class="card-link" href={article.path}>{article.label} →</a>
+          ))}
+        </div>
+      </>
+    )}
 
     <h2>よくある質問</h2>
     <div class="faq-list">
