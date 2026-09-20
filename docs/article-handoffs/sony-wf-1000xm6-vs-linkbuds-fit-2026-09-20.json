@@ -1,0 +1,43 @@
+{
+  "handoffId": "sony-wf-1000xm6-vs-linkbuds-fit-2026-09-20",
+  "source": "ChatGPT chat mode",
+  "researchDateJst": "2026-09-20",
+  "articleReady": true,
+  "category": "完全ワイヤレス・ノイズキャンセリングイヤホン",
+  "products": {
+    "a": {
+      "name": "Sony WF-1000XM6",
+      "model": "WF-1000XM6",
+      "officialUrl": "https://www.sony.jp/headphone/products/WF-1000XM6/",
+      "officialSpecUrl": "https://www.sony.jp/headphone/products/WF-1000XM6/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/WF-1000XM6.jpg",
+      "rakutenUrl": "https://item.rakuten.co.jp/a-price/4548736171763/",
+      "amazon": { "status": "unconfirmed", "asin": null }
+    },
+    "b": {
+      "name": "Sony LinkBuds Fit",
+      "model": "WF-LS910N",
+      "officialUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
+      "officialSpecUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/LinkBuds_Fit.jpg",
+      "rakutenUrl": "https://item.rakuten.co.jp/biccamera/4548736157873/",
+      "amazon": { "status": "unconfirmed", "asin": null }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "keyDifferences": ["価格", "片耳重量", "NCオン連続再生", "充電方法"]
+  },
+  "amazon": { "left": null, "right": null },
+  "rakuten": {
+    "left": "https://item.rakuten.co.jp/a-price/4548736171763/",
+    "right": "https://item.rakuten.co.jp/biccamera/4548736157873/"
+  },
+  "social": { "status": "none", "adoptedCount": 0, "embedUrls": [] },
+  "unconfirmed": [
+    "Amazonの商品詳細URLおよびASIN",
+    "月間検索ボリュームの定量値",
+    "X・YouTubeの採用埋め込み投稿"
+  ]
+}
