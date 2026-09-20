@@ -9,7 +9,7 @@
  * 該当テンプレートを cloneNode して追加する。
  * 削除時はフォーカス管理を行い、次の項目またはセクション見出しへ移動する。
  */
-import { publicArticleMetadata } from "../content/articles";
+import { publishedArticleMetadata } from "../content/articles";
 import {
   comparisonMemoStorageKey,
   encodeComparisonMemo,
@@ -26,7 +26,7 @@ export function initMemoApp(): void {
   const root = document.querySelector("[data-memo-page]");
   if (!(root instanceof HTMLElement)) return;
 
-  const knownIds = publicArticleMetadata.map((article) => article.id);
+  const knownIds = publishedArticleMetadata.map((article) => article.id);
   const form = root.querySelector("[data-project-form]");
   const status = root.querySelector("[data-project-status]");
   const empty = root.querySelector("[data-memo-empty]");
