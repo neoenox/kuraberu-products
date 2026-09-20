@@ -215,6 +215,8 @@ const publicArticleMetadata = Object.freeze(
   ),
 );
 const publishedArticleMetadata = Object.freeze(
-  publicArticleMetadata.filter((article) => isPublishedArticlePath(article.path)),
+  publicArticleMetadata.filter((article) =>
+    isPublishedArticlePath(article.path),
+  ),
 );
 export { publicArticleMetadata, publishedArticleMetadata };

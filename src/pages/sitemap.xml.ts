@@ -61,11 +61,13 @@ const staticPaths: SitemapEntry[] = [
   })),
 ];
 
-const articleEntries: SitemapEntry[] = publishedArticleMetadata.map((article) => ({
-  path: article.path,
-  lastmod: article.modifiedAt,
-  ...(article.imagePath ? { imagePath: article.imagePath } : {}),
-}));
+const articleEntries: SitemapEntry[] = publishedArticleMetadata.map(
+  (article) => ({
+    path: article.path,
+    lastmod: article.modifiedAt,
+    ...(article.imagePath ? { imagePath: article.imagePath } : {}),
+  }),
+);
 
 const publicPaths: SitemapEntry[] = [
   ...staticPaths,
