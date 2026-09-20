@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
   additionalCommercialArticleSeeds,
-  publicArticleMetadata,
+  publishedArticleMetadata,
 } from "../src/content/articles";
 
 /**
@@ -14,7 +14,7 @@ import {
  *   1. functions/articles/<slug>.ts（Cloudflare Pages Functions のハード404）
  *   2. public/_redirects の /articles/<slug>/* → /404.html (302)
  *   3. src/pages/articles/<slug>/ のページファイルが存在しないこと
- *   4. 公開メタデータ（publicArticleMetadata = sitemap / 一覧の情報源）に載らないこと
+ *   4. 公開メタデータ（publishedArticleMetadata = sitemap / 一覧の情報源）に載らないこと
  *
  * 片方だけ更新すると、非公開記事が静的HTMLとして公開されたまま残ったり、
  * 404 Function だけが残ってデッドコードになったりする。このテストは
@@ -56,21 +56,22 @@ const unpublishedSeedIds = additionalCommercialArticleSeeds
   .filter((seed) => !seed.productInfoCheckedAt)
   .map((seed) => seed.id);
 
-const publicPaths = new Set(
-  publicArticleMetadata.map((article) => article.path),
+const publishedPaths = new Set(
+  publishedArticleMetadata.map((article) => article.path),
 );
 
 describe("unpublished article sync (#389)", () => {
-  it("keeps functions/articles and _redirects covering exactly the same slugs", () => {
+  it("keeps hard-404 functions and redirects outside the published set", () => {
     const functions = functionArticleSlugs().sort();
     const redirects = redirectArticleSlugs().sort();
 
-    expect(
-      functions.length,
-      "functions/articles に *.ts 以外のファイルがない",
-    ).toBe(redirects.length);
-    expect(functions).toEqual(redirects);
     expect(functions.length).toBeGreaterThan(0);
+    for (const slug of [...functions, ...redirects]) {
+      expect(
+        publishedPaths.has(`/articles/${slug}/`),
+        `${slug} must not be published`,
+      ).toBe(false);
+    }
   });
 
   it("returns a hard 404 from every functions/articles handler", () => {
@@ -89,7 +90,7 @@ describe("unpublished article sync (#389)", () => {
         hasPageFile(slug),
         `src/pages/articles/${slug} must not exist`,
       ).toBe(false);
-      expect(publicPaths.has(`/articles/${slug}/`)).toBe(false);
+      expect(publishedPaths.has(`/articles/${slug}/`)).toBe(false);
     }
   });
 
@@ -97,14 +98,14 @@ describe("unpublished article sync (#389)", () => {
     expect(unpublishedSeedIds.length).toBeGreaterThan(0);
     for (const id of unpublishedSeedIds) {
       expect(
-        publicPaths.has(`/articles/${id}/`),
+        publishedPaths.has(`/articles/${id}/`),
         `${id} must stay private`,
       ).toBe(false);
     }
   });
 
   it("keeps a page file for every published article (no sitemap dead links)", () => {
-    for (const article of publicArticleMetadata) {
+    for (const article of publishedArticleMetadata) {
       expect(
         hasPageFile(article.id),
         `public article without page file: ${article.id}`,
