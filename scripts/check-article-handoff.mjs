@@ -38,11 +38,7 @@ for (const file of files) {
   if (manifest.articleId !== articleId || manifest.id !== manifestId) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
-  if (manifest.articleReady === false) {
-    errors.push(
-      `${manifestPath}: articleReady is false; do not generate the article`,
-    );
-  }
+  // Draft handoffs may exist while required purchase data is incomplete.
   const serializedManifest = JSON.stringify(manifest);
   if (serializedManifest.includes("sourceRef")) {
     errors.push(
@@ -75,10 +71,12 @@ for (const file of files) {
     if (manifest.articleReady === true) {
       const hasAmazon = isHttpUrl(amazon);
       const hasRakuten =
-        manifest.rakuten?.status === "verified" && isHttpUrl(rakuten);
-      if (!hasAmazon && !hasRakuten) {
+        manifest.rakuten?.status === "verified" &&
+        typeof rakuten === "string" &&
+        rakuten.startsWith("https://hb.afl.rakuten.co.jp/");
+      if (!hasAmazon || !hasRakuten) {
         errors.push(
-          `${articleId}: articleReady requires one confirmed Amazon or Rakuten URL for ${side}`,
+          `${articleId}: articleReady requires confirmed Amazon and Rakuten URLs for ${side}`,
         );
       }
     }

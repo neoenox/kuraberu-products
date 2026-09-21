@@ -65,13 +65,8 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
   "panasonic-eh-na9m-guide",
 ]);
 
-/** PR #876 で復活させる公開記事。 */
-export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
-  "anker-nano-a1638-vs-power-bank-a1256",
-  "anker-nano-power-bank-vs-zolo-a1688",
-  "logicool-mx-master-4-vs-mx-master-3s",
-]);
-
+/** 公開記事は品質ゲート通過後に個別追加する。未検証記事は公開しない。 */
+export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set(["jbl-flip-7-vs-charge-6"]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
   return Boolean(slug && PUBLISHED_ARTICLE_PAGE_SLUGS.has(slug));

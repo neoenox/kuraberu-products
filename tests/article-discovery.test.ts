@@ -100,7 +100,7 @@ describe.skipIf(!hasDist)("article discovery (rendered dist)", () => {
     expect(html).toContain("data-article-card");
     expect(html).toContain(publishedArticleMetadata[0].path);
     expect(html).toContain("条件に合う記事がありません");
-    expect(html).toContain("モバイルバッテリー");
+    expect(html).toContain(publishedArticleMetadata[0].category);
     expect(html).toContain(
       '<script src="/scripts/article-discovery.js" defer></script>',
     );
