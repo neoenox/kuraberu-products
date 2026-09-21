@@ -225,10 +225,9 @@ export function createExternalEmbedConfig(
   return {
     provider,
     canonicalUrl,
-    // Reddit's supported embed host. Using embed.reddit.com directly avoids
-    // the legacy redditmedia redirect that can leave an iframe unloaded.
-    renderer: "iframe",
-    embedUrl: `https://embed.reddit.com${url.pathname.replace(/\/$/, "")}/?embed=true&ref_source=embed&ref=share`,
+    // Reddit's official blockquote + widget.js embed format.
+    renderer: "widget",
+    scriptSrc: "https://embed.reddit.com/widgets.js",
     minimumHeight: 420,
   };
 }

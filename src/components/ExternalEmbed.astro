@@ -263,11 +263,14 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     if (config.provider === "reddit") {
       // This is the official Reddit oEmbed/widget shape. The widget script
       // upgrades the blockquote in place and keeps attribution/linking intact.
-      const quote = document.createElement("blockquote");
-      quote.className = "reddit-embed-bq";
-      quote.style.minHeight = `${config.minimumHeight}px`;
-      appendSourceLink(quote, config);
-      target.append(quote);
+      const quote =
+        target.querySelector<HTMLElement>(".reddit-embed-bq") ??
+        document.createElement("blockquote");
+      if (!quote.isConnected) {
+        quote.className = "reddit-embed-bq";
+        appendSourceLink(quote, config);
+        target.append(quote);
+      }
       await loadScriptOnce(config.scriptSrc);
       if (attempt !== currentAttempt() || !quote.isConnected) {
         throw new Error("external widget render cancelled");
@@ -578,6 +581,15 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     let resetGeneration = 0;
     const resetToPlaceholder = () => {
       resetGeneration += 1;
+      if (
+        root.dataset.serverEmbed === "true" &&
+        root.dataset.provider === "reddit"
+      ) {
+        // Keep the server-rendered Reddit card visible when external content
+        // is denied or withdrawn; it is the accessible fallback for the post.
+        root.dataset.embedState = "loaded";
+        return;
+      }
       targetAdapter.clear();
       target.hidden = true;
       root.dataset.embedState = "idle";
@@ -635,7 +647,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           ) {
             return;
           }
-          targetAdapter.clear();
+          if (
+            root.dataset.serverEmbed !== "true" ||
+            root.dataset.provider !== "reddit"
+          ) {
+            targetAdapter.clear();
+          }
           target.hidden = true;
           root.dataset.embedState = runtime.state;
           button.disabled = false;
