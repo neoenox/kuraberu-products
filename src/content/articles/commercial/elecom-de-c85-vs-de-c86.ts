@@ -34,8 +34,10 @@ export const elecomDeC85VsDeC86Seed: CommercialArticleSeed = {
   ],
   leftImage: "/products/elecom-de-c85-5000bk.jpg",
   rightImage: "/products/elecom-de-c86-10000bk.jpg",
-  leftRakutenUrl: "https://item.rakuten.co.jp/elecom/4549550417372/",
-  rightRakutenUrl: "https://item.rakuten.co.jp/elecom/4549550417396/",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4549550417372%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  rightRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4549550417396%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   officialSources: [
     {
       label: "エレコム DE-C85-5000BK 公式商品ページ",

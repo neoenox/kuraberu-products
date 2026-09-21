@@ -31,8 +31,10 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   rightPoint: "片耳約4.9g・29,700円・軽い装着感を重視する人向け",
   leftImage: "/products/sony-wf-1000xm6.jpg",
   rightImage: "/products/sony-linkbuds-fit.jpg",
-  leftRakutenUrl: "https://item.rakuten.co.jp/a-price/4548736171763/",
-  rightRakutenUrl: "https://item.rakuten.co.jp/biccamera/4548736157873/",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4548736171763%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+  rightRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736157873%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
   officialSources: [
     {
       label: "ソニー WF-1000XM6 公式商品ページ",
