@@ -67,7 +67,8 @@ describe("external embed URL validation", () => {
         "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the/",
       ),
     ).toMatchObject({
-      canonicalUrl: "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the",
+      canonicalUrl:
+        "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the",
       scriptSrc: "https://embed.reddit.com/widgets.js",
       renderer: "widget",
     });
@@ -156,4 +157,3 @@ describe("external embed URL validation", () => {
     expect(evidenceFiles).toEqual([]);
   });
 });
-
