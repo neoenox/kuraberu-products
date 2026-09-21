@@ -66,7 +66,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
-  aria-label={`${providerLabel}の外部コンテンツ`}
+    aria-label={`${providerLabel}の投稿`}
 >
   <div class="external-embed__intro">
     <p class="external-embed__label">外部コンテンツ</p>
@@ -85,7 +85,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     class="external-embed__target"
     data-external-embed-target
     tabindex="-1"
-    aria-label={`${providerLabel}の埋め込み結果`}
+    aria-label={`${providerLabel}の投稿表示`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
     hidden={!serverRenderEmbed}
   >
