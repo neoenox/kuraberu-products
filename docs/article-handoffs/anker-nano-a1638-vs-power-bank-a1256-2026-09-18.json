@@ -19,15 +19,9 @@
   },
   "social": {
     "status": "adopted",
-    "directPostUrls": [
-      "https://www.youtube.com/watch?v=NzVgkFEfzac"
-    ],
-    "embedUrls": [
-      "https://www.youtube.com/watch?v=NzVgkFEfzac"
-    ]
+    "directPostUrls": ["https://www.youtube.com/watch?v=NzVgkFEfzac"],
+    "embedUrls": ["https://www.youtube.com/watch?v=NzVgkFEfzac"]
   },
-  "caveats": [
-    "A1256入力仕様は公式ページ間で記載が異なるため比較表から除外"
-  ],
+  "caveats": ["A1256入力仕様は公式ページ間で記載が異なるため比較表から除外"],
   "draftReason": "品質再確認のため公開対象から取り下げ。商品一致したアフィリエイトURL・表示構成・SNS埋め込みを再確認してから再公開する。"
 }

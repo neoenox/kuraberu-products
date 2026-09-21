@@ -31,8 +31,10 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
   rightImage: "/products/jbl-charge-6.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0F1N1BC2D",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0F1MZ88ML",
-  leftRakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fflip-7%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
-  rightRakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fcharge-6%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fflip-7%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
+  rightRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fcharge-6%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
   officialSources: [
     {
       label: "JBL Flip 7 公式商品ページ",
