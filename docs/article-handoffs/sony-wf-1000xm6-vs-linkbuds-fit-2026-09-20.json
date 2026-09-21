@@ -34,7 +34,14 @@
     "left": "https://item.rakuten.co.jp/a-price/4548736171763/",
     "right": "https://item.rakuten.co.jp/biccamera/4548736157873/"
   },
-  "social": { "status": "none", "adoptedCount": 0, "embedUrls": [] },
+  "social": {
+    "status": "adopted",
+    "adoptedCount": 2,
+    "embedUrls": [
+      "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the/",
+      "https://www.reddit.com/r/SonyHeadphones/comments/1gm8ngl/linkbuds_fit_impressions_vs_linkbuds_s/"
+    ]
+  },
   "unconfirmed": [
     "Amazonの商品詳細URLおよびASIN",
     "月間検索ボリュームの定量値",

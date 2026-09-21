@@ -60,6 +60,17 @@ describe("external embed URL validation", () => {
       canonicalUrl: "https://www.pinterest.com/pin/123456789012345678/",
       renderer: "widget",
     });
+
+    expect(
+      createExternalEmbedConfig(
+        "reddit",
+        "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the/",
+      ),
+    ).toMatchObject({
+      canonicalUrl: "https://www.reddit.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the",
+      embedUrl: "https://www.redditmedia.com/r/SonyHeadphones/comments/1ta8tf2/wf1000xm6_3_months_later_the_good_the_bad_and_the/?embed=true&ref_source=embed&ref=share",
+      renderer: "iframe",
+    });
   });
 
   it.each([
@@ -134,6 +145,7 @@ describe("external embed URL validation", () => {
       "youtube",
       "tiktok",
       "pinterest",
+      "reddit",
     ]);
   });
 
@@ -144,3 +156,4 @@ describe("external embed URL validation", () => {
     expect(evidenceFiles).toEqual([]);
   });
 });
+
