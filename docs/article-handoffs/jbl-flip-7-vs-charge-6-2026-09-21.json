@@ -1,0 +1,51 @@
+{
+  "id": "jbl-flip-7-vs-charge-6-2026-09-21",
+  "articleId": "jbl-flip-7-vs-charge-6",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "category": "ポータブルBluetoothスピーカー",
+  "products": {
+    "left": {
+      "name": "JBL Flip 7",
+      "model": "JBLFLIP7BLK",
+      "officialUrl": "https://jp.jbl.com/FLIP-7.html",
+      "officialImageUrl": "https://uk.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw5b6be91b/JBL_FLIP_7_FRONT_BLACK_014_x1.png?sh=1605&sw=1605",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0F1N1BC2D",
+      "rakutenUrl": "https://item.rakuten.co.jp/jblstore/flip-7/"
+    },
+    "right": {
+      "name": "JBL Charge 6",
+      "model": "JBLCHARGE6BLK",
+      "officialUrl": "https://jp.jbl.com/CHARGE-6.html",
+      "officialImageUrl": "https://www.jbl.se/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw9d533793/LS_JBL_CHARGE_6_BLACK_FRONT_023_x1.png?sh=1605&sw=1605",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0F1MZ88ML",
+      "rakutenUrl": "https://item.rakuten.co.jp/jblstore/charge-6/"
+    }
+  },
+  "officialSources": [
+    "https://jp.jbl.com/FLIP-7.html",
+    "https://jp.jbl.com/CHARGE-6.html",
+    "https://jp.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw52ee32ba/pdfs/JBL_FLIP_7_Specsheet_JP.pdf",
+    "https://jp.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw77e07407/pdfs/JBL_Charge_6_Specsheet_JP.pdf"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0F1N1BC2D",
+    "right": "https://www.amazon.co.jp/dp/B0F1MZ88ML"
+  },
+  "rakuten": {
+    "status": "direct",
+    "left": "https://item.rakuten.co.jp/jblstore/flip-7/",
+    "right": "https://item.rakuten.co.jp/jblstore/charge-6/"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "excludedCandidates": []
+  },
+  "caveats": [
+    "公式価格は販売時期・カラー・販売店によって変動するため、本文では固定価格を比較根拠にしていない。",
+    "SNSの採用投稿は今回の確認範囲では確定できなかったため、SNS欄は表示しない。"
+  ]
+}

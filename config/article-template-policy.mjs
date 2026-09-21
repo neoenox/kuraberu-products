@@ -69,6 +69,7 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
 export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "anker-nano-a1638-vs-power-bank-a1256",
   "anker-nano-power-bank-vs-zolo-a1688",
+  "jbl-flip-7-vs-charge-6",
   "logicool-mx-master-4-vs-mx-master-3s",
 ]);
 
