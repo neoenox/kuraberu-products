@@ -7,7 +7,7 @@ export const ankerNanoA1638VsA1256Seed: CommercialArticleSeed = {
   handoffManifestId: "anker-nano-a1638-vs-power-bank-a1256-2026-09-18",
   productInfoCheckedAt: "2026-09-18",
   purchaseLinksCheckedAt: "2026-09-18",
-  purchaseLinkStatus: "verified",
+  purchaseLinkStatus: "unverified",
   title:
     "Anker Nano Power Bank A1638とPower Bank A1256の違いを比較｜45W巻取り式と30Wはどっち？",
   headline: "AnkerのA1638とA1256を比較。45W出力・ケーブル・価格・重さの違い",
@@ -35,10 +35,8 @@ export const ankerNanoA1638VsA1256Seed: CommercialArticleSeed = {
   rightImage: "/products/anker-power-a1256.jpg",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0DNLVY85L",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0BYMML97X",
-  leftRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1638%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-  rightRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1256%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  leftRakutenUrl: null,
+  rightRakutenUrl: null,
   officialSources: [
     { label: "A1638公式", url: "https://www.ankerjapan.com/products/a1638" },
     { label: "A1256公式", url: "https://www.ankerjapan.com/products/a1256" },

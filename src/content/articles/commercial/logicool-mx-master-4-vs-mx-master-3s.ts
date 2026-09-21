@@ -7,7 +7,7 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
   handoffManifestId: "logicool-mx-master-4-vs-mx-master-3s-2026-09-18",
   productInfoCheckedAt: "2026-09-18",
   purchaseLinksCheckedAt: "2026-09-18",
-  purchaseLinkStatus: "verified",
+  purchaseLinkStatus: "unverified",
   title:
     "Logicool MX Master 4とMX Master 3Sの違いを比較｜触覚フィードバック・重さ・価格は？",
   headline:
@@ -29,8 +29,8 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
   rightImage: "/products/logicool-mx-master-3s.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0FR8M3WS8",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0B1Q6VB16",
-  leftRakutenUrl: "https://item.rakuten.co.jp/logicool/mx2400gr/",
-  rightRakutenUrl: "https://item.rakuten.co.jp/logicool/mx2300gr/",
+  leftRakutenUrl: null,
+  rightRakutenUrl: null,
   officialSources: [
     {
       label: "MX Master 4 公式",

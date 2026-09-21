@@ -7,7 +7,7 @@ export const ankerNanoPowerBankVsZoloA1688Seed: CommercialArticleSeed = {
   handoffManifestId: "anker-nano-power-bank-vs-zolo-a1688-2026-09-17",
   productInfoCheckedAt: "2026-09-17",
   purchaseLinksCheckedAt: "2026-09-17",
-  purchaseLinkStatus: "verified",
+  purchaseLinkStatus: "unverified",
   title:
     "Anker Nano Power BankとZolo Power Bankの違いを比較｜30Wモバイルバッテリーはどっち？",
   headline:
@@ -33,11 +33,8 @@ export const ankerNanoPowerBankVsZoloA1688Seed: CommercialArticleSeed = {
   rightImage: "/products/anker-zolo-power-bank-a1688.jpg",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CDBY9P5Q",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DRFR2YT3",
-  // Chromeの楽天アフィリエイト管理画面で生成・確認した成果URL。
-  leftRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1259%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-  rightRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  leftRakutenUrl: null,
+  rightRakutenUrl: null,
   officialSources: [
     {
       label: "Anker Nano Power Bank 公式商品ページ",
