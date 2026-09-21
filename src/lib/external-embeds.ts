@@ -228,6 +228,6 @@ export function createExternalEmbedConfig(
     // Reddit's official blockquote + widget.js embed format.
     renderer: "widget",
     scriptSrc: "https://embed.reddit.com/widgets.js",
-    minimumHeight: 420,
+    minimumHeight: 316,
   };
 }
