@@ -3,7 +3,8 @@
   "articleId": "jbl-flip-7-vs-charge-6",
   "source": "Codex research",
   "checkedAt": "2026-09-21",
-  "articleReady": true,
+  "articleReady": false,
+  "draftReason": "埋め込み許可リストのSNS投稿を確認できないため公開停止",
   "category": "ポータブルBluetoothスピーカー",
   "products": {
     "left": {

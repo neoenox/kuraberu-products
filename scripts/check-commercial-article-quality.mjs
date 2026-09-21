@@ -92,8 +92,8 @@ for (const file of files) {
     const rakuten = manifest.rakuten?.[side];
     if (
       !/^https:\/\//.test(amazon ?? "") ||
-      !["verified", "direct"].includes(manifest.rakuten?.status) ||
-      !/^https:\/\//.test(rakuten ?? "")
+      manifest.rakuten?.status !== "verified" ||
+      !/^https:\/\/hb\.afl\.rakuten\.co\.jp\//.test(rakuten ?? "")
     ) {
       errors.push(
         `${articleId}: ${side} needs confirmed Amazon and Rakuten URLs`,

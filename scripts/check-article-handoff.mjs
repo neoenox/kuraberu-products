@@ -71,8 +71,9 @@ for (const file of files) {
     if (manifest.articleReady === true) {
       const hasAmazon = isHttpUrl(amazon);
       const hasRakuten =
-        ["verified", "direct"].includes(manifest.rakuten?.status) &&
-        isHttpUrl(rakuten);
+        manifest.rakuten?.status === "verified" &&
+        typeof rakuten === "string" &&
+        rakuten.startsWith("https://hb.afl.rakuten.co.jp/");
       if (!hasAmazon || !hasRakuten) {
         errors.push(
           `${articleId}: articleReady requires confirmed Amazon and Rakuten URLs for ${side}`,
