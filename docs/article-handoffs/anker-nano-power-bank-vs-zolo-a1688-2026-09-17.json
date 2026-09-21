@@ -3,15 +3,15 @@
   "articleId": "anker-nano-power-bank-vs-zolo-a1688",
   "source": "ChatGPT chat mode",
   "checkedAt": "2026-09-17",
-  "articleReady": true,
+  "articleReady": false,
   "amazon": {
     "left": "https://www.amazon.co.jp/dp/B0CDBY9P5Q",
     "right": "https://www.amazon.co.jp/dp/B0DRFR2YT3"
   },
   "rakuten": {
-    "status": "verified",
-    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1259%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    "status": "unavailable",
+    "left": null,
+    "right": null
   },
   "social": {
     "status": "adopted",
@@ -19,6 +19,9 @@
       "https://www.youtube.com/watch?v=ggh7n_HE5f8",
       "https://note.com/h_________2__2/n/ne318e88e299c"
     ],
-    "embedUrls": ["https://www.youtube.com/watch?v=ggh7n_HE5f8"]
-  }
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=ggh7n_HE5f8"
+    ]
+  },
+  "draftReason": "品質再確認のため公開対象から取り下げ。商品一致したアフィリエイトURL・表示構成・SNS埋め込みを再確認してから再公開する。"
 }

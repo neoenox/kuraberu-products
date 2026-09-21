@@ -3,7 +3,7 @@
   "articleId": "anker-nano-a1638-vs-power-bank-a1256",
   "source": "ChatGPT chat mode",
   "checkedAt": "2026-09-18",
-  "articleReady": true,
+  "articleReady": false,
   "officialSources": [
     "https://www.ankerjapan.com/products/a1638",
     "https://www.ankerjapan.com/products/a1256"
@@ -13,14 +13,21 @@
     "right": "https://www.amazon.co.jp/dp/B0BYMML97X"
   },
   "rakuten": {
-    "status": "verified",
-    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1638%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1256%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    "status": "unavailable",
+    "left": null,
+    "right": null
   },
   "social": {
     "status": "adopted",
-    "directPostUrls": ["https://www.youtube.com/watch?v=NzVgkFEfzac"],
-    "embedUrls": ["https://www.youtube.com/watch?v=NzVgkFEfzac"]
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=NzVgkFEfzac"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=NzVgkFEfzac"
+    ]
   },
-  "caveats": ["A1256入力仕様は公式ページ間で記載が異なるため比較表から除外"]
+  "caveats": [
+    "A1256入力仕様は公式ページ間で記載が異なるため比較表から除外"
+  ],
+  "draftReason": "品質再確認のため公開対象から取り下げ。商品一致したアフィリエイトURL・表示構成・SNS埋め込みを再確認してから再公開する。"
 }
