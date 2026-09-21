@@ -360,6 +360,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   function createTargetAdapter(
     target: HTMLElement,
     title: string,
+    preserveInitialContent = false,
   ): EmbedTargetAdapter {
     let activeCancel: (() => void) | undefined;
     let attempt = 0;
@@ -369,6 +370,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         activeCancel?.();
         activeCancel = undefined;
         attempt += 1;
+        if (preserveInitialContent && target.querySelector(".reddit-embed-bq")) {
+          return;
+        }
         target.replaceChildren();
       },
 
@@ -553,6 +557,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     const targetAdapter = createTargetAdapter(
       target,
       button.textContent ?? "外部コンテンツ",
+      root.dataset.serverEmbed === "true" && root.dataset.provider === "reddit",
     );
     const runtime = createExternalEmbedRuntime(
       config as ExternalEmbedConfig,
