@@ -7,7 +7,7 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
   handoffManifestId: "jbl-flip-7-vs-charge-6-2026-09-21",
   productInfoCheckedAt: "2026-09-21",
   purchaseLinksCheckedAt: "2026-09-21",
-  purchaseLinkStatus: "unverified",
+  purchaseLinkStatus: "verified",
   title: "JBL Flip 7とCharge 6の違いを比較｜軽さ・音量・電池持ちは？",
   headline: "JBLの防水ポータブルスピーカーを比較。持ち運びやすさと大音量の違い",
   description:

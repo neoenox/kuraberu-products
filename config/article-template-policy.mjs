@@ -66,7 +66,7 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
 ]);
 
 /** 公開記事は品質ゲート通過後に個別追加する。未検証記事は公開しない。 */
-export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set();
+export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set(["jbl-flip-7-vs-charge-6"]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
   return Boolean(slug && PUBLISHED_ARTICLE_PAGE_SLUGS.has(slug));
