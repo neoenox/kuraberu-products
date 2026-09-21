@@ -68,7 +68,9 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
       title: "WF-1000XM6を3か月使った感想",
       match: "model",
       purpose: "WF-1000XM6の実利用者による長期使用の感想です。",
+      summary: "ANCと音質、装着感、操作性を評価する一方、長時間の圧迫感や接続・アプリ・ケース電池への不満も記した3か月使用後の投稿です。",
       tone: "mixed",
+      autoDisplay: true,
     },
     {
       provider: "reddit",
@@ -76,7 +78,9 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
       title: "LinkBuds Fitの使用感",
       match: "model",
       purpose: "LinkBuds Fitを実際に使った投稿者の感想です。",
+      summary: "LinkBuds Fitの装着感や音質、ANCを実際に使った感想をまとめた投稿です。",
       tone: "mixed",
+      autoDisplay: true,
     },
   ],
   sourceLinks: [

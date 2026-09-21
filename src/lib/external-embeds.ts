@@ -225,8 +225,10 @@ export function createExternalEmbedConfig(
   return {
     provider,
     canonicalUrl,
+    // Reddit's supported embed host. Using embed.reddit.com directly avoids
+    // the legacy redditmedia redirect that can leave an iframe unloaded.
     renderer: "iframe",
-    embedUrl: `https://www.redditmedia.com${url.pathname.replace(/\/$/, "")}/?embed=true&ref_source=embed&ref=share`,
+    embedUrl: `https://embed.reddit.com${url.pathname.replace(/\/$/, "")}/?embed=true&ref_source=embed&ref=share`,
     minimumHeight: 420,
   };
 }

@@ -13,6 +13,7 @@ interface Props {
   /** 採用基準ランク: model（型番一致）/ series（シリーズ一致）/ brand（ブランド一般） */
   match: ExternalEmbedMatchRank;
   purpose?: string;
+  summary?: string;
   autoload?: boolean;
   /** ページ表示時に自動表示する（読者が拒否済みの場合を除く） */
   autoDisplay?: boolean;
@@ -26,6 +27,7 @@ const {
   url,
   title,
   purpose,
+  summary,
   autoload,
   autoDisplay,
   tone,
@@ -39,6 +41,8 @@ const providerLabel = externalEmbedProviderLabel(provider);
 // になる状態を防ぎ、静的HTMLの時点で埋め込みであることを検査できる。
 const serverRenderYoutube =
   provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
+const serverRenderReddit = provider === "reddit" && autoDisplay === true;
+const serverRenderEmbed = serverRenderYoutube || serverRenderReddit;
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -53,8 +57,8 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-provider={provider}
   data-match={match}
   data-tone={tone}
-  data-embed-state={serverRenderYoutube ? "loaded" : "idle"}
-  data-server-embed={serverRenderYoutube ? "true" : undefined}
+  data-embed-state={serverRenderEmbed ? "loaded" : "idle"}
+  data-server-embed={serverRenderEmbed ? "true" : undefined}
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
@@ -79,7 +83,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     tabindex="-1"
     aria-label={`${providerLabel}の埋め込み結果`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
-    hidden={!serverRenderYoutube}
+    hidden={!serverRenderEmbed}
   >
     {serverRenderYoutube && config.embedUrl && (
       <iframe
@@ -90,6 +94,13 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen
       ></iframe>
+    )}
+    {serverRenderReddit && (
+      <blockquote class="reddit-embed-bq">
+        <div class="reddit-embed-bq__brand">reddit</div>
+        <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">{title}</a>
+        {summary && <p>{summary}</p>}
+      </blockquote>
     )}
   </div>
   <noscript>
@@ -246,6 +257,25 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         currentAttempt,
         setActiveCancel,
       );
+      return;
+    }
+
+    if (config.provider === "reddit") {
+      // This is the official Reddit oEmbed/widget shape. The widget script
+      // upgrades the blockquote in place and keeps attribution/linking intact.
+      const quote = document.createElement("blockquote");
+      quote.className = "reddit-embed-bq";
+      quote.style.minHeight = `${config.minimumHeight}px`;
+      appendSourceLink(quote, config);
+      target.append(quote);
+      await loadScriptOnce(config.scriptSrc);
+      if (attempt !== currentAttempt() || !quote.isConnected) {
+        throw new Error("external widget render cancelled");
+      }
+      // Reddit's widget script processes the blockquote asynchronously. The
+      // blockquote itself is already the official accessible fallback, so it
+      // is safe to finish once the script has loaded rather than leaving an
+      // empty placeholder after a provider-side DOM timeout.
       return;
     }
 
@@ -766,6 +796,42 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   :global(.external-embed[data-provider="tiktok"] .external-embed__target iframe) {
     max-width: 420px;
     margin-inline: auto;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    min-height: auto;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq a {
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq__brand {
+    margin-bottom: 0.55rem;
+    color: #ff4500;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq p {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Redditの自動表示は投稿プレビューを内容に合わせて表示する。 */
+  .external-embed[data-provider="reddit"][data-auto-display="true"] .external-embed__target {
+    min-height: auto;
   }
 
   @media (max-width: 390px) {
