@@ -1,0 +1,33 @@
+{
+  "id": "panasonic-eh-na0j-vs-eh-na0g-compare-2026-09-21",
+  "articleId": "panasonic-eh-na0j-vs-eh-na0g-compare",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "products": {
+    "left": {
+      "name": "パナソニック ナノケア EH-NA0J",
+      "officialUrl": "https://panasonic.jp/hairdryer/products/eh-na0j.html",
+      "image": "/products/panasonic-eh-na0j-vs-eh-na0g-left.jpg"
+    },
+    "right": {
+      "name": "パナソニック ナノケア EH-NA0G",
+      "officialUrl": "https://panasonic.jp/hairdryer/products/eh-na0g.html",
+      "image": "/products/panasonic-eh-na0j-vs-eh-na0g-right.jpg"
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/s?k=%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%8A%E3%83%8E%E3%82%B1%E3%82%A2%20EH-NA0J",
+    "right": "https://www.amazon.co.jp/s?k=%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%8A%E3%83%8E%E3%82%B1%E3%82%A2%20EH-NA0G"
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "left": null,
+    "right": null
+  },
+  "social": {
+    "status": "none",
+    "embeds": []
+  },
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+}

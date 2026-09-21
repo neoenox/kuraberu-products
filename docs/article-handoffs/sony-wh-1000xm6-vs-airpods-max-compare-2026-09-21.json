@@ -1,0 +1,33 @@
+{
+  "id": "sony-wh-1000xm6-vs-airpods-max-compare-2026-09-21",
+  "articleId": "sony-wh-1000xm6-vs-airpods-max-compare",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "products": {
+    "left": {
+      "name": "Sony WH-1000XM6",
+      "officialUrl": "https://www.sony.jp/headphone/products/WH-1000XM6/",
+      "image": "/products/sony-wh-1000xm6.jpg"
+    },
+    "right": {
+      "name": "Apple AirPods Max",
+      "officialUrl": "https://www.apple.com/jp/airpods-max/",
+      "image": "/products/airpods-max.jpg"
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/s?k=Sony%20WH-1000XM6",
+    "right": "https://www.amazon.co.jp/s?k=Apple%20AirPods%20Max"
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "left": null,
+    "right": null
+  },
+  "social": {
+    "status": "none",
+    "embeds": []
+  },
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+}

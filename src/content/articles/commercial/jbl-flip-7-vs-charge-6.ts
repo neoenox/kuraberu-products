@@ -128,7 +128,6 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
   socialProofHasPosts: false,
   socialProofCheckedAt: "2026-09-21",
   socialProofQuery: "JBL Flip 7 Charge 6 使用感 レビュー",
-  embeds: [],
   officialProse: [
     {
       heading: "JBL Flip 7",

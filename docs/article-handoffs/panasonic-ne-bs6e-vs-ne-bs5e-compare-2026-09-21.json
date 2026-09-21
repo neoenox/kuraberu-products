@@ -1,0 +1,33 @@
+{
+  "id": "panasonic-ne-bs6e-vs-ne-bs5e-compare-2026-09-21",
+  "articleId": "panasonic-ne-bs6e-vs-ne-bs5e-compare",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "products": {
+    "left": {
+      "name": "パナソニック ビストロ NE-BS6E",
+      "officialUrl": "https://panasonic.jp/range/products/NE-BS6E.html",
+      "image": "/products/panasonic-ne-bs6e.png"
+    },
+    "right": {
+      "name": "パナソニック ビストロ NE-BS5E",
+      "officialUrl": "https://panasonic.jp/range/products/NE-BS5E.html",
+      "image": "/products/panasonic-ne-bs5e.png"
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/s?k=%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%93%E3%82%B9%E3%83%88%E3%83%AD%20NE-BS6E",
+    "right": "https://www.amazon.co.jp/s?k=%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%93%E3%82%B9%E3%83%88%E3%83%AD%20NE-BS5E"
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "left": null,
+    "right": null
+  },
+  "social": {
+    "status": "none",
+    "embeds": []
+  },
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+}

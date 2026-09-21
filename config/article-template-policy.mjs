@@ -70,6 +70,16 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "anker-nano-a1638-vs-power-bank-a1256",
   "anker-nano-power-bank-vs-zolo-a1688",
   "jbl-flip-7-vs-charge-6",
+  "panasonic-ne-bs6e-vs-ne-bs5e-compare",
+  "panasonic-es-lv9w-vs-es-lv7w-compare",
+  "sony-wf-1000xm6-vs-soundcore-liberty-5-pro",
+  "roborock-qrevo-curv-vs-dreame-x50-compare",
+  "sharp-kc-s50-vs-panasonic-f-px70c-compare",
+  "gopro-hero13-vs-dji-osmo-action5",
+  "regza-43m550m-vs-bravia-xr80-compare",
+  "sony-wh-1000xm6-vs-airpods-max-compare",
+  "panasonic-eh-na0j-vs-eh-na0g-compare",
+  "anker-prime-a2688-vs-anker-nano-a1638",
   "logicool-mx-master-4-vs-mx-master-3s",
 ]);
 

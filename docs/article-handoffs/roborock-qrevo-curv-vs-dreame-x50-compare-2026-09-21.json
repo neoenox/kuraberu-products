@@ -1,0 +1,33 @@
+{
+  "id": "roborock-qrevo-curv-vs-dreame-x50-compare-2026-09-21",
+  "articleId": "roborock-qrevo-curv-vs-dreame-x50-compare",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "products": {
+    "left": {
+      "name": "Roborock Qrevo Curv",
+      "officialUrl": "https://jp.roborock.com/pages/qrevo-curv",
+      "image": "/products/roborock-qrevo-curv-vs-dreame-x50-left.jpg"
+    },
+    "right": {
+      "name": "Dreame X50 Ultra",
+      "officialUrl": "https://www.dreametech.jp/products/x50-ultra",
+      "image": "/products/roborock-qrevo-curv-vs-dreame-x50-right.jpg"
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/s?k=Roborock%20Qrevo%20Curv",
+    "right": "https://www.amazon.co.jp/s?k=Dreame%20X50%20Ultra"
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "left": null,
+    "right": null
+  },
+  "social": {
+    "status": "none",
+    "embeds": []
+  },
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+}

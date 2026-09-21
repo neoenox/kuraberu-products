@@ -1,0 +1,33 @@
+{
+  "id": "gopro-hero13-vs-dji-osmo-action5-2026-09-21",
+  "articleId": "gopro-hero13-vs-dji-osmo-action5",
+  "source": "Codex research",
+  "checkedAt": "2026-09-21",
+  "articleReady": true,
+  "products": {
+    "left": {
+      "name": "GoPro HERO13 Black",
+      "officialUrl": "https://gopro.com/ja/jp/shop/cameras/hero13black/CHDHX-131-master.html",
+      "image": "/products/gopro-hero13-black.jpg"
+    },
+    "right": {
+      "name": "DJI Osmo Action 5 Pro",
+      "officialUrl": "https://www.dji.com/jp/osmo-action-5-pro",
+      "image": "/products/dji-osmo-action-5-pro.jpg"
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/s?k=GoPro%20HERO13%20Black",
+    "right": "https://www.amazon.co.jp/s?k=DJI%20Osmo%20Action%205%20Pro"
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "left": null,
+    "right": null
+  },
+  "social": {
+    "status": "none",
+    "embeds": []
+  },
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+}
