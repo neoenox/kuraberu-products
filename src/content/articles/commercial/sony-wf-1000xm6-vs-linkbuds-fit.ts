@@ -7,7 +7,7 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   handoffManifestId: "sony-wf-1000xm6-vs-linkbuds-fit-2026-09-20",
   productInfoCheckedAt: "2026-09-20",
   purchaseLinksCheckedAt: "2026-09-20",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "ソニー WF-1000XM6とLinkBuds Fitの違いを比較｜重さ・電池・価格は？",
   headline:
     "ソニーの完全ワイヤレスイヤホンを比較。ノイキャン重視と軽さ重視の違い",

@@ -3,7 +3,7 @@
   "articleId": "roborock-qrevo-curv-vs-dreame-x50-compare",
   "source": "Codex research",
   "checkedAt": "2026-09-21",
-  "articleReady": true,
+  "articleReady": false,
   "products": {
     "left": {
       "name": "Roborock Qrevo Curv",
@@ -29,5 +29,6 @@
     "status": "none",
     "embeds": []
   },
-  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"],
+  "draftReason": "楽天商品詳細URLとChrome生成成果URLが未確認のため公開停止"
 }

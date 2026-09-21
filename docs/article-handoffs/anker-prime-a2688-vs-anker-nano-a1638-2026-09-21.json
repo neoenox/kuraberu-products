@@ -3,7 +3,7 @@
   "articleId": "anker-prime-a2688-vs-anker-nano-a1638",
   "source": "Codex research",
   "checkedAt": "2026-09-21",
-  "articleReady": true,
+  "articleReady": false,
   "products": {
     "left": {
       "name": "Anker Prime Power Bank A2688",
@@ -29,5 +29,6 @@
     "status": "none",
     "embeds": []
   },
-  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"]
+  "caveats": ["Amazonは商品名検索リンク。購入前に型番と販売者を確認する。"],
+  "draftReason": "楽天商品詳細URLとChrome生成成果URLが未確認のため公開停止"
 }

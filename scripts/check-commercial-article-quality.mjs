@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { PUBLISHED_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
 
 const root = process.cwd();
 const articlesDir = path.join(root, "src", "content", "articles", "commercial");
@@ -73,17 +74,29 @@ for (const file of files) {
     errors.push(`${articleId}: handoff manifest is invalid JSON`);
     continue;
   }
-  if (manifest.articleReady !== true)
-    errors.push(`${articleId}: articleReady must be true`);
+  const isPublished = PUBLISHED_ARTICLE_PAGE_SLUGS.has(articleId);
+  if (manifest.articleReady !== true) {
+    if (isPublished)
+      errors.push(
+        `${articleId}: published article must have articleReady=true`,
+      );
+    continue;
+  }
+  if (!/purchaseLinkStatus:\s*"(?:verified|direct)"/.test(source)) {
+    errors.push(
+      `${articleId}: articleReady=true requires a CTA-enabled purchaseLinkStatus`,
+    );
+  }
   for (const side of ["left", "right"]) {
     const amazon = manifest.amazon?.[side];
     const rakuten = manifest.rakuten?.[side];
     if (
-      !/^https:\/\//.test(amazon ?? "") &&
+      !/^https:\/\//.test(amazon ?? "") ||
+      !["verified", "direct"].includes(manifest.rakuten?.status) ||
       !/^https:\/\//.test(rakuten ?? "")
     ) {
       errors.push(
-        `${articleId}: ${side} needs a confirmed Amazon or Rakuten URL`,
+        `${articleId}: ${side} needs confirmed Amazon and Rakuten URLs`,
       );
     }
   }

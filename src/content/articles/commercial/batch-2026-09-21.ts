@@ -9,7 +9,7 @@ export const AnkerPrimeA2688VsAnkerNanoA1638Seed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "anker-prime-a2688-vs-anker-nano-a1638-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title:
     "Anker Prime Power Bank A2688とAnker Nano Power Bank A1638の違いを比較",
   headline:
@@ -116,7 +116,7 @@ export const PanasonicEhNa0JVsEhNa0GCompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "panasonic-eh-na0j-vs-eh-na0g-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title:
     "パナソニック ナノケア EH-NA0Jとパナソニック ナノケア EH-NA0Gの違いを比較",
   headline:
@@ -211,7 +211,7 @@ export const SonyWh1000Xm6VsAirpodsMaxCompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "sony-wh-1000xm6-vs-airpods-max-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "Sony WH-1000XM6とApple AirPods Maxの違いを比較",
   headline: "Sony WH-1000XM6とApple AirPods Maxを公式仕様で比較",
   description:
@@ -311,7 +311,7 @@ export const Regza43M550MVsBraviaXr80CompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "regza-43m550m-vs-bravia-xr80-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "REGZA 43M550Mとソニー BRAVIA 5 K-55XR80の違いを比較",
   headline: "REGZA 43M550Mとソニー BRAVIA 5 K-55XR80を公式仕様で比較",
   description:
@@ -411,7 +411,7 @@ export const GoproHero13VsDjiOsmoAction5Seed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "gopro-hero13-vs-dji-osmo-action5-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "GoPro HERO13 BlackとDJI Osmo Action 5 Proの違いを比較",
   headline: "GoPro HERO13 BlackとDJI Osmo Action 5 Proを公式仕様で比較",
   description:
@@ -508,7 +508,7 @@ export const SharpKcS50VsPanasonicFPx70CCompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "sharp-kc-s50-vs-panasonic-f-px70c-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "シャープ KC-S50とパナソニック F-PX70Cの違いを比較",
   headline: "シャープ KC-S50とパナソニック F-PX70Cを公式仕様で比較",
   description:
@@ -610,7 +610,7 @@ export const RoborockQrevoCurvVsDreameX50CompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "roborock-qrevo-curv-vs-dreame-x50-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "Roborock Qrevo CurvとDreame X50 Ultraの違いを比較",
   headline: "Roborock Qrevo CurvとDreame X50 Ultraを公式仕様で比較",
   description:
@@ -712,7 +712,7 @@ export const SonyWf1000Xm6VsSoundcoreLiberty5ProSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "sony-wf-1000xm6-vs-soundcore-liberty-5-pro-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "Sony WF-1000XM6とSoundcore Liberty 5 Proの違いを比較",
   headline: "Sony WF-1000XM6とSoundcore Liberty 5 Proを公式仕様で比較",
   description:
@@ -812,7 +812,7 @@ export const PanasonicEsLv9WVsEsLv7WCompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "panasonic-es-lv9w-vs-es-lv7w-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title:
     "パナソニック ラムダッシュ ES-LV9Wとパナソニック ラムダッシュ ES-LV7Wの違いを比較",
   headline:
@@ -907,7 +907,7 @@ export const PanasonicNeBs6EVsNeBs5ECompareSeed: CommercialArticleSeed = {
   productInfoCheckedAt: checked,
   purchaseLinksCheckedAt: checked,
   handoffManifestId: "panasonic-ne-bs6e-vs-ne-bs5e-compare-2026-09-21",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title:
     "パナソニック ビストロ NE-BS6Eとパナソニック ビストロ NE-BS5Eの違いを比較",
   headline:
