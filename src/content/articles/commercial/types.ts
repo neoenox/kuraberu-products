@@ -69,6 +69,8 @@ type CommercialArticleSeed = {
     match: string;
     purpose?: string;
     summary?: string;
+    author?: string;
+    community?: string;
     tone?: string;
     autoload?: boolean;
     autoDisplay?: boolean;
