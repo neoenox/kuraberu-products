@@ -1,0 +1,44 @@
+{
+  "id": "elecom-de-c85-vs-de-c86-2026-09-20",
+  "articleId": "elecom-de-c85-vs-de-c86",
+  "source": "ChatGPT chat mode",
+  "checkedAt": "2026-09-20",
+  "articleReady": true,
+  "officialSources": [
+    "https://www.elecom.co.jp/products/DE-C85-5000BK.html",
+    "https://www.elecom.co.jp/products/DE-C86-10000BK.html",
+    "https://www.elecom.co.jp/pickup/contents/00126/standard/"
+  ],
+  "amazon": { "left": null, "right": null, "status": "unconfirmed" },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4549550417372%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felecom%2F4549550417396%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "excludedCandidates": [
+      {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/watch?v=gSxN1XicWpc",
+        "reason": "型番は一致するが本人の購入・実使用・提供有無を直接確認できない"
+      },
+      {
+        "platform": "note",
+        "url": "https://note.com/gadget_techo/n/nddea07209607",
+        "reason": "公式スペックと口コミ傾向を基にした記事で本人実使用を確認できない"
+      },
+      {
+        "platform": "GIGAZINE",
+        "url": "https://gigazine.net/news/20260320-elecom-de-c86-10000pn/",
+        "reason": "メーカー貸与品のレビューで一般ユーザー投稿ではない"
+      }
+    ]
+  },
+  "caveats": [
+    "Amazon商品詳細URLとASINは今回直接確認できなかったため登録していない。",
+    "SNSは採用条件を満たす投稿がなかったため記事欄を非表示にする。"
+  ]
+}

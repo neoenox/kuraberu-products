@@ -13,6 +13,9 @@ interface Props {
   /** 採用基準ランク: model（型番一致）/ series（シリーズ一致）/ brand（ブランド一般） */
   match: ExternalEmbedMatchRank;
   purpose?: string;
+  summary?: string;
+  author?: string;
+  community?: string;
   autoload?: boolean;
   /** ページ表示時に自動表示する（読者が拒否済みの場合を除く） */
   autoDisplay?: boolean;
@@ -26,6 +29,9 @@ const {
   url,
   title,
   purpose,
+  summary,
+  author,
+  community,
   autoload,
   autoDisplay,
   tone,
@@ -39,6 +45,8 @@ const providerLabel = externalEmbedProviderLabel(provider);
 // になる状態を防ぎ、静的HTMLの時点で埋め込みであることを検査できる。
 const serverRenderYoutube =
   provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
+const serverRenderReddit = provider === "reddit" && autoDisplay === true;
+const serverRenderEmbed = serverRenderYoutube || serverRenderReddit;
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -53,12 +61,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-provider={provider}
   data-match={match}
   data-tone={tone}
-  data-embed-state={serverRenderYoutube ? "loaded" : "idle"}
-  data-server-embed={serverRenderYoutube ? "true" : undefined}
+  data-embed-state={serverRenderEmbed ? "loaded" : "idle"}
+  data-server-embed={serverRenderEmbed ? "true" : undefined}
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
-  aria-label={`${providerLabel}の外部コンテンツ`}
+    aria-label={`${providerLabel}の投稿`}
 >
   <div class="external-embed__intro">
     <p class="external-embed__label">外部コンテンツ</p>
@@ -77,9 +85,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     class="external-embed__target"
     data-external-embed-target
     tabindex="-1"
-    aria-label={`${providerLabel}の埋め込み結果`}
+    aria-label={`${providerLabel}の投稿表示`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
-    hidden={!serverRenderYoutube}
+    hidden={!serverRenderEmbed}
   >
     {serverRenderYoutube && config.embedUrl && (
       <iframe
@@ -90,6 +98,19 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen
       ></iframe>
+    )}
+    {serverRenderReddit && (
+      <blockquote class="reddit-embed-bq">
+        <div class="reddit-embed-bq__brand">reddit</div>
+        <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">{title}</a>
+        {author && community && (
+          <div class="reddit-embed-bq__meta">
+            by <a href={`https://www.reddit.com/user/${author}`} target="_blank" rel="noopener noreferrer">u/{author}</a>
+            in <a href={`https://www.reddit.com/r/${community}`} target="_blank" rel="noopener noreferrer">{community}</a>
+          </div>
+        )}
+        {summary && <p>{summary}</p>}
+      </blockquote>
     )}
   </div>
   <noscript>
@@ -119,7 +140,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   } from "../lib/embed-consent";
 
   type EmbedConfig = {
-    provider: "x" | "youtube" | "tiktok" | "pinterest";
+    provider: "x" | "youtube" | "tiktok" | "pinterest" | "reddit";
     canonicalUrl: string;
     renderer: "iframe" | "widget";
     embedUrl?: string;
@@ -249,6 +270,28 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
       return;
     }
 
+    if (config.provider === "reddit") {
+      // This is the official Reddit oEmbed/widget shape. The widget script
+      // upgrades the blockquote in place and keeps attribution/linking intact.
+      const quote =
+        target.querySelector<HTMLElement>(".reddit-embed-bq") ??
+        document.createElement("blockquote");
+      if (!quote.isConnected) {
+        quote.className = "reddit-embed-bq";
+        appendSourceLink(quote, config);
+        target.append(quote);
+      }
+      await loadScriptOnce(config.scriptSrc);
+      if (attempt !== currentAttempt() || !quote.isConnected) {
+        throw new Error("external widget render cancelled");
+      }
+      // Reddit's widget script processes the blockquote asynchronously. The
+      // blockquote itself is already the official accessible fallback, so it
+      // is safe to finish once the script has loaded rather than leaving an
+      // empty placeholder after a provider-side DOM timeout.
+      return;
+    }
+
     const link = appendSourceLink(target, config);
     link.dataset.pinDo = "embedPin";
     if (!(window as PinterestWindow).PinUtils?.build) {
@@ -327,6 +370,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   function createTargetAdapter(
     target: HTMLElement,
     title: string,
+    preserveInitialContent = false,
   ): EmbedTargetAdapter {
     let activeCancel: (() => void) | undefined;
     let attempt = 0;
@@ -336,6 +380,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         activeCancel?.();
         activeCancel = undefined;
         attempt += 1;
+        if (preserveInitialContent && target.querySelector(".reddit-embed-bq")) {
+          return;
+        }
         target.replaceChildren();
       },
 
@@ -520,6 +567,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     const targetAdapter = createTargetAdapter(
       target,
       button.textContent ?? "外部コンテンツ",
+      root.dataset.serverEmbed === "true" && root.dataset.provider === "reddit",
     );
     const runtime = createExternalEmbedRuntime(
       config as ExternalEmbedConfig,
@@ -548,6 +596,15 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     let resetGeneration = 0;
     const resetToPlaceholder = () => {
       resetGeneration += 1;
+      if (
+        root.dataset.serverEmbed === "true" &&
+        root.dataset.provider === "reddit"
+      ) {
+        // Keep the server-rendered Reddit card visible when external content
+        // is denied or withdrawn; it is the accessible fallback for the post.
+        root.dataset.embedState = "loaded";
+        return;
+      }
       targetAdapter.clear();
       target.hidden = true;
       root.dataset.embedState = "idle";
@@ -605,7 +662,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           ) {
             return;
           }
-          targetAdapter.clear();
+          if (
+            root.dataset.serverEmbed !== "true" ||
+            root.dataset.provider !== "reddit"
+          ) {
+            targetAdapter.clear();
+          }
           target.hidden = true;
           root.dataset.embedState = runtime.state;
           button.disabled = false;
@@ -768,6 +830,48 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     margin-inline: auto;
   }
 
+  .external-embed[data-provider="reddit"] .reddit-embed-bq {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    min-height: auto;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq a {
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq__brand {
+    margin-bottom: 0.55rem;
+    color: #ff4500;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq p {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .external-embed[data-provider="reddit"] .reddit-embed-bq__meta {
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  /* Redditの自動表示は投稿プレビューを内容に合わせて表示する。 */
+  .external-embed[data-provider="reddit"][data-auto-display="true"] .external-embed__target {
+    min-height: auto;
+  }
+
   @media (max-width: 390px) {
     .external-embed__actions {
       align-items: stretch;
@@ -805,3 +909,4 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   }
 
 </style>
+

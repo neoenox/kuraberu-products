@@ -9,6 +9,14 @@ const commercialArticleImages: Readonly<
     left: "/products/anker-nano-power-bank-a1259.jpg",
     right: "/products/anker-zolo-power-bank-a1688.jpg",
   },
+  "elecom-de-c85-vs-de-c86": {
+    left: "/products/elecom-de-c85-5000bk.jpg",
+    right: "/products/elecom-de-c86-10000bk.jpg",
+  },
+  "sony-wf-1000xm6-vs-linkbuds-fit": {
+    left: "/products/sony-wf-1000xm6.jpg",
+    right: "/products/sony-linkbuds-fit.jpg",
+  },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
     right: "/products/panasonic-na-lx127el.jpg",

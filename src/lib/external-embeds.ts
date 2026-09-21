@@ -3,6 +3,7 @@ export const EXTERNAL_EMBED_PROVIDERS = [
   "youtube",
   "tiktok",
   "pinterest",
+  "reddit",
 ] as const;
 
 export type ExternalEmbedProvider = (typeof EXTERNAL_EMBED_PROVIDERS)[number];
@@ -45,6 +46,7 @@ const providerLabels: Record<ExternalEmbedProvider, string> = {
   youtube: "YouTube",
   tiktok: "TikTok",
   pinterest: "Pinterest",
+  reddit: "Reddit",
 };
 
 function parseHttpsUrl(input: string): URL {
@@ -182,27 +184,50 @@ export function createExternalEmbedConfig(
     };
   }
 
-  if (
-    !hasHostname(url, [
-      "pinterest.com",
-      "www.pinterest.com",
-      "pinterest.jp",
-      "www.pinterest.jp",
-    ])
-  ) {
-    throw new Error("Pinterestの公式ホスト以外は埋め込みできません。");
+  if (provider === "pinterest") {
+    if (
+      !hasHostname(url, [
+        "pinterest.com",
+        "www.pinterest.com",
+        "pinterest.jp",
+        "www.pinterest.jp",
+      ])
+    ) {
+      throw new Error("Pinterestの公式ホスト以外は埋め込みできません。");
+    }
+
+    const match = url.pathname.match(/^\/pin\/(\d+)(?:\/|$)/);
+    if (!match) {
+      throw new Error("Pinterestの公開Pin URLを指定してください。");
+    }
+
+    return {
+      provider,
+      canonicalUrl: `https://www.pinterest.com/pin/${match[1]}/`,
+      renderer: "widget",
+      scriptSrc: "https://assets.pinterest.com/js/pinit.js",
+      minimumHeight: 420,
+    };
   }
 
-  const match = url.pathname.match(/^\/pin\/(\d+)(?:\/|$)/);
+  if (!hasHostname(url, ["reddit.com", "www.reddit.com"])) {
+    throw new Error("Redditの公式ホスト以外は埋め込みできません。");
+  }
+
+  const match = url.pathname.match(
+    /^\/r\/([A-Za-z0-9_]+)\/comments\/([A-Za-z0-9]+)(?:\/[^/]+)?(?:\/|$)/,
+  );
   if (!match) {
-    throw new Error("Pinterestの公開Pin URLを指定してください。");
+    throw new Error("Redditの公開投稿URLを指定してください。");
   }
 
+  const canonicalUrl = `https://www.reddit.com${url.pathname.replace(/\/$/, "")}`;
   return {
     provider,
-    canonicalUrl: `https://www.pinterest.com/pin/${match[1]}/`,
+    canonicalUrl,
+    // Reddit's official blockquote + widget.js embed format.
     renderer: "widget",
-    scriptSrc: "https://assets.pinterest.com/js/pinit.js",
-    minimumHeight: 420,
+    scriptSrc: "https://embed.reddit.com/widgets.js",
+    minimumHeight: 316,
   };
 }
