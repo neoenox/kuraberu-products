@@ -17,6 +17,10 @@ const commercialArticleImages: Readonly<
     left: "/products/sony-wf-1000xm6.jpg",
     right: "/products/sony-linkbuds-fit.jpg",
   },
+  "anker-a121a-vs-a2688": {
+    left: "/products/anker-a121a.jpg",
+    right: "/products/anker-a2688.jpg",
+  },
   "jbl-flip-7-vs-charge-6": {
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
