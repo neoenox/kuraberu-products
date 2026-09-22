@@ -21,6 +21,10 @@ const commercialArticleImages: Readonly<
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
   },
+  "anker-a1664-vs-a1654": {
+    left: "/products/anker-a1664.jpg",
+    right: "/products/anker-a1654.jpg",
+  },
   "shokz-openfit-2-plus-vs-openfit-2": {
     left: "/products/shokz-openfit-2-plus.png",
     right: "/products/shokz-openfit-2.png",
