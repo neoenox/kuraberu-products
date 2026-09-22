@@ -1,0 +1,59 @@
+{
+  "id": "soundcore-space-one-pro-vs-space-one-2026-09-22",
+  "articleId": "soundcore-space-one-pro-vs-space-one",
+  "source": "ChatGPT chat mode",
+  "checkedAt": "2026-09-22",
+  "researchDateJST": "2026-09-22",
+  "articleReady": true,
+  "category": "ワイヤレスノイズキャンセリングヘッドホン",
+  "products": {
+    "a": {
+      "name": "Soundcore Space One Pro",
+      "model": "A3062N11",
+      "officialUrl": "https://www.ankerjapan.com/products/a3062",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/A3062_black.jpg",
+      "amazon": {
+        "url": "https://www.amazon.co.jp/dp/B0D4VMVCFX",
+        "asin": "B0D4VMVCFX"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/anker/a3062/"
+    },
+    "b": {
+      "name": "Soundcore Space One",
+      "model": "A3035011",
+      "officialUrl": "https://www.ankerjapan.com/products/a3035",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/A3035-main.jpg",
+      "amazon": {
+        "url": "https://www.amazon.co.jp/dp/B0C6MK4LXR",
+        "asin": "B0C6MK4LXR"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/anker/a3035/"
+    }
+  },
+  "officialSources": [
+    "https://www.ankerjapan.com/products/a3062",
+    "https://www.ankerjapan.com/products/a3035"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0D4VMVCFX",
+    "right": "https://www.amazon.co.jp/dp/B0C6MK4LXR"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3062%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3035%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+  },
+  "social": {
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://www.reddit.com/r/soundcore/comments/1t77l1r/my_brand_new_space_one_pros_unusual_problem/",
+      "https://www.reddit.com/r/soundcore/comments/1p1qkdq/very_impressed_with_the_space_one/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/soundcore/comments/1t77l1r/my_brand_new_space_one_pros_unusual_problem/",
+      "https://www.reddit.com/r/soundcore/comments/1p1qkdq/very_impressed_with_the_space_one/"
+    ]
+  },
+  "unconfirmedItems": []
+}

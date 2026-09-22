@@ -29,6 +29,10 @@ const commercialArticleImages: Readonly<
     left: "/products/P42i.jpg",
     right: "/products/P31i.png",
   },
+  "soundcore-space-one-pro-vs-space-one": {
+    left: "/products/soundcore-space-one-pro.jpg",
+    right: "/products/soundcore-space-one.jpg",
+  },
   "jbl-flip-7-vs-charge-6": {
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
@@ -285,3 +289,5 @@ const commercialArticleImages: Readonly<
 };
 
 export { commercialArticleImages };
+
+
