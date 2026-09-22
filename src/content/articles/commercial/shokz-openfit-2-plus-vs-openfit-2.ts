@@ -4,9 +4,6 @@ const rakutenBase =
   "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=";
 const rakutenToken =
   "&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D";
-const rakutenA = `${rakutenBase}${encodeURIComponent("https://item.rakuten.co.jp/akky2018/au-skz-openfit2plus-/")}${rakutenToken}`;
-const rakutenB = `${rakutenBase}${encodeURIComponent("https://item.rakuten.co.jp/flaner/10022823old/")}${rakutenToken}`;
-
 export const shokzOpenfit2PlusVsOpenfit2Seed: CommercialArticleSeed = {
   id: "shokz-openfit-2-plus-vs-openfit-2",
   publishedAt: "2026-09-22",
