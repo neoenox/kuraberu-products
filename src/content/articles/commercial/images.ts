@@ -42,8 +42,8 @@ const commercialArticleImages: Readonly<
     right: "/products/jbl-charge-6.png",
   },
   "shokz-openfit-2-plus-vs-openfit-2": {
-    left: "/products/shokz-openfit-2-plus.jpg",
-    right: "/products/shokz-openfit-2.jpg",
+    left: "/products/shokz-openfit-2-plus.png",
+    right: "/products/shokz-openfit-2.png",
   },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
@@ -297,6 +297,3 @@ const commercialArticleImages: Readonly<
 };
 
 export { commercialArticleImages };
-
-
-

@@ -980,7 +980,3 @@ describe("future date validation in Asia/Tokyo", () => {
     _setBuildReferenceDate(null);
   });
 });
-
-
-
-
