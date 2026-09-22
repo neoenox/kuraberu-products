@@ -154,6 +154,11 @@ describe("article metadata", () => {
       );
     }
     expect(
+      publishedArticleMetadata.some(
+        (article) => article.id === "anker-a121a-vs-a2688",
+      ),
+    ).toBe(true);
+    expect(
       publicArticleMetadata.some(
         (article) => article.id === "thermos-tiger-bottle",
       ),
