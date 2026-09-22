@@ -1,0 +1,59 @@
+{
+  "id": "anker-soundcore-p42i-vs-p31i-2026-09-22",
+  "articleId": "anker-soundcore-p42i-vs-p31i",
+  "source": "ChatGPT chat mode",
+  "checkedAt": "2026-09-22",
+  "researchDateJST": "2026-09-22",
+  "articleReady": true,
+  "category": "完全ワイヤレスイヤホン",
+  "products": {
+    "a": {
+      "name": "Soundcore P42i",
+      "model": "D1205N11",
+      "officialUrl": "https://www.ankerjapan.com/products/d1205",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/D1205N11.jpg",
+      "amazon": {
+        "url": "https://www.amazon.co.jp/dp/B0GZT5XM4R",
+        "asin": "B0GZT5XM4R"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/anker/d1205/"
+    },
+    "b": {
+      "name": "Soundcore P31i",
+      "model": "D1202N11",
+      "officialUrl": "https://www.ankerjapan.com/products/d1202",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/D1202N11.png",
+      "amazon": {
+        "url": "https://www.amazon.co.jp/dp/B0FNRS5WB2",
+        "asin": "B0FNRS5WB2"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/anker/d1202/"
+    }
+  },
+  "officialSources": [
+    "https://www.ankerjapan.com/products/d1205",
+    "https://www.ankerjapan.com/products/d1202"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0GZT5XM4R",
+    "right": "https://www.amazon.co.jp/dp/B0FNRS5WB2"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fd1205%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fd1202%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+  },
+  "social": {
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://www.reddit.com/r/soundcore/comments/1v25xax/the_brand_new_p42i_with_ultra_nc35/",
+      "https://www.reddit.com/r/soundcore/comments/1unwtp6/p31i_early_impressions/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/soundcore/comments/1v25xax/the_brand_new_p42i_with_ultra_nc35/",
+      "https://www.reddit.com/r/soundcore/comments/1unwtp6/p31i_early_impressions/"
+    ]
+  },
+  "unconfirmedItems": []
+}

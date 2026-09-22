@@ -25,6 +25,10 @@ const commercialArticleImages: Readonly<
     left: "/products/anker-a1664.jpg",
     right: "/products/anker-a1654.jpg",
   },
+  "anker-soundcore-p42i-vs-p31i": {
+    left: "/products/P42i.jpg",
+    right: "/products/P31i.png",
+  },
   "jbl-flip-7-vs-charge-6": {
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",

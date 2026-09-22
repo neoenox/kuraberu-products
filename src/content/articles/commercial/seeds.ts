@@ -79,6 +79,7 @@ import { sonyWf1000xm6VsLinkbudsFitSeed } from "./sony-wf-1000xm6-vs-linkbuds-fi
 import { jblFlip7VsCharge6Seed } from "./jbl-flip-7-vs-charge-6";
 import { ankerA121aVsA2688Seed } from "./anker-a121a-vs-a2688";
 import { ankerA1664VsA1654Seed } from "./anker-a1664-vs-a1654";
+import { ankerSoundcoreP42iVsP31iSeed } from "./anker-soundcore-p42i-vs-p31i";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerNanoA1638VsA1256Seed,
@@ -88,6 +89,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   jblFlip7VsCharge6Seed,
   ankerA121aVsA2688Seed,
   ankerA1664VsA1654Seed,
+  ankerSoundcoreP42iVsP31iSeed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,
