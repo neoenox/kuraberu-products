@@ -68,6 +68,7 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
 /** 公開記事は品質ゲート通過後に個別追加する。未検証記事は公開しない。 */
 export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "jbl-flip-7-vs-charge-6",
+  "anker-a121a-vs-a2688",
   "anker-a1664-vs-a1654",
 ]);
 export function isPublishedArticlePath(path) {

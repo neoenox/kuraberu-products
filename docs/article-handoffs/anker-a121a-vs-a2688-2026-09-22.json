@@ -1,0 +1,54 @@
+{
+  "id": "anker-a121a-vs-a2688-2026-09-22",
+  "articleId": "anker-a121a-vs-a2688",
+  "source": "Codex research",
+  "checkedAt": "2026-09-22",
+  "articleReady": true,
+  "category": "USB急速充電器",
+  "products": {
+    "left": {
+      "name": "Anker Nano Charger (70W, 3 Ports)",
+      "model": "A121AN11",
+      "officialUrl": "https://www.ankerjapan.com/products/a121a",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/a121an11.jpg?v=1756964334",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0F99FCSX7",
+      "rakutenUrl": "https://item.rakuten.co.jp/anker/a121a/"
+    },
+    "right": {
+      "name": "Anker Prime Charger (100W, 3 Ports, GaN)",
+      "model": "A2688N42",
+      "officialUrl": "https://www.ankerjapan.com/products/a2688",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/A2688-SILVER.jpg?v=1722567319",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0D73JBJ56",
+      "rakutenUrl": "https://item.rakuten.co.jp/anker/a2688/"
+    }
+  },
+  "officialSources": [
+    "https://www.ankerjapan.com/products/a121a",
+    "https://www.ankerjapan.com/products/a2688"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0F99FCSX7",
+    "right": "https://www.amazon.co.jp/dp/B0D73JBJ56"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa121a%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjB9%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa2688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "excludedCandidates": [
+      "https://www.youtube.com/watch?v=v7uOyKEn8Js",
+      "https://www.youtube.com/watch?v=K2kBdJoHAMQ",
+      "https://www.youtube.com/watch?v=6R7ITMAt6JA",
+      "https://note.com/gearlabjp/n/nf70834ed871c"
+    ]
+  },
+  "caveats": [
+    "価格と在庫は確認日現在の情報です。",
+    "SNSは広告・PR・対象モデル不一致を除外し、採用投稿はありません。"
+  ]
+}
