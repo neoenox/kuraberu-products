@@ -77,6 +77,7 @@ import { logicoolMxMaster4VsMxMaster3sSeed } from "./logicool-mx-master-4-vs-mx-
 import { elecomDeC85VsDeC86Seed } from "./elecom-de-c85-vs-de-c86";
 import { sonyWf1000xm6VsLinkbudsFitSeed } from "./sony-wf-1000xm6-vs-linkbuds-fit";
 import { jblFlip7VsCharge6Seed } from "./jbl-flip-7-vs-charge-6";
+import { ankerA121aVsA2688Seed } from "./anker-a121a-vs-a2688";
 import { shokzOpenfit2PlusVsOpenfit2Seed } from "./shokz-openfit-2-plus-vs-openfit-2";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
@@ -85,6 +86,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   elecomDeC85VsDeC86Seed,
   sonyWf1000xm6VsLinkbudsFitSeed,
   jblFlip7VsCharge6Seed,
+  ankerA121aVsA2688Seed,
   shokzOpenfit2PlusVsOpenfit2Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
