@@ -69,6 +69,7 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
 export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "jbl-flip-7-vs-charge-6",
   "anker-a121a-vs-a2688",
+  "anker-a1664-vs-a1654",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
