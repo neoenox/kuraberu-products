@@ -41,6 +41,10 @@ const commercialArticleImages: Readonly<
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
   },
+  "shokz-openfit-2-plus-vs-openfit-2": {
+    left: "/products/shokz-openfit-2-plus.jpg",
+    right: "/products/shokz-openfit-2.jpg",
+  },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
     right: "/products/panasonic-na-lx127el.jpg",

@@ -4,6 +4,7 @@ import { ankerNanoA1638VsA1256Seed } from "./anker-nano-a1638-vs-power-bank-a125
  */
 import type { CommercialArticleSeed } from "./types";
 import { kakakuSeptember2026Seeds } from "./kakaku-september-2026";
+import { shokzOpenfit2PlusVsOpenfit2Seed } from "./shokz-openfit-2-plus-vs-openfit-2";
 
 import { roborockQrevoCurvVsDreameX50Seed } from "./roborock-qrevo-curv-vs-dreame-x50";
 import { makitaCl107VsCl286Seed } from "./makita-cl107-vs-cl286";
@@ -94,6 +95,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerSoundcoreP42iVsP31iSeed,
   soundcoreSpaceOneProVsSpaceOneSeed,
   ankerA1638VsA1688Seed,
+  shokzOpenfit2PlusVsOpenfit2Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,

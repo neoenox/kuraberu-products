@@ -1,0 +1,18 @@
+{
+  "id": "shokz-openfit-2-plus-vs-openfit-2-2026-09-22",
+  "source": "ChatGPT chat mode",
+  "articleId": "shokz-openfit-2-plus-vs-openfit-2",
+  "checkedAt": "2026-09-22",
+  "researchDateJST": "2026-09-22",
+  "category": "オープンイヤー完全ワイヤレスイヤホン",
+  "articleReady": true,
+  "unconfirmedItems": [],
+  "officialSources": ["https://jp.shokz.com/products/openfit2plus", "https://jp.shokz.com/products/openfit2"],
+  "products": {
+    "a": {"name":"OpenFit 2+", "model":"T921", "officialUrl":"https://jp.shokz.com/products/openfit2plus", "officialImageUrl":"https://jp.shokz.com/cdn/shop/files/BK-2_bbc71b5d-530b-46b8-9c64-67b4d0ea53be.webp?v=1756176542", "amazon":{"asin":"B0F1Y3CJJ2","url":"https://www.amazon.co.jp/dp/B0F1Y3CJJ2"}, "rakutenProductUrl":"https://item.rakuten.co.jp/akky2018/au-skz-openfit2plus-/"},
+    "b": {"name":"OpenFit 2", "model":"T920", "officialUrl":"https://jp.shokz.com/products/openfit2", "officialImageUrl":"https://jp.shokz.com/cdn/shop/files/OpenFit2-Black_c94232f3-2fa3-48e0-96bd-cc01338237d0.webp?v=1736395013", "amazon":{"asin":"B0DJMG7YW9","url":"https://www.amazon.co.jp/dp/B0DJMG7YW9"}, "rakutenProductUrl":"https://item.rakuten.co.jp/flaner/10022823old/"}
+  },
+  "amazon": {"left":"https://www.amazon.co.jp/dp/B0F1Y3CJJ2", "right":"https://www.amazon.co.jp/dp/B0DJMG7YW9"},
+  "rakuten": {"left":"https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-skz-openfit2plus-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D", "right":"https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fflaner%2F10022823old%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D", "status":"verified"},
+  "social": {"status":"adopted", "adoptedCount":2, "directPostUrls":["https://www.reddit.com/r/shokz/comments/1umknfx/shokz_openfit_2_bad_sound/","https://www.reddit.com/r/shokz/comments/1svhlc9/openfit_2_quality_and_warrenty_warning/"], "embedUrls":["https://www.reddit.com/r/shokz/comments/1umknfx/shokz_openfit_2_bad_sound/","https://www.reddit.com/r/shokz/comments/1svhlc9/openfit_2_quality_and_warrenty_warning/"]}
+}
