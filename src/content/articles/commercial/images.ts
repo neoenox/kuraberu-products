@@ -33,6 +33,10 @@ const commercialArticleImages: Readonly<
     left: "/products/soundcore-space-one-pro.jpg",
     right: "/products/soundcore-space-one.jpg",
   },
+  "anker-a1638-vs-a1688": {
+    left: "/products/anker-nano-a1638-vs-a1688-left.jpg",
+    right: "/products/anker-nano-a1638-vs-a1688-right.jpg",
+  },
   "jbl-flip-7-vs-charge-6": {
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
@@ -289,5 +293,6 @@ const commercialArticleImages: Readonly<
 };
 
 export { commercialArticleImages };
+
 
 
