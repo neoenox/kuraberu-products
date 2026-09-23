@@ -37,10 +37,10 @@ type CommercialArticleSeed = {
     highlightNote?: string;
     direction?: "higher-is-better" | "lower-is-better";
   }[];
-  /** 左側商品の画像パス（"/products/..."）。省略時は hero セクションの画像をスキップ。 */
-  leftImage?: `/${string}`;
-  /** 右側商品の画像パス（"/products/..."）。省略時は hero セクションの画像をスキップ。 */
-  rightImage?: `/${string}`;
+  /** 左側商品の画像。ローカル "/products/..." またはメーカー公式の HTTPS URL。 */
+  leftImage?: `/${string}` | `https://${string}`;
+  /** 右側商品の画像。ローカル "/products/..." またはメーカー公式の HTTPS URL。 */
+  rightImage?: `/${string}` | `https://${string}`;
   /** 商品固有のFAQ（省略時は汎用FAQ） */
   faqEntries?: readonly { question: string; answer: string }[];
   /** リード文の上書き（省略時は summary + 汎用文） */
