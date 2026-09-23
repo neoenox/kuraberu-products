@@ -78,11 +78,11 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
       direction: "lower-is-better",
     },
     {
-      label: "Easy-Switch",
-      left: "対応（最大3台）",
-      right: "非対応",
+      label: "接続・切替",
+      left: "Easy-Switchで最大3台を切替",
+      right: "Bluetooth Low Energy / Logi Boltで接続",
       highlight: "left",
-      highlightNote: "最大3台を切り替え可能",
+      highlightNote: "M350sは3台切替を公式に明記",
     },
     {
       label: "スクロール",
@@ -128,7 +128,7 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     {
       question: "複数のPCやタブレットを切り替えて使えるのは？",
       answer:
-        "M350sです。Easy-Switchで最大3台のBluetooth対応デバイスを切り替えられます。",
+        "公式に3台切替が案内されているのはM350sです。Easy-Switchで最大3台のBluetooth対応デバイスを切り替えられます。",
     },
     {
       question: "長いWebページや文書をスクロールしやすいのは？",
