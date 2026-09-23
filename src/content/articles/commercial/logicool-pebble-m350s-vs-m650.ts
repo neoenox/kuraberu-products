@@ -20,7 +20,11 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "持ち運びやすい静音マウスを選びたい人",
     "M350sとM650の機能差を確認したい人",
   ],
-  uses: ["ノートPCでの作業", "自宅・オフィスでの作業", "複数デバイスの切り替え"],
+  uses: [
+    "ノートPCでの作業",
+    "自宅・オフィスでの作業",
+    "複数デバイスの切り替え",
+  ],
   summary:
     "軽さと最大3台のEasy-SwitchならM350s、SmartWheel・5ボタン・Logi Boltレシーバー同梱ならM650が向いています。",
   lead:
@@ -180,7 +184,8 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
       title: "Signature M650の長期使用感",
       match: "model",
       purpose: "約1年のオフィス利用後の感想",
-      summary: "スクロールホイールを評価する一方、約1年後にクリック不具合が出たという実利用投稿",
+      summary:
+        "スクロールホイールを評価する一方、約1年後にクリック不具合が出たという実利用投稿",
       community: "MouseReview",
       tone: "mixed",
       autoload: true,
