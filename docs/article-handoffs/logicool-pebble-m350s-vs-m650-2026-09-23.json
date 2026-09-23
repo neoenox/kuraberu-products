@@ -61,11 +61,11 @@
       "highlightNote": "約25.2g軽い"
     },
     {
-      "label": "接続デバイス切り替え",
-      "left": "Easy-Switchで最大3台",
-      "right": "1台接続",
+      "label": "接続・切替",
+      "left": "Easy-Switchで最大3台を切替",
+      "right": "Bluetooth Low Energy / Logi Boltで接続",
       "highlight": "left",
-      "highlightNote": "3台を切り替え可能"
+      "highlightNote": "M350sは3台切替を公式に明記"
     },
     {
       "label": "スクロール",
