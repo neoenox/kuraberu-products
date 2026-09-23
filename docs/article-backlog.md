@@ -147,6 +147,19 @@
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
 
+### Logicool Pebble Mouse 2 M350s vs Signature M650
+
+- slug: `logicool-pebble-m350s-vs-m650`
+- 状態: 実装中（Amazon商品詳細ページの直接確認待ち）
+- 比較軸: 公式価格、重量、Easy-Switch、SmartWheel、ボタン数、Logi Boltレシーバー、電池寿命、保証
+- 公式URL:
+  - https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse
+  - https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse
+- 楽天: M350sGR / M650MGR の商品詳細ページとユーザー生成成果URLを2026-09-23確認済み
+- SNS: 実利用のReddit投稿を左右1件ずつ参考情報として採用。比較根拠には使用しない
+- 公開条件: Amazon.co.jpの商品詳細ページを直接確認し、handoffの `articleReady` と `purchaseLinkStatus` を更新して全品質ゲートを通す
+
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
