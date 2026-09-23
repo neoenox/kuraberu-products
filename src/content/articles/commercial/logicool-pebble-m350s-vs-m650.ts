@@ -8,6 +8,8 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
   productInfoCheckedAt: "2026-09-23",
   purchaseLinksCheckedAt: "2026-09-23",
   purchaseLinkStatus: "unverified",
+  rakutenLinkStatus: "verified",
+  amazonLinkStatus: "unverified",
   title:
     "Logicool Pebble Mouse 2 M350sとSignature M650の違いを比較｜軽さ・3台切替・SmartWheelで選ぶ",
   headline:

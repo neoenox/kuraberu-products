@@ -19,6 +19,9 @@ type CommercialArticleSeed = {
   handoffManifestId?: string;
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  /** 販売先ごとの確認状態。未指定時は purchaseLinkStatus を使う。 */
+  amazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  rakutenLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */
   leftAmazonUrl?: `https://${string}`;
   rightAmazonUrl?: `https://${string}`;

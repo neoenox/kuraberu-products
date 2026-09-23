@@ -23,6 +23,8 @@ const createCommercialArticle = (
     productInfoCheckedAt: seed.productInfoCheckedAt,
     purchaseLinksCheckedAt: seed.purchaseLinksCheckedAt,
     purchaseLinkStatus: seed.purchaseLinkStatus ?? "unverified",
+    amazonLinkStatus: seed.amazonLinkStatus,
+    rakutenLinkStatus: seed.rakutenLinkStatus,
     officialSources: seed.officialSources,
     verifiedRows: seed.verifiedRows,
     imagePath:

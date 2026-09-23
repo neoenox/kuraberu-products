@@ -54,6 +54,9 @@ export type ArticleMetadataBase = {
   productInfoCheckedAt?: string;
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus: "verified" | "direct" | "unverified" | "unavailable";
+  /** 販売先ごとの確認状態。省略時は purchaseLinkStatus を使う。 */
+  amazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  rakutenLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   changeLog: readonly ArticleChangeLogEntry[];
   imagePath?: `/${string}` | `https://${string}`;
   /**
