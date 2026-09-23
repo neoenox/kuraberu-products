@@ -39,8 +39,8 @@ for (const file of files) {
     ["handoffManifestId", /handoffManifestId:\s*["'][^"']+["']/],
     ["productInfoCheckedAt", /productInfoCheckedAt:\s*["'][^"']+["']/],
     ["purchaseLinksCheckedAt", /purchaseLinksCheckedAt:\s*["'][^"']+["']/],
-    ["leftImage", /leftImage:\s*["']\//],
-    ["rightImage", /rightImage:\s*["']\//],
+    ["leftImage", /leftImage:\s*["'](?:\/|https:\/\/)/],
+    ["rightImage", /rightImage:\s*["'](?:\/|https:\/\/)/],
     ["officialSources", /officialSources:\s*\[/],
     ["verifiedRows", /verifiedRows:\s*\[/],
     ["faqEntries", /faqEntries:\s*\[/],
@@ -54,9 +54,15 @@ for (const file of files) {
   if (!fs.existsSync(routePath)) errors.push(`${articleId}: route is missing`);
   for (const imageKey of ["leftImage", "rightImage"]) {
     const image = source.match(
-      new RegExp(`${imageKey}:\\s*["'](/[^"']+)["']`),
+      new RegExp(`${imageKey}:\\s*["']([^"']+)["']`),
     )?.[1];
-    if (image && !fs.existsSync(path.join(root, "public", image.slice(1)))) {
+    if (!image) continue;
+    if (image.startsWith("https://")) continue;
+    if (!image.startsWith("/products/")) {
+      errors.push(`${articleId}: ${imageKey} must use /products/... or https://`);
+      continue;
+    }
+    if (!fs.existsSync(path.join(root, "public", image.slice(1)))) {
       errors.push(`${articleId}: image file is missing: ${image}`);
     }
   }
