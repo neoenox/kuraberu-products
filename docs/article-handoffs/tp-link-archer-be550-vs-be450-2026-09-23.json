@@ -1,0 +1,54 @@
+{
+  "id": "tp-link-archer-be550-vs-be450-2026-09-23",
+  "articleId": "tp-link-archer-be550-vs-be450",
+  "source": "ChatGPT regular Chat research, independently checked against manufacturer, retail, affiliate, and social pages",
+  "checkedAt": "2026-09-23",
+  "articleReady": true,
+  "category": "Wi-Fi 7 routers",
+  "products": {
+    "left": {
+      "name": "TP-Link Archer BE550/A",
+      "officialUrl": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be550/",
+      "officialImageUrl": "https://static.tp-link.com/upload/image-line/01_normal_20250805053945g.jpg",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0CWR5F88G",
+      "rakutenUrl": "https://item.rakuten.co.jp/tplinkdirect/8885020623956/"
+    },
+    "right": {
+      "name": "TP-Link Archer BE450",
+      "officialUrl": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be450/",
+      "officialImageUrl": "https://static.tp-link.com/upload/image-line/Archer_BE7200_normal_20250328034536r.jpg",
+      "amazonUrl": "https://www.amazon.co.jp/dp/B0DG1JKNTQ",
+      "rakutenUrl": "https://item.rakuten.co.jp/ppp-shop/10dg1jkntq/"
+    }
+  },
+  "officialSources": [
+    "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be550/",
+    "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be450/"
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0CWR5F88G?tag=kuraberuprodu-22",
+    "right": "https://www.amazon.co.jp/dp/B0DG1JKNTQ?tag=kuraberuprodu-22"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57d512f5.e3c60952.57d512f6.6542e0ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2F8885020623956%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57d5367d.d65b2fc4.57d5367e.865c0ce6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fppp-shop%2F10dg1jkntq%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1iIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+  },
+  "social": {
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.reddit.com/r/TpLink/comments/1wa0emz/complete_despair_with_archer_be550_re815xere700x/",
+      "https://www.reddit.com/r/TpLink/comments/1uxte6j/is_it_supposed_to_be_connecting_to_24g/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/TpLink/comments/1wa0emz/complete_despair_with_archer_be550_re815xere700x/",
+      "https://www.reddit.com/r/TpLink/comments/1uxte6j/is_it_supposed_to_be_connecting_to_24g/"
+    ],
+    "excludedCandidates": []
+  },
+  "caveats": [
+    "BE550 Amazon retail title identifies the sellable item as Archer BE550/A. The manufacturer's generic BE550 page does not resolve the hardware revision of that retail SKU, so the article does not claim a specific hardware version.",
+    "Wi-Fi rate figures are manufacturer's maximum nominal link rates, not measured throughput.",
+    "The BE450 Rakuten item is an exact-model marketplace listing from P3 Shop; seller, stock, and price can change."
+  ]
+}
