@@ -159,7 +159,6 @@
 - SNS: 実利用のReddit投稿を左右1件ずつ参考情報として採用。比較根拠には使用しない
 - 公開条件: Amazon.co.jpの商品詳細ページを直接確認し、handoffの `articleReady` と `purchaseLinkStatus` を更新して全品質ゲートを通す
 
-
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
