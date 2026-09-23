@@ -59,7 +59,7 @@ for (const file of files) {
     if (!image) continue;
     if (image.startsWith("https://")) continue;
     if (!image.startsWith("/products/")) {
-      errors.push(`${articleId}: ${imageKey} must use /products/... or https://`);
+      errors.push(\n        `${articleId}: ${imageKey} must use /products/... or https://`,\n      );
       continue;
     }
     if (!fs.existsSync(path.join(root, "public", image.slice(1)))) {
