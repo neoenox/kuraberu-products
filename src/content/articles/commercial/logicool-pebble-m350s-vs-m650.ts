@@ -20,7 +20,11 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "持ち運びやすい静音マウスを選びたい人",
     "M350sとM650の機能差を確認したい人",
   ],
-  uses: ["ノートPCでの作業", "自宅・オフィスでの作業", "複数デバイスの切り替え"],
+  uses: [
+    "ノートPCでの作業",
+    "自宅・オフィスでの作業",
+    "複数デバイスの切り替え",
+  ],
   summary:
     "軽さと最大3台のEasy-SwitchならM350s、SmartWheel・5ボタン・Logi Boltレシーバー同梱ならM650が向いています。",
   lead:
@@ -29,12 +33,12 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
   rightProduct: "Logicool Signature M650 M650MGR",
   leftPoint: "76gの薄型ボディと最大3台のEasy-Switchを重視する人向け",
   rightPoint: "SmartWheel・5ボタン・Logi Boltレシーバー同梱を重視する人向け",
-  leftImage: "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png",
-  rightImage: "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png",
+  leftImage:\n    "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png",
+  rightImage:\n    "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CJR5HBMN",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B09Q5SHDR3",
-  leftRakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm350sgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-  rightRakutenUrl: "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  leftRakutenUrl:\n    "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm350sgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  rightRakutenUrl:\n    "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   officialSources: [
     {
       label: "Logicool Pebble Mouse 2 M350s 公式商品ページ",
@@ -153,7 +157,8 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     {
       label: "Signature M650の長期使用感（Reddit）",
       href: "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/",
-      note: "約1年のオフィス使用後のクリック不具合とスクロールホイールへの評価を述べた本人投稿",
+      note:
+        "約1年のオフィス使用後のクリック不具合とスクロールホイールへの評価を述べた本人投稿",
     },
   ],
   embeds: [
@@ -176,7 +181,8 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
       title: "Signature M650の長期使用感",
       match: "model",
       purpose: "約1年のオフィス利用後の感想",
-      summary: "スクロールホイールを評価する一方、約1年後にクリック不具合が出たという実利用投稿",
+      summary:
+        "スクロールホイールを評価する一方、約1年後にクリック不具合が出たという実利用投稿",
       community: "MouseReview",
       tone: "mixed",
       autoload: true,
