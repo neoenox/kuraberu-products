@@ -1,0 +1,54 @@
+{
+  "id": "logicool-pro-x-superlight-2-dex-vs-superlight-2-2026-09-24",
+  "articleId": "logicool-pro-x-superlight-2-dex-vs-superlight-2",
+  "researchDateJST": "2026-09-24",
+  "articleReady": true,
+  "selection": {
+    "productA": "Logicool G PRO X SUPERLIGHT 2 DEX (GPROXSL-WLDEXBK)",
+    "productB": "Logicool G PRO X SUPERLIGHT 2 (G-PPD-004WL-BK)",
+    "officialProductUrls": [
+      "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x-superlight-2-dex",
+      "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x2-superlight-wireless-mouse"
+    ],
+    "reason": "同一シリーズで主要性能が共通し、右手用非対称形状と左右対称形状を比較できるため。既存ルート一覧にこの組み合わせの重複なし。"
+  },
+  "official": {
+    "status": "verified",
+    "sources": [
+      "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x-superlight-2-dex",
+      "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x2-superlight-wireless-mouse",
+      "https://press.logicool.co.jp/ja-jp/pro-x-superlight-2-dex/",
+      "https://resource.logitechg.com/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-top-angle-black-gallery-1.png",
+      "https://resource.logitechg.com/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-top-angle-black-gallery-1.png"
+    ],
+    "specs": {
+      "shape": "DEX is asymmetric for right-handed use; SUPERLIGHT 2 is symmetric.",
+      "weight": "60 g each",
+      "sensor": "HERO 2, up to 44,000 DPI each",
+      "reportRate": "up to 8,000 Hz each",
+      "battery": "up to 95 hours each",
+      "firmwareNote": "HERO 2 performance update requires latest Logicool G HUB per official announcement."
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0DF2F57LJ/?tag=kuraberuprodu-22",
+    "right": "https://www.amazon.co.jp/dp/B0CGR5HTM4/?tag=kuraberuprodu-22"
+  },
+  "rakuten": {
+    "status": "verified",
+    "directProductUrls": {
+      "left": "https://item.rakuten.co.jp/logicool/gproxsl-wldexbk/",
+      "right": "https://item.rakuten.co.jp/logicool/g-ppd-004wl-bk/"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fgproxsl-wldexbk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fg-ppd-004wl-bk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb21wIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+  },
+  "social": {
+    "status": "none",
+    "searchedPlatforms": ["X", "YouTube", "Reddit", "TikTok", "note"],
+    "directPostUrls": [],
+    "embedUrls": [],
+    "reason": "専用のX・Reddit検索接続が利用できず、一般検索でも広告判定と実利用を同時に直接確認できる埋め込み候補を採用できなかった。言及者がいないという意味ではないため、SNS欄は表示しない。"
+  },
+  "unconfirmedItems": []
+}

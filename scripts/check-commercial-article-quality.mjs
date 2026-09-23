@@ -56,7 +56,11 @@ for (const file of files) {
     const image = source.match(
       new RegExp(`${imageKey}:\\s*["'](/[^"']+)["']`),
     )?.[1];
-    if (image && !fs.existsSync(path.join(root, "public", image.slice(1)))) {
+    const imageExists =
+      image &&
+      (fs.existsSync(path.join(root, "public", image.slice(1))) ||
+        fs.existsSync(path.join(root, "src", "assets", image.slice(1))));
+    if (image && !imageExists) {
       errors.push(`${articleId}: image file is missing: ${image}`);
     }
   }
