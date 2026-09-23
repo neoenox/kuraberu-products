@@ -115,9 +115,16 @@
     "right": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
+      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
+      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
+    ],
     "excludedCandidates": [
       {
         "url": "https://www.reddit.com/r/readbeforebuying/comments/1h4urru/toptier_i_tried_the_logitech_pebble_mouse_2_m350s/",
