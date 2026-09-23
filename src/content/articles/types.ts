@@ -55,7 +55,7 @@ export type ArticleMetadataBase = {
   purchaseLinksCheckedAt?: string;
   purchaseLinkStatus: "verified" | "direct" | "unverified" | "unavailable";
   changeLog: readonly ArticleChangeLogEntry[];
-  imagePath?: `/${string}`;
+  imagePath?: `/${string}` | `https://${string}`;
   /**
    * JSON-LD の about（schema.org Product）に出す商品名。
    * 商品ガイド（productCount = 1）は必須。比較記事は未宣言なら about を出力しない。
@@ -303,8 +303,12 @@ export function defineArticleMetadata(
   if (!metadata.path.endsWith("/") || !metadata.path.startsWith("/articles/")) {
     throw new TypeError("article path must be a canonical /articles/.../ path");
   }
-  if (metadata.imagePath && !metadata.imagePath.startsWith("/")) {
-    throw new TypeError("imagePath must be root-relative");
+  if (
+    metadata.imagePath &&
+    !metadata.imagePath.startsWith("/") &&
+    !metadata.imagePath.startsWith("https://")
+  ) {
+    throw new TypeError("imagePath must be root-relative or an https URL");
   }
   return Object.freeze({ ...metadata }) as ArticleMetadata;
 }
