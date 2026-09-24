@@ -39,12 +39,12 @@ const {
 } = Astro.props;
 const config = createExternalEmbedConfig(provider, url);
 const providerLabel = externalEmbedProviderLabel(provider);
-// YouTubeは自前のiframeを記事HTMLへ出す。Redditは公式widget.jsに
-// blockquoteを処理させるため、表示後の実ウィジェット読み込みに任せる。
+// YouTubeとRedditは実投稿を表示するiframeを記事HTMLへ出す。
 const serverRenderYoutube =
   provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
-const serverRenderReddit = provider === "reddit" && autoDisplay === true;
-const serverRenderEmbed = serverRenderYoutube;
+const serverRenderReddit =
+  provider === "reddit" && autoDisplay === true && Boolean(config.embedUrl);
+const serverRenderEmbed = serverRenderYoutube || serverRenderReddit;
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -91,22 +91,16 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
     hidden={!serverRenderEmbed && !serverRenderReddit}
   >
-    {serverRenderYoutube && config.embedUrl && (
+    {serverRenderEmbed && config.embedUrl && (
       <iframe
         src={config.embedUrl}
         title={title}
         loading="eager"
         referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; encrypted-media; picture-in-picture"
+        allow={serverRenderYoutube ? "autoplay; encrypted-media; picture-in-picture" : "encrypted-media"}
+        sandbox={serverRenderReddit ? "allow-scripts allow-same-origin allow-popups" : undefined}
         allowfullscreen
       ></iframe>
-    )}
-    {serverRenderReddit && (
-      <blockquote class="reddit-embed-bq" data-embed-height="316">
-        <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">{title}</a>
-        {author && <> by <a href={`https://www.reddit.com/user/${encodeURIComponent(author)}/`} target="_blank" rel="noopener noreferrer">u/{author}</a></>}
-        {community && <> in <a href={`https://www.reddit.com/r/${encodeURIComponent(community)}/`} target="_blank" rel="noopener noreferrer">{community}</a></>}
-      </blockquote>
     )}
   </div>
   <noscript>

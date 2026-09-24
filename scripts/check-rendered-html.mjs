@@ -292,25 +292,14 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
     }
   }
 
-  // 外部埋め込み（X / YouTube / TikTok / Pinterest）はユーザーが同意した後に
-  // JSで挿入する設計（docs/external-embed-policy.md）。
-  // 初期HTMLにサードパーティの script / iframe / preconnect が混入すると
-  // 埋め込みコンテンツが自動ロードされてしまうため、全ページで検証する。
+  // 第三者iframeは既定で初期HTMLに含めない。記事で自動表示を明示した
+  // YouTube / Redditの公式iframeだけを許可する（docs/external-embed-policy.md）。
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, "utf8");
     const thirdPartyScript = [
       ...html.matchAll(/<script[^>]+\bsrc=["']([^"']+)/gi),
     ].some(([, src]) => /^(?:https?:)?\/\//i.test(src));
-    const thirdPartyIframe = [
-      ...html.matchAll(/<iframe(?:\s|>)[\s\S]*?<\/iframe>/gi),
-    ].some(([match]) => {
-      if (
-        /data-server-embed="true"/.test(html) &&
-        /src="https:\/\/www\.youtube\.com\/embed\//.test(match)
-      )
-        return false;
-      return true;
-    });
+    const thirdPartyIframe = findUnapprovedInitialIframes(html).length > 0;
     const preconnect = /<link[^>]+rel=["']?preconnect/i.test(html);
 
     if (thirdPartyScript)
@@ -320,6 +309,30 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
   }
 
   return { errors, pageCount: htmlFiles.length };
+}
+
+export function findUnapprovedInitialIframes(html) {
+  const iframeMatches = [...html.matchAll(/<iframe(?:\s|>)[^>]*>/gi)].map(
+    ([tag]) => tag,
+  );
+  const approvedServerIframes = [
+    ...html.matchAll(
+      /<aside\b[^>]*data-server-embed="true"[^>]*>[\s\S]*?<\/aside>/gi,
+    ),
+  ].flatMap(([aside]) => {
+    const provider = aside.match(/\bdata-provider="(youtube|reddit)"/i)?.[1];
+    if (!provider) return [];
+    const expectedHost =
+      provider === "youtube" ? "www\\.youtube\\.com" : "embed\\.reddit\\.com";
+    return [...aside.matchAll(/<iframe\b[^>]*\bsrc="([^"]+)"[^>]*>/gi)]
+      .filter(([, src]) =>
+        new RegExp(`^https://${expectedHost}/`).test(
+          src.replaceAll("&amp;", "&"),
+        ),
+      )
+      .map(([tag]) => tag);
+  });
+  return iframeMatches.filter((tag) => !approvedServerIframes.includes(tag));
 }
 
 if (

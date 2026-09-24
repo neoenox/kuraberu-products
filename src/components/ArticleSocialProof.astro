@@ -41,7 +41,7 @@ const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
   >
     <h2>SNS での感想（参考情報）</h2>
     {checkedAt && <p class="sns-checked-at">調査日：{checkedAt}</p>}
-    {hasPosts && bestMatch && bestMatch !== "brand" && curatedPosts.length > 0 && !hasEmbeddedPosts ? (
+    {hasPosts && curatedPosts.length > 0 && !hasEmbeddedPosts ? (
       <div class="sns-curated-posts">
         <p class="sns-posts-note">対象商品または同シリーズについて確認できる公開投稿へのリンクです。投稿内容は参考情報としてご覧ください。</p>
         <ul>
@@ -54,10 +54,6 @@ const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
             </li>
           ))}
         </ul>
-      </div>
-    ) : (!hasPosts || !bestMatch || bestMatch === "brand" || curatedPosts.length === 0) && !hasEmbeddedPosts ? (
-      <div class="sns-empty-state">
-        <p class="sns-posts-note">個別に確認した投稿はまだ掲載していません。Xで関連する投稿を検索できます。</p>
       </div>
     ) : null}
     {xSearchUrl && !hasEmbeddedPosts && (
