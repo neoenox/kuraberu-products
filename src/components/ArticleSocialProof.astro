@@ -8,6 +8,8 @@ interface Props {
   query: string;
   checkedAt?: string;
   hasPosts?: boolean;
+  /** 親から明示された実際の埋め込み数。空のAstro slotを投稿ありと誤判定しない。 */
+  hasEmbeddedPosts?: boolean;
   /** 埋め込み投稿の採用基準ランクの最上位（model / series / brand）。brand のみなら非表示 */
   bestMatch?: ExternalEmbedMatchRank;
   /** 投稿本文を転載せず、確認済みの公開投稿へ直接案内する。 */
@@ -17,15 +19,19 @@ interface Props {
 }
 
 const { hasPosts = false, bestMatch, directPosts = [], searchLabel, searchCaption, checkedAt } = Astro.props;
-const visible = Boolean(Astro.props.query?.trim());
-const hasEmbeddedPosts = Astro.slots.has("default");
-const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
+const hasEmbeddedPosts = Astro.props.hasEmbeddedPosts ?? Astro.slots.has("default");
 const curatedPosts = directPosts.map((post) => ({
   ...post,
   href: post.href.includes("x.com/")
     ? createExternalEmbedConfig("x", post.href).canonicalUrl
     : post.href,
 }));
+const hasEligiblePosts =
+  bestMatch !== undefined &&
+  bestMatch !== "brand" &&
+  (hasEmbeddedPosts || (hasPosts && curatedPosts.some((post) => post.href.trim())));
+const visible = Boolean(Astro.props.query?.trim()) && hasEligiblePosts;
+const xSearchUrl = visible ? createXSearchUrl(Astro.props.query) : undefined;
 ---
 {visible ? (
   <section
@@ -35,9 +41,6 @@ const curatedPosts = directPosts.map((post) => ({
   >
     <h2>SNS での感想（参考情報）</h2>
     {checkedAt && <p class="sns-checked-at">調査日：{checkedAt}</p>}
-    <p>
-      SNS投稿は実際の利用者の感想を知るための参考情報です。商品の仕様や比較結論の根拠には使用していません。比較の根拠はメーカー公式情報のみです。
-    </p>
     {hasPosts && bestMatch && bestMatch !== "brand" && curatedPosts.length > 0 && !hasEmbeddedPosts ? (
       <div class="sns-curated-posts">
         <p class="sns-posts-note">対象商品または同シリーズについて確認できる公開投稿へのリンクです。投稿内容は参考情報としてご覧ください。</p>

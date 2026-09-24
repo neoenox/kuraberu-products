@@ -1,0 +1,84 @@
+{
+  "id": "sony-wf-c710n-vs-linkbuds-fit-2026-09-24",
+  "source": "ChatGPT chat mode",
+  "articleId": "sony-wf-c710n-vs-linkbuds-fit",
+  "checkedAt": "2026-09-24",
+  "researchDateJST": "2026-09-24",
+  "category": "完全ワイヤレスイヤホン",
+  "articleReady": true,
+  "unconfirmedItems": [],
+  "officialSources": [
+    "https://www.sony.jp/headphone/products/WF-C710N/",
+    "https://www.sony.jp/headphone/products/WF-C710N/spec.html",
+    "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
+    "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html"
+  ],
+  "products": {
+    "a": {
+      "name": "ソニー WF-C710N",
+      "model": "WF-C710N",
+      "officialUrl": "https://www.sony.jp/headphone/products/WF-C710N/",
+      "officialSpecUrl": "https://www.sony.jp/headphone/products/WF-C710N/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/WF-C710N.jpg",
+      "amazon": {
+        "asin": "B0F3XFNHCW",
+        "url": "https://www.amazon.co.jp/dp/B0F3XFNHCW",
+        "directConfirmed": true,
+        "pageTitle": "ソニー(SONY) WF-C710N ブラック ワイヤレスイヤホン"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/e-earphone/sony-wfc710n/",
+      "rakutenAffiliateUrl": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    },
+    "b": {
+      "name": "ソニー LinkBuds Fit",
+      "model": "WF-LS910N",
+      "officialUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
+      "officialSpecUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/LinkBuds_Fit.jpg",
+      "amazon": {
+        "asin": "B0DHZZTPV6",
+        "url": "https://www.amazon.co.jp/dp/B0DHZZTPV6",
+        "directConfirmed": true,
+        "pageTitle": "ソニー(SONY) LinkBuds Fit WF-LS910N ホワイト"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/e-earphone/sony-wfls910n/",
+      "rakutenAffiliateUrl": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfls910n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "keyDifferences": [
+      "ソニーストア価格",
+      "片耳重量",
+      "NCオン連続再生",
+      "コーデック"
+    ]
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0F3XFNHCW",
+    "right": "https://www.amazon.co.jp/dp/B0DHZZTPV6"
+  },
+  "rakuten": {
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfls910n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "status": "verified"
+  },
+  "social": {
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://www.reddit.com/r/SonyHeadphones/comments/1l8t11v/the_wfc710n_sound_awesome/",
+      "https://www.reddit.com/r/SonyHeadphones/comments/1gm8ngl/linkbuds_fit_impressions_vs_linkbuds_s/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/SonyHeadphones/comments/1l8t11v/the_wfc710n_sound_awesome/",
+      "https://www.reddit.com/r/SonyHeadphones/comments/1gm8ngl/linkbuds_fit_impressions_vs_linkbuds_s/"
+    ]
+  },
+  "notes": [
+    "Amazon商品ページはChatGPT調査環境では直接確認できないとの回答だったため、Codex側で各Amazon商品詳細ページを開き、ページタイトル・モデルを直接確認した。",
+    "楽天成果URLはログイン済みChromeの楽天アフィリエイト商品リンク作成画面で、商品ごとの楽天詳細URLから生成した。",
+    "比較仕様・税込価格はメーカー公式ページで確認。口コミは個人の感想として扱い、比較結論の根拠にはしていない。"
+  ]
+}
