@@ -101,14 +101,18 @@ describe("公開記事コンテンツ品質ゲート", () => {
     }
   });
 
-  it("PurchaseCardコンポーネントが verified/direct のみ CTA を表示すること (#549)", () => {
+  it("PurchaseCardコンポーネントが販売先ごとの verified/direct 状態で CTA を表示すること (#549)", () => {
     const componentSource = readFileSync(
       join(root, "src/components/PurchaseCard.astro"),
       "utf8",
     );
-    // H-3: showCta は verified / direct のときだけ true。
+    expect(componentSource).toContain("rakutenLinkStatus = purchaseLinkStatus");
+    expect(componentSource).toContain("amazonLinkStatus = purchaseLinkStatus");
     expect(componentSource).toMatch(
-      /purchaseLinkStatus\s*===\s*["']verified["']\s*\|\|\s*purchaseLinkStatus\s*===\s*["']direct["']/,
+      /rakutenLinkStatus\s*===\s*["']verified["']\s*\|\|\s*rakutenLinkStatus\s*===\s*["']direct["']/,
+    );
+    expect(componentSource).toMatch(
+      /amazonLinkStatus\s*===\s*["']verified["']\s*\|\|\s*amazonLinkStatus\s*===\s*["']direct["']/,
     );
     // unverified / unavailable 時は pending 表示。
     expect(componentSource).toContain("purchase-card__pending");

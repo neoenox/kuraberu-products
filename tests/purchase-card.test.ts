@@ -165,4 +165,46 @@ describe("PurchaseCard", () => {
       expect(html).not.toContain("purchase-card__pending");
     }
   });
+
+  it("shows verified Rakuten while suppressing an unverified Amazon product link", async () => {
+    const container = await AstroContainer.create();
+    const html = await container.renderToString(PurchaseCard, {
+      props: {
+        name: "Logicool Pebble Mouse 2 M350s",
+        audience: "軽さを重視する人向け",
+        href: "https://hb.afl.rakuten.co.jp/ichiba/example/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshop%2Fm350s%2F",
+        amazonHref: "https://www.amazon.co.jp/dp/B0CJR5HBMN",
+        showAmazon: true,
+        purchaseLinkStatus: "unverified",
+        rakutenLinkStatus: "verified",
+        amazonLinkStatus: "unverified",
+      },
+    });
+
+    expect(html).toContain("楽天市場で商品ページを見る");
+    expect(html).not.toContain("Amazonで商品を確認");
+    expect(html).not.toContain("purchase-card__pending");
+  });
+
+  it("shows verified Amazon while suppressing an unverified Rakuten link", async () => {
+    vi.stubEnv("PUBLIC_AMAZON_ASSOCIATE_TAG", "example-22");
+    const container = await AstroContainer.create();
+    const html = await container.renderToString(PurchaseCard, {
+      props: {
+        name: "Logicool Pebble Mouse 2 M350s",
+        audience: "軽さを重視する人向け",
+        href: validRakutenUrl,
+        amazonHref: "https://www.amazon.co.jp/dp/B0CJR5HBMN",
+        showAmazon: true,
+        purchaseLinkStatus: "unverified",
+        rakutenLinkStatus: "unverified",
+        amazonLinkStatus: "verified",
+      },
+    });
+
+    expect(html).toContain("Amazonで商品を確認");
+    expect(html).toContain("tag=example-22");
+    expect(html).not.toContain("楽天市場で商品ページを見る");
+    expect(html).not.toContain("purchase-card__pending");
+  });
 });
