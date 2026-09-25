@@ -46,7 +46,7 @@
     "verify:build": "astro build && node scripts/check-image-magic.mjs && node scripts/report-css-usage.mjs --fail-on-unused && node scripts/check-rendered-html.mjs && node scripts/check-deployment-html.mjs && node scripts/test-post-deploy-verification.mjs && node scripts/check-external-links.mjs && node scripts/check-official-links.mjs check && node scripts/check-article-factual-integrity.mjs check && node scripts/spec-claims.mjs check && node scripts/validate-sns-ranks.mjs check && node scripts/check-source-relevancy.mjs check && node scripts/check-price-claims.mjs check && node scripts/check-csp-embed-consistency.mjs check"
   },
   "dependencies": {
-    "astro": "7.3.2",
+    "astro": "7.3.3",
     "typescript": "6.0.3"
   },
   "devDependencies": {
@@ -56,14 +56,14 @@
     "@vitest/coverage-v8": "4.1.11",
     "cookie": "2.0.1",
     "eslint": "10.10.0",
-    "eslint-plugin-astro": "3.1.0",
+    "eslint-plugin-astro": "3.2.1",
     "node-html-parser": "9.0.4",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "serve": "14.2.6",
     "sharp": "0.35.4",
     "typescript-eslint": "8.70.0",
     "vitest": "4.1.11",
-    "wrangler": "4.131.2",
+    "wrangler": "4.134.0",
     "yaml": "2.9.1"
   }
 }
