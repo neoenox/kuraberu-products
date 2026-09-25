@@ -1,0 +1,145 @@
+{
+  "id": "logicool-pebble-m350s-vs-m650-2026-09-23",
+  "source": "ChatGPT chat mode",
+  "articleId": "logicool-pebble-m350s-vs-m650",
+  "checkedAt": "2026-09-23",
+  "researchDateJST": "2026-09-23",
+  "category": "ワイヤレスマウス",
+  "articleReady": false,
+  "restartRequired": false,
+  "selectionReason": "同じLogicoolの現行静音ワイヤレスマウスで、M350sは薄型・76g・3台Easy-Switch、M650はSmartWheel・サイドボタン・Logi Boltレシーバー同梱という明確な選択差がある。既存記事にはM350sの掲載がなく、この組み合わせの重複も確認されなかった。",
+  "unconfirmedItems": [
+    "Amazon.co.jp商品詳細ページは取得ツールから直接開けず、ASINと型番一致は複数の外部インデックスで確認済みだがAmazon本体での直接確認は未完了"
+  ],
+  "products": {
+    "left": {
+      "name": "ロジクール PEBBLE MOUSE 2 M350S",
+      "model": "M350sGR",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse",
+      "officialImageUrl": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png",
+      "officialPrice": "3,960円（税込、2026-09-23確認）",
+      "amazon": {
+        "asin": "B0CJR5HBMN",
+        "url": "https://www.amazon.co.jp/dp/B0CJR5HBMN",
+        "verification": "direct-fetch-unavailable; model/ASIN corroborated by external index"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/logicool/m350sgr/"
+    },
+    "right": {
+      "name": "ロジクール Signature M650ワイヤレスマウス",
+      "model": "M650MGR",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse",
+      "officialImageUrl": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png",
+      "officialPrice": "4,840円（税込、2026-09-23確認）",
+      "amazon": {
+        "asin": "B09Q5SHDR3",
+        "url": "https://www.amazon.co.jp/dp/B09Q5SHDR3",
+        "verification": "direct-fetch-unavailable; model/ASIN corroborated by external index"
+      },
+      "rakutenProductUrl": "https://item.rakuten.co.jp/logicool/m650mgr/"
+    }
+  },
+  "officialSources": [
+    "https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse",
+    "https://press.logicool.co.jp/ja-jp/m350s-k380s/",
+    "https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse",
+    "https://press.logicool.co.jp/ja-jp/m650/"
+  ],
+  "verifiedRows": [
+    {
+      "label": "公式価格（税込）",
+      "left": "3,960円",
+      "right": "4,840円",
+      "highlight": "left",
+      "highlightNote": "880円安い"
+    },
+    {
+      "label": "本体重量（電池含む）",
+      "left": "76g",
+      "right": "101.2g",
+      "highlight": "left",
+      "highlightNote": "約25.2g軽い"
+    },
+    {
+      "label": "接続・切替",
+      "left": "Easy-Switchで最大3台を切替",
+      "right": "Bluetooth Low Energy / Logi Boltで接続",
+      "highlight": "left",
+      "highlightNote": "M350sは3台切替を公式に明記"
+    },
+    {
+      "label": "スクロール",
+      "left": "通常スクロール",
+      "right": "SmartWheel（精密／高速スクロール）",
+      "highlight": "right",
+      "highlightNote": "高速スクロール対応"
+    },
+    {
+      "label": "総ボタン数",
+      "left": "3",
+      "right": "5",
+      "highlight": "right",
+      "highlightNote": "サイドボタンを搭載"
+    },
+    {
+      "label": "Logi Bolt USBレシーバー",
+      "left": "対応・別売",
+      "right": "対応・同梱",
+      "highlight": "right",
+      "highlightNote": "レシーバー同梱"
+    },
+    {
+      "label": "電池寿命",
+      "left": "24か月",
+      "right": "Logi Bolt最大24か月／Bluetooth最大20か月",
+      "highlight": null
+    },
+    {
+      "label": "保証期間",
+      "left": "2年",
+      "right": "2年",
+      "highlight": null
+    }
+  ],
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0CJR5HBMN",
+    "right": "https://www.amazon.co.jp/dp/B09Q5SHDR3",
+    "status": "needs-direct-confirmation"
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductUrl": "https://item.rakuten.co.jp/logicool/m350sgr/",
+    "rightProductUrl": "https://item.rakuten.co.jp/logicool/m650mgr/",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm350sgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+  },
+  "social": {
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
+      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
+      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
+    ],
+    "excludedCandidates": [
+      {
+        "url": "https://www.reddit.com/r/readbeforebuying/comments/1h4urru/toptier_i_tried_the_logitech_pebble_mouse_2_m350s/",
+        "reason": "レビュー集約的な投稿で出所の独立性が弱いため不採用"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=CIbUTN7A2rw",
+        "reason": "説明欄にアフィリエイトリンク明記のため不採用"
+      }
+    ]
+  },
+  "caveats": [
+    "比較結論はLogicool公式商品ページと公式プレスリリースの仕様だけを根拠にする。",
+    "公式価格は2026-09-23時点のLogicoolオンラインストア表示を使用し、発売時価格は比較値に使わない。",
+    "SNS投稿は比較根拠に使用しない。",
+    "楽天成果URLはユーザーが楽天アフィリエイト管理画面で生成したHTMLから取得し、pc=の遷移先が左右それぞれlogicool/m350sgr/・logicool/m650mgr/であることを確認済み。",
+    "商品画像はLogicool公式のresource.logitech.com画像URLを直接参照する。"
+  ]
+}
