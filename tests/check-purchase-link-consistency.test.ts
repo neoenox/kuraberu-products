@@ -3,6 +3,7 @@ import {
   ALLOWED_OUTBOUND_HOSTS,
   CTA_CACHE_FILE,
   CTA_CACHE_MAX_AGE_DAYS,
+  CTA_AUDIT_CONCURRENCY,
   MAX_REDIRECT_HOPS,
   auditVerifiedCtaDestinations,
   checkArticleSource,
@@ -544,6 +545,40 @@ describe("verified CTA destination audit (issue #342)", () => {
     });
     expect(audit.errors).toHaveLength(1);
     expect(audit.errors[0]).toContain("unparseable URL");
+  });
+
+  it("audits destinations concurrently without changing result order", async () => {
+    let active = 0;
+    let maxActive = 0;
+    const urls = Array.from({ length: 5 }, (_, index) => ({
+      article: `article-${index}`,
+      key: `article-${index}:left`,
+      url: `https://promo.example.com/${index}`,
+    }));
+    const fetchImpl = (async (url: string) => {
+      active += 1;
+      maxActive = Math.max(maxActive, active);
+      await new Promise((resolve) => setTimeout(resolve, 2));
+      active -= 1;
+      return {
+        status: 200,
+        headers: new Map(),
+        url: url.replace("promo.example.com", "www.amazon.co.jp"),
+      };
+    }) as unknown as typeof fetch;
+    const audit = await auditVerifiedCtaDestinations({
+      urls,
+      allowlist: outboundHostAllowlist(),
+      fetchImpl,
+      concurrency: 2,
+    });
+
+    expect(CTA_AUDIT_CONCURRENCY).toBeGreaterThan(1);
+    expect(maxActive).toBe(2);
+    expect(audit.errors).toEqual([]);
+    expect(audit.checked.map(({ article }) => article)).toEqual(
+      urls.map(({ article }) => article),
+    );
   });
 
   it("resolves relative Location headers against the current URL", async () => {
