@@ -56,6 +56,7 @@ export const ALLOWED_OUTBOUND_HOSTS = Object.freeze([
 // リダイレクト追従の上限 hop 数と 1 リクエストあたりのタイムアウト（ms）。
 export const MAX_REDIRECT_HOPS = 5;
 export const REQUEST_TIMEOUT_MS = 10_000;
+export const CTA_AUDIT_CONCURRENCY = 6;
 
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 // HEAD を拒否するサーバー向けに GET で再試行するステータス。
@@ -574,45 +575,72 @@ export async function auditVerifiedCtaDestinations({
   for (const cta of urls) {
     if (!unique.has(cta.url)) unique.set(cta.url, cta);
   }
-  for (const [url, cta] of unique) {
-    const initialHost = hostnameOf(url);
-    if (initialHost === null) {
-      errors.push(
-        `${cta.article}: CTA "${cta.key}" has an unparseable URL: ${url}`,
-      );
-      continue;
-    }
-    if (allowNetworkSkip) {
-      // Skip network calls entirely: record as unchecked for coverage reporting
-      checked.push({ url, article: cta.article, result: "skipped" });
-      continue;
-    }
-    try {
-      const { finalUrl, hops } = await resolveFinalUrl(url, {
-        fetchImpl,
-        maxHops,
-        timeoutMs,
-      });
-      const finalHost = hostnameOf(finalUrl);
-      checked.push({
-        url,
-        article: cta.article,
-        result: "resolved",
-        finalHost,
-        hops,
-      });
-      if (finalHost === null || !allowlist.has(finalHost)) {
-        errors.push(
-          `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`,
-        );
-      }
-    } catch (error) {
-      const message = `${cta.article}: could not verify final destination of CTA "${cta.key}" (${url}): ${error.message}`;
-      if (allowNetworkSkip) {
-        warnings.push(`ALLOW_NETWORK_SKIP=1 (warn-only): ${message}`);
-      } else {
-        errors.push(message);
-      }
+  const entries = [...unique.entries()];
+
+  for (let offset = 0; offset < entries.length; offset += CTA_AUDIT_CONCURRENCY) {
+    const batch = entries.slice(offset, offset + CTA_AUDIT_CONCURRENCY);
+    const results = await Promise.all(
+      batch.map(async ([url, cta]) => {
+        const initialHost = hostnameOf(url);
+        if (initialHost === null) {
+          return {
+            errors: [
+              `${cta.article}: CTA "${cta.key}" has an unparseable URL: ${url}`,
+            ],
+            warnings: [],
+            checked: [],
+          };
+        }
+        if (allowNetworkSkip) {
+          return {
+            errors: [],
+            warnings: [],
+            checked: [{ url, article: cta.article, result: "skipped" }],
+          };
+        }
+
+        try {
+          const { finalUrl, hops } = await resolveFinalUrl(url, {
+            fetchImpl,
+            maxHops,
+            timeoutMs,
+          });
+          const finalHost = hostnameOf(finalUrl);
+          return {
+            errors:
+              finalHost === null || !allowlist.has(finalHost)
+                ? [
+                    `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`,
+                  ]
+                : [],
+            warnings: [],
+            checked: [
+              {
+                url,
+                article: cta.article,
+                result: "resolved",
+                finalHost,
+                hops,
+              },
+            ],
+          };
+        } catch (error) {
+          const message = `${cta.article}: could not verify final destination of CTA "${cta.key}" (${url}): ${error.message}`;
+          return {
+            errors: allowNetworkSkip ? [] : [message],
+            warnings: allowNetworkSkip
+              ? [`ALLOW_NETWORK_SKIP=1 (warn-only): ${message}`]
+              : [],
+            checked: [],
+          };
+        }
+      }),
+    );
+
+    for (const result of results) {
+      errors.push(...result.errors);
+      warnings.push(...result.warnings);
+      checked.push(...result.checked);
     }
   }
   return { errors, warnings, checked };
