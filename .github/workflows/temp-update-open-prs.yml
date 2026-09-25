@@ -1,23 +1,16 @@
-name: temporary update article PR branches
+name: temporary resolve article PR branches
 on:
   push:
     branches:
       - "article/next-product"
 permissions:
   contents: write
-  pull-requests: write
 jobs:
-  update:
+  resolve:
     runs-on: ubuntu-latest
     steps:
-      - name: Update PR branches with main
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          for pr in 895 896 898; do
-            echo "=== updating PR #$pr ==="
-            gh pr update-branch "$pr" --repo "$GH_REPO"
-          done
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - name: Resolve and merge main into article branches
+        run: bash .github/scripts/temp-resolve-article-conflicts.sh
