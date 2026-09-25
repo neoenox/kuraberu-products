@@ -75,7 +75,8 @@ export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
       left: "2.5Gbps LAN×4（1Gbps機器も接続可）",
       right: "1Gbps LAN×3",
       highlight: null,
-      highlightNote: "BE550は1Gbps機器にも使える、より高速な2.5Gbps LANを4基搭載",
+      highlightNote:
+        "BE550は1Gbps機器にも使える、より高速な2.5Gbps LANを4基搭載",
     },
     { label: "USB", left: "USB 3.0×1", right: "USB 3.0×1", highlight: null },
     { label: "Wi-Fi 7・MLO", left: "対応", right: "対応", highlight: null },
