@@ -9,7 +9,7 @@ jobs:
   inspect:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/checkout@3d342e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: 0
           persist-credentials: false
@@ -17,6 +17,8 @@ jobs:
         shell: bash
         run: |
           set -u
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           for item in "895:article/next-product" "896:article/next-product-3" "898:article/next-product-5"; do
             pr="${item%%:*}"
