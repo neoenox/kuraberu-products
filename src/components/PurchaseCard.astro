@@ -26,6 +26,9 @@ interface Props {
    * AffiliateButton 側で URL の妥当性を検証する。
    */
   purchaseLinkStatus: "verified" | "direct" | "unverified" | "unavailable";
+  /** 販売先別の検証状態。省略時は記事全体の状態を使う。 */
+  rakutenLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  amazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   /** Amazon商品詳細URL。未指定時は商品名の検索結果へリンクする。 */
   amazonHref?: string;
   showAmazon?: boolean;
@@ -43,6 +46,8 @@ const {
   requiredTerms,
   imageUrl,
   purchaseLinkStatus,
+  rakutenLinkStatus = purchaseLinkStatus,
+  amazonLinkStatus = purchaseLinkStatus,
   amazonHref,
   showAmazon = Boolean(import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG?.trim()),
 } = Astro.props;
@@ -52,14 +57,17 @@ const {
 // カード本体 (商品画像・名前・audience) は全ステータスで表示する。
 const showRakutenCta =
   Boolean(href) &&
-  (purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct");
+  (rakutenLinkStatus === "verified" || rakutenLinkStatus === "direct");
 const showAmazonCta =
   (showAmazon || Boolean(amazonHref)) &&
-  (purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct") &&
+  (amazonLinkStatus === "verified" || amazonLinkStatus === "direct") &&
   Boolean(amazonHref || name);
 const showCta = showRakutenCta || showAmazonCta;
 const showPending =
-  !showCta && (purchaseLinkStatus === "unverified" || !purchaseLinkStatus);
+  !showCta &&
+  (rakutenLinkStatus === "unverified" ||
+    amazonLinkStatus === "unverified" ||
+    !purchaseLinkStatus);
 const amazonProductUrl =
   showAmazonCta && amazonHref
     ? /[?&]tag=[A-Za-z0-9-]+/.test(amazonHref)
