@@ -577,7 +577,11 @@ export async function auditVerifiedCtaDestinations({
   }
   const entries = [...unique.entries()];
 
-  for (let offset = 0; offset < entries.length; offset += CTA_AUDIT_CONCURRENCY) {
+  for (
+    let offset = 0;
+    offset < entries.length;
+    offset += CTA_AUDIT_CONCURRENCY
+  ) {
     const batch = entries.slice(offset, offset + CTA_AUDIT_CONCURRENCY);
     const results = await Promise.all(
       batch.map(async ([url, cta]) => {
