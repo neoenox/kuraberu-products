@@ -48,8 +48,8 @@ const fallbackSeed: CommercialArticleSeed | undefined = article?.leftModel && ar
       purchaseLinkStatus: article.purchaseLinkStatus,
       officialSources: article.officialSources,
       verifiedRows: article.keyDiffRows,
-      leftImage: article.leftModel.image as `/${string}`,
-      rightImage: article.rightModel.image as `/${string}`,
+      leftImage: article.leftModel.image as `/${string}` | `https://${string}`,
+      rightImage: article.rightModel.image as `/${string}` | `https://${string}`,
       faqEntries: article.faqEntries,
       lead: article.lead,
       socialProofQuery: article.socialProofQuery,
@@ -124,6 +124,12 @@ const [leftResolved, rightResolved] = await Promise.all([
 ]);
 const leftProductHref = article.purchaseLinkStatus === "unavailable" ? undefined : leftResolved.href;
 const rightProductHref = article.purchaseLinkStatus === "unavailable" ? undefined : rightResolved.href;
+const leftPurchaseImageUrl = images.left?.startsWith("https://")
+  ? images.left
+  : leftResolved.product?.imageUrl;
+const rightPurchaseImageUrl = images.right?.startsWith("https://")
+  ? images.right
+  : rightResolved.product?.imageUrl;
 const rows: readonly DifferenceRow[] = seed.verifiedRows?.length
   ? seed.verifiedRows
   : [
@@ -243,8 +249,8 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <h3>購入前の注意</h3>
     <p>{seed.disclaimer ?? 'ランキングやレビューは時期・販売店・用途で変わります。この記事は購入を断定するものではなく、公式仕様を確認するための比較メモです。'}</p>
     <div class="purchase-cards">
-      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} amazonHref={seed.leftAmazonUrl} showAmazon={true} imagePath={images.left} imageUrl={leftResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
-      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} amazonHref={seed.rightAmazonUrl} showAmazon={true} imagePath={images.right} imageUrl={rightResolved.product?.imageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} />
+      <PurchaseCard name={seed.leftProduct} audience={seed.leftPoint} href={leftProductHref} amazonHref={seed.leftAmazonUrl} showAmazon={true} imagePath={images.left} imageUrl={leftPurchaseImageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} rakutenLinkStatus={seed.rakutenLinkStatus} amazonLinkStatus={seed.amazonLinkStatus} />
+      <PurchaseCard name={seed.rightProduct} audience={seed.rightPoint} href={rightProductHref} amazonHref={seed.rightAmazonUrl} showAmazon={true} imagePath={images.right} imageUrl={rightPurchaseImageUrl} placement="article-end" note="購入時点の販売条件をご確認ください。" purchaseLinkStatus={article.purchaseLinkStatus} rakutenLinkStatus={seed.rakutenLinkStatus} amazonLinkStatus={seed.amazonLinkStatus} />
     </div>
 
     {hasSocialProof && (

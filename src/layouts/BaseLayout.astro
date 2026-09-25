@@ -164,6 +164,8 @@ const faqStructuredData = faq && faq.length > 0
     {article && <meta name="article:product-count" content={String(article.productCount)} />}
     {article && <meta name="article:content-type" content={contentTypeFor(article.productCount)} />}
     {article?.purchaseLinkStatus && <meta name="article:purchase-link-status" content={article.purchaseLinkStatus} />}
+    {article?.rakutenLinkStatus && <meta name="article:rakuten-link-status" content={article.rakutenLinkStatus} />}
+    {article?.amazonLinkStatus && <meta name="article:amazon-link-status" content={article.amazonLinkStatus} />}
     {article?.productInfoCheckedAt && (
       <meta name="article:product-info-checked-at" content={article.productInfoCheckedAt} />
     )}
