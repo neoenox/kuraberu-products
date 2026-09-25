@@ -17,6 +17,22 @@ const commercialArticleImages: Readonly<
     left: "/products/sony-wf-1000xm6.jpg",
     right: "/products/sony-linkbuds-fit.jpg",
   },
+  "jbl-flip-7-vs-charge-6": {
+    left: "/products/jbl-flip-7.png",
+    right: "/products/jbl-charge-6.png",
+  },
+  "anker-a121a-vs-a2688": {
+    left: "/products/anker-a121a.jpg",
+    right: "/products/anker-a2688.jpg",
+  },
+  "anker-a1664-vs-a1654": {
+    left: "/products/anker-a1664.jpg",
+    right: "/products/anker-a1654.jpg",
+  },
+  "shokz-openfit-2-plus-vs-openfit-2": {
+    left: "/products/shokz-openfit-2-plus.png",
+    right: "/products/shokz-openfit-2.png",
+  },
   "toshiba-tw-127xm5l-vs-panasonic-na-lx127el": {
     left: "/products/toshiba-tw-127xm5l.jpg",
     right: "/products/panasonic-na-lx127el.jpg",

@@ -83,10 +83,15 @@ describe("sitemap.xml (#390)", () => {
     const xml = await sitemapXml();
     const withImage = publishedArticleMetadata.find(
       (article) => article.imagePath,
-    )!;
+    );
+    if (!withImage) {
+      expect(xml).not.toContain("<image:loc>");
+      return;
+    }
     const entry = xml
       .split("<url>")
       .find((chunk) => chunk.includes(withImage.path));
+    expect(entry).toBeDefined();
     expect(entry).toContain("<image:loc>");
     expect(entry).toContain(`<lastmod>${withImage.modifiedAt}</lastmod>`);
   });

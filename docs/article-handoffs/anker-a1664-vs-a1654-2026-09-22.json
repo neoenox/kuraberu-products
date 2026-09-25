@@ -1,0 +1,45 @@
+{
+  "id": "anker-a1664-vs-a1654-2026-09-22",
+  "articleId": "anker-a1664-vs-a1654",
+  "researchDateJST": "2026-09-22",
+  "articleReady": true,
+  "selection": {
+    "productA": "Anker MagGo Power Bank (10000mAh, Slim) A1664",
+    "productB": "Anker MagGo Power Bank (10000mAh) A1654",
+    "officialProductUrls": [
+      "https://www.ankerjapan.com/products/a1664",
+      "https://www.ankerjapan.com/products/a1654"
+    ],
+    "reason": "両製品とも10000mAh・Qi2・ワイヤレス最大15W・USB-C搭載・公式価格9,990円で、薄型軽量とスタンド機能という比較軸がある。"
+  },
+  "official": {
+    "status": "verified",
+    "sources": [
+      "https://www.ankerjapan.com/products/a1664",
+      "https://www.ankerjapan.com/products/a1654",
+      "https://www.ankerjapan.com/cdn/shop/files/A1664001.jpg",
+      "https://www.ankerjapan.com/cdn/shop/files/A1654-BLACK.jpg"
+    ]
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0DB1HFZLK",
+    "right": "https://www.amazon.co.jp/dp/B0CFTT82RH"
+  },
+  "rakuten": {
+    "status": "verified",
+    "directProductUrls": {
+      "left": "https://item.rakuten.co.jp/anker/a1664/",
+      "right": "https://item.rakuten.co.jp/anker/a1654/"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1664%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1654%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+  },
+  "social": {
+    "status": "none",
+    "searchedPlatforms": ["X", "YouTube", "Reddit", "TikTok", "note"],
+    "directPostUrls": [],
+    "embedUrls": [],
+    "reason": "直接確認でき、実利用・非PR・非広告・非アフィリエイトの条件を同時に満たす投稿は採用0件。"
+  },
+  "unconfirmedItems": []
+}

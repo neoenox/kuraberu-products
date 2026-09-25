@@ -5,6 +5,7 @@ import {
   normalizeSiteUrl,
   validateBuildEnvironment,
 } from "../config/runtime-env.mjs";
+import { PUBLISHED_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
 
 const { deploymentEnv, siteUrl } = validateBuildEnvironment(process.env);
 const expectedSiteUrl = normalizeSiteUrl(siteUrl ?? DEFAULT_SITE_URL);
@@ -286,9 +287,7 @@ if (sitemap.includes("/404")) errors.push("sitemap.xml: must not include 404");
 for (const pathname of [
   "/",
   "/articles/",
-  "/articles/anker-nano-a1638-vs-power-bank-a1256/",
-  "/articles/anker-nano-power-bank-vs-zolo-a1688/",
-  "/articles/logicool-mx-master-4-vs-mx-master-3s/",
+  ...[...PUBLISHED_ARTICLE_PAGE_SLUGS].map((slug) => `/articles/${slug}/`),
 ]) {
   const expected = new URL(pathname, `${expectedSiteUrl}/`).toString();
   if (!sitemap.includes(`<loc>${expected}</loc>`)) {

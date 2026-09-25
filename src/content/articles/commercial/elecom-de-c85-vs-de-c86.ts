@@ -7,7 +7,7 @@ export const elecomDeC85VsDeC86Seed: CommercialArticleSeed = {
   handoffManifestId: "elecom-de-c85-vs-de-c86-2026-09-20",
   productInfoCheckedAt: "2026-09-20",
   purchaseLinksCheckedAt: "2026-09-20",
-  purchaseLinkStatus: "direct",
+  purchaseLinkStatus: "unverified",
   title: "エレコム DE-C85とDE-C86の違いを比較｜薄さ・容量・出力はどっち？",
   headline:
     "エレコムの半固体モバイルバッテリーを比較。5,000mAhと10,000mAhの違い",
