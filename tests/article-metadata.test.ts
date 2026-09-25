@@ -146,6 +146,7 @@ describe("article metadata", () => {
       "anker-nano-power-bank-vs-zolo-a1688",
       "logicool-mx-master-4-vs-mx-master-3s",
       "shokz-openfit-2-plus-vs-openfit-2",
+      "logicool-pebble-m350s-vs-m650",
       "anker-a121a-vs-a2688",
       "anker-a1664-vs-a1654",
       "garmin-forerunner-570-vs-coros-pace-4",
