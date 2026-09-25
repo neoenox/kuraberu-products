@@ -1,23 +1,33 @@
-name: temporary update open PR branches
+name: temporary inspect merge conflicts
 on:
   push:
     branches:
       - "article/next-product"
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 jobs:
-  update:
+  inspect:
     runs-on: ubuntu-latest
     steps:
-      - name: Update stale PR branches with main
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Inspect merge conflicts
+        shell: bash
         run: |
-          set +e
-          for pr in 885 895 896 898; do
-            echo "=== updating PR #$pr ==="
-            gh pr update-branch "$pr" --repo "$GH_REPO"
-            echo "status=$?"
+          set -u
+          git fetch origin main
+          for item in "895:article/next-product" "896:article/next-product-3" "898:article/next-product-5"; do
+            pr="${item%%:*}"
+            branch_name="${item#*:}"
+            echo "=== PR #$pr ($branch_name) ==="
+            git checkout -B "inspect-$pr" "origin/$branch_name"
+            if git merge --no-commit --no-ff origin/main; then
+              echo "NO_CONFLICT"
+            else
+              echo "CONFLICT_FILES"
+              git diff --name-only --diff-filter=U
+            fi
+            git merge --abort 2>/dev/null || true
           done
