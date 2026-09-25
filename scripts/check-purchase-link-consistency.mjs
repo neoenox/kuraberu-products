@@ -56,6 +56,9 @@ export const ALLOWED_OUTBOUND_HOSTS = Object.freeze([
 // リダイレクト追従の上限 hop 数と 1 リクエストあたりのタイムアウト（ms）。
 export const MAX_REDIRECT_HOPS = 5;
 export const REQUEST_TIMEOUT_MS = 10_000;
+// Keep the scheduled cache refresh within its job timeout when retailer links
+// respond slowly, while limiting concurrent outbound requests.
+export const CTA_AUDIT_CONCURRENCY = 6;
 
 const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
 // HEAD を拒否するサーバー向けに GET で再試行するステータス。
@@ -557,6 +560,7 @@ export async function resolveFinalUrl(target, options = {}) {
  *   maxHops?: number;
  *   timeoutMs?: number;
  *   allowNetworkSkip?: boolean;
+ *   concurrency?: number;
  * }} options
  */
 export async function auditVerifiedCtaDestinations({
@@ -566,6 +570,7 @@ export async function auditVerifiedCtaDestinations({
   maxHops = MAX_REDIRECT_HOPS,
   timeoutMs = REQUEST_TIMEOUT_MS,
   allowNetworkSkip = false,
+  concurrency = CTA_AUDIT_CONCURRENCY,
 } = {}) {
   const errors = [];
   const warnings = [];
@@ -574,46 +579,61 @@ export async function auditVerifiedCtaDestinations({
   for (const cta of urls) {
     if (!unique.has(cta.url)) unique.set(cta.url, cta);
   }
-  for (const [url, cta] of unique) {
-    const initialHost = hostnameOf(url);
-    if (initialHost === null) {
-      errors.push(
-        `${cta.article}: CTA "${cta.key}" has an unparseable URL: ${url}`,
-      );
-      continue;
-    }
-    if (allowNetworkSkip) {
-      // Skip network calls entirely: record as unchecked for coverage reporting
-      checked.push({ url, article: cta.article, result: "skipped" });
-      continue;
-    }
-    try {
-      const { finalUrl, hops } = await resolveFinalUrl(url, {
-        fetchImpl,
-        maxHops,
-        timeoutMs,
-      });
-      const finalHost = hostnameOf(finalUrl);
-      checked.push({
-        url,
-        article: cta.article,
-        result: "resolved",
-        finalHost,
-        hops,
-      });
-      if (finalHost === null || !allowlist.has(finalHost)) {
-        errors.push(
-          `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`,
-        );
+  const entries = [...unique.entries()];
+  const results = new Array(entries.length);
+  let nextIndex = 0;
+  const workerCount = Math.max(1, Math.min(entries.length, concurrency));
+  await Promise.all(
+    Array.from({ length: workerCount }, async () => {
+      while (nextIndex < entries.length) {
+        const index = nextIndex++;
+        const [url, cta] = entries[index];
+        const initialHost = hostnameOf(url);
+        if (initialHost === null) {
+          results[index] = {
+            error: `${cta.article}: CTA "${cta.key}" has an unparseable URL: ${url}`,
+          };
+          continue;
+        }
+        if (allowNetworkSkip) {
+          results[index] = {
+            checked: { url, article: cta.article, result: "skipped" },
+          };
+          continue;
+        }
+        try {
+          const { finalUrl, hops } = await resolveFinalUrl(url, {
+            fetchImpl,
+            maxHops,
+            timeoutMs,
+          });
+          const finalHost = hostnameOf(finalUrl);
+          const result = {
+            checked: {
+              url,
+              article: cta.article,
+              result: "resolved",
+              finalHost,
+              hops,
+            },
+          };
+          if (finalHost === null || !allowlist.has(finalHost)) {
+            result.error = `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`;
+          }
+          results[index] = result;
+        } catch (error) {
+          const message = `${cta.article}: could not verify final destination of CTA "${cta.key}" (${url}): ${error.message}`;
+          results[index] = allowNetworkSkip
+            ? { warning: `ALLOW_NETWORK_SKIP=1 (warn-only): ${message}` }
+            : { error: message };
+        }
       }
-    } catch (error) {
-      const message = `${cta.article}: could not verify final destination of CTA "${cta.key}" (${url}): ${error.message}`;
-      if (allowNetworkSkip) {
-        warnings.push(`ALLOW_NETWORK_SKIP=1 (warn-only): ${message}`);
-      } else {
-        errors.push(message);
-      }
-    }
+    }),
+  );
+  for (const result of results) {
+    if (result?.checked) checked.push(result.checked);
+    if (result?.error) errors.push(result.error);
+    if (result?.warning) warnings.push(result.warning);
   }
   return { errors, warnings, checked };
 }
