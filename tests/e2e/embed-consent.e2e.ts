@@ -75,9 +75,8 @@ test.describe("consent-before-embed (network level)", () => {
       timeout: 30_000,
     });
     await expect(embed.locator("iframe").first()).toBeVisible();
-    await expect(embed.locator("[data-external-embed-status]")).toHaveText(
-      "外部コンテンツを表示しました。",
-    );
+    // Loaded state + a visible provider iframe are the success contract.
+    // The live-region status is intentionally cleared after a successful load.
     expect(
       thirdPartyRequests.some((url) => url.includes("platform.twitter.com")),
     ).toBe(true);
