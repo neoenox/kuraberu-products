@@ -1,0 +1,70 @@
+{
+  "id": "garmin-forerunner-570-vs-coros-pace-4-2026-09-25",
+  "articleId": "garmin-forerunner-570-vs-coros-pace-4",
+  "source": "Codex fresh product selection and official-source research",
+  "researchDateJst": "2026-09-25",
+  "articleReady": true,
+  "category": "ランニングウォッチ",
+  "products": {
+    "a": {
+      "name": "Garmin Forerunner 570 42mm Black",
+      "model": "010-02970-30",
+      "officialUrl": "https://www.garmin.co.jp/products/wearables/forerunner-570-42-black/",
+      "rakutenUrl": "https://item.rakuten.co.jp/garmin/010-02970-30/",
+      "amazon": {
+        "status": "verified",
+        "asin": "B0F9L8D3CL",
+        "url": "https://www.amazon.co.jp/dp/B0F9L8D3CL",
+        "note": "Amazon.co.jp product page title matches Forerunner 570; 42mm size and black color are selectable variants."
+      }
+    },
+    "b": {
+      "name": "COROS PACE 4 Silicone White",
+      "model": "PACE 4 Standard Silicone",
+      "officialUrl": "https://coros.com/jp/pace4",
+      "rakutenUrl": "https://item.rakuten.co.jp/coros/pace4/",
+      "amazon": {
+        "status": "verified",
+        "asin": "B0G14BYM52",
+        "url": "https://www.amazon.co.jp/dp/B0G14BYM52",
+        "note": "Amazon.co.jp product page is COROS PACE 4 with black and white color variants; white is selectable."
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "keyDifferences": [
+      "時計上の地図表示",
+      "スマートフォン連携通話",
+      "重量",
+      "公称の日常利用稼働時間",
+      "決済機能"
+    ],
+    "batteryComparisonCaveat": "Garmin GPS mode and COROS normal (all systems on) mode are stated under different manufacturer conditions; no winner asserted."
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0F9L8D3CL",
+    "right": "https://www.amazon.co.jp/dp/B0G14BYM52"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57e30319.1e92bbba.57e3031a.961e804e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgarmin%2F010-02970-30%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIxMDB4MTAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57e303b5.b6ec375c.57e303b6.74494732/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcoros%2Fpace4%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
+    "productPages": {
+      "left": "https://item.rakuten.co.jp/garmin/010-02970-30/",
+      "right": "https://item.rakuten.co.jp/coros/pace4/"
+    },
+    "note": "Affiliate URLs for both products were supplied by the user and point to their corresponding Rakuten product detail pages."
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "Search found videos with affiliate disclosures and review-unit disclosure, plus personal posts on Reddit/note. None met the non-promotional X/YouTube embed requirement; no SNS section is rendered."
+  },
+  "unconfirmed": [
+    "Amazon Forerunner 570 color/size variants require shopper selection on the product detail page"
+  ],
+  "draftReason": "Amazon・楽天の購入URLを左右の商品ごとに登録済み。ローカル表示の確認待ち。"
+}
