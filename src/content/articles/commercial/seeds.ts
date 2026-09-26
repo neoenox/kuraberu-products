@@ -80,6 +80,7 @@ import { jblFlip7VsCharge6Seed } from "./jbl-flip-7-vs-charge-6";
 import { ankerA121aVsA2688Seed } from "./anker-a121a-vs-a2688";
 import { ankerA1664VsA1654Seed } from "./anker-a1664-vs-a1654";
 import { shokzOpenfit2PlusVsOpenfit2Seed } from "./shokz-openfit-2-plus-vs-openfit-2";
+import { garminForerunner570VsCorosPace4Seed } from "./garmin-forerunner-570-vs-coros-pace-4";
 import { sonyWfC710nVsLinkbudsFitSeed } from "./sony-wf-c710n-vs-linkbuds-fit";
 import { logicoolPebbleM350sVsM650Seed } from "./logicool-pebble-m350s-vs-m650";
 
@@ -92,6 +93,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerA121aVsA2688Seed,
   ankerA1664VsA1654Seed,
   shokzOpenfit2PlusVsOpenfit2Seed,
+  garminForerunner570VsCorosPace4Seed,
   sonyWfC710nVsLinkbudsFitSeed,
   logicoolPebbleM350sVsM650Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
