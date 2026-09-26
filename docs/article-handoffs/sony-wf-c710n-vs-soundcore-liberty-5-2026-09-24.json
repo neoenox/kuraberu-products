@@ -1,0 +1,77 @@
+{
+  "id": "sony-wf-c710n-vs-soundcore-liberty-5-2026-09-24",
+  "articleId": "sony-wf-c710n-vs-soundcore-liberty-5",
+  "researchDateJST": "2026-09-24",
+  "articleReady": true,
+  "selection": {
+    "productA": "Sony WF-C710N ブラック",
+    "productB": "Soundcore Liberty 5 ミッドナイトブラック A3957N11",
+    "officialProductUrls": [
+      "https://www.sony.jp/headphone/products/WF-C710N/",
+      "https://www.ankerjapan.com/products/a3957"
+    ],
+    "reason": "同じ1万円台のノイズキャンセリング対応完全ワイヤレスイヤホン。購入相談・比較検索と実利用投稿が確認でき、価格、NC時の再生時間、コーデック、防塵防水で用途に関わる差がある。"
+  },
+  "official": {
+    "status": "verified",
+    "sources": [
+      "https://www.sony.jp/headphone/products/WF-C710N/",
+      "https://www.sony.jp/headphone/products/WF-C710N/spec.html",
+      "https://www.sony.jp/products/picture/WF-C710N.jpg",
+      "https://www.ankerjapan.com/products/a3957",
+      "https://www.ankerjapan.com/cdn/shop/files/A3957-BLACK_1200x1200.jpg?v=1746673866"
+    ],
+    "verifiedFacts": {
+      "sony": {
+        "officialStorePrice": "17600 JPY incl tax",
+        "weight": "about 5.2g per ear including M eartip",
+        "playback": "ANC on max 8.5h, ANC off max 12h; case total max about 30h ANC on",
+        "codec": "SBC, AAC",
+        "protection": "IPX4",
+        "bluetooth": "5.3",
+        "multipoint": "2 devices"
+      },
+      "soundcore": {
+        "model": "A3957N11 Midnight Black",
+        "officialPrice": "14990 JPY incl tax",
+        "weight": "about 5.2g per ear",
+        "playback": "ANC on max 8h standalone/32h with case; ANC off max 12h standalone/48h with case",
+        "codec": "SBC, AAC, LDAC",
+        "protection": "IP55 earbuds",
+        "bluetooth": "5.4",
+        "multipoint": "2 devices"
+      }
+    }
+  },
+  "amazon": {
+    "left": "https://www.amazon.co.jp/dp/B0F3XFNHCW",
+    "right": "https://www.amazon.co.jp/dp/B0DRVB48LJ",
+    "verification": "Amazon detail pages checked in Chrome; titles/ASINs match WF-C710N Black B0F3XFNHCW and Soundcore Liberty 5 Midnight Black A3957N11 B0DRVB48LJ. Site appends the configured associate tag at render time."
+  },
+  "rakuten": {
+    "status": "verified",
+    "directProductUrls": {
+      "left": "https://item.rakuten.co.jp/b-surprise2/4548736164154/",
+      "right": "https://item.rakuten.co.jp/anker/a3957/"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57d9e9de.ecb2fbc5.57d9e9df.eb576eb4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-surprise2%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "verification": "Both complete affiliate URLs were copied from the logged-in Rakuten Affiliate link creation page after confirming the matching item names and destinations."
+  },
+  "social": {
+    "status": "adopted",
+    "searchedPlatforms": ["X", "YouTube", "Reddit", "TikTok", "note"],
+    "directPostUrls": [
+      "https://www.reddit.com/r/SonyHeadphones/comments/1l8t11v/the_wfc710n_sound_awesome/",
+      "https://www.reddit.com/r/Earbuds/comments/1qdimq5/review_of_soundcore_liberty_5_1_week_in/"
+    ],
+    "embedUrls": [
+      "https://www.reddit.com/r/SonyHeadphones/comments/1l8t11v/the_wfc710n_sound_awesome/",
+      "https://www.reddit.com/r/Earbuds/comments/1qdimq5/review_of_soundcore_liberty_5_1_week_in/"
+    ],
+    "reason": "Both post bodies show personal use and specific model names. No PR, sponsored, or affiliate disclosure was found in the inspected posts. These are individual impressions, not evidence for the official-spec comparison."
+  },
+  "unconfirmedItems": [
+    "No numeric search-volume data was obtained; demand is supported by observed comparison queries and public usage discussions."
+  ]
+}

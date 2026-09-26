@@ -149,7 +149,8 @@ describe("article metadata", () => {
       "logicool-pebble-m350s-vs-m650",
       "anker-a121a-vs-a2688",
       "anker-a1664-vs-a1654",
-      "garmin-forerunner-570-vs-coros-pace-4",
+      "sony-wf-c710n-vs-linkbuds-fit",
+      "sony-wf-c710n-vs-soundcore-liberty-5",
     ];
     for (const id of newlyPublishedIds) {
       expect(publicArticleMetadata.some((article) => article.id === id)).toBe(
@@ -164,11 +165,6 @@ describe("article metadata", () => {
     expect(
       publishedArticleMetadata.some(
         (article) => article.id === "anker-a1664-vs-a1654",
-      ),
-    ).toBe(true);
-    expect(
-      publishedArticleMetadata.some(
-        (article) => article.id === "garmin-forerunner-570-vs-coros-pace-4",
       ),
     ).toBe(true);
     expect(
