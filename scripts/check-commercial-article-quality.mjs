@@ -64,7 +64,10 @@ for (const file of files) {
       );
       continue;
     }
-    if (!fs.existsSync(path.join(root, "public", image.slice(1)))) {
+    const imageExists =
+      fs.existsSync(path.join(root, "public", image.slice(1))) ||
+      fs.existsSync(path.join(root, "src", "assets", image.slice(1)));
+    if (!imageExists) {
       errors.push(`${articleId}: image file is missing: ${image}`);
     }
   }

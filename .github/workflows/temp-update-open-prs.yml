@@ -1,0 +1,16 @@
+name: temporary resolve article PR branches
+on:
+  push:
+    branches:
+      - "article/next-product"
+permissions:
+  contents: write
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - name: Resolve and merge main into article branches
+        run: bash .github/scripts/temp-resolve-article-conflicts.sh

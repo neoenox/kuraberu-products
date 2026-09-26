@@ -1,6 +1,10 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "logicool-pro-x-superlight-2-dex-vs-superlight-2": {
+    left: "/products/logicool-pro-x-superlight-2-dex.png",
+    right: "/products/logicool-pro-x-superlight-2.png",
+  },
   "anker-nano-a1638-vs-power-bank-a1256": {
     left: "/products/anker-nano-a1638.jpg",
     right: "/products/anker-power-a1256.jpg",
