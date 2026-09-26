@@ -56,20 +56,24 @@ function ghJson(args) {
   return JSON.parse(execFileSync("gh", ["api", ...args], { encoding: "utf8" }));
 }
 
+export function repoApiEndpoint(repo, path) {
+  return `repos/${repo}/${path}`;
+}
+
 function ghText(args) {
   return execFileSync("gh", args, { encoding: "utf8" }).trim();
 }
 
 /** open PR の behind 数と head の年齢を収集する（API アクセスを伴う）。 */
-export async function collectOpenPrs(repo) {
+export async function collectOpenPrs(repo, api = ghJson) {
   // gh api はパス引数を 1 個しか受けないため、クエリ文字列は単一パスに含める。
-  const pulls = ghJson([
-    `repos/${repo}/pulls?state=open&per_page=100&sort=updated&direction=desc`,
+  const pulls = api([
+    repoApiEndpoint(repo, "pulls?state=open&per_page=100&sort=updated&direction=desc"),
   ]);
   const prs = [];
   for (const pr of pulls) {
-    const compare = ghJson(["repos", repo, `compare/main...${pr.head.sha}`]);
-    const headCommit = ghJson(["repos", repo, `commits/${pr.head.sha}`]);
+    const compare = api([repoApiEndpoint(repo, `compare/main...${pr.head.sha}`)]);
+    const headCommit = api([repoApiEndpoint(repo, `commits/${pr.head.sha}`)]);
     const committerDate = headCommit.commit?.committer?.date;
     prs.push({
       number: pr.number,
@@ -116,7 +120,7 @@ async function main() {
       );
       continue;
     }
-    const head = ghJson(["repos", repo, `pulls/${pr.number}`]).head.sha ?? "";
+    const head = ghJson([repoApiEndpoint(repo, `pulls/${pr.number}`)]).head.sha ?? "";
     const comment = buildComment(pr.behindBy, head.slice(0, 7));
     const bodyPath = `${process.env.RUNNER_TEMP ?? process.env.TMPDIR ?? "."}/stale-pr-${pr.number}.md`;
     const { writeFileSync } = await import("node:fs");
