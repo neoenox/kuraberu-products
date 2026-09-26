@@ -6,6 +6,7 @@ import {
   countOtherArticleLinks,
   countRelatedArticleCards,
   countRenderedExternalEmbeds,
+  findUnapprovedInitialIframes,
   findEmptySections,
   readArticleContentType,
   readArticleProductCount,
@@ -537,6 +538,18 @@ ${embed.repeat(4)}`;
     expect(validateRenderedHtml({ distDirectory: directory }).errors).toContain(
       `${path.join(directory, "bad.html")}: rendered external embed limit exceeded: found 5, maximum is 4`,
     );
+  });
+});
+
+describe("initial external iframe policy", () => {
+  it("allows only explicit official YouTube and Reddit server embeds", () => {
+    const html = `<aside data-server-embed="true" data-provider="reddit"><iframe src="https://embed.reddit.com/r/example/comments/123/post/?embed=true"></iframe></aside><aside data-server-embed="true" data-provider="youtube"><iframe src="https://www.youtube.com/embed/abcdefghijk"></iframe></aside>`;
+    expect(findUnapprovedInitialIframes(html)).toEqual([]);
+  });
+
+  it("rejects unmarked and wrong-host initial iframes even beside an approved embed", () => {
+    const html = `<aside data-server-embed="true" data-provider="reddit"><iframe src="https://embed.reddit.com/r/example/comments/123/post/?embed=true"></iframe></aside><iframe src="https://www.redditmedia.com/r/example/comments/123/post/"></iframe><iframe src="https://evil.example/embed"></iframe>`;
+    expect(findUnapprovedInitialIframes(html)).toHaveLength(2);
   });
 });
 

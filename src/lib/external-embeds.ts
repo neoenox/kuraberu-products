@@ -222,12 +222,17 @@ export function createExternalEmbedConfig(
   }
 
   const canonicalUrl = `https://www.reddit.com${url.pathname.replace(/\/$/, "")}`;
+  const embedUrl = new URL(`https://embed.reddit.com${url.pathname}`);
+  embedUrl.searchParams.set("ref_source", "embed");
+  embedUrl.searchParams.set("ref", "share");
+  embedUrl.searchParams.set("embed", "true");
+  embedUrl.searchParams.set("showmedia", "true");
   return {
     provider,
     canonicalUrl,
-    // Reddit's official blockquote + widget.js embed format.
-    renderer: "widget",
-    scriptSrc: "https://embed.reddit.com/widgets.js",
+    // Reddit's embed host displays the real post card inside an iframe.
+    embedUrl: embedUrl.toString(),
+    renderer: "iframe",
     minimumHeight: 316,
   };
 }
