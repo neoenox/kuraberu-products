@@ -21,6 +21,10 @@ const commercialArticleImages: Readonly<
     left: "/products/jbl-flip-7.png",
     right: "/products/jbl-charge-6.png",
   },
+  "garmin-forerunner-570-vs-coros-pace-4": {
+    left: "/products/garmin-forerunner-570-42mm.jpg",
+    right: "/products/coros-pace-4-white.webp",
+  },
   "anker-a121a-vs-a2688": {
     left: "/products/anker-a121a.jpg",
     right: "/products/anker-a2688.jpg",
