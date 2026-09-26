@@ -3,13 +3,13 @@ import type { CommercialArticleSeed } from "./types";
 export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
   id: "logicool-pebble-m350s-vs-m650",
   publishedAt: "2026-09-23",
-  modifiedAt: "2026-09-23",
+  modifiedAt: "2026-09-26",
   handoffManifestId: "logicool-pebble-m350s-vs-m650-2026-09-23",
-  productInfoCheckedAt: "2026-09-23",
-  purchaseLinksCheckedAt: "2026-09-23",
-  purchaseLinkStatus: "unverified",
+  productInfoCheckedAt: "2026-09-26",
+  purchaseLinksCheckedAt: "2026-09-26",
+  purchaseLinkStatus: "verified",
   rakutenLinkStatus: "verified",
-  amazonLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   title:
     "Logicool Pebble Mouse 2 M350sとSignature M650の違いを比較｜軽さ・3台切替・SmartWheelで選ぶ",
   headline:
@@ -38,8 +38,8 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png",
   rightImage:
     "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png",
-  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CJR5HBMN",
-  rightAmazonUrl: "https://www.amazon.co.jp/dp/B09Q5SHDR3",
+  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CJR5HBMN?tag=kuraberuprodu-22",
+  rightAmazonUrl: "https://www.amazon.co.jp/dp/B09Q5SHDR3?tag=kuraberuprodu-22",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm350sgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   rightRakutenUrl:
@@ -149,51 +149,11 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "SmartWheelとサイドボタンを重視するならM650を選ぶ",
     "購入前に販売ページでカラー・価格・在庫を確認する",
   ],
-  socialProofHasPosts: true,
-  socialProofCheckedAt: "2026-09-23",
+  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-09-26",
   socialProofQuery: "Logicool Pebble Mouse 2 M350s Signature M650 使用感",
   socialProofBestMatch: "model",
-  socialProofDirectPosts: [
-    {
-      label: "Pebble Mouse 2 M350sの使用感（Reddit）",
-      href: "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
-      note: "購入後2〜3時間使用し、感触を気に入ったという本人投稿",
-    },
-    {
-      label: "Signature M650の長期使用感（Reddit）",
-      href: "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/",
-      note: "約1年のオフィス使用後のクリック不具合とスクロールホイールへの評価を述べた本人投稿",
-    },
-  ],
-  embeds: [
-    {
-      provider: "reddit",
-      url: "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
-      title: "Pebble Mouse 2 M350sの使用感",
-      match: "model",
-      purpose: "購入直後の使用感",
-      summary: "購入後2〜3時間使い、感触を気に入ったという実利用投稿",
-      community: "GadgetsIndia",
-      tone: "positive",
-      autoload: true,
-      autoDisplay: true,
-      compact: true,
-    },
-    {
-      provider: "reddit",
-      url: "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/",
-      title: "Signature M650の長期使用感",
-      match: "model",
-      purpose: "約1年のオフィス利用後の感想",
-      summary:
-        "スクロールホイールを評価する一方、約1年後にクリック不具合が出たという実利用投稿",
-      community: "MouseReview",
-      tone: "mixed",
-      autoload: true,
-      autoDisplay: true,
-      compact: true,
-    },
-  ],
+  socialProofDirectPosts: [],
   officialProse: [
     {
       heading: "Logicool Pebble Mouse 2 M350s",
@@ -214,22 +174,22 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     {
       label: "Pebble Mouse 2 M350s 公式商品ページ",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse",
-      date: "2026-09-23",
+      date: "2026-09-26",
     },
     {
       label: "Signature M650 公式商品ページ",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse",
-      date: "2026-09-23",
+      date: "2026-09-26",
     },
     {
       label: "楽天市場 M350sGR",
       url: "https://item.rakuten.co.jp/logicool/m350sgr/",
-      date: "2026-09-23",
+      date: "2026-09-26",
     },
     {
       label: "楽天市場 M650MGR",
       url: "https://item.rakuten.co.jp/logicool/m650mgr/",
-      date: "2026-09-23",
+      date: "2026-09-26",
     },
   ],
   disclaimer:

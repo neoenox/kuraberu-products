@@ -1,16 +1,14 @@
 {
   "id": "logicool-pebble-m350s-vs-m650-2026-09-23",
-  "source": "ChatGPT chat mode",
+  "source": "Codex direct validation of official, Amazon, and Rakuten product pages",
   "articleId": "logicool-pebble-m350s-vs-m650",
-  "checkedAt": "2026-09-23",
-  "researchDateJST": "2026-09-23",
+  "checkedAt": "2026-09-26",
+  "researchDateJST": "2026-09-26",
   "category": "ワイヤレスマウス",
-  "articleReady": false,
+  "articleReady": true,
   "restartRequired": false,
   "selectionReason": "同じLogicoolの現行静音ワイヤレスマウスで、M350sは薄型・76g・3台Easy-Switch、M650はSmartWheel・サイドボタン・Logi Boltレシーバー同梱という明確な選択差がある。既存記事にはM350sの掲載がなく、この組み合わせの重複も確認されなかった。",
-  "unconfirmedItems": [
-    "Amazon.co.jp商品詳細ページは取得ツールから直接開けず、ASINと型番一致は複数の外部インデックスで確認済みだがAmazon本体での直接確認は未完了"
-  ],
+  "unconfirmedItems": [],
   "products": {
     "left": {
       "name": "ロジクール PEBBLE MOUSE 2 M350S",
@@ -21,7 +19,7 @@
       "amazon": {
         "asin": "B0CJR5HBMN",
         "url": "https://www.amazon.co.jp/dp/B0CJR5HBMN",
-        "verification": "direct-fetch-unavailable; model/ASIN corroborated by external index"
+        "verification": "Amazon product detail page directly opened 2026-09-26; title confirms M350sGR"
       },
       "rakutenProductUrl": "https://item.rakuten.co.jp/logicool/m350sgr/"
     },
@@ -34,7 +32,7 @@
       "amazon": {
         "asin": "B09Q5SHDR3",
         "url": "https://www.amazon.co.jp/dp/B09Q5SHDR3",
-        "verification": "direct-fetch-unavailable; model/ASIN corroborated by external index"
+        "verification": "Amazon product detail page directly opened 2026-09-26; title confirms M650MGR"
       },
       "rakutenProductUrl": "https://item.rakuten.co.jp/logicool/m650mgr/"
     }
@@ -102,9 +100,10 @@
     }
   ],
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0CJR5HBMN",
-    "right": "https://www.amazon.co.jp/dp/B09Q5SHDR3",
-    "status": "needs-direct-confirmation"
+    "left": "https://www.amazon.co.jp/dp/B0CJR5HBMN?tag=kuraberuprodu-22",
+    "right": "https://www.amazon.co.jp/dp/B09Q5SHDR3?tag=kuraberuprodu-22",
+    "status": "verified",
+    "checkedAt": "2026-09-26"
   },
   "rakuten": {
     "status": "verified",
@@ -114,16 +113,11 @@
     "right": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
   },
   "social": {
-    "status": "adopted",
-    "adoptedCount": 2,
-    "directPostUrls": [
-      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
-      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
-    ],
-    "embedUrls": [
-      "https://www.reddit.com/r/GadgetsIndia/comments/1v0cg5y/new_mouse_addition/",
-      "https://www.reddit.com/r/MouseReview/comments/1wdju09/mouse_recommendations/"
-    ],
+    "status": "none",
+    "adoptedCount": 0,
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "Reddit candidates from the earlier draft were omitted because this article run has no X or YouTube post verified for embedding. The SNS section is not rendered.",
     "excludedCandidates": [
       {
         "url": "https://www.reddit.com/r/readbeforebuying/comments/1h4urru/toptier_i_tried_the_logitech_pebble_mouse_2_m350s/",
@@ -137,9 +131,10 @@
   },
   "caveats": [
     "比較結論はLogicool公式商品ページと公式プレスリリースの仕様だけを根拠にする。",
-    "公式価格は2026-09-23時点のLogicoolオンラインストア表示を使用し、発売時価格は比較値に使わない。",
-    "SNS投稿は比較根拠に使用しない。",
-    "楽天成果URLはユーザーが楽天アフィリエイト管理画面で生成したHTMLから取得し、pc=の遷移先が左右それぞれlogicool/m350sgr/・logicool/m650mgr/であることを確認済み。",
+    "公式価格は2026-09-26にLogicoolオンラインストアで再確認し、発売時価格は比較値に使わない。",
+    "Amazon商品詳細ページを直接開き、ASINと型番の一致を2026-09-26に確認。",
+    "楽天市場のLogicool公式ストアで左右の商品ページと型番を再確認。既存成果URLのpc=遷移先は対応する商品詳細URLと一致。",
+    "SNS投稿は比較根拠に使用しない。XまたはYouTubeの埋め込み対象がないためSNS欄は表示しない。",
     "商品画像はLogicool公式のresource.logitech.com画像URLを直接参照する。"
   ]
 }
