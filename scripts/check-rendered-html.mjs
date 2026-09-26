@@ -218,8 +218,12 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
       html.match(
         /<meta name="article:purchase-link-status" content="([^"]+)">/i,
       )?.[1] ?? null;
+    const rakutenLinkStatus =
+      html.match(
+        /<meta name="article:rakuten-link-status" content="([^"]+)">/i,
+      )?.[1] ?? purchaseLinkStatus;
     const hasPurchaseCtas =
-      purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct";
+      rakutenLinkStatus === "verified" || rakutenLinkStatus === "direct";
     const nextStepPurchaseDisabled = /data-next-step-purchase="disabled"/i.test(
       html,
     );
