@@ -82,6 +82,7 @@ import { ankerA1664VsA1654Seed } from "./anker-a1664-vs-a1654";
 import { shokzOpenfit2PlusVsOpenfit2Seed } from "./shokz-openfit-2-plus-vs-openfit-2";
 import { garminForerunner570VsCorosPace4Seed } from "./garmin-forerunner-570-vs-coros-pace-4";
 import { logicoolPebbleM350sVsM650Seed } from "./logicool-pebble-m350s-vs-m650";
+import { crucialX10ProVsKingstonXs2000Seed } from "./crucial-x10-pro-vs-kingston-xs2000";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerNanoA1638VsA1256Seed,
@@ -94,6 +95,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   shokzOpenfit2PlusVsOpenfit2Seed,
   garminForerunner570VsCorosPace4Seed,
   logicoolPebbleM350sVsM650Seed,
+  crucialX10ProVsKingstonXs2000Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,

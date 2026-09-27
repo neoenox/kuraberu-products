@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { hasVerifiedPurchaseDestination } from "./article-purchase-readiness.mjs";
 
 const root = process.cwd();
 const articlesDir = path.join(root, "src", "content", "articles", "commercial");
@@ -38,6 +39,37 @@ for (const file of files) {
   if (manifest.articleId !== articleId || manifest.id !== manifestId) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
+  if (manifest.amazon?.statusBySide) {
+    const evidence = manifest.amazon.browserEvidence;
+    if (
+      !evidence?.sessionIndicator?.state ||
+      !evidence.sessionIndicator.evidence ||
+      !evidence.sessionIndicator.observedAtJst
+    ) {
+      errors.push(
+        `${articleId}: per-side Amazon statuses require dated session-indicator evidence`,
+      );
+    }
+    for (const side of ["left", "right"]) {
+      const sideEvidence = evidence?.bySide?.[side];
+      for (const stage of [
+        "productMatch",
+        "eligibility",
+        "taggedUrl",
+        "destination",
+      ]) {
+        if (
+          typeof sideEvidence?.[stage]?.state !== "string" ||
+          typeof sideEvidence?.[stage]?.evidence !== "string" ||
+          sideEvidence[stage].evidence.trim() === ""
+        ) {
+          errors.push(
+            `${articleId}: Amazon ${side} ${stage} requires a state and direct-evidence note`,
+          );
+        }
+      }
+    }
+  }
   // Draft handoffs may exist while required purchase data is incomplete.
   const serializedManifest = JSON.stringify(manifest);
   if (serializedManifest.includes("sourceRef")) {
@@ -69,14 +101,20 @@ for (const file of files) {
       );
     }
     if (manifest.articleReady === true) {
-      const hasAmazon = isHttpUrl(amazon);
-      const hasRakuten =
-        manifest.rakuten?.status === "verified" &&
-        typeof rakuten === "string" &&
-        rakuten.startsWith("https://hb.afl.rakuten.co.jp/");
-      if (!hasAmazon || !hasRakuten) {
+      const amazonStatus =
+        manifest.amazon?.statusBySide?.[side] ?? manifest.amazon?.status;
+      const rakutenStatus =
+        manifest.rakuten?.statusBySide?.[side] ?? manifest.rakuten?.status;
+      if (
+        !hasVerifiedPurchaseDestination({
+          amazonStatus,
+          amazonUrl: amazon,
+          rakutenStatus,
+          rakutenUrl: rakuten,
+        })
+      ) {
         errors.push(
-          `${articleId}: articleReady requires confirmed Amazon and Rakuten URLs for ${side}`,
+          `${articleId}: articleReady requires at least one verified purchase destination for ${side}`,
         );
       }
     }

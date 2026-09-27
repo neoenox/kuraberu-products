@@ -160,6 +160,19 @@
 - SNS: X・YouTubeの埋め込み候補を確認できず不採用。SNS欄は表示しない
 - 公開条件: 記事データ、handoff、購入リンクの品質ゲートを通し、PRの必須CIを確認する
 
+### Crucial X10 Pro 2TB vs Kingston XS2000 2TB
+
+- slug: `crucial-x10-pro-vs-kingston-xs2000`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 最大読込・書込速度、IP55、落下耐性のメーカー記載条件、外形寸法・重量
+- 公式URL:
+  - https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9
+  - https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive
+- 購入先: 楽天成果URLは両商品確認済み。KingstonはAmazonタグ付き成果URLと遷移先も確認済み。CrucialはAmazon対象外のため楽天CTAのみ
+- 画像: 公式CDNの両画像を取得確認。Production CSPへ両ホストを追加
+- SNS: 適格性を裏付けられる投稿なしとして欄を非掲載（handoffに検索範囲・除外理由を記録）
+- handoff: `docs/article-handoffs/crucial-x10-pro-vs-kingston-xs2000-2026-09-27.json`
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE

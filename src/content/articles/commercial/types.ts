@@ -1,5 +1,7 @@
 type CommercialArticleSeed = {
   id: string;
+  /** 未公開の記事データ。記事一覧・トップページ等の公開導線から除外する。 */
+  draft?: boolean;
   title: string;
   headline: string;
   description: string;
@@ -25,6 +27,9 @@ type CommercialArticleSeed = {
   /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */
   leftAmazonUrl?: `https://${string}`;
   rightAmazonUrl?: `https://${string}`;
+  /** 商品ごとのAmazon販売先検証状態。省略時はamazonLinkStatusを使う。 */
+  leftAmazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  rightAmazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   /** 楽天商品詳細URL。nullを設定した場合は楽天リンクを自動検索しない。 */
   leftRakutenUrl?: `https://${string}` | null;
   rightRakutenUrl?: `https://${string}` | null;
