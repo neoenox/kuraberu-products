@@ -9,7 +9,7 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
   handoffManifestId: "jbl-tour-pro-3-vs-live-beam-3-2026-09-27",
   purchaseLinksCheckedAt: "2026-09-27",
   purchaseLinkStatus: "verified",
-  amazonLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
   title:
     "JBL Tour Pro 3とLive Beam 3を比較｜スマートケース・再生時間・価格の違い",
@@ -34,6 +34,8 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
   rightProduct: "JBL Live Beam 3 ブラック（JBLLIVEBEAM3BLK）",
   leftPoint: "ケースの音声送信機能とデュアルドライバーを重視する人向け",
   rightPoint: "長い公称再生時間と価格を重視する人向け",
+  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0DFXYNSWY",
+  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0D3T5ZW6Z",
   leftImage:
     "https://jp.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw767141b9/01.LS_JBL_Tour%20Pro%203_Product%20Image_Case%20Open_Black.png?sh=535&sw=535",
   rightImage:

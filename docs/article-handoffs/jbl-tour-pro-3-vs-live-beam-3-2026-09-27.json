@@ -71,12 +71,64 @@
     "featureCaveat": "Live Beam 3公式ページに記載がないTour Pro 3の各機能を、非対応とは断定しない。"
   },
   "amazon": {
-    "status": "unverified",
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DFXYNSWY",
+    "right": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z",
+    "leftAsin": "B0DFXYNSWY",
+    "rightAsin": "B0D3T5ZW6Z",
     "productPages": {
       "left": "https://www.amazon.co.jp/dp/B0DFXYNSWY?th=1",
       "right": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z?th=1"
     },
-    "note": "Amazon商品ページ上で商品名・型番・ブラックの一致を確認。今回の記事ではAmazonの対象可否とタグ付き成果URLを確認していないためCTAに使わず、商品ページは調査記録として保持する。"
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示され、カテゴリー「楽器」・販売手数料率2.00%を確認。商品別の適格性表示とは区別して記録。",
+        "observedAtJst": "2026-09-27"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでJBL TOUR PRO 3、ブラック、型番JBLTOURPRO3BLK、ASIN B0DFXYNSWYを確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UIで確認済みASINの商品リンクを生成。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクを開き、Amazonの商品名・型番が一致し、タグパラメーターを含むURLから商品詳細ページへ遷移することを確認。タグ実値は記録しない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでJBL LIVE BEAM 3、ブラック、型番JBLLIVEBEAM3BLK、ASIN B0D3T5ZW6Zを確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UIで確認済みASINの商品リンクを生成。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクを開き、Amazonの商品名・型番が一致し、タグパラメーターを含むURLから商品詳細ページへ遷移することを確認。タグ実値は記録しない。"
+          }
+        }
+      }
+    }
   },
   "rakuten": {
     "status": "verified",
@@ -116,10 +168,9 @@
     "note": "Xに適切な投稿は見つからず、確認したYouTube候補は広告・販売促進、または個人の実利用と非PRを確認できないため不採用。TikTokはアクセス制限により直接確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
   },
   "unconfirmed": [
-    "Amazonアソシエイトの各商品対象可否とタグ付き成果URLは確認していない。楽天の成果URLを両商品で確認できたためAmazonボタンは付けない。",
     "Live Beam 3のメーカー公式オンラインストア表示は確認日時点の状態であり、メーカー販売終了を意味しない。",
     "Live Beam 3の公式ページでTour Pro 3固有機能の記載を確認できないことは、非対応を意味しない。",
     "適格な実利用SNS投稿は確認できなかったが、対象SNS全体に投稿がないとの断定はしない。"
   ],
-  "publicationDecision": "JBL公式の商品名・型番・仕様・画像・希望小売価格を確認し、両商品について楽天アフィリエイト公式UIで商品詳細ページに対応する成果URLを生成した。Amazonは未確認としてCTAに含めない。X・YouTubeの採用可能な埋め込みを確認できなかったためSNS欄は表示しない。各商品に確認済み購入先があるため記事ready。"
+  "publicationDecision": "JBL公式の商品名・型番・仕様・画像・希望小売価格を確認。Amazonの公式リンク生成UIで両商品のリンク生成と商品詳細遷移を確認した。商品別の適格性表示は確認できず、共通ツールバーのカテゴリーと手数料率のみを記録。記事ソースにはASIN付きの正規商品詳細URLのみ保存し、本番では承認済みruntime環境設定がタグを付与する。楽天アフィリエイト公式UIでも両商品の成果URLを生成済み。採用可能なSNS埋め込みは確認できなかったためSNS欄は表示しない。両商品に確認済み購入先があるため記事ready。"
 }
