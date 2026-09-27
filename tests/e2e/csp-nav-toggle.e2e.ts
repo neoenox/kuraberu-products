@@ -11,16 +11,21 @@
  * <script is:inline> blocked by the Production CSP script-src 'self' policy.
  */
 
+import { readFileSync } from "node:fs";
 import { test, expect } from "@playwright/test";
 
 /** Production CSP from public/_headers — applied via route interception. */
-const PRODUCTION_CSP =
-  "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; " +
-  "script-src 'self' https://platform.twitter.com https://assets.pinterest.com https://widgets.pinterest.com; " +
-  "frame-src https://platform.twitter.com https://assets.pinterest.com https://www.youtube-nocookie.com https://www.tiktok.com; " +
-  "connect-src 'self' https://platform.twitter.com https://cdn.syndication.twimg.com https://api.twitter.com https://assets.pinterest.com; " +
-  "img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com https://i.pinimg.com https://*.image.rakuten.co.jp; " +
-  "style-src 'self' 'unsafe-inline'; font-src 'self' data:; media-src 'self' https://www.youtube-nocookie.com https://www.tiktok.com; form-action 'self'";
+const PRODUCTION_CSP = (() => {
+  const csp = readFileSync(
+    new URL("../../public/_headers", import.meta.url),
+    "utf8",
+  ).match(/^\s*Content-Security-Policy:\s*(.+)$/m)?.[1];
+
+  if (!csp) {
+    throw new Error("public/_headers is missing a Content-Security-Policy");
+  }
+  return csp;
+})();
 
 /** Apply Production CSP headers to every response via route interception. */
 async function applyProductionCSP(page: import("@playwright/test").Page) {
