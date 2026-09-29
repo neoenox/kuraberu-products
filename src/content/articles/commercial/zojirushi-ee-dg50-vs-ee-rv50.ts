@@ -9,7 +9,7 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   handoffManifestId: "zojirushi-ee-dg50-vs-ee-rv50-2026-09-29",
   purchaseLinksCheckedAt: "2026-09-29",
   purchaseLinkStatus: "verified",
-  amazonLinkStatus: "unverified",
+  amazonLinkStatus: "direct",
   rakutenLinkStatus: "verified",
   title: "象印 加湿器 EE-DG50とEE-RV50の違いを比較｜容量・連続加湿時間・サイズ",
   headline: "象印スチーム式加湿器2026年モデル EE-DG50とEE-RV50の違い",

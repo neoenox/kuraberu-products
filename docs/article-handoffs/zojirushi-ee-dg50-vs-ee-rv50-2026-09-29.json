@@ -89,10 +89,10 @@
     "caveat": "EE-RV50の公式ページに運転音の数値がないことは、EE-DG50より大きいことを意味しない。連続加湿時間・適用床面積はメーカーの目安。"
   },
   "amazon": {
-    "status": "unverified",
+    "status": "direct",
     "statusBySide": {
-      "left": "unverified",
-      "right": "unverified"
+      "left": "direct",
+      "right": "direct"
     },
     "left": "https://www.amazon.co.jp/dp/B0HGF5B9D8",
     "right": "https://www.amazon.co.jp/dp/B0HGFGSYXX",
@@ -116,7 +116,7 @@
           },
           "taggedUrl": {
             "state": "not-recorded",
-            "evidence": "公式リンク生成UIでの成果URL生成は実施していない。"
+            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される（PurchaseCard）。リンク生成UIでの生成は実施していない。"
           },
           "destination": {
             "state": "not-recorded",
@@ -134,7 +134,7 @@
           },
           "taggedUrl": {
             "state": "not-recorded",
-            "evidence": "公式リンク生成UIでの成果URL生成は実施していない。"
+            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される（PurchaseCard）。リンク生成UIでの生成は実施していない。"
           },
           "destination": {
             "state": "not-recorded",
@@ -165,7 +165,7 @@
   "unconfirmed": [
     "EE-RV50の入・切タイマー時間は公式本文と公式画像で読み取れる順序が異なるため、時間値を記事に掲載していない。",
     "EE-RV50の運転音の数値は公式ページで確認できず、静かさの優劣は判断していない。",
-    "Amazonの対象可否・成果URL生成・遷移先は未確認。"
+    "Amazonの対象可否（アソシエイト・ツールバー表示）は未確認で、遷移先の実機確認も未実施。購入リンクはdirect状態（ビルド時にtag付与）。対象外と判明した場合はCTAを出さない。"
   ],
   "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは生成済みで、両商品に確認済み購入先がある。公開操作（draft解除・公開許可リスト追加・articleReady更新）は所有者の承認待ちのため articleReady=false、seed は draft: true のまま。"
 }
