@@ -200,6 +200,20 @@
 - SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
 - handoff: `docs/article-handoffs/kobo-clara-colour-vs-libra-colour-2026-09-29.json`
 
+### 富士フイルム instax mini 13 vs instax mini 41
+
+- slug: `instax-mini-13-vs-mini-41`
+- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 比較軸: セルフタイマー・セルフィーミラー、カラー展開、デザイン、サイズ・質量、使用電池（レンズ・撮影範囲・フラッシュ・現像時間は共通）
+- 公式URL:
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41
+- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
+- 価格: どちらもオープン価格。販売店の価格は掲載しない
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
