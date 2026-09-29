@@ -30,6 +30,7 @@
     "https://jp.jbl.com/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw77e07407/pdfs/JBL_Charge_6_Specsheet_JP.pdf"
   ],
   "amazon": {
+    "status": "verified",
     "left": "https://www.amazon.co.jp/dp/B0F1N1BC2D",
     "right": "https://www.amazon.co.jp/dp/B0F1MZ88ML"
   },

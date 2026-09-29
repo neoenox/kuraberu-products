@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   COMMENT_MARKER,
   STALE_AFTER_MS,
+  apiEndpoints,
   buildComment,
   selectStalePrs,
 } from "../scripts/update-stale-prs.mjs";
@@ -19,6 +20,18 @@ function pr(overrides = {}) {
     ...overrides,
   };
 }
+
+describe("apiEndpoints", () => {
+  it("builds each gh api endpoint as one argument", () => {
+    expect(apiEndpoints("neoenox/kuraberu-products", "abc123", 42)).toEqual({
+      pulls:
+        "repos/neoenox/kuraberu-products/pulls?state=open&per_page=100&sort=updated&direction=desc",
+      compare: "repos/neoenox/kuraberu-products/compare/main...abc123",
+      commit: "repos/neoenox/kuraberu-products/commits/abc123",
+      pull: "repos/neoenox/kuraberu-products/pulls/42",
+    });
+  });
+});
 
 describe("selectStalePrs", () => {
   it("selects a non-draft MERGEABLE PR behind main with a head older than 24h", () => {

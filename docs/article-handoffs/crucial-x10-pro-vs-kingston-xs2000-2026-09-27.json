@@ -1,0 +1,135 @@
+{
+  "id": "crucial-x10-pro-vs-kingston-xs2000-2026-09-27",
+  "articleId": "crucial-x10-pro-vs-kingston-xs2000",
+  "source": "Fresh candidate selection and official-source/link verification in the current session",
+  "researchDateJst": "2026-09-27",
+  "articleReady": true,
+  "category": "ポータブルSSD",
+  "products": {
+    "left": {
+      "name": "Crucial X10 Pro 2TB Portable SSD",
+      "model": "CT2000X10PROSSD9",
+      "officialUrl": "https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9",
+      "officialImageUrl": "https://assets.micron.com/adobe/assets/urn:aaid:aem:e74216b8-9132-4aec-8481-2f7861387c80/renditions/transformpng-1024-1024.png/as/crucial-x10-pro-black-isolated-left.png",
+      "imageEvidence": "公式商品ページの画像要素とHTML上の画像URLを確認。2026-09-27にChromeで画像URLを直接開き、Crucial X10 Pro製品画像が表示されることを確認。HTTP GETでもimage/png、1024×922を確認。",
+      "specsVerified": {
+        "capacity": "2TB",
+        "sequentialRead": "最大2,100MB/s",
+        "sequentialWrite": "最大2,000MB/s",
+        "ipRating": "IP55",
+        "dropResistance": "最大約2m。カーペット上でデータに影響がない条件の記載あり",
+        "dimensions": "65 × 50mm（公式ページ記載。厚さ・重量は今回確認したページに記載なし）",
+        "housing": "アルミニウム、ゴム製ベース、ストラップ穴"
+      }
+    },
+    "right": {
+      "name": "Kingston XS2000 2TB",
+      "model": "SXS2000/2000G",
+      "officialUrl": "https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive",
+      "officialImageUrl": "https://media.kingston.com/kingston/product/sxs2000_4000gb_tn.png",
+      "imageEvidence": "Kingston公式製品ページに掲載されたXS2000シリーズの製品画像URLを確認。公式ページの画像は4TB表記のファイル名を含むため、容量を示す画像ではなくシリーズ外観として使用。実画像は135×65px。",
+      "specsVerified": {
+        "capacity": "2TB",
+        "interface": "USB 3.2 Gen 2x2",
+        "sequentialRead": "最大2,000MB/s",
+        "sequentialWrite": "最大2,000MB/s",
+        "ipRating": "IP55",
+        "dropResistance": "最大6ft。付属ラバースリーブと社内管理の落下試験について記載あり",
+        "dimensions": "69.54 × 32.58 × 13.5mm",
+        "weight": "28.9g",
+        "included": "ラバースリーブ、USB-C to USB-Cケーブル",
+        "warranty": "限定5年保証"
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "keyDifferences": [
+      "メーカー公称の最大読込速度（X10 Pro 2,100MB/s、XS2000 2,000MB/s）",
+      "最大書込速度（両機種2,000MB/s）",
+      "防塵・防水等級（両機種IP55）",
+      "寸法・重量の公式記載範囲（X10 Pro 65×50mm、XS2000 69.54×32.58×13.5mm・28.9g）",
+      "落下耐性の記載は試験条件が異なるため、優劣を断定しない"
+    ],
+    "speedCaveat": "最大速度はメーカー公称値。実速度はホスト機器、ケーブル、ファイル、使用環境で異なる。",
+    "dropTestCaveat": "Crucialはカーペット上で最大約2m、Kingstonは付属スリーブを含む最大6ftと記載。試験方法は同一と確認できず単純比較しない。"
+  },
+  "amazon": {
+    "statusBySide": {
+      "left": "search",
+      "right": "verified"
+    },
+    "right": "https://www.amazon.co.jp/dp/B09F6279PY?th=1&linkCode=ll2&tag=kuraberuprodu-22&linkId=1059556899f99acaec1e90d4b5e7f9a0&ref_=as_li_ss_tl",
+    "rightAsin": "B09F6279PY",
+    "rightVerification": "Amazon.co.jpの商品ページとアソシエイト・ツールバーでXS2000/2000G 2TB、ASIN B09F6279PYを照合。リンク生成ダイアログのストアID kuraberuprodu-22で完全リンクを生成・コピーし、tag付きURLを確認。そのURLを開くとXS2000 2TBの商品詳細ページに到達し、URL上のtagも維持された。",
+    "leftVerification": "Amazonアソシエイト・ツールバーの商品画面に『この商品はAmazonアソシエイトプログラムの対象外』と表示。X10 ProのAmazon CTAは出さない。",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示され、商品カテゴリー『パソコン・周辺機器』と販売手数料率2.00%を確認。これはツールバー表示の直接観察であり、ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-09-27"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jpの商品詳細ページでCrucial X10 Pro 2TBの商品名・型番を確認。"
+          },
+          "eligibility": {
+            "state": "unavailable",
+            "evidence": "アソシエイト・ツールバーに『この商品はAmazonアソシエイトプログラムの対象外』と表示。"
+          },
+          "taggedUrl": {
+            "state": "not-applicable",
+            "evidence": "商品がプログラム対象外の表示のため、成果URLを使用しない。"
+          },
+          "destination": {
+            "state": "not-applicable",
+            "evidence": "成果URLを使用しないため成果リンクの遷移先確認は不要。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jpの商品詳細ページでKingston XS2000 2TB、型番SXS2000/2000G、ASIN B09F6279PYを確認。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を表示。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "Amazonアソシエイトのリンク生成ダイアログでストアID kuraberuprodu-22、完全リンクを選び生成・コピー。検索欄へ貼り付けて https://www.amazon.co.jp/dp/B09F6279PY?th=1&linkCode=ll2&tag=kuraberuprodu-22&linkId=1059556899f99acaec1e90d4b5e7f9a0&ref_=as_li_ss_tl を直接確認。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLを開き、最終URLにtag=kuraberuprodu-22が残り、AmazonページタイトルでKingston XS2000 SXS2000/2000G 2TBを確認。ASIN B09F6279PYの商品詳細ページに到達。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57f32d04.2786676a.57f32d05.d4b822af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftales-store%2F202506050037110649528938428%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "leftProductPage": "https://item.rakuten.co.jp/tales-store/202506050037110649528938428/",
+    "leftProductName": "crucial 外付けポータブルSSD X10Proシリーズ 2TB 最大読み込み 2100MB/s CT2000X10PROSSD9",
+    "leftShop": "TalesStore 楽天市場店",
+    "leftProductVerified": true,
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57f33231.551f8117.57f33232.7136f34a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmanoangel%2F20240629145923_100%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "rightProductPage": "https://item.rakuten.co.jp/manoangel/20240629145923_100/",
+    "rightProductName": "キングストン 外付け SSD 2000GB 2TB USB3.2 Gen2x2 読出最大2000MB/秒 防滴防塵 耐衝撃 ポータブル SXS2000/2000G",
+    "rightShop": "Mano Angel 楽天市場店",
+    "rightProductVerified": true,
+    "generation": "2026-09-27、ログイン済みChromeで楽天アフィリエイト公式UIから各商品詳細URLを入力。商品名・型番・ショップを確認し、ソース欄のhb.afl.rakuten.co.jp URLを取得。両商品とも商品詳細ページへのリンク先を確認済み。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "X検索は利用可能な検索バックエンドがなく、Jina経由の検索も403で投稿を直接確認できなかった。YouTube候補は個別に確認し、Lon.TVとMardee Reviews TechはAmazonアフィリエイトリンク、Box.co.ukは販売店自身の販促動画のため不採用。Kingston XS2000のGP動画は実測をうたうが、確認できた説明文が定型的で2TB個体の試験か特定できず、動画内容も取得時に401となったため根拠として不採用。Девайснаяのユーザー体験動画も内容・提供関係を直接確認できず不採用。適格性を確認できた投稿は0件とし、SNS欄は掲載しない。これは適格な投稿が存在しないとの断定ではない。"
+  },
+  "unconfirmed": [],
+  "publicationDecision": "各商品に確認済みの購入先URLがあり、SNS適格投稿は確認できなかったためSNS欄は非掲載。Crucial公式画像CDNとKingston公式画像CDNの画像配信を確認済み。CrucialはAmazon対象外のため楽天CTAのみ、Kingstonは楽天・Amazon CTAを表示する。公開条件を満たしたためarticleReady=trueとし、明示された本番公開依頼に従いdraftを解除する。"
+}

@@ -1,6 +1,10 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "logicool-pro-x-superlight-2-dex-vs-superlight-2": {
+    left: "/products/logicool-pro-x-superlight-2-dex.png",
+    right: "/products/logicool-pro-x-superlight-2.png",
+  },
   "anker-nano-a1638-vs-power-bank-a1256": {
     left: "/products/anker-nano-a1638.jpg",
     right: "/products/anker-power-a1256.jpg",
@@ -24,6 +28,10 @@ const commercialArticleImages: Readonly<
   "garmin-forerunner-570-vs-coros-pace-4": {
     left: "/products/garmin-forerunner-570-42mm.jpg",
     right: "/products/coros-pace-4-white.webp",
+  },
+  "tp-link-archer-be550-vs-be450": {
+    left: "/products/tp-link-archer-be550.jpg",
+    right: "/products/tp-link-archer-be450.jpg",
   },
   "anker-a121a-vs-a2688": {
     left: "/products/anker-a121a.jpg",

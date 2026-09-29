@@ -140,6 +140,9 @@ import { isPublishedArticlePath } from "../../../config/article-template-policy.
 
 /** 全記事の配列（商業記事を含む） */
 const commercialIds = new Set(commercialArticleSeeds.map((seed) => seed.id));
+const draftCommercialIds = new Set(
+  commercialArticleSeeds.filter((seed) => seed.draft).map((seed) => seed.id),
+);
 
 export const additionalCommercialArticles: readonly ArticleMetadata[] =
   Object.freeze(
@@ -211,7 +214,9 @@ export const articleMetadata: readonly ArticleMetadata[] = Object.freeze([
 const publicArticleMetadata = Object.freeze(
   articleMetadata.filter(
     (article) =>
-      !commercialIds.has(article.id) || Boolean(article.productInfoCheckedAt),
+      !commercialIds.has(article.id) ||
+      (!draftCommercialIds.has(article.id) &&
+        Boolean(article.productInfoCheckedAt)),
   ),
 );
 const publishedArticleMetadata = Object.freeze(
