@@ -98,7 +98,7 @@ function articleSlugs(): string[] {
 
 describe("article metadata", () => {
   it("includes verified commercial articles in public discovery surfaces", () => {
-    expect(publicArticleMetadata).toHaveLength(120);
+    expect(publicArticleMetadata).toHaveLength(124);
     const newlyPublishedIds = [
       "yamazaki-dishwasher-rack-241925-vs-241926",
       "panasonic-mc-nx810km-vs-mc-nx700k",
@@ -123,6 +123,7 @@ describe("article metadata", () => {
       "dyson-v12-vs-micro-plus",
       "elecom-de-c85-vs-de-c86",
       "sony-wf-1000xm6-vs-linkbuds-fit",
+      "zojirushi-ee-dg50-vs-ee-rv50",
       "braun-series9pro-vs-series7",
       "delonghi-ecam22112b-vs-ecam25023sb",
       "irobot-roomba-j9plus-vs-j7",
@@ -149,6 +150,8 @@ describe("article metadata", () => {
       "logicool-pebble-m350s-vs-m650",
       "anker-a121a-vs-a2688",
       "anker-a1664-vs-a1654",
+      "garmin-forerunner-570-vs-coros-pace-4",
+      "jbl-tour-pro-3-vs-live-beam-3",
       "tp-link-archer-be550-vs-be450",
     ];
     for (const id of newlyPublishedIds) {
@@ -164,6 +167,11 @@ describe("article metadata", () => {
     expect(
       publishedArticleMetadata.some(
         (article) => article.id === "anker-a1664-vs-a1654",
+      ),
+    ).toBe(true);
+    expect(
+      publishedArticleMetadata.some(
+        (article) => article.id === "garmin-forerunner-570-vs-coros-pace-4",
       ),
     ).toBe(true);
     expect(
@@ -306,7 +314,7 @@ describe("article metadata", () => {
     // 比較記事は productCount: 2、単一商品記事（商品ガイド）は productCount: 1。
     expect(
       articleMetadata.filter((article) => article.productCount === 2),
-    ).toHaveLength(142);
+    ).toHaveLength(146);
     expect(
       articleMetadata.filter((article) => article.productCount === 1),
     ).toEqual([panasonicBabyMonitorArticle, panasonicEhNa9mGuideArticle]);

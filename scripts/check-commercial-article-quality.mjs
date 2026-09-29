@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { PUBLISHED_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
+import { hasVerifiedPurchaseDestination } from "./article-purchase-readiness.mjs";
 
 const root = process.cwd();
 const articlesDir = path.join(root, "src", "content", "articles", "commercial");
@@ -98,13 +99,20 @@ for (const file of files) {
   for (const side of ["left", "right"]) {
     const amazon = manifest.amazon?.[side];
     const rakuten = manifest.rakuten?.[side];
+    const amazonStatus =
+      manifest.amazon?.statusBySide?.[side] ?? manifest.amazon?.status;
+    const rakutenStatus =
+      manifest.rakuten?.statusBySide?.[side] ?? manifest.rakuten?.status;
     if (
-      !/^https:\/\//.test(amazon ?? "") ||
-      manifest.rakuten?.status !== "verified" ||
-      !/^https:\/\/hb\.afl\.rakuten\.co\.jp\//.test(rakuten ?? "")
+      !hasVerifiedPurchaseDestination({
+        amazonStatus,
+        amazonUrl: amazon,
+        rakutenStatus,
+        rakutenUrl: rakuten,
+      })
     ) {
       errors.push(
-        `${articleId}: ${side} needs confirmed Amazon and Rakuten URLs`,
+        `${articleId}: ${side} needs at least one verified purchase destination`,
       );
     }
   }

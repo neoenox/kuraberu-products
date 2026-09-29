@@ -67,10 +67,13 @@ export const CUSTOM_ARTICLE_PAGE_SLUGS = new Set([
 
 /** 公開記事は品質ゲート通過後に個別追加する。未検証記事は公開しない。 */
 export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
+  "garmin-forerunner-570-vs-coros-pace-4",
   "tp-link-archer-be550-vs-be450",
   "jbl-flip-7-vs-charge-6",
   "anker-a121a-vs-a2688",
   "anker-a1664-vs-a1654",
+  "crucial-x10-pro-vs-kingston-xs2000",
+  "zojirushi-ee-dg50-vs-ee-rv50",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];

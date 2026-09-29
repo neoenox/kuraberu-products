@@ -34,7 +34,27 @@
 
 公式ページが型番、仕様、画像のいずれかを直接確認できない場合は `確認不可` と記録し、採用しない。後継機・海外モデル・シリーズ一覧の値を転用しない。
 
-## 3. 楽天導線証跡
+## 3. Amazon導線証跡
+
+- アソシエイト画面のセッション表示（表示文言と確認日）:
+
+| 項目                                                                              | 左商品 | 右商品 |
+| --------------------------------------------------------------------------------- | ------ | ------ |
+| Amazon商品詳細URL / ASIN                                                          |        |        |
+| 商品名・型番一致                                                                  |        |        |
+| 商品のプログラム対象状態（表示文言）                                              |        |        |
+| 成果URL生成状態（`verified` / `not-recorded`等）                                  |        |        |
+| 生成済み成果URL（未取得なら空欄）                                                 |        |        |
+| 成果URLの最終遷移先・確認結果                                                     |        |        |
+| Amazon CTA状態（`verified` / `direct` / `search` / `unverified` / `unavailable`） |        |        |
+
+`bsk browsers`の接続情報はAmazonのログイン証拠ではない。画面で直接見ていない状態は`not-recorded`または`unverified`と記載する。成果URLの記録がないことからログイン状態、商品対象可否、生成操作の成否を推定しない。認証情報、Cookie、tokenは保存しない。
+
+Amazonの商品詳細URL・ASINを確認できない、検索で商品を見つけられない、またはリンク生成画面を確認できないだけなら`unavailable`にしない。商品名・型番が公式情報で確認済みなら、seedの商品別状態を`search`にし、runtimeタグ付きのAmazon検索ボタンを表示する。これは商品詳細リンクの確認済み状態ではなく、`articleReady`の購入先条件には数えない。
+
+`unavailable`を記録する場合は、商品詳細URLの`/dp/<ASIN>`、商品一致証跡、公式Amazonアソシエイト画面の明示結果を同じASINで突合し、`browserEvidence.bySide.<side>.unavailableEvidence`へ`reason`・`source`・`asin`・`observedAtJst`を保存する。認める理由は、商品別適格性画面の明示的な対象外表示（`item-ineligible`）またはリンク生成UIによる明示拒否（`official-link-builder-refused`）だけ。検索結果なし、ASIN不明、通信エラー、画面未確認、生成未実行は直接証拠にならず、`search`または`unverified`にする。`pnpm verify:lint`のhandoff検査がASIN一致、状態、日付、根拠を検証する。
+
+## 4. 楽天導線証跡
 
 | 項目                                  | 左商品 | 右商品 |
 | ------------------------------------- | ------ | ------ |
@@ -53,9 +73,9 @@
 
 ショップ不一致、検索結果URL、最終遷移先を特定できない短縮URL、既存URLの流用は `unverified` とし、CTAを表示しない。
 
-## 4. 実装チェック
+## 5. 実装チェック
 
-### 4.1 比較記事（editorial）の新規作成 — メタ1本 + 1行ラッパ（推奨）
+### 5.1 比較記事（editorial）の新規作成 — メタ1本 + 1行ラッパ（推奨）
 
 新規の比較記事は `src/pages/articles/<slug>/index.astro` に 50〜80 行を手書きしない。`src/content/articles/<slug>.ts` に全データを集約し、ページは 1 行ラッパにする（`combi-the-s-plus-vs-premium` 等が雛形）。
 
@@ -119,7 +139,7 @@ import CommercialArticlePage from "../../../components/CommercialArticlePage.ast
 
 新規ページのテンプレート判定は `scripts/check-article-template-policy.mjs` で行う。過去記事の互換ページだけを許可リストに残し、許可リストにないページで `ArticleComparisonPage` を使うと検証に失敗する。過去記事の互換ページを現行テンプレートへ自動変換して表示を変えることはしない。
 
-### 4.2 商業記事（commercial）の新規作成
+### 5.2 商業記事（commercial）の新規作成
 
 - [ ] `CommercialArticleSeed`へ商品名・公式URL・確認日・仕様を追加
 - [ ] `articlePurchaseLinks`へ左右の商品詳細成果URLを追加
@@ -129,7 +149,7 @@ import CommercialArticlePage from "../../../components/CommercialArticlePage.ast
 - [ ] 価格・在庫・人気・口コミを公式根拠なしに記載していない
 - [ ] SNS情報を比較根拠にしていない
 
-## 5. 検証と公開
+## 6. 検証と公開
 
 ### 現行記事レイアウトの確認
 
@@ -153,6 +173,6 @@ PUBLIC_BUILD_SHA=$(git rev-parse HEAD) pnpm verify
 - [ ] Production deploymentが`main`かつmerge SHAと一致
 - [ ] Productionの対象記事、sitemap、画像、JSON-LD、CTA DOMをcache-buster付きで確認
 
-## 6. 残件
+## 7. 残件
 
 確認できなかった項目、停止理由、再調査URL、再開条件を列挙する。残件がある場合、記事を「最新化済み」や「公開完了」と報告しない。

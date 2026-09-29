@@ -1,0 +1,176 @@
+{
+  "id": "jbl-tour-pro-3-vs-live-beam-3-2026-09-27",
+  "articleId": "jbl-tour-pro-3-vs-live-beam-3",
+  "source": "Fresh product selection and research in a new ChatGPT chat-mode conversation, verified by Codex against official pages and retailer listings",
+  "researchDateJst": "2026-09-27",
+  "articleReady": true,
+  "category": "イヤホン・ヘッドホン",
+  "products": {
+    "left": {
+      "name": "JBL Tour Pro 3 Black",
+      "model": "JBLTOURPRO3BLK",
+      "officialUrl": "https://jp.jbl.com/TOUR-PRO-3.html",
+      "officialImageUrl": "https://jp.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw767141b9/01.LS_JBL_Tour%20Pro%203_Product%20Image_Case%20Open_Black.png?sh=535&sw=535",
+      "imageEvidence": "JBL公式商品ページに掲載されるブラックモデルの商品画像URL。ページ上の商品名・型番を照合し、公式CDNの画像を使用。",
+      "officialSpecs": {
+        "driver": "10.2mm dynamic driver + two 5.1 x 2.8mm balanced armature drivers",
+        "caseDisplay": "1.57 inch",
+        "battery": "up to 11 hours in earbuds and 44 hours total with ANC off",
+        "quickCharge": "10 minutes for up to 3 hours of playback",
+        "weight": "83g including case",
+        "features": [
+          "Bluetooth 5.3",
+          "IP55",
+          "multipoint",
+          "wireless charging",
+          "JBL Spatial 360 with head tracking",
+          "Auracast",
+          "case audio transmitter"
+        ]
+      },
+      "officialMsrpJpy": 39600,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DFXYNSWY?th=1",
+      "rakutenProductPage": "https://item.rakuten.co.jp/ikeshibu/860068/",
+      "rakutenListingEvidence": "楽天アフィリエイト公式の商品リンク作成画面にJBL Tour Pro 3 Black、TOURPRO3BLK、イケベ楽器 イケシブ、39,600円を表示。pc=遷移先は上記の商品詳細ページ。2026-09-27。"
+    },
+    "right": {
+      "name": "JBL Live Beam 3 Black",
+      "model": "JBLLIVEBEAM3BLK",
+      "officialUrl": "https://jp.jbl.com/LIVEBEAM3.html",
+      "officialImageUrl": "https://jp.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwfb9effd5/01.JBL_Live_Beam_3_ProductImage_Feature_Screen_02_Black.png?sh=535&sw=535",
+      "imageEvidence": "JBL公式商品ページに掲載されるブラックモデルの商品画像URL。公式ページ・販売ページ本文で型番JBLLIVEBEAM3BLKとブラックを照合。",
+      "officialSpecs": {
+        "driver": "10mm dynamic driver",
+        "caseDisplay": "1.45 inch",
+        "battery": "up to 12 hours in earbuds and 48 hours total with ANC off",
+        "quickCharge": "10 minutes for up to 4 hours of playback",
+        "weight": "82g including case",
+        "features": ["Bluetooth 5.3", "IP55", "multipoint", "wireless charging"]
+      },
+      "officialMsrpJpy": 19800,
+      "manufacturerOnlineStoreStatus": "At the 2026-09-27 check, the JBL page stated that the item was sold out and unavailable for online purchase. This is only a direct-store status observation.",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z?th=1",
+      "rakutenProductPage": "https://item.rakuten.co.jp/akky2018/au-jbl-livebeam3-/",
+      "rakutenListingEvidence": "楽天アフィリエイト公式の商品リンク作成画面にJBL Live Beam 3の商品画像・商品名・アッキーインターナショナル、17,820円（生成時点）を表示。pc=遷移先は上記商品詳細ページ。販売ページ本文にブラック型番JBLLIVEBEAM3BLKとJAN 4968929221707を確認。価格はseedへ固定表示しない。2026-09-27。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格（税込）。JBL公式ページを2026-09-27に確認。販売店価格ではない。",
+    "keyDifferences": [
+      "Tour Pro 3はデュアル方式のハイブリッドドライバー、Live Beam 3は10mmダイナミックドライバー",
+      "ケース画面はTour Pro 3が1.57インチ、Live Beam 3が1.45インチ",
+      "ANCオフの最大再生時間はTour Pro 3が44時間、Live Beam 3が48時間",
+      "10分充電での公称再生時間はTour Pro 3が3時間、Live Beam 3が4時間",
+      "重量はケース込みTour Pro 3が83g、Live Beam 3が82g",
+      "確認した公式ページでTour Pro 3はケース音声送信機能、JBL Spatial 360/ヘッドトラッキング、Auracastを案内。Live Beam 3側は同機能の掲載を確認できず、非対応とは断定しない。",
+      "メーカー希望小売価格はTour Pro 3が39,600円、Live Beam 3が19,800円"
+    ],
+    "batteryCaveat": "再生時間・急速充電時間はいずれもメーカー公称値で、音量、ANC、コーデックなどの設定・使用条件で変わる。",
+    "featureCaveat": "Live Beam 3公式ページに記載がないTour Pro 3の各機能を、非対応とは断定しない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DFXYNSWY",
+    "right": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z",
+    "leftAsin": "B0DFXYNSWY",
+    "rightAsin": "B0D3T5ZW6Z",
+    "productPages": {
+      "left": "https://www.amazon.co.jp/dp/B0DFXYNSWY?th=1",
+      "right": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z?th=1"
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示され、カテゴリー「楽器」・販売手数料率2.00%を確認。商品別の適格性表示とは区別して記録。",
+        "observedAtJst": "2026-09-27"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでJBL TOUR PRO 3、ブラック、型番JBLTOURPRO3BLK、ASIN B0DFXYNSWYを確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UIで確認済みASINの商品リンクを生成。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクを開き、Amazonの商品名・型番が一致し、タグパラメーターを含むURLから商品詳細ページへ遷移することを確認。タグ実値は記録しない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでJBL LIVE BEAM 3、ブラック、型番JBLLIVEBEAM3BLK、ASIN B0D3T5ZW6Zを確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UIで確認済みASINの商品リンクを生成。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクを開き、Amazonの商品名・型番が一致し、タグパラメーターを含むURLから商品詳細ページへ遷移することを確認。タグ実値は記録しない。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57f5a553.61c8b1e0.57f5a554.a743e08b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fikeshibu%2F860068%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "leftProductPage": "https://item.rakuten.co.jp/ikeshibu/860068/",
+    "leftProductName": "JBL Tour Pro 3 Black (ブラック) (TOURPRO3BLK)【国内正規品・1年保証】",
+    "leftShop": "イケベ楽器 イケシブ",
+    "leftProductVerified": true,
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57f5a5ec.8c12c074.57f5a5ed.2891c8bc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-jbl-livebeam3-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "rightProductPage": "https://item.rakuten.co.jp/akky2018/au-jbl-livebeam3-/",
+    "rightProductName": "【JBL製品正規販売店】JBL Live Beam3 ライブビーム3 (カラー: 4色)",
+    "rightShop": "アッキーインターナショナル",
+    "rightProductVerified": true,
+    "generation": "2026-09-27にログイン済みChromeの楽天アフィリエイト公式画面へ各商品詳細URLを入力。商品リンク作成画面の商品名・型番・ショップと、ソース欄のhb.afl.rakuten.co.jp URLを確認。両URLのpc=遷移先は入力した各商品詳細ページと一致。Live Beam 3の販売ページ本文にはブラック型番JBLLIVEBEAM3BLKが含まれる。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "candidatesNotAdopted": [
+      {
+        "url": "https://www.reddit.com/r/JBL/comments/1v7raez/switched_to_jbl_tour_pro_3_review_need_advice/",
+        "product": "Tour Pro 3",
+        "reason": "ChatGPT調査で利用者レビュー候補として確認。今回のサイト品質ゲートで要求されるXまたはYouTubeの埋め込み対象ではないため記事へ採用しない。"
+      },
+      {
+        "url": "https://www.reddit.com/r/Earbuds/comments/1da6f75/jbl_live_beam_3_initial_review/",
+        "product": "Live Beam 3",
+        "reason": "ChatGPT調査で初期利用レビュー候補として確認。今回のサイト品質ゲートで要求されるXまたはYouTubeの埋め込み対象ではないため記事へ採用しない。"
+      },
+      {
+        "url": "https://www.reddit.com/r/JBL/comments/1heqtbl/",
+        "product": "Tour Pro 3とLive Beam 3の比較候補",
+        "reason": "ChatGPT調査で所有者による比較候補として確認。今回の記事の埋め込み欄には採用しない。"
+      }
+    ],
+    "note": "Xに適切な投稿は見つからず、確認したYouTube候補は広告・販売促進、または個人の実利用と非PRを確認できないため不採用。TikTokはアクセス制限により直接確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "Live Beam 3のメーカー公式オンラインストア表示は確認日時点の状態であり、メーカー販売終了を意味しない。",
+    "Live Beam 3の公式ページでTour Pro 3固有機能の記載を確認できないことは、非対応を意味しない。",
+    "適格な実利用SNS投稿は確認できなかったが、対象SNS全体に投稿がないとの断定はしない。"
+  ],
+  "publicationDecision": "JBL公式の商品名・型番・仕様・画像・希望小売価格を確認。Amazonの公式リンク生成UIで両商品のリンク生成と商品詳細遷移を確認した。商品別の適格性表示は確認できず、共通ツールバーのカテゴリーと手数料率のみを記録。記事ソースにはASIN付きの正規商品詳細URLのみ保存し、本番では承認済みruntime環境設定がタグを付与する。楽天アフィリエイト公式UIでも両商品の成果URLを生成済み。採用可能なSNS埋め込みは確認できなかったためSNS欄は表示しない。両商品に確認済み購入先があるため記事ready。"
+}
