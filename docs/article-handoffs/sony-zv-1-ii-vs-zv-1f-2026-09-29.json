@@ -3,7 +3,7 @@
   "articleId": "sony-zv-1-ii-vs-zv-1f",
   "source": "Fresh product selection and research by Claude Code against Sony Japan official pages, Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
   "researchDateJst": "2026-09-29",
-  "articleReady": false,
+  "articleReady": true,
   "category": "Vlogカメラ",
   "selection": {
     "reason": "ソニーのVlog向けコンパクトカメラ2機種。センサー（1.0型・有効約2010万画素）・液晶・4K動画・背景ぼけ切り換え・商品レビュー用設定が共通し、レンズ（18-50mmズームと20mm単焦点）・AF方式・連写・HD動画の記録形式・電池持ち・質量が異なる。公式の仕様表が詳細で、比較軸が明確。",
@@ -177,5 +177,5 @@
     "ZV-1 IIの発売時期、ZV-1Fの発売時期は今回の取得ページで確認できず、記事に掲載していない。",
     "ZV-1 IIの画像はブラックとホワイトの2台が写っており、購入先はホワイトを選んでいる。"
   ],
-  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }

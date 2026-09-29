@@ -2,7 +2,7 @@ import type { CommercialArticleSeed } from "./types";
 
 export const sonyZv1M2VsZv1fSeed: CommercialArticleSeed = {
   id: "sony-zv-1-ii-vs-zv-1f",
-  draft: true,
+  draft: false,
   publishedAt: "2026-09-29",
   modifiedAt: "2026-09-29",
   productInfoCheckedAt: "2026-09-29",

@@ -231,7 +231,7 @@
 ### ソニー VLOGCAM ZV-1 II vs ZV-1F
 
 - slug: `sony-zv-1-ii-vs-zv-1f`
-- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
 - 比較軸: レンズ（18-50mmズームと20mm単焦点）、AF方式、連写、HD動画の記録形式、内蔵ND、電池持ち、質量（センサー・液晶・4K動画・背景ぼけ切り換えは共通）
 - 公式URL:
   - https://www.sony.jp/vlogcam/products/ZV-1M2/
