@@ -187,6 +187,19 @@
 - 購入先: 楽天成果URLは両商品確認済み。AmazonもツールバーとタグURLの遷移先を確認済み（対象・2.00%、ビルド時にtag付与）
 - handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
 
+### 楽天Kobo Clara Colour vs Libra Colour
+
+- slug: `kobo-clara-colour-vs-libra-colour`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 画面サイズ・解像度、内蔵メモリ、ページめくりボタン、Koboスタイラス2対応、サイズ・質量、公式ページ価格（Kaleido 3・ComfortLight PRO・IPX8・バッテリー目安は共通）
+- 公式URL:
+  - https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/
+  - https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/
+- 購入先: 楽天ブックス（楽天Kobo公式ストア）の商品ページで商品名・価格一致、楽天市場商品検索APIで成果URLを取得（verified）。Amazon（B0D5D1DXZY / B0D5HSRM75）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式の仕様表用画像（他社マンガの写り込みなし、ホワイト・低解像度）
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/kobo-clara-colour-vs-libra-colour-2026-09-29.json`
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
