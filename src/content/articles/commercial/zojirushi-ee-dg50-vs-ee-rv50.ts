@@ -8,11 +8,10 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   productInfoCheckedAt: "2026-09-29",
   handoffManifestId: "zojirushi-ee-dg50-vs-ee-rv50-2026-09-29",
   purchaseLinksCheckedAt: "2026-09-29",
-  purchaseLinkStatus: "unverified",
+  purchaseLinkStatus: "verified",
   amazonLinkStatus: "unverified",
-  rakutenLinkStatus: "unverified",
-  title:
-    "象印 加湿器 EE-DG50とEE-RV50の違いを比較｜容量・連続加湿時間・サイズ",
+  rakutenLinkStatus: "verified",
+  title: "象印 加湿器 EE-DG50とEE-RV50の違いを比較｜容量・連続加湿時間・サイズ",
   headline: "象印スチーム式加湿器2026年モデル EE-DG50とEE-RV50の違い",
   description:
     "象印のスチーム式加湿器EE-DG50とEE-RV50を公式仕様で比較。加湿能力は同じ480mL/hで、容量、連続加湿時間、運転モード、タイマー、サイズ、公式ストア価格が異なります。",
@@ -36,8 +35,10 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   rightPoint: "同じ加湿能力で小さく軽い本体と価格を重視する人向け",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0HGF5B9D8",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0HGFGSYXX",
-  leftRakutenUrl: null,
-  rightRakutenUrl: null,
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232533%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+  rightRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232564%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
   leftImage: "/products/zojirushi-ee-dg50-wa.jpg",
   rightImage: "/products/zojirushi-ee-rv50-wa.jpg",
   officialSources: [
