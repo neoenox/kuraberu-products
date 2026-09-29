@@ -57,7 +57,7 @@
   },
   "amazon": {
     "statusBySide": {
-      "left": "unavailable",
+      "left": "search",
       "right": "verified"
     },
     "right": "https://www.amazon.co.jp/dp/B09F6279PY?th=1&linkCode=ll2&tag=kuraberuprodu-22&linkId=1059556899f99acaec1e90d4b5e7f9a0&ref_=as_li_ss_tl",

@@ -9,7 +9,7 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
   handoffManifestId: "crucial-x10-pro-vs-kingston-xs2000-2026-09-27",
   purchaseLinksCheckedAt: "2026-09-27",
   purchaseLinkStatus: "verified",
-  leftAmazonLinkStatus: "unavailable",
+  leftAmazonLinkStatus: "search",
   rightAmazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
   title:
