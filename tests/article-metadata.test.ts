@@ -98,7 +98,7 @@ function articleSlugs(): string[] {
 
 describe("article metadata", () => {
   it("includes verified commercial articles in public discovery surfaces", () => {
-    expect(publicArticleMetadata).toHaveLength(126);
+    expect(publicArticleMetadata).toHaveLength(127);
     const newlyPublishedIds = [
       "yamazaki-dishwasher-rack-241925-vs-241926",
       "panasonic-mc-nx810km-vs-mc-nx700k",
@@ -125,6 +125,7 @@ describe("article metadata", () => {
       "sony-wf-1000xm6-vs-linkbuds-fit",
       "zojirushi-ee-dg50-vs-ee-rv50",
       "kobo-clara-colour-vs-libra-colour",
+      "instax-mini-13-vs-mini-41",
       "braun-series9pro-vs-series7",
       "delonghi-ecam22112b-vs-ecam25023sb",
       "irobot-roomba-j9plus-vs-j7",

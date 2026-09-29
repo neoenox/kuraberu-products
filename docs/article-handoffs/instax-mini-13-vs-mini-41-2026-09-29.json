@@ -3,7 +3,7 @@
   "articleId": "instax-mini-13-vs-mini-41",
   "source": "Fresh product selection and research by Claude Code against Fujifilm Japan official pages, Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
   "researchDateJst": "2026-09-29",
-  "articleReady": false,
+  "articleReady": true,
   "category": "インスタントカメラ",
   "selection": {
     "reason": "富士フイルムのinstax miniシリーズで、レンズ・撮影範囲・フラッシュ・現像時間などが共通し、セルフタイマー・セルフィーミラー・カラー展開・デザイン・サイズ・質量が異なる現行2機種。最初の候補mini 12は公式ページ（instax.jp/mini12/）が404で、公式仕様がmini 41とほぼ同一（差はサイズと質量のみ）のため、後継のmini 13とmini 41の組み合わせに変更。",
@@ -179,5 +179,5 @@
     "mini 41の公式仕様・特長にセルフタイマーとセルフィーミラーの記載がないことを、機能がないとは断定していない。",
     "mini 13の発売時期、mini 41の色の名称は公式ページで確認できず、記事に掲載していない。"
   ],
-  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }

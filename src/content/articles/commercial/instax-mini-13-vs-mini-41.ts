@@ -2,7 +2,7 @@ import type { CommercialArticleSeed } from "./types";
 
 export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
   id: "instax-mini-13-vs-mini-41",
-  draft: true,
+  draft: false,
   publishedAt: "2026-09-29",
   modifiedAt: "2026-09-29",
   productInfoCheckedAt: "2026-09-29",

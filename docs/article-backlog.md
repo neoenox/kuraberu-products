@@ -203,7 +203,7 @@
 ### 富士フイルム instax mini 13 vs instax mini 41
 
 - slug: `instax-mini-13-vs-mini-41`
-- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
 - 比較軸: セルフタイマー・セルフィーミラー、カラー展開、デザイン、サイズ・質量、使用電池（レンズ・撮影範囲・フラッシュ・現像時間は共通）
 - 公式URL:
   - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13
