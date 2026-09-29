@@ -91,6 +91,7 @@ import { zojirushiEeDg50VsEeRv50Seed } from "./zojirushi-ee-dg50-vs-ee-rv50";
 import { koboClaraColourVsLibraColourSeed } from "./kobo-clara-colour-vs-libra-colour";
 import { instaxMini13VsMini41Seed } from "./instax-mini-13-vs-mini-41";
 import { instaxMiniEvoVsEvoCinemaSeed } from "./instax-mini-evo-vs-evo-cinema";
+import { sonyZv1M2VsZv1fSeed } from "./sony-zv-1-ii-vs-zv-1f";
 import { sonyWfC710nVsSoundcoreLiberty5Seed } from "./sony-wf-c710n-vs-soundcore-liberty-5";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
@@ -113,6 +114,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   koboClaraColourVsLibraColourSeed,
   instaxMini13VsMini41Seed,
   instaxMiniEvoVsEvoCinemaSeed,
+  sonyZv1M2VsZv1fSeed,
   sonyWfC710nVsSoundcoreLiberty5Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
