@@ -170,29 +170,39 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const tgController = new AbortController();
   const tgTimeout = setTimeout(() => tgController.abort(), 5_000);
-  let tgRes: Response;
   try {
-    tgRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: numericChatId,
-        text,
-        disable_web_page_preview: true,
-      }),
-      signal: tgController.signal,
-    });
+    const tgRes = await fetch(
+      `https://api.telegram.org/bot${token}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: numericChatId,
+          text,
+          disable_web_page_preview: true,
+        }),
+        signal: tgController.signal,
+      },
+    );
+    if (!tgRes.ok) {
+      let detail = "";
+      try {
+        detail = await tgRes.text();
+      } catch (error) {
+        if (tgController.signal.aborted) throw error;
+      }
+      console.error(
+        "telegram send failed:",
+        tgRes.status,
+        detail.slice(0, 200),
+      );
+      return json({ ok: false, error: "delivery failed" }, 502);
+    }
+
+    return json({ ok: true }, 200);
   } catch {
     return json({ ok: false, error: "delivery timeout" }, 504);
   } finally {
     clearTimeout(tgTimeout);
   }
-
-  if (!tgRes.ok) {
-    const detail = await tgRes.text().catch(() => "");
-    console.error("telegram send failed:", tgRes.status, detail.slice(0, 200));
-    return json({ ok: false, error: "delivery failed" }, 502);
-  }
-
-  return json({ ok: true }, 200);
 };

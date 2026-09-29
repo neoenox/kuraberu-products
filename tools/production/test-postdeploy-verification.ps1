@@ -55,6 +55,32 @@ $scenarios = @(
 
 $failures = [System.Collections.Generic.List[string]]::new()
 
+# An explicit arbitrary output path must be rejected before recursive cleanup.
+$unsafeOutputRoot = Join-Path $env:TEMP ("pdv-unsafe-output-" + [guid]::NewGuid().ToString('N'))
+$sentinelPath = Join-Path $unsafeOutputRoot 'keep.txt'
+New-Item -ItemType Directory -Path $unsafeOutputRoot -Force | Out-Null
+Set-Content -LiteralPath $sentinelPath -Value 'preserve this file' -NoNewline
+try {
+    Write-Host '=== Unsafe output root is rejected without deleting existing data ==='
+    & pwsh -NoProfile -NonInteractive -File $driver `
+        -Scenario 'fresh' `
+        -ExpectedCommitSha $ExpectedCommitSha `
+        -OldCommitSha $OldCommitSha `
+        -OutputRoot $unsafeOutputRoot
+    $unsafeExitCode = $LASTEXITCODE
+    if ($unsafeExitCode -eq 0) {
+        $failures.Add('[unsafe-output-root] expected the scenario driver to reject an arbitrary output path')
+    }
+    if (-not (Test-Path -LiteralPath $sentinelPath) -or
+        (Get-Content -LiteralPath $sentinelPath -Raw) -ne 'preserve this file') {
+        $failures.Add('[unsafe-output-root] existing sentinel data was removed or changed')
+    }
+} finally {
+    if (Test-Path -LiteralPath $unsafeOutputRoot) {
+        Remove-Item -LiteralPath $unsafeOutputRoot -Recurse -Force
+    }
+}
+
 foreach ($scenario in $scenarios) {
     $name = $scenario.name
     $outputRoot = Join-Path $env:TEMP ("pdv-contract-" + $name)
