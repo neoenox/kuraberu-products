@@ -83,7 +83,7 @@
 
 - 価格の書き方: 金額には確認日を併記する（例: `2026-08-10確認`、`2026-08-10時点の確認では`）。確認日のない裸の金額は書かない。機械検査は `pnpm check:price-claims`（warn-first、`--strict` で厳格化）。
 - 在庫の書き方: 在庫は断定しない（`在庫あり` 等の記載禁止）。購入時点の販売ページ確認へ誘導する。
-- 購入リンクの3値運用（`purchaseLinkStatus`）: `verified` のときだけ CTA を表示する。`unverified` / `unavailable` では購入ボタンを出さず「購入先の確認中です」に倒す。機械検査は `check-purchase-link-consistency` と `check-rendered-html`、実ブラウザ確認は `pnpm test:e2e`。
+- 購入リンク状態: `purchaseLinkStatus` は記事全体の状態を管理し、販売先別状態で各CTAを制御する。Amazonは直リンクが未確認でも商品名・型番が確認済みなら商品別`leftAmazonLinkStatus: "search"` / `rightAmazonLinkStatus: "search"`でruntimeタグ付き検索CTAを表示できるが、確認済み購入先には数えない。`unavailable`はASIN一致と公式アソシエイト画面の明示結果が揃う場合だけ許可し、handoff検査で証跡を確認する。`unverified`はCTAを表示しない。機械検査は`check-article-handoff`、`check-purchase-link-consistency`、`check-rendered-html`、実ブラウザ確認は`pnpm test:e2e`。
 - スペック主張の鮮度: `data/spec-claims.json` の各主張は `checkedAt` を持ち、180日で鮮度切れとして検出する（`pnpm check:spec-claims`）。巡回主体は月次の既存記事巡回とし、鮮度切れは公式再確認か主張の削除で解消する。
 - 出典関連性: 型番トークンと出典 URL の照合は `pnpm check:source-relevancy`（warn-first、`--strict` で厳格化）。
 

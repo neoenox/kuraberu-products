@@ -20,18 +20,18 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
     leftPoint: "右手に沿う非対称形状を選びたい人向け",
     rightPoint: "左右対称形状を選びたい人向け",
     publishedAt: "2026-09-24",
-    modifiedAt: "2026-09-24",
+    modifiedAt: "2026-09-29",
     handoffManifestId:
       "logicool-pro-x-superlight-2-dex-vs-superlight-2-2026-09-24",
     productInfoCheckedAt: "2026-09-24",
-    purchaseLinksCheckedAt: "2026-09-24",
+    purchaseLinksCheckedAt: "2026-09-29",
     purchaseLinkStatus: "verified",
+    leftAmazonLinkStatus: "direct",
+    rightAmazonLinkStatus: "direct",
     leftImage: "/products/logicool-pro-x-superlight-2-dex.png",
     rightImage: "/products/logicool-pro-x-superlight-2.png",
-    leftAmazonUrl:
-      "https://www.amazon.co.jp/dp/B0DF2F57LJ/?tag=kuraberuprodu-22",
-    rightAmazonUrl:
-      "https://www.amazon.co.jp/dp/B0CGR5HTM4/?tag=kuraberuprodu-22",
+    leftAmazonUrl: "https://www.amazon.co.jp/dp/B0DF2F57LJ",
+    rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DJVPRG63",
     leftRakutenUrl:
       "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fgproxsl-wldexbk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     rightRakutenUrl:

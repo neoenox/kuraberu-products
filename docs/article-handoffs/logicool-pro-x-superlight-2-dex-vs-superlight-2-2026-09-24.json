@@ -31,8 +31,57 @@
     }
   },
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0DF2F57LJ/?tag=kuraberuprodu-22",
-    "right": "https://www.amazon.co.jp/dp/B0CGR5HTM4/?tag=kuraberuprodu-22"
+    "statusBySide": {
+      "left": "direct",
+      "right": "direct"
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "not-checked",
+        "evidence": "The Amazon Associates UI was not opened; public Amazon product pages were used to check product identity.",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "matched",
+            "evidence": "Jina Reader fetched Amazon B0DF2F57LJ; its page title identifies Logicool G PRO X SUPERLIGHT 2 DEX and SKU GPROXSL-WLDEXBK. The official Logicool DEX page identifies the same SKU. Checked 2026-09-29 JST."
+          },
+          "eligibility": {
+            "state": "not-checked",
+            "evidence": "The Associates item-level eligibility UI was not opened; eligibility and commission status remain unknown."
+          },
+          "taggedUrl": {
+            "state": "not-generated-in-associates-ui",
+            "evidence": "No Associates link-builder action was performed. The seed stores the canonical untagged ASIN URL and the site applies the approved runtime tag during build."
+          },
+          "destination": {
+            "state": "page-read",
+            "evidence": "Jina Reader fetched the public https://www.amazon.co.jp/dp/B0DF2F57LJ product detail page on 2026-09-29 JST; a browser redirect-chain check was not performed."
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "matched",
+            "evidence": "Jina Reader fetched Amazon B0DJVPRG63; its page identifies Logicool PRO X SUPERLIGHT 2, SKU G-PPD-004WL-BK, black color, and a two-year warranty. The official Logicool page identifies PRO X SUPERLIGHT 2. Checked 2026-09-29 JST."
+          },
+          "eligibility": {
+            "state": "not-checked",
+            "evidence": "The Associates item-level eligibility UI was not opened; eligibility and commission status remain unknown."
+          },
+          "taggedUrl": {
+            "state": "not-generated-in-associates-ui",
+            "evidence": "No Associates link-builder action was performed. The seed stores the canonical untagged ASIN URL and the site applies the approved runtime tag during build."
+          },
+          "destination": {
+            "state": "page-read",
+            "evidence": "Jina Reader fetched the public https://www.amazon.co.jp/dp/B0DJVPRG63 product detail page on 2026-09-29 JST; a browser redirect-chain check was not performed."
+          }
+        }
+      }
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DF2F57LJ",
+    "right": "https://www.amazon.co.jp/dp/B0DJVPRG63"
   },
   "rakuten": {
     "status": "verified",

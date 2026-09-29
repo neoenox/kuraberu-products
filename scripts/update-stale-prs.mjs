@@ -27,6 +27,16 @@ import { execFileSync } from "node:child_process";
 export const STALE_AFTER_MS = 24 * 60 * 60 * 1000;
 export const COMMENT_MARKER = "<!-- stale-pr-updater -->";
 
+/** gh api に渡す REST endpoint は常に 1 引数の文字列として生成する。 */
+export function apiEndpoints(repo, headSha, prNumber) {
+  return {
+    pulls: `repos/${repo}/pulls?state=open&per_page=100&sort=updated&direction=desc`,
+    compare: `repos/${repo}/compare/main...${headSha}`,
+    commit: `repos/${repo}/commits/${headSha}`,
+    pull: `repos/${repo}/pulls/${prNumber}`,
+  };
+}
+
 /**
  * PR 一覧から「更新対象」を選別する（純粋関数・テスト対象）。
  * @param {Array<{number:number, behindBy:number, headAgeMs:number, mergeable:string, isDraft:boolean}>} prs
@@ -46,7 +56,7 @@ export function selectStalePrs(prs, nowMs = Date.now()) {
 export function buildComment(behindBy, headSha) {
   return [
     COMMENT_MARKER,
-    `この PR は main に \`${behindBy}\` コミット遅れていたため、ブランチを main で更新しました（head: \`${headSha}\`)。`,
+    `この PR は main に \`${behindBy}\` コミット遅れていたため、ブランチを main で更新しました（head: \`${headSha}\`）。`,
     "",
     "CI が再実行されます。コンフリクトが発生した場合は手動で解消してください。",
   ].join("\n");
@@ -62,14 +72,12 @@ function ghText(args) {
 
 /** open PR の behind 数と head の年齢を収集する（API アクセスを伴う）。 */
 export async function collectOpenPrs(repo) {
-  // gh api はパス引数を 1 個しか受けないため、クエリ文字列は単一パスに含める。
-  const pulls = ghJson([
-    `repos/${repo}/pulls?state=open&per_page=100&sort=updated&direction=desc`,
-  ]);
+  const pulls = ghJson([apiEndpoints(repo, "", 0).pulls]);
   const prs = [];
   for (const pr of pulls) {
-    const compare = ghJson(["repos", repo, `compare/main...${pr.head.sha}`]);
-    const headCommit = ghJson(["repos", repo, `commits/${pr.head.sha}`]);
+    const endpoints = apiEndpoints(repo, pr.head.sha, pr.number);
+    const compare = ghJson([endpoints.compare]);
+    const headCommit = ghJson([endpoints.commit]);
     const committerDate = headCommit.commit?.committer?.date;
     prs.push({
       number: pr.number,
@@ -116,7 +124,8 @@ async function main() {
       );
       continue;
     }
-    const head = ghJson(["repos", repo, `pulls/${pr.number}`]).head.sha ?? "";
+    const head =
+      ghJson([apiEndpoints(repo, "", pr.number).pull]).head.sha ?? "";
     const comment = buildComment(pr.behindBy, head.slice(0, 7));
     const bodyPath = `${process.env.RUNNER_TEMP ?? process.env.TMPDIR ?? "."}/stale-pr-${pr.number}.md`;
     const { writeFileSync } = await import("node:fs");

@@ -29,6 +29,10 @@ const commercialArticleImages: Readonly<
     left: "/products/garmin-forerunner-570-42mm.jpg",
     right: "/products/coros-pace-4-white.webp",
   },
+  "tp-link-archer-be550-vs-be450": {
+    left: "/products/tp-link-archer-be550.jpg",
+    right: "/products/tp-link-archer-be450.jpg",
+  },
   "anker-a121a-vs-a2688": {
     left: "/products/anker-a121a.jpg",
     right: "/products/anker-a2688.jpg",
