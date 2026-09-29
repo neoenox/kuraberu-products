@@ -139,7 +139,7 @@ test.describe("consent-before-embed (network level)", () => {
         thirdPartyRequests.push(request.url());
     });
 
-    await page.goto("/articles/anker-nano-power-bank-vs-zolo-a1688/", {
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
       waitUntil: "networkidle",
     });
     const embed = page.locator(
@@ -190,7 +190,7 @@ test.describe("consent-before-embed (network level)", () => {
         thirdPartyRequests.push(request.url());
     });
 
-    await page.goto("/articles/anker-nano-power-bank-vs-zolo-a1688/", {
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
       waitUntil: "networkidle",
     });
     const embed = page.locator(
