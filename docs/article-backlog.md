@@ -176,15 +176,15 @@
 ### 象印 スチーム式加湿器 EE-DG50 vs EE-RV50
 
 - slug: `zojirushi-ee-dg50-vs-ee-rv50`
-- 状態: 記事データ作成済み（`draft: true`、購入リンク未確認のため非公開）
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
 - 比較軸: 容量、連続加湿時間、運転モード・タイマー、外形寸法・質量、公式ストア価格（加湿能力・適用床面積・消費電力は共通）
 - 公式URL:
   - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
   - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/
-- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否・成果URLは未確認
-- 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは未生成
+- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否は未確認
+- 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは生成済み
 - SNS: 適格な実利用投稿を確認できず不採用。SNS欄は表示しない
-- 公開条件: 楽天成果URLの生成またはAmazonアソシエイト画面での確認後、`draft`解除・公開許可リスト追加・handoffの`articleReady`更新
+- 購入先: 楽天成果URLは両商品確認済み。Amazonはタグなし商品URLを`direct`で記載（ビルド時にtag付与、対象可否は未確認）
 - handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
 
 ## 追加確認・保留

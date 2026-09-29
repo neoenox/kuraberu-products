@@ -2,7 +2,7 @@ import type { CommercialArticleSeed } from "./types";
 
 export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   id: "zojirushi-ee-dg50-vs-ee-rv50",
-  draft: true,
+  draft: false,
   publishedAt: "2026-09-29",
   modifiedAt: "2026-09-29",
   productInfoCheckedAt: "2026-09-29",

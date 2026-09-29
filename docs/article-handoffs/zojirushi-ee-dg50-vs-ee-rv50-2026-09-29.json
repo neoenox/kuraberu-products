@@ -3,7 +3,7 @@
   "articleId": "zojirushi-ee-dg50-vs-ee-rv50",
   "source": "Fresh product selection and research by Claude (Cowork) against Zojirushi official pages, the Zojirushi official online store, and Amazon.co.jp / Rakuten Ichiba product detail pages",
   "researchDateJst": "2026-09-29",
-  "articleReady": false,
+  "articleReady": true,
   "category": "生活家電",
   "selection": {
     "reason": "2026年9月発売の象印スチーム式加湿器のうち、定格加湿能力・適用床面積・消費電力が同じで、容量・連続加湿時間・運転モード・サイズが異なる同サイズ帯（50）の2機種。加湿需要期の選択に直結し、既存記事に象印加湿器の比較はない。",
@@ -167,5 +167,5 @@
     "EE-RV50の運転音の数値は公式ページで確認できず、静かさの優劣は判断していない。",
     "Amazonの対象可否（アソシエイト・ツールバー表示）は未確認で、遷移先の実機確認も未実施。購入リンクはdirect状態（ビルド時にtag付与）。対象外と判明した場合はCTAを出さない。"
   ],
-  "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは生成済みで、両商品に確認済み購入先がある。公開操作（draft解除・公開許可リスト追加・articleReady更新）は所有者の承認待ちのため articleReady=false、seed は draft: true のまま。"
+  "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み（verified）。Amazonはdirect（ビルド時tag付与、対象可否は未確認）。所有者の指示により2026-09-29に公開。"
 }
