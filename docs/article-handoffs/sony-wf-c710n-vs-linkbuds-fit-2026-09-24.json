@@ -6,7 +6,9 @@
   "researchDateJST": "2026-09-24",
   "category": "完全ワイヤレスイヤホン",
   "articleReady": true,
-  "unconfirmedItems": [],
+  "unconfirmedItems": [
+    "Amazonアソシエイトの商品別対象可否とタグ付き商品リンクの生成・遷移は未確認。Amazon CTAは商品名・型番の検索に限定。"
+  ],
   "officialSources": [
     "https://www.sony.jp/headphone/products/WF-C710N/",
     "https://www.sony.jp/headphone/products/WF-C710N/spec.html",
@@ -14,7 +16,7 @@
     "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html"
   ],
   "products": {
-    "a": {
+    "left": {
       "name": "ソニー WF-C710N",
       "model": "WF-C710N",
       "officialUrl": "https://www.sony.jp/headphone/products/WF-C710N/",
@@ -29,7 +31,7 @@
       "rakutenProductUrl": "https://item.rakuten.co.jp/e-earphone/sony-wfc710n/",
       "rakutenAffiliateUrl": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
     },
-    "b": {
+    "right": {
       "name": "ソニー LinkBuds Fit",
       "model": "WF-LS910N",
       "officialUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
@@ -56,8 +58,7 @@
     ]
   },
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0F3XFNHCW",
-    "right": "https://www.amazon.co.jp/dp/B0DHZZTPV6"
+    "status": "search"
   },
   "rakuten": {
     "left": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
@@ -77,7 +78,7 @@
     ]
   },
   "notes": [
-    "Amazon商品ページはChatGPT調査環境では直接確認できないとの回答だったため、Codex側で各Amazon商品詳細ページを開き、ページタイトル・モデルを直接確認した。",
+    "Amazon商品ページのタイトル・モデルは確認済み。アソシエイトの商品別対象可否とタグ付き商品リンクの生成・遷移は未確認のため、記事ではAmazon商品詳細リンクを使わず、商品名・型番の検索CTAに限定する。",
     "楽天成果URLはログイン済みChromeの楽天アフィリエイト商品リンク作成画面で、商品ごとの楽天詳細URLから生成した。",
     "比較仕様・税込価格はメーカー公式ページで確認。口コミは個人の感想として扱い、比較結論の根拠にはしていない。"
   ]

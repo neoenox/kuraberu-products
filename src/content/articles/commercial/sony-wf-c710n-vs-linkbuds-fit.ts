@@ -31,8 +31,8 @@ export const sonyWfC710nVsLinkbudsFitSeed: CommercialArticleSeed = {
   rightPoint: "片耳約4.9gで、LDAC・LC3にも対応",
   leftImage: "/products/sony-wf-c710n.jpg",
   rightImage: "/products/sony-linkbuds-fit.jpg",
-  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0F3XFNHCW",
-  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DHZZTPV6",
+  leftAmazonLinkStatus: "search",
+  rightAmazonLinkStatus: "search",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   rightRakutenUrl:
