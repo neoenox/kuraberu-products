@@ -139,3 +139,32 @@ describe("post-deploy newest-article smoke check", () => {
     expect(scenarioSource).toContain("<loc>");
   });
 });
+
+describe("post-deploy scenario output safety (#921)", () => {
+  it("limits recursive cleanup to the matching dedicated TEMP scenario directory", () => {
+    const scenarioSource = readFileSync(
+      "tools/production/test-postdeploy-verification-scenario.ps1",
+      "utf8",
+    );
+    expect(scenarioSource).toContain(
+      "[System.IO.Path]::GetFullPath($env:TEMP).TrimEnd(",
+    );
+    expect(scenarioSource).toContain(
+      '"pdv-scenario-$Scenario", "pdv-contract-$Scenario"',
+    );
+    expect(scenarioSource).toContain("Refusing unsafe OutputRoot");
+    expect(scenarioSource).toContain("ReparsePoint");
+    expect(scenarioSource).toContain(
+      "Remove-Item -LiteralPath $OutputRoot -Recurse -Force",
+    );
+
+    const contractSource = readFileSync(
+      "tools/production/test-postdeploy-verification.ps1",
+      "utf8",
+    );
+    expect(contractSource).toContain("pdv-unsafe-output-");
+    expect(contractSource).toContain(
+      "existing sentinel data was removed or changed",
+    );
+  });
+});
