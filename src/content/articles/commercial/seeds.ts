@@ -1,4 +1,5 @@
 import { ankerNanoA1638VsA1256Seed } from "./anker-nano-a1638-vs-power-bank-a1256";
+import { tpLinkArcherBe550VsBe450Seed } from "./tp-link-archer-be550-vs-be450";
 /**
  * All commercial article seeds — aggregated for iteration.
  */
@@ -87,6 +88,7 @@ import { jblTourPro3VsLiveBeam3Seed } from "./jbl-tour-pro-3-vs-live-beam-3";
 import { zojirushiEeDg50VsEeRv50Seed } from "./zojirushi-ee-dg50-vs-ee-rv50";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
+  tpLinkArcherBe550VsBe450Seed,
   ankerNanoA1638VsA1256Seed,
   logicoolMxMaster4VsMxMaster3sSeed,
   elecomDeC85VsDeC86Seed,
