@@ -3,7 +3,7 @@
   "articleId": "kobo-clara-colour-vs-libra-colour",
   "source": "Fresh product selection and research by Claude Code against Rakuten Kobo official pages (Rakuten Books), Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
   "researchDateJst": "2026-09-29",
-  "articleReady": false,
+  "articleReady": true,
   "category": "電子書籍リーダー",
   "selection": {
     "reason": "楽天Koboのカラー対応電子書籍リーダーで、E Ink Kaleido 3・ComfortLight PRO・IPX8・USB-C・バッテリー目安が共通し、画面サイズ・内蔵メモリ・ページめくりボタン・スタイラス対応・価格が異なる2機種。同一メーカーの現行ラインで比較軸が明確。",
@@ -164,5 +164,5 @@
     "楽天の成果URLの遷移先はクリックして確認していない。",
     "商品画像は公式の仕様表用画像（ホワイト・低解像度）で、購入先のブラックとは色が異なる。"
   ],
-  "publicationDecision": "公式仕様・価格・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
+  "publicationDecision": "公式仕様・価格・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }

@@ -190,7 +190,7 @@
 ### 楽天Kobo Clara Colour vs Libra Colour
 
 - slug: `kobo-clara-colour-vs-libra-colour`
-- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
 - 比較軸: 画面サイズ・解像度、内蔵メモリ、ページめくりボタン、Koboスタイラス2対応、サイズ・質量、公式ページ価格（Kaleido 3・ComfortLight PRO・IPX8・バッテリー目安は共通）
 - 公式URL:
   - https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/
