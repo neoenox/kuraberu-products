@@ -228,6 +228,20 @@
 - SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
 - handoff: `docs/article-handoffs/instax-mini-evo-vs-evo-cinema-2026-09-29.json`
 
+### ソニー VLOGCAM ZV-1 II vs ZV-1F
+
+- slug: `sony-zv-1-ii-vs-zv-1f`
+- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 比較軸: レンズ（18-50mmズームと20mm単焦点）、AF方式、連写、HD動画の記録形式、内蔵ND、電池持ち、質量（センサー・液晶・4K動画・背景ぼけ切り換えは共通）
+- 公式URL:
+  - https://www.sony.jp/vlogcam/products/ZV-1M2/
+  - https://www.sony.jp/vlogcam/products/ZV-1F/
+- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、ZV-1 IIはJoshin web、ZV-1Fは楽天ビック）。Amazon（B0C6614QWT / B0BJ5L8RCG）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: ソニー公式の画像（ZV-1 IIはブラックとホワイトの2台、ZV-1Fはホワイト）
+- 価格: どちらもオープン価格。販売店の価格は掲載しない
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/sony-zv-1-ii-vs-zv-1f-2026-09-29.json`
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE

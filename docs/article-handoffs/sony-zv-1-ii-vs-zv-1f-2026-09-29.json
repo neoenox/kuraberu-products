@@ -1,0 +1,181 @@
+{
+  "id": "sony-zv-1-ii-vs-zv-1f-2026-09-29",
+  "articleId": "sony-zv-1-ii-vs-zv-1f",
+  "source": "Fresh product selection and research by Claude Code against Sony Japan official pages, Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
+  "researchDateJst": "2026-09-29",
+  "articleReady": false,
+  "category": "Vlogカメラ",
+  "selection": {
+    "reason": "ソニーのVlog向けコンパクトカメラ2機種。センサー（1.0型・有効約2010万画素）・液晶・4K動画・背景ぼけ切り換え・商品レビュー用設定が共通し、レンズ（18-50mmズームと20mm単焦点）・AF方式・連写・HD動画の記録形式・電池持ち・質量が異なる。公式の仕様表が詳細で、比較軸が明確。",
+    "duplicateCheck": "src/pages/articles、src/content/articles、全リモートブランチ、全worktreeに zv-1 / ZV-1M2 / ZV-1F の記事なし。既存の sony-zv-e10m2-vs-nikon-z30 はZV-E10M2を使うため別商品。作業中ブランチ（logicool-mx-brio、jbl-tour-pro-3、anker-liberty-5、iphone-18-pro-vs-pixel-11-pro、portable-power）とも重複なし。キヤノンEOS R50系は公式サイトがボット対策で取得できないため不採用。"
+  },
+  "products": {
+    "left": {
+      "name": "ソニー VLOGCAM ZV-1 II ホワイト",
+      "model": "ZV-1M2 W（JAN 4548736155725）",
+      "officialUrl": "https://www.sony.jp/vlogcam/products/ZV-1M2/",
+      "officialSpecUrl": "https://www.sony.jp/vlogcam/products/ZV-1M2/spec/",
+      "officialImageUrl": "https://www.sony.jp/content/dam/sony/contents/regional=FSMC/jp/category_5148/product/ZV-1M2_black_white.jpg",
+      "imageEvidence": "ソニー公式の仕様ページに掲載されたブラックとホワイトの2台の画像（626×470 JPEG、HTTP 200、2026-09-29）。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に sony-zv-1-ii.jpg として保存。",
+      "officialSpecs": {
+        "lens": "F1.8〜4.0、f=6.9〜17.6mm（35mm判相当18〜50mm）、撮影距離 約5cm〜∞",
+        "sensor": "1.0型（13.2×8.8mm）Exmor RS CMOS、静止画時最大約2010万画素／動画時最大約1680万画素",
+        "nd": "内蔵NDフィルター（1/8 ND）",
+        "af": "ファストハイブリッドAF（位相差検出／コントラスト検出）、測距点 静止画最大315点・動画最大273点（位相差）、認識対象 人・動物",
+        "burst": "Hi：最高約24コマ/秒",
+        "video4k": "XAVC S 4K 29.97p／23.98p（100Mbps／60Mbps）",
+        "videoHd": "XAVC S HD 119.88p（100Mbps／60Mbps）、59.94p、29.97p、23.98p",
+        "monitor": "3.0型・921,600ドット・タッチパネル、オープン角約176°・チルト角約270°",
+        "stabilizer": "電子式（動画：アクティブ／切）",
+        "wireless": "Bluetooth 4.2、Wi-Fi IEEE 802.11b/g/n（2.4GHz帯）",
+        "terminals": "USB Type-C、HDMIマイクロ、マイク端子、マルチインターフェースシュー",
+        "battery": "NP-BX1、CIPA準拠・液晶モニター使用時 静止画約290枚／実動画約45分／連続動画約75分",
+        "weight": "約292g（バッテリー・メモリーカード含む）／約266g（本体のみ）",
+        "dimensions": "約105.5×60.0×46.7mm（幅×高さ×奥行）",
+        "features": "背景ぼけ切り換え、商品レビュー用設定、シネマティックVlog設定、クリエイティブルック、美肌効果",
+        "colors": ["ブラック", "ホワイト"],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0C6614QWT",
+      "rakutenProductPage": "https://item.rakuten.co.jp/jism/4548736155725-34-39044-n/",
+      "rakutenListingEvidence": "Joshin web 家電とPCの大型専門店の商品ページ item.rakuten.co.jp/jism/4548736155725-34-39044-n/（URLにJAN 4548736155725を含む）。楽天市場商品検索APIで商品名「ソニー デジタルカメラ「VLOGCAM ZV-1 II」（ホワイト） ZV-1M2-W」、ショップ名を確認（2026-09-29）。JAN 4548736155725はホワイトの商品名で複数店が掲載。販売店の価格は記事に掲載しない。"
+    },
+    "right": {
+      "name": "ソニー VLOGCAM ZV-1F ホワイト",
+      "model": "ZV-1F W（JAN 4548736147058）",
+      "officialUrl": "https://www.sony.jp/vlogcam/products/ZV-1F/",
+      "officialSpecUrl": "https://www.sony.jp/vlogcam/products/ZV-1F/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/ZV-1F_white_front.jpg",
+      "imageEvidence": "ソニー公式の商品ページに掲載されたホワイト正面画像（626×470 JPEG、HTTP 200、image/jpeg、2026-09-29）。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に sony-zv-1f-white.jpg として保存。",
+      "officialSpecs": {
+        "lens": "ZEISSテッサー T*（6群6枚）、F2.0、f=7.6mm（35mm判相当20mm）、撮影距離 AF約5cm〜∞、光学ズームなし",
+        "sensor": "1.0型（13.2×8.8mm）Exmor RS CMOS、有効約2010万画素",
+        "nd": "公式仕様表に記載なし",
+        "af": "コントラスト検出方式、ワイド425点、瞳AF（静止画：人物・動物／動画：人物）",
+        "burst": "速度優先連写：最高16コマ/秒",
+        "video4k": "XAVC S 4K 30p／24p（100M／60M）",
+        "videoHd": "XAVC S HD 60p（50M／25M）、30p（50M／16M）、24p（50M）",
+        "monitor": "3.0型・921,600ドット・タッチパネル、オープン角約176°・チルト角約270°",
+        "stabilizer": "電子式",
+        "wireless": "Bluetooth 4.1、Wi-Fi IEEE 802.11b/g/n（2.4GHz帯）",
+        "terminals": "USB Type-C、HDMIマイクロ、マイク端子、アクセサリーシュー（外部マイク装着の記載）",
+        "battery": "NP-BX1、CIPA準拠・液晶モニター使用時 静止画約360枚／実動画約60分／連続動画約90分",
+        "weight": "約256g（バッテリー・メモリーカード含む）／約229g（本体のみ）",
+        "dimensions": "約105.5×60.0×46.4mm（幅×高さ×奥行）",
+        "features": "背景ぼけ切り換え、商品レビュー用設定、美肌効果、クリエイティブルック、指向性3カプセルマイク",
+        "colors": ["ホワイト", "ブラック"],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0BJ5L8RCG",
+      "rakutenProductPage": "https://item.rakuten.co.jp/biccamera/4548736147058/",
+      "rakutenListingEvidence": "楽天ビック（ビックカメラ×楽天）の商品ページ item.rakuten.co.jp/biccamera/4548736147058/（URLにJAN 4548736147058を含む）。楽天市場商品検索APIで商品名「SONY｜ソニー VLOGCAM ZV-1F 超広角単焦点レンズ一体型カメラ ホワイト」、ショップ名を確認（2026-09-29）。販売店の価格は記事に掲載しない。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "ソニーの公式ページでどちらもオープン価格。販売店の価格は変動するため記事に掲載しない。",
+    "keyDifferences": [
+      "レンズはZV-1 IIがF1.8〜4.0・35mm判相当18〜50mmのズーム、ZV-1FがF2.0・20mm相当の単焦点（光学ズームなし）",
+      "AFはZV-1 IIがファストハイブリッドAF（位相差315点／273点）、ZV-1Fがコントラスト検出（ワイド425点）",
+      "連続撮影はZV-1 IIが最高約24コマ/秒、ZV-1Fが速度優先連写で最高16コマ/秒",
+      "HD動画の最高フレームレートはZV-1 IIが119.88p、ZV-1Fが60p",
+      "内蔵NDフィルターはZV-1 IIに記載（1/8 ND）。ZV-1Fの公式仕様表には記載なし",
+      "電池持ち（CIPA準拠・液晶モニター使用時）はZV-1 IIが静止画約290枚・実動画約45分、ZV-1Fが静止画約360枚・実動画約60分",
+      "質量（バッテリー・カード含む）はZV-1 IIが約292g、ZV-1Fが約256g",
+      "BluetoothはZV-1 IIが4.2、ZV-1Fが4.1"
+    ],
+    "commonSpecs": [
+      "1.0型Exmor RS CMOS、有効約2010万画素",
+      "3.0型・921,600ドットのタッチパネル液晶、バリアングル（オープン約176°・チルト約270°）",
+      "XAVC S 4K 30p／24p（100Mbps／60Mbps）",
+      "電子式手ブレ補正、背景ぼけ切り換え、商品レビュー用設定、クリエイティブルック",
+      "バッテリーNP-BX1、USB Type-C、HDMIマイクロ、マイク端子、Wi-Fi",
+      "カラー ブラックとホワイト、オープン価格"
+    ],
+    "caveat": "ZV-1Fの公式仕様表にNDフィルターの記載がないことは、機能がないと断定するものではない。仕上がりや使い勝手の優劣は判断していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0C6614QWT",
+    "right": "https://www.amazon.co.jp/dp/B0BJ5L8RCG",
+    "leftAsin": "B0C6614QWT",
+    "rightAsin": "B0BJ5L8RCG",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（ZV-1 II ホワイト・ZV-1F ホワイト）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「SONY(ソニー) コンパクトデジタルカメラ VLOGCAM Vlog用カメラ ZV-1II ボディ ウィンドスクリーン付属 18-50mm F1.8-4.0 ズームレンズ ホワイト ZV-1M2 W」、ASIN B0C6614QWTを確認（2026-09-29）。購入ボタンの出品は新品（販売元 RADICAL）。中古は別の出品として表示。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0C6614QWT?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「SONY(ソニー) コンパクトデジタルカメラ VLOGCAM Vlog用カメラ ZV-1II ボディ ウィンドスクリーン付属 18-50mm F1.8-4.0 ズームレンズ ホワイト ZV-1M2 W」、ASIN B0C6614QWTの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「SONY(ソニー) コンパクトデジタルカメラ VLOGCAM Vlog用カメラ ZV-1F ボディ ウィンドスクリーン付属 20mm F2.0 単焦点レンズ ホワイト ZV-1F W」、ASIN B0BJ5L8RCGを確認（2026-09-29）。購入ボタンの出品は新品（出荷元・販売元 Amazon.co.jp）。中古は別の出品として表示。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0BJ5L8RCG?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「SONY(ソニー) コンパクトデジタルカメラ VLOGCAM Vlog用カメラ ZV-1F ボディ ウィンドスクリーン付属 20mm F2.0 単焦点レンズ ホワイト ZV-1F W」、ASIN B0BJ5L8RCGの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductPage": "https://item.rakuten.co.jp/jism/4548736155725-34-39044-n/",
+    "leftShop": "Joshin web 家電とPCの大型専門店",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/biccamera/4548736147058/",
+    "rightShop": "楽天ビック(ビックカメラ×楽天)",
+    "rightProductVerified": true,
+    "generation": "2026-09-29に楽天市場商品検索API（IchibaItem Search 20260701）へアフィリエイトID付きで問い合わせ、返却された成果URL（affiliateUrl）を記載。商品名とJAN入りの商品ページURLを確認。認証情報は保存しない。成果URLをクリックしての遷移先確認は未実施。",
+    "left": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4548736155725-34-39044-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F13984550%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+    "right": "https://hb.afl.rakuten.co.jp/hgc/g00r7ldn.w78maaf9.g00r7ldn.w78mb4d0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736147058%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F13873290%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "楽天の成果URLの遷移先はクリックして確認していない。",
+    "ZV-1Fの公式仕様表に内蔵NDフィルターの記載がないことを、機能がないとは断定していない。",
+    "ZV-1 IIの発売時期、ZV-1Fの発売時期は今回の取得ページで確認できず、記事に掲載していない。",
+    "ZV-1 IIの画像はブラックとホワイトの2台が写っており、購入先はホワイトを選んでいる。"
+  ],
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
+}

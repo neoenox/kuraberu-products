@@ -90,6 +90,7 @@ import { zojirushiEeDg50VsEeRv50Seed } from "./zojirushi-ee-dg50-vs-ee-rv50";
 import { koboClaraColourVsLibraColourSeed } from "./kobo-clara-colour-vs-libra-colour";
 import { instaxMini13VsMini41Seed } from "./instax-mini-13-vs-mini-41";
 import { instaxMiniEvoVsEvoCinemaSeed } from "./instax-mini-evo-vs-evo-cinema";
+import { sonyZv1M2VsZv1fSeed } from "./sony-zv-1-ii-vs-zv-1f";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   tpLinkArcherBe550VsBe450Seed,
@@ -110,6 +111,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   koboClaraColourVsLibraColourSeed,
   instaxMini13VsMini41Seed,
   instaxMiniEvoVsEvoCinemaSeed,
+  sonyZv1M2VsZv1fSeed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,
