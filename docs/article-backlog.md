@@ -217,7 +217,7 @@
 ### 富士フイルム instax mini Evo vs instax mini Evo Cinema
 
 - slug: `instax-mini-evo-vs-evo-cinema`
-- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
 - 比較軸: 動画撮影、エフェクト、液晶モニター、AF、無線通信、サイズ・質量、カラー展開（レンズ・プリント出力時間・プリント可能枚数は共通）
 - 公式URL:
   - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo
