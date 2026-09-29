@@ -10,8 +10,13 @@ const manual = fs.existsSync(manualPath)
 const requiredRules = [
   "ChatGPTには成果用アフィリエイトURLの取得を要求しない",
   "楽天の成果URLは、Codex側がChromeのログイン済み楽天アフィリエイト管理画面",
-  "`articleReady` は、各商品の少なくとも1つの確認済み購入先URLと、掲載するSNSの実埋め込みが揃った時点でCodex側が判定する",
-  "販売先の一部で成果リンクを生成できない、またはプログラム対象外の場合は、その販売先を`unavailable`として記録し、対応するCTAだけを非表示にする",
+  "`articleReady`は、各商品の少なくとも1つの確認済み購入先URLと、掲載するSNSの実埋め込みが揃った時点でCodex側が判定する",
+  "検索結果が見つからないだけでは`unavailable`にしない",
+  "AmazonのASINが見つからないだけなら商品選定からやり直さず",
+  "商品別状態を`search`にしてruntimeタグ付きAmazon検索CTAを表示する",
+  "Amazonの`search` CTAは商品詳細の確認済み購入先に数えず",
+  "`browserEvidence.bySide.<side>.unavailableEvidence`",
+  "同じASINを指すAmazon商品詳細URLと、商品別適格性画面の明示的対象外または公式リンク生成UIの明示拒否の証拠",
   "Amazonのセッション状態、商品ごとの対象可否、成果URL生成、遷移先確認を別々に記録する",
   "記録がない場合は`未確認`とし、ログインしていないと推定しない",
   "`bsk browsers`の接続情報だけでは、Amazonへのログイン状態を判断しない",
@@ -38,6 +43,10 @@ const sourceRules = [
   ["src/components/ExternalEmbed.astro", "serverRenderYoutube"],
   ["src/lib/external-embeds.ts", "https://www.youtube.com/embed/"],
   ["src/components/CommercialArticlePage.astro", 'id="purchase"'],
+  ["src/components/PurchaseCard.astro", 'amazonLinkStatus === "search"'],
+  ["src/components/PurchaseCard.astro", "Amazonで検索"],
+  ["scripts/check-article-handoff.mjs", "getAmazonUnavailableEvidenceErrors"],
+  ["scripts/check-article-handoff.mjs", "seedProduct.includes(product.model)"],
 ];
 
 if (!manual) errors.push("article workflow manual is missing");

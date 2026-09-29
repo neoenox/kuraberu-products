@@ -27,9 +27,11 @@ type CommercialArticleSeed = {
   /** Amazon商品詳細URL。設定時は商品カードにAmazonボタンを表示する。 */
   leftAmazonUrl?: `https://${string}`;
   rightAmazonUrl?: `https://${string}`;
-  /** 商品ごとのAmazon販売先検証状態。省略時はamazonLinkStatusを使う。 */
-  leftAmazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
-  rightAmazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  /** 商品ごとのAmazon販売先状態。省略時はamazonLinkStatusを使い、searchは検索CTAのみを表示する。 */
+  leftAmazonLinkStatus?:
+    "verified" | "direct" | "search" | "unverified" | "unavailable";
+  rightAmazonLinkStatus?:
+    "verified" | "direct" | "search" | "unverified" | "unavailable";
   /** 楽天商品詳細URL。nullを設定した場合は楽天リンクを自動検索しない。 */
   leftRakutenUrl?: `https://${string}` | null;
   rightRakutenUrl?: `https://${string}` | null;

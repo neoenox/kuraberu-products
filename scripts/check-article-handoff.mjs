@@ -1,6 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
-import { hasVerifiedPurchaseDestination } from "./article-purchase-readiness.mjs";
+import {
+  getAmazonUnavailableEvidenceErrors,
+  hasVerifiedPurchaseDestination,
+} from "./article-purchase-readiness.mjs";
 
 const root = process.cwd();
 const articlesDir = path.join(root, "src", "content", "articles", "commercial");
@@ -40,6 +43,13 @@ for (const file of files) {
     errors.push(`${manifestPath}: articleId/id does not match the seed`);
   }
   if (manifest.amazon?.statusBySide) {
+    const allowedAmazonStatuses = new Set([
+      "verified",
+      "direct",
+      "search",
+      "unverified",
+      "unavailable",
+    ]);
     const evidence = manifest.amazon.browserEvidence;
     if (
       !evidence?.sessionIndicator?.state ||
@@ -51,6 +61,11 @@ for (const file of files) {
       );
     }
     for (const side of ["left", "right"]) {
+      if (!allowedAmazonStatuses.has(manifest.amazon.statusBySide[side])) {
+        errors.push(
+          `${articleId}: Amazon ${side} requires an explicit supported per-product status`,
+        );
+      }
       const sideEvidence = evidence?.bySide?.[side];
       for (const stage of [
         "productMatch",
@@ -70,6 +85,7 @@ for (const file of files) {
       }
     }
   }
+  errors.push(...getAmazonUnavailableEvidenceErrors(manifest, articleId));
   // Draft handoffs may exist while required purchase data is incomplete.
   const serializedManifest = JSON.stringify(manifest);
   if (serializedManifest.includes("sourceRef")) {
@@ -86,6 +102,58 @@ for (const file of files) {
     typeof value === "string" && /^https:\/\//.test(value);
   for (const side of ["left", "right"]) {
     const amazon = manifest.amazon?.[side];
+    const amazonStatus =
+      manifest.amazon?.statusBySide?.[side] ?? manifest.amazon?.status;
+    const sideStatusMatch = new RegExp(
+      `\\b${side}AmazonLinkStatus\\s*:\\s*["']([^"']+)["']`,
+    ).exec(source);
+    const globalStatusMatch = /\bamazonLinkStatus\s*:\s*["']([^"']+)["']/.exec(
+      source,
+    );
+    const seedAmazonStatus = sideStatusMatch?.[1] ?? globalStatusMatch?.[1];
+
+    if (amazonStatus === "search") {
+      if (
+        seedAmazonStatus !== "search" ||
+        new RegExp(`\\b${side}AmazonUrl\\s*:`).test(source)
+      ) {
+        errors.push(
+          `${articleId}: Amazon ${side} search status must map to a search-only seed with no product-detail URL`,
+        );
+      }
+      const product = manifest.products?.[side];
+      const seedProduct = new RegExp(
+        `\\b${side}Product\\s*:\\s*["']([^"']+)["']`,
+      ).exec(source)?.[1];
+      const productNameTerms =
+        typeof product?.name === "string"
+          ? (product.name.match(/[\p{L}\p{N}]+/gu) ?? []).filter(
+              (term) => term.length > 1,
+            )
+          : [];
+      const matchingNameTerms = productNameTerms.filter((term) =>
+        seedProduct
+          ?.toLocaleLowerCase("ja-JP")
+          .includes(term.toLocaleLowerCase("ja-JP")),
+      );
+      if (
+        typeof product?.name !== "string" ||
+        product.name.trim() === "" ||
+        typeof product?.model !== "string" ||
+        product.model.trim() === "" ||
+        matchingNameTerms.length < Math.min(2, productNameTerms.length) ||
+        !seedProduct.includes(product.model)
+      ) {
+        errors.push(
+          `${articleId}: Amazon ${side} search CTA requires the handoff product name and model to be present in the seed query`,
+        );
+      }
+    }
+    if (amazonStatus === "unavailable" && seedAmazonStatus !== "unavailable") {
+      errors.push(
+        `${articleId}: Amazon ${side} unavailable status must match the seed`,
+      );
+    }
     if (amazon && !isHttpUrl(amazon))
       errors.push(`${articleId}: Amazon ${side} must be a direct https URL`);
     if (amazon && !source.includes(amazon))

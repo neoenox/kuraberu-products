@@ -22,7 +22,8 @@ describe("Crucial X10 Pro vs Kingston XS2000 publication", () => {
     expect(seed?.draft).not.toBe(true);
     expect(manifest.articleReady).toBe(true);
     expect(manifest.social.status).toBe("none");
-    expect(manifest.amazon.statusBySide.left).toBe("unavailable");
+    expect(manifest.amazon.statusBySide.left).toBe("search");
+    expect(seed?.leftAmazonLinkStatus).toBe("search");
     expect(manifest.amazon.statusBySide.right).toBe("verified");
     expect(manifest.rakuten.status).toBe("verified");
     expect(PUBLISHED_ARTICLE_PAGE_SLUGS.has(articleId)).toBe(true);

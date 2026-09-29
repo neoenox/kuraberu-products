@@ -28,7 +28,12 @@ interface Props {
   purchaseLinkStatus: "verified" | "direct" | "unverified" | "unavailable";
   /** 販売先別の検証状態。省略時は記事全体の状態を使う。 */
   rakutenLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
-  amazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  amazonLinkStatus?:
+    | "verified"
+    | "direct"
+    | "search"
+    | "unverified"
+    | "unavailable";
   /** Amazon商品詳細URL。未指定時は商品名の検索結果へリンクする。 */
   amazonHref?: string;
   showAmazon?: boolean;
@@ -53,30 +58,33 @@ const {
 } = Astro.props;
 
 // unverified / unavailable の購入リンクは CTA を表示しない (#549)。
-// verified / direct のみ実際の購入ボタンを表示する。
+// verified / direct に加え、search はタグ付き検索CTAのみを表示する。
 // カード本体 (商品画像・名前・audience) は全ステータスで表示する。
 const showRakutenCta =
   Boolean(href) &&
   (rakutenLinkStatus === "verified" || rakutenLinkStatus === "direct");
 const showAmazonCta =
   (showAmazon || Boolean(amazonHref)) &&
-  (amazonLinkStatus === "verified" || amazonLinkStatus === "direct") &&
+  (amazonLinkStatus === "verified" ||
+    amazonLinkStatus === "direct" ||
+    amazonLinkStatus === "search") &&
   Boolean(amazonHref || name);
 const showCta = showRakutenCta || showAmazonCta;
+const useAmazonSearch = amazonLinkStatus === "search" || !amazonHref;
 const showPending =
   !showCta &&
   (rakutenLinkStatus === "unverified" ||
     amazonLinkStatus === "unverified" ||
     !purchaseLinkStatus);
 const amazonProductUrl =
-  showAmazonCta && amazonHref
+  showAmazonCta && !useAmazonSearch && amazonHref
     ? /[?&]tag=[A-Za-z0-9-]+/.test(amazonHref)
       ? amazonHref
       : toAmazonAssociateProductUrl(amazonHref, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
     : undefined;
 const amazonSearchUrl =
-  showAmazonCta && !amazonHref
-    ? toAmazonAssociateSearchUrl(name, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
+  showAmazonCta && useAmazonSearch
+    ? toAmazonAssociateSearchUrl(searchQuery || name, import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG)
     : undefined;
 const resolvedImage = resolveImage(imagePath);
 ---
@@ -118,7 +126,9 @@ const resolvedImage = resolveImage(imagePath);
           data-placement={placement}
         >
           <span class="cta-card-body">
-            <span class="cta-card-label">Amazonで商品を確認</span>
+            <span class="cta-card-label">
+              {useAmazonSearch ? "Amazonで検索" : "Amazonで商品を確認"}
+            </span>
             <span class="cta-card-sub">→</span>
           </span>
         </a>

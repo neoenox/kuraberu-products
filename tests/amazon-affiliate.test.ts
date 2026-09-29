@@ -161,6 +161,28 @@ describe("Amazon Associates integration", () => {
     expect(html).not.toContain("（広告）");
   });
 
+  it("renders an explicit tagged Amazon search CTA for search-only status", async () => {
+    vi.stubEnv("PUBLIC_AMAZON_ASSOCIATE_TAG", "example-22");
+    const container = await AstroContainer.create();
+    const html = await container.renderToString(PurchaseCard, {
+      props: {
+        name: "商品A 型番A123",
+        audience: "商品Aを探している人向け",
+        purchaseLinkStatus: "verified",
+        amazonLinkStatus: "search",
+        amazonHref: "https://www.amazon.co.jp/dp/B012345678",
+        showAmazon: true,
+      },
+    });
+
+    expect(html).toContain("Amazonで検索");
+    expect(html).not.toContain("Amazonで商品を確認");
+    expect(html).toContain("/s?k=%E5%95%86%E5%93%81A+%E5%9E%8B%E7%95%AAA123");
+    expect(html).toContain("tag=example-22");
+    expect(html).not.toContain("/dp/B012345678");
+    expect(html).toContain('rel="sponsored nofollow noopener noreferrer"');
+  });
+
   it("does not show a default Amazon CTA when no associate ID is configured", async () => {
     const container = await AstroContainer.create();
     const html = await container.renderToString(PurchaseCard, {
