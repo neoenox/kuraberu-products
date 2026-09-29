@@ -130,9 +130,8 @@ export function createExternalEmbedConfig(
       provider,
       canonicalUrl: `https://www.youtube.com/watch?v=${videoId}`,
       renderer: "iframe",
-      // YouTubeの動画は記事HTMLに直接iframeを出す。標準のembedホストを
-      // 使うことで、アプリ内ブラウザでも動画プレーヤーを確実に初期化する。
-      embedUrl: `https://www.youtube.com/embed/${videoId}`,
+      // 同意後に限り、プライバシー強化モードのiframeを追加する。
+      embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
       minimumHeight: 315,
     };
   }

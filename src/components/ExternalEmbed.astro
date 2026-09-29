@@ -17,7 +17,7 @@ interface Props {
   author?: string;
   community?: string;
   autoload?: boolean;
-  /** ページ表示時に自動表示する（読者が拒否済みの場合を除く） */
+  /** 保存済みの表示許可がある訪問時に自動表示する */
   autoDisplay?: boolean;
   tone?: "good" | "bad" | "mixed";
   /** compact: 埋め込みの会話（返信）を隠して高さを抑える */
@@ -40,13 +40,8 @@ const {
 } = Astro.props;
 const config = createExternalEmbedConfig(provider, url);
 const providerLabel = externalEmbedProviderLabel(provider);
-// YouTubeはautoload/autoDisplayの採用投稿なら、JSの読み込み完了を待たず
-// 記事HTMLへiframeを直接出す。これで「埋め込み対象はあるが、空の枠だけ」
-// になる状態を防ぎ、静的HTMLの時点で埋め込みであることを検査できる。
-const serverRenderYoutube =
-  provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
+// Redditの静的カードには外部通信がないため、同意前にも表示できる。
 const serverRenderReddit = provider === "reddit" && autoDisplay === true;
-const serverRenderEmbed = serverRenderYoutube || serverRenderReddit;
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -61,8 +56,8 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-provider={provider}
   data-match={match}
   data-tone={tone}
-  data-embed-state={serverRenderEmbed ? "loaded" : "idle"}
-  data-server-embed={serverRenderEmbed ? "true" : undefined}
+  data-embed-state={serverRenderReddit ? "loaded" : "idle"}
+  data-server-embed={serverRenderReddit ? "true" : undefined}
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
@@ -87,18 +82,8 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     tabindex="-1"
     aria-label={`${providerLabel}の投稿表示`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
-    hidden={!serverRenderEmbed}
+    hidden={!serverRenderReddit}
   >
-    {serverRenderYoutube && config.embedUrl && (
-      <iframe
-        src={config.embedUrl}
-        title={title}
-        loading="eager"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    )}
     {serverRenderReddit && (
       <blockquote class="reddit-embed-bq">
         <div class="reddit-embed-bq__brand">reddit</div>
@@ -552,8 +537,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   if (document.querySelector("[data-external-embed]")) {
   for (const root of document.querySelectorAll<HTMLElement>("[data-external-embed]")) {
     if (root.dataset.initialized === "true") continue;
-    // serverRenderYoutube がiframeをすでに出しているため、runtimeでtargetを
-    // clearして空に戻さない。直接表示したiframeはそのまま維持する。
+    // Redditの静的カードはruntimeによる外部通信を必要としない。
     if (root.dataset.serverEmbed === "true") continue;
     root.dataset.initialized = "true";
 
@@ -618,12 +602,16 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     const onClick = () => {
       if (disposed) return;
-      if (
-        root.dataset.autoDisplay === "true" &&
-        getCachedConsent() === "denied"
-      ) {
-        status.textContent = "このブラウザでは外部投稿を表示しない設定です。";
-        return;
+      if (root.dataset.autoDisplay === "true") {
+        const consent = getCachedConsent();
+        if (consent === undefined) {
+          showConsentBanner();
+          return;
+        }
+        if (consent === "denied") {
+          status.textContent = "このブラウザでは外部投稿を表示しない設定です。";
+          return;
+        }
       }
       if (actionPromise) return;
       const generationAtStart = resetGeneration;
@@ -700,15 +688,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
       onConsentChange(handleConsentChange);
 
       const consent = getCachedConsent();
-      if (
-        consent === "granted" ||
-        (consent === undefined && root.dataset.autoDisplay === "true")
-      ) {
-        // 同意済み、または記事単位の自動表示: 即座に読み込む。
+      if (consent === "granted") {
+        // 同意済みの再訪問では自動表示する。
         onClick();
       } else if (consent === undefined) {
         // 未同意: 同意バナーを1枚だけ注入し、ユーザーの選択を待つ。
-        if (root.dataset.autoDisplay !== "true") showConsentBanner();
+        showConsentBanner();
       } else {
         // granted / denied 済み: 撤回（設定変更）UIを1枚だけ出す。
         showWithdrawControl();
@@ -898,9 +883,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  /* 自動表示する埋め込みは投稿そのものを主役にし、
-     「外部コンテンツ」や読み込みボタンを記事本文へ出さない。 */
-  .external-embed[data-auto-display="true"] .external-embed__intro {
+  /* 読み込み後だけ説明とボタンを隠す。未同意・拒否・失敗時は
+     元投稿へのリンクと手動表示の案内を残す。 */
+  .external-embed[data-auto-display="true"][data-embed-state="loaded"] .external-embed__intro {
     display: none;
   }
   .external-embed[data-auto-display="true"] .external-embed__target {
