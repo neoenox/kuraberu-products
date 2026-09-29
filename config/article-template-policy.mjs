@@ -75,6 +75,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "crucial-x10-pro-vs-kingston-xs2000",
   "zojirushi-ee-dg50-vs-ee-rv50",
   "kobo-clara-colour-vs-libra-colour",
+  "instax-mini-13-vs-mini-41",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];

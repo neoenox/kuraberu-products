@@ -88,6 +88,7 @@ import { crucialX10ProVsKingstonXs2000Seed } from "./crucial-x10-pro-vs-kingston
 import { jblTourPro3VsLiveBeam3Seed } from "./jbl-tour-pro-3-vs-live-beam-3";
 import { zojirushiEeDg50VsEeRv50Seed } from "./zojirushi-ee-dg50-vs-ee-rv50";
 import { koboClaraColourVsLibraColourSeed } from "./kobo-clara-colour-vs-libra-colour";
+import { instaxMini13VsMini41Seed } from "./instax-mini-13-vs-mini-41";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   tpLinkArcherBe550VsBe450Seed,
@@ -106,6 +107,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   jblTourPro3VsLiveBeam3Seed,
   zojirushiEeDg50VsEeRv50Seed,
   koboClaraColourVsLibraColourSeed,
+  instaxMini13VsMini41Seed,
   ankerNanoPowerBankVsZoloA1688Seed,
   soundcoreLiberty5ProVsLiberty4ProSeed,
   ...kakakuSeptember2026Seeds,
