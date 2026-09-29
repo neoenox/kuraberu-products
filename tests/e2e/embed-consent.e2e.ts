@@ -80,9 +80,8 @@ test.describe("consent-before-embed (network level)", () => {
       timeout: 30_000,
     });
     await expect(embed.locator("iframe").first()).toBeVisible();
-    await expect(embed.locator("[data-external-embed-status]")).toHaveText(
-      "外部コンテンツを表示しました。",
-    );
+    // Loaded state + a visible provider iframe are the success contract.
+    // The live-region status is intentionally cleared after a successful load.
     expect(
       thirdPartyRequests.some((url) => url.includes("platform.twitter.com")),
     ).toBe(true);
@@ -140,7 +139,7 @@ test.describe("consent-before-embed (network level)", () => {
         thirdPartyRequests.push(request.url());
     });
 
-    await page.goto("/articles/anker-nano-power-bank-vs-zolo-a1688/", {
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
       waitUntil: "networkidle",
     });
     const embed = page.locator(
@@ -191,7 +190,7 @@ test.describe("consent-before-embed (network level)", () => {
         thirdPartyRequests.push(request.url());
     });
 
-    await page.goto("/articles/anker-nano-power-bank-vs-zolo-a1688/", {
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
       waitUntil: "networkidle",
     });
     const embed = page.locator(
