@@ -1,0 +1,196 @@
+{
+  "id": "instax-mini-evo-vs-evo-cinema-2026-09-29",
+  "articleId": "instax-mini-evo-vs-evo-cinema",
+  "source": "Fresh product selection and research by Claude Code against Fujifilm Japan official pages, Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
+  "researchDateJst": "2026-09-29",
+  "articleReady": true,
+  "category": "インスタントカメラ",
+  "selection": {
+    "reason": "富士フイルムのハイブリッドインスタントカメラ2機種。レンズ・プリント出力時間・プリント可能枚数が共通し、動画撮影、エフェクト、液晶モニター、通信、カラー展開が異なる。公式仕様表が詳細で、比較軸が明確。",
+    "duplicateCheck": "src/pages/articles、src/content/articles、全リモートブランチ、全worktreeに mini Evo / Evo Cinema の記事なし。既存のinstax記事（instax-mini-13-vs-mini-41）とは商品が重複しない。作業中ブランチ（logicool-mx-brio、jbl-tour-pro-3、anker-liberty-5、iphone-18-pro-vs-pixel-11-pro、portable-power）とも重複なし。キヤノンEOS R50系は公式サイトがボット対策で取得できないため不採用、ソニーZV-E10M2は既存記事で使用済みのため不採用、ソニッケアーは型番・色違いが多く公式記載が入り組むため見送り。"
+  },
+  "products": {
+    "left": {
+      "name": "富士フイルム instax mini Evo ブラック",
+      "model": "instax mini Evo（BLACK、JAN 4547410520088）",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo",
+      "officialSpecUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo/specifications",
+      "officialImageUrl": "https://asset.fujifilm.com/www/jp/files/2025-09/8740ab5240f9b50d1903a2d59b0f3645/pic_minievo_design_01.jpg",
+      "imageEvidence": "富士フイルム公式のデザインページに掲載されたBLACK正面画像（1680×1120 JPEG、HTTP 200、image/jpeg、2026-09-29）。画像下部に「BLACK（ブラック）」の表記あり。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に instax-mini-evo-black.jpg として保存。",
+      "officialSpecs": {
+        "lens": "f=28mm（35mmフィルム換算）・F2.0",
+        "range": "10cm〜∞",
+        "shutter": "1/4秒〜1/8000秒（自動切替）",
+        "iso": "ISO100〜1600（自動切替）",
+        "exposure": "プログラムAE、露出補正±2.0EV（1/3EVステップ）",
+        "flash": "オート／強制発光／発光禁止、撮影可能範囲 約50cm〜1.5m",
+        "selfTimer": "約2秒／約10秒",
+        "printTime": "約16秒（instax-Rich mode使用時、起動直後は約7秒加算）",
+        "prints": "フル充電から約100枚（使用条件により変動）",
+        "charge": "約2〜3時間",
+        "film": "instax mini（別売）",
+        "battery": "リチウムイオン電池（内蔵型）",
+        "msrp": "オープン価格",
+        "sensor": "1/5型CMOS原色フィルター",
+        "recordPixels": "2560×1920ピクセル",
+        "memory": "内蔵メモリー約45枚、microSD／microSDHC 1GBあたり約850枚",
+        "af": "シングルAF（AF補助光付）",
+        "effects": "レンズエフェクト10種×フィルムエフェクト10種＝100通り",
+        "video": "公式の仕様・特長に動画撮影の記載なし",
+        "monitor": "3.0型TFTカラー液晶（約46万ドット）",
+        "wireless": "Bluetooth Ver.4.2（BLE）",
+        "usb": "USB Micro-B／Type-C（充電専用、mini Evo brown発売以降順次切り替え）",
+        "dimensions": "87mm×122.9mm×36mm（突起部除く）",
+        "weight": "約285g",
+        "colors": ["BLACK", "BROWN", "GENTLE ROSE"]
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0C85H3GTH",
+      "rakutenProductPage": "https://item.rakuten.co.jp/mapcamera/4547410520088/",
+      "rakutenListingEvidence": "マップカメラ楽天市場店の商品ページ item.rakuten.co.jp/mapcamera/4547410520088/（URLにJAN 4547410520088を含む）。楽天市場商品検索APIで商品名「FUJIFILM instax mini Evo（USB Type-C） ブラック」、ショップ名を確認（2026-09-29）。販売店の価格は記事に掲載しない。"
+    },
+    "right": {
+      "name": "富士フイルム instax mini Evo Cinema",
+      "model": "instax mini Evo Cinema（通常版、JAN 4547410562293）",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema",
+      "officialSpecUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema/specifications",
+      "officialImageUrl": "https://asset.fujifilm.com/www/jp/files/2026-01/36a5395779812141796c7edc9363daa8/pic_mini_evo_cinema_design_01.png",
+      "imageEvidence": "富士フイルム公式のデザインページに掲載された斜め前方からの画像（1680×1120 PNG、HTTP 200、image/png、2026-09-29。グリップアタッチメント装着状態）。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に instax-mini-evo-cinema.png として保存。",
+      "officialSpecs": {
+        "lens": "f=28mm（35mmフィルム換算）・F2.0",
+        "range": "10cm〜∞",
+        "shutter": "1/4秒〜1/8000秒（自動切替）",
+        "iso": "ISO100〜1600（自動切替）",
+        "exposure": "プログラムAE、露出補正±2.0EV（1/3EVステップ）",
+        "flash": "オート／強制発光／発光禁止、撮影可能範囲 約50cm〜1.5m",
+        "selfTimer": "約2秒／約10秒",
+        "printTime": "約16秒（instax-Rich mode使用時、起動直後は約7秒加算）",
+        "prints": "フル充電から約100枚（使用条件により変動）",
+        "charge": "約2〜3時間",
+        "film": "instax mini（別売）",
+        "battery": "リチウムイオン電池（内蔵型）",
+        "msrp": "オープン価格",
+        "sensor": "1/5型CMOS原色フィルター（有効約500万画素）",
+        "recordPixels": "静止画1920×2560／動画（通常）600×800／動画（高画質、2020のみ）1080×1440",
+        "memory": "静止画は内蔵約50枚、動画（通常）は内蔵約10本（1本=15秒）、microSD／microSDHC／microSDXC（〜256GB）対応",
+        "af": "シングルAF、顔認識AF",
+        "effects": "ジダイヤル™エフェクト10種（1930〜2020）×度合い調整10段階",
+        "video": "MP4（H.264、AAC）、24p、STANDARD 2.5Mbps／HIGH-QUALITY 9.0Mbps、最大15秒のカットを複数撮影",
+        "monitor": "1.54型TFTカラー液晶（約17万ドット）",
+        "wireless": "Bluetooth Ver.5.4（BLE）、無線LAN IEEE802.11b/g/n（2.4GHz帯）",
+        "usb": "USB Type-C（充電専用）",
+        "dimensions": "39.4mm×132.5mm×100.1mm（突起部除く、公式表記のまま）",
+        "weight": "約270g（フィルムパック、記録メディア含まず）",
+        "colors": ["通常版（公式の価格表・JANコード一覧の表記）"]
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GGNPV24C",
+      "rakutenProductPage": "https://item.rakuten.co.jp/jism/4547410562293-34-1793-n/",
+      "rakutenListingEvidence": "Joshin web 家電とPCの大型専門店の商品ページ item.rakuten.co.jp/jism/4547410562293-34-1793-n/（URLにJAN 4547410562293を含む）。楽天市場商品検索APIで商品名「富士フイルム ハイブリッドインスタントカメラ“チェキ”「instax mini Evo Cinema」」、ショップ名を確認（2026-09-29）。販売店の価格は記事に掲載しない。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格は、富士フイルムの価格表・JANコード一覧（fujifilm.com/jp/ja/consumer/instax/cameras/jan）でどちらもオープン価格。販売店の価格は変動するため記事に掲載しない。",
+    "keyDifferences": [
+      "動画撮影はEvo Cinemaの公式ページに記載（MP4・24p、最大15秒のカット、動画QRコード付きプリント）。Evoの公式仕様には記載なし",
+      "エフェクトはEvoがレンズ10種×フィルム10種、Evo Cinemaがジダイヤル10種×度合い10段階（どちらも100通り）",
+      "液晶モニターはEvoが3.0型（約46万ドット）、Evo Cinemaが1.54型（約17万ドット）",
+      "AFはEvoがシングルAF、Evo CinemaがシングルAFに加えて顔認識AF",
+      "無線通信はEvoがBluetooth 4.2、Evo CinemaがBluetooth 5.4と無線LAN",
+      "外形寸法は公式の表記順が機種で異なるため直接比較しない。質量はEvoが約285g、Evo Cinemaが約270g（フィルムパック、記録メディア含まず）",
+      "カラーはEvoが3色、Evo Cinemaが通常版の1種類"
+    ],
+    "commonSpecs": [
+      "レンズ f=28mm（35mm換算）・F2.0、撮影可能距離10cm〜∞",
+      "撮像素子 1/5型CMOS、ISO100〜1600、シャッター1/4〜1/8000秒",
+      "セルフタイマー 約2秒／約10秒",
+      "プリント出力時間 約16秒、フル充電から約100枚、充電時間約2〜3時間",
+      "スマホ画像のダイレクトプリント、リモート撮影",
+      "使用フィルム instax mini（別売）"
+    ],
+    "caveat": "Evoの公式仕様に動画の記載がないことは、機能がないと断定するものではない。外形寸法と質量は公式の表記条件が異なる。仕上がりの優劣は判断していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0C85H3GTH",
+    "right": "https://www.amazon.co.jp/dp/B0GGNPV24C",
+    "leftAsin": "B0C85H3GTH",
+    "rightAsin": "B0GGNPV24C",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（instax mini Evo ブラック・instax mini Evo Cinema）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「富士フイルム チェキ Evo ハイブリッドインスタントカメラ instax mini Evo ブラック INS MINI EVO BLACK」、ASIN B0C85H3GTHを確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0C85H3GTH?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「富士フイルム チェキ Evo ハイブリッドインスタントカメラ instax mini Evo ブラック INS MINI EVO BLACK」、ASIN B0C85H3GTHの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「富士フイルム チェキ instax mini Evo Cinema ハイブリッドインスタントカメラ」、ASIN B0GGNPV24Cを確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0GGNPV24C?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「富士フイルム チェキ instax mini Evo Cinema ハイブリッドインスタントカメラ」、ASIN B0GGNPV24Cの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductPage": "https://item.rakuten.co.jp/mapcamera/4547410520088/",
+    "leftShop": "マップカメラ楽天市場店",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/jism/4547410562293-34-1793-n/",
+    "rightShop": "Joshin web 家電とPCの大型専門店",
+    "rightProductVerified": true,
+    "generation": "2026-09-29に楽天市場商品検索API（IchibaItem Search 20260701）へアフィリエイトID付きで問い合わせ、返却された成果URL（affiliateUrl）を記載。商品名とJAN入りの商品ページURLを確認。認証情報は保存しない。成果URLをクリックしての遷移先確認は未実施。",
+    "left": "https://hb.afl.rakuten.co.jp/hgc/g00prnmn.w78maa38.g00prnmn.w78mba41/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmapcamera%2F4547410520088%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmapcamera%2Fi%2F12050274%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+    "right": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "楽天の成果URLの遷移先はクリックして確認していない。",
+    "Evoの公式仕様に動画撮影の記載がないことを、機能がないとは断定していない。",
+    "Evo Cinemaの外形寸法は公式の表記順が不明確（39.4×132.5×100.1mm）で、Evoとは直接比較していない。",
+    "Evoの発売時期、Evo Cinemaのカラー名は公式ページで確認できず、記事に掲載していない。"
+  ],
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
+}

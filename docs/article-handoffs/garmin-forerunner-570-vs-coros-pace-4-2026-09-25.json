@@ -45,7 +45,8 @@
   },
   "amazon": {
     "left": "https://www.amazon.co.jp/dp/B0F9L8D3CL",
-    "right": "https://www.amazon.co.jp/dp/B0G14BYM52"
+    "right": "https://www.amazon.co.jp/dp/B0G14BYM52",
+    "status": "verified"
   },
   "rakuten": {
     "status": "verified",

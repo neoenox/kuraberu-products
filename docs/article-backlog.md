@@ -150,14 +150,83 @@
 ### Logicool Pebble Mouse 2 M350s vs Signature M650
 
 - slug: `logicool-pebble-m350s-vs-m650`
-- 状態: 実装中（Amazon商品詳細ページの直接確認待ち）
+- 状態: 記事・購入リンク確認済み（2026-09-26、変更の取り込み待ち）
 - 比較軸: 公式価格、重量、Easy-Switch、SmartWheel、ボタン数、Logi Boltレシーバー、電池寿命、保証
 - 公式URL:
   - https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse
   - https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse
-- 楽天: M350sGR / M650MGR の商品詳細ページとユーザー生成成果URLを2026-09-23確認済み
-- SNS: 実利用のReddit投稿を左右1件ずつ参考情報として採用。比較根拠には使用しない
-- 公開条件: Amazon.co.jpの商品詳細ページを直接確認し、handoffの `articleReady` と `purchaseLinkStatus` を更新して全品質ゲートを通す
+- Amazon: M350sGR / M650MGR の商品詳細ページを直接確認し、ASINと商品型番の一致を2026-09-26確認済み
+- 楽天: M350sGR / M650MGR のロジクール公式ストア商品詳細ページと成果URL遷移先を2026-09-26再確認済み
+- SNS: X・YouTubeの埋め込み候補を確認できず不採用。SNS欄は表示しない
+- 公開条件: 記事データ、handoff、購入リンクの品質ゲートを通し、PRの必須CIを確認する
+
+### Crucial X10 Pro 2TB vs Kingston XS2000 2TB
+
+- slug: `crucial-x10-pro-vs-kingston-xs2000`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 最大読込・書込速度、IP55、落下耐性のメーカー記載条件、外形寸法・重量
+- 公式URL:
+  - https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9
+  - https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive
+- 購入先: 楽天成果URLは両商品確認済み。KingstonはAmazonタグ付き成果URLと遷移先も確認済み。CrucialはAmazon対象外のため楽天CTAのみ
+- 画像: 公式CDNの両画像を取得確認。Production CSPへ両ホストを追加
+- SNS: 適格性を裏付けられる投稿なしとして欄を非掲載（handoffに検索範囲・除外理由を記録）
+- handoff: `docs/article-handoffs/crucial-x10-pro-vs-kingston-xs2000-2026-09-27.json`
+
+### 象印 スチーム式加湿器 EE-DG50 vs EE-RV50
+
+- slug: `zojirushi-ee-dg50-vs-ee-rv50`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 容量、連続加湿時間、運転モード・タイマー、外形寸法・質量、公式ストア価格（加湿能力・適用床面積・消費電力は共通）
+- 公式URL:
+  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
+  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/
+- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否はツールバーで確認済み（対象・2.00%）。タグ付きURLの遷移先も確認済み
+- 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは生成済み
+- SNS: 適格な実利用投稿を確認できず不採用。SNS欄は表示しない
+- 購入先: 楽天成果URLは両商品確認済み。AmazonもツールバーとタグURLの遷移先を確認済み（対象・2.00%、ビルド時にtag付与）
+- handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
+
+### 楽天Kobo Clara Colour vs Libra Colour
+
+- slug: `kobo-clara-colour-vs-libra-colour`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 画面サイズ・解像度、内蔵メモリ、ページめくりボタン、Koboスタイラス2対応、サイズ・質量、公式ページ価格（Kaleido 3・ComfortLight PRO・IPX8・バッテリー目安は共通）
+- 公式URL:
+  - https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/
+  - https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/
+- 購入先: 楽天ブックス（楽天Kobo公式ストア）の商品ページで商品名・価格一致、楽天市場商品検索APIで成果URLを取得（verified）。Amazon（B0D5D1DXZY / B0D5HSRM75）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式の仕様表用画像（他社マンガの写り込みなし、ホワイト・低解像度）
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/kobo-clara-colour-vs-libra-colour-2026-09-29.json`
+
+### 富士フイルム instax mini 13 vs instax mini 41
+
+- slug: `instax-mini-13-vs-mini-41`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: セルフタイマー・セルフィーミラー、カラー展開、デザイン、サイズ・質量、使用電池（レンズ・撮影範囲・フラッシュ・現像時間は共通）
+- 公式URL:
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41
+- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
+- 価格: どちらもオープン価格。販売店の価格は掲載しない
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
+
+### 富士フイルム instax mini Evo vs instax mini Evo Cinema
+
+- slug: `instax-mini-evo-vs-evo-cinema`
+- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
+- 比較軸: 動画撮影、エフェクト、液晶モニター、AF、無線通信、サイズ・質量、カラー展開（レンズ・プリント出力時間・プリント可能枚数は共通）
+- 公式URL:
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema
+- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、EvoはマップカメラBLACK、Evo CinemaはJoshin web）。Amazon（B0C85H3GTH / B0GGNPV24C）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式デザインページの画像（EvoはBLACK正面、Evo Cinemaは斜め前方）
+- 価格: どちらもオープン価格。販売店の価格は掲載しない
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/instax-mini-evo-vs-evo-cinema-2026-09-29.json`
 
 ## 追加確認・保留
 

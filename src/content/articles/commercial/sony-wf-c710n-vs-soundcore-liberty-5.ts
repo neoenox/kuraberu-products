@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
   id: "sony-wf-c710n-vs-soundcore-liberty-5",
   publishedAt: "2026-09-24",
-  modifiedAt: "2026-09-24",
+  modifiedAt: "2026-09-29",
   handoffManifestId: "sony-wf-c710n-vs-soundcore-liberty-5-2026-09-24",
   productInfoCheckedAt: "2026-09-24",
   purchaseLinksCheckedAt: "2026-09-24",
@@ -29,8 +29,8 @@ export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
   rightPoint: "価格が2,610円安く、LDAC・IP55に対応",
   leftImage: "/products/sony-wf-c710n.jpg",
   rightImage: "/products/soundcore-liberty-5.jpg",
-  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0F3XFNHCW",
-  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DRVB48LJ",
+  leftAmazonLinkStatus: "search",
+  rightAmazonLinkStatus: "search",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57d9e9de.ecb2fbc5.57d9e9df.eb576eb4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-surprise2%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   rightRakutenUrl:

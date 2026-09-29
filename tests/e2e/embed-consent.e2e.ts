@@ -49,7 +49,7 @@ function isThirdPartyRequest(url: string): boolean {
 const ARTICLE_PATH = "/articles/babybjorn/";
 
 test.describe("consent-before-embed (network level)", () => {
-  test("automatically renders the curated X post on the thermos article", async ({
+  test("waits for consent before rendering the autoDisplay X post", async ({
     page,
   }) => {
     test.setTimeout(45_000);
@@ -67,8 +67,13 @@ test.describe("consent-before-embed (network level)", () => {
     await expect(embed).toBeVisible();
     await expect(embed).toContainText("JNL-503（旧型）");
     await expect(embed).toHaveAttribute("data-auto-display", "true");
-    // The article template intentionally omits the privacy notice and the
-    // per-embed opt-out control; consent is handled by the page-level banner.
+    const banner = page.locator("[data-embed-consent-banner]");
+    await expect(banner).toBeVisible();
+    await expect(embed).toHaveAttribute("data-embed-state", "idle");
+    expect(thirdPartyRequests).toHaveLength(0);
+    await banner.locator("[data-embed-consent-accept]").click();
+    // The article template intentionally omits the per-embed opt-out control;
+    // consent is handled by the page-level banner.
     await expect(embed.locator(".external-embed__privacy")).toHaveCount(0);
     await expect(embed.locator("[data-external-embed-stop]")).toHaveCount(0);
     await expect(embed).toHaveAttribute("data-embed-state", "loaded", {
@@ -103,6 +108,9 @@ test.describe("consent-before-embed (network level)", () => {
   test("does not render the removed per-embed opt-out control", async ({
     page,
   }) => {
+    await page.addInitScript(() =>
+      localStorage.setItem("embed-consent", "granted"),
+    );
     await page.goto("/articles/thermos-tiger-bottle/", {
       waitUntil: "networkidle",
     });
@@ -113,6 +121,84 @@ test.describe("consent-before-embed (network level)", () => {
 
     await expect(embed.locator("[data-external-embed-stop]")).toHaveCount(0);
     await expect(embed.locator("iframe").first()).toBeVisible();
+  });
+
+  test("autoDisplay YouTube waits for consent and stops after withdrawal", async ({
+    page,
+  }) => {
+    await page.route("https://www.youtube-nocookie.com/embed/**", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "text/html",
+        body: "<!doctype html><title>Video fixture</title>",
+      }),
+    );
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (isThirdPartyRequest(request.url()))
+        thirdPartyRequests.push(request.url());
+    });
+
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
+      waitUntil: "networkidle",
+    });
+    const embed = page.locator(
+      '[data-external-embed][data-provider="youtube"]',
+    );
+    await expect(embed).toHaveAttribute("data-auto-display", "true");
+    await expect(embed).toHaveAttribute("data-embed-state", "idle");
+    await expect(embed.locator("iframe")).toHaveCount(0);
+    const banner = page.locator("[data-embed-consent-banner]");
+    await expect(banner).toBeVisible();
+    expect(thirdPartyRequests).toHaveLength(0);
+
+    await embed.locator("[data-external-embed-load]").click();
+    expect(thirdPartyRequests).toHaveLength(0);
+    await expect(embed).toHaveAttribute("data-embed-state", "idle");
+
+    await banner.locator("[data-embed-consent-accept]").click();
+    await expect(embed.locator("iframe")).toHaveAttribute(
+      "src",
+      /https:\/\/www\.youtube-nocookie\.com\/embed\//,
+    );
+    await expect(embed).toHaveAttribute("data-embed-state", "loaded");
+    expect(
+      thirdPartyRequests.some((url) =>
+        url.startsWith("https://www.youtube-nocookie.com/embed/"),
+      ),
+    ).toBe(true);
+
+    await page.locator("[data-embed-consent-withdraw] button").click();
+    await expect(embed.locator("iframe")).toHaveCount(0);
+    const requestsAfterWithdrawal: string[] = [];
+    page.on("request", (request) => {
+      if (isThirdPartyRequest(request.url()))
+        requestsAfterWithdrawal.push(request.url());
+    });
+    await page.reload({ waitUntil: "networkidle" });
+    await expect(page.locator("[data-embed-consent-banner]")).toBeVisible();
+    expect(requestsAfterWithdrawal).toHaveLength(0);
+  });
+
+  test("autoDisplay YouTube respects a stored rejection", async ({ page }) => {
+    await page.addInitScript(() =>
+      localStorage.setItem("embed-consent", "denied"),
+    );
+    const thirdPartyRequests: string[] = [];
+    page.on("request", (request) => {
+      if (isThirdPartyRequest(request.url()))
+        thirdPartyRequests.push(request.url());
+    });
+
+    await page.goto("/articles/anker-nano-a1638-vs-power-bank-a1256/", {
+      waitUntil: "networkidle",
+    });
+    const embed = page.locator(
+      '[data-external-embed][data-provider="youtube"]',
+    );
+    await expect(embed).toHaveAttribute("data-embed-state", "idle");
+    await expect(embed.locator("iframe")).toHaveCount(0);
+    expect(thirdPartyRequests).toHaveLength(0);
   });
 
   test("blocks all third-party requests until user grants consent", async ({

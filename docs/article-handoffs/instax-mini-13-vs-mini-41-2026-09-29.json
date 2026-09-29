@@ -1,0 +1,183 @@
+{
+  "id": "instax-mini-13-vs-mini-41-2026-09-29",
+  "articleId": "instax-mini-13-vs-mini-41",
+  "source": "Fresh product selection and research by Claude Code against Fujifilm Japan official pages, Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
+  "researchDateJst": "2026-09-29",
+  "articleReady": true,
+  "category": "インスタントカメラ",
+  "selection": {
+    "reason": "富士フイルムのinstax miniシリーズで、レンズ・撮影範囲・フラッシュ・現像時間などが共通し、セルフタイマー・セルフィーミラー・カラー展開・デザイン・サイズ・質量が異なる現行2機種。最初の候補mini 12は公式ページ（instax.jp/mini12/）が404で、公式仕様がmini 41とほぼ同一（差はサイズと質量のみ）のため、後継のmini 13とmini 41の組み合わせに変更。",
+    "duplicateCheck": "src/pages/articles、src/content/articles、全リモートブランチ、全worktreeに instax / mini13 / mini41 / チェキ の記事なし。作業中ブランチ（logicool-mx-brio、jbl-tour-pro-3、anker-liberty-5、iphone-18-pro-vs-pixel-11-pro、portable-power）と商品重複なし。"
+  },
+  "products": {
+    "left": {
+      "name": "富士フイルム instax mini 13 クレイホワイト",
+      "model": "instax mini 13（CLAY WHITE、JAN 4547410564662）",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13",
+      "officialSpecUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13/specifications",
+      "officialImageUrl": "https://asset.fujifilm.com/www/jp/files/2026-03/be14982f7e8a7fb4fdb4c32a3495b1ea/pic_mini13_design_09.png",
+      "imageEvidence": "富士フイルム公式のデザインページに掲載されたCLAY WHITE正面画像（1680×1120 PNG、HTTP 200、image/png、2026-09-29）。画像下部に「CLAY WHITE（クレイホワイト）」の表記あり。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に instax-mini-13-clay-white.png として保存。",
+      "officialSpecs": {
+        "film": "instax mini（写真画面サイズ62mm×46mm）",
+        "lens": "2群2枚構成 f=60mm 1:12.7",
+        "finder": "実像式ファインダー0.37倍／ターゲットマーク付き、クローズアップモード用視差補正機能付き",
+        "range": "0.3m〜∞（0.3〜0.5mではクローズアップモード）",
+        "shutter": "プログラム式電子シャッター 1/2〜1/250秒、低輝度スローシンクロ",
+        "exposure": "自動調節 Lv5.0〜14.5（ISO800）",
+        "development": "約90秒",
+        "flash": "常時発光フラッシュ（自動調光）／充電時間7秒以下／撮影距離0.3〜2.2m",
+        "power": "単3形アルカリ電池2本またはニッケル水素電池2本／撮影可能パック数約10パック（当社試験条件）",
+        "selfTimer": "電子式・約2秒／約10秒（LED付きセルフタイマーレバー）",
+        "selfieMirror": "あり",
+        "angleAccessory": "ストラップ付属のカメラ角度調整アクセサリー",
+        "dimensions": "105.5×124.7×67.6mm",
+        "weight": "327g（電池、ストラップ、フィルム別）",
+        "colors": [
+          "CANDY PINK",
+          "DREAMY PURPLE",
+          "FROST BLUE",
+          "LAGOON GREEN",
+          "CLAY WHITE"
+        ],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0G5P496HD",
+      "rakutenProductPage": "https://item.rakuten.co.jp/premoa/4547410564662/",
+      "rakutenListingEvidence": "総合通販PREMOA 楽天市場店の商品ページ item.rakuten.co.jp/premoa/4547410564662/（URLにJAN 4547410564662を含む）。楽天市場商品検索APIで商品名「INS MINI 13 クレイホワイト 富士フイルム instax mini チェキ」、ショップ名を確認（2026-09-29）。販売店の価格は記事に掲載しない。"
+    },
+    "right": {
+      "name": "富士フイルム instax mini 41",
+      "model": "instax mini 41（通常版、JAN 4547410545173）",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41",
+      "officialSpecUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41/specifications",
+      "officialImageUrl": "https://asset.fujifilm.com/www/jp/files/2025-04/4804bfd2476a67951a059d41f66d25aa/pic_mini41_design_01.png",
+      "imageEvidence": "富士フイルム公式のデザインページに掲載された正面画像（1680×1120 PNG、HTTP 200、image/png、2026-09-29）。カメラ以外の他社著作物の写り込みなし。src/assets/products と public/products に instax-mini-41.png として保存。",
+      "officialSpecs": {
+        "film": "instax mini（写真画面サイズ62mm×46mm）",
+        "lens": "2群2枚構成 f=60mm 1:12.7",
+        "finder": "実像式ファインダー0.37倍／ターゲットマーク付き、クローズアップモード用視差補正機能付き",
+        "range": "0.3m〜∞（0.3〜0.5mではクローズアップモード）",
+        "shutter": "プログラム式電子シャッター 1/2〜1/250秒、低輝度スローシンクロ",
+        "exposure": "自動調節 Lv5.0〜14.5（ISO800）",
+        "development": "約90秒",
+        "flash": "常時発光フラッシュ（自動調光）／充電時間7秒以下／撮影距離0.3〜2.2m",
+        "power": "単3形アルカリ電池（LR6）2本／撮影可能パック数約10パック（当社試験条件）",
+        "selfTimer": "公式の仕様・特長に記載なし",
+        "selfieMirror": "公式の仕様・特長に記載なし",
+        "design": "ファッションアイテムとして合わせやすいクラシックデザイン",
+        "dimensions": "104.5×122.5×67.5mm",
+        "weight": "345g（電池、ストラップ、フィルム別）",
+        "colors": ["通常版（公式の価格表・JANコード一覧の表記）"],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": null,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0F43J12FV",
+      "rakutenProductPage": "https://item.rakuten.co.jp/ksdenki/4547410545173/",
+      "rakutenListingEvidence": "ケーズデンキ 楽天市場店の商品ページ item.rakuten.co.jp/ksdenki/4547410545173/（URLにJAN 4547410545173を含む）。楽天市場商品検索APIで商品名「FUJIFILM チェキカメラ instax mini 41 INSTAX MINI 41 ブラック」、ショップ名を確認（2026-09-29）。販売店の価格は記事に掲載しない。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格は、富士フイルムの価格表・JANコード一覧（fujifilm.com/jp/ja/consumer/instax/cameras/jan）でどちらもオープン価格。販売店の価格は変動するため記事に掲載しない。",
+    "keyDifferences": [
+      "セルフタイマー（約2秒／約10秒）とセルフィーミラーはmini 13の公式ページに記載。mini 41の公式仕様・特長には記載なし",
+      "カラーはmini 13が5色、mini 41が通常版の1種類（公式の価格表・JANコード一覧）",
+      "外形寸法はmini 13が105.5×124.7×67.6mm、mini 41が104.5×122.5×67.5mm",
+      "質量はmini 13が327g、mini 41が345g（電池、ストラップ、フィルム別）",
+      "電池はmini 13がアルカリ電池2本またはニッケル水素電池2本、mini 41の公式仕様はアルカリ電池（LR6）2本の記載",
+      "デザインはmini 13がやさしい丸みのラウンドシェイプ、mini 41がクラシックデザイン"
+    ],
+    "commonSpecs": [
+      "使用フィルム instax mini（写真画面サイズ62mm×46mm）",
+      "レンズ 2群2枚構成 f=60mm 1:12.7",
+      "撮影範囲 0.3m〜∞（0.3〜0.5mはクローズアップモード）",
+      "プログラム式電子シャッター、自動調光、常時発光フラッシュ（撮影距離0.3〜2.2m）",
+      "フィルム現像時間 約90秒",
+      "撮影可能パック数 約10パック（当社試験条件）",
+      "オートパワーオフ 5分"
+    ],
+    "caveat": "mini 41の公式ページにセルフタイマーやセルフィーミラーの記載がないことは、機能がないと断定するものではない。仕上がりの優劣は判断していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0G5P496HD",
+    "right": "https://www.amazon.co.jp/dp/B0F43J12FV",
+    "leftAsin": "B0G5P496HD",
+    "rightAsin": "B0F43J12FV",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（instax mini 13 クレイホワイト・instax mini 41）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「富士フイルム(FUJIFILM) チェキ インスタントカメラ instax mini 13 クレイホワイト INS MINI 13 WHITE」、ASIN B0G5P496HDを確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0G5P496HD?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「富士フイルム(FUJIFILM) チェキ インスタントカメラ instax mini 13 クレイホワイト INS MINI 13 WHITE」、ASIN B0G5P496HDの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「富士フイルム instax mini 41 インスタントカメラ チェキ INS MINI 41」、ASIN B0F43J12FVを確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0F43J12FV?tag=kuraberuprodu-22 のtagは、アソシエイトのストアID kuraberuprodu-22（既存記事で確認済み）と同じ。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、tag=kuraberuprodu-22がURLに残り、商品名「富士フイルム instax mini 41 インスタントカメラ チェキ INS MINI 41」、ASIN B0F43J12FVの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductPage": "https://item.rakuten.co.jp/premoa/4547410564662/",
+    "leftShop": "総合通販PREMOA 楽天市場店",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/ksdenki/4547410545173/",
+    "rightShop": "ケーズデンキ 楽天市場店",
+    "rightProductVerified": true,
+    "generation": "2026-09-29に楽天市場商品検索API（IchibaItem Search 20260701）へアフィリエイトID付きで問い合わせ、返却された成果URL（affiliateUrl）を記載。商品名とJAN入りの商品ページURLを確認。認証情報は保存しない。成果URLをクリックしての遷移先確認は未実施。",
+    "left": "https://hb.afl.rakuten.co.jp/hgc/g00r8gxn.w78maa04.g00r8gxn.w78mb52c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpremoa%2F4547410564662%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpremoa%2Fi%2F11344473%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+    "right": "https://hb.afl.rakuten.co.jp/hgc/g00tit6n.w78ma4ce.g00tit6n.w78mb45d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4547410545173%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fksdenki%2Fi%2F10512579%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "楽天の成果URLの遷移先はクリックして確認していない。",
+    "mini 41の公式仕様・特長にセルフタイマーとセルフィーミラーの記載がないことを、機能がないとは断定していない。",
+    "mini 13の発売時期、mini 41の色の名称は公式ページで確認できず、記事に掲載していない。"
+  ],
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
+}

@@ -1,0 +1,168 @@
+{
+  "id": "kobo-clara-colour-vs-libra-colour-2026-09-29",
+  "articleId": "kobo-clara-colour-vs-libra-colour",
+  "source": "Fresh product selection and research by Claude Code against Rakuten Kobo official pages (Rakuten Books), Amazon.co.jp / Rakuten Ichiba product detail pages, and the Rakuten Web Service Ichiba Item Search API",
+  "researchDateJst": "2026-09-29",
+  "articleReady": true,
+  "category": "電子書籍リーダー",
+  "selection": {
+    "reason": "楽天Koboのカラー対応電子書籍リーダーで、E Ink Kaleido 3・ComfortLight PRO・IPX8・USB-C・バッテリー目安が共通し、画面サイズ・内蔵メモリ・ページめくりボタン・スタイラス対応・価格が異なる2機種。同一メーカーの現行ラインで比較軸が明確。",
+    "duplicateCheck": "src/pages/articles、src/content/articles、全リモートブランチ、全worktreeに kobo / clara / libra の記事なし。作業中ブランチ（logicool-mx-brio、jbl-tour-pro-3、anker-liberty-5、iphone-18-pro-vs-pixel-11-pro、portable-power）と商品重複なし。最初の候補パナソニックFE-KXU07は既存記事（dainichi-hd-rxt525-vs-panasonic-fe-kxu07）で使用済みのため不採用。"
+  },
+  "products": {
+    "left": {
+      "name": "Kobo Clara Colour ブラック",
+      "model": "Kobo Clara Colour",
+      "officialUrl": "https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/",
+      "officialImageUrl": "https://image.books.rakuten.co.jp/books/img/e-book/ereaders/spec/device_img_claracolour.png",
+      "imageEvidence": "楽天Kobo公式ページの比較表に掲載された仕様表用画像（172×246 PNG、HTTP 200、image/png、2026-09-29）。商品写真は他社マンガ作品の画面が写り込むため使用せず、写り込みのないこの画像を src/assets/products と public/products に kobo-clara-colour.png として保存。本体色はホワイトで、購入先のブラックとは異なる。",
+      "officialSpecs": {
+        "display": "6.0インチ E Ink Kaleido 3 タッチスクリーン",
+        "resolution": "1448×1072（カラー150ppi／白黒300ppi）",
+        "storage": "約16GB（テキスト約12,400点／コミック約248点、テキスト1冊1MB・コミック1冊50MBで計算した理論値）",
+        "battery": "数週間（ライトとWi-Fiをオフ、1ページ約1分、1日30ページの計算値）",
+        "light": "ComfortLight PRO",
+        "dimensions": "160.0×112.0×9.15mm",
+        "weight": "174.0g",
+        "pageTurn": "画面のタップ／スワイプ操作",
+        "waterproof": "IPX8準拠（水深2m／最大60分、生活防水として案内）",
+        "stylus": "非対応",
+        "colors": ["ホワイト", "ブラック"],
+        "officialPriceJpy": 29800
+      },
+      "officialStorePriceJpy": 29800,
+      "officialStoreUrl": "https://books.rakuten.co.jp/rb/17822117/",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0D5D1DXZY",
+      "rakutenProductPage": "https://item.rakuten.co.jp/book/17822117/",
+      "rakutenListingEvidence": "楽天ブックス（楽天Kobo公式ストア）の商品ページ item.rakuten.co.jp/book/17822117/。楽天市場商品検索APIで商品名「Kobo Clara Colour (ブラック)」、価格29,800円、ショップ楽天ブックスを確認（2026-09-29）。価格は公式ページの表記と一致。"
+    },
+    "right": {
+      "name": "Kobo Libra Colour ブラック",
+      "model": "Kobo Libra Colour",
+      "officialUrl": "https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/",
+      "officialImageUrl": "https://image.books.rakuten.co.jp/books/img/e-book/ereaders/spec/device_img_libracolour.png",
+      "imageEvidence": "楽天Kobo公式ページの比較表に掲載された仕様表用画像（205×228 PNG、HTTP 200、image/png、2026-09-29）。商品写真は他社マンガ作品の画面が写り込むため使用せず、写り込みのないこの画像を src/assets/products と public/products に kobo-libra-colour.png として保存。本体色はホワイトで、購入先のブラックとは異なる。",
+      "officialSpecs": {
+        "display": "7.0インチ E Ink Kaleido 3 タッチスクリーン",
+        "resolution": "1680×1264（カラー150ppi／白黒300ppi）",
+        "storage": "約32GB（テキスト約27,000点／コミック約540点、テキスト1冊1MB・コミック1冊50MBで計算した理論値）",
+        "battery": "数週間（ライトとWi-Fiをオフ、1ページ約1分、1日30ページの計算値）",
+        "light": "ComfortLight PRO",
+        "dimensions": "161.0×144.6×6.2〜8.3mm",
+        "weight": "199.5g",
+        "pageTurn": "画面のタップ／スワイプ操作、ページめくりボタン付き",
+        "waterproof": "IPX8準拠（水深2m／最大60分、生活防水として案内）",
+        "stylus": "Koboスタイラス2対応（別売）",
+        "colors": ["ホワイト", "ブラック"],
+        "officialPriceJpy": 41800
+      },
+      "officialStorePriceJpy": 41800,
+      "officialStoreUrl": "https://books.rakuten.co.jp/rb/17822115/",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0D5HSRM75",
+      "rakutenProductPage": "https://item.rakuten.co.jp/book/17822115/",
+      "rakutenListingEvidence": "楽天ブックス（楽天Kobo公式ストア）の商品ページ item.rakuten.co.jp/book/17822115/。楽天市場商品検索APIで商品名「Kobo Libra Colour（ブラック）」、価格41,800円、ショップ楽天ブックスを確認（2026-09-29）。価格は公式ページの表記と一致。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格の表記はなし。記事の価格は楽天Kobo公式ページ（楽天ブックス）の表記を2026-09-29に確認したもの。税込表記は公式ページになく、記事では税込と書かない。",
+    "keyDifferences": [
+      "画面サイズはClara Colourが6.0インチ（1448×1072）、Libra Colourが7.0インチ（1680×1264）",
+      "内蔵メモリはClara Colourが約16GB、Libra Colourが約32GB",
+      "ページめくりはLibra Colourのみ物理ボタン付き",
+      "Koboスタイラス2に対応するのはLibra Colourのみ（スタイラスは別売）",
+      "外形寸法・質量はClara Colourが160.0×112.0×9.15mm・174.0g、Libra Colourが161.0×144.6×6.2〜8.3mm・199.5g",
+      "公式ページの価格はClara Colourが29,800円、Libra Colourが41,800円（2026-09-29確認）"
+    ],
+    "commonSpecs": [
+      "E Ink Kaleido 3（カラー150ppi／白黒300ppi）",
+      "ComfortLight PRO",
+      "IPX8準拠（水深2m／最大60分）",
+      "バッテリー持続時間の目安は数週間",
+      "USB-C、Wi-Fi（IEEE 802.11 ac/b/g/n）",
+      "本体カラーはホワイトとブラック",
+      "Kobo Remote対応"
+    ],
+    "caveat": "バッテリー持続時間と収録冊数はメーカーの目安・理論値。防水は水中での長時間利用を前提としない生活防水として案内されている。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0D5D1DXZY",
+    "right": "https://www.amazon.co.jp/dp/B0D5HSRM75",
+    "leftAsin": "B0D5D1DXZY",
+    "rightAsin": "B0D5HSRM75",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（Clara Colour・Libra Colour ブラック）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Kobo Clara Colour カラー 電子書籍リーダー 6インチ 防水 ブラック」、ASIN B0D5D1DXZYを確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『家電(含 キッチン家電、生活家電、理美容家電など)』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0D5D1DXZY?tag=kuraberuprodu-22 のtagが、アソシエイトのストアID kuraberuprodu-22 と一致することを確認（2026-09-29）。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「Kobo Clara Colour カラー 電子書籍リーダー 6インチ 防水 ブラック」、ASIN B0D5D1DXZYの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Kobo Libra Colour カラー 電子書籍リーダー 7インチ 防水 ブラック」、ASIN B0D5HSRM75を確認（2026-09-29）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『家電(含 キッチン家電、生活家電、理美容家電など)』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0D5HSRM75?tag=kuraberuprodu-22 のtagが、アソシエイトのストアID kuraberuprodu-22 と一致することを確認（2026-09-29）。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「Kobo Libra Colour カラー 電子書籍リーダー 7インチ 防水 ブラック」、ASIN B0D5HSRM75の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductPage": "https://item.rakuten.co.jp/book/17822117/",
+    "leftShop": "楽天ブックス",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/book/17822115/",
+    "rightShop": "楽天ブックス",
+    "rightProductVerified": true,
+    "generation": "2026-09-29に楽天市場商品検索API（IchibaItem Search 20260701）へアフィリエイトID付きで問い合わせ、返却された成果URL（affiliateUrl）を記載。商品名・価格・ショップが公式ページの表記と一致することを確認。認証情報は保存しない。成果URLをクリックしての遷移先確認は未実施。",
+    "left": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.w78ma52d.g00q072n.w78mbc5c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F17822117%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21220736%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+    "right": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.w78ma52d.g00q072n.w78mbc5c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F17822115%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21220733%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "楽天の成果URLの遷移先はクリックして確認していない。",
+    "商品画像は公式の仕様表用画像（ホワイト・低解像度）で、購入先のブラックとは色が異なる。"
+  ],
+  "publicationDecision": "公式仕様・価格・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
+}

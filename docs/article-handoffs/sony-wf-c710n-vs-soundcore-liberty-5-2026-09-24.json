@@ -43,10 +43,19 @@
       }
     }
   },
+  "products": {
+    "left": {
+      "name": "Sony WF-C710N ブラック",
+      "model": "WF-C710N"
+    },
+    "right": {
+      "name": "Soundcore Liberty 5 ミッドナイトブラック A3957N11",
+      "model": "A3957N11"
+    }
+  },
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0F3XFNHCW",
-    "right": "https://www.amazon.co.jp/dp/B0DRVB48LJ",
-    "verification": "Amazon detail pages checked in Chrome; titles/ASINs match WF-C710N Black B0F3XFNHCW and Soundcore Liberty 5 Midnight Black A3957N11 B0DRVB48LJ. Site appends the configured associate tag at render time."
+    "status": "search",
+    "verification": "Amazon product detail page titles and ASINs were observed to match WF-C710N Black (B0F3XFNHCW) and Soundcore Liberty 5 Midnight Black A3957N11 (B0DRVB48LJ). Product eligibility and tagged direct-link creation/destination were not verified, so the article uses product-name/model search CTAs."
   },
   "rakuten": {
     "status": "verified",
@@ -72,6 +81,7 @@
     "reason": "Both post bodies show personal use and specific model names. No PR, sponsored, or affiliate disclosure was found in the inspected posts. These are individual impressions, not evidence for the official-spec comparison."
   },
   "unconfirmedItems": [
-    "No numeric search-volume data was obtained; demand is supported by observed comparison queries and public usage discussions."
+    "No numeric search-volume data was obtained; demand is supported by observed comparison queries and public usage discussions.",
+    "Amazon Associates eligibility and tagged direct-link creation/destination were not verified; Amazon CTAs use product-name/model search."
   ]
 }

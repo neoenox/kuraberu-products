@@ -17,7 +17,7 @@ interface Props {
   author?: string;
   community?: string;
   autoload?: boolean;
-  /** ページ表示時に自動表示する（読者が拒否済みの場合を除く） */
+  /** 保存済みの表示許可がある訪問時に自動表示する */
   autoDisplay?: boolean;
   tone?: "good" | "bad" | "mixed";
   /** compact: 埋め込みの会話（返信）を隠して高さを抑える */
@@ -29,6 +29,7 @@ const {
   url,
   title,
   purpose,
+  summary,
   author,
   community,
   autoload,
@@ -39,12 +40,8 @@ const {
 } = Astro.props;
 const config = createExternalEmbedConfig(provider, url);
 const providerLabel = externalEmbedProviderLabel(provider);
-// YouTubeとRedditは実投稿を表示するiframeを記事HTMLへ出す。
-const serverRenderYoutube =
-  provider === "youtube" && autoDisplay === true && Boolean(config.embedUrl);
-const serverRenderReddit =
-  provider === "reddit" && autoDisplay === true && Boolean(config.embedUrl);
-const serverRenderEmbed = serverRenderYoutube || serverRenderReddit;
+// Redditの静的カードには外部通信がないため、同意前にも表示できる。
+const serverRenderReddit = provider === "reddit" && autoDisplay === true;
 const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   good: "良かったという声",
   bad: "気になったという声",
@@ -58,26 +55,22 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   data-config={JSON.stringify(config)}
   data-provider={provider}
   data-match={match}
-  data-title={title}
-  data-author={author}
-  data-community={community}
-  data-reddit-scaffold={serverRenderReddit ? "true" : undefined}
   data-tone={tone}
-  data-embed-state={serverRenderEmbed ? "loaded" : "idle"}
-  data-server-embed={serverRenderEmbed ? "true" : undefined}
+  data-embed-state={serverRenderReddit ? "loaded" : "idle"}
+  data-server-embed={serverRenderReddit ? "true" : undefined}
   data-autoload={autoload ? "true" : undefined}
   data-auto-display={autoDisplay ? "true" : undefined}
   data-compact={compact ? "true" : undefined}
     aria-label={`${providerLabel}の投稿`}
 >
   <div class="external-embed__intro">
-    {autoDisplay !== true && <p class="external-embed__label">外部コンテンツ</p>}
+    <p class="external-embed__label">外部コンテンツ</p>
     {tone && <p class="external-embed__tone" data-external-embed-tone={tone}>{toneLabel[tone]}</p>}
     <h3>{title}</h3>
-    {purpose && autoDisplay !== true && <p>{purpose}</p>}
-    <div class="external-embed__actions" hidden={autoDisplay === true}>
+    {purpose && <p>{purpose}</p>}
+    <div class="external-embed__actions">
       <button type="button" data-external-embed-load>{providerLabel}の投稿を表示</button>
-      <a data-external-embed-direct href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">
+      <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">
         {providerLabel}で直接見る
       </a>
     </div>
@@ -89,22 +82,24 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     tabindex="-1"
     aria-label={`${providerLabel}の投稿表示`}
     style={`--external-embed-min-height: ${config.minimumHeight}px`}
-    hidden={!serverRenderEmbed && !serverRenderReddit}
+    hidden={!serverRenderReddit}
   >
-    {serverRenderEmbed && config.embedUrl && (
-      <iframe
-        src={config.embedUrl}
-        title={title}
-        loading="eager"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow={serverRenderYoutube ? "autoplay; encrypted-media; picture-in-picture" : "encrypted-media"}
-        sandbox={serverRenderReddit ? "allow-scripts allow-same-origin allow-popups" : undefined}
-        allowfullscreen
-      ></iframe>
+    {serverRenderReddit && (
+      <blockquote class="reddit-embed-bq">
+        <div class="reddit-embed-bq__brand">reddit</div>
+        <a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">{title}</a>
+        {author && community && (
+          <div class="reddit-embed-bq__meta">
+            by <a href={`https://www.reddit.com/user/${author}`} target="_blank" rel="noopener noreferrer">u/{author}</a>
+            in <a href={`https://www.reddit.com/r/${community}`} target="_blank" rel="noopener noreferrer">{community}</a>
+          </div>
+        )}
+        {summary && <p>{summary}</p>}
+      </blockquote>
     )}
   </div>
   <noscript>
-    <p>投稿を埋め込み表示できない場合は、<a href={config.canonicalUrl} target="_blank" rel="noopener noreferrer">元の投稿へのリンク</a>から確認できます。</p>
+    <p>埋め込み表示にはJavaScriptが必要です。上のリンクから元の投稿を確認できます。</p>
   </noscript>
 </aside>
 
@@ -156,7 +151,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   const PINTEREST_API_POLL_INTERVAL_MS = 150;
   const scriptLoads = new Map<string, Promise<void>>();
 
-  function loadScriptOnce(src: string, after?: HTMLElement): Promise<void> {
+  function loadScriptOnce(src: string): Promise<void> {
     const existing = scriptLoads.get(src);
     if (existing) return existing;
 
@@ -194,10 +189,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         },
       );
 
-      if (!present) {
-        if (after?.parentNode) after.insertAdjacentElement("afterend", script);
-        else document.head.append(script);
-      }
+      if (!present) document.head.append(script);
     });
 
     const trackedLoad = load.catch((error: unknown) => {
@@ -271,38 +263,10 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         document.createElement("blockquote");
       if (!quote.isConnected) {
         quote.className = "reddit-embed-bq";
-        quote.dataset.embedHeight = "316";
-        const hostEmbed = target.closest<HTMLElement>("[data-external-embed]");
-        const postLink = document.createElement("a");
-        postLink.href = config.canonicalUrl;
-        postLink.target = "_blank";
-        postLink.rel = "noopener noreferrer";
-        postLink.textContent = hostEmbed?.dataset.title ?? "Redditの投稿";
-        quote.append(postLink, document.createElement("br"));
-        if (hostEmbed?.dataset.author) {
-          quote.append(document.createTextNode(" by "));
-          const authorLink = document.createElement("a");
-          authorLink.href = `https://www.reddit.com/user/${encodeURIComponent(hostEmbed.dataset.author)}/`;
-          authorLink.target = "_blank";
-          authorLink.rel = "noopener noreferrer";
-          authorLink.textContent = `u/${hostEmbed.dataset.author}`;
-          quote.append(authorLink);
-        }
-        if (hostEmbed?.dataset.community) {
-          quote.append(document.createTextNode(" in "));
-          const communityLink = document.createElement("a");
-          communityLink.href = `https://www.reddit.com/r/${encodeURIComponent(hostEmbed.dataset.community)}/`;
-          communityLink.target = "_blank";
-          communityLink.rel = "noopener noreferrer";
-          communityLink.textContent = hostEmbed.dataset.community;
-          quote.append(communityLink);
-        }
+        appendSourceLink(quote, config);
         target.append(quote);
       }
-      // Reddit's official embed snippet puts widgets.js immediately after
-      // its blockquote. Keeping that relationship lets the provider associate
-      // the widget with the post when the script runs after user consent.
-      await loadScriptOnce(config.scriptSrc, quote);
+      await loadScriptOnce(config.scriptSrc);
       if (attempt !== currentAttempt() || !quote.isConnected) {
         throw new Error("external widget render cancelled");
       }
@@ -573,8 +537,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
   if (document.querySelector("[data-external-embed]")) {
   for (const root of document.querySelectorAll<HTMLElement>("[data-external-embed]")) {
     if (root.dataset.initialized === "true") continue;
-    // serverRenderYoutube がiframeをすでに出しているため、runtimeでtargetを
-    // clearして空に戻さない。直接表示したiframeはそのまま維持する。
+    // Redditの静的カードはruntimeによる外部通信を必要としない。
     if (root.dataset.serverEmbed === "true") continue;
     root.dataset.initialized = "true";
 
@@ -588,7 +551,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     const targetAdapter = createTargetAdapter(
       target,
       button.textContent ?? "外部コンテンツ",
-      root.dataset.redditScaffold === "true",
+      root.dataset.serverEmbed === "true" && root.dataset.provider === "reddit",
     );
     const runtime = createExternalEmbedRuntime(
       config as ExternalEmbedConfig,
@@ -639,11 +602,16 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     };
     const onClick = () => {
       if (disposed) return;
-      if (
-        root.dataset.autoDisplay === "true" &&
-        getCachedConsent() === "denied"
-      ) {
-        return;
+      if (root.dataset.autoDisplay === "true") {
+        const consent = getCachedConsent();
+        if (consent === undefined) {
+          showConsentBanner();
+          return;
+        }
+        if (consent === "denied") {
+          status.textContent = "このブラウザでは外部投稿を表示しない設定です。";
+          return;
+        }
       }
       if (actionPromise) return;
       const generationAtStart = resetGeneration;
@@ -653,7 +621,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
         target.hidden = false;
         const loadPromise = runtime.load();
         root.dataset.embedState = runtime.state;
-        status.textContent = "";
+        status.textContent = "外部コンテンツを読み込んでいます。";
 
         try {
           await loadPromise;
@@ -665,7 +633,7 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
             return;
           }
           root.dataset.embedState = runtime.state;
-          status.textContent = "";
+          status.textContent = "外部コンテンツを表示しました。";
           target.focus({ preventScroll: true });
           if (root.dataset.autoload === "true") {
             // autoload: 撤回時に手動読み込みUIへ戻せるよう、ボタンはDOMに残し
@@ -688,50 +656,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
           ) {
             targetAdapter.clear();
           }
-          if (root.dataset.redditScaffold === "true") {
-            if (!target.querySelector(".reddit-embed-bq")) {
-              const quote = document.createElement("blockquote");
-              quote.className = "reddit-embed-bq";
-              quote.dataset.embedHeight = "316";
-              const postLink = document.createElement("a");
-              postLink.href = config.canonicalUrl;
-              postLink.target = "_blank";
-              postLink.rel = "noopener noreferrer";
-              postLink.textContent = root.dataset.title ?? "Redditの投稿";
-              quote.append(postLink, document.createElement("br"));
-              if (root.dataset.author) {
-                quote.append(document.createTextNode(" by "));
-                const authorLink = document.createElement("a");
-                authorLink.href = `https://www.reddit.com/user/${encodeURIComponent(root.dataset.author)}/`;
-                authorLink.target = "_blank";
-                authorLink.rel = "noopener noreferrer";
-                authorLink.textContent = `u/${root.dataset.author}`;
-                quote.append(authorLink);
-              }
-              if (root.dataset.community) {
-                quote.append(document.createTextNode(" in "));
-                const communityLink = document.createElement("a");
-                communityLink.href = `https://www.reddit.com/r/${encodeURIComponent(root.dataset.community)}/`;
-                communityLink.target = "_blank";
-                communityLink.rel = "noopener noreferrer";
-                communityLink.textContent = root.dataset.community;
-                quote.append(communityLink);
-              }
-              target.append(quote);
-            }
-          }
-          target.hidden = !(root.dataset.redditScaffold === "true");
+          target.hidden = true;
           root.dataset.embedState = runtime.state;
-          const actions = root.querySelector<HTMLElement>(".external-embed__actions");
-          if (actions) actions.hidden = false;
-          if (root.dataset.redditScaffold === "true") {
-            button.hidden = true;
-            status.textContent = "";
-          } else {
-            button.disabled = false;
-            status.textContent = "投稿を読み込めませんでした。";
-            button.focus({ preventScroll: true });
-          }
+          button.disabled = false;
+          status.textContent =
+            "埋め込みを読み込めませんでした。元の投稿へのリンクから確認してください。";
+          button.focus({ preventScroll: true });
         }
       })().finally(() => {
         actionPromise = undefined;
@@ -758,15 +688,12 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
       onConsentChange(handleConsentChange);
 
       const consent = getCachedConsent();
-      if (
-        consent === "granted" ||
-        (consent === undefined && root.dataset.autoDisplay === "true")
-      ) {
-        // 同意済み、または記事単位の自動表示: 即座に読み込む。
+      if (consent === "granted") {
+        // 同意済みの再訪問では自動表示する。
         onClick();
       } else if (consent === undefined) {
         // 未同意: 同意バナーを1枚だけ注入し、ユーザーの選択を待つ。
-        if (root.dataset.autoDisplay !== "true") showConsentBanner();
+        showConsentBanner();
       } else {
         // granted / denied 済み: 撤回（設定変更）UIを1枚だけ出す。
         showWithdrawControl();
@@ -956,9 +883,9 @@ const toneLabel: Record<NonNullable<Props["tone"]>, string> = {
     display: none;
   }
 
-  /* 自動表示する埋め込みは投稿そのものを主役にし、
-     「外部コンテンツ」や読み込みボタンを記事本文へ出さない。 */
-  .external-embed[data-auto-display="true"] .external-embed__intro {
+  /* 読み込み後だけ説明とボタンを隠す。未同意・拒否・失敗時は
+     元投稿へのリンクと手動表示の案内を残す。 */
+  .external-embed[data-auto-display="true"][data-embed-state="loaded"] .external-embed__intro {
     display: none;
   }
   .external-embed[data-auto-display="true"] .external-embed__target {
