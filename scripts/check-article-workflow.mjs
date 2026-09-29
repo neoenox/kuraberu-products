@@ -55,6 +55,10 @@ const sourceRules = [
     "scripts/check-article-handoff.mjs",
     "articleReady requires an explicit resolved Amazon status",
   ],
+  [
+    "scripts/check-article-handoff.mjs",
+    "verified/direct status requires a confirmed product-detail URL",
+  ],
 ];
 
 if (!manual) errors.push("article workflow manual is missing");

@@ -4,6 +4,7 @@ import {
   getAmazonUnavailableEvidenceErrors,
   hasVerifiedPurchaseDestination,
 } from "./article-purchase-readiness.mjs";
+import { isAmazonProductDetailUrl } from "../config/runtime-env.mjs";
 
 const root = process.cwd();
 const articlesDir = path.join(root, "src", "content", "articles", "commercial");
@@ -193,6 +194,14 @@ for (const file of files) {
         manifest.amazon?.statusBySide?.[side] ?? manifest.amazon?.status;
       const rakutenStatus =
         manifest.rakuten?.statusBySide?.[side] ?? manifest.rakuten?.status;
+      if (
+        ["verified", "direct"].includes(amazonStatus) &&
+        !isAmazonProductDetailUrl(amazon)
+      ) {
+        errors.push(
+          `${articleId}: Amazon ${side} verified/direct status requires a confirmed product-detail URL; use search when the exact product URL is unavailable`,
+        );
+      }
       if (
         !hasVerifiedPurchaseDestination({
           amazonStatus,

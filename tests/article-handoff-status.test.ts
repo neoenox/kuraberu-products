@@ -8,6 +8,7 @@ function check(
   seedStatus: string,
   manifestStatus: string | undefined,
   ready = true,
+  includeAmazonUrl = manifestStatus !== "search",
 ) {
   const root = mkdtempSync(path.join(tmpdir(), "handoff-status-"));
   try {
@@ -24,7 +25,7 @@ function check(
       id: "fixture", handoffManifestId: "fixture", publishedAt: "2026-09-29",
       purchaseLinkStatus: "verified", amazonLinkStatus: "${seedStatus}",
       leftProduct: "Example Model123", rightProduct: "Example Model123",
-      ${manifestStatus === "search" ? "" : `leftAmazonUrl: "${amazon}", rightAmazonUrl: "${amazon}",`}
+      ${includeAmazonUrl ? `leftAmazonUrl: "${amazon}", rightAmazonUrl: "${amazon}",` : ""}
       leftRakutenUrl: "${rakuten}", rightRakutenUrl: "${rakuten}"
     };`,
     );
@@ -40,9 +41,7 @@ function check(
         },
         amazon: {
           status: manifestStatus,
-          ...(manifestStatus === "search"
-            ? {}
-            : { left: amazon, right: amazon }),
+          ...(includeAmazonUrl ? { left: amazon, right: amazon } : {}),
         },
         rakuten: { status: "verified", left: rakuten, right: rakuten },
       }),
@@ -66,6 +65,13 @@ describe("handoff Amazon publication gate", () => {
   });
   it("rejects an omitted Amazon status on a ready article", () => {
     expect(check("verified", undefined).status).toBe(1);
+  });
+  it("rejects verified Amazon status without a product URL even when Rakuten is verified", () => {
+    const result = check("verified", "verified", true, false);
+    expect(result.status).toBe(1);
+    expect(result.errors).toContain(
+      "verified/direct status requires a confirmed product-detail URL",
+    );
   });
   it.each(["unverified", "verified", "direct"])(
     "rejects seed-only unavailable with a %s handoff",
