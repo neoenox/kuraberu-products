@@ -28,6 +28,7 @@
     "https://www.ankerjapan.com/products/a2688"
   ],
   "amazon": {
+    "status": "verified",
     "left": "https://www.amazon.co.jp/dp/B0F99FCSX7",
     "right": "https://www.amazon.co.jp/dp/B0D73JBJ56"
   },

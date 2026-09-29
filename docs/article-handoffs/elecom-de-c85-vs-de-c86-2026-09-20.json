@@ -12,7 +12,7 @@
   "amazon": {
     "left": null,
     "right": null,
-    "status": "unconfirmed"
+    "status": "unverified"
   },
   "rakuten": {
     "status": "verified",
