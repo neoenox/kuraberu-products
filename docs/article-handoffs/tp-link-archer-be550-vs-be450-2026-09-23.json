@@ -26,8 +26,57 @@
     "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be450/"
   ],
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0CWR5F88G?tag=kuraberuprodu-22",
-    "right": "https://www.amazon.co.jp/dp/B0DG1JKNTQ?tag=kuraberuprodu-22"
+    "statusBySide": {
+      "left": "direct",
+      "right": "direct"
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "not-checked",
+        "evidence": "The Amazon Associates UI was not opened; this check used public Amazon product detail pages only.",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "matched",
+            "evidence": "Amazon's B0CWR5F88G page identifies a TP-Link BE9300 Wi-Fi 7 router and labels the product video Archer BE550/A; TP-Link's official Archer BE550 page identifies the BE9300 tri-band Wi-Fi 7 router. Checked 2026-09-29 JST."
+          },
+          "eligibility": {
+            "state": "not-checked",
+            "evidence": "The Associates item-level eligibility UI was not opened; eligibility and commission status remain unknown."
+          },
+          "taggedUrl": {
+            "state": "not-generated-in-associates-ui",
+            "evidence": "No Associates link-builder action was performed. The seed stores the canonical untagged ASIN URL and the site adds the approved runtime tag during build."
+          },
+          "destination": {
+            "state": "page-read",
+            "evidence": "Jina Reader fetched the public https://www.amazon.co.jp/dp/B0CWR5F88G product detail page on 2026-09-29 JST; a browser redirect-chain check was not performed."
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "matched",
+            "evidence": "Amazon's B0DG1JKNTQ page identifies TP-Link Archer BE450; TP-Link's official Archer BE450 page identifies the BE7200 dual-band Wi-Fi 7 router. Checked 2026-09-29 JST."
+          },
+          "eligibility": {
+            "state": "not-checked",
+            "evidence": "The Associates item-level eligibility UI was not opened; eligibility and commission status remain unknown."
+          },
+          "taggedUrl": {
+            "state": "not-generated-in-associates-ui",
+            "evidence": "No Associates link-builder action was performed. The seed stores the canonical untagged ASIN URL and the site adds the approved runtime tag during build."
+          },
+          "destination": {
+            "state": "page-read",
+            "evidence": "Jina Reader fetched the public https://www.amazon.co.jp/dp/B0DG1JKNTQ product detail page on 2026-09-29 JST; a browser redirect-chain check was not performed."
+          }
+        }
+      }
+    },
+    "left": "https://www.amazon.co.jp/dp/B0CWR5F88G",
+    "right": "https://www.amazon.co.jp/dp/B0DG1JKNTQ"
   },
   "rakuten": {
     "status": "verified",

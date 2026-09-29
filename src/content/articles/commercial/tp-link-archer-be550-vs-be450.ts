@@ -33,8 +33,10 @@ export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
   rightPoint: "10Gbps有線接続と高速な5GHz帯を優先する人向け",
   leftImage: "/products/tp-link-archer-be550.jpg",
   rightImage: "/products/tp-link-archer-be450.jpg",
-  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CWR5F88G?tag=kuraberuprodu-22",
-  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DG1JKNTQ?tag=kuraberuprodu-22",
+  leftAmazonUrl: "https://www.amazon.co.jp/dp/B0CWR5F88G",
+  leftAmazonLinkStatus: "direct",
+  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DG1JKNTQ",
+  rightAmazonLinkStatus: "direct",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57d512f5.e3c60952.57d512f6.6542e0ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2F8885020623956%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9%3D%3D",
   rightRakutenUrl:
