@@ -22,6 +22,7 @@
     ]
   },
   "amazon": {
+    "status": "verified",
     "left": "https://www.amazon.co.jp/dp/B0DB1HFZLK",
     "right": "https://www.amazon.co.jp/dp/B0CFTT82RH"
   },

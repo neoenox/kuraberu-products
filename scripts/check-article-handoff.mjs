@@ -110,7 +110,27 @@ for (const file of files) {
     const globalStatusMatch = /\bamazonLinkStatus\s*:\s*["']([^"']+)["']/.exec(
       source,
     );
-    const seedAmazonStatus = sideStatusMatch?.[1] ?? globalStatusMatch?.[1];
+    const purchaseStatusMatch =
+      /\bpurchaseLinkStatus\s*:\s*["']([^"']+)["']/.exec(source);
+    // Match PurchaseCard's per-side -> Amazon -> purchase status fallback.
+    const seedAmazonStatus =
+      sideStatusMatch?.[1] ??
+      globalStatusMatch?.[1] ??
+      purchaseStatusMatch?.[1] ??
+      "unverified";
+    if ((amazonStatus ?? "unverified") !== seedAmazonStatus) {
+      errors.push(
+        `${articleId}: Amazon ${side} handoff status must match the effective seed status`,
+      );
+    }
+    if (
+      manifest.articleReady === true &&
+      !["verified", "direct", "search", "unavailable"].includes(amazonStatus)
+    ) {
+      errors.push(
+        `${articleId}: articleReady requires an explicit resolved Amazon status for ${side}; use search for a confirmed product without an exact Amazon link`,
+      );
+    }
 
     if (amazonStatus === "search") {
       if (
@@ -142,7 +162,7 @@ for (const file of files) {
         typeof product?.model !== "string" ||
         product.model.trim() === "" ||
         matchingNameTerms.length < Math.min(2, productNameTerms.length) ||
-        !seedProduct.includes(product.model)
+        !seedProduct?.includes(product.model)
       ) {
         errors.push(
           `${articleId}: Amazon ${side} search CTA requires the handoff product name and model to be present in the seed query`,

@@ -46,7 +46,15 @@ const sourceRules = [
   ["src/components/PurchaseCard.astro", 'amazonLinkStatus === "search"'],
   ["src/components/PurchaseCard.astro", "Amazonで検索"],
   ["scripts/check-article-handoff.mjs", "getAmazonUnavailableEvidenceErrors"],
-  ["scripts/check-article-handoff.mjs", "seedProduct.includes(product.model)"],
+  ["scripts/check-article-handoff.mjs", "seedProduct?.includes(product.model)"],
+  [
+    "scripts/check-article-handoff.mjs",
+    "handoff status must match the effective seed status",
+  ],
+  [
+    "scripts/check-article-handoff.mjs",
+    "articleReady requires an explicit resolved Amazon status",
+  ],
 ];
 
 if (!manual) errors.push("article workflow manual is missing");
