@@ -25,7 +25,7 @@ const requiredRules = [
   "本文の順番は「結論 → 主な比較ポイント → よくある質問 → 購入先 → SNSでの感想 → 更新履歴・情報源」",
   "採用投稿を載せる場合は、XまたはYouTubeの実埋め込みを少なくとも1件",
   "埋め込みが1件もない場合はSNS見出し・検索リンク・直接リンクを表示しない",
-  "CTA横の「（広告）」、動画前の「外部コンテンツの表示」",
+  "未同意時は、外部送信の注意文と許可・拒否操作を含む共通の同意バナーを表示する",
 ];
 const forbiddenRules = [
   "必要な場合はユーザーが生成して後から渡す",
@@ -40,8 +40,9 @@ const sourceRules = [
   ],
   ["src/components/ExternalEmbed.astro", "aspect-ratio: 16 / 9"],
   ["src/components/ExternalEmbed.astro", "data-server-embed"],
-  ["src/components/ExternalEmbed.astro", "serverRenderYoutube"],
-  ["src/lib/external-embeds.ts", "https://www.youtube.com/embed/"],
+  ["src/components/ExternalEmbed.astro", 'if (consent === "granted")'],
+  ["src/components/ExternalEmbed.astro", "showConsentBanner();"],
+  ["src/lib/external-embeds.ts", "https://www.youtube-nocookie.com/embed/"],
   ["src/components/CommercialArticlePage.astro", 'id="purchase"'],
   ["src/components/PurchaseCard.astro", 'amazonLinkStatus === "search"'],
   ["src/components/PurchaseCard.astro", "Amazonで検索"],
@@ -99,6 +100,13 @@ if (
   errors.push(
     "current embed template still contains removed privacy/opt-out UI",
   );
+}
+if (
+  embedSource.includes("serverRenderYoutube") ||
+  embedSource.includes("src={config.embedUrl}") ||
+  embedSource.includes("consent === undefined && root.dataset.autoDisplay")
+) {
+  errors.push("current embed template can bypass the consent gate");
 }
 for (const relativePath of [
   "src/components/AffiliateButton.astro",
