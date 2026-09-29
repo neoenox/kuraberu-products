@@ -293,6 +293,43 @@ describe("Rakuten API request", () => {
     warning.mockRestore();
   });
 
+  it("aborts a stalled response body after the headers arrive", async () => {
+    vi.useFakeTimers();
+    const warning = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const fetchImpl = vi.fn(
+        async (_input: RequestInfo | URL, init?: RequestInit) =>
+          new Response(
+            new ReadableStream<Uint8Array>({
+              start(stream) {
+                init?.signal?.addEventListener(
+                  "abort",
+                  () => stream.error(new DOMException("aborted", "AbortError")),
+                  { once: true },
+                );
+              },
+            }),
+            { status: 200, headers: { "Content-Type": "application/json" } },
+          ),
+      ) as unknown as typeof fetch;
+
+      const productsPromise = requestRakutenProducts(
+        new URL("https://openapi.rakuten.co.jp/example"),
+        "secret-access-key",
+        { fetchImpl, timeoutMs: 50 },
+      );
+      await vi.advanceTimersByTimeAsync(50);
+
+      expect(await productsPromise).toEqual([]);
+      expect(warning).toHaveBeenCalledWith(
+        expect.stringContaining("タイムアウト"),
+      );
+    } finally {
+      warning.mockRestore();
+      vi.useRealTimers();
+    }
+  });
+
   it("rejects non-Rakuten URLs returned by the API", async () => {
     const fetchImpl = vi.fn(
       async () =>
