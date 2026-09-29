@@ -89,10 +89,10 @@
     "caveat": "EE-RV50の公式ページに運転音の数値がないことは、EE-DG50より大きいことを意味しない。連続加湿時間・適用床面積はメーカーの目安。"
   },
   "amazon": {
-    "status": "direct",
+    "status": "verified",
     "statusBySide": {
-      "left": "direct",
-      "right": "direct"
+      "left": "verified",
+      "right": "verified"
     },
     "left": "https://www.amazon.co.jp/dp/B0HGF5B9D8",
     "right": "https://www.amazon.co.jp/dp/B0HGFGSYXX",
@@ -115,12 +115,12 @@
             "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
-            "state": "not-recorded",
-            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される（PurchaseCard）。リンク生成UIでの生成は実施していない。"
+            "state": "verified",
+            "evidence": "Amazonアソシエイトのリンク生成ダイアログでストアID kuraberuprodu-22 を確認（2026-09-29）。本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0HGF5B9D8?tag=kuraberuprodu-22 のtagがこのストアIDと一致することを確認。ダイアログからの完全リンク（linkId付き）のコピーは取得できておらず、記事のリンクはビルド時にtagを付与した形式。"
           },
           "destination": {
-            "state": "not-recorded",
-            "evidence": "成果URL未生成のため遷移先確認は未実施。"
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名EE-DG50-WA、ASIN B0HGF5B9D8の商品詳細ページに到達。ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示（2026-09-29）。"
           }
         },
         "right": {
@@ -133,12 +133,12 @@
             "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
-            "state": "not-recorded",
-            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される（PurchaseCard）。リンク生成UIでの生成は実施していない。"
+            "state": "verified",
+            "evidence": "Amazonアソシエイトのリンク生成ダイアログでストアID kuraberuprodu-22 を確認（2026-09-29）。本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0HGFGSYXX?tag=kuraberuprodu-22 のtagがこのストアIDと一致することを確認。ダイアログからの完全リンク（linkId付き）のコピーは取得できておらず、記事のリンクはビルド時にtagを付与した形式。"
           },
           "destination": {
-            "state": "not-recorded",
-            "evidence": "成果URL未生成のため遷移先確認は未実施。"
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名EE-RV50-WA、ASIN B0HGFGSYXXの商品詳細ページに到達。ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示（2026-09-29）。"
           }
         }
       }
@@ -164,8 +164,7 @@
   },
   "unconfirmed": [
     "EE-RV50の入・切タイマー時間は公式本文と公式画像で読み取れる順序が異なるため、時間値を記事に掲載していない。",
-    "EE-RV50の運転音の数値は公式ページで確認できず、静かさの優劣は判断していない。",
-    "Amazonのリンク生成ダイアログでの成果URL生成と、タグ付きURLの遷移先の実機確認は未実施。購入リンクはdirect状態（ビルド時にtag付与）。"
+    "EE-RV50の運転音の数値は公式ページで確認できず、静かさの優劣は判断していない。"
   ],
-  "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み（verified）。Amazonはdirect（ビルド時tag付与、対象可否は未確認）。所有者の指示により2026-09-29に公開。"
+  "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み（verified）。AmazonはツールバーでのアソシエイトTag対象確認・タグ付きURLの遷移先確認済み（verified）。所有者の指示により2026-09-29に公開。"
 }
