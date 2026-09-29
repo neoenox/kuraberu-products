@@ -123,6 +123,7 @@ describe("article metadata", () => {
       "dyson-v12-vs-micro-plus",
       "elecom-de-c85-vs-de-c86",
       "sony-wf-1000xm6-vs-linkbuds-fit",
+      "sony-wf-c710n-vs-linkbuds-fit",
       "zojirushi-ee-dg50-vs-ee-rv50",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",

@@ -263,45 +263,26 @@ export async function requestRakutenProducts(
   const keyword = url.searchParams.get("keyword") ?? "";
   const keywordHash = hashKeywordSync(keyword);
 
-  let response: Response;
+  let response: Response | undefined;
   try {
     response = await fetchImpl(url, {
       headers: { accessKey },
       signal: controller.signal,
     });
-  } catch (error) {
-    const durationMs = Math.round(performance.now() - startTime);
-    console.warn(
-      "楽天API接続失敗またはタイムアウト: 購入リンクを未設定として続行します",
-    );
-    recordPerfEntry({
-      keywordHash,
-      durationMs,
-      httpStatus: 0,
-      productCount: 0,
-      cacheHit: false,
-      error: error instanceof Error ? error.message : "connection failed",
-    });
-    return [];
-  } finally {
-    clearTimeout(timeout);
-  }
+    if (!response.ok) {
+      const durationMs = Math.round(performance.now() - startTime);
+      console.warn(`楽天APIエラー: HTTP ${response.status}`);
+      recordPerfEntry({
+        keywordHash,
+        durationMs,
+        httpStatus: response.status,
+        productCount: 0,
+        cacheHit: false,
+        error: `HTTP ${response.status}`,
+      });
+      return [];
+    }
 
-  if (!response.ok) {
-    const durationMs = Math.round(performance.now() - startTime);
-    console.warn(`楽天APIエラー: HTTP ${response.status}`);
-    recordPerfEntry({
-      keywordHash,
-      durationMs,
-      httpStatus: response.status,
-      productCount: 0,
-      cacheHit: false,
-      error: `HTTP ${response.status}`,
-    });
-    return [];
-  }
-
-  try {
     const products = parseRakutenProducts(await response.json());
     const durationMs = Math.round(performance.now() - startTime);
     recordPerfEntry({
@@ -312,20 +293,33 @@ export async function requestRakutenProducts(
       cacheHit: false,
     });
     return products;
-  } catch {
+  } catch (error) {
     const durationMs = Math.round(performance.now() - startTime);
+    const timedOut = controller.signal.aborted;
+    const connectionFailed = !response || timedOut;
+    const errorMessage = timedOut
+      ? "timeout"
+      : response
+        ? "parse error"
+        : error instanceof Error
+          ? error.message
+          : "connection failed";
     console.warn(
-      "楽天APIレスポンス解析失敗: 購入リンクを未設定として続行します",
+      connectionFailed
+        ? "楽天API接続失敗またはタイムアウト: 購入リンクを未設定として続行します"
+        : "楽天APIレスポンス解析失敗: 購入リンクを未設定として続行します",
     );
     recordPerfEntry({
       keywordHash,
       durationMs,
-      httpStatus: 200,
+      httpStatus: connectionFailed ? 0 : (response?.status ?? 0),
       productCount: 0,
       cacheHit: false,
-      error: "parse error",
+      error: errorMessage,
     });
     return [];
+  } finally {
+    clearTimeout(timeout);
   }
 }
 

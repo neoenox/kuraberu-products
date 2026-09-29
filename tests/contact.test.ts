@@ -695,6 +695,48 @@ describe("onRequestPost", () => {
     vi.useRealTimers();
   });
 
+  it("returns 504 when Telegram's error response body stalls", async () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    try {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn(
+          async (_input: RequestInfo | URL, init?: RequestInit) =>
+            new Response(
+              new ReadableStream<Uint8Array>({
+                start(stream) {
+                  init?.signal?.addEventListener(
+                    "abort",
+                    () =>
+                      stream.error(new DOMException("aborted", "AbortError")),
+                    { once: true },
+                  );
+                },
+              }),
+              { status: 502 },
+            ),
+        ),
+      );
+
+      const responsePromise = onRequestPost({
+        request: postRequest(validForm()),
+        env: baseEnv(),
+        params: {},
+        data: {},
+      });
+      await vi.advanceTimersByTimeAsync(5_000);
+
+      const response = await responsePromise;
+      expect(response.status).toBe(504);
+      expect(await response.json()).toEqual({
+        ok: false,
+        error: "delivery timeout",
+      });
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it("clears the timeout after a successful Telegram response", async () => {
     const clearTimeoutSpy = vi.spyOn(globalThis, "clearTimeout");
     telegramOk();

@@ -29,6 +29,37 @@ if (-not $OutputRoot) {
     $OutputRoot = Join-Path $env:TEMP ("pdv-scenario-" + $Scenario)
 }
 
+# This script recursively replaces its output directory. Keep that operation
+# inside the dedicated per-scenario temp namespace, even when a caller passes
+# -OutputRoot explicitly. The wrapper uses pdv-contract-<scenario>; standalone
+# invocations default to pdv-scenario-<scenario>.
+if (-not $env:TEMP) {
+    throw 'TEMP must be set before running the post-deploy scenario driver.'
+}
+$tempRoot = [System.IO.Path]::GetFullPath($env:TEMP).TrimEnd(
+    [System.IO.Path]::DirectorySeparatorChar,
+    [System.IO.Path]::AltDirectorySeparatorChar
+)
+$fullOutputRoot = [System.IO.Path]::GetFullPath($OutputRoot)
+$outputParent = [System.IO.Path]::GetDirectoryName($fullOutputRoot).TrimEnd(
+    [System.IO.Path]::DirectorySeparatorChar,
+    [System.IO.Path]::AltDirectorySeparatorChar
+)
+$outputLeaf = [System.IO.Path]::GetFileName($fullOutputRoot)
+$allowedLeaves = @("pdv-scenario-$Scenario", "pdv-contract-$Scenario")
+if (-not [string]::Equals($outputParent, $tempRoot, [System.StringComparison]::OrdinalIgnoreCase) -or
+    $outputLeaf -notin $allowedLeaves) {
+    throw "Refusing unsafe OutputRoot '$OutputRoot'. Use the dedicated TEMP scenario directory for '$Scenario'."
+}
+$OutputRoot = $fullOutputRoot
+if (Test-Path -LiteralPath $OutputRoot) {
+    $existingOutputRoot = Get-Item -LiteralPath $OutputRoot -Force
+    if (-not $existingOutputRoot.PSIsContainer -or
+        ($existingOutputRoot.Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+        throw "Refusing to replace non-directory or reparse-point OutputRoot '$OutputRoot'."
+    }
+}
+
 # NOTE: PowerShell variable names are case-insensitive, and the dot-sourced
 # verification script binds its `$BaseUrl` param in THIS scope. Prefix stub
 # state with 'Stub' so the param binding cannot clobber it.
@@ -136,8 +167,8 @@ $scriptUnderTest = Join-Path $PSScriptRoot 'Invoke-PostDeployVerification.ps1'
 if (-not (Test-Path $scriptUnderTest)) {
     throw "Verification script not found: $scriptUnderTest"
 }
-if (Test-Path $OutputRoot) {
-    Remove-Item $OutputRoot -Recurse -Force
+if (Test-Path -LiteralPath $OutputRoot) {
+    Remove-Item -LiteralPath $OutputRoot -Recurse -Force
 }
 New-Item -ItemType Directory -Path $OutputRoot -Force | Out-Null
 $expectedTopPageFixture = Join-Path $OutputRoot 'exact-top.html'

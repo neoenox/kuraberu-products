@@ -196,9 +196,10 @@ const faq = seed.faqEntries?.length
 const socialProofQuery = seed.socialProofQuery ?? `${seed.leftProduct} ${seed.rightProduct}`;
 const hasSocialProof = Boolean(
   seed.socialProofHasPosts &&
-    ((seed.socialProofDirectPosts?.length ?? 0) > 0 ||
-      (seed.embeds?.length ?? 0) > 0 ||
-      seed.socialProofBestMatch),
+    seed.socialProofBestMatch &&
+    seed.socialProofBestMatch !== "brand" &&
+    ((seed.socialProofDirectPosts?.some((post) => post.href.trim()) ?? false) ||
+      (seed.embeds?.length ?? 0) > 0),
 );
 const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
 ---
@@ -257,6 +258,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         query={socialProofQuery}
         checkedAt={seed.socialProofCheckedAt}
         hasPosts={seed.socialProofHasPosts}
+        hasEmbeddedPosts={Boolean(seed.embeds?.length)}
         bestMatch={seed.socialProofBestMatch as any}
         directPosts={seed.socialProofDirectPosts}
       >

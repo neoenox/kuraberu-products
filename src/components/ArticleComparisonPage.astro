@@ -393,6 +393,7 @@ const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left
           query={resolved.socialProofQuery}
           checkedAt={resolved.socialProofCheckedAt}
           hasPosts={resolved.socialProofHasPosts}
+          hasEmbeddedPosts={Boolean(resolved.embeds?.length)}
           bestMatch={resolved.socialProofBestMatch as any}
           directPosts={resolved.socialProofLinks}
           searchLabel={resolved.socialProofSearchLabel}
