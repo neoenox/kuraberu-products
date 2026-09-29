@@ -87,10 +87,10 @@
     "caveat": "バッテリー持続時間と収録冊数はメーカーの目安・理論値。防水は水中での長時間利用を前提としない生活防水として案内されている。"
   },
   "amazon": {
-    "status": "direct",
+    "status": "verified",
     "statusBySide": {
-      "left": "direct",
-      "right": "direct"
+      "left": "verified",
+      "right": "verified"
     },
     "left": "https://www.amazon.co.jp/dp/B0D5D1DXZY",
     "right": "https://www.amazon.co.jp/dp/B0D5HSRM75",
@@ -113,12 +113,12 @@
             "evidence": "アソシエイト・ツールバーにカテゴリー『家電(含 キッチン家電、生活家電、理美容家電など)』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
-            "state": "not-recorded",
-            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される。リンク生成UIでの生成は実施していない。"
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0D5D1DXZY?tag=kuraberuprodu-22 のtagが、アソシエイトのストアID kuraberuprodu-22 と一致することを確認（2026-09-29）。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
           },
           "destination": {
-            "state": "not-recorded",
-            "evidence": "タグ付きURLの遷移先確認は、Chrome拡張の接続が切れたため未実施。"
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「Kobo Clara Colour カラー 電子書籍リーダー 6インチ 防水 ブラック」、ASIN B0D5D1DXZYの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
           }
         },
         "right": {
@@ -131,12 +131,12 @@
             "evidence": "アソシエイト・ツールバーにカテゴリー『家電(含 キッチン家電、生活家電、理美容家電など)』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
-            "state": "not-recorded",
-            "evidence": "タグなしの商品詳細URLを記載。ビルド時に環境変数 PUBLIC_AMAZON_ASSOCIATE_TAG のtagが自動付与される。リンク生成UIでの生成は実施していない。"
+            "state": "verified",
+            "evidence": "本番の公開ページに出力されるリンク https://www.amazon.co.jp/dp/B0D5HSRM75?tag=kuraberuprodu-22 のtagが、アソシエイトのストアID kuraberuprodu-22 と一致することを確認（2026-09-29）。ダイアログからの完全リンク（linkId付き）のコピーは取得しておらず、記事のリンクはビルド時にtagを付与した形式。"
           },
           "destination": {
-            "state": "not-recorded",
-            "evidence": "タグ付きURLの遷移先確認は、Chrome拡張の接続が切れたため未実施。"
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「Kobo Libra Colour カラー 電子書籍リーダー 7インチ 防水 ブラック」、ASIN B0D5HSRM75の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-09-29）。"
           }
         }
       }
@@ -161,9 +161,8 @@
     "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
   },
   "unconfirmed": [
-    "Amazonのタグ付きURLの遷移先は未確認（Chrome拡張の接続が切れたため）。確認後にverifiedへ更新する。",
     "楽天の成果URLの遷移先はクリックして確認していない。",
     "商品画像は公式の仕様表用画像（ホワイト・低解像度）で、購入先のブラックとは色が異なる。"
   ],
-  "publicationDecision": "公式仕様・価格・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazon対象可否（ツールバー）を確認済み。Amazonは遷移先未確認のためdirect。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
+  "publicationDecision": "公式仕様・価格・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。公開は所有者の明示指示待ちのため articleReady=false、seed は draft: true のまま。"
 }

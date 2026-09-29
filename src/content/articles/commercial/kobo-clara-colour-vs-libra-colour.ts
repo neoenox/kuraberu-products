@@ -9,7 +9,7 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
   handoffManifestId: "kobo-clara-colour-vs-libra-colour-2026-09-29",
   purchaseLinksCheckedAt: "2026-09-29",
   purchaseLinkStatus: "verified",
-  amazonLinkStatus: "direct",
+  amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
   title:
     "Kobo Clara ColourとLibra Colourの違いを比較｜画面サイズ・容量・ページ送りボタン",
