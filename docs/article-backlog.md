@@ -214,6 +214,20 @@
 - SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
 - handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
 
+### 富士フイルム instax mini Evo vs instax mini Evo Cinema
+
+- slug: `instax-mini-evo-vs-evo-cinema`
+- 状態: 記事データ作成済み（`draft: true`、公開は所有者の指示待ち）
+- 比較軸: 動画撮影、エフェクト、液晶モニター、AF、無線通信、サイズ・質量、カラー展開（レンズ・プリント出力時間・プリント可能枚数は共通）
+- 公式URL:
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo
+  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema
+- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、EvoはマップカメラBLACK、Evo CinemaはJoshin web）。Amazon（B0C85H3GTH / B0GGNPV24C）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
+- 画像: 公式デザインページの画像（EvoはBLACK正面、Evo Cinemaは斜め前方）
+- 価格: どちらもオープン価格。販売店の価格は掲載しない
+- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- handoff: `docs/article-handoffs/instax-mini-evo-vs-evo-cinema-2026-09-29.json`
+
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
