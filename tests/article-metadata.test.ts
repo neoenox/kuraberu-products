@@ -156,6 +156,7 @@ describe("article metadata", () => {
       "anker-a121a-vs-a2688",
       "anker-a1664-vs-a1654",
       "garmin-forerunner-570-vs-coros-pace-4",
+      "sony-wf-c710n-vs-soundcore-liberty-5",
       "jbl-tour-pro-3-vs-live-beam-3",
       "tp-link-archer-be550-vs-be450",
     ];
