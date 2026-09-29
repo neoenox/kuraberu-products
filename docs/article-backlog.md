@@ -181,10 +181,10 @@
 - 公式URL:
   - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
   - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/
-- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否は未確認
+- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否はツールバーで確認済み（対象・2.00%）。タグ付きURLの遷移先は未確認
 - 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは生成済み
 - SNS: 適格な実利用投稿を確認できず不採用。SNS欄は表示しない
-- 購入先: 楽天成果URLは両商品確認済み。Amazonはタグなし商品URLを`direct`で記載（ビルド時にtag付与、対象可否は未確認）
+- 購入先: 楽天成果URLは両商品確認済み。Amazonはタグなし商品URLを`direct`で記載（ビルド時にtag付与、対象可否はツールバーで確認済み（対象・2.00%）。タグ付きURLの遷移先は未確認）
 - handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
 
 ## 追加確認・保留

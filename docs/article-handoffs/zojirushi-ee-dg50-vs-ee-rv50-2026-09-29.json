@@ -100,8 +100,8 @@
     "rightAsin": "B0HGFGSYXX",
     "browserEvidence": {
       "sessionIndicator": {
-        "state": "not-recorded",
-        "evidence": "使用したブラウザー（Claude Cowork のブラウザーペイン）ではAmazonアソシエイト・ツールバーを確認していない。ログイン状態は記録しておらず、未ログインとは断定しない。",
+        "state": "observed",
+        "evidence": "Amazon商品ページ（EE-DG50-WA・EE-RV50-WA）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
         "observedAtJst": "2026-09-29"
       },
       "bySide": {
@@ -111,8 +111,8 @@
             "evidence": "Amazon.co.jp商品詳細ページで商品名「象印マホービン 加湿器 スチーム式 4.0L ホワイト EE-DG50-WA」、ブランド象印マホービン、寸法27.5×24×36.5cm、ASIN B0HGF5B9D8を確認（2026-09-29）。"
           },
           "eligibility": {
-            "state": "not-recorded",
-            "evidence": "アソシエイト・ツールバー上の対象可否表示は確認していない。"
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
             "state": "not-recorded",
@@ -129,8 +129,8 @@
             "evidence": "Amazon.co.jp商品詳細ページで商品名「象印マホービン 加湿器 スチーム式 3.0L ホワイト EE-RV50-WA」、ブランド象印マホービン、寸法26×24×31.5cm、ASIN B0HGFGSYXXを確認（2026-09-29）。"
           },
           "eligibility": {
-            "state": "not-recorded",
-            "evidence": "アソシエイト・ツールバー上の対象可否表示は確認していない。"
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-09-29）。"
           },
           "taggedUrl": {
             "state": "not-recorded",
@@ -165,7 +165,7 @@
   "unconfirmed": [
     "EE-RV50の入・切タイマー時間は公式本文と公式画像で読み取れる順序が異なるため、時間値を記事に掲載していない。",
     "EE-RV50の運転音の数値は公式ページで確認できず、静かさの優劣は判断していない。",
-    "Amazonの対象可否（アソシエイト・ツールバー表示）は未確認で、遷移先の実機確認も未実施。購入リンクはdirect状態（ビルド時にtag付与）。対象外と判明した場合はCTAを出さない。"
+    "Amazonのリンク生成ダイアログでの成果URL生成と、タグ付きURLの遷移先の実機確認は未実施。購入リンクはdirect状態（ビルド時にtag付与）。"
   ],
   "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み（verified）。Amazonはdirect（ビルド時tag付与、対象可否は未確認）。所有者の指示により2026-09-29に公開。"
 }
