@@ -5,3 +5,5 @@ sketches/
 coverage/
 pnpm-lock.yaml
 dist-baseline/
+# Search Console の所有権確認ファイル（配布された内容のまま保持する）
+public/google*.html
