@@ -5,7 +5,9 @@
 
 ## プライバシー設計
 
-- 保存するのは **イベント種別 / 商品ID / 配置（placement）/ ページパス / 時刻** のみ
+- 保存するのは **イベント種別（page_view / purchase）/ 商品ID / 配置（placement）/ ページパス / 流入元（src・ref）/ 時刻** のみ
+- 流入元は、リンクの `?src=`（x / instagram など、英数字・_・-の24文字まで）と、参照元の **ホスト名だけ**（パス・クエリは保存しない）。最初の流入を、同じタブの間だけ `sessionStorage` に保持する（Cookie や端末を識別する値は作らない）
+- 自動操作（`navigator.webdriver`）のブラウザは数えない
 - Cookie・フィンガープリント・**IP アドレスは収集・保存しない**
   （IP はレート制限の判定に一時使用するだけ）
 - 通信はすべて同一オリジン（`/api/events`）。第三者ドメインへは送信しない
@@ -31,13 +33,36 @@
 ## 保存形式（KV 有効時）
 
 - キー: `v1:events:YYYY-MM-DD:<uuid>`（日別・追記型で読み書き競合なし）
-- 値: `{"event", "productId", "placement", "path", "at"}`（IP・ユーザー識別子は含まない）
+- 値: `{"event", "productId", "placement", "linkType", "path", "src", "ref", "at"}`（IP・ユーザー識別子は含まない。項目は、あるものだけ保存）
 - TTL: 90日。集計は外部のダッシュボードやスクリプトで行う
 
-## KV の有効化手順（任意）
+## KV の有効化手順
 
-1. `pnpm exec wrangler kv namespace create kuraberu-events` で namespace を作成し id を控える
-2. `wrangler.jsonc` のコメントアウトされた `kv_namespaces` を有効化して id を設定する
-3. デプロイ後、`/api/events` が KV に書き込む
+本番は `wrangler pages deploy`（Cloudflare Pages への直接アップロード）でデプロイする。Pages Functions の KV は、**Pages プロジェクトの設定で紐づける**（`wrangler.jsonc` の `kv_namespaces` は、この配備方式では使われない可能性が高いため、変更しない）。
+
+1. namespace を作成する（作成済み: `kuraberu-events`、id `96b93901d4d3455aa3f0823a57f8b6c0`、2026-09-30）
+   `pnpm exec wrangler kv namespace create kuraberu-events`
+2. Cloudflare ダッシュボード → Workers & Pages → `kuraberu-products` → 設定 → バインディング → 追加 → **KV namespace**
+   変数名 `ANALYTICS_KV`、namespace `kuraberu-events`（本番環境）
+3. 次の本番デプロイ（`Deploy production`）から、`/api/events` が KV に書き込む（バインディングは、設定後のデプロイから有効）
 
 未設定のままでもサイトと計測の送信側は動作し続ける（保存だけが行われない）。
+
+### 制限
+
+- Workers KV の無料プランは、書き込みが 1 日 1,000 件まで。ページ表示（page_view）も 1 件ずつ保存するため、1 日の表示が約 1,000 を超えると、超過分のイベントは保存されずに破棄される（サイトの動作には影響しない）。増えたら、Workers Paid への切り替え、または集計方式の見直しを検討する。
+- 保存期間は最大 90 日。
+
+## 集計
+
+```bash
+pnpm report:analytics                       # 直近7日
+pnpm report:analytics -- --days 30
+pnpm report:analytics -- --namespace-id <id>
+```
+
+ローカルの `wrangler`（ログイン済み）で KV を **読み取り専用** で読み、日別のページ表示・購入クリック・クリック率、流入元別、配置別、リンク種別別、商品別、ページ別を出力する。注文（購入）は保存していない。楽天アフィリエイトと Amazon アソシエイトの管理画面のレポートで確認する。
+
+## 流入元の付け方
+
+SNS などに貼るリンクの末尾に `?src=<ラベル>` を付ける（例: `https://kuraberu-products.pages.dev/articles/instax-mini-13-vs-mini-41/?src=x`）。参照元のホスト名は自動で記録される。

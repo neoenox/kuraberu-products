@@ -23,6 +23,7 @@
     "validate:env": "node scripts/validate-build-env.mjs",
     "validate:content": "node scripts/validate-content.mjs",
     "check:css-usage": "node scripts/report-css-usage.mjs --fail-on-unused",
+    "report:analytics": "node scripts/report-analytics.mjs",
     "check:spec-claims": "node scripts/spec-claims.mjs check",
     "check:official-links": "node scripts/check-official-links.mjs check",
     "check:rendered": "node scripts/check-rendered-html.mjs",
