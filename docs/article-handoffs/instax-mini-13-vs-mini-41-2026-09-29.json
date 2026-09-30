@@ -169,15 +169,23 @@
     "right": "https://hb.afl.rakuten.co.jp/hgc/g00tit6n.w78ma4ce.g00tit6n.w78mb45d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4547410545173%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fksdenki%2Fi%2F10512579%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+    "status": "adopted",
+    "adoptedCount": 2,
+    "directPostUrls": [
+      "https://x.com/MermerAngel13/status/2085530915598750163",
+      "https://x.com/kyousaiochi/status/1918690411020955774"
+    ],
+    "embedUrls": [
+      "https://x.com/MermerAngel13/status/2085530915598750163",
+      "https://x.com/kyousaiochi/status/1918690411020955774"
+    ],
+    "note": "2026-09-30に、所有者のログイン済みChromeでXを読み取り専用で検索し、対象型番（mini 13・mini 41）を実際に購入した個人ユーザーの公開投稿を各1件採用。店舗・買取・メルカリ・公式・ポイ活・イベント告知の投稿は除外。採用した2アカウントは、プロフィールと直近の投稿で、個人の趣味アカウントであり、PR・アフィリエイト・案件表記がないことを目視確認。どちらも短い好意的な投稿であり、性能比較の根拠には使用しない。検索範囲はX（日本語、反応10以上）とYouTube。YouTubeは、店舗の宣伝動画と、投稿者が判別できない動画のみで、採用せず。"
   },
   "unconfirmed": [
     "楽天の成果URLの遷移先はクリックして確認していない。",
     "mini 41の公式仕様・特長にセルフタイマーとセルフィーミラーの記載がないことを、機能がないとは断定していない。",
-    "mini 13の発売時期、mini 41の色の名称は公式ページで確認できず、記事に掲載していない。"
+    "mini 13の発売時期、mini 41の色の名称は公式ページで確認できず、記事に掲載していない。",
+    "SNSの口コミは各1件で、どちらも好意的な短い投稿。否定的・中立的な意見は、条件に合う投稿を見つけられなかったため載せていない。"
   ],
   "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }
