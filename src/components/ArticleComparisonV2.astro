@@ -18,6 +18,10 @@ interface Side {
   purchaseHref?: string;
   /** クリック計測用の商品ID（任意） */
   productId?: string;
+  /** Amazon商品詳細URL（NextStepBlock のAmazonボタン用） */
+  amazonHref?: string;
+  /** Amazon導線の確認状態 */
+  amazonStatus?: "verified" | "direct" | "search" | "unverified" | "unavailable";
 }
 
 interface Props {
@@ -64,20 +68,20 @@ const {
     leftPoints={left.guidePoints}
     rightPoints={right.guidePoints}
   />
+  {showNextStepBlock && (
+    <NextStepBlock
+      left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image, amazonHref: left.amazonHref, amazonStatus: left.amazonStatus }}
+      right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image, amazonHref: right.amazonHref, amazonStatus: right.amazonStatus }}
+      diagnosisHref={diagnosisHref}
+      purchaseLinkStatus={purchaseLinkStatus}
+      showPurchaseCtas={showNextStepPurchaseCtas}
+    />
+  )}
   <VisualKeyDifferences
     leftLabel={`${left.brand} ${left.line}`}
     rightLabel={`${right.brand} ${right.line}`}
     items={rows}
     commonNote={commonNote}
   />
-  {showNextStepBlock && (
-    <NextStepBlock
-      left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image }}
-      right={{ label: `${right.brand} ${right.line}`, href: right.purchaseHref, productId: right.productId, image: right.image }}
-      diagnosisHref={diagnosisHref}
-      purchaseLinkStatus={purchaseLinkStatus}
-      showPurchaseCtas={showNextStepPurchaseCtas}
-    />
-  )}
   <TrustLine checkedAt={checkedAt} showDisclosure={false} />
 </section>

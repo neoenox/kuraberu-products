@@ -93,8 +93,10 @@ import { instaxMini13VsMini41Seed } from "./instax-mini-13-vs-mini-41";
 import { instaxMiniEvoVsEvoCinemaSeed } from "./instax-mini-evo-vs-evo-cinema";
 import { sonyZv1M2VsZv1fSeed } from "./sony-zv-1-ii-vs-zv-1f";
 import { sonyWfC710nVsSoundcoreLiberty5Seed } from "./sony-wf-c710n-vs-soundcore-liberty-5";
+import { airpods5VsAirpods4AncSeed } from "./airpods-5-vs-airpods-4-anc";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
+  airpods5VsAirpods4AncSeed,
   tpLinkArcherBe550VsBe450Seed,
   ankerNanoA1638VsA1256Seed,
   logicoolMxMaster4VsMxMaster3sSeed,

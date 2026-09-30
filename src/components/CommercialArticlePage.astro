@@ -224,12 +224,11 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     {!hasHeroSources && <TrustLine checkedAt={article.productInfoCheckedAt} />}
     {hasHeroSources ? (
       <ArticleComparisonV2
-        left={{ brand: leftHero.brand, line: leftHero.line, tagline: seed.leftPoint, image: images.left ?? '', imageAlt: seed.leftProduct, officialHref: leftOfficialHref, guidePoints: [seed.leftPoint], purchaseHref: leftProductHref }}
-        right={{ brand: rightHero.brand, line: rightHero.line, tagline: seed.rightPoint, image: images.right ?? '', imageAlt: seed.rightProduct, officialHref: rightOfficialHref, guidePoints: [seed.rightPoint], purchaseHref: rightProductHref }}
+        left={{ brand: leftHero.brand, line: leftHero.line, tagline: seed.leftPoint, image: images.left ?? '', imageAlt: seed.leftProduct, officialHref: leftOfficialHref, guidePoints: [seed.leftPoint], purchaseHref: leftProductHref, amazonHref: seed.leftAmazonUrl, amazonStatus: (seed.leftAmazonLinkStatus ?? seed.amazonLinkStatus ?? article.amazonLinkStatus) as any }}
+        right={{ brand: rightHero.brand, line: rightHero.line, tagline: seed.rightPoint, image: images.right ?? '', imageAlt: seed.rightProduct, officialHref: rightOfficialHref, guidePoints: [seed.rightPoint], purchaseHref: rightProductHref, amazonHref: seed.rightAmazonUrl, amazonStatus: (seed.rightAmazonLinkStatus ?? seed.amazonLinkStatus ?? article.amazonLinkStatus) as any }}
         rows={heroRows}
         checkedAt={seed.productInfoCheckedAt}
         purchaseLinkStatus={article.purchaseLinkStatus}
-        showNextStepBlock={false}
       />
     ) : <h2 id="key-differences">違いを確認する</h2>}
     {!hasHeroSources && (
