@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  INSTAX_FILM_CHECKED_AT,
+  instaxFilmOffers,
+  perSheet,
+} from '../../../data/instax-film-prices';
+import { ARTICLE_LAYOUT } from '../../../../config/article-layout.mjs';
+import { isAffiliateRakutenUrl } from '../../../../config/runtime-env.mjs';
+
+const title = 'instax mini フィルムは1枚いくら？パック別の最安を楽天の価格で比べた｜くらべる商品メモ';
+const description =
+  'チェキ（instax mini）の標準フィルムを、10枚・30枚・100枚のパック別に、送料込みの楽天市場の価格から1枚あたりで比べました。まとめ買いでどれだけ安くなるかがわかります。';
+
+const offers = [...instaxFilmOffers]
+  .map((offer) => ({
+    ...offer,
+    each: perSheet(offer),
+    href: offer.affiliateUrl,
+  }))
+  .sort((a, b) => a.each - b.each);
+
+// 成果報酬つきURLでない購入ボタンは公開させない（ビルドを失敗させる）
+for (const offer of offers) {
+  if (!isAffiliateRakutenUrl(offer.href)) {
+    throw new Error(`instax film guide: not an affiliate URL: ${offer.id}`);
+  }
+}
+
+const best = offers[0];
+const tenPack = offers.find((offer) => offer.sheets === 10)!;
+const bulkSaving = Math.round(tenPack.each * 100 - best.price);
+const yen = (value: number) => value.toLocaleString('ja-JP');
+const [year, month, day] = INSTAX_FILM_CHECKED_AT.split('-').map(Number);
+const checkedLabel = `${year}年${month}月${day}日`;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="wrap section article">
+    <p class="meta"><a href="/articles/">比較記事一覧</a> / instax mini フィルムの価格</p>
+
+    <h1>instax mini フィルムは1枚いくら？パック別の最安を比べた</h1>
+    <p class="lead">
+      チェキのフィルムは、まとめ買いすれば、どれだけ安くなるのか。楽天市場の価格を、1枚あたりに直して比べました。結論は、<strong>安くなるが、差は1枚あたり約{Math.round(tenPack.each - best.each)}円</strong>です。
+    </p>
+
+    <p class="notice">広告・PRを含みます。価格は{checkedLabel}に取得した値で、順位は価格だけで決めています。</p>
+
+    <h2>結論：100枚買うなら、約{yen(bulkSaving)}円安くなる</h2>
+    <p>
+      {best.packLabel}の最安は、{best.shop}の{yen(best.price)}円で、<strong>1枚あたり{best.each}円</strong>でした。10枚パックを1つずつ買うと1枚あたり{tenPack.each}円なので、100枚では約{yen(bulkSaving)}円の差になります。
+    </p>
+    <p>
+      逆に言えば、月に1〜2パックしか使わない人は、まとめ買いを急ぐ必要はありません。使い切るまでに時間がかかり、フィルムには使用期限があるためです。
+    </p>
+
+    <h2>1枚あたりの価格（安い順）</h2>
+    <div class="table-scroll">
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th scope="col">パック</th>
+            <th scope="col">1枚あたり</th>
+            <th scope="col">合計（税込・送料込み）</th>
+            <th scope="col">ショップと注意点</th>
+            <th scope="col">購入</th>
+          </tr>
+        </thead>
+        <tbody>
+          {offers.map((offer) => (
+            <tr>
+              <th scope="row">{offer.packLabel}</th>
+              <td data-label="1枚あたり"><strong>{offer.each}円</strong></td>
+              <td data-label="合計">{yen(offer.price)}円</td>
+              <td data-label="ショップと注意点">
+                {offer.shop}
+                {offer.note && <><br /><span class="meta">{offer.note}</span></>}
+              </td>
+              <td data-label="購入">
+                <a
+                  href={offer.href}
+                  target="_blank"
+                  rel="sponsored nofollow noopener noreferrer"
+                  data-cta-event={ARTICLE_LAYOUT.ctaEvent}
+                  data-placement={ARTICLE_LAYOUT.guidePlacement}
+                  data-product-id={offer.id}
+                >楽天市場で見る →</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">{checkedLabel}時点。価格・在庫は変わります。購入前に、販売ページで、価格・送料・在庫を確認してください。</p>
+
+    <h2>比べ方</h2>
+    <ul>
+      <li>対象は、白フレームの標準フィルム（instax mini JP 1）です。絵柄つき・モノクロ・限定品・中古は入れていません。</li>
+      <li>「送料込み」と表示された出品だけを比べました。送料別の出品は、送料しだいで順位が入れ替わるため、除いています。</li>
+      <li>20枚パック（JP 2）は、送料込みで見つかった出品が1枚あたり約290円で、10枚パックより割高でした。50枚は、送料込みの出品を確認できず、載せていません。</li>
+      <li>価格は楽天市場商品検索APIで取得した、税込の販売価格です。</li>
+    </ul>
+
+    <h2>フィルムを買う前に：カメラは決まっていますか？</h2>
+    <p>instax mini のフィルムは、どのチェキ（instax mini シリーズ）でも使えます。カメラをまだ選んでいない場合は、次の記事が参考になります。</p>
+    <ul>
+      <li><a href="/articles/instax-mini-13-vs-mini-41/">instax mini 13 と mini 41 の違い</a></li>
+      <li><a href="/articles/instax-mini-evo-vs-evo-cinema/">instax mini Evo と Evo Cinema の違い</a></li>
+    </ul>
+  </article>
+</BaseLayout>

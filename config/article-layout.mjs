@@ -13,6 +13,8 @@ export const ARTICLE_LAYOUT = {
   placements: ["article-end", "next-step"],
   // 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下）
   diagnosisPlacement: "diagnosis-result",
+  // 記事ではない解説ページ（/guides/ 配下）の購入リンク用 placement
+  guidePlacement: "guide",
   // 診断ページのイベント名（/api/events が受け付ける）。仕様（Analytics 節）の
   // イベント群を定義し、レイアウト契約と同じくここが唯一の情報源。
   diagnosisEvents: [

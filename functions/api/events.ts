@@ -158,6 +158,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const allowedPlacements = [
     ...ARTICLE_LAYOUT.placements,
     ARTICLE_LAYOUT.diagnosisPlacement,
+    ARTICLE_LAYOUT.guidePlacement,
   ];
   const isPurchase = event === ARTICLE_LAYOUT.ctaEvent;
   if (isPurchase && !allowedPlacements.includes(placement)) {

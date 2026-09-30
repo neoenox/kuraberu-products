@@ -30,6 +30,8 @@ export interface ArticleLayout {
   placements: readonly string[];
   /** 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下） */
   diagnosisPlacement: string;
+  /** 記事ではない解説ページ（/guides/ 配下）の購入リンク用 placement */
+  guidePlacement: string;
   /** 診断ページのイベント名（/api/events が受け付ける許可リスト） */
   diagnosisEvents: readonly string[];
   defaultPlacement: string;

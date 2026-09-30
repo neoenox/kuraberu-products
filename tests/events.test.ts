@@ -105,7 +105,11 @@ describe("click analytics endpoint", () => {
 
   // config/article-layout.mjs を唯一の情報源として、purchase イベントに
   // 許可される placement を網羅検証する（レイアウト変更時は自動追随する）。
-  it.each([...ARTICLE_LAYOUT.placements, ARTICLE_LAYOUT.diagnosisPlacement])(
+  it.each([
+    ...ARTICLE_LAYOUT.placements,
+    ARTICLE_LAYOUT.diagnosisPlacement,
+    ARTICLE_LAYOUT.guidePlacement,
+  ])(
     "accepts a purchase click with the %s placement and preserves it in KV",
     async (placement) => {
       const { kv, put } = makeKv();
