@@ -29,7 +29,7 @@ const requiredRules = [
   "HTML上のiframe存在だけでSNS表示確認を完了にしない",
   "親PRまたはベースブランチでも同じ失敗が起きるか比較する",
   "埋め込みが1件もない場合はSNS見出し・検索リンク・直接リンクを表示しない",
-  "未同意時は、外部送信の注意文と許可・拒否操作を含む共通の同意バナーを表示する",
+  "外部コンテンツは標準で表示し、外部送信の注意文と「表示しない」操作を含む共通の案内を記事内に表示する",
 ];
 const forbiddenRules = [
   "必要な場合はユーザーが生成して後から渡す",
@@ -44,8 +44,11 @@ const sourceRules = [
   ],
   ["src/components/ExternalEmbed.astro", "aspect-ratio: 16 / 9"],
   ["src/components/ExternalEmbed.astro", "data-server-embed"],
-  ["src/components/ExternalEmbed.astro", 'if (consent === "granted")'],
-  ["src/components/ExternalEmbed.astro", "showConsentBanner();"],
+  [
+    "src/components/ExternalEmbed.astro",
+    'if (getEffectiveConsent() !== "denied") {',
+  ],
+  ["src/components/ExternalEmbed.astro", "showConsentControl();"],
   ["src/lib/external-embeds.ts", "https://www.youtube-nocookie.com/embed/"],
   ["src/components/CommercialArticlePage.astro", 'id="purchase"'],
   ["src/components/PurchaseCard.astro", 'amazonLinkStatus === "search"'],
