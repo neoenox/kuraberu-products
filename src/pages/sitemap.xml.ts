@@ -58,6 +58,7 @@ const staticPaths: SitemapEntry[] = [
   { path: "/tools/product-finder/" },
   { path: "/guides/instax-mini-film-price/" },
   { path: "/guides/instax-mini-pattern-film-price/" },
+  { path: "/guides/sd-card-price-per-gb/" },
   ...diagnosisCategories.map((category) => ({
     path: `/tools/product-finder/${category.slug}/` as const,
   })),
