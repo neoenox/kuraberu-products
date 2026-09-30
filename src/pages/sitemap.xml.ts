@@ -57,6 +57,7 @@ const staticPaths: SitemapEntry[] = [
   { path: "/disclaimer/" },
   { path: "/tools/product-finder/" },
   { path: "/guides/instax-mini-film-price/" },
+  { path: "/guides/instax-mini-pattern-film-price/" },
   ...diagnosisCategories.map((category) => ({
     path: `/tools/product-finder/${category.slug}/` as const,
   })),
