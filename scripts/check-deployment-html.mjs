@@ -46,11 +46,19 @@ function validateSecurityHeaders() {
     );
 }
 
+// Search Console の所有権確認ファイル（google + 16桁の16進数 + .html）はページではない。
+// 1行のテキストだけで、title / canonical / h1 などを持たないため、ページ検査の対象外にする。
+const OWNERSHIP_VERIFICATION_FILE = /^google[0-9a-f]{16}\.html$/;
+
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     const current = path.join(directory, entry.name);
     if (entry.isDirectory()) walk(current);
-    else if (current.endsWith(".html")) htmlFiles.push(current);
+    else if (
+      current.endsWith(".html") &&
+      !OWNERSHIP_VERIFICATION_FILE.test(entry.name)
+    )
+      htmlFiles.push(current);
   }
 }
 
