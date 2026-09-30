@@ -1,0 +1,180 @@
+{
+  "id": "airpods-5-vs-airpods-4-anc-2026-09-30",
+  "articleId": "airpods-5-vs-airpods-4-anc",
+  "source": "Fresh product selection and research by Codex against Apple Japan official specifications and Amazon.co.jp product detail pages.",
+  "researchDateJst": "2026-09-30",
+  "articleReady": true,
+  "category": "ワイヤレスイヤホン",
+  "selection": {
+    "reason": "Appleの同じオープンイヤー型ANCラインで、ANCの公表比較、防塵・耐汗耐水等級、ケース機能に明確な選択差がある組み合わせ。AirPods 5は2026年9月発売の新モデルで、Apple公式比較表にAirPods 5とアクティブノイズキャンセリング搭載AirPods 4が別モデルとして掲載されている。",
+    "duplicateCheck": "2026-09-30に公開sitemap・記事一覧およびmainのsrc/pages/articles、src/content/articles、docs/article-handoffsを確認。AirPods Pro 3とSony WF-1000XM6、Sony WH-1000XM6とAirPods Maxの記事はあるが、AirPods 5とAirPods 4 ANCの比較はなし。確認済みの並行記事候補とも商品ペアの重複なし。"
+  },
+  "products": {
+    "left": {
+      "name": "AirPods 5（USB-C充電ケース）",
+      "model": "AirPods 5",
+      "officialUrl": "https://www.apple.com/jp/airpods-5/specs/",
+      "officialPageHttpStatus": 200,
+      "officialPageFinalUrl": "https://www.apple.com/jp/airpods-5/specs/",
+      "officialImageUrl": "https://www.apple.com/v/airpods-5/a/images/specs/hero_airpods_5gen__d26undxkde2q_large_2x.jpg",
+      "imageEvidence": "Apple JapanのAirPods 5仕様ページ内に掲載された製品画像。2026-09-30取得、HTTP 200、image/jpeg、404x430、14,191 bytes。public/products/airpods-5-hero.jpgとsrc/assets/products/airpods-5-hero.jpgへ保存。",
+      "officialSpecs": {
+        "chip": "H2",
+        "bluetooth": "Bluetooth 5.3",
+        "anc": "ANC搭載AirPods 4との比較で最大1.5倍（Appleの公表比較）",
+        "resistance": "防塵・耐汗耐水性能 IP57",
+        "case": "USB-C充電ケース",
+        "batteryWithAncPerCharge": "最大4時間",
+        "batteryWithAncIncludingCase": "最大20時間",
+        "earbudDimensionsEach": "30.2 x 18.3 x 18.1 mm",
+        "earbudWeightEach": "4.3 g"
+      },
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HJ9VNBZ8",
+      "amazonAsin": "B0HJ9VNBZ8"
+    },
+    "right": {
+      "name": "アクティブノイズキャンセリング搭載AirPods 4（ワイヤレス充電ケース）",
+      "model": "アクティブノイズキャンセリング搭載AirPods 4",
+      "officialUrl": "https://support.apple.com/ja-jp/121204",
+      "officialPageHttpStatus": 200,
+      "officialPageFinalUrl": "https://support.apple.com/ja-jp/121204",
+      "officialImageUrl": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121204-airpods-4-anc.png",
+      "imageEvidence": "Appleサポート技術仕様ページで確認したANC搭載AirPods 4の画像。2026-09-30取得、HTTP 200、image/png、1000x1000、206,662 bytes。public/products/airpods-4-anc.pngとsrc/assets/products/airpods-4-anc.pngへ保存。",
+      "officialSpecs": {
+        "chip": "H2",
+        "bluetooth": "Bluetooth 5.3",
+        "anc": "アクティブノイズキャンセリング搭載",
+        "resistance": "防塵・耐汗耐水性能 IP54",
+        "case": "Qi／Apple Watch充電器でのワイヤレス充電、「探す」機能用スピーカー搭載",
+        "batteryWithAncPerCharge": "最大4時間",
+        "batteryWithAncIncludingCase": "最大20時間",
+        "earbudDimensionsEach": "30.2 x 18.3 x 18.1 mm",
+        "earbudWeightEach": "4.3 g"
+      },
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DGJBNYVY",
+      "amazonAsin": "B0DGJBNYVY"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "priceBasis": "価格は記事に掲載しない。購入時点の価格と在庫は販売先で確認する案内に留める。",
+    "keyDifferences": [
+      "Apple公表のANC比較ではAirPods 5はANC搭載AirPods 4比で最大1.5倍。",
+      "防塵・耐汗耐水性能はAirPods 5がIP57、ANC搭載AirPods 4がIP54。",
+      "比較対象のAirPods 5はUSB-C充電ケース版。ANC搭載AirPods 4はQi／Apple Watch充電に対応し、「探す」用スピーカーを備えるケース。"
+    ],
+    "commonSpecs": [
+      "H2チップとBluetooth 5.3",
+      "ANC有効時のイヤホン単体の最大再生時間は4時間",
+      "ANC有効時にケースを併用した最大再生時間は20時間",
+      "イヤホン左右各30.2 x 18.3 x 18.1 mm、4.3 g"
+    ],
+    "caveat": "ANCの最大1.5倍はAppleが公表する比較試験上の表現で、実環境で同じ差が出るとは限らない。IP57/IP54は防水を意味せず、水上・水中のスポーツや運動には対応しない。AirPods 5にはワイヤレス充電ケース付きの別モデルもあり、本記事はUSB-C充電ケース版を対象とする。"
+  },
+  "amazon": {
+    "status": "direct",
+    "statusBySide": {
+      "left": "direct",
+      "right": "direct"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0HJ9VNBZ8",
+    "right": "https://www.amazon.co.jp/dp/B0DGJBNYVY",
+    "leftAsin": "B0HJ9VNBZ8",
+    "rightAsin": "B0DGJBNYVY",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "ログイン済みChromeのAmazon商品ページにアソシエイト・ツールバーを確認。表示にはカテゴリー「楽器」と販売手数料率2.00%が含まれていた。これはセッション表示の観察記録であり、商品別の対象可否とは分けて扱う。",
+        "observedAtJst": "2026-09-30"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページのページタイトルでApple AirPods 5を確認。URLのASINはB0HJ9VNBZ8。HTTP 200（2026-09-30）。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "アソシエイト・リンク生成UIに商品別適格性の明示表示はなかった。ツールバーにはカテゴリー「楽器」・販売手数料率2.00%が表示されたが、これは商品別適格性の証拠には使わない。"
+          },
+          "taggedUrl": {
+            "state": "runtime-tagged-in-render",
+            "evidence": "ローカル記事のAmazon CTAに未タグURLを基にした /dp/B0HJ9VNBZ8 リンクが表示され、tagクエリが1つだけ付くことを確認。クエリ値はAmazonアソシエイトUIで選択された追跡IDと一致（値は保存しない）。2026-09-30 JST。"
+          },
+          "destination": {
+            "state": "direct-page-verified",
+            "evidence": "Amazon.co.jpの未タグ商品URLをブラウザーで開き、AirPods 5（USB-C充電ケース）の商品タイトル・モデルを確認。/dp/B0HJ9VNBZ8の商品詳細ページがHTTP 200で表示された。2026-09-30 JST。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページのページタイトルでアクティブノイズキャンセリング搭載Apple AirPods 4を確認。URLのASINはB0DGJBNYVY。HTTP 200（2026-09-30）。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "アソシエイト・リンク生成UIに商品別適格性の明示表示はなかった。ツールバーにはカテゴリー「楽器」・販売手数料率2.00%が表示されたが、これは商品別適格性の証拠には使わない。"
+          },
+          "taggedUrl": {
+            "state": "runtime-tagged-in-render",
+            "evidence": "ローカル記事のAmazon CTAに未タグURLを基にした /dp/B0DGJBNYVY リンクが表示され、tagクエリが1つだけ付くことを確認。クエリ値はAmazonアソシエイトUIで選択された追跡IDと一致（値は保存しない）。2026-09-30 JST。"
+          },
+          "destination": {
+            "state": "direct-page-verified",
+            "evidence": "Amazon.co.jpの商品詳細ページでアクティブノイズキャンセリング搭載AirPods 4・ワイヤレス充電ケース版の商品タイトルとモデルを確認。/dp/B0DGJBNYVYの商品詳細ページがHTTP 200で表示された。2026-09-30 JST。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/580adb2a.5e046fc2.580adb2b.309f9903/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftry3%2F4549995725049%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/58021d7e.4983f3fd.58021d7f.1b074964/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fapple-rm2409012%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "leftProductPage": "https://item.rakuten.co.jp/try3/4549995725049/",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/rakutenmobile-store/apple-rm2409012/",
+    "rightProductVerified": true,
+    "generation": "楽天アフィリエイト公式URL入力欄に商品ページURLを入力して「リンクのみ」を生成。2026-09-30に生成URLを確認し、HTTP GETの最終到達先が左右とも商品詳細ページでHTTP 200であることを確認。",
+    "browserEvidence": {
+      "observedAtJst": "2026-09-30",
+      "ui": "楽天アフィリエイトにログインした画面の「URLを入力してリンクを作成」から商品ページごとに作成。",
+      "bySide": {
+        "left": {
+          "inputUrl": "https://item.rakuten.co.jp/try3/4549995725049/",
+          "productTitle": "Apple AirPods 5 MKFW4J/A ノイズキャンセリング H2チップ IP57 国内正規品",
+          "shopName": "TRYX3楽天市場店",
+          "productMatch": "楽天市場の商品説明にUSB-C充電ケース付き AirPods 5、型番MKFW4J/A、ANC、IP57を確認。",
+          "affiliateUiTitle": "Apple AirPods 5 MKFW4J/A ノイズキャンセリング H2チップ IP57 国内正規品",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://item.rakuten.co.jp/try3/4549995725049/",
+          "finalHttpStatus": 200
+        },
+        "right": {
+          "inputUrl": "https://item.rakuten.co.jp/rakutenmobile-store/apple-rm2409012/",
+          "productTitle": "Apple AirPods 4 アクティブノイズキャンセリング搭載（MXP93J/A）",
+          "shopName": "楽天モバイル公式 楽天市場店",
+          "productMatch": "楽天市場の商品説明にANC搭載、型番MXP93J/A、ワイヤレス充電ケースを確認。",
+          "affiliateUiTitle": "Apple AirPods 4 アクティブノイズキャンセリング搭載（MXP93J/A）",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://item.rakuten.co.jp/rakutenmobile-store/apple-rm2409012/",
+          "finalHttpStatus": 200
+        }
+      }
+    }
+  },
+  "social": {
+    "status": "none",
+    "embedUrls": [],
+    "note": "RedditでAirPods 5の個人使用感投稿を確認したが、前者は旧イヤホンからの乗り換え、後者もAirPods 4 ANCとの同条件比較ではない。投稿の感想を製品比較の根拠にせず、記事にSNS欄を設けない。"
+  },
+  "unconfirmed": ["Apple公式価格は調査・掲載していない。"],
+  "publicationDecision": "Amazon.co.jpで左右それぞれの正確な商品詳細ページとASINを確認し、HTTP 200を確認。記事seedには未タグの正規商品URLを保持し、サイトが設定済みのPUBLIC_AMAZON_ASSOCIATE_TAGをビルド時に付与する。商品別適格性ラベルはUIに表示されておらず、汎用カテゴリー料率から推定していない。楽天アフィリエイト公式UIで左右の商品ページに対応する成果URLを生成し、商品一致・ショップ・最終遷移先を確認。Amazonと楽天に各商品1件ずつ確認済み購入リンクがあるためarticleReady=true。公開用許可リスト外のdraftとして保留し、PRの承認と公開判断までは公開しない。"
+}

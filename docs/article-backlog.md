@@ -10,6 +10,23 @@
 4. 体験談・口コミを比較の根拠にせず、公式情報中心で構成できる
 5. 既存記事と検索意図・対象商品が過度に重複しない
 
+## 新規作成・確認中
+
+### Apple AirPods 5（USB-C充電ケース） vs アクティブノイズキャンセリング搭載AirPods 4
+
+- slug: airpods-5-vs-airpods-4-anc
+- Issue: #926（https://github.com/neoenox/kuraberu-products/issues/926）
+- 状態: 非公開ドラフト。Amazonの対象可否・成果URLの遷移先と楽天商品ページを未確認
+- 比較軸: Apple公表のANC比較、防塵・耐汗耐水等級、ケース機能、ANC有効時の電池持ち・本体寸法と重量
+- 公式URL:
+  - https://www.apple.com/jp/airpods-5/specs/
+  - https://www.apple.com/jp/airpods/compare/
+  - https://support.apple.com/ja-jp/121204
+- 画像: Apple公式仕様ページの画像を public/products/ と src/assets/products/ に保存
+- 販売先: Amazon商品名・ASINは確認済み。成果リンク生成と遷移先、楽天商品一致・成果リンクは未確認のため購入CTAを非表示
+- SNS: RedditのAirPods 5使用感を確認したが、AirPods 4 ANCとの同条件比較ではないため不採用。SNS欄は表示しない
+- handoff: docs/article-handoffs/airpods-5-vs-airpods-4-anc-2026-09-30.json
+
 ## 現在の公開済み（122本）
 
 | slug                                              | 状態                           |
@@ -211,7 +228,7 @@
 - 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
 - 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
 - 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- SNS: Xの個人購入者の投稿を各1件採用（2026-09-30確認、mini 13・mini 41）。どちらも短い好意的な投稿
 - handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
 
 ### 富士フイルム instax mini Evo vs instax mini Evo Cinema

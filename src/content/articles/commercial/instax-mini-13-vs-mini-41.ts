@@ -4,7 +4,7 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
   id: "instax-mini-13-vs-mini-41",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-29",
+  modifiedAt: "2026-09-30",
   productInfoCheckedAt: "2026-09-29",
   handoffManifestId: "instax-mini-13-vs-mini-41-2026-09-29",
   purchaseLinksCheckedAt: "2026-09-29",
@@ -177,9 +177,48 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
     "レンズ、撮影範囲、フラッシュ、現像時間は共通なので、機能とデザインの好みで選ぶ",
   ],
   socialProofQuery: "instax mini 13 mini 41 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-29",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-09-30",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  socialProofDirectPosts: [
+    {
+      label: "instax mini 13を購入した人の投稿（X）",
+      href: "https://x.com/MermerAngel13/status/2085530915598750163",
+      note: "購入後の感想についての公開投稿",
+    },
+    {
+      label: "instax mini 41を購入した人の投稿（X）",
+      href: "https://x.com/kyousaiochi/status/1918690411020955774",
+      note: "見た目の印象についての公開投稿",
+    },
+  ],
+  embeds: [
+    {
+      provider: "x",
+      url: "https://x.com/MermerAngel13/status/2085530915598750163",
+      title: "instax mini 13を購入した人の投稿",
+      match: "model",
+      purpose:
+        "instax mini 13を実際に購入した個人ユーザーの公開投稿です。性能比較の根拠には使用しません。",
+      summary:
+        "届いた翌日の投稿。まだ上手ではないが新しい趣味になりそうと感じ、思い切って買ってよかったと述べています。",
+      tone: "good",
+      autoload: true,
+      compact: true,
+    },
+    {
+      provider: "x",
+      url: "https://x.com/kyousaiochi/status/1918690411020955774",
+      title: "instax mini 41を購入した人の投稿",
+      match: "model",
+      purpose:
+        "instax mini 41を実際に購入した個人ユーザーの公開投稿です。性能比較の根拠には使用しません。",
+      summary: "購入した人の投稿。レトロな見た目をかわいいと評価しています。",
+      tone: "good",
+      autoload: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "instax mini 13",
