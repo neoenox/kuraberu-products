@@ -44,6 +44,8 @@ Environment の設定が未完了であり、これがないと Production deplo
 
 **変更ファイル**: `src/lib/embed-consent.ts`, `src/components/ExternalEmbed.astro`, `tests/embed-consent.test.ts`, `tests/e2e/embed-consent.e2e.ts`
 
+> 2026-09-30 更新: 所有者の判断で、同意前通信ブロックをやめ、標準表示（外部送信の案内と「表示しない」の拒否つき）に変更した。上の表は、変更前の実施内容の記録。詳細は `docs/external-embed-policy.md`。
+
 ### P1-3: BLOCKER/rollback 状態分離
 
 | 項目                   | 状態                      |

@@ -5,7 +5,7 @@
 
 ## 結論
 
-外部投稿は記事の主たる根拠にせず、購入品レビューやメーカー一次情報を補足する用途に限る。初回訪問では第三者サービスへ接続せず、外部送信の案内を読んだ読者が表示を許可した後に公式プレーヤーまたは公式ウィジェットを読み込む。`autoDisplay` を明示した投稿も、保存済みの許可がある再訪問時だけ自動読み込みする。読者はこのブラウザの設定を変更でき、保存済みの「表示しない」設定を優先する。
+外部投稿は記事の主たる根拠にせず、購入品レビューやメーカー一次情報を補足する用途に限る。外部コンテンツは標準で表示する（2026-09-30に所有者の判断で、同意後の表示から変更）。初期HTMLは第三者サービスへ接続せず、ページ読み込み後のJavaScriptが公式プレーヤーまたは公式ウィジェットを読み込む。記事内に外部送信の案内と「表示しない」の操作を1枚だけ表示し、保存済みの「表示しない」設定があるブラウザでは外部サービスへ接続しない。
 
 Phase 1では、URLから安全に公式表示へ変換でき、任意HTMLを保存せずに実装できるサービスだけを採用する。Redditは公式のredditmedia.com iframeを使う。
 
@@ -113,8 +113,8 @@ externalEmbeds:
 ### 読み込みとフォールバック
 
 - 初期HTMLには第三者scriptタグやiframeを出力しない。
-- 読者の表示許可後にのみ外部リソースを読み込む。保存済みの許可がある場合は再訪問時に自動読み込みできる。
-- 表示前に外部送信の可能性を案内する。
+- 標準ではページ読み込み後に外部リソースを読み込む。保存済みの「表示しない」設定があるブラウザでは読み込まない。
+- 記事内に外部送信の可能性の案内と「表示しない」「表示する」の操作を表示する。
 - 元投稿への通常リンクを常に残す。
 - JavaScript無効、通信失敗、削除済み投稿でも記事本文と元リンクを利用できる。
 - 外部scriptは同一URLにつき1回だけ読み込む。
@@ -127,7 +127,7 @@ Cloudflare Workers Static Assetsの正式な`public/_headers`方式で、生成�
 
 許可する外部originは、Phase 1の公式読み込み先に限定する。
 
-- `script-src`: Xの`platform.twitter.com`、Pinterestの`assets.pinterest.com`と`widgets.pinterest.com`。初期HTMLの第三者scriptは0件で、クリック後だけ読み込む。`widgets.pinterest.com`は公式PinウィジェットがPin情報を取得するJSONPの配信元で、描画に必須の機能ドメインである。追跡用の`log.pinterest.com`ビーコンは`img-src`で許可せず、描画はこのビーコンなしで成立する。
+- `script-src`: Xの`platform.twitter.com`、Pinterestの`assets.pinterest.com`と`widgets.pinterest.com`。初期HTMLの第三者scriptは0件で、ページ読み込み後のJavaScriptが読み込む（「表示しない」設定では読み込まない）。`widgets.pinterest.com`は公式PinウィジェットがPin情報を取得するJSONPの配信元で、描画に必須の機能ドメインである。追跡用の`log.pinterest.com`ビーコンは`img-src`で許可せず、描画はこのビーコンなしで成立する。
 - `frame-src`: Xの`platform.twitter.com`、Pinterestの`assets.pinterest.com`、YouTubeの`www.youtube-nocookie.com`、TikTokの`www.tiktok.com`。
 - `connect-src`: Xウィジェットが使用する`platform.twitter.com`、`cdn.syndication.twimg.com`、`api.twitter.com`と、Pinterestの`assets.pinterest.com`。
 - `img-src`: Xの`pbs.twimg.com` / `abs.twimg.com`、Pinterestの`i.pinimg.com`、サイト自身、`data:`。
@@ -137,9 +137,13 @@ Cloudflare Workers Static Assetsの正式な`public/_headers`方式で、生成�
 
 ## プライバシー
 
-外部埋め込みを表示すると、対象サービスへIPアドレス、ブラウザ情報、閲覧ページ、Cookie等が送信される場合がある。そのため、サイトのプライバシーポリシーと各埋め込み直前の案内の両方で説明する。
+外部埋め込みを表示すると、対象サービスへIPアドレス、ブラウザ情報、閲覧ページ、Cookie等が送信される場合がある。そのため、サイトのプライバシーポリシーと記事内の案内の両方で説明する（送信先のサービス名、送信される情報、目的は`src/pages/privacy.astro`）。
 
-未同意または拒否済みの読者については、外部サービスのスクリプトやiframeを読み込まない設計を維持する。
+「表示しない」を選んだ読者については、外部サービスのスクリプトやiframeを読み込まない設計を維持する。
+
+### 標準表示への変更の経緯（2026-09-30）
+
+従来は、外部通信の前に読者の許可を求める設計（同意ゲート）だった。所有者の判断で、標準表示（開示と拒否の手段つき）に変更した。日本の外部送信規律（電気通信事業法）は、通知・公表または拒否の手段を求めるもので、事前の同意までは求めないという理解に基づく。この理解は法的助言ではなく、対象となるか、必要な記載項目は、必要に応じて専門家に確認する。
 
 ## サービス固有の注意
 

@@ -5,13 +5,16 @@
  * 同意状態は localStorage に保存され、同一ブラウザで再訪問時にも
  * 同意状態が維持される。
  *
- * - 未設定: consent is unknown, prompt the user
+ * - 未設定: 標準で表示する（DEFAULT_CONSENT = "granted" として扱う）
  * - granted: user accepted, autoload embeds may proceed
  * - denied: user declined, embeds remain in manual-load mode
  */
 
 const CONSENT_KEY = "embed-consent";
 export type EmbedConsent = "granted" | "denied";
+
+/** 保存済みの選択がないときの扱い。外部コンテンツは標準で表示する。 */
+export const DEFAULT_CONSENT: EmbedConsent = "granted";
 
 declare global {
   interface Window {
@@ -112,6 +115,14 @@ export function getCachedConsent(): EmbedConsent | undefined {
     window.__embedConsent = consent;
   }
   return consent;
+}
+
+/**
+ * 実際に適用する状態を返す。保存済みの選択があればそれを優先し、
+ * 未設定なら DEFAULT_CONSENT（標準で表示）を返す。
+ */
+export function getEffectiveConsent(): EmbedConsent {
+  return getCachedConsent() ?? DEFAULT_CONSENT;
 }
 
 export const STORAGE_KEY = CONSENT_KEY;
