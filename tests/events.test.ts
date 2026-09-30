@@ -424,3 +424,75 @@ describe("click analytics endpoint", () => {
     expect(value.rank).toBe("2");
   });
 });
+
+describe("page view and traffic source events", () => {
+  it("accepts a page_view without a placement and persists src / ref", async () => {
+    const { kv, put } = makeKv();
+    const response = await onRequestPost(
+      context(
+        postRequest(
+          JSON.stringify({
+            event: ARTICLE_LAYOUT.pageViewEvent,
+            path: "/articles/instax-mini-13-vs-mini-41/",
+            src: "X",
+            ref: "t.co",
+          }),
+        ),
+        baseEnv(undefined, kv),
+      ),
+    );
+    expect(response.status).toBe(204);
+    expect(put).toHaveBeenCalledTimes(1);
+    const parsed = JSON.parse(put.mock.calls[0][1] as string);
+    expect(parsed.event).toBe("page_view");
+    expect(parsed.path).toBe("/articles/instax-mini-13-vs-mini-41/");
+    expect(parsed.src).toBe("x");
+    expect(parsed.ref).toBe("t.co");
+    expect(parsed.placement).toBeUndefined();
+  });
+
+  it("stores src and ref on a purchase click too", async () => {
+    const { kv, put } = makeKv();
+    const response = await onRequestPost(
+      context(
+        postRequest(validPayload({ src: "instagram", ref: "l.instagram.com" })),
+        baseEnv(undefined, kv),
+      ),
+    );
+    expect(response.status).toBe(204);
+    const parsed = JSON.parse(put.mock.calls[0][1] as string);
+    expect(parsed.src).toBe("instagram");
+    expect(parsed.ref).toBe("l.instagram.com");
+  });
+
+  it("drops an invalid src or ref instead of rejecting the event", async () => {
+    const { kv, put } = makeKv();
+    const response = await onRequestPost(
+      context(
+        postRequest(
+          JSON.stringify({
+            event: "page_view",
+            path: "/",
+            src: "<script>alert(1)</script>",
+            ref: "https://evil.example/path?token=secret",
+          }),
+        ),
+        baseEnv(undefined, kv),
+      ),
+    );
+    expect(response.status).toBe(204);
+    const parsed = JSON.parse(put.mock.calls[0][1] as string);
+    expect(parsed.src).toBeUndefined();
+    expect(parsed.ref).toBeUndefined();
+  });
+
+  it("still requires a valid placement for purchase events", async () => {
+    const response = await onRequestPost(
+      context(
+        postRequest(validPayload({ placement: "somewhere-else" })),
+        baseEnv(),
+      ),
+    );
+    expect(response.status).toBe(400);
+  });
+});

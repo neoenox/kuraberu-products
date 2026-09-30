@@ -26,6 +26,7 @@ export interface RelatedSelectionConfig {
 
 export interface ArticleLayout {
   ctaEvent: string;
+  pageViewEvent: string;
   placements: readonly string[];
   /** 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下） */
   diagnosisPlacement: string;

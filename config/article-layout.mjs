@@ -7,6 +7,8 @@
 export const ARTICLE_LAYOUT = {
   // 購入 CTA を識別するマーカー属性の値（AffiliateButton / NextStepBlock が出力し、ゲートが探す）
   ctaEvent: "purchase",
+  // ページ表示の計測イベント（/api/events が受け付ける。購入クリック率の分母）
+  pageViewEvent: "page_view",
   // PurchaseCard / NextStepBlock の placement prop が取り得る値
   placements: ["article-end", "next-step"],
   // 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下）

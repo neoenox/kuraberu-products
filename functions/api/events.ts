@@ -53,10 +53,29 @@ interface AnalyticsEvent {
   linkType?: string;
   path?: string;
   rank?: string;
+  src?: string;
+  ref?: string;
 }
 
 function isValidProductId(value: string): boolean {
   return /^[a-z0-9][a-z0-9-]{0,63}$/.test(value);
+}
+
+// 流入元の計測（任意）。不正な値はイベントを拒否せず、黙って保存しない。
+// src: リンクの ?src= で付ける流入元ラベル（x / instagram など）
+// ref: 参照元のホスト名だけ（パスやクエリは保存しない）
+function normalizeSrc(value: unknown): string | undefined {
+  return typeof value === "string" && /^[a-z0-9][a-z0-9_-]{0,23}$/i.test(value)
+    ? value.toLowerCase()
+    : undefined;
+}
+
+function normalizeRefHost(value: unknown): string | undefined {
+  return typeof value === "string" &&
+    value.length <= 80 &&
+    /^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(value)
+    ? value.toLowerCase()
+    : undefined;
 }
 
 function isValidPath(value: string): boolean {
@@ -124,6 +143,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const event = typeof body.event === "string" ? body.event : "";
   const allowedEvents = [
     ARTICLE_LAYOUT.ctaEvent,
+    ARTICLE_LAYOUT.pageViewEvent,
     ...ARTICLE_LAYOUT.diagnosisEvents,
   ];
   if (!allowedEvents.includes(event)) {
@@ -168,6 +188,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       ? body.rank
       : undefined;
 
+  const src = normalizeSrc(body.src);
+  const ref = normalizeRefHost(body.ref);
+
   const path = typeof body.path === "string" ? body.path : "";
   if (path && !isValidPath(path)) {
     return json({ ok: false, error: "invalid path" }, 400);
@@ -185,6 +208,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       ...(linkType ? { linkType } : {}),
       ...(rank ? { rank } : {}),
       ...(path ? { path } : {}),
+      ...(src ? { src } : {}),
+      ...(ref ? { ref } : {}),
       at: new Date().toISOString(),
     });
     try {

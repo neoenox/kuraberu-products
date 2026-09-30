@@ -23,6 +23,49 @@
     }).catch(function () {});
   }
 
+  // 流入元（チャネル）の把握用。リンクの ?src= と、参照元のホスト名だけを使う。
+  // 同じタブの間だけ sessionStorage に保持する（Cookie や端末を識別する値は作らない）。
+  function trafficSource() {
+    var src = "";
+    var ref = "";
+    try {
+      var param = new URLSearchParams(location.search).get("src") || "";
+      if (/^[a-z0-9][a-z0-9_-]{0,23}$/i.test(param)) src = param.toLowerCase();
+    } catch {}
+    try {
+      if (document.referrer) {
+        var host = new URL(document.referrer).hostname;
+        if (host && host !== location.hostname) ref = host.toLowerCase();
+      }
+    } catch {}
+    try {
+      if (src || ref) {
+        // 最初の流入を、そのタブの間、保持する
+        if (!sessionStorage.getItem("kp-first-touch")) {
+          sessionStorage.setItem(
+            "kp-first-touch",
+            JSON.stringify({ src: src, ref: ref }),
+          );
+        }
+      }
+      var stored = JSON.parse(
+        sessionStorage.getItem("kp-first-touch") || "null",
+      );
+      if (stored) {
+        src = src || stored.src || "";
+        ref = ref || stored.ref || "";
+      }
+    } catch {}
+    return { src: src, ref: ref };
+  }
+
+  function withSource(payload) {
+    var source = trafficSource();
+    if (source.src) payload.src = source.src;
+    if (source.ref) payload.ref = source.ref;
+    return payload;
+  }
+
   function linkType(cta) {
     var href = cta.getAttribute("href") || "";
     try {
@@ -56,6 +99,11 @@
     if (cta.dataset.rank) {
       payload.rank = cta.dataset.rank;
     }
-    sendEvent(payload);
+    sendEvent(withSource(payload));
   });
+
+  // ページ表示の計測（購入クリック率の分母）。自動操作（webdriver）は数えない。
+  if (!navigator.webdriver) {
+    sendEvent(withSource({ event: "page_view", path: location.pathname }));
+  }
 })();
