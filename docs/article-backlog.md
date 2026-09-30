@@ -211,7 +211,7 @@
 - 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
 - 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
 - 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
+- SNS: Xの個人購入者の投稿を各1件採用（2026-09-30確認、mini 13・mini 41）。どちらも短い好意的な投稿
 - handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
 
 ### 富士フイルム instax mini Evo vs instax mini Evo Cinema
