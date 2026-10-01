@@ -6,6 +6,9 @@ import { site } from '../config/site';
 import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
 import { isPublishedArticlePath } from '../../config/article-template-policy.mjs';
+import { instaxFilmOffers, perSheet as filmPerSheet } from '../data/instax-film-prices';
+import { instaxPatternOffers, perSheet as patternPerSheet } from '../data/instax-pattern-film-prices';
+import { sdCardOffers, perGb } from '../data/sd-card-prices';
 
 // 新着比較：旧テンプレートの互換ページを除き、公開日が新しい記事を表示する。
 // 互換ページのURLは維持しつつ、トップページの新着枠へは再掲しない。
@@ -34,6 +37,42 @@ const latestItemListJson = safeJsonForScript({
   })),
 });
 
+// 価格ガイド：1枚あたり・1GBあたりの価格ページ。表示する価格帯は、各ページと同じデータから導出する。
+const range = (values: number[]) => {
+  const low = Math.round(Math.min(...values));
+  const high = Math.round(Math.max(...values));
+  return `${low}〜${high}`;
+};
+const priceGuides = [
+  {
+    path: '/guides/instax-mini-film-price/',
+    title: 'チェキのフィルムは1枚いくら？',
+    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/cheki/cabinet/tokiwacamera42/4547410377224n-1.jpg?_ex=200x200',
+    imageAlt: 'instax mini フィルム（10枚入り）',
+    unit: '1枚あたり',
+    figure: range(instaxFilmOffers.map(filmPerSheet)),
+    summary: '10枚・30枚・100枚のパック別に、送料込みの最安を比べました。',
+  },
+  {
+    path: '/guides/instax-mini-pattern-film-price/',
+    title: 'チェキの絵柄つきフィルムは1枚いくら？',
+    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/mituboshicamera/cabinet/goods_08/imgrc0115267911.jpg?_ex=200x200',
+    imageAlt: 'instax mini フィルム レインボー（10枚入り）',
+    unit: '1枚あたり',
+    figure: range(instaxPatternOffers.map(patternPerSheet)),
+    summary: 'モノクロームと8つの柄を、無地との差つきで比べました。',
+  },
+  {
+    path: '/guides/sd-card-price-per-gb/',
+    title: '4K動画向けSDカードは1GBいくら？',
+    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/pc-goodmedia/cabinet/img09/imgrc0162361812.jpg?_ex=200x200',
+    imageAlt: 'キオクシア EXCERIA G2 SDXCカード',
+    unit: '1GBあたり',
+    figure: range(sdCardOffers.map(perGb)),
+    summary: '64GB〜512GBを容量別に比べました。大容量ほど、1GBあたりは安くなります。',
+  },
+];
+
 // カテゴリ入口：記事数が topPage.categoryMinArticles 以上のカテゴリを表示。
 // 件数が多い順 → 名前順。リンク先は /articles/category/…（カテゴリページの
 // クライアント側フィルタが URL パラメータを読んで絞り込む）。
@@ -59,19 +98,41 @@ const categories = [...categoryCounts.entries()]
   <section class="wrap section section-intro hero-section">
     <p class="eyebrow">くらべる商品メモ</p>
     <h1 class="hero-heading">家電・日用品を<br class="hero-br" />くらべて、選ぶ。</h1>
-    <p class="lead">似ていて迷う2商品を、違いと「<strong>どっち向き？</strong>」で比較します。<br />メーカー公式情報を中心に確認しています。</p>
+    <p class="lead">買う前の迷いを、メーカー公式情報と、実際の価格の数字で整理します。</p>
     <form class="top-search" role="search" aria-label="比較記事を検索" data-top-search action="/articles/" method="get">
       <input type="search" name="q" maxlength="100" autocomplete="off" placeholder="商品名・用途・悩みで検索（例: 電気ケトル、軽い）" aria-label="商品名・用途・悩みで検索" />
       <button type="submit" class="secondary-button">検索</button>
     </form>
   </section>
 
-  <section class="wrap section" data-top-latest>
+  <section class="wrap section" id="guides" data-top-guides>
     <div class="subsection-heading">
-      <p class="section-label">新着比較</p>
-      <h2>最近追加した記事</h2>
+      <p class="section-label">価格ガイド</p>
+      <h2>いくらで買える？</h2>
     </div>
-    <p class="lead">新しく追加した比較記事を、公開日の新しい順に紹介します。</p>
+    <p class="lead">楽天市場の価格を、1枚・1GBあたりに直して比べました。</p>
+    <div class="article-list top-article-list">
+      {priceGuides.map((guide) => (
+        <article class="card guide-card">
+          <div class="guide-visual">
+            <img class="guide-image" src={guide.image} alt={guide.imageAlt} width="200" height="200" loading="lazy" referrerpolicy="no-referrer" />
+            <p class="guide-stat" aria-hidden="true"><span class="guide-unit">{guide.unit}</span><span class="guide-figure">{guide.figure}</span><span class="guide-yen">円</span></p>
+          </div>
+          <div class="card-body">
+            <h3><a href={guide.path}>{guide.title}</a></h3>
+            <p class="card-desc">{guide.summary}</p>
+            <span class="guide-more" aria-hidden="true">価格を比べる →</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap section" id="compare" data-top-latest>
+    <div class="subsection-heading">
+      <p class="section-label">比較記事</p>
+      <h2>どっちを買う？</h2>
+    </div>
     {latest.length > 0 ? (
       <div class="article-list top-article-list">
         {latest.map((article) => (
@@ -84,12 +145,13 @@ const categories = [...categoryCounts.entries()]
     <script is:inline type="application/ld+json" set:html={latestItemListJson}></script>
   </section>
 
+  <div class="wrap"><p class="top-see-all"><a class="text-link" href="/articles/">比較記事をすべて見る →</a></p></div>
+
   <section class="wrap section" data-top-categories>
     <div class="subsection-heading">
       <p class="section-label">カテゴリ</p>
       <h2>カテゴリから探す</h2>
     </div>
-    <p class="lead">比較したいジャンルから記事を探せます。</p>
     {categories.length > 0 ? (
       <ul class="category-list">
         {categories.map(([category, count]) => (
@@ -106,23 +168,20 @@ const categories = [...categoryCounts.entries()]
     )}
   </section>
 
-  <section class="wrap section section-diagnosis" data-top-diagnosis>
-    <div class="subsection-heading">
+  <div class="wrap"><div class="top-tools">
+    <section class="top-tool" data-top-diagnosis>
       <p class="section-label">商品診断</p>
       <h2>迷っているなら、30秒で診断</h2>
-    </div>
-    <p class="lead">使い方に合う商品が分からない人向け。メーカー公式情報に基づいて、選び方を整理します。</p>
-    <p class="diagnosis-actions"><a class="primary-button" href="/tools/product-finder/">商品選択診断を始める →</a></p>
-  </section>
-
-  <section class="wrap section" data-top-memo>
-    <div class="subsection-heading">
+      <p>数問に答えるだけ。公式情報に基づいて、合う商品を整理します。</p>
+      <p class="diagnosis-actions"><a class="primary-button" href="/tools/product-finder/">診断を始める →</a></p>
+    </section>
+    <section class="top-tool" data-top-memo>
       <p class="section-label">比較メモ</p>
       <h2>候補をブラウザにメモ</h2>
-    </div>
-    <p class="lead">目的・条件・候補・決定理由をこのブラウザに記録できます。保存は端末内だけです。</p>
-    <p class="diagnosis-actions"><a class="primary-button" href="/memo/">比較メモを開く →</a></p>
-  </section>
+      <p>目的・条件・候補・決め手を記録できます。保存は、この端末の中だけです。</p>
+      <p class="diagnosis-actions"><a class="primary-button" href="/memo/">比較メモを開く →</a></p>
+    </section>
+  </div></div>
 
   <section class="section section-rule"><div class="wrap editor-note"><p class="section-label">このサイトの見方</p><h2>判断材料を、盛らない。</h2><p>メーカー公式の商品ページ・公式Q&Aで確認できる情報だけを分けて整理し、確認できない数字や体験談は掲載しません。</p><a class="text-link" href="/about/">運営方針を見る →</a></div></section>
 </BaseLayout>
@@ -139,11 +198,6 @@ const categories = [...categoryCounts.entries()]
   .hero-br { display: none; }
   @media (min-width: 560px) { .hero-br { display: block; } }
 
-  .section-diagnosis {
-    border-block: 1px solid var(--line);
-    background: var(--section-alt);
-  }
-
   .diagnosis-actions { margin: 1rem 0 0; }
   .diagnosis-actions .primary-button {
     display: inline-block;
@@ -154,18 +208,99 @@ const categories = [...categoryCounts.entries()]
     gap: 0.75rem;
   }
 
+  .top-see-all { max-width: 900px; margin: 0; padding-bottom: clamp(2rem, 5vw, 3.5rem); }
+  [data-top-latest] { padding-bottom: 1.25rem; }
+
+  .top-tools {
+    display: grid;
+    gap: 1rem;
+    max-width: 900px;
+    padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  }
+  @media (min-width: 720px) {
+    .top-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .top-tool {
+    padding: 1.25rem 1.4rem 1.4rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow-sm);
+  }
+  .top-tool h2 { margin: 0 0 0.5rem; font-size: clamp(1.15rem, 2vw, 1.4rem); }
+  .top-tool p { margin: 0 0 0.5rem; }
+
+  .guide-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow-sm);
+  }
+  .guide-card:hover { box-shadow: var(--card-shadow-md); }
+  @media (min-width: 640px) {
+    .guide-card { grid-template-columns: 220px minmax(0, 1fr); }
+  }
+  .guide-visual {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--hero-gradient);
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 640px) {
+    .guide-visual {
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+    }
+  }
+  .guide-image {
+    display: block;
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    box-shadow: var(--card-shadow-sm);
+  }
+  .guide-stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0;
+    color: var(--accent);
+  }
+  .guide-unit { flex-basis: 100%; text-align: center; font-size: 0.85rem; color: var(--ink-soft); }
+  .guide-figure {
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .guide-yen { font-size: 0.95rem; font-weight: 700; }
+  .guide-card .card-body { padding: 0.95rem 1.1rem 1.05rem; }
+  .guide-card h3 { margin: 0 0 0.35rem; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.35; }
+  .guide-card h3 a { text-decoration: none; }
+  .guide-card h3 a::after { content: ""; position: absolute; inset: 0; }
+  .guide-more { display: inline-block; margin-top: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+
   /* セクション見出しを、左寄せのカード列（max-width: 900px）に揃える。 */
+  [data-top-guides] .subsection-heading,
   [data-top-latest] .subsection-heading,
-  [data-top-categories] .subsection-heading,
-  [data-top-diagnosis] .subsection-heading,
-  [data-top-memo] .subsection-heading {
+  [data-top-categories] .subsection-heading {
     max-width: 900px;
   }
 
+  [data-top-guides] .subsection-heading h2,
   [data-top-latest] .subsection-heading h2,
-  [data-top-categories] .subsection-heading h2,
-  [data-top-diagnosis] .subsection-heading h2,
-  [data-top-memo] .subsection-heading h2 {
+  [data-top-categories] .subsection-heading h2 {
     margin-bottom: 0.75rem;
   }
 
