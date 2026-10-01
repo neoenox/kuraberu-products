@@ -28,17 +28,18 @@
       "model": "T920",
       "officialUrl": "https://jp.shokz.com/products/openfit2",
       "officialImageUrl": "https://jp.shokz.com/cdn/shop/files/OpenFit2-Black_c94232f3-2fa3-48e0-96bd-cc01338237d0.webp?v=1736395013",
-      "amazon": {
-        "asin": "B0DJMG7YW9",
-        "url": "https://www.amazon.co.jp/dp/B0DJMG7YW9"
-      },
       "rakutenProductUrl": "https://item.rakuten.co.jp/flaner/10022823old/"
     }
   },
   "amazon": {
     "left": "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
-    "right": "https://www.amazon.co.jp/dp/B0DJMG7YW9",
-    "status": "verified"
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "unverified"
+    },
+    "checkedAt": "2026-10-01",
+    "verification": "2026-10-01: ASIN B0F1Y3CJJ2 is Shokz OpenFit 2+ (title match; Associates SiteStripe shows the item as eligible). ASIN B0DJMG7YW9, previously used for OpenFit 2, now resolves to Shokz OpenFit Pro and amazon.co.jp search no longer lists OpenFit 2 (T920), so the right-hand Amazon direct link was removed."
   },
   "rakuten": {
     "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-skz-openfit2plus-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
