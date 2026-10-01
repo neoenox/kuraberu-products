@@ -3,11 +3,13 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   id: "sony-wf-1000xm6-vs-linkbuds-fit",
   publishedAt: "2026-09-20",
-  modifiedAt: "2026-09-20",
+  modifiedAt: "2026-10-02",
   handoffManifestId: "sony-wf-1000xm6-vs-linkbuds-fit-2026-09-20",
-  productInfoCheckedAt: "2026-09-20",
-  purchaseLinksCheckedAt: "2026-09-20",
-  purchaseLinkStatus: "unverified",
+  productInfoCheckedAt: "2026-10-02",
+  purchaseLinksCheckedAt: "2026-10-02",
+  purchaseLinkStatus: "verified",
+  amazonLinkStatus: "search",
+  rakutenLinkStatus: "verified",
   title: "ソニー WF-1000XM6とLinkBuds Fitの違いを比較｜重さ・電池・価格は？",
   headline:
     "ソニーの完全ワイヤレスイヤホンを比較。ノイキャン重視と軽さ重視の違い",
@@ -182,22 +184,22 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
     {
       label: "ソニー WF-1000XM6 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/WF-1000XM6/",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー WF-1000XM6 公式仕様",
       url: "https://www.sony.jp/headphone/products/WF-1000XM6/spec.html",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー LinkBuds Fit 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー LinkBuds Fit 公式仕様",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "楽天市場 XPRICE WF-1000XM6",

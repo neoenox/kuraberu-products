@@ -83,6 +83,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "logicool-pro-x-superlight-2-dex-vs-superlight-2",
   "sony-wf-c710n-vs-linkbuds-fit",
   "sony-wf-c710n-vs-soundcore-liberty-5",
+  "sony-wf-1000xm6-vs-linkbuds-fit",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];

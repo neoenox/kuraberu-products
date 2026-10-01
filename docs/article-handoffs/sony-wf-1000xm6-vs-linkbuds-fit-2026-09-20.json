@@ -3,47 +3,44 @@
   "articleId": "sony-wf-1000xm6-vs-linkbuds-fit",
   "source": "ChatGPT chat mode",
   "researchDateJst": "2026-09-20",
-  "articleReady": false,
+  "articleReady": true,
   "category": "完全ワイヤレス・ノイズキャンセリングイヤホン",
   "products": {
-    "a": {
+    "left": {
       "name": "Sony WF-1000XM6",
       "model": "WF-1000XM6",
       "officialUrl": "https://www.sony.jp/headphone/products/WF-1000XM6/",
       "officialSpecUrl": "https://www.sony.jp/headphone/products/WF-1000XM6/spec.html",
       "officialImageUrl": "https://www.sony.jp/products/picture/WF-1000XM6.jpg",
-      "rakutenUrl": "https://item.rakuten.co.jp/a-price/4548736171763/",
-      "amazon": {
-        "status": "unconfirmed",
-        "asin": null
-      }
+      "rakutenUrl": "https://item.rakuten.co.jp/a-price/4548736171763/"
     },
-    "b": {
+    "right": {
       "name": "Sony LinkBuds Fit",
       "model": "WF-LS910N",
       "officialUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
       "officialSpecUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
       "officialImageUrl": "https://www.sony.jp/products/picture/LinkBuds_Fit.jpg",
-      "rakutenUrl": "https://item.rakuten.co.jp/biccamera/4548736157873/",
-      "amazon": {
-        "status": "unconfirmed",
-        "asin": null
-      }
+      "rakutenUrl": "https://item.rakuten.co.jp/biccamera/4548736157873/"
     }
   },
   "comparison": {
     "officialSpecsVerified": true,
     "officialPricesVerified": true,
-    "keyDifferences": ["価格", "片耳重量", "NCオン連続再生", "充電方法"]
+    "keyDifferences": ["価格", "片耳重量", "NCオン連続再生", "充電方法"],
+    "recheckNote": "2026-10-02: ソニー公式の仕様ページで、片耳質量、連続再生時間、ドライバー径、Bluetooth、コーデック、充電方法、ソニーストア価格（税込）が記事の値と一致することを再確認した。"
   },
   "amazon": {
+    "status": "search",
     "left": null,
-    "right": null
+    "right": null,
+    "verification": "Amazonの商品詳細URL・ASINは未確認のため、商品名と型番を含む検索CTAのみを使う。"
   },
   "rakuten": {
     "status": "verified",
     "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4548736171763%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
-    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736157873%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D"
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736157873%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "checkedAt": "2026-10-01",
+    "stockNote": "2026-10-01: 左（XPRICE楽天市場店 WF-1000XM6 ブラック）と右（楽天ビック LinkBuds Fit ブラック）の商品ページで、在庫あり・買い物かごボタンを確認した。"
   },
   "social": {
     "status": "adopted",
@@ -62,5 +59,5 @@
     "月間検索ボリュームの定量値",
     "X・YouTubeの採用埋め込み投稿"
   ],
-  "draftReason": "Amazon商品詳細URLが未確認のため公開停止"
+  "recheckedAtJst": "2026-10-02"
 }
