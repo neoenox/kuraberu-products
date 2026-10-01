@@ -16,13 +16,18 @@ export const canonPixusTs8830VsEpsonEp887aArticle = defineArticleMetadata({
   summary:
     "キヤノン公式・セイコーエプソン公式の商品ページで確認できる仕様をもとに、TS8830とEP-887Aを比較します。",
   publishedAt: "2026-09-11",
-  modifiedAt: "2026-09-11",
+  modifiedAt: "2026-10-01",
   productInfoCheckedAt: "2026-09-11",
   purchaseLinksCheckedAt: "2026-09-11",
   purchaseLinkStatus: "direct",
   imagePath: "/products/canon-pixus-ts8830.jpg",
   aboutProductNames: ["キヤノン PIXUS TS8830", "エプソン カラリオ EP-887A"],
   changeLog: [
+    {
+      date: "2026-10-01",
+      summary:
+        "L判コストの記載を、キヤノン公式ページの最新値（TS8830は約23.9円（大容量））に修正し、エプソンとの差を約2.3円に直した。",
+    },
     {
       date: "2026-09-11",
       summary:
