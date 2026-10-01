@@ -35,6 +35,6 @@ test("top section headings align with the featured card column", () => {
 
   expect(page).toContain("[data-top-latest] .subsection-heading");
   expect(page).toContain("[data-top-categories] .subsection-heading");
-  expect(page).toContain("[data-top-diagnosis] .subsection-heading");
+  expect(page).toContain("[data-top-guides] .subsection-heading");
   expect(page).toContain("max-width: 900px;");
 });
