@@ -5,7 +5,7 @@
   "checkedAt": "2026-09-22",
   "researchDateJST": "2026-09-22",
   "category": "オープンイヤー完全ワイヤレスイヤホン",
-  "articleReady": true,
+  "articleReady": false,
   "unconfirmedItems": [],
   "officialSources": [
     "https://jp.shokz.com/products/openfit2plus",
@@ -103,5 +103,6 @@
       "https://www.reddit.com/r/shokz/comments/1umknfx/shokz_openfit_2_bad_sound/",
       "https://www.reddit.com/r/shokz/comments/1svhlc9/openfit_2_quality_and_warrenty_warning/"
     ]
-  }
+  },
+  "holdReason": "2026-10-01: OpenFit 2 (T920) is sold out on the linked Rakuten listing (flaner, black and beige), no in-stock OpenFit 2 listing was found via the Rakuten Item Search API, and amazon.co.jp no longer lists OpenFit 2 (the old ASIN B0DJMG7YW9 now resolves to OpenFit Pro). The article is unpublished until a purchasable OpenFit 2 listing returns or the article is reworked."
 }
