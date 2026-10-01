@@ -78,6 +78,12 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "instax-mini-13-vs-mini-41",
   "instax-mini-evo-vs-evo-cinema",
   "sony-zv-1-ii-vs-zv-1f",
+  "jbl-tour-pro-3-vs-live-beam-3",
+  "logicool-pebble-m350s-vs-m650",
+  "logicool-pro-x-superlight-2-dex-vs-superlight-2",
+  "shokz-openfit-2-plus-vs-openfit-2",
+  "sony-wf-c710n-vs-linkbuds-fit",
+  "sony-wf-c710n-vs-soundcore-liberty-5",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];

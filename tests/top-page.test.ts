@@ -5,6 +5,7 @@ import {
   articleMetadata,
 } from "../src/content/articles";
 import { comparisonSubjects } from "../src/lib/article-subjects";
+import { ARTICLE_LIST_PAGE_SIZE } from "../src/lib/article-list";
 import { contentTypeFor, ARTICLE_LAYOUT } from "../config/article-layout.mjs";
 import { isPublishedArticlePath } from "../config/article-template-policy.mjs";
 
@@ -334,14 +335,24 @@ describe.skipIf(!hasDist)("article card thumbnails (rendered dist)", () => {
   });
 
   it("statically generates all /articles/page/<N> pages (#556)", () => {
-    // 全記事数 / ページサイズ = 必要なページ数。最低2ページ以上は
-    // 生成されているはず (現在のデータは70件以上、12件/ページ)。
-    if (!existsSync("dist/articles/page")) return;
+    // 公開記事数 / ページサイズ = 必要なページ数。ページ1は /articles/ なので、
+    // /articles/page/N/ は 2 ページ目以降の分だけ生成される。
+    const publishedCount = publicArticleMetadata.filter((article) =>
+      isPublishedArticlePath(article.path),
+    ).length;
+    const expectedExtraPages = Math.max(
+      Math.ceil(publishedCount / ARTICLE_LIST_PAGE_SIZE) - 1,
+      0,
+    );
+    if (!existsSync("dist/articles/page")) {
+      expect(expectedExtraPages).toBe(0);
+      return;
+    }
     const pageDirs = readdirSync("dist/articles/page", { withFileTypes: true })
       .filter((entry) => entry.isDirectory())
       .map((entry) => entry.name)
       .sort((a, b) => Number(a) - Number(b));
-    expect(pageDirs.length).toBeGreaterThanOrEqual(2);
+    expect(pageDirs.length).toBe(expectedExtraPages);
     // ページ1は /articles/index.html、ページ2以降は /articles/page/N/
     for (const page of pageDirs) {
       const html = readFileSync(
