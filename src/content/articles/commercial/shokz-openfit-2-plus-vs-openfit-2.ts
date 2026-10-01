@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const shokzOpenfit2PlusVsOpenfit2Seed: CommercialArticleSeed = {
   id: "shokz-openfit-2-plus-vs-openfit-2",
   publishedAt: "2026-09-22",
-  modifiedAt: "2026-09-22",
+  modifiedAt: "2026-10-01",
   handoffManifestId: "shokz-openfit-2-plus-vs-openfit-2-2026-09-22",
   productInfoCheckedAt: "2026-09-22",
   purchaseLinksCheckedAt: "2026-09-22",
@@ -31,7 +31,8 @@ export const shokzOpenfit2PlusVsOpenfit2Seed: CommercialArticleSeed = {
   leftImage: "/products/shokz-openfit-2-plus.png",
   rightImage: "/products/shokz-openfit-2.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
-  rightAmazonUrl: "https://www.amazon.co.jp/dp/B0DJMG7YW9",
+  leftAmazonLinkStatus: "verified",
+  rightAmazonLinkStatus: "search",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-skz-openfit2plus-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
   rightRakutenUrl:
@@ -212,11 +213,6 @@ export const shokzOpenfit2PlusVsOpenfit2Seed: CommercialArticleSeed = {
     {
       label: "Amazon OpenFit 2+",
       url: "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
-      date: "2026-09-22",
-    },
-    {
-      label: "Amazon OpenFit 2",
-      url: "https://www.amazon.co.jp/dp/B0DJMG7YW9",
       date: "2026-09-22",
     },
     {
