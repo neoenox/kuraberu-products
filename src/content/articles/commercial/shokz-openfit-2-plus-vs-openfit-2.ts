@@ -32,6 +32,7 @@ export const shokzOpenfit2PlusVsOpenfit2Seed: CommercialArticleSeed = {
   rightImage: "/products/shokz-openfit-2.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
   leftAmazonLinkStatus: "verified",
+  rightAmazonLinkStatus: "search",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-skz-openfit2plus-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
   rightRakutenUrl:

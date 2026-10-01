@@ -12,7 +12,7 @@
     "https://jp.shokz.com/products/openfit2"
   ],
   "products": {
-    "a": {
+    "left": {
       "name": "OpenFit 2+",
       "model": "T921",
       "officialUrl": "https://jp.shokz.com/products/openfit2plus",
@@ -23,7 +23,7 @@
       },
       "rakutenProductUrl": "https://item.rakuten.co.jp/akky2018/au-skz-openfit2plus-/"
     },
-    "b": {
+    "right": {
       "name": "OpenFit 2",
       "model": "T920",
       "officialUrl": "https://jp.shokz.com/products/openfit2",
@@ -32,14 +32,60 @@
     }
   },
   "amazon": {
-    "left": "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
     "status": "verified",
     "statusBySide": {
       "left": "verified",
-      "right": "unverified"
+      "right": "search"
     },
+    "left": "https://www.amazon.co.jp/dp/B0F1Y3CJJ2",
+    "leftAsin": "B0F1Y3CJJ2",
     "checkedAt": "2026-10-01",
-    "verification": "2026-10-01: ASIN B0F1Y3CJJ2 is Shokz OpenFit 2+ (title match; Associates SiteStripe shows the item as eligible). ASIN B0DJMG7YW9, previously used for OpenFit 2, now resolves to Shokz OpenFit Pro and amazon.co.jp search no longer lists OpenFit 2 (T920), so the right-hand Amazon direct link was removed."
+    "verification": "2026-10-01: left (OpenFit 2+, B0F1Y3CJJ2) verified. Right: ASIN B0DJMG7YW9, previously used for OpenFit 2 (T920), now resolves to Shokz OpenFit Pro and amazon.co.jp search no longer lists OpenFit 2, so the right-hand direct link was removed and the article uses a product-name search CTA.",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示され、カテゴリー「楽器」・販売手数料率2.00%を確認。商品別の適格性表示とは区別して記録。",
+        "observedAtJst": "2026-10-01"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでShokz OpenFit 2+ ブラック、ASIN B0F1Y3CJJ2を確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UI（アフィリエイトリンクを共有する）が確認済みASINの商品ページで表示された。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグパラメーターを含む商品URLを開き、Amazonの商品名（OpenFit 2+）とASIN B0F1Y3CJJ2が一致する商品詳細ページへ遷移し、タグが保持されることを確認。タグ実値は記録しない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "mismatch",
+            "evidence": "以前のASIN B0DJMG7YW9は、2026-10-01時点でShokz OpenFit Proの商品ページに遷移した。amazon.co.jpの検索（OpenFit 2 S903 / T920）にもOpenFit 2は表示されなかった。"
+          },
+          "eligibility": {
+            "state": "not-checked",
+            "evidence": "商品詳細URLを使わない検索CTAのため、商品別の適格性は確認していない。"
+          },
+          "taggedUrl": {
+            "state": "not-applicable",
+            "evidence": "直リンクを持たない検索CTAのため対象外。検索URLには本番runtime設定のタグが付く。"
+          },
+          "destination": {
+            "state": "not-applicable",
+            "evidence": "直リンクを持たない検索CTAのため対象外。"
+          }
+        }
+      }
+    }
   },
   "rakuten": {
     "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-skz-openfit2plus-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
