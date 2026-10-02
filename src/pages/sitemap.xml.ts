@@ -56,6 +56,7 @@ const staticPaths: SitemapEntry[] = [
   { path: "/privacy/" },
   { path: "/disclaimer/" },
   { path: "/tools/product-finder/" },
+  { path: "/guides/" },
   { path: "/guides/instax-mini-film-price/" },
   { path: "/guides/instax-mini-pattern-film-price/" },
   { path: "/guides/sd-card-price-per-gb/" },

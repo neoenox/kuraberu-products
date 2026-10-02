@@ -89,7 +89,7 @@ test.describe("CSP + nav toggle (1440px)", () => {
     const desktopNav = page.locator("nav.navlinks--desktop");
     await expect(desktopNav).toBeVisible();
     const navLinks = desktopNav.locator("a");
-    await expect(navLinks).toHaveCount(4);
+    await expect(navLinks).toHaveCount(5);
 
     // Assert: at least the first nav link is visible on screen
     const firstLink = navLinks.first();
@@ -189,7 +189,7 @@ test.describe("nav without JavaScript (#836)", () => {
 
     const desktopNav = page.locator("nav.navlinks--desktop");
     await expect(desktopNav).toBeVisible();
-    await expect(desktopNav.locator("a")).toHaveCount(4);
+    await expect(desktopNav.locator("a")).toHaveCount(5);
 
     // The first link (比較記事) navigates without JS
     await desktopNav.locator("a").first().click();
@@ -208,7 +208,7 @@ test.describe("nav without JavaScript (#836)", () => {
     // Native <details> toggle (no JS involved)
     await summary.click();
     const drawerLinks = page.locator("[data-nav-toggle] nav.navlinks a");
-    await expect(drawerLinks).toHaveCount(4);
+    await expect(drawerLinks).toHaveCount(5);
     await expect(drawerLinks.first()).toBeVisible();
   });
 });
