@@ -1,0 +1,82 @@
+---
+import type { priceGuides } from '../data/price-guides';
+
+interface Props {
+  guide: (typeof priceGuides)[number];
+}
+const { guide } = Astro.props;
+---
+<article class="card guide-card">
+  <div class="guide-visual">
+    <img class="guide-image" src={guide.image} alt={guide.imageAlt} width="200" height="200" loading="lazy" referrerpolicy="no-referrer" />
+    <p class="guide-stat" aria-hidden="true"><span class="guide-unit">{guide.unit}</span><span class="guide-figure">{guide.figure}</span><span class="guide-yen">円</span></p>
+  </div>
+  <div class="card-body">
+    <h3><a href={guide.path}>{guide.title}</a></h3>
+    <p class="card-desc">{guide.summary}</p>
+    <span class="guide-more" aria-hidden="true">価格を比べる →</span>
+  </div>
+</article>
+
+<style is:global>
+  .guide-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow-sm);
+  }
+  .guide-card:hover { box-shadow: var(--card-shadow-md); }
+  @media (min-width: 640px) {
+    .guide-card { grid-template-columns: 220px minmax(0, 1fr); }
+  }
+  .guide-visual {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--hero-gradient);
+    border-bottom: 1px solid var(--line);
+  }
+  @media (min-width: 640px) {
+    .guide-visual {
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+    }
+  }
+  .guide-image {
+    display: block;
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    box-shadow: var(--card-shadow-sm);
+  }
+  .guide-stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0;
+    color: var(--accent);
+  }
+  .guide-unit { flex-basis: 100%; text-align: center; font-size: 0.85rem; color: var(--ink-soft); }
+  .guide-figure {
+    font-size: clamp(1.7rem, 4vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .guide-yen { font-size: 0.95rem; font-weight: 700; }
+  .guide-card .card-body { padding: 0.95rem 1.1rem 1.05rem; }
+  .guide-card h3 { margin: 0 0 0.35rem; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.35; }
+  .guide-card h3 a { text-decoration: none; }
+  .guide-card h3 a::after { content: ""; position: absolute; inset: 0; }
+  .guide-more { display: inline-block; margin-top: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+</style>

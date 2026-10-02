@@ -6,9 +6,8 @@ import { site } from '../config/site';
 import { safeJsonForScript } from '../lib/safe-json';
 import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
 import { isPublishedArticlePath } from '../../config/article-template-policy.mjs';
-import { instaxFilmOffers, perSheet as filmPerSheet } from '../data/instax-film-prices';
-import { instaxPatternOffers, perSheet as patternPerSheet } from '../data/instax-pattern-film-prices';
-import { sdCardOffers, perGb } from '../data/sd-card-prices';
+import { priceGuides } from '../data/price-guides';
+import PriceGuideCard from '../components/PriceGuideCard.astro';
 
 // 比較記事の枠：旧テンプレートの互換ページを除き、公開日が新しい記事を
 // topPage.latestLimit 件まで表示する（公開記事が少ない間は全件）。
@@ -37,42 +36,6 @@ const latestItemListJson = safeJsonForScript({
     name: article.headline,
   })),
 });
-
-// 価格ガイド：1枚あたり・1GBあたりの価格ページ。表示する価格帯は、各ページと同じデータから導出する。
-const range = (values: number[]) => {
-  const low = Math.round(Math.min(...values));
-  const high = Math.round(Math.max(...values));
-  return `${low}〜${high}`;
-};
-const priceGuides = [
-  {
-    path: '/guides/instax-mini-film-price/',
-    title: 'チェキのフィルムは1枚いくら？',
-    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/cheki/cabinet/tokiwacamera42/4547410377224n-1.jpg?_ex=200x200',
-    imageAlt: 'instax mini フィルム（10枚入り）',
-    unit: '1枚あたり',
-    figure: range(instaxFilmOffers.map(filmPerSheet)),
-    summary: '10枚・30枚・100枚のパック別に、送料込みの最安を比べました。',
-  },
-  {
-    path: '/guides/instax-mini-pattern-film-price/',
-    title: 'チェキの絵柄つきフィルムは1枚いくら？',
-    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/mituboshicamera/cabinet/goods_08/imgrc0115267911.jpg?_ex=200x200',
-    imageAlt: 'instax mini フィルム レインボー（10枚入り）',
-    unit: '1枚あたり',
-    figure: range(instaxPatternOffers.map(patternPerSheet)),
-    summary: 'モノクロームと8つの柄を、無地との差つきで比べました。',
-  },
-  {
-    path: '/guides/sd-card-price-per-gb/',
-    title: '4K動画向けSDカードは1GBいくら？',
-    image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/pc-goodmedia/cabinet/img09/imgrc0162361812.jpg?_ex=200x200',
-    imageAlt: 'キオクシア EXCERIA G2 SDXCカード',
-    unit: '1GBあたり',
-    figure: range(sdCardOffers.map(perGb)),
-    summary: '64GB〜512GBを容量別に比べました。大容量ほど、1GBあたりは安くなります。',
-  },
-];
 
 // カテゴリ入口：記事数が topPage.categoryMinArticles 以上のカテゴリを表示。
 // 件数が多い順 → 名前順。リンク先は /articles/category/…（カテゴリページの
@@ -114,17 +77,7 @@ const categories = [...categoryCounts.entries()]
     <p class="lead">楽天市場の価格を、1枚・1GBあたりに直して比べました。</p>
     <div class="article-list top-article-list">
       {priceGuides.map((guide) => (
-        <article class="card guide-card">
-          <div class="guide-visual">
-            <img class="guide-image" src={guide.image} alt={guide.imageAlt} width="200" height="200" loading="lazy" referrerpolicy="no-referrer" />
-            <p class="guide-stat" aria-hidden="true"><span class="guide-unit">{guide.unit}</span><span class="guide-figure">{guide.figure}</span><span class="guide-yen">円</span></p>
-          </div>
-          <div class="card-body">
-            <h3><a href={guide.path}>{guide.title}</a></h3>
-            <p class="card-desc">{guide.summary}</p>
-            <span class="guide-more" aria-hidden="true">価格を比べる →</span>
-          </div>
-        </article>
+        <PriceGuideCard guide={guide} />
       ))}
     </div>
   </section>
@@ -230,67 +183,6 @@ const categories = [...categoryCounts.entries()]
   }
   .top-tool h2 { margin: 0 0 0.5rem; font-size: clamp(1.15rem, 2vw, 1.4rem); }
   .top-tool p { margin: 0 0 0.5rem; }
-
-  .guide-card {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--card-shadow-sm);
-  }
-  .guide-card:hover { box-shadow: var(--card-shadow-md); }
-  @media (min-width: 640px) {
-    .guide-card { grid-template-columns: 220px minmax(0, 1fr); }
-  }
-  .guide-visual {
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: var(--hero-gradient);
-    border-bottom: 1px solid var(--line);
-  }
-  @media (min-width: 640px) {
-    .guide-visual {
-      border-bottom: 0;
-      border-right: 1px solid var(--line);
-    }
-  }
-  .guide-image {
-    display: block;
-    width: 112px;
-    height: 112px;
-    object-fit: contain;
-    background: var(--paper);
-    border-radius: var(--radius-md);
-    box-shadow: var(--card-shadow-sm);
-  }
-  .guide-stat {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    margin: 0;
-    color: var(--accent);
-  }
-  .guide-unit { flex-basis: 100%; text-align: center; font-size: 0.85rem; color: var(--ink-soft); }
-  .guide-figure {
-    font-size: clamp(1.7rem, 4vw, 2.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .guide-yen { font-size: 0.95rem; font-weight: 700; }
-  .guide-card .card-body { padding: 0.95rem 1.1rem 1.05rem; }
-  .guide-card h3 { margin: 0 0 0.35rem; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.35; }
-  .guide-card h3 a { text-decoration: none; }
-  .guide-card h3 a::after { content: ""; position: absolute; inset: 0; }
-  .guide-more { display: inline-block; margin-top: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
 
   /* セクション見出しを、左寄せのカード列（max-width: 900px）に揃える。 */
   [data-top-guides] .subsection-heading,

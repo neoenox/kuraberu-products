@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceGuideCard from '../../components/PriceGuideCard.astro';
+import { priceGuides } from '../../data/price-guides';
+
+const title = '価格ガイド｜くらべる商品メモ';
+const description =
+  '楽天市場の価格を、1枚・1GBあたりに直して比べる価格ガイドの一覧です。送料込みの最安を、パックや容量別に確認できます。';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="wrap section section-intro">
+    <p class="meta"><a href="/">トップ</a> / 価格ガイド</p>
+    <h1>価格ガイド</h1>
+    <p class="lead">楽天市場の価格を、1枚・1GBあたりに直して比べました。価格は取得した日の値で、変わることがあります。</p>
+    <div class="article-list guide-index-list">
+      {priceGuides.map((guide) => (
+        <PriceGuideCard guide={guide} />
+      ))}
+    </div>
+    <p class="meta"><a class="text-link" href="/articles/">2商品の比較記事を見る →</a></p>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  .guide-index-list { gap: 0.75rem; max-width: 900px; margin: 1.25rem 0; }
+</style>
