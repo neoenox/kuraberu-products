@@ -3,7 +3,7 @@
   "articleId": "logicool-mx-master-4-vs-mx-master-3s",
   "source": "Codex research",
   "checkedAt": "2026-09-18",
-  "articleReady": false,
+  "articleReady": true,
   "officialSources": [
     "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-4",
     "https://press.logicool.co.jp/ja-jp/mx-master-4/",
@@ -11,8 +11,61 @@
     "https://press.logicool.co.jp/ja-jp/mx_master_3S/"
   ],
   "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
     "left": "https://www.amazon.co.jp/dp/B0FR8M3WS8",
-    "right": "https://www.amazon.co.jp/dp/B0B1Q6VB16"
+    "right": "https://www.amazon.co.jp/dp/B0B1Q6VB16",
+    "leftAsin": "B0FR8M3WS8",
+    "rightAsin": "B0B1Q6VB16",
+    "checkedAt": "2026-10-01",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示され、カテゴリー「家電（キッチン家電、季節家電、理美容家電など）」・販売手数料率2.00%を確認。商品別の適格性表示とは区別して記録。",
+        "observedAtJst": "2026-10-01"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでロジクール MX MASTER 4 MX2400GR、グラファイト、ASIN B0FR8M3WS8を確認。在庫あり・買い物かごボタンあり。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UI（アフィリエイトリンクを共有する）が確認済みASINの商品ページで表示された。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグパラメーターを含む商品URLを開き、ASIN B0FR8M3WS8（MX MASTER 4 MX2400GR）の商品詳細ページへ遷移し、タグが保持されることを確認。タグ実値は記録しない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページでロジクール MX MASTER3s MX2300GR、グラファイト、ASIN B0B1Q6VB16を確認。在庫あり・買い物かごボタンあり。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品別の適格性文言は表示されなかった。共通ツールバーのカテゴリー・手数料率は上記のとおり。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "公式リンク生成UI（アフィリエイトリンクを共有する）が確認済みASINの商品ページで表示された。タグ付きURLの実値は記録せず、記事ソースではなく本番runtime設定を使う。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグパラメーターを含む商品URLを開き、ASIN B0B1Q6VB16（MX MASTER3s MX2300GR）の商品詳細ページへ遷移し、タグが保持されることを確認。タグ実値は記録しない。"
+          }
+        }
+      }
+    }
   },
   "rakuten": {
     "status": "unavailable",
@@ -27,5 +80,6 @@
   "caveats": [
     "確認できた動画は販売リンクまたは提供品の記載があるため、SNS欄には採用しない。"
   ],
-  "draftReason": "品質再確認のため公開対象から取り下げ。商品一致したアフィリエイトURL・表示構成・SNS埋め込みを再確認してから再公開する。"
+  "recheckedAtJst": "2026-10-02",
+  "specsRecheckNote": "2026-10-02: ロジクール公式プレスリリースで、重量（150g/141g）、サイズ、ボタン数（8/7）、解像度（200〜8,000dpi）、電池寿命（最長70日）、保証（2年）が記事の値と一致することを再確認した。価格は変動するため、記事から外した（ロジクール公式での3Sの価格は、記事公開時の14,960円から変わっていた）。"
 }

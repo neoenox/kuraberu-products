@@ -80,13 +80,19 @@ describe("article CTA layout vs metadata productCount", () => {
           ).toMatch(/\bpurchaseLinkStatus=/);
         }
 
+        // 楽天ボタンは楽天の状態で決まる（未指定なら記事全体の状態）。
+        const rakutenStatus =
+          article.rakutenLinkStatus ?? article.purchaseLinkStatus;
+        const rakutenCtaEnabled =
+          rakutenStatus === "verified" || rakutenStatus === "direct";
+
         for (const set of ARTICLE_LAYOUT.ctaSets) {
           const isComparison =
             contentTypeFor(article.productCount) === "comparison";
           const expected =
             set.comparisonOnly &&
-            (article.purchaseLinkStatus === "unavailable" ||
-              article.purchaseLinkStatus === "unverified" ||
+            (rakutenStatus === "unavailable" ||
+              rakutenStatus === "unverified" ||
               !isComparison)
               ? 0
               : set.comparisonOnly && nextStepPurchaseDisabled
@@ -109,8 +115,7 @@ describe("article CTA layout vs metadata productCount", () => {
           blocks.length + nextStepBuyCount,
           `${article.id}: total CTAs should match expectedPurchaseCtasPerArticle(${article.productCount}, layout)`,
         ).toBe(
-          article.purchaseLinkStatus === "verified" ||
-            article.purchaseLinkStatus === "direct"
+          rakutenCtaEnabled
             ? expectedPurchaseCtasPerArticle(
                 article.productCount,
                 ARTICLE_LAYOUT,

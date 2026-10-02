@@ -3,28 +3,29 @@ import type { CommercialArticleSeed } from "./types";
 export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
   id: "logicool-mx-master-4-vs-mx-master-3s",
   publishedAt: "2026-09-18",
-  modifiedAt: "2026-09-18",
+  modifiedAt: "2026-10-02",
   handoffManifestId: "logicool-mx-master-4-vs-mx-master-3s-2026-09-18",
-  productInfoCheckedAt: "2026-09-18",
-  purchaseLinksCheckedAt: "2026-09-18",
-  purchaseLinkStatus: "unverified",
+  productInfoCheckedAt: "2026-10-02",
+  purchaseLinksCheckedAt: "2026-10-01",
+  purchaseLinkStatus: "verified",
+  amazonLinkStatus: "verified",
+  rakutenLinkStatus: "unavailable",
   title:
-    "Logicool MX Master 4とMX Master 3Sの違いを比較｜触覚フィードバック・重さ・価格は？",
-  headline:
-    "MX Master 4と3Sを比較。触覚フィードバック・ボタン数・重さ・価格の違い",
+    "Logicool MX Master 4とMX Master 3Sの違いを比較｜触覚フィードバック・ボタン数・重さは？",
+  headline: "MX Master 4と3Sを比較。触覚フィードバック・ボタン数・重さの違い",
   description:
-    "Logicoolの高機能ワイヤレスマウス2機種を、メーカー公式情報と実機レビュー動画で比較します。",
+    "Logicoolの高機能ワイヤレスマウス2機種を、メーカー公式情報で比較します。",
   category: "PC周辺機器",
   tags: ["PC周辺機器", "Logicool", "マウス"],
   audiences: ["仕事用マウスを買い替えたい人", "MX Master 4と3Sで迷っている人"],
   uses: ["長時間のデスクワーク", "複数アプリのショートカット操作"],
   summary:
-    "MX Master 4は触覚フィードバックとボタン数を重視する人向け、MX Master 3Sは軽さと価格を優先する人向けです。",
-  lead: "結論：新機能と操作の拡張性ならMX Master 4、価格と軽さならMX Master 3Sを選ぶと納得しやすい比較です。",
+    "MX Master 4は触覚フィードバックとボタン数を重視する人向け、MX Master 3Sは軽さとシンプルな操作を優先する人向けです。",
+  lead: "結論：新機能と操作の拡張性ならMX Master 4、軽さとシンプルな操作ならMX Master 3Sを選ぶと納得しやすい比較です。",
   leftProduct: "Logicool MX Master 4 MX2400GR（グラファイト）",
   rightProduct: "Logicool MX Master 3S MX2300GR（グラファイト）",
   leftPoint: "触覚フィードバックと8ボタンを重視する人向け",
-  rightPoint: "価格と141gの軽さを重視する人向け",
+  rightPoint: "141gの軽さとシンプルな7ボタンを重視する人向け",
   leftImage: "/products/logicool-mx-master-4.png",
   rightImage: "/products/logicool-mx-master-3s.png",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0FR8M3WS8",
@@ -42,14 +43,6 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
-    {
-      label: "公式価格（税込）",
-      left: "21,890円",
-      right: "14,960円",
-      highlight: "right",
-      highlightNote: "6,930円安い",
-      direction: "lower-is-better",
-    },
     {
       label: "サイズ",
       left: "88.2×128.2×50.8mm",
@@ -89,9 +82,9 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
         "触覚フィードバック、Actions Ring、8ボタンによる操作拡張を使いたい人に向いています。",
     },
     {
-      question: "価格を抑えたいならどちら？",
+      question: "価格はどこで確認できますか？",
       answer:
-        "公式価格が14,960円のMX Master 3Sです。MX Master 4より6,930円安く購入できます。",
+        "価格は販売先やキャンペーンで変わります。購入前に、ロジクール公式ストアや各販売ページで、価格と在庫を確認してください。",
     },
     {
       question: "軽いのはどちら？",
@@ -104,7 +97,7 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
   ],
   decisionGuideSteps: [
     "触覚フィードバックや新しいショートカット操作を使いたいか決める",
-    "価格差6,930円を新機能に払うか検討する",
+    "触覚フィードバックやボタン数の差が、自分の作業に必要か検討する",
     "軽さを優先するならMX Master 3Sを選ぶ",
     "購入前に販売ページで価格と在庫を確認する",
   ],
@@ -113,14 +106,14 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
       heading: "MX Master 4",
       items: [
         "触覚フィードバックを返すHaptic Sense PanelとActions Ringを搭載。",
-        "8ボタン、8,000dpi、最長70日、重量150g。公式価格は21,890円。",
+        "8ボタン、8,000dpi、最長70日、重量150g。",
       ],
     },
     {
       heading: "MX Master 3S",
       items: [
         "静音クリックとMagSpeed電磁スクロールを採用。",
-        "7ボタン、8,000dpi、最長70日、重量141g。公式価格は14,960円。",
+        "7ボタン、8,000dpi、最長70日、重量141g。",
       ],
     },
   ],
@@ -132,34 +125,34 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
     {
       label: "MX Master 4 公式",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-4",
-      date: "2026-09-18",
+      date: "2026-10-02",
     },
     {
       label: "MX Master 4 公式プレスリリース",
       url: "https://press.logicool.co.jp/ja-jp/mx-master-4/",
-      date: "2026-09-18",
+      date: "2026-10-02",
     },
     {
       label: "MX Master 3S 公式",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-3s",
-      date: "2026-09-18",
+      date: "2026-10-02",
     },
     {
       label: "MX Master 3S 公式プレスリリース",
       url: "https://press.logicool.co.jp/ja-jp/mx_master_3S/",
-      date: "2026-09-18",
+      date: "2026-10-02",
     },
     {
       label: "Amazon MX Master 4",
       url: "https://www.amazon.co.jp/dp/B0FR8M3WS8",
-      date: "2026-09-18",
+      date: "2026-10-01",
     },
     {
       label: "Amazon MX Master 3S",
       url: "https://www.amazon.co.jp/dp/B0B1Q6VB16",
-      date: "2026-09-18",
+      date: "2026-10-01",
     },
   ],
   disclaimer:
-    "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。口コミは個人の感想です。",
+    "仕様・価格・在庫は変更される可能性があります。購入前に公式ページと販売ページをご確認ください。",
 };
