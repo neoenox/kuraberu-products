@@ -3,11 +3,12 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   id: "sony-wf-1000xm6-vs-linkbuds-fit",
   publishedAt: "2026-09-20",
-  modifiedAt: "2026-09-20",
+  modifiedAt: "2026-10-02",
   handoffManifestId: "sony-wf-1000xm6-vs-linkbuds-fit-2026-09-20",
-  productInfoCheckedAt: "2026-09-20",
-  purchaseLinksCheckedAt: "2026-09-20",
-  purchaseLinkStatus: "unverified",
+  productInfoCheckedAt: "2026-10-02",
+  purchaseLinksCheckedAt: "2026-10-02",
+  purchaseLinkStatus: "verified",
+  rakutenLinkStatus: "verified",
   title: "ソニー WF-1000XM6とLinkBuds Fitの違いを比較｜重さ・電池・価格は？",
   headline:
     "ソニーの完全ワイヤレスイヤホンを比較。ノイキャン重視と軽さ重視の違い",
@@ -31,6 +32,8 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   rightPoint: "片耳約4.9g・29,700円・軽い装着感を重視する人向け",
   leftImage: "/products/sony-wf-1000xm6.jpg",
   rightImage: "/products/sony-linkbuds-fit.jpg",
+  leftAmazonLinkStatus: "search",
+  rightAmazonLinkStatus: "search",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4548736171763%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
   rightRakutenUrl:
@@ -182,22 +185,22 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
     {
       label: "ソニー WF-1000XM6 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/WF-1000XM6/",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー WF-1000XM6 公式仕様",
       url: "https://www.sony.jp/headphone/products/WF-1000XM6/spec.html",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー LinkBuds Fit 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "ソニー LinkBuds Fit 公式仕様",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
-      date: "2026-09-20",
+      date: "2026-10-02",
     },
     {
       label: "楽天市場 XPRICE WF-1000XM6",
