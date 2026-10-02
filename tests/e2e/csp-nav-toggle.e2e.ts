@@ -27,9 +27,19 @@ const PRODUCTION_CSP = (() => {
   return csp;
 })();
 
-/** Apply Production CSP headers to every response via route interception. */
+/**
+ * Apply Production CSP headers to the page's HTML responses via route
+ * interception. CSP is a document response header, so only documents are
+ * fetched and re-served; every other request (including third-party images)
+ * passes through untouched. Proxying all requests left a `route.fetch` in
+ * flight when the test ended once the top page loaded external images.
+ */
 async function applyProductionCSP(page: import("@playwright/test").Page) {
   await page.route("**/*", async (route) => {
+    if (route.request().resourceType() !== "document") {
+      await route.continue();
+      return;
+    }
     const response = await route.fetch();
     const headers = { ...response.headers() };
     headers["content-security-policy"] = PRODUCTION_CSP;
