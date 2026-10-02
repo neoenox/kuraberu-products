@@ -92,7 +92,7 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
     }
   });
 
-  it("renders the six newest public articles in the latest section", () => {
+  it("renders the newest public articles (up to topPage.latestLimit) in the latest section", () => {
     const expected = [...topPageArticles]
       .sort(
         (a, b) =>
@@ -100,7 +100,7 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
           b.modifiedAt.localeCompare(a.modifiedAt) ||
           a.path.localeCompare(b.path),
       )
-      .slice(0, 6)
+      .slice(0, ARTICLE_LAYOUT.topPage.latestLimit)
       .map((article) => article.path);
     const section = topHtml.match(
       /<section\b[^>]*data-top-latest[^>]*>([\s\S]*?)<\/section\s*>/i,
@@ -121,7 +121,7 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
           b.modifiedAt.localeCompare(a.modifiedAt) ||
           a.path.localeCompare(b.path),
       )
-      .slice(0, 6)
+      .slice(0, ARTICLE_LAYOUT.topPage.latestLimit)
       .map((article) => article.path);
 
     // Cloudflare Pages applies _redirects before serving static assets. A
@@ -376,7 +376,7 @@ describe.skipIf(!hasDist)(
   () => {
     beforeAll(loadRenderedPages);
 
-    it("lists the six newest articles as ListItems (#846)", () => {
+    it("lists the newest articles as ListItems (#846)", () => {
       const expected = [...topPageArticles]
         .sort(
           (a, b) =>
@@ -384,7 +384,7 @@ describe.skipIf(!hasDist)(
             b.modifiedAt.localeCompare(a.modifiedAt) ||
             a.path.localeCompare(b.path),
         )
-        .slice(0, 6);
+        .slice(0, ARTICLE_LAYOUT.topPage.latestLimit);
       const scripts = [
         ...topHtml.matchAll(
           /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,

@@ -36,10 +36,8 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
   rightPoint: "長い公称再生時間と価格を重視する人向け",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0DFXYNSWY",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0D3T5ZW6Z",
-  leftImage:
-    "https://jp.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw767141b9/01.LS_JBL_Tour%20Pro%203_Product%20Image_Case%20Open_Black.png?sh=535&sw=535",
-  rightImage:
-    "https://jp.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwfb9effd5/01.JBL_Live_Beam_3_ProductImage_Feature_Screen_02_Black.png?sh=535&sw=535",
+  leftImage: "/products/jbl-tour-pro-3.png",
+  rightImage: "/products/jbl-live-beam-3.png",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57f5a553.61c8b1e0.57f5a554.a743e08b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fikeshibu%2F860068%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
   rightRakutenUrl:
