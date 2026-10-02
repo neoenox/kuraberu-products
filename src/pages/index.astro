@@ -10,7 +10,8 @@ import { instaxFilmOffers, perSheet as filmPerSheet } from '../data/instax-film-
 import { instaxPatternOffers, perSheet as patternPerSheet } from '../data/instax-pattern-film-prices';
 import { sdCardOffers, perGb } from '../data/sd-card-prices';
 
-// 新着比較：旧テンプレートの互換ページを除き、公開日が新しい記事を表示する。
+// 比較記事の枠：旧テンプレートの互換ページを除き、公開日が新しい記事を
+// topPage.latestLimit 件まで表示する（公開記事が少ない間は全件）。
 // 互換ページのURLは維持しつつ、トップページの新着枠へは再掲しない。
 const topPageArticles = publicArticleMetadata.filter((article) =>
   isPublishedArticlePath(article.path),
@@ -22,7 +23,7 @@ const latest = [...topPageArticles]
       b.modifiedAt.localeCompare(a.modifiedAt) ||
       a.path.localeCompare(b.path),
   )
-  .slice(0, 6);
+  .slice(0, ARTICLE_LAYOUT.topPage.latestLimit);
 
 // 新着リストの構造化データ（ItemList）。表示対象の latest から導出するため、
 // 記事追加・更新時は自動で追従する（ハードコードしない）。

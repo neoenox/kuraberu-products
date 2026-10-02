@@ -52,6 +52,8 @@ export interface ContentTypeConfig {
 }
 
 export interface TopPageConfig {
+  /** トップの比較記事の枠に出す最大件数（公開日の新しい順） */
+  latestLimit: number;
   /** 「よく比較される商品」としてトップに出す比較記事パス（3〜6件） */
   featuredPaths: readonly string[];
   /** トップのカテゴリ入口に載せる最低記事数 */
