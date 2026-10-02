@@ -1,0 +1,15 @@
+---
+import { priceAgeDays } from '../lib/reading-costs';
+interface Props { checkedAt: string }
+const { checkedAt } = Astro.props;
+const days = priceAgeDays(checkedAt);
+---
+<p class="meta" data-price-check={checkedAt}>価格確認日 <time datetime={checkedAt}>{checkedAt}</time> · <span data-price-age>{days === null ? '確認日を要確認' : `確認から${days}日${days >= 7 ? '（再確認をおすすめします）' : ''}`}</span>。現在の価格は購入先で確認してください。</p>
+<script>
+  import { priceAgeDays } from '../lib/reading-costs';
+  document.querySelectorAll<HTMLElement>('[data-price-check]').forEach(node => {
+    const days = priceAgeDays(node.dataset.priceCheck ?? '');
+    const span = node.querySelector('[data-price-age]');
+    if (span) span.textContent = days === null ? '確認日を要確認' : `確認から${days}日${days >= 7 ? '（再確認をおすすめします）' : ''}`;
+  });
+</script>

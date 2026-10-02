@@ -1,4 +1,5 @@
 ---
+import PriceCheckedAt from '../components/PriceCheckedAt.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { publicArticleMetadata } from '../content/articles';
@@ -7,9 +8,9 @@ import { safeJsonForScript } from '../lib/safe-json';
 import { isPublishedArticlePath } from '../../config/article-template-policy.mjs';
 import { ARTICLE_LAYOUT } from '../../config/article-layout.mjs';
 import { categoryGroup } from '../lib/article-categories';
-import { instaxFilmOffers, perSheet as filmPerSheet } from '../data/instax-film-prices';
-import { instaxPatternOffers, perSheet as patternPerSheet } from '../data/instax-pattern-film-prices';
-import { sdCardOffers, perGb } from '../data/sd-card-prices';
+import { INSTAX_FILM_CHECKED_AT, instaxFilmOffers, perSheet as filmPerSheet } from '../data/instax-film-prices';
+import { INSTAX_PATTERN_CHECKED_AT, instaxPatternOffers, perSheet as patternPerSheet } from '../data/instax-pattern-film-prices';
+import { SD_CARD_CHECKED_AT, sdCardOffers, perGb } from '../data/sd-card-prices';
 
 // 比較記事の枠：旧テンプレートの互換ページを除き、公開日が新しい記事を
 // topPage.latestLimit 件まで表示する（公開記事が少ない間は全件）。
@@ -48,6 +49,7 @@ const range = (values: number[]) => {
 const priceGuides = [
   {
     path: '/guides/instax-mini-film-price/',
+    checkedAt: INSTAX_FILM_CHECKED_AT,
     title: 'チェキのフィルムは1枚いくら？',
     image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/cheki/cabinet/tokiwacamera42/4547410377224n-1.jpg?_ex=200x200',
     imageAlt: 'instax mini フィルム（10枚入り）',
@@ -57,6 +59,7 @@ const priceGuides = [
   },
   {
     path: '/guides/instax-mini-pattern-film-price/',
+    checkedAt: INSTAX_PATTERN_CHECKED_AT,
     title: 'チェキの絵柄つきフィルムは1枚いくら？',
     image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/mituboshicamera/cabinet/goods_08/imgrc0115267911.jpg?_ex=200x200',
     imageAlt: 'instax mini フィルム レインボー（10枚入り）',
@@ -66,6 +69,7 @@ const priceGuides = [
   },
   {
     path: '/guides/sd-card-price-per-gb/',
+    checkedAt: SD_CARD_CHECKED_AT,
     title: '4K動画向けSDカードは1GBいくら？',
     image: 'https://thumbnail.image.rakuten.co.jp/@0_mall/pc-goodmedia/cabinet/img09/imgrc0162361812.jpg?_ex=200x200',
     imageAlt: 'キオクシア EXCERIA G2 SDXCカード',
@@ -127,6 +131,7 @@ const categories = [...categoryCounts.entries()]
           <div class="card-body">
             <h3><a href={guide.path}>{guide.title}</a></h3>
             <p class="card-desc">{guide.summary}</p>
+            <PriceCheckedAt checkedAt={guide.checkedAt} />
             <span class="guide-more" aria-hidden="true">価格を比べる →</span>
           </div>
         </article>
