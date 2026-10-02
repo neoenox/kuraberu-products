@@ -36,6 +36,10 @@ const {
   heading = '主な比較ポイント',
   commonNote = '',
 } = Astro.props;
+const different = items.filter((row) => row.left !== row.right);
+const important = [...different.filter((row) => row.highlight), ...different.filter((row) => !row.highlight)].slice(0, 3);
+const remaining = different.filter((row) => !important.includes(row));
+const common = items.filter((row) => row.left === row.right);
 ---
 
 <section class="key-diffs" aria-label={heading}>
@@ -43,8 +47,9 @@ const {
     <h2 id="key-differences">{heading}</h2>
   </div>
   {commonNote.trim() && <p class="key-diffs-common">{commonNote}</p>}
+  {important.length > 0 && <p>まず確認したい違い {important.length}項目</p>}
   <div class="key-diffs-list">
-    {items.map((row) => {
+    {important.map((row) => {
       // 比率バーの0除算を防ぐ: 両方が0のときはバーを描画しない。
       const barTotal = row.bar ? row.bar.left + row.bar.right : 0;
       const rawRatio =
@@ -87,9 +92,60 @@ const {
       );
     })}
   </div>
+  {(remaining.length > 0 || common.length > 0) && <details class="comparison-details">
+    <summary>詳細仕様・共通仕様を見る（{remaining.length + common.length}項目）</summary>
+    {remaining.length > 0 && <><h3>その他の違い</h3><div class="key-diffs-list">
+    {remaining.map((row) => {
+      // 比率バーの0除算を防ぐ: 両方が0のときはバーを描画しない。
+      const barTotal = row.bar ? row.bar.left + row.bar.right : 0;
+      const rawRatio =
+        row.bar && barTotal > 0 ? (row.bar.left / barTotal) * 100 : null;
+      const leftRatio =
+        rawRatio === null
+          ? null
+          : row.direction === 'lower-is-better'
+            ? 100 - rawRatio
+            : rawRatio;
+      const rightRatio = leftRatio === null ? null : 100 - leftRatio;
+      return (
+        <div class="key-diff-row">
+          <p class="key-diff-label">{row.label}</p>
+          <div class="key-diff-values">
+            <div class={`key-diff-value${row.highlight === 'left' ? ' is-highlighted' : ''}`}>
+              <span class="key-diff-brand">{leftLabel}</span>
+              <b>{row.left}</b>
+              {row.highlight === 'left' && row.highlightNote && <em class="difference-highlight-note">{row.highlightNote}</em>}
+            </div>
+            <div class={`key-diff-value${row.highlight === 'right' ? ' is-highlighted' : ''}`}>
+              <span class="key-diff-brand">{rightLabel}</span>
+              <b>{row.right}</b>
+              {row.highlight === 'right' && row.highlightNote && <em class="difference-highlight-note">{row.highlightNote}</em>}
+            </div>
+          </div>
+          {row.bar && leftRatio !== null && (
+            <div class="key-diff-bar" role="img" aria-label={`${leftLabel}: ${row.left} / ${rightLabel}: ${row.right}`}>
+              <div class="key-diff-bar-track">
+                <div class="key-diff-bar-fill is-left" style={`width:${leftRatio}%`}></div>
+                <div class="key-diff-bar-fill is-right" style={`width:${rightRatio}%`}></div>
+              </div>
+              <div class="key-diff-bar-scale">
+                <span>{row.left}</span>
+                <span>{row.right}</span>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    })}
+  </div></>}
+    {common.length > 0 && <><h3>両商品に共通する仕様</h3><p>{leftLabel} / {rightLabel}</p><dl>{common.map((row) => <div class="key-diff-row"><dt>{row.label}</dt><dd>{row.left}{row.highlightNote && <em class="difference-highlight-note">{row.highlightNote}</em>}</dd></div>)}</dl></>}
+  </details>}
 </section>
 
 <style>
+  .comparison-details { margin-top: 1rem; }
+  .comparison-details summary { cursor: pointer; font-weight: 700; padding-block: 0.75rem; }
+  .comparison-details dd { margin: 0.5rem 0; overflow-wrap: anywhere; }
   .key-diffs {
     margin-block: 1.5rem 2.5rem;
   }

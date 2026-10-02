@@ -1,4 +1,5 @@
 ---
+import { categoryGroup } from '../../../lib/article-categories';
 import ArticleListPage from '../../../components/ArticleListPage.astro';
 import { publishedArticleMetadata } from '../../../content/articles';
 
@@ -8,7 +9,7 @@ const allCategories = [...new Set(publishedArticleMetadata.map((article) => arti
 
 export function getStaticPaths() {
   const categories = [...new Set(publishedArticleMetadata.map((article) => article.category))].sort();
-  return categories.map((category) => ({
+  return [...new Set([...categories, ...categories.map(categoryGroup)])].map((category) => ({
     params: { category },
     props: { category },
   }));
@@ -16,7 +17,7 @@ export function getStaticPaths() {
 
 const { category } = Astro.props;
 const articles = [...publishedArticleMetadata]
-  .filter((article) => article.category === category)
+  .filter((article) => (article.category === category || categoryGroup(article.category) === category))
   .sort((a, b) => (a.modifiedAt < b.modifiedAt ? 1 : a.modifiedAt > b.modifiedAt ? -1 : 0));
 ---
 <ArticleListPage

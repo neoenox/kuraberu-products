@@ -1,3 +1,4 @@
+import { categoryGroup } from "./article-categories";
 import type { ArticleMetadata } from "../content/articles";
 import { comparisonSubjects } from "./article-subjects";
 
@@ -67,7 +68,12 @@ export function matchesArticle(
   article: ArticleMetadata,
   state: ArticleDiscoveryState,
 ): boolean {
-  if (state.category && article.category !== state.category) return false;
+  if (
+    state.category &&
+    article.category !== state.category &&
+    categoryGroup(article.category) !== state.category
+  )
+    return false;
   if (state.tag && !article.tags.includes(state.tag)) return false;
   const query = normalizeDiscoveryText(state.query);
   if (!query) return true;
@@ -102,7 +108,12 @@ export function parseDiscoveryState(
   return {
     query: params.get("q")?.slice(0, 100) ?? "",
     category:
-      category && validCategories.includes(category) ? category : undefined,
+      category &&
+      [...validCategories, ...validCategories.map(categoryGroup)].includes(
+        category,
+      )
+        ? category
+        : undefined,
     tag: tag && validTags.includes(tag) ? tag : undefined,
   };
 }

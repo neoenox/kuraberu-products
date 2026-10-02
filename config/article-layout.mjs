@@ -125,7 +125,7 @@ export const ARTICLE_LAYOUT = {
   // （tests/top-page.test.ts）がここから期待値を導出する。
   topPage: {
     // トップのカテゴリ入口に載せる最低記事数（これ未満のカテゴリは非表示）。
-    categoryMinArticles: 2,
+    categoryMinArticles: 1,
   },
 };
 

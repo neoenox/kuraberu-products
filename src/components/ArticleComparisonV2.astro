@@ -68,6 +68,13 @@ const {
     leftPoints={left.guidePoints}
     rightPoints={right.guidePoints}
   />
+  <VisualKeyDifferences
+    leftLabel={`${left.brand} ${left.line}`}
+    rightLabel={`${right.brand} ${right.line}`}
+    items={rows}
+    commonNote={commonNote}
+  />
+  <TrustLine checkedAt={checkedAt} showDisclosure={false} />
   {showNextStepBlock && (
     <NextStepBlock
       left={{ label: `${left.brand} ${left.line}`, href: left.purchaseHref, productId: left.productId, image: left.image, amazonHref: left.amazonHref, amazonStatus: left.amazonStatus }}
@@ -77,11 +84,5 @@ const {
       showPurchaseCtas={showNextStepPurchaseCtas}
     />
   )}
-  <VisualKeyDifferences
-    leftLabel={`${left.brand} ${left.line}`}
-    rightLabel={`${right.brand} ${right.line}`}
-    items={rows}
-    commonNote={commonNote}
-  />
-  <TrustLine checkedAt={checkedAt} showDisclosure={false} />
+
 </section>
