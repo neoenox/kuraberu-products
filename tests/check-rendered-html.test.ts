@@ -1240,6 +1240,32 @@ describe("article next-step block (conclusion → 次にすること: A/B購入 
     ]);
   });
 
+  it("expects no Rakuten buttons when Rakuten is explicitly unavailable but the article is verified", () => {
+    const html = comparisonWith(
+      nextStep("/tools/product-finder/", { buyCount: 0 }),
+      true,
+    ).replace(
+      '<meta name="article:purchase-link-status" content="verified">',
+      '<meta name="article:purchase-link-status" content="verified"><meta name="article:rakuten-link-status" content="unavailable">',
+    );
+    expect(validateArticleNextStep("articles/x/index.html", html)).toEqual([]);
+  });
+
+  it("still requires two Rakuten buttons when Rakuten is verified", () => {
+    const html = comparisonWith(
+      nextStep("/tools/product-finder/", { buyCount: 0 }),
+      true,
+    ).replace(
+      '<meta name="article:purchase-link-status" content="verified">',
+      '<meta name="article:purchase-link-status" content="verified"><meta name="article:rakuten-link-status" content="verified">',
+    );
+    const errors = validateArticleNextStep("articles/x/index.html", html);
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain(
+      "next-step block must render exactly 2 purchase buttons",
+    );
+  });
+
   it("rejects a block whose diagnosis link is not a diagnosis page", () => {
     const errors = validateArticleNextStep(
       "articles/x/index.html",

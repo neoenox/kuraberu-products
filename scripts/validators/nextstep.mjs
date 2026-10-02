@@ -22,8 +22,15 @@ export function validateArticleNextStep(relative, html) {
     html.match(
       /<meta name="article:purchase-link-status" content="([^"]+)">/i,
     )?.[1] ?? null;
+  // 楽天ボタン（next-step__buy）は楽天の状態で決まる。楽天が「取り扱いなし」と
+  // 明記された記事（rakutenLinkStatus: "unavailable"）は、アマゾンの購入先だけで
+  // 公開でき、楽天ボタンは出さない。指定がなければ記事全体の状態に従う。
+  const rakutenLinkStatus =
+    html.match(
+      /<meta name="article:rakuten-link-status" content="([^"]+)">/i,
+    )?.[1] ?? purchaseLinkStatus;
   const hasPurchaseCtas =
-    purchaseLinkStatus === "verified" || purchaseLinkStatus === "direct";
+    rakutenLinkStatus === "verified" || rakutenLinkStatus === "direct";
   const legacyCtas = [
     ...html.matchAll(
       /<section\b[^>]*class="[^"]*\bdiagnosis-cta\b[^"]*"[^>]*>/gi,

@@ -674,8 +674,10 @@ describe.skipIf(!hasDist)("article diagnosis CTA (rendered dist)", () => {
       ).toBe(
         nextStepPurchaseDisabled
           ? 0
-          : article?.purchaseLinkStatus === "verified" ||
-              article?.purchaseLinkStatus === "direct"
+          : (article?.rakutenLinkStatus ?? article?.purchaseLinkStatus) ===
+                "verified" ||
+              (article?.rakutenLinkStatus ?? article?.purchaseLinkStatus) ===
+                "direct"
             ? 2
             : 0,
       );
