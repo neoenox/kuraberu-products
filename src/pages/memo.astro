@@ -1,16 +1,31 @@
 ---
+import { buildMemoProducts } from "../lib/memo-products";
+import { safeJsonForScript } from "../lib/safe-json";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { publishedArticleMetadata } from "../content/articles";
+const products = buildMemoProducts();
 ---
 <BaseLayout title="比較メモ｜くらべる商品メモ" description="目的と候補を保存する比較メモ" robots="noindex,nofollow">
   <section class="section wrap article-index" data-memo-page>
     <p class="eyebrow">Decision memo</p>
     <h1>比較メモ</h1>
-    <p class="lead">記事を保存するだけでなく、目的・条件・候補・決定理由をこのブラウザに記録できます。保存状態はこのブラウザの端末内だけに保存されます。</p>
+    <p class="lead">候補商品を選んで違いを比べ、必要に応じて予算や選ぶ理由を記録できます。記録はこのブラウザの端末内だけに保存されます。</p>
 
     <form class="card comparison-project-form" data-project-form>
+      <h2>候補商品を選ぶ</h2>
+      <p>商品は8件まで追加できます。記事の保存とは別に、比べたい商品だけを選びます。</p>
+      <label>追加する商品<select data-product-picker><option value="">商品を選択</option>{products.map(product => <option value={product.id}>{product.name}</option>)}</select></label>
+      <button type="button" class="secondary-button" data-product-add>比較に追加</button>
+      <p><a href="/articles/">比較記事を探す →</a></p>
+      <div class="card-actions">
+        <button class="cta" type="submit">比較メモを保存</button>
+        <span class="meta" role="status" aria-live="polite" data-project-status></span>
+      </div>
+      <div data-product-comparison></div>
+      <details data-project-details><summary>予算・利用条件・判断を記録する（任意）</summary>
       <h2>比較の前提</h2>
-      <p class="meta">価格や仕様の自動取得は行いません。未確認の情報は未確認のまま残してください。</p>
+      <p class="meta">未確認の情報は未確認のまま残してください。</p>
+      <p class="meta" data-legacy-candidates></p>
       <div class="comparison-form-grid">
         <label>
           比較の目的・利用シーン
@@ -48,15 +63,13 @@ import { publishedArticleMetadata } from "../content/articles";
           <textarea name="unresolved" rows="3" maxlength="500" placeholder="1行に1項目"></textarea>
         </label>
       </div>
-      <div class="card-actions">
-        <button class="cta" type="submit">比較メモを保存</button>
-        <span class="meta" role="status" aria-live="polite" data-project-status></span>
-      </div>
+      </details>
+
     </form>
 
     <section class="saved-articles" aria-labelledby="saved-articles-heading">
       <h2 id="saved-articles-heading">保存した候補記事</h2>
-      <p class="meta">候補にしたい記事を先に記事ページで保存し、ここで候補として選択してください。</p>
+      <p class="meta">あとで読みたい記事の保存一覧です。商品候補への追加は、各記事の「この2商品を比較する」から直接行えます。</p>
       <div class="article-list" data-memo-list>
         {publishedArticleMetadata.map((article) => (
           <template data-memo-template data-article-id={article.id}>
@@ -66,8 +79,7 @@ import { publishedArticleMetadata } from "../content/articles";
               <p>{article.summary}</p>
               <p class="meta">商品情報確認日 {article.productInfoCheckedAt ?? "未記録"}</p>
               <label class="candidate-choice">
-                <input type="checkbox" data-project-candidate value={article.id}>
-                この記事を比較候補にする
+                <a href={`/memo/?article=${encodeURIComponent(article.id)}`}>{article.productCount === 1 ? "この商品を比較する →" : "この2商品を比較する →"}</a>
               </label>
               <div class="card-actions">
                 <a class="cta" href={article.path}>記事を確認する →</a>
@@ -82,6 +94,15 @@ import { publishedArticleMetadata } from "../content/articles";
         <p><a href="/articles/">比較記事一覧から記事を探す →</a></p>
       </div>
     </section>
+    <section class="card memo-backup" aria-labelledby="backup-heading">
+      <h2 id="backup-heading">バックアップと復元</h2>
+      <p>ファイルには目的・予算・候補・記入内容が含まれます。安全な場所に保管してください。復元するファイルは端末内で検証します。</p>
+      <button type="button" class="secondary-button" data-memo-export>現在の入力をファイルに書き出す</button>
+      <label>バックアップを選択（1MB以下）<input type="file" accept=".json,application/json" data-memo-import></label>
+      <p role="status" aria-live="polite" data-backup-status></p>
+      <div hidden data-backup-preview><h3>復元内容の確認</h3><p>確定すると現在の保存記事・候補・記入内容を以下で置き換えます。取り消すと変更しません。</p><pre data-backup-content></pre><button type="button" data-backup-confirm>この内容で置き換える</button><button type="button" data-backup-cancel>取り消す</button></div>
+    </section>
+    <script is:inline type="application/json" data-memo-products set:html={safeJsonForScript(products)} />
     <noscript><p class="notice">比較メモの保存状態を表示するにはJavaScriptが必要です。下の記事リンクから通常どおり閲覧できます。</p></noscript>
   </section>
 
@@ -90,3 +111,17 @@ import { publishedArticleMetadata } from "../content/articles";
     initMemoApp();
   </script>
 </BaseLayout>
+
+<style>
+  :global(.memo-product-grid) { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1rem; }
+  :global(.memo-product) { min-width: 0; overflow-wrap: anywhere; }
+  :global(.memo-product label) { display: block; margin-block: 1rem; }
+  :global(.memo-product textarea) { width: 100%; box-sizing: border-box; }
+  :global(.memo-comparison-row) { border-top: 1px solid var(--border); padding-block: 1rem; overflow-wrap: anywhere; }
+  select { width: 100%; max-width: 100%; padding: .75rem; font: inherit; border: 1px solid var(--border); border-radius: .5rem; background: white; margin-block: .5rem; }
+  .comparison-project-form > .card-actions { margin-block: 1rem; flex-wrap: wrap; }
+  .comparison-project-form { min-width: 0; }
+  .memo-backup { margin-top: 2rem; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; }
+  [data-project-details] { margin: 1.5rem 0; }
+</style>
