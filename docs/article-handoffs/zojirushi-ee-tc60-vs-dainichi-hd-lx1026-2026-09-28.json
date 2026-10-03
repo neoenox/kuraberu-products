@@ -1,0 +1,184 @@
+{
+  "id": "zojirushi-ee-tc60-vs-dainichi-hd-lx1026-2026-09-28",
+  "articleId": "zojirushi-ee-tc60-vs-dainichi-hd-lx1026",
+  "source": "Codex direct research using manufacturer pages and marketplace UI",
+  "researchDateJst": "2026-09-28",
+  "articleReady": true,
+  "publishStatus": "published",
+  "category": "加湿器",
+  "candidate": {
+    "adoption": "採用",
+    "duplicateCheck": {
+      "slugRoute": "既存route・seedに同一slugなし",
+      "leftModel": "EE-TC60の比較記事なし。象印の既存加湿器記事は別型番",
+      "rightModel": "HD-LX1026の比較記事なし。ダイニチの既存加湿器記事は別モデル"
+    }
+  },
+  "products": {
+    "left": {
+      "name": "象印 スチーム式加湿器 EE-TC60（ソフトブラック）",
+      "model": "EE-TC60-BM",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-tc/",
+      "officialSpecUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-tc/",
+      "officialImageUrl": "https://www.zojirushi.co.jp/syohin/assets/cms/materials/ee-tc_kv_02.png",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/png",
+        "bytes": 116442,
+        "savedAs": "public/products/zojirushi-ee-tc60-black.png",
+        "renderedFrom": "src/assets/products/zojirushi-ee-tc60-black.png"
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/ksdenki/4974305232502/",
+        "productPageStatus": 200,
+        "modelMatch": "EE-TC60 BM ソフトブラック",
+        "shop": "ケーズデンキ 楽天市場店",
+        "affiliateUi": {
+          "status": "generated",
+          "displayedProduct": "象印マホービン スチーム式加湿器 EE-TC60 BM ソフトブラック",
+          "displayedShop": "ケーズデンキ 楽天市場店",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "destinationHost": "item.rakuten.co.jp",
+          "destinationMatchesProductPage": true,
+          "trackedUrlStored": false,
+          "tracking": "記事seedには商品詳細URLのみ保存し、サイトのランタイム設定で広告リンク化"
+        }
+      }
+    },
+    "right": {
+      "name": "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+      "model": "HD-LX1026",
+      "officialUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialSpecUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialImageUrl": "https://www.dainichi-net.co.jp/uploads/slider480/hd-lx1026_w.jpg",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytes": 95995,
+        "savedAs": "public/products/dainichi-hd-lx1026-w.jpg",
+        "renderedFrom": "src/assets/products/dainichi-hd-lx1026-w.jpg"
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/ksdenki/4951272037248/",
+        "productPageStatus": 200,
+        "modelMatch": "HD-LX1026(W) スノーホワイト",
+        "shop": "ケーズデンキ 楽天市場店",
+        "affiliateUi": {
+          "status": "generated",
+          "displayedProduct": "ダイニチ工業 ハイブリッド式加湿器 LX TYPE HD-LX1026(W) スノーホワイト",
+          "displayedShop": "ケーズデンキ 楽天市場店",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "destinationHost": "item.rakuten.co.jp",
+          "destinationMatchesProductPage": true,
+          "trackedUrlStored": false,
+          "tracking": "記事seedには商品詳細URLのみ保存し、サイトのランタイム設定で広告リンク化"
+        }
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "keyDifferences": [
+      "スチーム式とハイブリッド式",
+      "最大加湿量600mL/hと標準960mL/h（ターボ1,100mL/h）",
+      "対応床面積17畳と27畳（プレハブ洋室）",
+      "タンク容量4.0Lと7.0L",
+      "手入れ方法",
+      "重量2.8kgと約6.3kg"
+    ],
+    "notes": [
+      "加湿量はメーカー公称値。ダイニチは室温20℃・湿度30％の条件を注記",
+      "消費電力、連続運転時間、運転音は方式やモードが異なるため、横並びの優劣を付けない",
+      "両機種とも公式ページはオープン価格。記事に固定価格・在庫・口コミを掲載しない"
+    ]
+  },
+  "amazon": {
+    "statusBySide": {
+      "left": "verified",
+      "right": "search"
+    },
+    "ctaModeBySide": {
+      "left": "product",
+      "right": "search"
+    },
+    "searchCtaBySide": {
+      "right": {
+        "status": "enabled",
+        "query": "ダイニチ ハイブリッド式加湿器 HD-LX1026 スノーホワイト",
+        "productDetailMatch": "unverified",
+        "evidence": "Amazon.co.jpの型番検索と商品名・型番検索の結果にHD-LX1026の個別商品ページを確認できず。型番を含む検索結果へ案内するボタンを別途表示し、Amazon商品ページの一致確認とは区別する。検索URLはランタイムのAssociates設定で生成する。",
+        "observedAtJst": "2026-09-28"
+      }
+    },
+    "left": "https://www.amazon.co.jp/dp/B0HGFKGF2N",
+    "right": null,
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "associates-toolbar-visible",
+        "evidence": "商品詳細ページでAmazonアソシエイトのリンク生成UIが表示され、公式リンク生成を実行",
+        "observedAtJst": "2026-09-28"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon商品名にEE-TC60-BM、ASIN B0HGFKGF2Nを確認"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品単位のプログラム対象可否表示は画面で確認できなかった。対象外とは判断しない"
+          },
+          "taggedUrl": {
+            "state": "generated",
+            "evidence": "Amazonアソシエイト公式UIで商品リンクを生成。タグ付きURLは記録せず、サイトのランタイム設定を使用"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクから同一ASIN B0HGFKGF2Nの商品詳細ページへの最終遷移を確認"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "not-found-in-exact-query",
+            "evidence": "Amazon.co.jpでHD-LX1026を検索した結果に一致する商品詳細ページを確認できず。全出品がないとは判断しない"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "一致する商品詳細ページが見つからなかったため、商品単位の対象表示は未確認"
+          },
+          "taggedUrl": {
+            "state": "not-generated",
+            "evidence": "一致する商品詳細ページを特定できず、誤ったASINでのリンク生成は行わなかった"
+          },
+          "destination": {
+            "state": "not-checked",
+            "evidence": "一致する商品詳細ページ・ASINを特定できず、遷移先は未確認"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "direct",
+    "statusBySide": {
+      "left": "direct",
+      "right": "direct"
+    },
+    "ctaModeBySide": {
+      "left": "product",
+      "right": "product"
+    },
+    "left": "https://item.rakuten.co.jp/ksdenki/4974305232502/",
+    "right": "https://item.rakuten.co.jp/ksdenki/4951272037248/",
+    "trackingPolicy": "楽天は商品ページの直接リンクとして表示する（成果リンクではない）。成果リンクはログイン済みの楽天アフィリエイト画面で生成して確認した場合にだけ記録する。"
+  },
+  "social": {
+    "status": "none",
+    "adoptedCount": 0,
+    "directPostUrls": [],
+    "embedUrls": [],
+    "notes": "SNS・口コミを比較根拠に採用せず、メーカー公式仕様だけで比較する。記事にSNS欄を表示しない"
+  },
+  "draftReason": null
+}
