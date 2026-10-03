@@ -125,7 +125,7 @@ export const ARTICLE_LAYOUT = {
   // （tests/top-page.test.ts）がここから期待値を導出する。
   topPage: {
     // トップのカテゴリ入口に載せる最低記事数（これ未満のカテゴリは非表示）。
-    categoryMinArticles: 2,
+    categoryMinArticles: 1,
     // トップの「どっちを買う？」枠に出す比較記事の最大件数（公開日の新しい順）。
     // 公開記事がこの件数以下の間は、すべての記事をトップから辿れる。
     latestLimit: 24,
