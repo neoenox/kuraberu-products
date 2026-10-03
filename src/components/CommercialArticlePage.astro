@@ -1,4 +1,6 @@
 ---
+import ArticleIntroduction from './ArticleIntroduction.astro';
+import ConsumableGuides from './ConsumableGuides.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ComparisonMemoButton from './ComparisonMemoButton.astro';
 import PurchaseCard from './PurchaseCard.astro';
@@ -208,7 +210,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <p class="meta"><a href="/articles/">比較記事一覧</a> / {article.category} · 公開日 <time datetime={article.publishedAt}>{article.publishedAt}</time> · 更新日 <time datetime={article.modifiedAt}>{article.modifiedAt}</time></p>
     <h1>{article.headline}</h1>
     <ComparisonMemoButton articleId={article.id} />
-    <p class="lead">{seed.lead ?? article.summary}</p>
+    <ArticleIntroduction text={seed.lead ?? article.summary} />
     {hasHeroSources && (
       <nav class="article-toc" aria-label="目次">
         <h2>目次</h2>
@@ -303,6 +305,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
     <h2>調査方法・免責</h2>
     <p>このサイトの比較は、メーカー公式の商品ページ・公式の比較表で確認できる情報のみを根拠としています。個人の感想や口コミは比較の根拠にしていません。</p>
   </article>
+  <ConsumableGuides articleId={article.id} />
   <RelatedArticles currentPath={article.path} currentCategory={article.category} />
 </BaseLayout>
 

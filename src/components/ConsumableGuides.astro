@@ -1,0 +1,6 @@
+---
+interface Props { articleId: string }
+const supported = new Set(['instax-mini-13-vs-mini-41', 'instax-mini-evo-vs-evo-cinema']);
+const show = supported.has(Astro.props.articleId);
+---
+{show && <aside class="card" aria-label="使用するフィルムの費用"><h2>使用するフィルムの費用も確認する</h2><p>この2商品で使用するinstax miniフィルムの価格を、1枚あたりで比較できます。商品本体の価格とは別の費用です。</p><ul><li><a href="/guides/instax-mini-film-price/">無地フィルムの価格を比較する →</a></li><li><a href="/guides/instax-mini-pattern-film-price/">絵柄つきフィルムの価格を比較する →</a></li></ul></aside>}

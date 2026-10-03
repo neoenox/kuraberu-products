@@ -471,14 +471,16 @@ const clientData = {
 
         if (isInMemo) {
           // 比較メモから削除
-          const { removed } = removeProductArticlesFromMemo(product, knownArticleIds);
+          const { removed, saved } = removeProductArticlesFromMemo(product, knownArticleIds);
+          if (!saved) { memoToggleBtn.textContent = '保存できませんでした（再試行できます）'; return; }
           if (removed.length > 0) {
             memoToggleBtn.textContent = '比較メモに追加';
             memoToggleBtn.setAttribute('aria-pressed', 'false');
           }
         } else {
           // 比較メモに追加
-          const { added, atLimit } = addProductArticlesToMemo(product, knownArticleIds);
+          const { added, atLimit, saved } = addProductArticlesToMemo(product, knownArticleIds);
+          if (!saved) { memoToggleBtn.textContent = '保存できませんでした（再試行できます）'; return; }
           if (added.length > 0) {
             memoToggleBtn.textContent = '比較メモから外す';
             memoToggleBtn.setAttribute('aria-pressed', 'true');
