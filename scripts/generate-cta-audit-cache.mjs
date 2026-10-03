@@ -21,6 +21,7 @@ import {
   outboundHostAllowlist,
   auditVerifiedCtaDestinations,
   CTA_CACHE_FILE,
+  CTA_REFRESH_TIMEOUT_MS,
 } from "./check-purchase-link-consistency.mjs";
 
 const CACHE_PATH = path.resolve(CTA_CACHE_FILE);
@@ -42,6 +43,7 @@ async function main() {
     urls: ctas,
     allowlist,
     allowNetworkSkip: false,
+    timeoutMs: CTA_REFRESH_TIMEOUT_MS,
   });
 
   for (const warning of audit.warnings) console.warn(warning);
