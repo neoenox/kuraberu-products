@@ -1,4 +1,5 @@
 ---
+import PriceCheckedAt from './PriceCheckedAt.astro';
 import type { priceGuides } from '../data/price-guides';
 
 interface Props {
@@ -14,6 +15,7 @@ const { guide } = Astro.props;
   <div class="card-body">
     <h3><a href={guide.path}>{guide.title}</a></h3>
     <p class="card-desc">{guide.summary}</p>
+    <PriceCheckedAt checkedAt={guide.checkedAt} />
     <span class="guide-more" aria-hidden="true">価格を比べる →</span>
   </div>
 </article>
