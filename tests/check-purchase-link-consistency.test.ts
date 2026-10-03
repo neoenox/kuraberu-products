@@ -4,6 +4,8 @@ import {
   CTA_CACHE_FILE,
   CTA_CACHE_MAX_AGE_DAYS,
   CTA_AUDIT_CONCURRENCY,
+  CTA_REFRESH_TIMEOUT_MS,
+  REQUEST_TIMEOUT_MS,
   MAX_REDIRECT_HOPS,
   auditVerifiedCtaDestinations,
   checkArticleSource,
@@ -574,6 +576,8 @@ describe("verified CTA destination audit (issue #342)", () => {
     });
 
     expect(CTA_AUDIT_CONCURRENCY).toBeGreaterThan(1);
+    // #973: 週次更新は応答に約10秒かかる楽天に合わせ、通常より長いタイムアウトを使う。
+    expect(CTA_REFRESH_TIMEOUT_MS).toBeGreaterThan(REQUEST_TIMEOUT_MS);
     expect(maxActive).toBe(2);
     expect(audit.errors).toEqual([]);
     expect(audit.checked.map(({ article }) => article)).toEqual(
