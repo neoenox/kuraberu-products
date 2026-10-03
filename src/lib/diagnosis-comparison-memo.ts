@@ -7,11 +7,12 @@
 
 import {
   comparisonMemoStorageKey,
-  sanitizeComparisonMemo,
   encodeComparisonMemo,
   toggleComparisonMemo,
   type ComparisonMemoState,
 } from "./comparison-memo";
+
+import { memoStateKey, readMemoState, saveMemoState } from "./memo-state";
 
 /** パスから記事IDを抽出する（例: "/articles/pigeon-bottle-160-240/" → "pigeon-bottle-160-240"） */
 export function extractArticleIdFromPath(path: string): string | null {
@@ -33,20 +34,29 @@ export function loadComparisonMemo(
   knownIds: readonly string[],
 ): ComparisonMemoState {
   try {
-    const raw = localStorage.getItem(comparisonMemoStorageKey);
-    return sanitizeComparisonMemo(raw, knownIds);
+    return { version: 1, ids: readMemoState(localStorage, knownIds).ids };
   } catch {
     return { version: 1, ids: [] };
   }
 }
 
 /** 比較メモの状態をlocalStorageに保存する */
-export function saveComparisonMemo(state: ComparisonMemoState): void {
+export function saveComparisonMemo(
+  state: ComparisonMemoState,
+  knownIds: readonly string[] = state.ids,
+): boolean {
   try {
-    const encoded = encodeComparisonMemo(state.ids);
-    localStorage.setItem(comparisonMemoStorageKey, encoded);
+    if (localStorage.getItem(memoStateKey) !== null) {
+      const snapshot = readMemoState(localStorage, knownIds);
+      saveMemoState(localStorage, { ...snapshot, ids: [...state.ids] });
+    } else
+      localStorage.setItem(
+        comparisonMemoStorageKey,
+        encodeComparisonMemo(state.ids),
+      );
+    return true;
   } catch {
-    // プライベートモード等で保存できない場合は黙って無視する
+    return false;
   }
 }
 
@@ -54,7 +64,12 @@ export function saveComparisonMemo(state: ComparisonMemoState): void {
 export function addProductArticlesToMemo(
   product: { articleUrls: readonly string[] },
   knownIds: readonly string[],
-): { added: string[]; alreadyExists: string[]; atLimit: boolean } {
+): {
+  added: string[];
+  alreadyExists: string[];
+  atLimit: boolean;
+  saved: boolean;
+} {
   const articleIds = extractArticleIdsFromProduct(product);
   const memoState = loadComparisonMemo(knownIds);
 
@@ -81,11 +96,9 @@ export function addProductArticlesToMemo(
     }
   }
 
-  if (added.length > 0) {
-    saveComparisonMemo(currentState);
-  }
-
-  return { added, alreadyExists, atLimit };
+  const saved =
+    added.length === 0 || saveComparisonMemo(currentState, knownIds);
+  return { added: saved ? added : [], alreadyExists, atLimit, saved };
 }
 
 /** 商品が比較メモに含まれているかどうかを判定する */
@@ -102,7 +115,7 @@ export function isProductInMemo(
 export function removeProductArticlesFromMemo(
   product: { articleUrls: readonly string[] },
   knownIds: readonly string[],
-): { removed: string[] } {
+): { removed: string[]; saved: boolean } {
   const articleIds = extractArticleIdsFromProduct(product);
   const memoState = loadComparisonMemo(knownIds);
 
@@ -118,9 +131,7 @@ export function removeProductArticlesFromMemo(
     }
   }
 
-  if (removed.length > 0) {
-    saveComparisonMemo(currentState);
-  }
-
-  return { removed };
+  const saved =
+    removed.length === 0 || saveComparisonMemo(currentState, knownIds);
+  return { removed: saved ? removed : [], saved };
 }
