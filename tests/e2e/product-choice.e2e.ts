@@ -14,7 +14,7 @@ test("category subtype selection survives reload and clearing restores the paren
   await expect(page.locator("[data-discovery-count]")).toHaveText("2件の記事");
   await page.locator("[data-discovery-clear]").first().click();
   await expect(category).toHaveValue("オーディオ");
-  await expect(page.locator("[data-discovery-count]")).toHaveText("5件の記事");
+  await expect(page.locator("[data-discovery-count]")).toHaveText("6件の記事");
 });
 
 test("keyboard can reveal common specifications and mobile content does not overflow", async ({

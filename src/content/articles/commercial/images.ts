@@ -1,6 +1,10 @@
 const commercialArticleImages: Readonly<
   Record<string, { left?: `/${string}`; right?: `/${string}` }>
 > = {
+  "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max": {
+    left: "/products/soundcore-liberty-5-pro-vs-max.png",
+    right: "/products/soundcore-liberty-5-pro-max.png",
+  },
   "logicool-pro-x-superlight-2-dex-vs-superlight-2": {
     left: "/products/logicool-pro-x-superlight-2-dex.png",
     right: "/products/logicool-pro-x-superlight-2.png",
