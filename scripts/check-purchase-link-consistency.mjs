@@ -56,6 +56,9 @@ export const ALLOWED_OUTBOUND_HOSTS = Object.freeze([
 // リダイレクト追従の上限 hop 数と 1 リクエストあたりのタイムアウト（ms）。
 export const MAX_REDIRECT_HOPS = 5;
 export const REQUEST_TIMEOUT_MS = 10_000;
+// 週次キャッシュ更新（GitHub ランナー）では item.rakuten.co.jp の応答が約10秒かかるため、
+// 通常の検証より長いタイムアウトを使う（#973）。
+export const CTA_REFRESH_TIMEOUT_MS = 30_000;
 // Keep the scheduled cache refresh within its job timeout when retailer links
 // respond slowly, while limiting concurrent outbound requests.
 export const CTA_AUDIT_CONCURRENCY = 6;

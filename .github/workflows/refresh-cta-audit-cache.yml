@@ -2,8 +2,9 @@ name: refresh CTA audit cache
 
 on:
   schedule:
-    # Weekly on Monday at 02:23 UTC (offset from external-links which runs at 00:23)
-    - cron: "23 2 * * 1"
+    # Mondays and Thursdays at 02:23 UTC (offset from external-links which runs at 00:23).
+    # Twice a week so one failed run does not let the 7-day cache expire (#973).
+    - cron: "23 2 * * 1,4"
   workflow_dispatch:
 
 permissions:
@@ -30,9 +31,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: PROBE (temporary diagnostics)
-        continue-on-error: true
-        run: bash .probe.sh
       - name: Generate CTA audit cache (strict, no network skip)
         run: node scripts/generate-cta-audit-cache.mjs
       - name: Commit updated cache if changed
