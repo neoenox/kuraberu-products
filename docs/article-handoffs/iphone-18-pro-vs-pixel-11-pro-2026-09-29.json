@@ -1,0 +1,163 @@
+{
+  "id": "iphone-18-pro-vs-pixel-11-pro-2026-09-29",
+  "articleId": "iphone-18-pro-vs-pixel-11-pro",
+  "source": "Fresh product selection and research verified against manufacturer pages, Amazon Japan, and Rakuten Affiliate UI",
+  "researchDateJst": "2026-09-29",
+  "articleReady": true,
+  "category": "スマートフォン",
+  "products": {
+    "left": {
+      "name": "Apple iPhone 18 Pro 256GB",
+      "model": "iPhone 18 Pro",
+      "officialUrl": "https://www.apple.com/jp/iphone-18-pro/specs/",
+      "officialImageUrl": "https://www.apple.com/v/iphone-18-pro/a/images/meta/iphone-18-pro_overview__bl9no3txkonm_og.png?202609171604",
+      "imageEvidence": "Apple日本公式ページのog:image URLを確認し、公式ホストから取得。Chromeで画像を直接表示し、iPhone 18 Proの公式プロモーション画像と判別できることを視認。ローカルではpublic/products/iphone-18-pro.pngとして使用。",
+      "officialSpecs": {
+        "capacity": "256GB",
+        "display": "6.3-inch Super Retina XDR, ProMotion up to 120Hz",
+        "dimensions": "71.9 × 150.0 × 8.75 mm",
+        "weight": "211g",
+        "rearCamera": "48MP variable-aperture main, 48MP ultrawide, 48MP 4x telephoto; 8x optical-quality zoom and up to 40x digital zoom",
+        "battery": "up to 24 hours typical use; do not compare directly with Google's estimate without matching test methodology",
+        "sim": "dual eSIM; no physical SIM"
+      },
+      "officialMsrpJpy": 219800,
+      "rakutenProductPage": "https://item.rakuten.co.jp/rakutenmobile-store/iphone-18-pro/",
+      "rakutenProductName": "Apple iPhone 18 Pro SIMフリー 端末本体のみ",
+      "rakutenShop": "楽天モバイル公式ショップ",
+      "rakutenListingEvidence": "2026-09-29にログイン済み楽天アフィリエイト公式画面で当該商品ページを指定して成果URLを生成。公式ショップの商品ページ名はApple iPhone 18 ProのSIMフリー本体。商品ページに容量の選択肢として256GBが表示されることを確認。256GBを選択・購入手続きしておらず、販売価格は記事に転記しない。成果URLのpc=遷移先はこの商品詳細ページと一致。"
+    },
+    "right": {
+      "name": "Google Pixel 11 Pro 256GB Obsidian",
+      "model": "Pixel 11 Pro 256GB",
+      "officialUrl": "https://store.google.com/jp/product/pixel_11_pro_specs?hl=ja",
+      "officialImageUrl": "https://lh3.googleusercontent.com/wDDDdufrDg1fmakvzbW6llGw-vcfA9BaVUO0BgnxrltoQdgkM_j3jF_GUhHwLsehRWjmcZAaE7q7m2R_36-ul3ZUF-_L3GgJg8E=rj-sc0xffffffff",
+      "imageEvidence": "Google Store公式製品ページから取得した公式画像URL。Chromeで画像を直接表示し、Pixel 11シリーズの公式製品画像であることを視認。ローカルではpublic/products/pixel-11-pro.jpgとして使用。",
+      "officialSpecs": {
+        "capacity": "256GB / 12GB RAM",
+        "display": "6.3-inch Super Actua LTPO OLED, 1–120Hz",
+        "dimensions": "152.7 × 71.9 × 8.4 mm",
+        "weight": "204g",
+        "rearCamera": "50MP wide, 48MP ultrawide, 48MP 5x optical telephoto; up to 120x Super Res Zoom Pro",
+        "battery": "4,850mAh typical; 30+ hours claimed; do not compare directly with Apple's estimate without matching test methodology",
+        "sim": "one nanoSIM plus one eSIM or dual eSIM",
+        "softwareUpdates": "7 years of OS, security, and Pixel Drop updates"
+      },
+      "officialStartingPriceJpy": 174800,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HC3B8NG6",
+      "amazonAsin": "B0HC3B8NG6",
+      "rakutenProductPage": "https://item.rakuten.co.jp/best1mobile/pixel11pro/",
+      "rakutenProductName": "Google Pixel11 Pro 256GB | 512GB | 1TB [Obsidian/Olive/Fog/Canyon] Google Store version, SIM-free",
+      "rakutenShop": "best1mobile",
+      "rakutenListingEvidence": "2026-09-29にログイン済み楽天アフィリエイト公式画面で当該商品ページを指定して成果URLを生成。商品名にPixel 11 Pro、容量256GB、色Obsidianの選択肢を確認。成果URLのpc=遷移先はこの商品詳細ページと一致。",
+      "amazonListingEvidence": "Amazon.co.jpの商品詳細ページでGoogle Pixel 11 Pro、256GB、SIMフリー、Obsidian、ASIN B0HC3B8NG6を確認。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Apple Newsroom掲載のiPhone 18 Pro税込219,800円からと、Google Store掲載のPixel 11 Pro税込174,800円から。いずれも標準256GBモデルを比較し、割引・下取りを含まない。",
+    "keyDifferences": [
+      "確認した公式価格はPixel 11 Proが45,000円低い（256GBの掲載価格）",
+      "画面サイズはいずれも6.3インチ級",
+      "Pixel 11 Proは7g軽い（204g対211g）",
+      "iPhone 18 Proは48MP 4倍望遠と8倍光学品質ズーム、Pixel 11 Proは48MP 5倍光学望遠と最大120倍超解像ズーム Proを案内",
+      "Pixel 11 ProはnanoSIMとeSIMまたはデュアルeSIM、iPhone 18 ProはデュアルeSIMで物理SIM非対応",
+      "GoogleはPixel 11 ProのOS・セキュリティ・Pixel Drop更新を7年間と案内。今回参照したApple仕様ページはiPhoneの更新年数を明記していない"
+    ],
+    "cameraCaveat": "望遠倍率とデジタル・超解像ズームの最大倍率は共通基準で測った画質比較ではない。倍率だけで撮影品質を順位付けしない。",
+    "batteryCaveat": "電池容量とメーカー公称の駆動時間は測定方法が異なるため、数字だけで両製品の実使用時間を直接比較しない。"
+  },
+  "amazon": {
+    "status": "partial",
+    "statusBySide": {
+      "left": "search",
+      "right": "verified"
+    },
+    "searchLinks": {
+      "left": {
+        "query": "Apple iPhone 18 Pro 256GB",
+        "url": "https://www.amazon.co.jp/s?k=Apple+iPhone+18+Pro+256GB",
+        "status": "verified",
+        "evidence": "PurchaseCardのAmazon検索リンクで商品名・容量を含む検索語を使用。タグ値は記録せずPUBLIC_AMAZON_ASSOCIATE_TAGから描画時に付与する。Amazon検索結果に遷移するリンクとして確認し、商品詳細ページを示すものではない。"
+      }
+    },
+    "right": "https://www.amazon.co.jp/dp/B0HC3B8NG6",
+    "rightAsin": "B0HC3B8NG6",
+    "productPages": {
+      "right": "https://www.amazon.co.jp/dp/B0HC3B8NG6"
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Pixel 11 ProのAmazon商品ページ上にアソシエイト・ツールバーを確認。スマートフォン分類の料率表示2.00%を観察。共通カテゴリー表示であり、商品別適格性表示とは区別して記録。GitHub Production変数の値は画面・記録へ出力せず、表示されたストアIDとの一致だけを検証。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "not-found-in-current-search",
+            "evidence": "2026-09-29にAmazon.co.jpで「Apple iPhone 18 Pro 256GB SIMフリー」と「iPhone 18 Pro」を検索。確認できた検索結果にはケースや別モデルが含まれ、iPhone 18 Pro 256GBの本体詳細ページは見つからなかった。Amazon全体に出品が存在しないとの断定ではない。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品一致を確認できるASIN商品詳細ページが見つからず、個別商品のアソシエイト適格性は表示・確認できていない。"
+          },
+          "taggedUrl": {
+            "state": "verified-search-link",
+            "evidence": "記事のPurchaseCardがApple iPhone 18 Pro 256GBのAmazon検索リンクを生成し、タグはPUBLIC_AMAZON_ASSOCIATE_TAGから実行時に付与する。アソシエイトタグ値は記録しない。"
+          },
+          "destination": {
+            "state": "verified-search-results",
+            "evidence": "リンク先はAmazon.co.jpの検索結果ページであり、商品詳細ページではない。記事上のボタンも『Amazonで検索』と表示して、直接の商品リンクと区別する。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページのタイトルと仕様表示でGoogle Pixel 11 Pro、256GB、SIMフリー、Obsidian、ASIN B0HC3B8NG6を確認。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "ツールバーにカテゴリ別料率2.00%が表示されたが、ASIN固有の適格性メッセージは表示されなかった。料率表示のみから商品別適格性を断定しない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事ソースはタグなしASIN商品ページのみを保持。ローカル描画時にPUBLIC_AMAZON_ASSOCIATE_TAGを使うruntime処理が成果タグを付与することを確認。Production変数はツールバーのIDと値を表示せず照合。生成した成果URLの値は記録しない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグを加える前のAmazon /dp/B0HC3B8NG6商品詳細ページで商品名・容量・色を照合。クリックによる自己紹介リンクの遷移は行わず、記事表示では正しいASINを基底遷移先として維持することを検証。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/58021d7e.4983f3fd.58021d7f.1b074964/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fiphone-18-pro%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "leftProductPage": "https://item.rakuten.co.jp/rakutenmobile-store/iphone-18-pro/",
+    "leftProductName": "Apple iPhone 18 Pro SIMフリー 端末本体のみ",
+    "leftShop": "楽天モバイル公式ショップ",
+    "leftProductVerified": true,
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/580220e2.e788e5cf.580220e3.3d0b4bcb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbest1mobile%2Fpixel11pro%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "rightProductPage": "https://item.rakuten.co.jp/best1mobile/pixel11pro/",
+    "rightProductName": "Google Pixel11 Pro 256GB | 512GB | 1TB [Obsidian/Olive/Fog/Canyon] Google Store version, SIM-free",
+    "rightShop": "best1mobile",
+    "rightProductVerified": true,
+    "generation": "2026-09-29にログイン済みChromeの楽天アフィリエイト公式画面へ各商品詳細URLを入力。商品リンク作成画面の商品名・容量・色・ショップを確認し、出力された成果URLのpc=遷移先が入力した商品詳細ページと一致することを確認。iPhoneページでは256GBが選択肢として掲載され、実際の容量選択や購入は行わず販売価格は転記しない。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検証可能な公式情報を中心に構成。記事にSNS投稿を採用しないため、SNS欄と検索リンクは出さない。"
+  },
+  "unconfirmed": [
+    "iPhone 18 Pro 256GBのAmazon商品詳細ページとASINは未確認。Amazonボタンは検索結果へ案内し、検索時点で表示された別モデル・アクセサリーを本商品として扱わない。",
+    "Amazonツールバーのカテゴリ別料率表示からPixel 11 ProのASIN単位の適格性は確認できていない。",
+    "Google Pixel 11 Proの最大120倍超解像ズームとiPhone 18 Proの最大40倍デジタルズームは画質の共通比較ではない。",
+    "電池持ちはメーカー間で測定条件が異なるため、本記事では優劣を付けない。"
+  ],
+  "publicationDecision": "AppleとGoogle公式仕様・価格を確認し、256GBモデルで比較。楽天アフィリエイト公式画面で両商品の成果リンクを生成し、商品名・選択肢・ショップ・pc=遷移先を照合。AmazonはPixel 11 Pro 256GBのASIN一致を確認し、タグはソースへ保存せず実行時環境変数から付与する。iPhone 18 ProのAmazon商品詳細ページは未確認のため、商品名・容量を指定した検索リンクを『Amazonで検索』として表示し、直接リンクと混同させない。両商品に楽天の確認済み商品詳細リンクがあるため記事ready。"
+}
