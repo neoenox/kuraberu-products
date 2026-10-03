@@ -48,3 +48,51 @@ jobs:
           to prove CTA destination coverage when network calls are skipped."
           # persist-credentials: false のため、ここでトークンを再設定して push。
           git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"
+
+  # 失敗・キャンセル（job timeout を含む）を issue で通知し、次回成功時に自動クローズする。
+  # このキャッシュは7日で失効し、失効すると全 PR の lint-and-test が失敗する（#973）。
+  # schedule 実行だけを対象にし、手動実行（workflow_dispatch）では起票しない。
+  report:
+    needs: refresh
+    if: always() && github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      REFRESH_RESULT: ${{ needs.refresh.result }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Open or update failure issue
+        if: needs.refresh.result != 'success'
+        run: |
+          TITLE="CTA監査キャッシュの週次更新ジョブが失敗しています"
+          BODY="週次ジョブ \`refresh CTA audit cache\` が成功しませんでした（結果: ${REFRESH_RESULT}）。
+
+          - 実行: ${RUN_URL}
+          - 影響: \`data/cta-audit-cache.json\` は生成から7日で失効し、失効すると全 PR の \`lint-and-test\`（\`check-purchase-link-consistency\`）が失敗します。
+          - 対応: 実行ログを確認し、原因を直してください。急ぐ場合はローカルで \`pnpm verify:cta-strict\` を実行し、\`data/cta-audit-cache.json\` だけを更新する PR を出せます。
+          - 関連: #973
+
+          このジョブが次に成功すると、この issue は自動でクローズされます。"
+          NUM=$(gh issue list --state open --search "in:title CTA監査キャッシュの週次更新ジョブが失敗" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "再び失敗しました（結果: ${REFRESH_RESULT}）: ${RUN_URL}"
+            echo "既存の issue #$NUM にコメントしました"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+            echo "失敗通知の issue を新規作成しました"
+          fi
+      - name: Close failure issue after a successful run
+        if: needs.refresh.result == 'success'
+        run: |
+          NUM=$(gh issue list --state open --search "in:title CTA監査キャッシュの週次更新ジョブが失敗" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "週次ジョブが成功したため、この issue をクローズします: ${RUN_URL}"
+            gh issue close "$NUM"
+            echo "失敗通知の issue #$NUM をクローズしました"
+          else
+            echo "開いている失敗通知の issue はありません（クローズ不要）"
+          fi
