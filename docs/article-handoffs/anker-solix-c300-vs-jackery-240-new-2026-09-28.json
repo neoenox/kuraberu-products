@@ -1,0 +1,153 @@
+{
+  "id": "anker-solix-c300-vs-jackery-240-new-2026-09-28",
+  "articleId": "anker-solix-c300-vs-jackery-240-new",
+  "source": "Fresh product selection, checked against the current manufacturer pages and Amazon product pages in this session",
+  "researchDateJst": "2026-09-28",
+  "articleReady": true,
+  "category": "ポータブル電源",
+  "products": {
+    "left": {
+      "name": "Anker Solix C300 Portable Power Station",
+      "model": "A1722",
+      "officialUrl": "https://www.ankerjapan.com/products/a1722",
+      "officialImageUrl": "https://www.ankerjapan.com/cdn/shop/files/A17225Z1_listing_product_e60e99cf-7e75-4f9e-8645-25f1083c105c.jpg?crop=center&height=650&v=1766050723&width=650",
+      "imageEvidence": "Anker Japan公式商品ページの画像要素から公式CDN URLを取得。2026-09-28にGETでHTTP 200、image/jpeg、38,759 bytesを確認。",
+      "officialSpecs": {
+        "capacity": "288Wh",
+        "ratedOutput": "300W; peak 600W",
+        "weight": "approximately 4.1kg",
+        "dimensions": "approximately 16.4 x 16.1 x 24.0cm",
+        "acOutputPorts": 3,
+        "usbCOutputPorts": 3,
+        "usbAOutputPorts": 1,
+        "carSocket": 1,
+        "acRecharge": "approximately 68 minutes",
+        "powerChangeover": "10ms per the manufacturer comparison table",
+        "officialPagePriceJpy": 49990
+      }
+    },
+    "right": {
+      "name": "Jackery ポータブル電源 240 New",
+      "model": "JE-240A",
+      "officialUrl": "https://www.jackery.jp/products/explorer-240-new",
+      "officialImageUrl": "https://www.jackery.jp/cdn/shop/files/02_240NEW_1000_1000px.jpg?v=1713950669&width=650",
+      "imageEvidence": "Jackery Japan公式商品ページの画像要素から公式CDN URLを取得。2026-09-28にGETでHTTP 200、image/jpeg、34,043 bytesを確認。",
+      "officialSpecs": {
+        "capacity": "256Wh",
+        "ratedOutput": "300W",
+        "weight": "approximately 3.6kg",
+        "dimensions": "231 x 153 x 168.19mm",
+        "powerChangeover": "less than 20ms",
+        "acRechargePageValues": "FAQ states approximately 1.9 hours standard / 1 hour emergency; another charging table states 1.7 hours for AC",
+        "batteryLife": "approximately 4000 charge cycles retaining at least 70% capacity",
+        "officialPagePriceJpy": 32800
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Official online-store displayed prices on 2026-09-28: Anker 49,990 JPY and Jackery 32,800 JPY. Prices may change.",
+    "keyDifferences": [
+      "Both list 300W rated output; Anker additionally lists 600W peak output.",
+      "C300 capacity is 288Wh versus 256Wh for 240 New.",
+      "240 New weighs approximately 3.6kg versus approximately 4.1kg for C300.",
+      "The Anker official table lists three AC outputs; Jackery's product page diagram identifies an AC output port.",
+      "Anker lists 10ms changeover and Jackery lists less than 20ms; the manufacturers' test conditions have not been established as equivalent.",
+      "Jackery's product page has differing standard AC charging-time text in its FAQ (approximately 1.9 hours) and another table (1.7 hours); charging-time superiority is not claimed.",
+      "Official displayed prices on the check date differ by 17,190 JPY."
+    ],
+    "limitations": "Published manufacturer values are not independent measurements. In particular, changeover times and charging times may use different methods or conditions. Do not infer suitability for medical devices, servers, or other critical equipment."
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "search"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0D5XGP6CW",
+    "right": null,
+    "leftAsin": "B0D5XGP6CW",
+    "productPages": {
+      "left": "https://www.amazon.co.jp/dp/B0D5XGP6CW?th=1"
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページでアソシエイト・ツールバーを確認。ツールバーにはカテゴリー「携帯電話・スマートフォン」と手数料率2%が表示された。これはページ上の共通表示として記録し、個別商品の報酬率・成果保証としては扱わない。商品ページのカテゴリー表示と異なる場合があるため、商品別適格性とは分離する。",
+        "observedAtJst": "2026-09-28"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon商品詳細ページでAnker SOLIX C300、ASIN B0D5XGP6CWを確認。販売元はAnkerDirect、発送元はAmazon。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "この商品固有のプログラム対象可否は画面に表示されなかった。共通ツールバーのカテゴリー・率から個別の適格性を推定しない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "Amazon SiteStripeの完全リンク生成操作後、画面に「クリップボードにコピーしました」と表示。生成URLの全文・タグ値は記事データに保存しない。"
+          },
+          "destination": {
+            "state": "product-page-verified",
+            "evidence": "購入先に登録するASIN付き商品詳細URLを開き、商品一致と公式販売元を確認。生成済み完全リンク自体の最終リダイレクト先は別途開いていない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "not-verified",
+            "evidence": "2026-10-03にASIN B0CZ7145K1を開くと、Jackery Solar Generator 240 New 40 Mini（ソーラーパネル2点セット、49,900円）のページ（ASIN B0D2HXKBF1）へ移り、240 New本体のみの商品ページとして確認できなかった。Amazon検索でもJE-240A本体のみの出品は見つからなかった。2026-09-28には本体ページとして確認していたが、現在は一致を確認できない。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品詳細ページを確認できないため、個別の適格性は確認していない。"
+          },
+          "taggedUrl": {
+            "state": "not-applicable",
+            "evidence": "商品詳細URLを記事データに保存しない。検索CTAのタグはランタイム設定から付与する。"
+          },
+          "destination": {
+            "state": "search-only",
+            "evidence": "商品名と型番から検索結果を開く検索CTAのみ。検索結果の商品を本商品として確認済みとは扱わない。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa17225z1%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "leftProductPage": "https://item.rakuten.co.jp/anker/a17225z1/",
+    "leftProductName": "Anker SOLIX C300 Portable Power Station A17225Z1",
+    "leftShop": "アンカー・ダイレクト楽天市場店",
+    "leftProductVerified": true,
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57fa6fe4.a1c9bf9a.57fa6fe5.2fbe93ef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjackery-japan%2Fn-p-240200-bkor-jk2%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "rightProductPage": "https://item.rakuten.co.jp/jackery-japan/n-p-240200-bkor-jk2/",
+    "rightProductName": "Jackery ポータブル電源 240 New JE-240A",
+    "rightShop": "Jackery Japan 楽天市場店",
+    "rightProductVerified": true,
+    "generation": "2026-09-28、ログイン済みChromeで楽天アフィリエイト公式UIに商品詳細URLを入力。商品名・型番・ショップ名を照合し、生成されたhb.afl.rakuten.co.jpリンクの転送先が各商品詳細ページに到達することを確認。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "記事の比較根拠はメーカー公式ページに限定し、確認済みのXまたはYouTube埋め込み投稿を採用していないためSNS欄を表示しない。SNS全体に投稿がないとの意味ではない。"
+  },
+  "unconfirmed": [
+    "Jackery 240 New（JE-240A）本体のみのAmazon商品詳細ページは2026-10-03時点で確認できない。Amazon CTAは検索結果へ案内し、検索時点で表示された別商品・セット商品を本商品として扱わない。",
+    "Amazonページで商品ごとのアソシエイト・プログラム適格性表示は見つからなかった。",
+    "Amazon SiteStripeが生成した完全リンクの最終遷移は確認していない。記事のCTAは一致確認済みASINまたは検索URLを使用し、タグはランタイム設定から付与する。",
+    "停電時の切替時間についてメーカー間の測定・試験条件の同等性は未確認。",
+    "Jackery公式ページ内で通常AC充電時間の表示が1.7時間と約1.9時間に分かれているため、通常充電時間の比較を記事本文に採用しない。",
+    "Jackery公式ページの商品名表示に容量240Whと256Whが混在する。記事は仕様欄の256Whを採用した。"
+  ],
+  "publicationDecision": "2026-09-28に各メーカー公式ページで仕様・価格を確認し、2026-10-03に公式ページで価格・容量・出力・重量・停電時の切替時間・AC出力ポートと販売状況を再確認した（価格はC300が49,990円、240 Newが32,800円で変更なし）。楽天は両商品の成果リンクが、2026-10-03時点でも一致する商品ページ（在庫あり・同価格）へ解決することを確認した。AmazonはAnker SOLIX C300（ASIN B0D5XGP6CW、販売元AnkerDirect、49,990円）の商品詳細ページを再確認した。Jackery 240 NewのASIN B0CZ7145K1は、2026-10-03時点ではソーラーパネル付きセットのページへ移り本体のみの商品として確認できないため、Jackery側のAmazonは商品名・型番を指定した検索CTAとして表示し、直接リンクと混同させない。各商品に確認済みの楽天購入先がある。情報源と画像はメーカー公式ページに限定。SNS欄は採用しない。"
+}

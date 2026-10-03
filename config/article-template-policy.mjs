@@ -86,6 +86,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "sony-wf-1000xm6-vs-linkbuds-fit",
   "logicool-mx-master-4-vs-mx-master-3s",
   "anker-nano-a1638-vs-power-bank-a1256",
+  "anker-solix-c300-vs-jackery-240-new",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
