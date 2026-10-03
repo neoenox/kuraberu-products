@@ -1,12 +1,14 @@
 import {
+  INSTAX_FILM_CHECKED_AT,
   instaxFilmOffers,
   perSheet as filmPerSheet,
 } from "./instax-film-prices";
 import {
+  INSTAX_PATTERN_CHECKED_AT,
   instaxPatternOffers,
   perSheet as patternPerSheet,
 } from "./instax-pattern-film-prices";
-import { sdCardOffers, perGb } from "./sd-card-prices";
+import { SD_CARD_CHECKED_AT, sdCardOffers, perGb } from "./sd-card-prices";
 
 // 価格ガイド：1枚あたり・1GBあたりの価格ページ。表示する価格帯は、各ページと同じデータから導出する。
 const range = (values: number[]) => {
@@ -17,6 +19,7 @@ const range = (values: number[]) => {
 export const priceGuides = [
   {
     path: "/guides/instax-mini-film-price/",
+    checkedAt: INSTAX_FILM_CHECKED_AT,
     title: "チェキのフィルムは1枚いくら？",
     image:
       "https://thumbnail.image.rakuten.co.jp/@0_mall/cheki/cabinet/tokiwacamera42/4547410377224n-1.jpg?_ex=200x200",
@@ -27,6 +30,7 @@ export const priceGuides = [
   },
   {
     path: "/guides/instax-mini-pattern-film-price/",
+    checkedAt: INSTAX_PATTERN_CHECKED_AT,
     title: "チェキの絵柄つきフィルムは1枚いくら？",
     image:
       "https://thumbnail.image.rakuten.co.jp/@0_mall/mituboshicamera/cabinet/goods_08/imgrc0115267911.jpg?_ex=200x200",
@@ -37,6 +41,7 @@ export const priceGuides = [
   },
   {
     path: "/guides/sd-card-price-per-gb/",
+    checkedAt: SD_CARD_CHECKED_AT,
     title: "4K動画向けSDカードは1GBいくら？",
     image:
       "https://thumbnail.image.rakuten.co.jp/@0_mall/pc-goodmedia/cabinet/img09/imgrc0162361812.jpg?_ex=200x200",
