@@ -93,6 +93,20 @@ Amazonの確認では、Amazonのセッション状態、商品ごとの対象�
 
 購入先は商品カードを1つずつ置き、カード内に同じ見た目のAmazon・楽天ボタンを並べる。Amazonは確認済みASINから公式リンクを生成して商品詳細遷移を確認する。直リンクが未確認でも商品名・型番が確認済みなら、seedへ`leftAmazonLinkStatus: "search"`または`rightAmazonLinkStatus: "search"`を設定し、タグ付き検索CTAを表示する。検索CTAは商品詳細リンクの確認済み状態ではない。楽天はChromeで次の手順を実行する。(1) Chromeで`https://affiliate.rakuten.co.jp/`を開く。(2) 上部のURL入力欄へ、商品一致を確認済みの楽天商品詳細URLを貼り付ける。(3) 商品リンク作成画面で商品名・型番・ショップを確認する。(4) ソース欄から、商品詳細URLを`pc=`に含む生成済み`https://hb.afl.rakuten.co.jp/` URLをコピーしてseedへ登録する。商品カードには確認状態に合う販売先CTAだけを出す。検索結果なし、画面未確認、通信エラー、リンク未生成は`unavailable`の根拠にせず、`search`または`unverified`とする。`unavailable`には同じASINを指すAmazon商品詳細URLと、商品別適格性画面の明示的対象外または公式リンク生成UIの明示拒否の証拠を要求する。商品詳細URLの直貼り、検索結果URL、推測URLは成果URLとして登録しない。
 
+### Amazonリンク付きのローカルプレビュー
+
+通常の`pnpm build`はAmazon広告タグを持たないため、タグ付きの購入ボタンを確認できない。ローカルで確認するときは、次の専用コマンドを使う。
+
+```bash
+pnpm article:preview -- --check-only
+pnpm article:preview -- --port 4322
+```
+
+- GitHub CLIでログイン済みである必要がある。GitHubの`production`環境の変数`PUBLIC_AMAZON_ASSOCIATE_TAG`を**読み取るだけ**で、作成・変更はしない。値はログへ出さない。
+- 変数を読めない、または空の場合は、ビルドを始めずに止まる。
+- ビルド後に`pnpm check:rendered`で購入ボタンと遷移先を検査し、通れば`--port`（既定4321）でローカルプレビューを起動する。`--check-only`は検査だけで終了する。
+- ビルド結果にはタグが含まれる。生成物（`dist`）をコミットしたり、公開場所へアップロードしたりしない。
+
 ## 4. 公開前ゲート
 
 1. `pnpm verify` がPASS。

@@ -39,6 +39,7 @@
     "article:add": "node scripts/article-add.mjs",
     "check:article-workflow": "node scripts/check-article-workflow.mjs",
     "check:article-quality": "node scripts/check-commercial-article-quality.mjs",
+    "article:preview": "node scripts/preview-commercial-article.mjs",
     "resize:images": "node scripts/resize-source-images.mjs",
     "verify": "pnpm verify:lint && pnpm verify:build",
     "verify:fast": "node scripts/verify-pnpm-version.mjs && prettier --check . && eslint . && astro check && node scripts/validate-build-env.mjs && node scripts/validate-content.mjs && node scripts/check-radius-tokens.mjs",
