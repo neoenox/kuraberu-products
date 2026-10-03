@@ -8,6 +8,7 @@ import {ARTICLE_LAYOUT} from '../../config/article-layout.mjs';
 import { isPublishedArticlePath } from '../../config/article-template-policy.mjs';
 import { priceGuides } from '../data/price-guides';
 import PriceGuideCard from '../components/PriceGuideCard.astro';
+import { categoryGroup } from '../lib/article-categories';
 
 // 比較記事の枠：旧テンプレートの互換ページを除き、公開日が新しい記事を
 // topPage.latestLimit 件まで表示する（公開記事が少ない間は全件）。
@@ -42,7 +43,8 @@ const latestItemListJson = safeJsonForScript({
 // クライアント側フィルタが URL パラメータを読んで絞り込む）。
 const categoryCounts = new Map<string, number>();
 for (const article of topPageArticles) {
-  categoryCounts.set(article.category, (categoryCounts.get(article.category) ?? 0) + 1);
+  const group = categoryGroup(article.category);
+  categoryCounts.set(group, (categoryCounts.get(group) ?? 0) + 1);
 }
 const categories = [...categoryCounts.entries()]
   .filter(([, count]) => count >= ARTICLE_LAYOUT.topPage.categoryMinArticles)
@@ -61,12 +63,15 @@ const categories = [...categoryCounts.entries()]
 >
   <section class="wrap section section-intro hero-section">
     <p class="eyebrow">くらべる商品メモ</p>
-    <h1 class="hero-heading">家電・日用品を<br class="hero-br" />くらべて、選ぶ。</h1>
+    <h1 class="hero-heading">家電・日用品をくらべて、選ぶ。</h1>
     <p class="lead">買う前の迷いを、メーカー公式情報と、実際の価格の数字で整理します。</p>
     <form class="top-search" role="search" aria-label="比較記事を検索" data-top-search action="/articles/" method="get">
       <input type="search" name="q" maxlength="100" autocomplete="off" placeholder="商品名・用途・悩みで検索（例: 電気ケトル、軽い）" aria-label="商品名・用途・悩みで検索" />
       <button type="submit" class="secondary-button">検索</button>
     </form>
+    <nav class="top-entry-links" aria-label="目的から探す">
+      <a href="/articles/">商品を探す →</a><a href="#guides">価格を比べる →</a><a href="/tools/product-finder/">診断する →</a>
+    </nav>
   </section>
 
   <section class="wrap section" id="guides" data-top-guides>
@@ -141,16 +146,18 @@ const categories = [...categoryCounts.entries()]
 </BaseLayout>
 
 <style is:global>
-  .hero-heading {
-    max-width: 14ch;
+  .hero-section.section-intro .hero-heading {
+    max-width: 24ch;
     margin-bottom: 1rem;
-    font-size: clamp(2.4rem, 7vw, 4.5rem);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     line-height: 1.08;
     letter-spacing: -0.015em;
   }
 
-  .hero-br { display: none; }
-  @media (min-width: 560px) { .hero-br { display: block; } }
+  .hero-section.section { padding-block: 1.5rem; }
+  .top-entry-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 1rem; }
+  .top-entry-links a { font-weight: 700; }
+  [data-top-guides].section { padding-top: 1.5rem; }
 
   .diagnosis-actions { margin: 1rem 0 0; }
   .diagnosis-actions .primary-button {

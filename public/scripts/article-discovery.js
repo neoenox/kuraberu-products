@@ -162,7 +162,7 @@
   query.value = (initial.get("q") || "").slice(0, 100);
   category.value = allowed(
     category,
-    initialCategoryFromPath || initial.get("category") || "",
+    initial.get("category") || initialCategoryFromPath || "",
   );
   if (tag) tag.value = allowed(tag, initial.get("tag") || "");
 
@@ -176,7 +176,9 @@
     if (hasFilter) {
       const matches = index.filter(
         (article) =>
-          (!category.value || article.category === category.value) &&
+          (!category.value ||
+            article.category === category.value ||
+            article.categoryGroup === category.value) &&
           (!(tag && tag.value) || (article.tags || []).includes(tag.value)) &&
           expandQueryWithSynonyms(terms).every((term) =>
             articleSearchText(article).includes(term),
@@ -198,7 +200,7 @@
     const params = new URLSearchParams();
     if (query.value.trim()) params.set("q", query.value.trim());
     if (category.value) params.set("category", category.value);
-    if (tag.value) params.set("tag", tag.value);
+    if (tag && tag.value) params.set("tag", tag.value);
     history.replaceState(
       null,
       "",

@@ -1,3 +1,4 @@
+import { categoryGroup } from "../src/lib/article-categories";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { beforeAll, describe, expect, it } from "vitest";
 import {
@@ -37,8 +38,8 @@ const topPageArticles = publicArticleMetadata.filter((article) =>
 const categoryCounts = new Map<string, number>();
 for (const article of topPageArticles) {
   categoryCounts.set(
-    article.category,
-    (categoryCounts.get(article.category) ?? 0) + 1,
+    categoryGroup(article.category),
+    (categoryCounts.get(categoryGroup(article.category)) ?? 0) + 1,
   );
 }
 const expectedCategories = [...categoryCounts.entries()]
@@ -84,7 +85,7 @@ describe.skipIf(!hasDist)("top page (rendered dist)", () => {
 
   it("keeps the category entry set consistent with the articles index options", () => {
     const optionCategories = [
-      ...articlesIndexHtml.matchAll(/<option value="([^"]+)">/g),
+      ...articlesIndexHtml.matchAll(/<option value="([^"]+)"[^>]*>/g),
     ].map((match) => match[1]);
     for (const [name] of expectedCategories) {
       expect(optionCategories).toContain(name);
