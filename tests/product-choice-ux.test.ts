@@ -70,15 +70,21 @@ describe.skipIf(!existsSync("dist"))(
       const top = parse(readFileSync("dist/index.html", "utf8"));
 
       // #960: short intro first, full background remains available.
-      expect(article.querySelector(".lead")?.textContent.trim().length).toBeGreaterThan(0);
-      expect(article.querySelector("details.article-introduction")).not.toBeNull();
+      expect(
+        article.querySelector(".lead")?.textContent.trim().length,
+      ).toBeGreaterThan(0);
+      expect(
+        article.querySelector("details.article-introduction"),
+      ).not.toBeNull();
 
       // #963: every top price guide carries a checked-at marker and stale-state text.
       const guideCards = top.querySelectorAll(".guide-card");
       expect(guideCards.length).toBeGreaterThan(0);
       for (const card of guideCards) {
         expect(card.querySelector("[data-price-check]")).not.toBeNull();
-        expect(card.textContent).toContain("現在の価格は購入先で確認してください");
+        expect(card.textContent).toContain(
+          "現在の価格は購入先で確認してください",
+        );
       }
 
       // #964: supported instax comparison exposes both consumable guides.
