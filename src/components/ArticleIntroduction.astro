@@ -1,0 +1,8 @@
+---
+import { shortIntroduction } from '../lib/reading-costs';
+interface Props { text: string }
+const { text } = Astro.props;
+const short = shortIntroduction(text);
+---
+<p class="lead">{short}</p>
+{short !== text && <details class="article-introduction"><summary>比較の背景を読む</summary><p>{text}</p></details>}
