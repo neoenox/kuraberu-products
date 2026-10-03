@@ -97,6 +97,7 @@ import { airpods5VsAirpods4AncSeed } from "./airpods-5-vs-airpods-4-anc";
 import { ankerSolixC300VsJackery240NewSeed } from "./anker-solix-c300-vs-jackery-240-new";
 import { pixelWatch5VsGalaxyWatch9Seed } from "./pixel-watch-5-vs-galaxy-watch9";
 import { zojirushiEeTc60VsDainichiHdLx1026Seed } from "./zojirushi-ee-tc60-vs-dainichi-hd-lx1026";
+import { iphone18ProVsPixel11ProSeed } from "./iphone-18-pro-vs-pixel-11-pro";
 import { sonyZvE10m2VsNikonZ30Seed } from "./sony-zv-e10m2-vs-nikon-z30";
 
 export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
@@ -123,6 +124,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   sonyZv1M2VsZv1fSeed,
   sonyWfC710nVsSoundcoreLiberty5Seed,
   ankerSolixC300VsJackery240NewSeed,
+  iphone18ProVsPixel11ProSeed,
   sonyZvE10m2VsNikonZ30Seed,
   pixelWatch5VsGalaxyWatch9Seed,
   zojirushiEeTc60VsDainichiHdLx1026Seed,

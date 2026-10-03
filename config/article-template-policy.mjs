@@ -89,6 +89,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "anker-solix-c300-vs-jackery-240-new",
   "pixel-watch-5-vs-galaxy-watch9",
   "zojirushi-ee-tc60-vs-dainichi-hd-lx1026",
+  "iphone-18-pro-vs-pixel-11-pro",
   "sony-zv-e10m2-vs-nikon-z30",
 ]);
 export function isPublishedArticlePath(path) {
