@@ -1,0 +1,180 @@
+{
+  "id": "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max-2026-09-29",
+  "articleId": "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max",
+  "source": "Codex research against Anker Japan official pages and Amazon.co.jp product detail pages; product selection and manufacturer-confirmed facts provided for 2026-09-29 JST",
+  "researchDateJst": "2026-09-29",
+  "checkedAt": "2026-09-29",
+  "articleReady": true,
+  "category": "イヤホン・ヘッドホン",
+  "products": {
+    "left": {
+      "name": "Soundcore Liberty 5 Pro Midnight Black",
+      "model": "D1203",
+      "colorSku": "D1203N11",
+      "officialUrl": "https://www.ankerjapan.com/products/d1203",
+      "officialImageUrl": "https://cdn.shopify.com/s/files/1/0508/4381/2001/files/D1203N11.png?v=1779853896",
+      "imageEvidence": "Anker Japan公式Shopify CDNのD1203N11商品画像。公式商品ページURLと型番D1203を照合し、public/products と src/assets/products へ同一バイトで保存。",
+      "localImage": "/products/soundcore-liberty-5-pro.png",
+      "officialSpecs": {
+        "noiseCancelling": "ウルトラノイズキャンセリング 4.0（Thus AI）",
+        "driver": "9.2mmダイナミックドライバー",
+        "batteryAncOff": "本体最大12時間 / ケース込み最大50時間",
+        "batteryAncOn": "本体最大6.5時間 / ケース込み最大28時間",
+        "earWeight": "約5.9g（片耳）",
+        "caseWeight": "約68.5g（充電ケース含む）",
+        "caseDisplay": "ディスプレイ搭載（小画面。1.78インチAMOLEDの記載なし）",
+        "wirelessCharge": "USB Type-C / ワイヤレス充電（マグネット不可）",
+        "aiVoiceRecorder": "なし（公式シリーズ比較およびAmazon比較表でProは非搭載）",
+        "dustWater": "IP55",
+        "bluetooth": "Bluetooth 6.1",
+        "codecs": "SBC / AAC / LDAC",
+        "multipoint": "最大3台（LDAC時2台）"
+      },
+      "officialMsrpJpy": 26990,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GK1QFGF6",
+      "amazonAsin": "B0GK1QFGF6",
+      "rakutenProductPage": null
+    },
+    "right": {
+      "name": "Soundcore Liberty 5 Pro Max Midnight Black",
+      "model": "D1204",
+      "colorSku": "D1204N11",
+      "officialUrl": "https://www.ankerjapan.com/products/d1204",
+      "officialImageUrl": "https://cdn.shopify.com/s/files/1/0508/4381/2001/files/D1204N11.png?v=1779855501",
+      "imageEvidence": "Anker Japan公式Shopify CDNのD1204N11商品画像。公式商品ページURLと型番D1204を照合し、public/products と src/assets/products へ同一バイトで保存。",
+      "localImage": "/products/soundcore-liberty-5-pro-max.png",
+      "officialSpecs": {
+        "noiseCancelling": "ウルトラノイズキャンセリング 4.0（Thus AI）",
+        "driver": "9.2mmダイナミックドライバー",
+        "batteryAncOff": "本体最大12時間 / ケース込み最大50時間（Proと同値）",
+        "batteryAncOn": "本体最大6.5時間 / ケース込み最大28時間（Proと同値）",
+        "earWeight": "約5.9g（片耳）",
+        "caseWeight": "約85.5g（充電ケース含む）",
+        "caseDisplay": "1.78インチAMOLED＋壁紙カスタマイズ",
+        "wirelessCharge": "USB Type-C / ワイヤレス充電（マグネット可）",
+        "aiVoiceRecorder": "あり（Max専用。充電ケースから対面録音・文字起こし・要約。アプリ接続が必要）",
+        "dustWater": "IP55",
+        "bluetooth": "Bluetooth 6.1",
+        "codecs": "SBC / AAC / LDAC",
+        "multipoint": "最大3台（LDAC時2台）"
+      },
+      "officialMsrpJpy": 36990,
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GLF2TBD4",
+      "amazonAsin": "B0GLF2TBD4",
+      "rakutenProductPage": null
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Anker Japan公式オンラインストア税込表示価格。2026-09-29確認。販売店価格ではない。",
+    "keyDifferences": [
+      "公式価格はProが26,990円、Pro Maxが36,990円（税込）",
+      "充電ケース表示はProがディスプレイ搭載、Pro Maxが1.78インチAMOLED＋壁紙カスタマイズ",
+      "ワイヤレス充電は両対応だが、Proはマグネット不可、Pro Maxはマグネット可",
+      "AIボイスレコーダーはPro Maxのみ。公式シリーズ比較およびAmazonのシリーズ比較表でもProは非搭載、Maxは搭載",
+      "ケース込み重量はPro約68.5g、Pro Max約85.5g。片耳はいずれも約5.9g",
+      "音響・ANC・バッテリー公称値は公式上で同一（UNC 4.0、9.2mmドライバー、ANCオフ12/50時間、ANCオン6.5/28時間）",
+      "IP55、Bluetooth 6.1、SBC/AAC/LDAC、最大3台マルチポイントも共通"
+    ],
+    "aiRecorderCaveat": "一部の要約や第三者比較でProにもレコーダーがあると誤認されやすいが、Anker公式のシリーズ比較およびAmazon比較表ではAIボイスレコーダーはPro Maxのみ。本記事はMax専用として扱う。",
+    "batteryCaveat": "再生時間はメーカー公称値。音量、ANC、コーデック、Dolby Atmos等の設定・使用条件で変わる。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GK1QFGF6",
+    "right": "https://www.amazon.co.jp/dp/B0GLF2TBD4",
+    "leftAsin": "B0GK1QFGF6",
+    "rightAsin": "B0GLF2TBD4",
+    "productPages": {
+      "left": "https://www.amazon.co.jp/dp/B0GK1QFGF6",
+      "right": "https://www.amazon.co.jp/dp/B0GLF2TBD4"
+    },
+    "tagNote": "他のAnker記事と同様、seed/handoffには正規の /dp/ASIN URLのみ保存する。本番runtimeのwithAmazonTagがストアID kuraberuprodu-22 を付与する。手動生成例: https://www.amazon.co.jp/dp/B0GK1QFGF6?tag=kuraberuprodu-22 および https://www.amazon.co.jp/dp/B0GLF2TBD4?tag=kuraberuprodu-22",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "not-recorded",
+        "evidence": "本作業ではアソシエイト・ツールバーのセッション表示を直接観察していない。未確認であり、未ログインや対象外とは断定しない。",
+        "observedAtJst": "2026-09-29"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細でAnker Soundcore Liberty 5 Pro Midnight Black、型番D1203、ASIN B0GK1QFGF6、公式価格と同額の税込26,990円表示を2026-09-29に確認。シリーズ比較表でもProはAIボイスレコーダー非搭載。"
+          },
+          "eligibility": {
+            "state": "not-recorded",
+            "evidence": "商品別のアソシエイト適格性文言は本セッションでツールバーから直接確認していない。未確認として記録。"
+          },
+          "taggedUrl": {
+            "state": "runtime-pattern",
+            "evidence": "他Anker記事と同じく正規 /dp/ASIN をseedへ保存。タグ付きURLはruntimeがkuraberuprodu-22を付与する想定。手動の同等URL例は ?tag=kuraberuprodu-22。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "https://www.amazon.co.jp/dp/B0GK1QFGF6 を開き、Liberty 5 Pro Midnight Black / D1203 / ASIN B0GK1QFGF6 の商品詳細へ到達することを確認。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細でAnker Soundcore Liberty 5 Pro Max Midnight Black、型番D1204、ASIN B0GLF2TBD4、税込36,990円表示を2026-09-29に確認。About this itemでAIボイスレコーダー搭載を確認。"
+          },
+          "eligibility": {
+            "state": "not-recorded",
+            "evidence": "商品別のアソシエイト適格性文言は本セッションでツールバーから直接確認していない。未確認として記録。"
+          },
+          "taggedUrl": {
+            "state": "runtime-pattern",
+            "evidence": "他Anker記事と同じく正規 /dp/ASIN をseedへ保存。タグ付きURLはruntimeがkuraberuprodu-22を付与する想定。手動の同等URL例は ?tag=kuraberuprodu-22。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "https://www.amazon.co.jp/dp/B0GLF2TBD4 を開き、Liberty 5 Pro Max Midnight Black / D1204 / ASIN B0GLF2TBD4 の商品詳細へ到達することを確認。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unavailable",
+    "statusBySide": {
+      "left": "unavailable",
+      "right": "unavailable"
+    },
+    "left": null,
+    "right": null,
+    "leftProductPage": null,
+    "rightProductPage": null,
+    "generation": "2026-09-29時点で楽天の商品一致した詳細URLおよびChrome楽天アフィリエイト画面での成果URL生成は未実施・未確認。推測URLは作らない。両商品とも楽天CTAは非表示。Amazonの確認済み購入先があるため商品選定はやり直さない。",
+    "note": "UNVERIFIED / unavailable。発明したアフィリエイトURLは登録しない。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "searchAttempt": {
+      "checkedAtJst": "2026-09-29",
+      "queries": [
+        "Soundcore Liberty 5 Pro",
+        "Liberty 5 Pro Max",
+        "D1203",
+        "D1204",
+        "サウンドコア リバティ 5 Pro Max"
+      ],
+      "result": "X/YouTubeの埋め込み許可リスト向けに、広告・PR・アフィリエイトを除いた実利用投稿の元URLを本作業では採用できなかった。適格投稿が存在しないとの断定ではない。"
+    },
+    "note": "採用SNSなし。SNS欄は省略。"
+  },
+  "unconfirmed": [
+    "楽天の商品詳細URLと成果URLは未確認のためunavailable",
+    "Amazonアソシエイト・ツールバーの商品別適格性表示は未確認",
+    "Proのケースディスプレイ解像度・インチ数は公式で1.78インチAMOLEDとしては記載なし（搭載事実のみ確認）"
+  ],
+  "publicationDecision": "Anker公式で両商品の名称・型番・仕様・公式価格・公式画像を確認。Amazon商品詳細でASIN一致とブラックSKUを確認し、各商品に確認済みAmazon購入先がある。楽天はunavailableでCTA非表示。SNS採用なしで欄非表示。Amazonのみで各商品1つ以上の確認済み購入先があるためarticleReady=trueとし、draft解除を優先する。 2026-10-03にAnker Japan公式の2商品ページ（価格・型番・重量・再生時間・IP55・ケース画面・マグネット充電・AIボイスレコーダー）とAmazonの両商品ページ（ミッドナイトブラック、在庫あり、公式と同価格）を再確認した。楽天は両商品とも商品を確認できておらず、今回は再確認していない。"
+}

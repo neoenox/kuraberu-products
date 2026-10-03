@@ -89,6 +89,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "anker-solix-c300-vs-jackery-240-new",
   "pixel-watch-5-vs-galaxy-watch9",
   "zojirushi-ee-tc60-vs-dainichi-hd-lx1026",
+  "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
