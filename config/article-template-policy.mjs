@@ -87,6 +87,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "logicool-mx-master-4-vs-mx-master-3s",
   "anker-nano-a1638-vs-power-bank-a1256",
   "anker-solix-c300-vs-jackery-240-new",
+  "pixel-watch-5-vs-galaxy-watch9",
   "zojirushi-ee-tc60-vs-dainichi-hd-lx1026",
 ]);
 export function isPublishedArticlePath(path) {

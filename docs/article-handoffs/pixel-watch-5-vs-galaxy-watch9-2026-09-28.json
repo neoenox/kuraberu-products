@@ -1,0 +1,211 @@
+{
+  "id": "pixel-watch-5-vs-galaxy-watch9-2026-09-28",
+  "articleId": "pixel-watch-5-vs-galaxy-watch9",
+  "source": "Codex direct research using manufacturer pages, Amazon Associates UI, and Rakuten Affiliate UI",
+  "researchDateJst": "2026-09-28",
+  "articleReady": true,
+  "publishStatus": "published",
+  "category": "スマートウォッチ",
+  "candidate": {
+    "adoption": "採用",
+    "duplicateCheck": {
+      "slugRoute": "既存route・seedに同一slugなし",
+      "leftModel": "Pixel Watch 5の45mm比較記事なし",
+      "rightModel": "Galaxy Watch9の44mm比較記事なし"
+    }
+  },
+  "products": {
+    "left": {
+      "name": "Google Pixel Watch 5 45mm Bluetooth/Wi-Fi（Polished Silver / Fog）",
+      "model": "GA10892-US",
+      "officialUrl": "https://store.google.com/jp/product/pixel_watch_5?hl=ja",
+      "officialSpecUrl": "https://store.google.com/jp/product/pixel_watch_5_specs?hl=ja",
+      "officialPageDisplayedName": "Google Pixel Watch 5",
+      "officialPageSelectedVariant": "45 mm; Polished Silver アルミケース / Fog アクティブ バンド（第2世代）; Bluetooth/Wi-Fi",
+      "officialPriceJpy": 67800,
+      "officialImageUrl": "https://lh3.googleusercontent.com/gSvv2Brmwpeey2jtxSRiIemy2_lBH3mFueOPwNP7alss9ySHi98vkHzPb9Zcs7F4O9HrXk8ILbxv3VoY0n4RXFYJsbjkuZjsag=w188-h188-rw-nu",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/webp",
+        "bytes": 9484,
+        "dimensions": "188x188",
+        "savedAs": "public/products/pixel-watch-5-45mm-fog.webp",
+        "renderedFrom": "src/assets/products/pixel-watch-5-45mm-fog.webp"
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/book/18748531/",
+        "productPageStatus": 200,
+        "modelMatch": "Google Pixel Watch 5 (45 mm) Polished Silver case / Fog Active Band Gen 2 Wi-Fi; GA10892-US",
+        "shop": "楽天ブックス",
+        "affiliateUi": {
+          "status": "generated",
+          "displayedProduct": "Google Pixel Watch 5 (45 mm) Polished Silver case / Fog Active Band Gen 2 Wi-Fi",
+          "displayedShop": "楽天ブックス",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "destinationHost": "item.rakuten.co.jp",
+          "destinationMatchesProductPage": true,
+          "trackedUrlStored": false,
+          "tracking": "商品詳細URLのみseedに保存し、サイトのランタイム設定で成果リンクを生成"
+        }
+      }
+    },
+    "right": {
+      "name": "Samsung Galaxy Watch9 44mm Bluetooth シルバー",
+      "model": "SM-L350NZSJXJP",
+      "officialUrl": "https://www.samsung.com/jp/watches/galaxy-watch/galaxy-watch9-44mm-silver-bluetooth-sm-l350nzsjxjp/",
+      "officialSpecUrl": "https://news.samsung.com/jp/galaxy-watch-pre-orders-start-2026",
+      "officialPageDisplayedName": "Galaxy Watch9 (Bluetooth, 44 mm)",
+      "officialPriceJpy": 73370,
+      "officialImageUrl": "https://images.samsung.com/jp/galaxy-watch9/feature/Galaxy-Watch9_Design-colors-silver-44mm-start_PC.jpg?imbypass=true",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytes": 82221,
+        "dimensions": "1920x810",
+        "savedAs": "public/products/galaxy-watch9-44mm-silver.jpg",
+        "renderedFrom": "src/assets/products/galaxy-watch9-44mm-silver.jpg"
+      },
+      "amazon": {
+        "productUrl": "https://www.amazon.co.jp/dp/B0H6B93696",
+        "asin": "B0H6B93696",
+        "productMatch": "Samsung Galaxy Watch9 44mm Bluetooth Silver; SM-L350NZSJXJP",
+        "affiliateUi": {
+          "productDetailPage": "verified",
+          "taggedUrlGenerated": true,
+          "finalDestinationSameAsin": true,
+          "itemEligibility": "not-shown",
+          "taggedUrlStored": false,
+          "tracking": "Amazon Associatesのランタイム設定からタグを付与。成果URL・タグは記事データへ保存しない"
+        }
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/samsungonline/wtc_watch9/?variantId=r4986773260086",
+        "productPageStatus": 200,
+        "modelMatch": "44mm / シルバー / SM-L350NZSJXJP",
+        "shop": "Samsung公式ストア",
+        "affiliateUi": {
+          "status": "generated",
+          "displayedProduct": "Samsung Galaxy Watch9 40mm/44mm カラー選択商品",
+          "displayedShop": "Samsung公式ストア",
+          "inputVariantId": "r4986773260086",
+          "generatedProductPagePath": "/samsungonline/wtc_watch9/",
+          "generatedLinkDropsVariantQuery": true,
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "destinationHost": "item.rakuten.co.jp",
+          "destinationMatchesExactVariant": false,
+          "trackedUrlStored": false,
+          "tracking": "生成UIはvariantIdを落とすため、その成果URLは使わない。サイトのランタイムは選択済みvariantId付き商品詳細URLをpc到達先として生成し、描画HTMLで保持を確認する"
+        },
+        "runtimePurchaseUrlStatus": "direct",
+        "runtimeDestination": "商品詳細URLに選択済みvariantId=r4986773260086を保持"
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "keyDifferences": [
+      "対象はPixel Watch 5の45mm Bluetooth/Wi-FiとGalaxy Watch9の44mm Bluetooth",
+      "メーカー記載の対応OS下限: Android 12.0以降とAndroid 13以上",
+      "本体質量: 36.7gと34.0g（いずれもバンドを除く）",
+      "公称ストレージ: 64GBと32GB（Galaxy使用可能領域20.1GB）",
+      "公称電池容量: 465mAhと445mAh",
+      "最大使用時間: PixelはAODオン40時間/GalaxyはAODオフ40時間・オン30時間"
+    ],
+    "notes": [
+      "価格は2026-09-28にGoogle Store 45mm Bluetooth/Wi-Fi 67,800円、Samsung公式ページ Galaxy Watch9 44mm 73,370円からを確認。価格・在庫は変動する",
+      "Google Pixel Watch 5の技術仕様表は45mmモデルをAODで最大40時間、Battery Saverで最大72時間と記載",
+      "Googleの発売記事本文のバッテリー箇条書きと脚注にサイズ別時間の記載矛盾があるため、詳細仕様表を採用し、記事では直接の優劣を付けない",
+      "Samsung Galaxy Watch9の電池時間はSamsung公式仕様表でAODオフ最大40時間、AODオン最大30時間。メーカー間で試験条件が同じとは確認できない",
+      "健康関連機能は一般的なウェルネス目的。利用条件は地域・端末・アカウント等により異なり、疾病の診断・治療を意図しない"
+    ]
+  },
+  "amazon": {
+    "statusBySide": {
+      "left": "search",
+      "right": "verified"
+    },
+    "ctaModeBySide": {
+      "left": "search",
+      "right": "product"
+    },
+    "searchCtaBySide": {
+      "left": {
+        "status": "enabled",
+        "query": "Google Pixel Watch 5 45mm Bluetooth Wi-Fi GA10892-US Fog",
+        "productDetailMatch": "unverified",
+        "evidence": "Amazon.co.jpの検索結果で、45mm Bluetooth/Wi-Fi GA10892-USに一致する国内商品詳細ページを確認できなかった。並行輸入のLTE版など別仕様は採用せず、商品詳細の一致確認と区別した検索ボタンを表示する。",
+        "observedAtJst": "2026-09-28"
+      }
+    },
+    "left": null,
+    "right": "https://www.amazon.co.jp/dp/B0H6B93696",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "associates-toolbar-visible",
+        "evidence": "Amazon商品詳細ページにAssociates SiteStripeが表示され、リンク生成UIを操作",
+        "observedAtJst": "2026-09-28"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "not-found-in-exact-query",
+            "evidence": "45mm Bluetooth/Wi-FiとGA10892-USを含むAmazon検索結果に一致する商品詳細ページを確認できず。全出品が存在しないとは判断しない"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "一致する個別商品ページが未特定のため、商品単位のプログラム対象状態は未確認"
+          },
+          "taggedUrl": {
+            "state": "not-generated",
+            "evidence": "一致する商品詳細ページを特定できず、別仕様のASINから成果リンクを生成しなかった"
+          },
+          "destination": {
+            "state": "not-checked",
+            "evidence": "対象仕様のASINを特定できず、成果リンク遷移先は未確認"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jpの商品名と型番がGalaxy Watch9 44mm Bluetooth Silver / SM-L350NZSJXJPに一致"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "個別商品ページで商品単位のプログラム対象表示は確認できなかった。対象外とは判断しない"
+          },
+          "taggedUrl": {
+            "state": "generated",
+            "evidence": "Amazon Associates公式リンク生成UIから商品リンクを生成。タグ付きURLは保存せずランタイム設定を利用"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "生成リンクの最終遷移先がASIN B0H6B93696の同一商品詳細ページであることを確認"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "statusBySide": {
+      "left": "direct",
+      "right": "direct"
+    },
+    "ctaModeBySide": {
+      "left": "product",
+      "right": "product"
+    },
+    "left": "https://item.rakuten.co.jp/book/18748531/",
+    "right": "https://item.rakuten.co.jp/samsungonline/wtc_watch9/?variantId=r4986773260086",
+    "trackingPolicy": "楽天は商品ページの直接リンクとして表示する（成果リンクではない）。成果リンクはログイン済みの楽天アフィリエイト画面で生成して確認した場合にだけ記録する。",
+    "status": "direct"
+  },
+  "social": {
+    "status": "none",
+    "adoptedCount": 0,
+    "directPostUrls": [],
+    "embedUrls": [],
+    "notes": "SNS・口コミを比較根拠に採用せず、メーカー公式仕様だけで比較する。記事にSNS欄を表示しない"
+  },
+  "draftReason": null
+}
