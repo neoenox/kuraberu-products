@@ -7,6 +7,8 @@
  * 2. compV2 モード: comparison-v2 レジストリ + manual seeds から自動解決
  * 3. 明示モード: 全プロップを直接渡す（後方互換）
  */
+import ArticleIntroduction from './ArticleIntroduction.astro';
+import ConsumableGuides from './ConsumableGuides.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedArticles from './RelatedArticles.astro';
 import PurchaseCard from './PurchaseCard.astro';
@@ -337,7 +339,7 @@ const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left
     <p class="meta"><a href="/articles/">比較記事一覧</a> / {articleMetadata.category} · 公開日 <time datetime={articleMetadata.publishedAt}>{articleMetadata.publishedAt}</time> · 更新日 <time datetime={articleMetadata.modifiedAt}>{articleMetadata.modifiedAt}</time></p>
     <h1>{articleMetadata.headline}</h1>
     <ComparisonMemoButton articleId={articleMetadata.id} />
-    <p class="lead">{lead}</p>
+    <ArticleIntroduction text={lead} />
     <nav class="jump-nav" aria-label="ページ内ジャンプ"><a href="#key-differences">違い</a><a href="#decision-guide">結局どっち？</a><a href="#faq">FAQ</a></nav>
     <ArticleComparisonV2 left={left} right={right} rows={keyDiffRows} checkedAt={articleMetadata.productInfoCheckedAt} purchaseLinkStatus={articleMetadata.purchaseLinkStatus} diagnosisHref={resolved.diagnosisHref} showNextStepPurchaseCtas={props.showNextStepPurchaseCtas} />
     {summaryParagraph && <p>{summaryParagraph}</p>}
@@ -449,5 +451,6 @@ const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left
     <h2>調査方法・免責事項</h2>
     <p>{disclaimer}</p>
   </article>
+  <ConsumableGuides articleId={articleMetadata.id} />
   <RelatedArticles currentPath={articleMetadata.path} currentCategory={articleMetadata.category} />
 </BaseLayout>
