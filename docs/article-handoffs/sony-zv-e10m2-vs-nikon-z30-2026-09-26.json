@@ -1,0 +1,83 @@
+{
+  "id": "sony-zv-e10m2-vs-nikon-z30-2026-09-26",
+  "articleId": "sony-zv-e10m2-vs-nikon-z30",
+  "source": "Codex fresh product selection and official-source research",
+  "researchDateJst": "2026-09-26",
+  "articleReady": true,
+  "category": "ミラーレスカメラ",
+  "products": {
+    "left": {
+      "name": "ソニー VLOGCAM ZV-E10 II ボディ（ブラック）",
+      "model": "ZV-E10M2",
+      "officialUrl": "https://www.sony.jp/ichigan/products/ZV-E10M2/",
+      "specUrl": "https://www.sony.jp/ichigan/products/ZV-E10M2/spec.html",
+      "officialImageUrl": "https://www.sony.jp/products/picture/middle/ZV-E10M2_black_white_lens.jpg",
+      "localImage": "public/products/sony-zv-e10m2.jpg",
+      "specsVerified": {
+        "effectivePixels": "静止画時 最大約2600万画素",
+        "4kUhd": "60p対応",
+        "weightBodyOnly": "約292g",
+        "weightWithBatteryAndCard": "約377g"
+      }
+    },
+    "right": {
+      "name": "ニコン Z30 ボディ",
+      "model": "Z30",
+      "officialUrl": "https://www.nikon-image.com/products/mirrorless/lineup/z_30/",
+      "specUrl": "https://www.nikon-image.com/products/lineup/mirrorless/z30/spec.html",
+      "officialImageUrl": "https://www.nikon-image.com/cms/products/mirrorless/lineup/z_30/img/index/product_01.jpg",
+      "localImage": "public/products/nikon-z30.jpg",
+      "specsVerified": {
+        "effectivePixels": "2088万画素",
+        "4kUhd": "30pまで",
+        "fullHdHighFrameRate": "120p/100p対応",
+        "weightBodyOnly": "約350g",
+        "weightWithBatteryAndCard": "約405g（ボディーキャップを除く）"
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "keyDifferences": [
+      "4K UHDの最高フレームレート（ZV-E10 II 60p / Z30 30p）",
+      "静止画有効画素数（ZV-E10 II 最大約2600万 / Z30 2088万）",
+      "本体のみ質量（ZV-E10 II 約292g / Z30 約350g）",
+      "レンズマウント（Sony E / Nikon Z）"
+    ],
+    "weightCaveat": "メーカー公称値。ボディのみとバッテリー・メモリーカード込みの両方を明示し、レンズ重量は含めない。",
+    "videoCaveat": "最高フレームレートを比較。記録形式、クロップ、カード要件等は撮影設定で異なるため、購入前に公式仕様を確認する。"
+  },
+  "amazon": {
+    "status": "verified",
+    "left": "https://www.amazon.co.jp/dp/B0D97HW6S6",
+    "right": "https://www.amazon.co.jp/dp/B0B5CP9X1X",
+    "leftAsin": "B0D97HW6S6",
+    "rightAsin": "B0B5CP9X1X",
+    "verification": "Amazon.co.jpの商品詳細画面で、SonyはZV-E10M2ボディ、NikonはZ30ボディと商品名を確認。Amazonアソシエイトタグはサイト設定から付与する。"
+  },
+  "rakuten": {
+    "status": "verified",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57ed5f71.fb653054.57ed5f72.1781caa3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4548736160675-34-39044-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/5701c911.d88f4b8a.5701c912.ee48bcf8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Femedama%2F4960759910615%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "leftProductPage": "https://item.rakuten.co.jp/jism/4548736160675-34-39044-n/",
+    "rightProductPage": "https://item.rakuten.co.jp/emedama/4960759910615/",
+    "leftProductVerified": true,
+    "rightProductVerified": true,
+    "generation": "2026-09-26, authenticated Rakuten Affiliate dashboard in the connected Chrome; page preview matched the Sony ZV-E10M2 body and Nikon Z30 body respectively. Both generated as link_type=hybrid_url.",
+    "note": "成果URLをログイン済み楽天アフィリエイト画面で生成。seedへ同一URLを反映済み。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "SNS投稿は採用しない。記事の比較根拠はメーカー公式仕様に限定し、SNS欄は表示しない。SNS全体に投稿がないとの意味ではなく、X検索はブラウザーでタイムアウトして調査を完了できていない。"
+  },
+  "unconfirmed": [
+    "Xを含むSNS投稿の採否調査（YouTube検索では今回の記事に適合する投稿を確認できず、X検索はブラウザーでタイムアウト）",
+    "楽天以外も含むリンク先・在庫・価格の継続確認"
+  ],
+  "draftReason": null,
+  "publishStatus": "published",
+  "publicationDecision": "2026-09-26に調査した内容を、2026-10-03にメーカー公式の仕様ページ（ソニー・ニコン）、Amazonの商品ページ（両商品）、楽天の成果リンク（両商品が一致する商品ページへ解決・在庫あり）で再確認した。各商品に確認済みの購入先がある。SNS欄は採用しない。"
+}
