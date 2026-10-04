@@ -16,14 +16,14 @@
 
 - slug: airpods-5-vs-airpods-4-anc
 - Issue: #926（https://github.com/neoenox/kuraberu-products/issues/926）
-- 状態: 非公開ドラフト。Amazonの対象可否・成果URLの遷移先と楽天商品ページを未確認
+- 状態: 2026-10-04公開。公式仕様、Amazonの両商品ページ、楽天の両成果リンクの遷移先を再確認済み
 - 比較軸: Apple公表のANC比較、防塵・耐汗耐水等級、ケース機能、ANC有効時の電池持ち・本体寸法と重量
 - 公式URL:
   - https://www.apple.com/jp/airpods-5/specs/
   - https://www.apple.com/jp/airpods/compare/
   - https://support.apple.com/ja-jp/121204
 - 画像: Apple公式仕様ページの画像を public/products/ と src/assets/products/ に保存
-- 販売先: Amazon商品名・ASINは確認済み。成果リンク生成と遷移先、楽天商品一致・成果リンクは未確認のため購入CTAを非表示
+- 販売先: Amazonは両商品ともASIN付き商品リンク（タグは実行時に付与）。楽天は両商品とも成果リンク
 - SNS: RedditのAirPods 5使用感を確認したが、AirPods 4 ANCとの同条件比較ではないため不採用。SNS欄は表示しない
 - handoff: docs/article-handoffs/airpods-5-vs-airpods-4-anc-2026-09-30.json
 

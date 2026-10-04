@@ -2,12 +2,11 @@ import type { CommercialArticleSeed } from "./types";
 
 export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
   id: "airpods-5-vs-airpods-4-anc",
-  draft: true,
-  publishedAt: "2026-09-30",
-  modifiedAt: "2026-09-30",
-  productInfoCheckedAt: "2026-09-30",
+  publishedAt: "2026-10-04",
+  modifiedAt: "2026-10-04",
+  productInfoCheckedAt: "2026-10-04",
   handoffManifestId: "airpods-5-vs-airpods-4-anc-2026-09-30",
-  purchaseLinksCheckedAt: "2026-09-30",
+  purchaseLinksCheckedAt: "2026-10-04",
   purchaseLinkStatus: "direct",
   amazonLinkStatus: "direct",
   rakutenLinkStatus: "verified",
@@ -166,19 +165,19 @@ export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
     {
       label: "Apple AirPods 5 仕様",
       url: "https://www.apple.com/jp/airpods-5/specs/",
-      date: "2026-09-30",
+      date: "2026-10-04",
     },
     {
       label: "Apple AirPods モデル比較",
       url: "https://www.apple.com/jp/airpods/compare/",
-      date: "2026-09-30",
+      date: "2026-10-04",
     },
     {
       label: "Apple アクティブノイズキャンセリング搭載AirPods 4 技術仕様",
       url: "https://support.apple.com/ja-jp/121204",
-      date: "2026-09-30",
+      date: "2026-10-04",
     },
   ],
   disclaimer:
-    "比較は2026-09-30に確認したApple公式仕様に基づきます。ANCの公表値はAppleの試験結果で、実環境での感じ方を保証するものではありません。価格・在庫・販売条件は購入時点の販売ページでご確認ください。",
+    "比較は2026-10-04に確認したApple公式仕様に基づきます。ANCの公表値はAppleの試験結果で、実環境での感じ方を保証するものではありません。価格・在庫・販売条件は購入時点の販売ページでご確認ください。",
 };
