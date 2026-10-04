@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { validateSourceToggle } from "../scripts/check-rendered-html.mjs";
 import {
+  additionalCommercialArticleSeeds,
   articleMetadata,
   publicArticleMetadata,
   publishedArticleMetadata,
@@ -98,7 +99,22 @@ function articleSlugs(): string[] {
 
 describe("article metadata", () => {
   it("includes verified commercial articles in public discovery surfaces", () => {
-    expect(publicArticleMetadata).toHaveLength(137);
+    // 公開一覧は「商用記事以外」と「draftでなく商品情報の確認日がある商用記事」。
+    // 件数を固定すると記事の追加ごとに更新が必要になるため、規則そのものを確かめる (#230)。
+    const seedById = new Map(
+      additionalCommercialArticleSeeds.map((seed) => [seed.id, seed]),
+    );
+    const isComplete = (article: (typeof articleMetadata)[number]) => {
+      const seed = seedById.get(article.id);
+      return !seed || (!seed.draft && Boolean(article.productInfoCheckedAt));
+    };
+    const publicIds = new Set(
+      publicArticleMetadata.map((article) => article.id),
+    );
+    for (const article of articleMetadata) {
+      expect(publicIds.has(article.id), article.id).toBe(isComplete(article));
+    }
+    expect(publicArticleMetadata.length).toBeGreaterThan(0);
     const newlyPublishedIds = [
       "yamazaki-dishwasher-rack-241925-vs-241926",
       "panasonic-mc-nx810km-vs-mc-nx700k",
@@ -324,9 +340,10 @@ describe("article metadata", () => {
       ).toBe(true);
     }
     // 比較記事は productCount: 2、単一商品記事（商品ガイド）は productCount: 1。
-    expect(
-      articleMetadata.filter((article) => article.productCount === 2),
-    ).toHaveLength(160);
+    // 件数は記事の追加で変わるため固定せず、それ以外の値がないことを確かめる。
+    for (const article of articleMetadata) {
+      expect([1, 2], article.id).toContain(article.productCount);
+    }
     expect(
       articleMetadata.filter((article) => article.productCount === 1),
     ).toEqual([panasonicBabyMonitorArticle, panasonicEhNa9mGuideArticle]);
