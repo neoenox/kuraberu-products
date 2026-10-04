@@ -181,6 +181,7 @@ describe("article metadata", () => {
       "iphone-18-pro-vs-pixel-11-pro",
       "sony-zv-e10m2-vs-nikon-z30",
       "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max",
+      "airpods-5-vs-airpods-4-anc",
     ];
     for (const id of newlyPublishedIds) {
       expect(publicArticleMetadata.some((article) => article.id === id)).toBe(
