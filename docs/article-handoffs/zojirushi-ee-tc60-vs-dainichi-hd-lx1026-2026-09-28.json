@@ -160,18 +160,20 @@
     }
   },
   "rakuten": {
-    "status": "direct",
+    "status": "verified",
     "statusBySide": {
-      "left": "direct",
-      "right": "direct"
+      "left": "verified",
+      "right": "verified"
     },
     "ctaModeBySide": {
       "left": "product",
       "right": "product"
     },
-    "left": "https://item.rakuten.co.jp/ksdenki/4974305232502/",
-    "right": "https://item.rakuten.co.jp/ksdenki/4951272037248/",
-    "trackingPolicy": "楽天は商品ページの直接リンクとして表示する（成果リンクではない）。成果リンクはログイン済みの楽天アフィリエイト画面で生成して確認した場合にだけ記録する。"
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232502%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037248%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "trackingPolicy": "2026-10-04、ログイン済みChromeの楽天アフィリエイト公式UI（商品リンクを作成）に商品ページURLを入力して成果リンクを生成。画面上の商品名・価格・料率（2.0%）と、生成リンクのpc=遷移先が商品ページURLと一致することを確認した。",
+    "leftProductPage": "https://item.rakuten.co.jp/ksdenki/4974305232502/",
+    "rightProductPage": "https://item.rakuten.co.jp/ksdenki/4951272037248/"
   },
   "social": {
     "status": "none",
