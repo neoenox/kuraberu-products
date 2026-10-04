@@ -60,12 +60,13 @@
   "rakuten": {
     "status": "verified",
     "directProductUrls": {
-      "left": "https://item.rakuten.co.jp/b-surprise2/4548736164154/",
+      "left": "https://item.rakuten.co.jp/r-kojima/4548736164154/",
       "right": "https://item.rakuten.co.jp/anker/a3957/"
     },
-    "left": "https://hb.afl.rakuten.co.jp/ichiba/57d9e9de.ecb2fbc5.57d9e9df.eb576eb4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-surprise2%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f113aa.5b6cf53b.56f113ab.04bde605/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-kojima%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    "verification": "Both complete affiliate URLs were copied from the logged-in Rakuten Affiliate link creation page after confirming the matching item names and destinations."
+    "verification": "Both complete affiliate URLs were copied from the logged-in Rakuten Affiliate link creation page after confirming the matching item names and destinations.",
+    "leftReplacementNote": "2026-10-04: 旧購入先（b-surprise2）が在庫切れで、成果リンクが中継ページへ送られていたため、コジマ楽天市場店（JAN 4548736164154、WF-C710N ブラック、在庫あり、16,359円）へ差し替え。ログイン済みの楽天アフィリエイト公式UIで成果リンクを生成し、pc=遷移先が商品ページURLと一致することを確認した。"
   },
   "social": {
     "status": "adopted",

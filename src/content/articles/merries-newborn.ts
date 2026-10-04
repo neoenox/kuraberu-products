@@ -16,12 +16,17 @@ export const merriesNewbornArticle = defineArticleMetadata({
   summary:
     "「ファーストプレミアム」と「ずっと肌さらエアスルー」を、公式情報・販売ページ・確認状況に分けて比較します。",
   publishedAt: "2026-08-08",
-  modifiedAt: "2026-08-28",
+  modifiedAt: "2026-10-04",
   productInfoCheckedAt: "2026-08-08",
-  purchaseLinksCheckedAt: "2026-08-28",
+  purchaseLinksCheckedAt: "2026-10-04",
   purchaseLinkStatus: "verified",
   imagePath: "/products/merries-fp-newborn.jpg",
   changeLog: [
+    {
+      date: "2026-10-04",
+      summary:
+        "楽天の購入先（ずっと肌さらエアスルー）が削除されていたため、在庫のあるマツモトキヨシ楽天市場店の「エアスルー テープ 新生児用5000gまで」へ差し替え。",
+    },
     {
       date: "2026-08-17",
       summary:

@@ -416,7 +416,8 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
       if (idMatch) {
         for (const side of ["left", "right"]) {
           const key = `${idMatch[1]}:${side}`;
-          if (registry.has(key)) {
+          // 空 URL は購入先を確認できない項目（CTA 非表示）なので監査対象にしない。
+          if (registry.get(key)) {
             ctas.push({ article: slug, key, url: registry.get(key) });
           }
         }

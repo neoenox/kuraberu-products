@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
   id: "sony-wf-c710n-vs-soundcore-liberty-5",
   publishedAt: "2026-09-24",
-  modifiedAt: "2026-09-29",
+  modifiedAt: "2026-10-04",
   handoffManifestId: "sony-wf-c710n-vs-soundcore-liberty-5-2026-09-24",
   productInfoCheckedAt: "2026-09-24",
-  purchaseLinksCheckedAt: "2026-09-24",
+  purchaseLinksCheckedAt: "2026-10-04",
   purchaseLinkStatus: "verified",
   title: "Sony WF-C710NとSoundcore Liberty 5を比較｜価格・電池持ち・コーデック",
   headline: "価格とLDACならLiberty 5、NCオンの連続再生時間ならWF-C710N",
@@ -32,7 +32,7 @@ export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
   leftAmazonLinkStatus: "search",
   rightAmazonLinkStatus: "search",
   leftRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57d9e9de.ecb2fbc5.57d9e9df.eb576eb4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-surprise2%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "https://hb.afl.rakuten.co.jp/ichiba/56f113aa.5b6cf53b.56f113ab.04bde605/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-kojima%2F4548736164154%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   rightRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   officialSources: [
@@ -206,9 +206,9 @@ export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
       date: "2026-09-24",
     },
     {
-      label: "楽天市場 WF-C710N BZ",
-      url: "https://item.rakuten.co.jp/b-surprise2/4548736164154/",
-      date: "2026-09-24",
+      label: "楽天市場 WF-C710N BZ（コジマ楽天市場店）",
+      url: "https://item.rakuten.co.jp/r-kojima/4548736164154/",
+      date: "2026-10-04",
     },
     {
       label: "楽天市場 Soundcore Liberty 5",
