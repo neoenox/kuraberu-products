@@ -43,7 +43,8 @@ export const pixelWatch5VsGalaxyWatch9Seed: CommercialArticleSeed = {
   leftAmazonLinkStatus: "search",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0H6B93696",
   rightAmazonLinkStatus: "verified",
-  leftRakutenUrl: "https://item.rakuten.co.jp/book/18748531/",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18748531%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   rightRakutenUrl:
     "https://item.rakuten.co.jp/samsungonline/wtc_watch9/?variantId=r4986773260086",
   officialSources: [

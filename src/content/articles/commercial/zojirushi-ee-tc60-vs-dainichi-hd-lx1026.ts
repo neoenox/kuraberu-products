@@ -9,7 +9,7 @@ export const zojirushiEeTc60VsDainichiHdLx1026Seed: CommercialArticleSeed = {
   purchaseLinksCheckedAt: "2026-10-03",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "unverified",
-  rakutenLinkStatus: "direct",
+  rakutenLinkStatus: "verified",
   title:
     "象印 EE-TC60とダイニチ HD-LX1026を比較｜加湿方式・対応畳数・手入れの違い",
   headline:
@@ -38,8 +38,10 @@ export const zojirushiEeTc60VsDainichiHdLx1026Seed: CommercialArticleSeed = {
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0HGFKGF2N",
   leftAmazonLinkStatus: "verified",
   rightAmazonLinkStatus: "search",
-  leftRakutenUrl: "https://item.rakuten.co.jp/ksdenki/4974305232502/",
-  rightRakutenUrl: "https://item.rakuten.co.jp/ksdenki/4951272037248/",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232502%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  rightRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037248%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   officialSources: [
     {
       label: "象印 EE-TC60 公式商品ページ",

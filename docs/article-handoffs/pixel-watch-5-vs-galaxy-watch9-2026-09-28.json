@@ -188,17 +188,18 @@
   },
   "rakuten": {
     "statusBySide": {
-      "left": "direct",
+      "left": "verified",
       "right": "direct"
     },
     "ctaModeBySide": {
       "left": "product",
       "right": "product"
     },
-    "left": "https://item.rakuten.co.jp/book/18748531/",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18748531%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     "right": "https://item.rakuten.co.jp/samsungonline/wtc_watch9/?variantId=r4986773260086",
-    "trackingPolicy": "楽天は商品ページの直接リンクとして表示する（成果リンクではない）。成果リンクはログイン済みの楽天アフィリエイト画面で生成して確認した場合にだけ記録する。",
-    "status": "direct"
+    "trackingPolicy": "2026-10-04、ログイン済みChromeの楽天アフィリエイト公式UI（商品リンクを作成）に商品ページURLを入力して成果リンクを生成。画面上の商品名・価格・料率（2.0%）と、生成リンクのpc=遷移先が商品ページURLと一致することを確認した。 Galaxy Watch9は生成リンクのpc=遷移先から色・サイズの選択（variantId）が落ち、40mm/44mm・全色の商品ページになるため成果リンクを採用せず、variantId付きの商品ページへの直接リンク（成果なし）のままとした。",
+    "status": "direct",
+    "leftProductPage": "https://item.rakuten.co.jp/book/18748531/"
   },
   "social": {
     "status": "none",
