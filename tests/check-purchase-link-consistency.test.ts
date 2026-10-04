@@ -378,6 +378,39 @@ describe("verified CTA destination audit (issue #342)", () => {
     }
   });
 
+  it("skips an empty registry URL (hidden CTA) for ArticleComparisonPage articles", () => {
+    const directory = mkdtempSync(join(tmpdir(), "cta-empty-"));
+    try {
+      writeSrcTree(directory, [
+        {
+          slug: "sample-vs-other",
+          source: `<ArticleComparisonPage articleId="sample-vs-other" />`,
+        },
+      ]);
+      writeFileSync(
+        join(directory, "data", "article-purchase-links.json"),
+        JSON.stringify({
+          "sample-vs-other:left": {
+            name: "A",
+            purchaseUrl: "https://item.rakuten.co.jp/shop/a/",
+          },
+          // 購入できる出品が見つからない商品は空 URL で CTA を非表示にする。
+          "sample-vs-other:right": { name: "B", purchaseUrl: "" },
+        }),
+      );
+      const { ctas } = collectVerifiedCtaUrls({ srcDirectory: directory });
+      expect(ctas).toEqual([
+        {
+          article: "sample-vs-other",
+          key: "sample-vs-other:left",
+          url: "https://item.rakuten.co.jp/shop/a/",
+        },
+      ]);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
   it("normalizes hostnames and builds a static allowlist (no registry auto-generation)", () => {
     expect(hostnameOf("https://Example.com./x")).toBe("example.com");
     expect(hostnameOf("not a url")).toBeNull();
