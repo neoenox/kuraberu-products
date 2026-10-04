@@ -4,10 +4,10 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
   id: "crucial-x10-pro-vs-kingston-xs2000",
   draft: false,
   publishedAt: "2026-09-27",
-  modifiedAt: "2026-09-27",
+  modifiedAt: "2026-10-04",
   productInfoCheckedAt: "2026-09-27",
   handoffManifestId: "crucial-x10-pro-vs-kingston-xs2000-2026-09-27",
-  purchaseLinksCheckedAt: "2026-09-27",
+  purchaseLinksCheckedAt: "2026-10-04",
   purchaseLinkStatus: "verified",
   leftAmazonLinkStatus: "search",
   rightAmazonLinkStatus: "verified",
@@ -43,8 +43,7 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
     "https://www.amazon.co.jp/dp/B09F6279PY?th=1&linkCode=ll2&tag=kuraberuprodu-22&linkId=1059556899f99acaec1e90d4b5e7f9a0&ref_=as_li_ss_tl",
   leftRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/57f32d04.2786676a.57f32d05.d4b822af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftales-store%2F202506050037110649528938428%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
-  rightRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57f33231.551f8117.57f33232.7136f34a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmanoangel%2F20240629145923_100%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+  rightRakutenUrl: null,
   officialSources: [
     {
       label: "Crucial X10 Pro 2TB 公式商品ページ",

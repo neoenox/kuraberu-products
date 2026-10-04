@@ -11,6 +11,23 @@
  */
 import { ARTICLE_PAGE_PATTERN } from "./sections.mjs";
 
+/**
+ * 楽天CTAを出さない側の数（article:rakuten-unavailable-sides、例: "right"）。
+ * 記事全体の楽天状態が verified / direct でも、この側の楽天ボタンは描画されない。
+ */
+export function rakutenUnavailableSideCount(html) {
+  const sides =
+    html.match(
+      /<meta name="article:rakuten-unavailable-sides" content="([^"]*)">/i,
+    )?.[1] ?? "";
+  return new Set(
+    sides
+      .split(",")
+      .map((side) => side.trim())
+      .filter((side) => side === "left" || side === "right"),
+  ).size;
+}
+
 export function validateArticleNextStep(relative, html) {
   if (!ARTICLE_PAGE_PATTERN.test(relative)) return [];
   const errors = [];
@@ -83,7 +100,10 @@ export function validateArticleNextStep(relative, html) {
   const nextStepPurchaseDisabled = /data-next-step-purchase="disabled"/i.test(
     section,
   );
-  const expectedBuyLinks = !nextStepPurchaseDisabled && hasPurchaseCtas ? 2 : 0;
+  const expectedBuyLinks =
+    !nextStepPurchaseDisabled && hasPurchaseCtas
+      ? 2 - rakutenUnavailableSideCount(html)
+      : 0;
   if (buyLinks.length !== expectedBuyLinks) {
     errors.push(
       `${relative}: next-step block must render exactly ${expectedBuyLinks} purchase buttons (next-step__buy), found ${buyLinks.length}`,

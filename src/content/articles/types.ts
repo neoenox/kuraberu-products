@@ -57,6 +57,11 @@ export type ArticleMetadataBase = {
   /** 販売先ごとの確認状態。省略時は purchaseLinkStatus を使う。 */
   amazonLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
   rakutenLinkStatus?: "verified" | "direct" | "unverified" | "unavailable";
+  /**
+   * 楽天の購入先を確認できず、楽天CTAを出さない側（商用記事で seed の楽天URLが null）。
+   * 記事全体の rakutenLinkStatus が verified / direct でも、この側の楽天ボタンは描画されない。
+   */
+  rakutenUnavailableSides?: readonly ("left" | "right")[];
   changeLog: readonly ArticleChangeLogEntry[];
   imagePath?: `/${string}` | `https://${string}`;
   /**
