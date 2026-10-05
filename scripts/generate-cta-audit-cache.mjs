@@ -51,8 +51,10 @@ async function main() {
   const resolved = audit.checked.filter((e) => e.result === "resolved");
   const skipped = audit.checked.filter((e) => e.result === "skipped");
 
+  const unavailable = resolved.filter((e) => e.unavailable);
+
   console.log(
-    `Audit complete: ${resolved.length} resolved, ${skipped.length} skipped, ${audit.errors.length} errors`,
+    `Audit complete: ${resolved.length} resolved, ${skipped.length} skipped, ${unavailable.length} unavailable (warning), ${audit.errors.length} errors`,
   );
 
   if (audit.errors.length) {
@@ -71,6 +73,8 @@ async function main() {
     finalUrl: entry.finalUrl,
     finalHost: entry.finalHost,
     hops: entry.hops,
+    // 売り切れ用の中継ページへ着地したCTA。在庫が戻れば次回の更新で外れる。
+    ...(entry.unavailable ? { unavailable: true } : {}),
     checkedAt: new Date().toISOString(),
   }));
 
