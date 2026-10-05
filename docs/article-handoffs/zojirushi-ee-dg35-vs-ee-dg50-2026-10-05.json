@@ -1,0 +1,172 @@
+{
+  "id": "zojirushi-ee-dg35-vs-ee-dg50-2026-10-05",
+  "articleId": "zojirushi-ee-dg35-vs-ee-dg50",
+  "source": "Fresh product selection and research by Claude Code against Zojirushi official pages, the Zojirushi official online store, and Amazon.co.jp / Rakuten Ichiba product detail pages (Amazon and Rakuten affiliate screens observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-05",
+  "articleReady": true,
+  "category": "生活家電",
+  "selection": {
+    "reason": "2026年9月発売のEE-DG35・50は同一シリーズで、容量・定格加湿能力・適用床面積・消費電力・サイズ・質量が異なり、連続加湿時間・機能は共通。部屋の広さと設置スペースで選ぶ加湿需要期の選択に直結する。既存のEE-DG50 vs EE-RV50記事とは対象の組み合わせが異なる。",
+    "duplicateCheck": "src/pages/articles と src/content/articles に EE-DG35 を扱う記事なし。EE-DG50 vs EE-RV50（公開済み）とは比較対象が異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "象印 スチーム式加湿器 EE-DG35 ホワイト",
+      "model": "EE-DG35-WA",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/",
+      "officialImageUrl": "https://www.zojirushi-direct.com/client_info/ZOJIRUSHI_DIRECT/itemimage/EEDG35_WA/EEDG35_WA_01.png",
+      "imageEvidence": "象印公式オンラインストアのEE-DG35 WA商品ページ（og:image）の商品画像（650×650 PNG、HTTP 200、2026-10-05）。600×600 JPEGに変換して public/products/zojirushi-ee-dg35-wa.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "release": "2026年09月発売",
+        "capacity": "3.0L",
+        "ratedHumidification": "350mL/h",
+        "floorArea": "木造和室～6畳（10㎡）／プレハブ洋室～10畳（16㎡）",
+        "power": "湯沸かし立ち上げ時985W、加湿時305W",
+        "continuousHours": "強8、中16、弱32（約h）",
+        "timer": "入タイマー4・6・8時間、切タイマー1・2・4時間",
+        "noise": "加湿時約30dB、湯沸かし時約39dB（公式ページ記載）",
+        "brightness": "ランプの明るさ明/暗の2段階",
+        "dimensions": "24×27.5×32.5（約cm）",
+        "weight": "2.7（約kg）",
+        "colors": ["グレー（HA）", "ホワイト（WA）"],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": 23980,
+      "officialStoreUrl": "https://www.zojirushi-direct.com/category/HUMIDIFIER/EEDG35_WA.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HGF9J1MT",
+      "rakutenProductPage": "https://item.rakuten.co.jp/ksdenki/4974305232519/",
+      "rakutenListingEvidence": "ケーズデンキ 楽天市場店の商品詳細ページでJAN 4974305232519を確認し、楽天アフィリエイト画面のプレビューで商品名「象印マホービン スチーム式加湿器 EE-DG35 WA ホワイト」・価格23,980円を確認（2026-10-05）。"
+    },
+    "right": {
+      "name": "象印 スチーム式加湿器 EE-DG50 ホワイト",
+      "model": "EE-DG50-WA",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/",
+      "officialImageUrl": "https://www.zojirushi-direct.com/client_info/ZOJIRUSHI_DIRECT/itemimage/EEDG50_WA/EEDG50_WA_01.png",
+      "imageEvidence": "公式ストアのEE-DG50 WA商品画像（og:image、2026-10-05にURL再確認）。public/products/zojirushi-ee-dg50-wa.jpg に保存済みの既存ファイルを使用。",
+      "officialSpecs": {
+        "release": "2026年09月発売",
+        "capacity": "4.0L",
+        "ratedHumidification": "480mL/h",
+        "floorArea": "木造和室～8畳（13㎡）／プレハブ洋室～13畳（22㎡）",
+        "power": "湯沸かし立ち上げ時985W、加湿時410W",
+        "continuousHours": "強8、中16、弱32（約h）",
+        "timer": "入タイマー4・6・8時間、切タイマー1・2・4時間",
+        "noise": "加湿時約30dB、湯沸かし時約39dB（公式ページ記載）",
+        "brightness": "ランプの明るさ明/暗の2段階",
+        "dimensions": "24×27.5×36.5（約cm）",
+        "weight": "2.9（約kg）",
+        "colors": ["グレー（HA）", "ホワイト（WA）"],
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": 27280,
+      "officialStoreUrl": "https://www.zojirushi-direct.com/category/HUMIDIFIER/EEDG50_WA.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HGF5B9D8",
+      "rakutenProductPage": "https://item.rakuten.co.jp/ksdenki/4974305232533/",
+      "rakutenListingEvidence": "ケーズデンキ 楽天市場店の商品詳細ページで、商品名「象印マホービン スチーム式加湿器 EE-DG50 WA ホワイト」とJAN 4974305232533を確認（2026-09-29）。成果URLは2026-09-29に生成済み。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格はオープン価格。記事の価格は象印公式オンラインストア（象印ダイレクト）の税込表示を2026-10-05に確認したもの。",
+    "keyDifferences": [
+      "容量はEE-DG35が3.0L、EE-DG50が4.0L",
+      "定格加湿能力はEE-DG35が350mL/h、EE-DG50が480mL/h",
+      "適用床面積はEE-DG35が木造和室～6畳／プレハブ洋室～10畳、EE-DG50が木造和室～8畳／プレハブ洋室～13畳",
+      "加湿時消費電力はEE-DG35が305W、EE-DG50が410W（湯沸かし立ち上げ時は共に985W）",
+      "外形寸法はEE-DG35が24×27.5×32.5cm・約2.7kg、EE-DG50が24×27.5×36.5cm・約2.9kg",
+      "公式ストア価格（税込・2026-10-05確認）はEE-DG35 WAが23,980円、EE-DG50 WAが27,280円"
+    ],
+    "commonSpecs": [
+      "スチーム式（100℃まで沸とうさせ約65℃まで冷ました蒸気）",
+      "連続加湿時間 強約8時間・中約16時間・弱約32時間（EE-DG35･50共通、公式記載）",
+      "入タイマー4・6・8時間、切タイマー1・2・4時間",
+      "自動加湿3段階、湿度モニター、ランプ明るさ切替",
+      "加湿時約30dB・湯沸かし時約39dB（公式ページ記載）",
+      "フィルター不要・フッ素加工の広口容器、クエン酸洗浄モード、湯沸かし音セーブモード",
+      "チャイルドロック、ふた開閉ロック、転倒湯もれ防止構造",
+      "カラー グレー・ホワイト"
+    ],
+    "caveat": "連続加湿時間は公式が室温20℃・満水時・強モードの条件で示す目安。容量が小さいEE-DG35で同じ時間となる点も公式ページの『EE-DG35･50共通』の記載に基づく。適用床面積はメーカーの目安。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0HGF9J1MT",
+    "right": "https://www.amazon.co.jp/dp/B0HGF5B9D8",
+    "leftAsin": "B0HGF9J1MT",
+    "rightAsin": "B0HGF5B9D8",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（EE-DG35-WA・EE-DG50-WA）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-05"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「象印マホービン 加湿器 スチーム式 3.0L ホワイト EE-DG35-WA」、品番・型番、ASIN B0HGF9J1MTを確認（2026-10-05）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-05）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HGF9J1MT?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「象印マホービン 加湿器 スチーム式 3.0L ホワイト EE-DG35-WA」の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-05）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「象印マホービン 加湿器 スチーム式 4.0L ホワイト EE-DG50-WA」、品番・型番、ASIN B0HGF5B9D8を確認（2026-10-05）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-05）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HGF5B9D8?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、商品名「象印マホービン 加湿器 スチーム式 4.0L ホワイト EE-DG50-WA」の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-05）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "leftProductPage": "https://item.rakuten.co.jp/ksdenki/4974305232519/",
+    "leftShop": "ケーズデンキ 楽天市場店",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/ksdenki/4974305232533/",
+    "rightShop": "ケーズデンキ 楽天市場店",
+    "rightProductVerified": true,
+    "generation": "EE-DG35は2026-10-05に楽天アフィリエイト公式画面（affiliate.rakuten.co.jp）へログインした状態で、商品詳細URLから生成された成果URL（画面のソース欄の値をそのまま使用、改変なし）。EE-DG50は2026-09-29に同画面で生成済みのURL。遷移先の実機確認は未実施。",
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232519%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232533%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "2026年9月発売の新モデルのため、本調査では実利用者による適格な投稿を確認していない（2026-10-05時点で本格的な検索は未実施。適格投稿が存在しないとの断定ではない）。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天成果URLの遷移先は実機で開いて確認していない。",
+    "楽天・Amazonの販売価格と在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み、Amazonはツールバー対象確認とタグ付きURLの遷移先確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

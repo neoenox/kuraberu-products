@@ -27,6 +27,17 @@
 - SNS: RedditのAirPods 5使用感を確認したが、AirPods 4 ANCとの同条件比較ではないため不採用。SNS欄は表示しない
 - handoff: docs/article-handoffs/airpods-5-vs-airpods-4-anc-2026-09-30.json
 
+### 象印 スチーム式加湿器 EE-DG35 vs EE-DG50
+
+- slug: `zojirushi-ee-dg35-vs-ee-dg50`
+- 状態: 2026-10-05作成（Draft PR）。公式仕様、象印公式ストア価格、Amazon・楽天の商品一致、各購入先リンクを確認済み
+- 比較軸: 適用床面積、定格加湿能力、容量、加湿時消費電力、外形寸法・質量、公式ストア価格（連続加湿時間・タイマー・機能は共通）
+- 公式URL:
+  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
+- 購入先: Amazonは両商品ともASIN付き（EE-DG35-WA: B0HGF9J1MT / EE-DG50-WA: B0HGF5B9D8、対象・2.00%、タグ付きURLの遷移先確認済み）。楽天はケーズデンキ楽天市場店、成果URLは両商品生成済み
+- SNS: 適格な実利用投稿は未確認のため欄を非掲載
+- handoff: `docs/article-handoffs/zojirushi-ee-dg35-vs-ee-dg50-2026-10-05.json`
+
 ## 現在の公開済み（122本）
 
 | slug                                              | 状態                           |

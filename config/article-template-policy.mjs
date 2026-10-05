@@ -94,6 +94,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max",
   "airpods-5-vs-airpods-4-anc",
   "dainichi-hd-lx1226-vs-hd-lx1026",
+  "zojirushi-ee-dg35-vs-ee-dg50",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
