@@ -702,7 +702,7 @@ describe.skipIf(!hasDist)("article diagnosis CTA (rendered dist)", () => {
                 "verified" ||
               (article?.rakutenLinkStatus ?? article?.purchaseLinkStatus) ===
                 "direct"
-            ? 2
+            ? 2 - (article?.rakutenUnavailableSides?.length ?? 0)
             : 0,
       );
       const specsIndex = html.indexOf('id="specs"');

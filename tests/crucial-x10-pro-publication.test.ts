@@ -25,7 +25,17 @@ describe("Crucial X10 Pro vs Kingston XS2000 publication", () => {
     expect(manifest.amazon.statusBySide.left).toBe("search");
     expect(seed?.leftAmazonLinkStatus).toBe("search");
     expect(manifest.amazon.statusBySide.right).toBe("verified");
-    expect(manifest.rakuten.status).toBe("verified");
+    // 2026-10-04: Kingston XS2000 は楽天の出品がすべて在庫切れのため楽天CTAだけを外した。
+    expect(manifest.rakuten.statusBySide).toEqual({
+      left: "verified",
+      right: "unavailable",
+    });
+    expect(seed?.rightRakutenUrl).toBeNull();
+    expect(seed?.rightAmazonUrl).toMatch(/^https:\/\/www\.amazon\.co\.jp\//);
+    expect(
+      publicArticleMetadata.find((article) => article.id === articleId)
+        ?.rakutenUnavailableSides,
+    ).toEqual(["right"]);
     expect(PUBLISHED_ARTICLE_PAGE_SLUGS.has(articleId)).toBe(true);
     expect(
       publicArticleMetadata.some((article) => article.id === articleId),

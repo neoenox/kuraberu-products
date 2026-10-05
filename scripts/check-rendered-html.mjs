@@ -37,7 +37,10 @@ import {
   validateArticleContentType,
   validateArticleTrustLine,
 } from "./validators/meta.mjs";
-import { validateArticleNextStep } from "./validators/nextstep.mjs";
+import {
+  rakutenUnavailableSideCount,
+  validateArticleNextStep,
+} from "./validators/nextstep.mjs";
 import {
   countOtherArticleLinks,
   countRelatedArticleCards,
@@ -245,6 +248,21 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
     if (nextStepPurchaseDisabled) {
       expectedCtasByPlacement["next-step"] = 0;
     }
+    // 楽天の購入先がない側（article:rakuten-unavailable-sides）は、各配置の楽天CTAが1枚ずつ減る。
+    const unavailableSides = hasPurchaseCtas
+      ? rakutenUnavailableSideCount(html)
+      : 0;
+    let removedCtas = 0;
+    for (const { placement, cardsPerProduct } of ARTICLE_LAYOUT.ctaSets) {
+      if (!expectedCtasByPlacement[placement]) continue;
+      const removed = Math.min(
+        expectedCtasByPlacement[placement],
+        unavailableSides * cardsPerProduct,
+      );
+      expectedCtasByPlacement[placement] -= removed;
+      removedCtas += removed;
+    }
+    const expectedRakutenCtaCount = expectedCtaCount - removedCtas;
     errors.push(...validateArticleContentType(relative, html, productCount));
     errors.push(...validateSourceToggle(relative, html));
     const isCurrentArticleTemplate = html.includes('class="article-toc"');
@@ -262,7 +280,7 @@ export function validateRenderedHtml({ distDirectory = "dist" } = {}) {
       ...validateArticleCtas(
         relative,
         html,
-        expectedCtaCount,
+        expectedRakutenCtaCount,
         expectedCtasByPlacement,
       ),
     );
