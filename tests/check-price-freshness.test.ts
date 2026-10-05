@@ -48,7 +48,12 @@ describe("price freshness", () => {
       30,
     );
     // 30日ちょうど（2026-09-05）は対象外。確認日がない記事は最優先で報告する。
-    expect(stale.map((article) => [article.id, article.ageDays])).toEqual([
+    expect(
+      stale.map((article: { id: string; ageDays: number | null }) => [
+        article.id,
+        article.ageDays,
+      ]),
+    ).toEqual([
       ["undated", null],
       ["old", 65],
     ]);
