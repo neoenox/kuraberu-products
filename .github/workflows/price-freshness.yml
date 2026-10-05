@@ -1,0 +1,66 @@
+name: price freshness
+
+# 公開中の商用記事のうち、価格を載せていて商品情報の確認日が 30 日を超えた記事を検出し、
+# 再確認を促す issue を開く/更新する。全記事が再確認済みになれば issue を自動クローズする。
+# 価格そのものの自動取得はしない（確認日の管理だけ）。
+
+on:
+  schedule:
+    - cron: "47 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # releases/v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # releases/v7.0.0
+        with:
+          node-version-file: .node-version
+      - name: Check price freshness
+        id: check
+        run: node scripts/check-price-freshness.mjs
+        continue-on-error: true
+      - name: Open or update re-verification issue
+        id: notify
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          NUM=$(gh issue list --state open --search "in:title 価格表示の再確認" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body-file .acceptance/price-freshness/report.md
+            echo "既存の再確認 issue #$NUM を最新の状態に更新しました"
+          else
+            gh issue create \
+              --title "価格表示の再確認が必要（price freshness）" \
+              --body-file .acceptance/price-freshness/report.md
+            echo "再確認 issue を新規作成しました"
+          fi
+      - name: Fail when prices are stale but notification failed
+        if: steps.check.outcome == 'failure' && steps.notify.outcome != 'success'
+        run: |
+          echo "::error::Price check dates are stale, but the re-verification issue could not be created/updated (notify step outcome: ${{ steps.notify.outcome }})."
+          exit 1
+      - name: Close re-verification issue when fresh
+        if: steps.check.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          NUM=$(gh issue list --state open --search "in:title 価格表示の再確認" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "価格を載せた全記事の確認日が更新されたため、この issue をクローズします。"
+            gh issue close "$NUM"
+            echo "再確認 issue #$NUM をクローズしました"
+          else
+            echo "開いている再確認 issue はありません（クローズ不要）"
+          fi
