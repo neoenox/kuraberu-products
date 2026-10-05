@@ -85,6 +85,18 @@ describe("article CTA layout vs metadata productCount", () => {
           article.rakutenLinkStatus ?? article.purchaseLinkStatus;
         const rakutenCtaEnabled =
           rakutenStatus === "verified" || rakutenStatus === "direct";
+        // 楽天の購入先がない側（rakutenUnavailableSides）は次の一歩の楽天ボタンを出さない。
+        const unavailableSides = rakutenCtaEnabled
+          ? (article.rakutenUnavailableSides?.length ?? 0)
+          : 0;
+        const nextStepButtonsRemoved = nextStepPurchaseDisabled
+          ? 0
+          : ARTICLE_LAYOUT.ctaSets
+              .filter((set) => set.comparisonOnly)
+              .reduce(
+                (total, set) => total + set.cardsPerProduct * unavailableSides,
+                0,
+              );
 
         for (const set of ARTICLE_LAYOUT.ctaSets) {
           const isComparison =
@@ -99,10 +111,14 @@ describe("article CTA layout vs metadata productCount", () => {
                 ? 0
                 : set.cardsPerProduct * article.productCount;
           if (set.comparisonOnly) {
+            const expectedButtons = Math.max(
+              0,
+              expected - set.cardsPerProduct * unavailableSides,
+            );
             expect(
               nextStepBuyCount,
-              `${article.id}: ${set.placement} should have ${expected} buy buttons (NextStepBlock)`,
-            ).toBe(expected);
+              `${article.id}: ${set.placement} should have ${expectedButtons} buy buttons (NextStepBlock)`,
+            ).toBe(expectedButtons);
           } else {
             expect(
               counts.get(set.placement) ?? 0,
@@ -119,7 +135,9 @@ describe("article CTA layout vs metadata productCount", () => {
             ? expectedPurchaseCtasPerArticle(
                 article.productCount,
                 ARTICLE_LAYOUT,
-              ) - (nextStepPurchaseDisabled ? article.productCount : 0)
+              ) -
+                (nextStepPurchaseDisabled ? article.productCount : 0) -
+                nextStepButtonsRemoved
             : ARTICLE_LAYOUT.ctaSets
                 .filter((set) => !set.comparisonOnly)
                 .reduce(

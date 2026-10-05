@@ -3,6 +3,16 @@ import { defineArticleMetadata } from "../types";
 import type { CommercialArticleSeed } from "./types";
 import { commercialArticleImages } from "./images";
 
+// seed の楽天URLを明示的に null にした側は、楽天CTAを描画しない（在庫切れ・販売終了など）。
+const rakutenUnavailableSides = (
+  seed: CommercialArticleSeed,
+): readonly ("left" | "right")[] | undefined => {
+  const sides = (["left", "right"] as const).filter(
+    (side) => seed[`${side}RakutenUrl`] === null,
+  );
+  return sides.length > 0 ? sides : undefined;
+};
+
 const createCommercialArticle = (
   seed: CommercialArticleSeed,
 ): ArticleMetadata =>
@@ -25,6 +35,7 @@ const createCommercialArticle = (
     purchaseLinkStatus: seed.purchaseLinkStatus ?? "unverified",
     amazonLinkStatus: seed.amazonLinkStatus,
     rakutenLinkStatus: seed.rakutenLinkStatus,
+    rakutenUnavailableSides: rakutenUnavailableSides(seed),
     officialSources: seed.officialSources,
     verifiedRows: seed.verifiedRows,
     imagePath:

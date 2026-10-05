@@ -111,18 +111,23 @@
     }
   },
   "rakuten": {
-    "status": "verified",
+    "status": "partial",
     "left": "https://hb.afl.rakuten.co.jp/ichiba/57f32d04.2786676a.57f32d05.d4b822af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftales-store%2F202506050037110649528938428%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
     "leftProductPage": "https://item.rakuten.co.jp/tales-store/202506050037110649528938428/",
     "leftProductName": "crucial 外付けポータブルSSD X10Proシリーズ 2TB 最大読み込み 2100MB/s CT2000X10PROSSD9",
     "leftShop": "TalesStore 楽天市場店",
     "leftProductVerified": true,
-    "right": "https://hb.afl.rakuten.co.jp/ichiba/57f33231.551f8117.57f33232.7136f34a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmanoangel%2F20240629145923_100%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+    "right": null,
     "rightProductPage": "https://item.rakuten.co.jp/manoangel/20240629145923_100/",
     "rightProductName": "キングストン 外付け SSD 2000GB 2TB USB3.2 Gen2x2 読出最大2000MB/秒 防滴防塵 耐衝撃 ポータブル SXS2000/2000G",
     "rightShop": "Mano Angel 楽天市場店",
-    "rightProductVerified": true,
-    "generation": "2026-09-27、ログイン済みChromeで楽天アフィリエイト公式UIから各商品詳細URLを入力。商品名・型番・ショップを確認し、ソース欄のhb.afl.rakuten.co.jp URLを取得。両商品とも商品詳細ページへのリンク先を確認済み。"
+    "rightProductVerified": false,
+    "generation": "2026-09-27、ログイン済みChromeで楽天アフィリエイト公式UIから各商品詳細URLを入力。商品名・型番・ショップを確認し、ソース欄のhb.afl.rakuten.co.jp URLを取得。両商品とも商品詳細ページへのリンク先を確認済み。",
+    "statusBySide": {
+      "left": "verified",
+      "right": "unavailable"
+    },
+    "rightUnavailableNote": "2026-10-04: 旧購入先（manoangel）は在庫切れで、成果リンクが商品ページではなくtransition.afl.rakuten.co.jpへ送られていた。楽天でSXS2000/2000Gの出品5件を確認したが、すべて在庫切れのため楽天CTAを非表示にした。Amazonの確認済み商品リンクは維持。"
   },
   "social": {
     "status": "none",

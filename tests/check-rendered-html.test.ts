@@ -1266,6 +1266,28 @@ describe("article next-step block (conclusion → 次にすること: A/B購入 
     );
   });
 
+  it("expects one Rakuten button when one side has no Rakuten purchase destination", () => {
+    const withMeta = (buyCount: number) =>
+      comparisonWith(
+        nextStep("/tools/product-finder/", { buyCount }),
+        true,
+      ).replace(
+        '<meta name="article:purchase-link-status" content="verified">',
+        '<meta name="article:purchase-link-status" content="verified"><meta name="article:rakuten-link-status" content="verified"><meta name="article:rakuten-unavailable-sides" content="right">',
+      );
+    expect(
+      validateArticleNextStep("articles/x/index.html", withMeta(1)),
+    ).toEqual([]);
+    const errors = validateArticleNextStep(
+      "articles/x/index.html",
+      withMeta(2),
+    );
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain(
+      "next-step block must render exactly 1 purchase buttons",
+    );
+  });
+
   it("rejects a block whose diagnosis link is not a diagnosis page", () => {
     const errors = validateArticleNextStep(
       "articles/x/index.html",

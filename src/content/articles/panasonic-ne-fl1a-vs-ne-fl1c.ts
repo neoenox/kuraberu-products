@@ -16,12 +16,17 @@ export const panasonicNeFl1aVsNeFl1cArticle = defineArticleMetadata({
   summary:
     "NE-FL1AとNE-FL1Cを、パナソニック公式の容量・庫内寸法・質量・自動メニュー数・確認状況に分けて比較します。",
   publishedAt: "2026-08-15",
-  modifiedAt: "2026-09-09",
+  modifiedAt: "2026-10-04",
   productInfoCheckedAt: "2026-09-09",
-  purchaseLinksCheckedAt: "2026-09-04",
-  purchaseLinkStatus: "verified",
+  purchaseLinksCheckedAt: "2026-10-04",
+  purchaseLinkStatus: "unverified",
   imagePath: "/products/panasonic-ne-fl1a.jpg",
   changeLog: [
+    {
+      date: "2026-10-04",
+      summary:
+        "楽天のNE-FL1C購入先が削除されており、在庫があり購入できる出品が見つからないため、NE-FL1Cの購入ボタンを非表示にした。",
+    },
     {
       date: "2026-08-15",
       summary:
