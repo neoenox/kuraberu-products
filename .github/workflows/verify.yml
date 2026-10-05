@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  # refresh-cta-audit-cache.yml が GITHUB_TOKEN で作るPRには pull_request が
+  # 発火しないため、そのPRの head で必須チェックを起動するのに使う。
+  workflow_dispatch:
 
 permissions:
   contents: read
