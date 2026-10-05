@@ -81,7 +81,8 @@
       }
     },
     "left": "https://www.amazon.co.jp/dp/B0DF2F57LJ",
-    "right": "https://www.amazon.co.jp/dp/B0DJVPRG63"
+    "right": "https://www.amazon.co.jp/dp/B0CGR5B9FS",
+    "replacementNote": "2026-10-05: 旧ASIN B0DJVPRG63 は【整備済み品】の商品ページで、在庫切れ・再入荷予定なしになっていた。Amazonで型番G-PPD-004WL-BKを検索し、新品の商品ページ B0CGR5B9FS（Logicool G PRO X SUPERLIGHT 2、G-PPD-004WL-BK、残り1点・24,500円、販売元は第三者セラー）を確認して差し替えた。Amazon限定パッケージ（G-PPD-004WL-BKd）は型番表記が異なるため採用しなかった。"
   },
   "rakuten": {
     "status": "verified",
