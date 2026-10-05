@@ -1,0 +1,170 @@
+{
+  "id": "dainichi-hd-lx1226-vs-hd-lx1026-2026-10-05",
+  "articleId": "dainichi-hd-lx1226-vs-hd-lx1026",
+  "source": "Codex direct research using manufacturer pages and marketplace UI",
+  "researchDateJst": "2026-10-05",
+  "articleReady": true,
+  "publishStatus": "published",
+  "category": "加湿器",
+  "candidate": {
+    "adoption": "採用",
+    "duplicateCheck": {
+      "slugRoute": "既存route・seedに同一slugなし",
+      "leftModel": "HD-LX1226の比較記事なし",
+      "rightModel": "HD-LX1026は象印EE-TC60との比較記事があるが、同シリーズの容量違い比較はなし"
+    }
+  },
+  "products": {
+    "left": {
+      "name": "ダイニチ ハイブリッド式加湿器 HD-LX1226（チャコールブラック）",
+      "model": "HD-LX1226",
+      "officialUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialSpecUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialImageUrl": "https://www.dainichi-net.co.jp/uploads/slider480/hd-lx1226_k.jpg",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytes": 107161,
+        "savedAs": "public/products/dainichi-hd-lx1226-k.jpg"
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/ksdenki/4951272037309/",
+        "productPageStatus": 200,
+        "shop": "ケーズデンキ 楽天市場店",
+        "modelMatch": "HD-LX1226(K) チャコールブラック、JAN 4951272037309、在庫あり（2026-10-05）"
+      }
+    },
+    "right": {
+      "name": "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+      "model": "HD-LX1026",
+      "officialUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialSpecUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "officialImageUrl": "https://www.dainichi-net.co.jp/uploads/slider480/hd-lx1026_w.jpg",
+      "officialImageFetch": {
+        "status": 200,
+        "contentType": "image/jpeg",
+        "bytes": 95995,
+        "savedAs": "public/products/dainichi-hd-lx1026-w.jpg",
+        "note": "2026-09-28に象印EE-TC60との比較記事で取得済みの画像を再利用"
+      },
+      "rakuten": {
+        "productUrl": "https://item.rakuten.co.jp/ksdenki/4951272037248/",
+        "productPageStatus": 200,
+        "shop": "ケーズデンキ 楽天市場店",
+        "modelMatch": "HD-LX1026(W) スノーホワイト、JAN 4951272037248、在庫あり（2026-10-05）"
+      }
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "keyDifferences": [
+      "最大加湿量（標準）1,200mL/hと960mL/h、ターボ1,300mL/hと1,100mL/h",
+      "適用床面積 プレハブ洋室33畳・木造和室20畳と27畳・16畳",
+      "最大消費電力（標準）665/675Wと420/430W",
+      "連続加湿時間（標準）約5.8時間と約7.3時間"
+    ],
+    "notes": [
+      "外形寸法405×390×289mm、質量約6.3kg、タンク7.0L、運転音、カラー3色、eco運転の消費電力・連続加湿時間は共通",
+      "加湿量はメーカー公称値。室温20℃・湿度30％の条件をメーカーが注記",
+      "メーカー希望小売価格はどちらもオープン価格。販売価格は記事に載せない"
+    ]
+  },
+  "amazon": {
+    "statusBySide": {
+      "left": "search",
+      "right": "search"
+    },
+    "ctaModeBySide": {
+      "left": "search",
+      "right": "search"
+    },
+    "searchCtaBySide": {
+      "left": {
+        "status": "enabled",
+        "query": "ダイニチ ハイブリッド式加湿器 HD-LX1226（チャコールブラック）",
+        "productDetailMatch": "unverified",
+        "evidence": "2026-10-05にAmazon.co.jpで「ダイニチ HD-LX1226」を検索し、HD-LX1226・HD-LX1026の商品詳細ページは見つからなかった（家電量販店向けモデル）。Amazon全体に出品がないとの断定ではない。",
+        "observedAtJst": "2026-10-05"
+      },
+      "right": {
+        "status": "enabled",
+        "query": "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+        "productDetailMatch": "unverified",
+        "evidence": "2026-10-05にAmazon.co.jpで「ダイニチ HD-LX1226」を検索し、HD-LX1226・HD-LX1026の商品詳細ページは見つからなかった（家電量販店向けモデル）。Amazon全体に出品がないとの断定ではない。",
+        "observedAtJst": "2026-10-05"
+      }
+    },
+    "left": null,
+    "right": null,
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "not-recorded",
+        "evidence": "Amazonには未ログインの内蔵ブラウザで検索結果を確認した。アソシエイトのセッション表示は確認していない（ログインしていないとの意味ではない）。",
+        "observedAtJst": "2026-10-05"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "not-found-in-current-search",
+            "evidence": "2026-10-05にAmazon.co.jpで「ダイニチ HD-LX1226」を検索し、表示された検索結果にHD-LX1226の商品詳細ページはなかった（別機種・別製品のみ）。Amazon全体に出品がないとの断定ではない。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品詳細ページを確認できないため、商品別のアソシエイト適格性は確認していない。"
+          },
+          "taggedUrl": {
+            "state": "not-applicable",
+            "evidence": "商品詳細URLを記事データに保存しない。検索CTAのタグはランタイム設定から描画時に付与する。"
+          },
+          "destination": {
+            "state": "search-only",
+            "evidence": "商品名と型番を検索語にした検索結果へ案内するだけで、検索結果の商品を本商品として確認済みとは扱わない。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "not-found-in-current-search",
+            "evidence": "2026-10-05にAmazon.co.jpで「ダイニチ HD-LX1226」を検索し、表示された検索結果にHD-LX1026の商品詳細ページはなかった（別機種・別製品のみ）。Amazon全体に出品がないとの断定ではない。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品詳細ページを確認できないため、商品別のアソシエイト適格性は確認していない。"
+          },
+          "taggedUrl": {
+            "state": "not-applicable",
+            "evidence": "商品詳細URLを記事データに保存しない。検索CTAのタグはランタイム設定から描画時に付与する。"
+          },
+          "destination": {
+            "state": "search-only",
+            "evidence": "商品名と型番を検索語にした検索結果へ案内するだけで、検索結果の商品を本商品として確認済みとは扱わない。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "ctaModeBySide": {
+      "left": "product",
+      "right": "product"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037309%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037248%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+    "leftProductPage": "https://item.rakuten.co.jp/ksdenki/4951272037309/",
+    "rightProductPage": "https://item.rakuten.co.jp/ksdenki/4951272037248/",
+    "trackingPolicy": "2026-10-05、ログイン済みChromeの楽天アフィリエイト公式UI（商品リンクを作成）にHD-LX1226(K)の商品ページURLを入力して成果リンクを生成し、画面上の商品名・価格・料率（2.0%）と、pc=遷移先が商品ページURLと一致することを確認した。HD-LX1026(W)は2026-10-04に同じ手順で生成した成果リンク（象印EE-TC60との比較記事と同一）を再利用し、pc=遷移先の一致を確認した。"
+  },
+  "social": {
+    "status": "none",
+    "adoptedCount": 0,
+    "directPostUrls": [],
+    "embedUrls": [],
+    "notes": "SNS・口コミを比較根拠に採用せず、メーカー公式仕様だけで比較する。記事にSNS欄を表示しない"
+  },
+  "draftReason": null
+}
