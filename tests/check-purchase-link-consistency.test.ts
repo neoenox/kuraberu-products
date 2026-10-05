@@ -10,6 +10,7 @@ import {
   auditVerifiedCtaDestinations,
   checkArticleSource,
   checkPurchaseLinkConsistency,
+  collectCommercialCtaUrls,
   collectVerifiedCtaUrls,
   countPurchaseLinkStatuses,
   extractNextStepHrefs,
@@ -503,6 +504,86 @@ describe("verified CTA destination audit (issue #342)", () => {
     expect(audit.errors).toHaveLength(1);
     expect(audit.errors[0]).toContain("tracker.example.net");
     expect(audit.errors[0]).toContain("not in the verified CTA allowlist");
+  });
+
+  it("fails when an allowlisted destination returns an HTTP error (removed item)", async () => {
+    const fetchImpl = stubFetch({
+      "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item": redirect(
+        "https://item.rakuten.co.jp/shop/gone/",
+      ),
+      // HEAD 404 は GET で再試行される。GET も 404 なら商品ページは失われている。
+      "https://item.rakuten.co.jp/shop/gone/": {
+        status: 404,
+        headers: new Map(),
+      },
+    }) as unknown as typeof fetch;
+    const audit = await auditVerifiedCtaDestinations({
+      urls: [
+        {
+          article: "a",
+          key: "a:rakuten-left",
+          url: "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item",
+        },
+      ],
+      allowlist: outboundHostAllowlist(),
+      fetchImpl,
+    });
+    expect(audit.errors).toHaveLength(1);
+    expect(audit.errors[0]).toContain("returns HTTP 404");
+  });
+
+  it("accepts Rakuten Books product pages as a verified destination", () => {
+    expect(ALLOWED_OUTBOUND_HOSTS).toContain("books.rakuten.co.jp");
+    // 在庫切れの成果リンクが送られる中継ページは購入先として扱わない。
+    expect(ALLOWED_OUTBOUND_HOSTS).not.toContain(
+      "transition.afl.rakuten.co.jp",
+    );
+  });
+
+  it("collects Rakuten CTAs from published, non-draft commercial seeds only", () => {
+    const directory = mkdtempSync(join(tmpdir(), "cta-commercial-"));
+    try {
+      const seedDir = join(directory, "content", "articles", "commercial");
+      mkdirSync(seedDir, { recursive: true });
+      const seed = (id: string, extra = "") => `export const s = {
+  id: "${id}",
+  ${extra}
+  handoffManifestId: "${id}-2026-10-04",
+  leftRakutenUrl:
+    "https://hb.afl.rakuten.co.jp/ichiba/${id}/left",
+  rightRakutenUrl: "https://item.rakuten.co.jp/shop/${id}/",
+  leftAmazonUrl: "https://www.amazon.co.jp/dp/B000000000",
+};`;
+      writeFileSync(join(seedDir, "published-a.ts"), seed("published-a"));
+      writeFileSync(
+        join(seedDir, "draft-b.ts"),
+        seed("draft-b", "draft: true,"),
+      );
+      writeFileSync(join(seedDir, "unlisted-c.ts"), seed("unlisted-c"));
+      writeFileSync(
+        join(seedDir, "seeds.ts"),
+        'export const ids = { id: "published-a" };',
+      );
+      const ctas = collectCommercialCtaUrls({
+        srcDirectory: directory,
+        isPublished: (path: string) => path !== "/articles/unlisted-c/",
+      });
+      // Amazon は対象外。draft と公開許可リスト外の記事、seed 以外のモジュールは除外。
+      expect(ctas).toEqual([
+        {
+          article: "published-a",
+          key: "published-a:rakuten-left",
+          url: "https://hb.afl.rakuten.co.jp/ichiba/published-a/left",
+        },
+        {
+          article: "published-a",
+          key: "published-a:rakuten-right",
+          url: "https://item.rakuten.co.jp/shop/published-a/",
+        },
+      ]);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
   });
 
   it("rejects chains that exceed the redirect hop cap", async () => {

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { isPublishedArticlePath } from "../config/article-template-policy.mjs";
 
 // 購入リンクの単一情報源ゲート（購入URL集約の恒久化）。
 //
@@ -42,12 +43,14 @@ export const CTA_CACHE_MAX_AGE_DAYS = 7;
 
 // verified CTA の**最終到達先**ホスト（リダイレクト追従後の最終ホスト）。
 // 商品詳細ページ（item.rakuten.co.jp）も確認済みの正規到達先として許可する。
+// 楽天ブックスの商品（item.rakuten.co.jp/book/…）は books.rakuten.co.jp/rb/… へ転送される。
 // a.r10.to 等の短縮リンクホストはここに含めない。
 // #436: 検索結果ページは購入導線の到達先にならないため許可しない。
 // リダイレクト追従は全 CTA に対して必須。
 export const ALLOWED_OUTBOUND_HOSTS = Object.freeze([
   "hb.afl.rakuten.co.jp",
   "item.rakuten.co.jp",
+  "books.rakuten.co.jp",
   "biccamera.rakuten.co.jp",
   "www.rakuten.co.jp",
   "www.amazon.co.jp",
@@ -376,7 +379,8 @@ export function loadArticleStatuses(srcDirectory = "src") {
 
 /**
  * verified 記事の CTA が参照するアウトバウンド URL 一覧を収集する。
- * 商用テンプレート記事（CommercialArticlePage）はビルド時 API 解決のため対象外。
+ * 商用テンプレート記事（CommercialArticlePage）のページはレジストリを参照しないため、
+ * 購入 URL は collectCommercialCtaUrls で seed から別に収集して末尾に加える。
  * 戻り値: [{ article, key, url }]（URL 重複あり・出現順）
  */
 export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
@@ -424,7 +428,42 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
       }
     }
   }
+  ctas.push(...collectCommercialCtaUrls({ srcDirectory }));
   return { ctas, statuses };
+}
+
+const COMMERCIAL_SEED_DIR = "content/articles/commercial";
+
+/**
+ * 公開済みの商用記事 seed から楽天の購入 URL を収集する。
+ * 本番は PURCHASE_LINK_MODE=direct で seed の URL をそのまま描画するため、
+ * 公開許可リストに載った記事の楽天 CTA を週次監査の対象にする。
+ * Amazon の商品 URL は対象外: GitHub ランナーからはボット対策ページが返り得て、
+ * ホストの確認だけでは ASIN の商品差し替えも検出できないため。
+ * 戻り値: [{ article, key, url }]（key は `<id>:rakuten-left|right`）
+ */
+export function collectCommercialCtaUrls({
+  srcDirectory = "src",
+  isPublished = isPublishedArticlePath,
+} = {}) {
+  const directory = path.join(srcDirectory, COMMERCIAL_SEED_DIR);
+  const ctas = [];
+  if (!fs.existsSync(directory)) return ctas;
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith(".ts")) continue;
+    const source = fs.readFileSync(path.join(directory, entry.name), "utf8");
+    if (!/\bhandoffManifestId\s*:/.test(source)) continue; // seed 以外のモジュール
+    const id = /\bid\s*:\s*"([^"]+)"/.exec(source)?.[1];
+    if (!id || /\bdraft\s*:\s*true\b/.test(source)) continue;
+    if (!isPublished(`/articles/${id}/`)) continue;
+    for (const side of ["left", "right"]) {
+      const url = new RegExp(`\\b${side}RakutenUrl\\s*:\\s*"([^"]+)"`).exec(
+        source,
+      )?.[1];
+      if (url) ctas.push({ article: id, key: `${id}:rakuten-${side}`, url });
+    }
+  }
+  return ctas.sort((a, b) => a.key.localeCompare(b.key));
 }
 
 /** 正規化済みホスト名（小文字・末尾ドット除去）。無効な URL は null。 */
@@ -606,7 +645,7 @@ export async function auditVerifiedCtaDestinations({
           continue;
         }
         try {
-          const { finalUrl, hops } = await resolveFinalUrl(url, {
+          const { finalUrl, hops, status } = await resolveFinalUrl(url, {
             fetchImpl,
             maxHops,
             timeoutMs,
@@ -623,6 +662,9 @@ export async function auditVerifiedCtaDestinations({
           };
           if (finalHost === null || !allowlist.has(finalHost)) {
             result.error = `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`;
+          } else if (status >= 400) {
+            // 許可ホストでも、削除・販売終了などで商品ページが失われた到達先は合格にしない。
+            result.error = `${cta.article}: CTA "${cta.key}" (${url}) ultimately returns HTTP ${status} at ${finalUrl}`;
           }
           results[index] = result;
         } catch (error) {
