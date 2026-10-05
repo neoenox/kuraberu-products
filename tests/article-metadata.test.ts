@@ -141,6 +141,7 @@ describe("article metadata", () => {
       "sony-wf-1000xm6-vs-linkbuds-fit",
       "sony-wf-c710n-vs-linkbuds-fit",
       "zojirushi-ee-dg50-vs-ee-rv50",
+      "zojirushi-ee-dg35-vs-ee-dg50",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",
       "instax-mini-evo-vs-evo-cinema",
