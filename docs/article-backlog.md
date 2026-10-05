@@ -12,33 +12,9 @@
 
 ## 新規作成・確認中
 
-### Apple AirPods 5（USB-C充電ケース） vs アクティブノイズキャンセリング搭載AirPods 4
+現在、作成中の記事はない。
 
-- slug: airpods-5-vs-airpods-4-anc
-- Issue: #926（https://github.com/neoenox/kuraberu-products/issues/926）
-- 状態: 2026-10-04公開。公式仕様、Amazonの両商品ページ、楽天の両成果リンクの遷移先を再確認済み
-- 比較軸: Apple公表のANC比較、防塵・耐汗耐水等級、ケース機能、ANC有効時の電池持ち・本体寸法と重量
-- 公式URL:
-  - https://www.apple.com/jp/airpods-5/specs/
-  - https://www.apple.com/jp/airpods/compare/
-  - https://support.apple.com/ja-jp/121204
-- 画像: Apple公式仕様ページの画像を public/products/ と src/assets/products/ に保存
-- 販売先: Amazonは両商品ともASIN付き商品リンク（タグは実行時に付与）。楽天は両商品とも成果リンク
-- SNS: RedditのAirPods 5使用感を確認したが、AirPods 4 ANCとの同条件比較ではないため不採用。SNS欄は表示しない
-- handoff: docs/article-handoffs/airpods-5-vs-airpods-4-anc-2026-09-30.json
-
-### 象印 スチーム式加湿器 EE-DG35 vs EE-DG50
-
-- slug: `zojirushi-ee-dg35-vs-ee-dg50`
-- 状態: 2026-10-05作成（Draft PR）。公式仕様、象印公式ストア価格、Amazon・楽天の商品一致、各購入先リンクを確認済み
-- 比較軸: 適用床面積、定格加湿能力、容量、加湿時消費電力、外形寸法・質量、公式ストア価格（連続加湿時間・タイマー・機能は共通）
-- 公式URL:
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
-- 購入先: Amazonは両商品ともASIN付き（EE-DG35-WA: B0HGF9J1MT / EE-DG50-WA: B0HGF5B9D8、対象・2.00%、タグ付きURLの遷移先確認済み）。楽天はケーズデンキ楽天市場店、成果URLは両商品生成済み
-- SNS: 適格な実利用投稿は未確認のため欄を非掲載
-- handoff: `docs/article-handoffs/zojirushi-ee-dg35-vs-ee-dg50-2026-10-05.json`
-
-## 現在の公開済み（122本）
+## 現在の公開済み（154本）
 
 | slug                                              | 状態                           |
 | ------------------------------------------------- | ------------------------------ |
@@ -166,109 +142,46 @@
 | `balmuda-the-toaster-vs-aladdin-graphite-toaster` | 公開済み                       |
 
 記事の公開日・変更日・公式確認日は `src/content/articles.ts` を正本とする。ここには履歴やPR番号を重複して持たせない。
+| `airpods-5-vs-airpods-4-anc` | 公開済み |
+| `anker-a121a-vs-a2688` | 公開済み |
+| `anker-a1664-vs-a1654` | 公開済み |
+| `anker-nano-a1638-vs-power-bank-a1256` | 公開済み |
+| `anker-nano-power-bank-vs-zolo-a1688` | 公開済み |
+| `anker-solix-c300-vs-jackery-240-new` | 公開済み |
+| `anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max` | 公開済み |
+| `crucial-x10-pro-vs-kingston-xs2000` | 公開済み |
+| `dainichi-hd-lx1226-vs-hd-lx1026` | 公開済み |
+| `elecom-de-c85-vs-de-c86` | 公開済み |
+| `garmin-forerunner-570-vs-coros-pace-4` | 公開済み |
+| `instax-mini-13-vs-mini-41` | 公開済み |
+| `instax-mini-evo-vs-evo-cinema` | 公開済み |
+| `iphone-18-pro-vs-pixel-11-pro` | 公開済み |
+| `jbl-flip-7-vs-charge-6` | 公開済み |
+| `jbl-tour-pro-3-vs-live-beam-3` | 公開済み |
+| `kobo-clara-colour-vs-libra-colour` | 公開済み |
+| `logicool-mx-master-4-vs-mx-master-3s` | 公開済み |
+| `logicool-pebble-m350s-vs-m650` | 公開済み |
+| `logicool-pro-x-superlight-2-dex-vs-superlight-2` | 公開済み |
+| `pixel-watch-5-vs-galaxy-watch9` | 公開済み |
+| `shokz-openfit-2-plus-vs-openfit-2` | 公開済み |
+| `sony-wf-1000xm6-vs-linkbuds-fit` | 公開済み |
+| `sony-wf-c710n-vs-linkbuds-fit` | 公開済み |
+| `sony-wf-c710n-vs-soundcore-liberty-5` | 公開済み |
+| `sony-zv-1-ii-vs-zv-1f` | 公開済み |
+| `sony-zv-e10m2-vs-nikon-z30` | 公開済み |
+| `soundcore-liberty-5-pro-vs-liberty-4-pro` | 公開済み |
+| `tp-link-archer-be550-vs-be450` | 公開済み |
+| `zojirushi-ee-dg35-vs-ee-dg50` | 公開済み |
+| `zojirushi-ee-dg50-vs-ee-rv50` | 公開済み |
+| `zojirushi-ee-tc60-vs-dainichi-hd-lx1026` | 公開済み |
 
 ## 次の候補
 
-現在、確定した次の候補はない。ここに挙げていた10件はすべて公開済みのため、
-2026-09-11に候補節をリセットした。公開済み記事は上の表を正とする。
+現在、確定した次の候補はない。公開済み記事は上の表を正とし、各記事の確認記録は
+`docs/article-handoffs/` のhandoffを参照する（2026-10-05に候補節をリセット）。
 
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
-
-### Logicool Pebble Mouse 2 M350s vs Signature M650
-
-- slug: `logicool-pebble-m350s-vs-m650`
-- 状態: 記事・購入リンク確認済み（2026-09-26、変更の取り込み待ち）
-- 比較軸: 公式価格、重量、Easy-Switch、SmartWheel、ボタン数、Logi Boltレシーバー、電池寿命、保証
-- 公式URL:
-  - https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse
-  - https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse
-- Amazon: M350sGR / M650MGR の商品詳細ページを直接確認し、ASINと商品型番の一致を2026-09-26確認済み
-- 楽天: M350sGR / M650MGR のロジクール公式ストア商品詳細ページと成果URL遷移先を2026-09-26再確認済み
-- SNS: X・YouTubeの埋め込み候補を確認できず不採用。SNS欄は表示しない
-- 公開条件: 記事データ、handoff、購入リンクの品質ゲートを通し、PRの必須CIを確認する
-
-### Crucial X10 Pro 2TB vs Kingston XS2000 2TB
-
-- slug: `crucial-x10-pro-vs-kingston-xs2000`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 最大読込・書込速度、IP55、落下耐性のメーカー記載条件、外形寸法・重量
-- 公式URL:
-  - https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9
-  - https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive
-- 購入先: 楽天成果URLは両商品確認済み。KingstonはAmazonタグ付き成果URLと遷移先も確認済み。CrucialはAmazon対象外のため楽天CTAのみ
-- 画像: 公式CDNの両画像を取得確認。Production CSPへ両ホストを追加
-- SNS: 適格性を裏付けられる投稿なしとして欄を非掲載（handoffに検索範囲・除外理由を記録）
-- handoff: `docs/article-handoffs/crucial-x10-pro-vs-kingston-xs2000-2026-09-27.json`
-
-### 象印 スチーム式加湿器 EE-DG50 vs EE-RV50
-
-- slug: `zojirushi-ee-dg50-vs-ee-rv50`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 容量、連続加湿時間、運転モード・タイマー、外形寸法・質量、公式ストア価格（加湿能力・適用床面積・消費電力は共通）
-- 公式URL:
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/
-- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否はツールバーで確認済み（対象・2.00%）。タグ付きURLの遷移先も確認済み
-- 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは生成済み
-- SNS: 適格な実利用投稿を確認できず不採用。SNS欄は表示しない
-- 購入先: 楽天成果URLは両商品確認済み。AmazonもツールバーとタグURLの遷移先を確認済み（対象・2.00%、ビルド時にtag付与）
-- handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
-
-### 楽天Kobo Clara Colour vs Libra Colour
-
-- slug: `kobo-clara-colour-vs-libra-colour`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 画面サイズ・解像度、内蔵メモリ、ページめくりボタン、Koboスタイラス2対応、サイズ・質量、公式ページ価格（Kaleido 3・ComfortLight PRO・IPX8・バッテリー目安は共通）
-- 公式URL:
-  - https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/
-  - https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/
-- 購入先: 楽天ブックス（楽天Kobo公式ストア）の商品ページで商品名・価格一致、楽天市場商品検索APIで成果URLを取得（verified）。Amazon（B0D5D1DXZY / B0D5HSRM75）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式の仕様表用画像（他社マンガの写り込みなし、ホワイト・低解像度）
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/kobo-clara-colour-vs-libra-colour-2026-09-29.json`
-
-### 富士フイルム instax mini 13 vs instax mini 41
-
-- slug: `instax-mini-13-vs-mini-41`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: セルフタイマー・セルフィーミラー、カラー展開、デザイン、サイズ・質量、使用電池（レンズ・撮影範囲・フラッシュ・現像時間は共通）
-- 公式URL:
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: Xの個人購入者の投稿を各1件採用（2026-09-30確認、mini 13・mini 41）。どちらも短い好意的な投稿
-- handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
-
-### 富士フイルム instax mini Evo vs instax mini Evo Cinema
-
-- slug: `instax-mini-evo-vs-evo-cinema`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 動画撮影、エフェクト、液晶モニター、AF、無線通信、サイズ・質量、カラー展開（レンズ・プリント出力時間・プリント可能枚数は共通）
-- 公式URL:
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、EvoはマップカメラBLACK、Evo CinemaはJoshin web）。Amazon（B0C85H3GTH / B0GGNPV24C）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式デザインページの画像（EvoはBLACK正面、Evo Cinemaは斜め前方）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/instax-mini-evo-vs-evo-cinema-2026-09-29.json`
-
-### ソニー VLOGCAM ZV-1 II vs ZV-1F
-
-- slug: `sony-zv-1-ii-vs-zv-1f`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: レンズ（18-50mmズームと20mm単焦点）、AF方式、連写、HD動画の記録形式、内蔵ND、電池持ち、質量（センサー・液晶・4K動画・背景ぼけ切り換えは共通）
-- 公式URL:
-  - https://www.sony.jp/vlogcam/products/ZV-1M2/
-  - https://www.sony.jp/vlogcam/products/ZV-1F/
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、ZV-1 IIはJoshin web、ZV-1Fは楽天ビック）。Amazon（B0C6614QWT / B0BJ5L8RCG）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: ソニー公式の画像（ZV-1 IIはブラックとホワイトの2台、ZV-1Fはホワイト）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/sony-zv-1-ii-vs-zv-1f-2026-09-29.json`
 
 ## 追加確認・保留
 
