@@ -54,7 +54,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@playwright/test": "1.63.0",
-    "@typescript-eslint/parser": "8.70.1",
+    "@typescript-eslint/parser": "8.71.0",
     "@vitest/coverage-v8": "4.1.11",
     "cookie": "2.0.1",
     "eslint": "10.11.0",
@@ -62,10 +62,10 @@
     "node-html-parser": "9.0.4",
     "prettier": "3.9.9",
     "serve": "14.2.6",
-    "sharp": "0.35.4",
-    "typescript-eslint": "8.70.1",
+    "sharp": "0.35.5",
+    "typescript-eslint": "8.71.0",
     "vitest": "4.1.11",
-    "wrangler": "4.140.0",
+    "wrangler": "4.146.0",
     "yaml": "2.9.1"
   }
 }
