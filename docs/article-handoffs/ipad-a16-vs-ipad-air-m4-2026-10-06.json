@@ -1,0 +1,163 @@
+{
+  "id": "ipad-a16-vs-ipad-air-m4-2026-10-06",
+  "articleId": "ipad-a16-vs-ipad-air-m4",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec pages and iPad buy page, and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-06",
+  "articleReady": true,
+  "category": "タブレット",
+  "selection": {
+    "reason": "標準のiPad（A16）とiPad Air（M4）は、同じ11インチ・同じ解像度でありながらチップ・メモリ・Apple Pencil対応・ディスプレイ処理・価格が異なり、購入時の迷いが大きい。公開済み記事にタブレットはなく、iPhone・Apple Watch・AirPods記事から移りやすい。バックログ旧候補のiPad Air（M3）は、Apple公式で現行モデルがM4であることを確認して差し替えた。",
+    "duplicateCheck": "src/pages/articles と src/content/articles にiPadを扱う記事なし（2026-10-06確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "11インチ iPad（A16） Wi-Fi 128GB",
+      "model": "iPad（A16）11インチ",
+      "officialUrl": "https://www.apple.com/jp/ipad-11/specs/",
+      "officialImageUrl": "https://www.apple.com/v/ipad-11/d/images/overview/hero/hero__crzh9misvcuq_large.jpg",
+      "imageEvidence": "Apple Japan 11インチiPad（A16）概要ページのヒーロー画像（685x822 JPEG、HTTP 200、2026-10-06取得）。キーボード・Apple Pencilが写る下部を切り落とし、背面カラー4色の上部を800x800の白背景正方形に整えて public/products/ipad-a16-hero.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "A16（5コアCPU、4コアGPU、16コアNeural Engine）",
+        "display": "11インチLiquid Retina、2,360x1,640、264ppi、500ニト、True Tone、耐指紋性撥油コーティング",
+        "pencil": "Apple Pencil（USB-C）、Apple Pencil（第1世代、USB-C - Apple Pencilアダプタ使用）",
+        "wireless": "Wi-Fi 6（802.11ax）、Bluetooth 5.3",
+        "storage": "128GB・256GB・512GB",
+        "dimensions": "248.6x179.5x7mm",
+        "weight": "477g（Wi-Fi）、481g（Wi-Fi + Cellular）",
+        "battery": "Wi-Fiでのインターネット利用、ビデオ再生：最大10時間",
+        "camera": "12MP広角、12MPセンターフレーム（横向き）",
+        "appleIntelligence": "仕様ページに記載なし",
+        "memory": "仕様ページに記載なし"
+      },
+      "officialStorePriceJpy": 74800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の検索結果は第三者の転売店が中心で、Apple製品として信頼できる販売店の商品詳細ページを今回は特定していない。商品一致を確認できないため成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "11インチ iPad Air（M4） Wi-Fi 128GB",
+      "model": "iPad Air（M4）11インチ",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "officialImageUrl": "https://www.apple.com/v/ipad-air/ah/images/overview/hero/hero_endframe__6gl84bccyaqi_large.png",
+      "imageEvidence": "Apple Japan iPad Air概要ページのヒーロー画像（630x1054 PNG、HTTP 200、2026-10-06取得）。下部の余白を切り落として800x800の白背景正方形に整え、public/products/ipad-air-m4-hero.jpg と src/assets/products に保存。画像のサイズ（11/13インチ）は画像からは判別できない。",
+      "officialSpecs": {
+        "chip": "M4（8コアCPU＝高性能3＋高効率5、9コアGPU、16コアNeural Engine）",
+        "memory": "12GBユニファイドメモリ（120GB/sメモリ帯域幅）",
+        "display": "11インチLiquid Retina、2,360x1,640、264ppi、500ニト、広色域（P3）、True Tone、フルラミネーション、反射防止、耐指紋性撥油コーティング",
+        "pencil": "Apple Pencil Pro、Apple Pencil（USB-C）",
+        "wireless": "Apple N1、Wi-Fi 7（802.11be）、Bluetooth 6、Thread",
+        "storage": "128GB・256GB・512GB・1TB",
+        "dimensions": "247.6x178.5x6.1mm",
+        "weight": "464g（Wi-Fi）、465g（Wi-Fi + Cellular）",
+        "battery": "Wi-Fiでのインターネット利用、ビデオ再生：最大10時間",
+        "camera": "12MP広角、12MPセンターフレーム",
+        "appleIntelligence": "仕様ページに記載あり"
+      },
+      "officialStorePriceJpy": 129800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad/ipad-air",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GQWJCR4K",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "左側と同じ理由で、楽天の商品詳細ページは今回特定していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleのオンライン購入ページ（apple.com/jp/shop/buy-ipad）の税込表示。iPadは74,800円から、iPad Airは11インチが129,800円から（2026-10-06確認）。",
+    "keyDifferences": [
+      "チップはiPad（A16）がA16、iPad Air（M4）がM4（8コアCPU・9コアGPU）",
+      "メモリは、iPad Air（M4）が12GBと仕様に記載。iPad（A16）の仕様ページには記載なし",
+      "ディスプレイは、広色域（P3）・フルラミネーション・反射防止がiPad Air（M4）のみ仕様に記載",
+      "Apple Pencilは、iPad Air（M4）がApple Pencil Pro対応。iPad（A16）は第1世代（アダプタ使用）に対応",
+      "無線はiPad（A16）がWi-Fi 6／Bluetooth 5.3、iPad Air（M4）がWi-Fi 7／Bluetooth 6",
+      "質量・厚さは477g・7mmと464g・6.1mm",
+      "Apple公式価格は74,800円からと129,800円から"
+    ],
+    "commonSpecs": [
+      "11インチ 2,360x1,640・264ppi・500ニト",
+      "背面12MP・前面12MPセンターフレーム",
+      "ステレオスピーカー",
+      "USB-C",
+      "Wi-Fiでのインターネット利用・ビデオ再生は最大10時間"
+    ],
+    "caveat": "比較は11インチのWi-Fiモデルが基準。Amazonの商品ページの色はiPad（A16）がシルバー、iPad Air（M4）がスペースグレイで、記事の画像の色とは異なる。iPad（A16）のメモリ容量とApple Intelligence対応はApple仕様ページに記載がなく、優劣を断定していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+    "right": "https://www.amazon.co.jp/dp/B0GQWJCR4K",
+    "leftAsin": "B0DZ7WF87P",
+    "rightAsin": "B0GQWJCR4K",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページ（iPad A16・iPad Air M4）にアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-06"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple 11 インチ iPad (A16) 128GB Wi-Fi 6 シルバー」とASIN B0DZ7WF87Pを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DZ7WF87P?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple 11 インチ iPad (A16) 128GB Wi-Fi 6 シルバーの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-06）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple 11インチiPad Air（M4）128GB Apple N1によるWi-Fi 7 スペースグレイ」とASIN B0GQWJCR4Kを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GQWJCR4K?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple 11インチiPad Air（M4）128GB Apple N1によるWi-Fi 7 スペースグレイの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-06）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天の確認済み購入先はない。Amazonが両商品で確認済みのため、articleReadyの購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "iPad（A16）のメモリ容量とApple Intelligence対応はApple仕様ページに記載がなく未確認。",
+    "AmazonとApple公式の価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Apple公式の仕様・価格・画像と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
