@@ -145,6 +145,7 @@ describe("article metadata", () => {
       "ipad-a16-vs-ipad-air-m4",
       "switchbot-hub3-vs-hub2",
       "kindle-paperwhite-vs-colorsoft",
+      "karcher-k2-silent-vs-k3-silent-plus",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",
       "instax-mini-evo-vs-evo-cinema",
