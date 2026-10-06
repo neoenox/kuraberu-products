@@ -7,6 +7,7 @@ import {
   CTA_REFRESH_TIMEOUT_MS,
   REQUEST_TIMEOUT_MS,
   MAX_REDIRECT_HOPS,
+  UNAVAILABLE_LANDING_HOSTS,
   auditVerifiedCtaDestinations,
   checkArticleSource,
   checkPurchaseLinkConsistency,
@@ -530,6 +531,86 @@ describe("verified CTA destination audit (issue #342)", () => {
     });
     expect(audit.errors).toHaveLength(1);
     expect(audit.errors[0]).toContain("returns HTTP 404");
+  });
+
+  it("warns, not fails, when a Rakuten affiliate link lands on the sold-out transition page", async () => {
+    const fetchImpl = stubFetch({
+      "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item": redirect(
+        "https://transition.afl.rakuten.co.jp/sold-out",
+      ),
+      "https://transition.afl.rakuten.co.jp/sold-out": {
+        status: 200,
+        headers: new Map(),
+      },
+    }) as unknown as typeof fetch;
+    const audit = await auditVerifiedCtaDestinations({
+      urls: [
+        {
+          article: "a",
+          key: "a:rakuten-right",
+          url: "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item",
+        },
+      ],
+      allowlist: outboundHostAllowlist(),
+      fetchImpl,
+    });
+    expect(audit.errors).toEqual([]);
+    expect(audit.warnings).toHaveLength(1);
+    expect(audit.warnings[0]).toContain("sold out or unavailable");
+    expect(audit.checked[0]).toMatchObject({
+      result: "resolved",
+      finalHost: "transition.afl.rakuten.co.jp",
+      unavailable: true,
+    });
+  });
+
+  it("still fails when a non-affiliate link lands on the transition host", async () => {
+    const fetchImpl = stubFetch({
+      "https://promo.example.com/1": redirect(
+        "https://transition.afl.rakuten.co.jp/sold-out",
+      ),
+      "https://transition.afl.rakuten.co.jp/sold-out": {
+        status: 200,
+        headers: new Map(),
+      },
+    }) as unknown as typeof fetch;
+    const audit = await auditVerifiedCtaDestinations({
+      urls: [
+        { article: "a", key: "a:left", url: "https://promo.example.com/1" },
+      ],
+      allowlist: outboundHostAllowlist(),
+      fetchImpl,
+    });
+    expect(audit.warnings).toEqual([]);
+    expect(audit.errors).toHaveLength(1);
+    expect(audit.errors[0]).toContain("not in the verified CTA allowlist");
+    expect(audit.checked[0]).not.toHaveProperty("unavailable");
+  });
+
+  it("keeps every other non-allowlisted landing from a Rakuten affiliate link an error", async () => {
+    const fetchImpl = stubFetch({
+      "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item": redirect(
+        "https://tracker.example.net/landing",
+      ),
+      "https://tracker.example.net/landing": {
+        status: 200,
+        headers: new Map(),
+      },
+    }) as unknown as typeof fetch;
+    const audit = await auditVerifiedCtaDestinations({
+      urls: [
+        {
+          article: "a",
+          key: "a:rakuten-left",
+          url: "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=item",
+        },
+      ],
+      allowlist: outboundHostAllowlist(),
+      fetchImpl,
+    });
+    expect(audit.warnings).toEqual([]);
+    expect(audit.errors).toHaveLength(1);
+    expect(UNAVAILABLE_LANDING_HOSTS).toEqual(["transition.afl.rakuten.co.jp"]);
   });
 
   it("accepts Rakuten Books product pages as a verified destination", () => {

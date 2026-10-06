@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  # GITHUB_TOKEN で作られた PR（CTA監査キャッシュ更新など）では pull_request が
+  # 発火しないため、そのワークフローから head ブランチに対して明示的に起動する。
+  workflow_dispatch:
 
 permissions:
   contents: read
