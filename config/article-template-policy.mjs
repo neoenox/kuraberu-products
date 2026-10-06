@@ -98,6 +98,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "ipad-a16-vs-ipad-air-m4",
   "switchbot-hub3-vs-hub2",
   "kindle-paperwhite-vs-colorsoft",
+  "karcher-k2-silent-vs-k3-silent-plus",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
