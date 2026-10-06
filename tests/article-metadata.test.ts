@@ -146,6 +146,7 @@ describe("article metadata", () => {
       "switchbot-hub3-vs-hub2",
       "kindle-paperwhite-vs-colorsoft",
       "karcher-k2-silent-vs-k3-silent-plus",
+      "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",
       "instax-mini-evo-vs-evo-cinema",
