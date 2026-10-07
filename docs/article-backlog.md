@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（73本）
+## 現在の公開済み（74本）
 
 2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている（`nintendo-switch-2-vs-switch-oled`は同日のデプロイ後に実測して追加）。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
 
@@ -55,6 +55,7 @@
 | `sony-zv-e10m2-vs-nikon-z30`                         | 公開済み                     |
 | `switchbot-hub3-vs-hub2`                             | 公開済み                     |
 | `amazon-fire-tv-stick-4k-max-vs-4k-select`           | 公開済み                     |
+| `amazon-echo-show-8-vs-echo-show-5`                  | 公開済み                     |
 | `t-fal-ko5901jp-vs-zoujirushi-ck-pa08`               | 公開済み                     |
 | `tanita-bc-772-vs-omron-hbf-702t`                    | 公開済み                     |
 | `tefal-cy8768jp-vs-panasonic-sr-mp300`               | 公開済み                     |
@@ -230,13 +231,6 @@
 - 状態: 候補（対象型番は未確定。公式で現行ラインナップを確認して決める）
 - 想定比較軸: ブラッシングモード、センサー、バッテリー、付属品、替ブラシの種類、公式価格
 - 確認すること: フィリップス公式の対象型番ページ（`philips.co.jp/c-m-pe/electric-toothbrushes`）、型番と販売名、Amazon・楽天の商品一致、既存のフィリップス記事（`panasonic-ew-dp57-vs-philips-hx9911`は別カテゴリで、2026-10-07時点で非公開）との重複
-
-### Amazon Echo Show 8 vs Echo Show 5
-
-- 選定理由: 公開中のスマートホーム記事はSwitchBot ハブ記事のみで、画面付きスマートスピーカーが未着手。
-- 状態: 候補（公式情報は未確認。世代・日本での現行モデルは記事化前にAmazonの日本向けページで再確認する）
-- 想定比較軸: 画面サイズ、スピーカー、カメラ、スマートホームハブ機能、公式価格
-- 確認すること: Amazon.co.jpの両商品ページ、世代・型番、現行販売状況、既存のEcho Dot記事（`amazon-echo-dot-5th-vs-google-nest-mini-2nd`は2026-10-07時点で非公開）との重複
 
 ## 追加確認・保留
 

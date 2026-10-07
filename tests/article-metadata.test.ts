@@ -149,6 +149,7 @@ describe("article metadata", () => {
       "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
       "dji-osmo-action-6-vs-gopro-hero13-black",
       "amazon-fire-tv-stick-4k-max-vs-4k-select",
+      "amazon-echo-show-8-vs-echo-show-5",
       "nintendo-switch-2-vs-switch-oled",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",

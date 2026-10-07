@@ -102,6 +102,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
   "dji-osmo-action-6-vs-gopro-hero13-black",
   "amazon-fire-tv-stick-4k-max-vs-4k-select",
+  "amazon-echo-show-8-vs-echo-show-5",
   "nintendo-switch-2-vs-switch-oled",
 ]);
 export function isPublishedArticlePath(path) {
