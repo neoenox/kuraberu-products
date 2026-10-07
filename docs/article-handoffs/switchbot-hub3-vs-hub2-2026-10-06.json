@@ -14,8 +14,8 @@
       "name": "SwitchBot ハブ3",
       "model": "W7202101",
       "officialUrl": "https://www.switchbot.jp/products/switchbot-hub3",
-      "officialImageUrl": "https://www.switchbot.jp/cdn/shop/files/Hub_3_JP_1600x1600_02_1x_f13df486-6ca8-4398-8f4f-7e9636bfc49f.webp?v=1760694016",
-      "imageEvidence": "SwitchBot公式商品ページのog:image（800x800に取得、2026-10-06）。画像右上の受賞バッジを避けるため上部を切り落とし、800x800の白背景正方形に整えて public/products/switchbot-hub3.jpg と src/assets/products に保存。画面上部が一部切れている。",
+      "officialImageUrl": "https://www.switchbot.jp/cdn/shop/files/Hub3_JP_1600x1600_04_2x_da011668-9041-4c4f-9ed3-846f255fb5ea.webp",
+      "imageEvidence": "SwitchBot公式商品ページのギャラリー画像（Hub3_JP_1600x1600_04、白背景の本体単体、HTTP 200、2026-10-06取得）。800x800に整えて public/products/switchbot-hub3.jpg と src/assets/products に保存。2026-10-07に、受賞バッジの写り込みと画面上部の切れを避けるため、og画像の切り出しから差し替えた。",
       "officialSpecs": {
         "size": "126×94×38mm",
         "weight": "190g",

@@ -15,7 +15,7 @@
       "model": "iPad（A16）11インチ",
       "officialUrl": "https://www.apple.com/jp/ipad-11/specs/",
       "officialImageUrl": "https://www.apple.com/v/ipad-11/d/images/overview/hero/hero__crzh9misvcuq_large.jpg",
-      "imageEvidence": "Apple Japan 11インチiPad（A16）概要ページのヒーロー画像（685x822 JPEG、HTTP 200、2026-10-06取得）。キーボード・Apple Pencilが写る下部を切り落とし、背面カラー4色の上部を800x800の白背景正方形に整えて public/products/ipad-a16-hero.jpg と src/assets/products に保存。",
+      "imageEvidence": "Apple Japan 11インチiPad（A16）概要ページのヒーロー画像（685x822 JPEG、HTTP 200、2026-10-06取得）。キーボード・Apple Pencilが写る下部を切り落とし、背面カラー4色の上部を800x800の白背景正方形に整えて public/products/ipad-a16-hero.jpg と src/assets/products に保存。 2026-10-07に、切り口が不自然だったため、下端を白へ薄く消す加工を加えた。",
       "officialSpecs": {
         "chip": "A16（5コアCPU、4コアGPU、16コアNeural Engine）",
         "display": "11インチLiquid Retina、2,360x1,640、264ppi、500ニト、True Tone、耐指紋性撥油コーティング",
