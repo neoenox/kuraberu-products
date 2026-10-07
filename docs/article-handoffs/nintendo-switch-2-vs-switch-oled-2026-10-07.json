@@ -1,0 +1,195 @@
+{
+  "id": "nintendo-switch-2-vs-switch-oled-2026-10-07",
+  "articleId": "nintendo-switch-2-vs-switch-oled",
+  "source": "Fresh product selection and research by Claude Code against Nintendo Japan official pages (Switch 2 specs, lineup and compatibility pages; Switch OLED model page and its spec/lineup modals), Amazon.co.jp product detail pages and Rakuten Books product pages (Amazon Associates toolbar and Rakuten Affiliate link creation observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-07",
+  "articleReady": true,
+  "category": "ゲーム機本体",
+  "selection": {
+    "reason": "docs/article-backlog.md の「次の候補」に記載されていた組み合わせ。ゲーム機カテゴリは公開記事がなく、Switch 2とSwitch（有機ELモデル）は画面・TV出力・保存メモリー・対応ソフト・希望小売価格が異なり、購入時の迷いが明確。",
+    "duplicateCheck": "非公開の既存記事 switch-2-vs-switch-2-zelda（Switch 2通常版とゼルダ同梱版の比較）があるが、Switch同士の世代間比較ではなく組み合わせは異なる。公開済み記事にゲーム機の比較はない。"
+  },
+  "products": {
+    "left": {
+      "name": "Nintendo Switch 2（日本語・国内専用）",
+      "model": "Nintendo Switch 2 日本語・国内専用（JAN 4902370553024）",
+      "officialUrl": "https://www.nintendo.com/jp/hardware/switch2/specs/",
+      "officialImageUrl": "https://www.nintendo.com/jp/hardware/switch2/lineup/assets/img/img_products_switch2_jp.png",
+      "imageEvidence": "任天堂のSwitch 2商品ラインナップページの日本語・国内専用版パッケージ画像（912x648 PNG、HTTP 200、2026-10-07取得）。透過背景を白に合成し、余白を切り詰めて800x800に配置し、public/products/nintendo-switch-2-jp.jpg と src/assets/products に保存。既存の switch-2.jpg は変更していない。",
+      "officialSpecs": {
+        "display": "7.9インチ 広色域液晶、1920x1080、HDR対応、最大120HzのVRR、静電容量方式タッチスクリーン",
+        "tvOutput": "最大3840x2160 60fps、1920x1080／2560x1440選択時は120fps、HDR10、VRR",
+        "storage": "256GB（UFS）",
+        "microSd": "microSD Expressメモリーカードのみ対応（最大2TB）。通常のmicroSDはSwitchからの画面写真・動画のコピーにのみ利用可",
+        "gameCard": "Nintendo Switch 2ゲームカード、Nintendo Switchゲームカードのどちらも差し込める",
+        "battery": "5220mAh、約2〜6.5時間、充電約3時間",
+        "size": "縦116mm×横272mm×厚さ13.9mm（Joy-Con 2取り付け時）",
+        "weight": "約401g（Joy-Con 2取り付け時 約534g）",
+        "wireless": "Wi-Fi 6、Bluetooth、TVモード時有線LAN",
+        "usb": "USB Type-C 2ポート"
+      },
+      "officialPriceJpy": 59980,
+      "officialPriceUrl": "https://www.nintendo.com/jp/hardware/switch2/lineup/",
+      "compatibilityUrl": "https://www.nintendo.com/jp/hardware/switch2/compatibility/",
+      "compatibilityEvidence": "互換性ページで「一部のタイトルはNintendo Switchと完全な互換性を実現することができません」、リングフィット アドベンチャー・Nintendo Labo・Nintendo Switch Sports（シュート対決）等でSwitchのJoy-Conが必要、Switch 2ではSwitch用Joy-Conを充電できない旨を確認（2026-10-07）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0H362VDQG",
+      "rakutenProductPage": "https://item.rakuten.co.jp/book/18210481/",
+      "rakutenListingEvidence": "楽天ブックスの商品ページのタイトル「楽天ブックス: Nintendo Switch 2（日本語・国内専用） - Nintendo Switch 2 - 4902370553024 : ゲーム」と在庫表示を確認（2026-10-07）。"
+    },
+    "right": {
+      "name": "Nintendo Switch（有機ELモデル）Joy-Con(L)/(R) ホワイト",
+      "model": "本体 HEG-001（パッケージ HEG-S-KAAAA、JAN 4902370548495）",
+      "officialUrl": "https://www.nintendo.com/jp/hardware/detail/switch-oled/",
+      "officialSpecUrl": "https://www.nintendo.com/jp/hardware/switch/modal/specs/body_oled.html",
+      "officialImageUrl": "https://www.nintendo.com/jp/hardware/switch/modal/img/lineup/img-package--oled_white.jpg",
+      "imageEvidence": "任天堂のSwitch本体ラインナップ（有機ELモデル ホワイト）のパッケージ画像（450x348 JPEG、HTTP 200、2026-10-07取得）。余白を切り詰めて800x800に拡大配置し、public/products/nintendo-switch-oled-white.jpg と src/assets/products に保存。元画像が小さく、やや粗い。",
+      "officialSpecs": {
+        "display": "7.0インチ 有機EL、1280x720、静電容量方式タッチスクリーン",
+        "tvOutput": "最大1920x1080 60fps",
+        "storage": "64GB",
+        "microSd": "microSD／microSDHC／microSDXC",
+        "gameCard": "Nintendo Switchソフトのゲームカード専用",
+        "battery": "4310mAh、約4.5〜9.0時間、充電約3時間",
+        "size": "縦102mm×横242mm×厚さ13.9mm（Joy-Con取り付け時）",
+        "weight": "約320g（Joy-Con取り付け時 約420g）",
+        "wireless": "IEEE 802.11 a/b/g/n/ac、Bluetooth 4.1、TVモード時有線LAN（ドック）",
+        "usb": "USB Type-C"
+      },
+      "officialPriceJpy": 47980,
+      "officialPriceUrl": "https://www.nintendo.com/jp/hardware/detail/switch-oled/",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B098B8PFXY",
+      "rakutenProductPage": "https://item.rakuten.co.jp/book/16882955/",
+      "rakutenListingEvidence": "楽天ブックスの商品ページのタイトル「楽天ブックス: Nintendo Switch（有機ELモデル） Joy-Con(L)/(R) ホワイト - Nintendo Switch - 4902370548495 : ゲーム」と「在庫あり」を確認（2026-10-07）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "任天堂公式ページの希望小売価格（税込）。Switch 2 日本語・国内専用 59,980円（多言語対応版 69,980円はNintendo Storeのみ）、Switch（有機ELモデル）47,980円（2026-10-07確認）。",
+    "keyDifferences": [
+      "画面は7.9インチ液晶1920x1080（HDR・120Hz）と7.0インチ有機EL 1280x720",
+      "TV出力は最大4K60と最大1080p60",
+      "保存メモリーは256GBと64GB",
+      "microSDはSwitch 2がmicroSD Expressのみ",
+      "Switch 2はSwitchソフトも遊べる（一部制限）、有機ELモデルはSwitch 2ソフト非対応",
+      "希望小売価格は59,980円と47,980円",
+      "質量は約534gと約420g（Joy-Con取り付け時）"
+    ],
+    "commonSpecs": [
+      "TV・テーブル・携帯の3モード",
+      "TVモード時の有線LAN",
+      "充電時間約3時間"
+    ],
+    "caveat": "バッテリー持続時間は遊ぶソフトで変わる目安のため優劣を判断していない。Amazon・楽天の販売価格は記事に載せていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0H362VDQG",
+    "right": "https://www.amazon.co.jp/dp/B098B8PFXY",
+    "leftAsin": "B0H362VDQG",
+    "rightAsin": "B098B8PFXY",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-07"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Nintendo Switch 2（日本語・国内専用）【Amazon.co.jp限定】特典 Nintendo Switch 2 ロゴデザインステッカー 同梱」とASIN B0H362VDQGを確認。出荷元・販売元はAmazon.co.jp（2026-10-07）。Amazon限定のステッカー特典が付く出品で、本体は日本語・国内専用版。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『TVゲーム』と販売手数料率2.00%を表示（2026-10-07）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0H362VDQG?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、同じ商品詳細ページに到達（2026-10-07）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Nintendo Switch(有機ELモデル) Joy-Con(L)/(R) ホワイト」（ブランド 任天堂）とASIN B098B8PFXYを確認（2026-10-07）。確認時のカートボックスは第三者の中古品で、新品は他の出品者から購入する表示だった。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『TVゲーム』と販売手数料率2.00%を表示（2026-10-07）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B098B8PFXY?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、同じ商品詳細ページに到達（2026-10-07）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18210481%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16882955%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "leftProductPage": "https://item.rakuten.co.jp/book/18210481/",
+    "rightProductPage": "https://item.rakuten.co.jp/book/16882955/",
+    "leftProductVerified": true,
+    "rightProductVerified": true,
+    "generation": "2026-10-07に楽天アフィリエイト公式画面（affiliate.rakuten.co.jp）へログインした状態で、「URLを入力してリンクを作成」に商品詳細URLを入力して生成。リンクタイプは「リンクのみ」。ソース欄のURLをそのまま使用（改変なし）。HTTP GETの最終遷移先が楽天ブックスの各商品ページ（HTTP 200）であることを確認。",
+    "browserEvidence": {
+      "observedAtJst": "2026-10-07",
+      "ui": "楽天アフィリエイトにログインした画面の「URLを入力してリンクを作成」から商品ページごとに作成。",
+      "bySide": {
+        "left": {
+          "inputUrl": "https://item.rakuten.co.jp/book/18210481/",
+          "productTitle": "Nintendo Switch 2（日本語・国内専用）",
+          "shopName": "楽天ブックス",
+          "productMatch": "楽天ブックスの商品ページのタイトルとJAN 4902370553024を確認し、リンク作成画面の商品名「Nintendo Switch 2（日本語・国内専用）」・ショップ「楽天ブックス」・料率2.0%（ジャンル テレビゲーム）を確認。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://books.rakuten.co.jp/rb/18210481/?scid=af_pc_etc&sc2id=af_101_0_0",
+          "finalHttpStatus": 200
+        },
+        "right": {
+          "inputUrl": "https://item.rakuten.co.jp/book/16882955/",
+          "productTitle": "Nintendo Switch（有機ELモデル） Joy-Con(L)/(R) ホワイト",
+          "shopName": "楽天ブックス",
+          "productMatch": "楽天ブックスの商品ページのタイトルとJAN 4902370548495を確認し、リンク作成画面でショップ「楽天ブックス」・料率2.0%と、生成URLのpc=が同じ商品ページであることを確認。リンク作成画面上の商品名テキストは取得していない（not-recorded）。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://books.rakuten.co.jp/rb/16882955/?scid=af_pc_etc&sc2id=af_101_0_0",
+          "finalHttpStatus": 200
+        }
+      }
+    }
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "Switchソフトの個別タイトルの互換性は確認していない（任天堂の互換性ページへ誘導）。",
+    "AmazonのSwitch（有機ELモデル）は確認時のカートボックスが第三者の中古品で、新品の出品者・価格は確認していない。",
+    "Amazon・楽天の販売価格は記事に載せていない。",
+    "価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様・希望小売価格・互換性・画像、Amazonの商品一致・対象表示・遷移先、楽天ブックスの商品一致と生成URLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
