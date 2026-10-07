@@ -1,0 +1,159 @@
+{
+  "id": "amazon-fire-tv-stick-4k-max-vs-4k-select-2026-10-08",
+  "articleId": "amazon-fire-tv-stick-4k-max-vs-4k-select",
+  "source": "Fresh product selection and research by Claude Code against Amazon.co.jp product detail pages (Amazon is the manufacturer and seller of Fire TV devices; Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-08",
+  "articleReady": true,
+  "category": "ストリーミング端末",
+  "selection": {
+    "reason": "Fire TV Stick 4K MaxとFire TV Stick 4K Selectは、どちらも4K対応で、Dolby Vision・Dolby Atmos・Wi-Fi規格・ストレージ・リモコン・価格が異なり、購入時の迷いが明確。バックログの候補。ストリーミング端末は公開中の記事にないカテゴリ。",
+    "duplicateCheck": "src/pages/articles と src/content/articles（commercial と旧形式）にFire TVの記事なし（2026-10-08確認）。公開中のKindle記事とは対象が異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "Amazon Fire TV Stick 4K Max（第2世代）",
+      "model": "Fire TV Stick 4K Max",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/51rDODg+ZKL._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（箱・本体・リモコン、1000x977、HTTP 200、2026-10-08取得）。800x800の白背景正方形に整えて public/products/amazon-fire-tv-stick-4k-max.jpg と src/assets/products に保存。画像内の箱に『4K MAX 16GB Wi-Fi 6E』の表記がある。",
+      "officialSpecs": {
+        "resolution": "4K Ultra HD",
+        "video": "Dolby Vision、HDR10、HDR10+、HLG",
+        "audio": "Dolby Atmos",
+        "wifi": "Wi-Fi 6E（2.4/5/6GHz）",
+        "bluetooth": "Bluetooth 5.2 + LE",
+        "storage": "16GB",
+        "processor": "2.0GHzクアッドコア",
+        "remote": "Alexa対応音声認識リモコン Enhanced",
+        "cloudGaming": "Xbox、NVIDIA GeForce NOW",
+        "size": "99x30x14mm（HDMI端子含まず）"
+      },
+      "officialStorePriceJpy": 15980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Fire TV StickはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Amazon Fire TV Stick 4K Select",
+      "model": "Fire TV Stick 4K Select",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61+59M8o84L._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（箱・本体・リモコン、1000x804、HTTP 200、2026-10-08取得）。800x800の白背景正方形に整えて public/products/amazon-fire-tv-stick-4k-select.jpg と src/assets/products に保存。画像内の箱に『4K SELECT 8GB Wi-Fi 5』の表記がある。",
+      "officialSpecs": {
+        "resolution": "4K Ultra HD",
+        "video": "HDR10、HDR10+、HLG",
+        "audio": "Dolby Encodedオーディオ HDMIパススルー",
+        "wifi": "Wi-Fi 5",
+        "bluetooth": "Bluetooth 5.0 + LE",
+        "storage": "8GB",
+        "remote": "Alexa対応音声認識リモコン",
+        "cloudGaming": "Xbox",
+        "size": "99x30x14mm",
+        "release": "2025年発売"
+      },
+      "officialStorePriceJpy": 10980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Fire TV StickはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Amazon.co.jpの商品ページの比較表（Fire TV Stick 4K Max 15,980円、4K Select 10,980円、いずれも税込、2026-10-08確認）。4K Selectのページには『セール対象商品』の表示があった。",
+    "keyDifferences": [
+      "Dolby VisionとDolby Atmosは4K Maxのみ（4K Selectは映像HDR10系、音声はDolby Encodedパススルー）",
+      "Wi-FiはMaxがWi-Fi 6E、SelectがWi-Fi 5",
+      "ストレージは16GBと8GB",
+      "付属リモコンはMaxがEnhanced、Selectが標準のAlexa対応音声認識リモコン",
+      "クラウドゲームはMaxがXboxとGeForce NOW、SelectがXbox",
+      "価格は15,980円と10,980円"
+    ],
+    "commonSpecs": [
+      "4K Ultra HD",
+      "HDR10・HDR10+・HLG",
+      "99x30x14mm",
+      "Alexa対応音声認識リモコンが付属"
+    ],
+    "caveat": "Amazonの比較表にはFire TV Stick HD、4K Plus、Fire TV Cubeも載っているが、比較には含めていない。Amazonのページのレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+    "right": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+    "leftAsin": "B0G2TXBSWJ",
+    "rightAsin": "B0G2TXCWFH",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-08"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Fire TV Stick 4K Max(マックス) | Fire TV Stick史上最もパワフル | ストリーミングメディアプレイヤー」とASIN B0G2TXBSWJを確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0G2TXBSWJ?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon Fire TV Stick 4K Max(マックス) | Fire TV Stick史上最もパワフル | ストリーミングメディアプレイヤーの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-08）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Fire TV Stick 4K Select(セレクト)」とASIN B0G2TXCWFHを確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0G2TXCWFH?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon Fire TV Stick 4K Select(セレクト)の商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-08）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。Amazon自社商品のため楽天は確認していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "4K Selectのプロセッサ等、Amazonの商品ページに記載のない仕様は比較していない。",
+    "価格・在庫・セールは購入時点で変動する。"
+  ],
+  "publicationDecision": "Amazonの商品一致・仕様・価格・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
