@@ -12,14 +12,11 @@
 
 ## 新規作成・確認中
 
-### `nintendo-switch-2-vs-switch-oled`（Nintendo Switch 2 vs Switch 有機ELモデル）
+現在、作成中の記事はない。
 
-- 状態: Draft PR（2026-10-07）。公式仕様・希望小売価格・互換性ページ、Amazon（両商品verified）、楽天ブックス（両商品verified）を確認済み。handoff: `docs/article-handoffs/nintendo-switch-2-vs-switch-oled-2026-10-07.json`
-- 公開済みの表へは、マージと本番反映後に本番URLのHTTP 200を実測してから移す。
+## 現在の公開済み（72本）
 
-## 現在の公開済み（71本）
-
-2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
+2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている（`nintendo-switch-2-vs-switch-oled`は同日のデプロイ後に実測して追加）。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
 
 | slug                                                 | 状態                         |
 | ---------------------------------------------------- | ---------------------------- |
@@ -47,6 +44,7 @@
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み                     |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み                     |
 | `logicool-pro-x-superlight-2-dex-vs-superlight-2`    | 公開済み                     |
+| `nintendo-switch-2-vs-switch-oled`                   | 公開済み                     |
 | `pixel-watch-5-vs-galaxy-watch9`                     | 公開済み                     |
 | `sharp-hotcook-kn-hw24k-vs-kn-hw24h`                 | 公開済み                     |
 | `shokz-openfit-2-plus-vs-openfit-2`                  | 公開済み                     |
