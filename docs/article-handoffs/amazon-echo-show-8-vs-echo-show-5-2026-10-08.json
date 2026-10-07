@@ -1,0 +1,155 @@
+{
+  "id": "amazon-echo-show-8-vs-echo-show-5-2026-10-08",
+  "articleId": "amazon-echo-show-8-vs-echo-show-5",
+  "source": "Fresh product selection and research by Claude Code against Amazon.co.jp product detail pages (Amazon is the manufacturer and seller of Echo devices; Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-08",
+  "articleReady": true,
+  "category": "スマートホーム",
+  "selection": {
+    "reason": "Echo Show 8（2025年発売）とEcho Show 5（第3世代）は、画面・スピーカー・カメラ・スマートホームハブ内蔵・サイズ・価格が異なり、購入時の迷いが明確。バックログの候補。公開中のスマートホーム記事はSwitchBot ハブ記事のみで、画面付きスマートスピーカーは未着手。",
+    "duplicateCheck": "src/pages/articles と src/content/articles（commercial と旧形式）にEcho Showの記事なし（2026-10-08確認）。旧形式のEcho Dot記事（amazon-echo-dot-5th-vs-google-nest-mini-2nd）は本番で非公開で、対象商品も異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "Amazon Echo Show 8（2025年発売）",
+      "model": "Echo Show 8 2025年発売",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61gQ8i9MevL._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（本体とスタンド、白背景、882x637、HTTP 200、2026-10-08取得）。800x800の白背景正方形に整えて public/products/amazon-echo-show-8-2025.jpg と src/assets/products に保存。画像のスタンドは別売り。",
+      "officialSpecs": {
+        "display": "8.7インチHDタッチスクリーン（1340x800）",
+        "speaker": "フルレンジドライバー2個、2.8インチウーファー、空間オーディオ",
+        "camera": "13MP自動フレーミング、3.3倍ズーム",
+        "hub": "Zigbee、Matter、Threadボーダールーター",
+        "processor": "AZ3 Pro（AI Accelerator）",
+        "size": "208x127x150mm",
+        "weight": "1049g",
+        "wifi": "Wi-Fi 6E",
+        "sensors": "室内温度センサー、在室検知",
+        "included": "本体、電源アダプター（30W）、クイックスタートガイド（スタンドは別売り）",
+        "release": "2025年"
+      },
+      "officialStorePriceJpy": 39980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Echo ShowはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Amazon Echo Show 5（第3世代）",
+      "model": "Echo Show 5 第3世代",
+      "officialUrl": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/51WoZnp2ssL._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（本体のみ、白背景、954x622、HTTP 200、2026-10-08取得）。800x800の白背景正方形に整えて public/products/amazon-echo-show-5-3rd-gen.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "5.5インチ",
+        "speaker": "1.7インチスピーカー1個",
+        "camera": "2MP",
+        "processor": "AZ2 Neural Edge",
+        "size": "147x91x82mm",
+        "release": "2023年"
+      },
+      "officialStorePriceJpy": 17980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Echo ShowはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Amazon.co.jpの商品ページの比較表（Echo Show 8 39,980円、Echo Show 5 17,980円、いずれも税込、2026-10-08確認）。検索結果にはEcho Show 5の割引価格（13,980円）の表示もあった。",
+    "keyDifferences": [
+      "画面は8.7インチHDと5.5インチ",
+      "スピーカーはEcho Show 8がフルレンジ2個・ウーファー・空間オーディオ、Echo Show 5が1.7インチ1個",
+      "カメラは13MP（自動フレーミング）と2MP",
+      "スマートホームハブ内蔵はEcho Show 8のみ（比較表）",
+      "本体サイズは208x127x150mmと147x91x82mm",
+      "価格は39,980円と17,980円"
+    ],
+    "commonSpecs": [
+      "Alexa搭載",
+      "ビデオ通話と見守りに使えるカメラ",
+      "マイク・カメラのオン／オフボタン"
+    ],
+    "caveat": "Echo Show 5の重量・Wi-Fi・センサーはAmazonのページに記載が見当たらず比較していない。Amazonの比較表にはEcho Show 11・15も載っているが、比較には含めていない。Amazonのページのレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+    "right": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+    "leftAsin": "B0DYC1LM11",
+    "rightAsin": "B09B2RLPLV",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-08"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Echo Show 8 (エコーショー8) 2025年発売 - シームレスな新デザイン、8.7インチHDディスプレイ with Alexa、空間オーディオ」とASIN B0DYC1LM11を確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Echoデバイス』と販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DYC1LM11?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon Echo Show 8 (エコーショー8) 2025年発売 - シームレスな新デザイン、8.7インチHDディスプレイ with Alexa、空間オーディオの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-08）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Echo Show 5 第3世代 - スマートディスプレイ with Alexa」とASIN B09B2RLPLVを確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Echoデバイス』と販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B09B2RLPLV?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon Echo Show 5 第3世代 - スマートディスプレイ with Alexaの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-08）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。Amazon自社商品のため楽天は確認していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Echo Show 5の重量・Wi-Fi規格・センサーはAmazonのページで確認できていない。",
+    "価格・在庫・セールは購入時点で変動する。"
+  ],
+  "publicationDecision": "Amazonの商品一致・仕様・価格・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
