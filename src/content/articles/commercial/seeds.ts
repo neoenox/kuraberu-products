@@ -74,6 +74,7 @@ import { switchbotHub3VsHub2Seed } from "./switchbot-hub3-vs-hub2";
 import { kindlePaperwhiteVsColorsoftSeed } from "./kindle-paperwhite-vs-colorsoft";
 import { karcherK2SilentVsK3SilentPlusSeed } from "./karcher-k2-silent-vs-k3-silent-plus";
 import { sharpHotcookKnHw24kVsKnHw24hSeed } from "./sharp-hotcook-kn-hw24k-vs-kn-hw24h";
+import { djiOsmoAction6VsGoproHero13BlackSeed } from "./dji-osmo-action-6-vs-gopro-hero13-black";
 import { zojirushiCvGb22VsTigerPimG220Seed } from "./zojirushi-cv-gb22-vs-tiger-pim-g220";
 import { panasonicBeFd633VsBridgestoneA6xc41Seed } from "./panasonic-be-fd633-vs-bridgestone-a6xc41";
 import { irisFkC5VsPanasonicFdF06x2Seed } from "./iris-fk-c5-vs-panasonic-fd-f06x2";
@@ -213,4 +214,5 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   kindlePaperwhiteVsColorsoftSeed,
   karcherK2SilentVsK3SilentPlusSeed,
   sharpHotcookKnHw24kVsKnHw24hSeed,
+  djiOsmoAction6VsGoproHero13BlackSeed,
 ];
