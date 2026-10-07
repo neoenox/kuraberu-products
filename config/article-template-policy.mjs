@@ -99,6 +99,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "switchbot-hub3-vs-hub2",
   "kindle-paperwhite-vs-colorsoft",
   "karcher-k2-silent-vs-k3-silent-plus",
+  "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];
