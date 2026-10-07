@@ -82,6 +82,7 @@
 価格・購入リンク・出典の扱いは次の基準に集約する（個別記事の慣行ではなく本書を正とする）。
 
 - 価格の書き方: 金額には確認日を併記する（例: `2026-08-10確認`、`2026-08-10時点の確認では`）。確認日のない裸の金額は書かない。機械検査は `pnpm check:price-claims`（warn-first、`--strict` で厳格化）。
+- 価格ガイド（トップページ「いくらで買える？」、`src/data/*-prices.ts`）: 楽天市場の価格を人が取り直して更新する（自動取得はしない）。週次の `price freshness` が確認日（`*_CHECKED_AT`）を見て、30日を超えると再確認の issue を開く。更新するときは価格と `*_CHECKED_AT` を同じ変更で直す。
 - 在庫の書き方: 在庫は断定しない（`在庫あり` 等の記載禁止）。購入時点の販売ページ確認へ誘導する。
 - 購入リンク状態: `purchaseLinkStatus` は記事全体の状態を管理し、販売先別状態で各CTAを制御する。Amazonは直リンクが未確認でも商品名・型番が確認済みなら商品別`leftAmazonLinkStatus: "search"` / `rightAmazonLinkStatus: "search"`でruntimeタグ付き検索CTAを表示できるが、確認済み購入先には数えない。`unavailable`はASIN一致と公式アソシエイト画面の明示結果が揃う場合だけ許可し、handoff検査で証跡を確認する。`unverified`はCTAを表示しない。機械検査は`check-article-handoff`、`check-purchase-link-consistency`、`check-rendered-html`、実ブラウザ確認は`pnpm test:e2e`。
 - スペック主張の鮮度: `data/spec-claims.json` の各主張は `checkedAt` を持ち、180日で鮮度切れとして検出する（`pnpm check:spec-claims`）。巡回主体は月次の既存記事巡回とし、鮮度切れは公式再確認か主張の削除で解消する。
