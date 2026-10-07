@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（159本）
+## 現在の公開済み（160本）
 
 | slug                                              | 状態                           |
 | ------------------------------------------------- | ------------------------------ |
@@ -177,6 +177,7 @@
 | `kindle-paperwhite-vs-colorsoft` | 公開済み |
 | `karcher-k2-silent-vs-k3-silent-plus` | 公開済み |
 | `sharp-hotcook-kn-hw24k-vs-kn-hw24h` | 公開済み |
+| `dji-osmo-action-6-vs-gopro-hero13-black` | 公開済み |
 | `zojirushi-ee-dg50-vs-ee-rv50` | 公開済み |
 | `zojirushi-ee-tc60-vs-dainichi-hd-lx1026` | 公開済み |
 

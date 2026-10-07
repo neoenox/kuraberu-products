@@ -1,0 +1,185 @@
+{
+  "id": "dji-osmo-action-6-vs-gopro-hero13-black-2026-10-07",
+  "articleId": "dji-osmo-action-6-vs-gopro-hero13-black",
+  "source": "Fresh product selection and research by Claude Code against DJI Japan official pages and DJI Store, GoPro Japan official shop pages, Amazon.co.jp product detail pages and Rakuten Biccamera product page (Amazon Associates toolbar and Rakuten Affiliate link creation observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-07",
+  "articleReady": true,
+  "category": "アクションカメラ",
+  "selection": {
+    "reason": "アクションカメラの現行モデルであるDJI Osmo Action 6とGoPro HERO13 Blackは、センサー・防水・内蔵ストレージ・拡張性・価格が異なり、購入時の迷いが明確。既存のAction 5 Pro比較記事は前世代のDJIとの比較のため、現行世代の比較として追加する。",
+    "duplicateCheck": "既存記事 gopro-hero13-black-vs-dji-osmo-action-5-pro（2026-09-11公開、HERO13 BlackとOsmo Action 5 Proの比較）がある。本記事は現行世代のOsmo Action 6との比較で、対象の組み合わせは異なるが、HERO13 Blackを含むため検索意図は一部重複する。commercial 以外の旧形式記事（src/content/articles 直下）も確認した上で、現行モデル同士の比較として追加する。"
+  },
+  "products": {
+    "left": {
+      "name": "DJI Osmo Action 6 スタンダードコンボ",
+      "model": "Osmo Action 6",
+      "officialUrl": "https://www.dji.com/jp/osmo-action-6/specs",
+      "officialImageUrl": "https://www-cdn.djiits.com/cms/uploads/ae781cd30b6dc794eb49ad3d44e26845@374*374.png",
+      "imageEvidence": "DJI日本のOsmo Action 6ページのog:image（374x374 PNG、HTTP 200、2026-10-07取得）。透過背景を白に合成し、800x800に拡大して public/products/dji-osmo-action-6.jpg と src/assets/products に保存。元画像が小さく、やや粗い。",
+      "officialSpecs": {
+        "sensor": "1/1.1インチCMOS",
+        "aperture": "f/2.0〜f/4.0（FOV 155°）",
+        "video": "8K 7680x4320 24/25/30fps、4K 120fps（4:3 3840x2880 100/120fps を確認）",
+        "waterproof": "20m（防水ケースなし）、60m（防水ケース使用時）",
+        "storage": "内蔵64GB（使用可能50GB）、microSD最大1TB",
+        "battery": "1950mAh、1080p/24fpsで240分",
+        "size": "72.8x47.2x33.1mm",
+        "weight": "149g",
+        "display": "前面1.46インチ、背面2.5インチ",
+        "stabilization": "RockSteady 3.0／3.0+／HorizonBalancing／HorizonSteady",
+        "wireless": "Wi-Fi 6、BLE 5.1",
+        "temperature": "-20〜45℃"
+      },
+      "officialStorePriceJpy": 61270,
+      "officialStoreUrl": "https://store.dji.com/jp/product/osmo-action-6",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FM3X3DW5",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "DJIの楽天市場店（dji-shop）の出品ページはコンボ別のバリエーションをまとめた構成で、スタンダードコンボの商品詳細ページを確定できなかった（not-recorded）。"
+    },
+    "right": {
+      "name": "GoPro HERO13 Black",
+      "model": "CHDHX-131-FW",
+      "officialUrl": "https://gopro.com/ja/jp/shop/cameras/buy/hero13black/CHDHX-131-master.html",
+      "officialImageUrl": "https://static.gopro.com/assets/blta2b8522e5372af40/bltedeb8f2c46ee5dd8/66ac8ab02b7be548aba7925f/01-pdp-h13-gallery-768-375.png",
+      "imageEvidence": "GoPro日本の商品ページのギャラリー画像（1000x1000 PNG、HTTP 200、2026-10-07取得）。透過背景を白に合成し、被写体を切り出して800x800に整え、public/products/gopro-hero13-black-2026.jpg と src/assets/products に保存。 既存の src/assets/products/gopro-hero13-black.jpg（旧記事用）は変更せず、別名で保存。",
+      "officialSpecs": {
+        "sensor": "1/1.9インチCMOS 27.6MP",
+        "aperture": "F2.5",
+        "video": "5.3K(16:9) 60fps、4K 120fps、2.7K 240fps",
+        "waterproof": "10m",
+        "storage": "内蔵なし（A2 V30以上のmicroSD）",
+        "battery": "取り外し可能な1900mAh Enduro",
+        "size": "71.8x50.8x33.6mm",
+        "weight": "159g（バッテリー込み）／125g（バッテリーなし）",
+        "display": "前面1.4インチ、背面2.27インチタッチ",
+        "stabilization": "HyperSmooth 6.0",
+        "wireless": "Wi-Fi 6、BLE 5.3",
+        "temperature": "-10〜40℃",
+        "extras": "HBシリーズレンズ対応、GPS"
+      },
+      "officialStorePriceJpy": 68800,
+      "officialStoreUrl": "https://gopro.com/ja/jp/shop/cameras/buy/hero13black/CHDHX-131-master.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DRCQTXFF",
+      "rakutenProductPage": "https://item.rakuten.co.jp/biccamera/4595319442147/",
+      "rakutenListingEvidence": "楽天ビック（biccamera）の商品ページのタイトル「GoPro｜ゴープロ アクションカメラ HERO13 Black CHDHX-131-FW」を確認（2026-10-07）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "DJIストア（store.dji.com/jp）のOsmo Action 6スタンダードコンボは61,270円、GoPro日本公式ストアのHERO13 Blackは68,800円（予備バッテリー同梱）。いずれも税込表示（2026-10-07確認）。同梱品が異なる。",
+    "keyDifferences": [
+      "センサーはOsmo Action 6が1/1.1インチ、HERO13 Blackが1/1.9インチ",
+      "Osmo Action 6は可変絞り（f/2.0〜f/4.0）と8K動画",
+      "防水は20mと10m",
+      "内蔵ストレージはOsmo Action 6のみ（50GB使用可）",
+      "HERO13 Blackは取り外し可能バッテリー、GPS、HBシリーズレンズ対応",
+      "公式ストア価格は61,270円と68,800円（同梱品が異なる）"
+    ],
+    "commonSpecs": [
+      "4K 120fps",
+      "Wi-Fi 6",
+      "タッチ画面",
+      "手ぶれ補正（RockSteady／HyperSmooth）"
+    ],
+    "caveat": "バッテリー持続時間とサイズ・質量は測定条件が異なるため優劣を判断していない。Amazonの表示価格は記事に載せていない（GoPro側は公式価格と大きく異なる表示だった）。AmazonのGoPro出品の出荷元・販売元は確認していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0FM3X3DW5",
+    "right": "https://www.amazon.co.jp/dp/B0DRCQTXFF",
+    "leftAsin": "B0FM3X3DW5",
+    "rightAsin": "B0DRCQTXFF",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-07"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「DJI Osmo Action 6 スタンダードコンボ 日常使いに最適な8Kアクションカメラ」とASIN B0FM3X3DW5を確認。出荷元・販売元はAmazon.co.jp（2026-10-07）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-07）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FM3X3DW5?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、DJI Osmo Action 6 スタンダードコンボ 日常使いに最適な8Kアクションカメラの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-07）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「GoPro HERO13 Black アクションカメラ（型番CHDHX-131-FW）」とASIN B0DRCQTXFFを確認。出荷元・販売元は確認していない（2026-10-07）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-07）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DRCQTXFF?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、GoPro HERO13 Black アクションカメラ（型番CHDHX-131-FW）の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-07）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "verified"
+    },
+    "left": null,
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4595319442147%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "rightProductPage": "https://item.rakuten.co.jp/biccamera/4595319442147/",
+    "rightProductVerified": true,
+    "generation": "2026-10-07に楽天アフィリエイト公式画面（affiliate.rakuten.co.jp）へログインした状態で、商品詳細URLを入力して生成。リンクタイプは「リンクのみ」。ソース欄のURLをそのまま使用（改変なし）。HTTP GET最終遷移先が楽天ビックの商品ページ（HTTP 200）であることを確認。",
+    "browserEvidence": {
+      "observedAtJst": "2026-10-07",
+      "ui": "楽天アフィリエイトにログインした画面の「URLを入力してリンクを作成」から商品ページごとに作成。",
+      "bySide": {
+        "right": {
+          "inputUrl": "https://item.rakuten.co.jp/biccamera/4595319442147/",
+          "productTitle": "GoPro｜ゴープロ アクションカメラ HERO13 Black CHDHX-131-FW [4K対応 /防水]",
+          "shopName": "楽天ビック",
+          "productMatch": "楽天ビックの商品ページのタイトルで型番CHDHX-131-FWを確認し、アフィリエイト画面のプレビューURLが同一商品ページであることを確認。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://biccamera.rakuten.co.jp/item/4595319442147/",
+          "finalHttpStatus": 200
+        }
+      }
+    }
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "Osmo Action 6の楽天商品詳細ページ（スタンダードコンボ）は確定していない。",
+    "AmazonのGoPro出品の出荷元・販売元と、Amazon・楽天の価格は記事に載せていない。",
+    "DJIとGoProの同梱品の差（予備バッテリーなど）は公式ストアの表示の範囲でのみ確認した。",
+    "価格・在庫・同梱品は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様・価格・画像、Amazonの商品一致・対象表示・遷移先、GoProの楽天（楽天ビック）の商品一致と生成URLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
