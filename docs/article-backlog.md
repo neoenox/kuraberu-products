@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（72本）
+## 現在の公開済み（73本）
 
 2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている（`nintendo-switch-2-vs-switch-oled`は同日のデプロイ後に実測して追加）。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
 
@@ -54,6 +54,7 @@
 | `sony-zv-1-ii-vs-zv-1f`                              | 公開済み                     |
 | `sony-zv-e10m2-vs-nikon-z30`                         | 公開済み                     |
 | `switchbot-hub3-vs-hub2`                             | 公開済み                     |
+| `amazon-fire-tv-stick-4k-max-vs-4k-select`           | 公開済み                     |
 | `t-fal-ko5901jp-vs-zoujirushi-ck-pa08`               | 公開済み                     |
 | `tanita-bc-772-vs-omron-hbf-702t`                    | 公開済み                     |
 | `tefal-cy8768jp-vs-panasonic-sr-mp300`               | 公開済み                     |
@@ -214,13 +215,6 @@
 - 想定比較軸: 解錠スピード、静音モード、バッテリー（充電式か電池式か）、本体デザイン、対応するカギの形状、公式価格
 - 確認すること: SwitchBot公式の両商品ページ（`switchbot-lock-ultra`、`switchbot-lock-pro`）、型番、現行販売状況、単体かセット品かの商品一致、Amazon・楽天の商品一致
 - 注意: 顔認証・指紋認証セットなど構成違いが多いため、比較は本体単体に絞る。
-
-### Fire TV Stick 4K Max vs 4K Select
-
-- 選定理由: ストリーミング端末が未着手で、公開中のKindle記事のAmazonデバイス読者と重なる。Amazon自社商品のため購入導線を確認しやすい。
-- 状態: 候補（公式情報は未確認。世代・日本での発売状況は記事化前にAmazonの日本向けページで再確認する）
-- 想定比較軸: 無線規格、ストレージとメモリ、音声フォーマット（Dolby Atmos）、リモコン、公式価格
-- 確認すること: Amazon.co.jpの両商品ページ、日本向けの現行ラインナップ、型番・世代、既存のAmazonデバイス記事との重複
 
 ### DJI Mini 5 Pro vs Mini 4 Pro
 
