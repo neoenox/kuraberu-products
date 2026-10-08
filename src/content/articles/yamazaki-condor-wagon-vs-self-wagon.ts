@@ -19,11 +19,18 @@ export const yamazakiCondorWagonArticle = defineArticleMetadata({
   summary:
     "コンドル サイドメッシュワゴンIIとセルフワゴンIIを、山崎産業公式の仕様と確認状況に分けて比較します。",
   publishedAt: "2026-08-14",
-  modifiedAt: "2026-08-14",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-08-14",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-condor-fu943-000x-mb.jpg",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページでFU943-000X-MB・FU944-000X-MB（ブラック）の一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-14",
       summary:

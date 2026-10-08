@@ -17,11 +17,18 @@ export const yamazakiTowerDeskPanelArticle = defineArticleMetadata({
   summary:
     "デスク横トレー付きスチールパネルとマグネットペンスタンドを、公式情報・確認状況・型番検索に分けて比較します。",
   publishedAt: "2026-08-13",
-  modifiedAt: "2026-08-14",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-08-13",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-tower-desk-panel.jpg",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページで10066・10096（ホワイト）の一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-14",
       summary:

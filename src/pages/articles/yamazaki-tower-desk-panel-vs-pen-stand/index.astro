@@ -44,9 +44,11 @@ const keyDiffRows: KeyDiffRow[] = [
 ---
 
 <ArticleComparisonPage
+  showAmazon={true}
+  showNextStepPurchaseCtas={false}
   articleMetadata={articleMetadata}
-  left={{brand: panel.brand, line: panel.line, tagline: 'デスク横の面を使ってまとめるなら', image: panel.image, imageAlt: panel.imageAlt, officialHref: panelOfficial, guidePoints: [panel.audience], purchaseHref: articlePurchaseLinks['yamazaki-tower-desk-panel-vs-pen-stand:left'].purchaseUrl, productId: 'yamazaki-tower-desk-panel'}}
-  right={{brand: penStand.brand, line: penStand.line, tagline: 'ペンを立てて省スペースに置くなら', image: penStand.image, imageAlt: penStand.imageAlt, officialHref: penStandOfficial, guidePoints: [penStand.audience], purchaseHref: articlePurchaseLinks['yamazaki-tower-desk-panel-vs-pen-stand:right'].purchaseUrl, productId: 'yamazaki-tower-magnetic-pen-stand'}}
+  left={{brand: panel.brand, line: panel.line, tagline: 'デスク横の面を使ってまとめるなら', image: panel.image, imageAlt: panel.imageAlt, officialHref: panelOfficial, guidePoints: [panel.audience], purchaseHref: articlePurchaseLinks['yamazaki-tower-desk-panel-vs-pen-stand:left'].purchaseUrl, amazonHref: 'https://www.amazon.co.jp/dp/B0FBFTDD13', productId: 'yamazaki-tower-desk-panel'}}
+  right={{brand: penStand.brand, line: penStand.line, tagline: 'ペンを立てて省スペースに置くなら', image: penStand.image, imageAlt: penStand.imageAlt, officialHref: penStandOfficial, guidePoints: [penStand.audience], purchaseHref: articlePurchaseLinks['yamazaki-tower-desk-panel-vs-pen-stand:right'].purchaseUrl, amazonHref: 'https://www.amazon.co.jp/dp/B0FBFV28P9', productId: 'yamazaki-tower-magnetic-pen-stand'}}
   keyDiffRows={keyDiffRows}
   lead={"山崎実業 towerのデスク横トレー付きスチールパネルとマグネットペンスタンドを、買って使えるかに直結する設置条件・用途・組み合わせ方を中心に比較します。重量や耐荷重などの数値は詳細仕様にまとめます。"}
   officialDescription={"上の比較は、山崎実業公式の商品ページ（240034・240051）で2026年8月13日に確認した内容です。カラー別品番、仕様、設置条件は購入前に公式ページで再確認してください。"}

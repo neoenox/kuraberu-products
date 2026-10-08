@@ -15,16 +15,22 @@ export const yamazakiLaundryWireBasketArticle = defineArticleMetadata({
   summary:
     "ランドリーワイヤーバスケット タワー スリム MとLを、山崎実業公式の商品ページで確認できるサイズ・重量・容量・耐荷重に分けて比較します。",
   publishedAt: "2026-08-25",
-  modifiedAt: "2026-09-09",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-09-09",
-  purchaseLinksCheckedAt: "2026-08-25",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-laundry-wire-basket-m.jpg",
   aboutProductNames: [
     "山崎実業 ランドリーワイヤーバスケット タワー スリム M（240001）",
     "山崎実業 ランドリーワイヤーバスケット タワー スリム L（240002）",
   ],
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページでスリム M 10001・L 10003（ホワイト）の一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-25",
       summary:

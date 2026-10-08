@@ -15,12 +15,18 @@ export const yamazakiDustWagonArticle = defineArticleMetadata({
   summary:
     "山崎実業の45L分別ダストワゴン2分別・3分別を、公式の仕様と確認状況に分けて比較します。",
   publishedAt: "2026-08-15",
-  modifiedAt: "2026-08-15",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-08-15",
-  purchaseLinksCheckedAt: "2026-08-15",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-dust-wagon-45l-2division.jpg",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページで45L 2分別1820・3分別1822（ホワイト）の一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-15",
       summary: "初回公開。山崎実業公式の商品ページと楽天公式生成リンクを確認。",
