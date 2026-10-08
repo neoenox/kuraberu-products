@@ -8,13 +8,13 @@
  *   タップしやすい大きさを保つこと。
  *
  * Test targets:
- * - /articles/thermos-kfm-020-vs-kfi-020/ (purchaseLinkStatus: unverified)
+ * - /articles/zojirushi-eq-aa22-vs-eq-sa22/ (purchaseLinkStatus: unverified)
  * - /articles/pampers-newborn/ (purchaseLinkStatus: verified)
  */
 
 import { test, expect } from "@playwright/test";
 
-const UNVERIFIED_PATH = "/articles/thermos-kfm-020-vs-kfi-020/";
+const UNVERIFIED_PATH = "/articles/zojirushi-eq-aa22-vs-eq-sa22/";
 const VERIFIED_PATH = "/articles/pampers-newborn/";
 const NOTICE_TEXT = "販売先を確認中です";
 

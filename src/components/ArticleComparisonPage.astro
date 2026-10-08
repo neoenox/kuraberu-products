@@ -429,10 +429,10 @@ const specRows = (specRowsProp ?? keyDiffRows.map((r) => ({ label: r.label, left
     <h2>購入時の注意</h2>
     <p>{purchaseWarning}</p>
     <div class="purchase-cards">
-      {(left.purchaseHref || right.purchaseHref) ? (
+      {(left.purchaseHref || right.purchaseHref || left.amazonHref || right.amazonHref) ? (
         <>
-          <PurchaseCard name={leftPurchaseName} audience={leftPurchaseAudience} href={left.purchaseHref} amazonHref={left.amazonHref} imagePath={left.image} placement="article-end" note="価格・在庫は販売先でご確認ください。" purchaseLinkStatus={articleMetadata.purchaseLinkStatus} showAmazon={props.showAmazon} />
-          <PurchaseCard name={rightPurchaseName} audience={rightPurchaseAudience} href={right.purchaseHref} amazonHref={right.amazonHref} imagePath={right.image} placement="article-end" note="価格・在庫は販売先でご確認ください。" purchaseLinkStatus={articleMetadata.purchaseLinkStatus} showAmazon={props.showAmazon} />
+          <PurchaseCard name={leftPurchaseName} audience={leftPurchaseAudience} href={left.purchaseHref} amazonHref={left.amazonHref} imagePath={left.image} placement="article-end" note="価格・在庫は販売先でご確認ください。" purchaseLinkStatus={articleMetadata.purchaseLinkStatus} rakutenLinkStatus={articleMetadata.rakutenLinkStatus ?? articleMetadata.purchaseLinkStatus} amazonLinkStatus={articleMetadata.amazonLinkStatus ?? articleMetadata.purchaseLinkStatus} showAmazon={props.showAmazon} />
+          <PurchaseCard name={rightPurchaseName} audience={rightPurchaseAudience} href={right.purchaseHref} amazonHref={right.amazonHref} imagePath={right.image} placement="article-end" note="価格・在庫は販売先でご確認ください。" purchaseLinkStatus={articleMetadata.purchaseLinkStatus} rakutenLinkStatus={articleMetadata.rakutenLinkStatus ?? articleMetadata.purchaseLinkStatus} amazonLinkStatus={articleMetadata.amazonLinkStatus ?? articleMetadata.purchaseLinkStatus} showAmazon={props.showAmazon} />
         </>
       ) : null}
     </div>
