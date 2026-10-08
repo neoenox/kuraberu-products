@@ -56,8 +56,10 @@ describe.skipIf(!existsSync("dist"))(
       expect(html.indexOf('id="decision-guide"')).toBeLessThan(
         html.indexOf('id="key-differences"'),
       );
+      // 購入リンクは記事末尾の「購入先」1か所だけ（結論直後の next-step 欄は出さない）。
+      expect(html).not.toContain('id="next-step"');
       expect(html.indexOf('id="key-differences"')).toBeLessThan(
-        html.indexOf('id="next-step"'),
+        html.indexOf('id="purchase"'),
       );
     });
     it("provides three real exploration links and preserves old category pages", () => {
