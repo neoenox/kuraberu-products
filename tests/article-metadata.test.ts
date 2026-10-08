@@ -150,6 +150,7 @@ describe("article metadata", () => {
       "dji-osmo-action-6-vs-gopro-hero13-black",
       "amazon-fire-tv-stick-4k-max-vs-4k-select",
       "amazon-echo-show-8-vs-echo-show-5",
+      "philips-sonicare-7100-hx7420-vs-6500-hx7410",
       "nintendo-switch-2-vs-switch-oled",
       "kobo-clara-colour-vs-libra-colour",
       "instax-mini-13-vs-mini-41",
