@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（75本）
+## 現在の公開済み（76本）
 
 2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている（`nintendo-switch-2-vs-switch-oled`は同日のデプロイ後に実測して追加）。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
 
@@ -56,6 +56,7 @@
 | `switchbot-hub3-vs-hub2`                             | 公開済み                     |
 | `amazon-fire-tv-stick-4k-max-vs-4k-select`           | 公開済み                     |
 | `amazon-echo-show-8-vs-echo-show-5`                  | 公開済み                     |
+| `amazon-echo-dot-max-vs-echo-dot-5th`                | 公開済み                     |
 | `philips-sonicare-7100-hx7420-vs-6500-hx7410`        | 公開済み                     |
 | `t-fal-ko5901jp-vs-zoujirushi-ck-pa08`               | 公開済み                     |
 | `tanita-bc-772-vs-omron-hbf-702t`                    | 公開済み                     |
@@ -214,13 +215,6 @@
 
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
-
-### Amazon Echo Dot Max（2025年発売） vs Echo Dot（第5世代）
-
-- 選定理由: 公開中のスマートホーム記事はSwitchBot ハブ記事とEcho Show記事のみで、小型のEchoスピーカーが未着手。旧形式のEcho Dot記事（`amazon-echo-dot-5th-vs-google-nest-mini-2nd`）は本番で非公開。
-- 状態: 候補（公式情報は未確認。2026-10-08にAmazon.co.jpの検索で、両商品が現行品として並んでいることを確認）
-- 想定比較軸: サウンド、スマートホームハブ内蔵の有無、センサー、サイズ、価格
-- 確認すること: Amazon.co.jpの両商品ページ（ASIN・出荷元）、仕様の比較表、色違いの扱い、既存のEcho Show記事との重複
 
 ### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
 

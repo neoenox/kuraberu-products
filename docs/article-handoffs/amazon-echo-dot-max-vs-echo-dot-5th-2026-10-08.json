@@ -1,0 +1,160 @@
+{
+  "id": "amazon-echo-dot-max-vs-echo-dot-5th-2026-10-08",
+  "articleId": "amazon-echo-dot-max-vs-echo-dot-5th",
+  "source": "Fresh product selection and research by Claude Code against Amazon.co.jp product detail pages (Amazon is the manufacturer and seller of Echo devices; Amazon Associates toolbar and link builder observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-08",
+  "articleReady": true,
+  "category": "スマートホーム",
+  "selection": {
+    "reason": "Echo Dot Max（2025年発売）とEcho Dot（第5世代）は、スピーカー構成・スマートホームハブ内蔵・Wi-Fi・センサー・サイズ・価格が異なり、購入時の迷いが明確。バックログの次の候補の1番。公開中のスマートホーム記事はSwitchBot ハブ記事とEcho Show記事のみで、画面のないEchoスピーカーは未着手。",
+    "duplicateCheck": "src/pages/articles と src/content/articles（commercial と旧形式）にEcho Dot Max の記事なし（2026-10-08確認）。旧形式のEcho Dot記事（amazon-echo-dot-5th-vs-google-nest-mini-2nd）は本番で非公開で、比較相手が異なる。Echo Show 8 vs 5 記事は画面付きで対象商品が異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "Amazon Echo Dot Max（2025年発売）",
+      "model": "Echo Dot Max 2025年発売（グラファイト）",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71ozCbsdgZL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの2枚目の商品画像（本体のみ、白背景、877x874、HTTP 200、2026-10-08取得）。1枚目は文字入りのイメージ画像のため不採用。800x800の白背景正方形に整えて public/products/amazon-echo-dot-max-2025.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "speaker": "0.8インチツイーター x1、2.5インチウーファー x1、ロスレスHD、ルームアダプション技術",
+        "hub": "Zigbee、Matter、Threadボーダールーター",
+        "wifi": "1x1 Wi-Fi 6E、BT5.3/Bluetooth Low Energy",
+        "processor": "AZ3 with AI Accelerator",
+        "sensors": "室内温度センサー、環境光センサー、在室検知、加速度センサー(タップジェスチャー)",
+        "size": "109x109x99mm",
+        "weight": "505.3g",
+        "included": "本体、電源アダプター(22W)、クイックスタートガイド",
+        "release": "2025年",
+        "colors": "グラファイト、グレーシャーホワイト、アメジスト（色ごとに別ASIN。記事はグラファイト B0DKLWZY2Z）"
+      },
+      "officialStorePriceJpy": 21480,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Echo DotはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Amazon Echo Dot（第5世代）",
+      "model": "Echo Dot 第5世代（チャコール）",
+      "officialUrl": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/710GmYYsbTL._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの2枚目の商品画像（本体のみ、白背景、812x799、HTTP 200、2026-10-08取得）。1枚目は文字入りのイメージ画像のため不採用。800x800の白背景正方形に整えて public/products/amazon-echo-dot-5th-gen.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "speaker": "44mm (1.73インチ) 前面放射型スピーカー、ロスレスHD音源対応",
+        "smartHome": "wifi、Bluetooth Low Energy Mesh、Matter",
+        "wifi": "デュアルバンド 802.11a/b/g/n/ac (2.4/5GHz)",
+        "sensors": "温度センサー、モーション検知（商品説明）、タップ操作",
+        "size": "100x100x89mm",
+        "weight": "304g",
+        "included": "本体、電源アダプタ(15W)、クイックスタートガイド",
+        "release": "2023年",
+        "colors": "チャコール、グレーシャーホワイト、ディープシーブルー（記事はチャコール B09B8SZLLG）"
+      },
+      "officialStorePriceJpy": 13980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Echo DotはAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Amazon.co.jpの商品ページの価格表示とEchoシリーズの比較表（Echo Dot Max 21,480円、Echo Dot 第5世代 13,980円、いずれも税込、2026-10-08確認）。商品ページにはプライム感謝祭先行セール（10/13から、Echo Dot Max 8,980円、Echo Dot 4,480円）の告知があるが、記事の価格は確認日の通常表示。",
+    "keyDifferences": [
+      "スピーカーは2基（ツイーター＋ウーファー）と1基（1.73インチ）",
+      "スマートホームハブ内蔵（Zigbee、Matter、Thread）はEcho Dot Maxのみ",
+      "Wi-FiはWi-Fi 6Eとデュアルバンド11ac",
+      "センサーはEcho Dot Maxが環境光センサーと加速度センサーも記載",
+      "本体は109x109x99mm・505.3gと100x100x89mm・304g",
+      "価格は21,480円と13,980円"
+    ],
+    "commonSpecs": [
+      "Alexa搭載",
+      "画面なし（比較表の音声・ビデオ通話は音声のみ）",
+      "マイク オン/オフボタン",
+      "ロスレスHD対応",
+      "eeroビルトイン"
+    ],
+    "caveat": "Echo Dot（第5世代）のプロセッサーは商品ページに記載がなく比較していない。比較表にはEcho Studio・Echo Spotも載っているが比較に含めていない。レビュー欄の購入者コメントやAI要約は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+    "right": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+    "leftAsin": "B0DKLWZY2Z",
+    "rightAsin": "B09B8SZLLG",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-08"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Echo Dot Max (エコードットマックス)(2025年発売) - Alexaスピーカー、部屋中に広がるサウンド、スマートホームハブ内蔵、グラファイト」とASIN B0DKLWZY2Zを確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Echoデバイス』と販売手数料率4.50%を表示。リンク生成ダイアログの『対象外』メッセージは非表示（display:none）のまま（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "アソシエイト・ツールバーのリンク生成ダイアログで完全なリンク（linkCode=ll2、linkId付き、https://www.amazon.co.jp/dp/B0DKLWZY2Z?th=1&...）の生成とクリップボードへのコピーを確認。記事のリンクはビルド時にストアIDを付与した https://www.amazon.co.jp/dp/B0DKLWZY2Z?tag=<store-id> の形式（2026-10-08）。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグ付きURLをログイン済みChromeで開き、最終URLにtagが残り（th=1が付与）、Amazon Echo Dot Max (エコードットマックス)(2025年発売) - Alexaスピーカー、部屋中に広がるサウンド、スマートホームハブ内蔵、グラファイトの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示。表示価格21,480円（2026-10-08）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon Echo Dot (エコードット) 第5世代 - Alexa、センサー搭載、鮮やかなサウンド｜チャコール」とASIN B09B8SZLLGを確認。出荷元・販売元はAmazon.co.jp（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Echoデバイス』と販売手数料率4.50%を表示。リンク生成ダイアログの『対象外』メッセージは非表示（display:none）のまま（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "アソシエイト・ツールバーのリンク生成ダイアログで完全なリンク（linkCode=ll2、linkId付き、https://www.amazon.co.jp/dp/B09B8SZLLG?th=1&...）の生成とクリップボードへのコピーを確認。記事のリンクはビルド時にストアIDを付与した https://www.amazon.co.jp/dp/B09B8SZLLG?tag=<store-id> の形式（2026-10-08）。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "タグ付きURLをログイン済みChromeで開き、最終URLにtagが残り（th=1が付与）、Amazon Echo Dot (エコードット) 第5世代 - Alexa、センサー搭載、鮮やかなサウンド｜チャコールの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示。表示価格13,980円（2026-10-08）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。Amazon自社商品のため楽天は確認していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Echo Dot（第5世代）のプロセッサーはAmazonのページで確認できていない。",
+    "色違い（グレーシャーホワイト、アメジスト、ディープシーブルー）は別ASINで、記事はグラファイトとチャコールにリンク。",
+    "価格・在庫・セールは購入時点で変動する（10/13からプライム感謝祭の先行セール告知あり）。"
+  ],
+  "publicationDecision": "Amazonの商品一致・仕様・価格・対象表示・リンク生成・タグ付きURLの遷移先は確認済み。ユーザーの指示（おまかせ）によりPR作成・マージ・本番反映まで進める。"
+}
