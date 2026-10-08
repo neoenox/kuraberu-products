@@ -36,6 +36,10 @@ export const ARTICLE_LAYOUT = {
   // next-step: 結論直後の「次にすること」1ブロック（NextStepBlock.astro）の購入ボタン。
   // 比較記事のみ（comparisonOnly: true）で、商品ガイド（productCount=1）には出さない。
   // 購入カード本体（末尾の詳細カード）とは別のコンパクトなボタン。
+  // 現行テンプレート（目次付きの CommercialArticlePage）は購入先を記事末尾の
+  // 「購入先」1か所にまとめるため、next-step ブロックを出さない
+  // （data-next-step-purchase="disabled" でゲートの期待枚数から除外される）。
+  // next-step は過去記事のテンプレートだけが使う。
   // （2026-08-18: v2 の途中 CTA = after-decision は、宣言する記事がゼロのまま経路ごと削除）
   ctaSets: [
     { placement: "article-end", cardsPerProduct: 1 },
