@@ -17,6 +17,11 @@ export interface ComparisonSide {
   guidePoints: readonly string[];
   /** クリック計測用の商品ID（任意） */
   productId?: string;
+  /**
+   * 確認済みのAmazon商品詳細URL（https://www.amazon.co.jp/dp/<ASIN>）。
+   * タグはビルド時に付与するため、ソースにはタグなしで書く。
+   */
+  amazonHref?: `https://www.amazon.co.jp/dp/${string}`;
 }
 
 /** 比較行（ verifiedRows / keyDiffRows 共通） */

@@ -14,12 +14,18 @@ export const yamazakiFreeBroomArticle = defineArticleMetadata({
   uses: ["床を掃く", "清掃用品を比較する"],
   summary: "JS自由箒32と45を、山崎産業公式の仕様と確認状況に分けて比較します。",
   publishedAt: "2026-08-16",
-  modifiedAt: "2026-08-16",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-08-16",
-  purchaseLinksCheckedAt: "2026-08-16",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-free-broom-32.jpg",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページ（販売・発送Amazon.co.jp）で型番BR952-032J-MB・BR952-045J-MBの一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-16",
       summary: "初回公開。山崎産業公式の商品ページと楽天公式生成リンクを確認。",
@@ -32,6 +38,7 @@ export const yamazakiFreeBroomArticle = defineArticleMetadata({
     image: "/products/yamazaki-free-broom-32.jpg",
     imageAlt: "山崎産業 JS自由箒32 BR952-032J-MB",
     officialHref: "https://product.yamazaki-sangyo.co.jp/product/209613",
+    amazonHref: "https://www.amazon.co.jp/dp/B0F36PDCWZ",
     guidePoints: [
       "狭い場所や持ち運びやすさを優先して、幅330mmのほうきを選びたい人向け",
     ],
@@ -43,6 +50,7 @@ export const yamazakiFreeBroomArticle = defineArticleMetadata({
     image: "/products/yamazaki-free-broom-45.jpg",
     imageAlt: "山崎産業 JS自由箒45 BR952-045J-MB",
     officialHref: "https://product.yamazaki-sangyo.co.jp/product/209620",
+    amazonHref: "https://www.amazon.co.jp/dp/B0F36S961G",
     guidePoints: ["一度に広い範囲を掃きたい人向け"],
   },
   keyDiffRows: [
@@ -110,9 +118,9 @@ export const yamazakiFreeBroomArticle = defineArticleMetadata({
         "公式ページの材質表記は、どちらもハンドルがアルミパイプ、甲がPP、毛がPP・再生PET・馬毛・除電材です。",
     },
     {
-      question: "楽天市場の価格は掲載していますか？",
+      question: "価格は掲載していますか？",
       answer:
-        "価格・在庫・送料・ポイントは販売先で変わるため、楽天市場の型番検索ページで購入時点の表示を確認してください。",
+        "価格・在庫・送料・ポイントは販売先で変わるため、記事末尾の購入先から、購入時点の販売ページの表示を確認してください。",
     },
   ],
 });
