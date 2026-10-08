@@ -16,12 +16,17 @@ export const tefalGarmentSteamerArticle = defineArticleMetadata({
   summary:
     "DV4030J0とDV8070J0を、ティファール公式の商品ページで確認できるスチーム量・立ち上がり・連続運転・かけ面に分けて比較します。",
   publishedAt: "2026-08-13",
-  modifiedAt: "2026-08-14",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-08-13",
-  purchaseLinksCheckedAt: "2026-08-13",
-  purchaseLinkStatus: "unverified",
+  purchaseLinksCheckedAt: "2026-10-08",
+  purchaseLinkStatus: "verified",
   imagePath: "/products/tefal-dv4030j0.jpg",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "楽天市場の商品ページでDV4030J0（くらし屋）・DV8070J0（デンキチWeb楽天市場店）の型番一致を確認し、楽天公式アフィリエイトUIで生成したリンクを追加。",
+    },
     {
       date: "2026-08-14",
       summary:

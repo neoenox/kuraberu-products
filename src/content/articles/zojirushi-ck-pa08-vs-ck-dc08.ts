@@ -15,12 +15,17 @@ export const zojirushiElectricKettleArticle = defineArticleMetadata({
   summary:
     "CK-PA08とCK-DC08を、象印公式の商品ページで確認できる仕様・安全設計・手入れ方法に分けて比較します。",
   publishedAt: "2026-08-13",
-  modifiedAt: "2026-09-09",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-09-09",
-  purchaseLinksCheckedAt: "2026-08-13",
-  purchaseLinkStatus: "unverified",
+  purchaseLinksCheckedAt: "2026-10-08",
+  purchaseLinkStatus: "verified",
   imagePath: "/products/zojirushi-ck-pa08.webp",
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "楽天市場の商品ページでCK-PA08（Sommelier）・CK-DC08（ケーズデンキ楽天市場店）の型番一致を確認し、楽天公式アフィリエイトUIで生成したリンクを追加。",
+    },
     {
       date: "2026-09-09",
       summary:
