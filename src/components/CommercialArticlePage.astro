@@ -224,6 +224,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
       </nav>
     )}
     {!hasHeroSources && <TrustLine checkedAt={article.productInfoCheckedAt} />}
+    {/* 購入先は目次の「購入先」（記事末尾の PurchaseCard）1か所にまとめ、結論直後に同じ購入リンクを重ねない（showNextStepBlock=false）。 */}
     {hasHeroSources ? (
       <ArticleComparisonV2
         left={{ brand: leftHero.brand, line: leftHero.line, tagline: seed.leftPoint, image: images.left ?? '', imageAlt: seed.leftProduct, officialHref: leftOfficialHref, guidePoints: [seed.leftPoint], purchaseHref: leftProductHref, amazonHref: seed.leftAmazonUrl, amazonStatus: (seed.leftAmazonLinkStatus ?? seed.amazonLinkStatus ?? article.amazonLinkStatus) as any }}
@@ -231,6 +232,7 @@ const hasSourceLinks = seed.sourceLinks && seed.sourceLinks.length > 0;
         rows={heroRows}
         checkedAt={seed.productInfoCheckedAt}
         purchaseLinkStatus={article.purchaseLinkStatus}
+        showNextStepBlock={false}
       />
     ) : <h2 id="key-differences">違いを確認する</h2>}
     {!hasHeroSources && (
