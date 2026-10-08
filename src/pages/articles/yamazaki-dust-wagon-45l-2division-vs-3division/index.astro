@@ -34,9 +34,11 @@ const keyDiffRows: KeyDiffRow[] = [
 ---
 
 <ArticleComparisonPage
+  showAmazon={true}
+  showNextStepPurchaseCtas={false}
   articleMetadata={articleMetadata}
-  left={{brand: '山崎実業', line: '45L 2分別', tagline: '設置幅を抑えるなら', image: twoDivisionImage, imageAlt: '山崎実業 蓋付き目隠し分別ダストワゴン 45L 2分別', officialHref: twoDivisionOfficial, guidePoints: [twoDivisionAudience], purchaseHref: articlePurchaseLinks['yamazaki-dust-wagon-45l-2division-vs-3division:left'].purchaseUrl}}
-  right={{brand: '山崎実業', line: '45L 3分別', tagline: '分別数を優先するなら', image: threeDivisionImage, imageAlt: '山崎実業 蓋付き目隠し分別ダストワゴン 45L 3分別', officialHref: threeDivisionOfficial, guidePoints: [threeDivisionAudience], purchaseHref: articlePurchaseLinks['yamazaki-dust-wagon-45l-2division-vs-3division:right'].purchaseUrl}}
+  left={{brand: '山崎実業', line: '45L 2分別', tagline: '設置幅を抑えるなら', image: twoDivisionImage, imageAlt: '山崎実業 蓋付き目隠し分別ダストワゴン 45L 2分別', officialHref: twoDivisionOfficial, guidePoints: [twoDivisionAudience], purchaseHref: articlePurchaseLinks['yamazaki-dust-wagon-45l-2division-vs-3division:left'].purchaseUrl, amazonHref: 'https://www.amazon.co.jp/dp/B0D4DKQ5R9'}}
+  right={{brand: '山崎実業', line: '45L 3分別', tagline: '分別数を優先するなら', image: threeDivisionImage, imageAlt: '山崎実業 蓋付き目隠し分別ダストワゴン 45L 3分別', officialHref: threeDivisionOfficial, guidePoints: [threeDivisionAudience], purchaseHref: articlePurchaseLinks['yamazaki-dust-wagon-45l-2division-vs-3division:right'].purchaseUrl, amazonHref: 'https://www.amazon.co.jp/dp/B0D4DSYC73'}}
   keyDiffRows={keyDiffRows}
   lead={"山崎実業の蓋付き目隠し分別ダストワゴン45Lを、2分別と3分別で比較します。メーカー公式ページで確認できる分別数・設置幅・重量・耐荷重をもとに、置き場所と分別数のどちらを優先するか整理します。"}
   summaryParagraph={"2分別は3分別より幅と重量を抑えやすく、3分別は同じ45L対応でも分別数を増やせます。ごみ箱を置く場所の幅と、必要な分別数を先に確認してください。"}

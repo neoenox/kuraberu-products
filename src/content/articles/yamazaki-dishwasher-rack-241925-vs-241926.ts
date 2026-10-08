@@ -22,16 +22,22 @@ export const yamazakiDishwasherRackArticle = defineArticleMetadata({
   summary:
     "食洗機ラック タワー ロータイプとハイタイプを、山崎実業公式の商品ページで確認できるサイズ・重量・耐荷重・設置条件に分けて比較します。",
   publishedAt: "2026-08-25",
-  modifiedAt: "2026-09-09",
+  modifiedAt: "2026-10-08",
   productInfoCheckedAt: "2026-09-09",
-  purchaseLinksCheckedAt: "2026-08-25",
+  purchaseLinksCheckedAt: "2026-10-08",
   purchaseLinkStatus: "unverified",
+  amazonLinkStatus: "verified",
   imagePath: "/products/yamazaki-dishwasher-rack-low.jpg",
   aboutProductNames: [
     "山崎実業 食洗機ラック タワー ロータイプ（241925）",
     "山崎実業 食洗機ラック タワー ハイタイプ（241926）",
   ],
   changeLog: [
+    {
+      date: "2026-10-08",
+      summary:
+        "Amazon.co.jpの商品ページでロータイプ5303・ハイタイプ5305（ホワイト）の一致を確認し、Amazonの購入リンクを追加。",
+    },
     {
       date: "2026-08-25",
       summary:
