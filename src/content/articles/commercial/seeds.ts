@@ -78,6 +78,7 @@ import { djiOsmoAction6VsGoproHero13BlackSeed } from "./dji-osmo-action-6-vs-gop
 import { nintendoSwitch2VsSwitchOledSeed } from "./nintendo-switch-2-vs-switch-oled";
 import { amazonFireTvStick4kMaxVs4kSelectSeed } from "./amazon-fire-tv-stick-4k-max-vs-4k-select";
 import { amazonEchoShow8VsEchoShow5Seed } from "./amazon-echo-show-8-vs-echo-show-5";
+import { amazonEchoDotMaxVsEchoDot5thSeed } from "./amazon-echo-dot-max-vs-echo-dot-5th";
 import { philipsSonicare7100Hx7420Vs6500Hx7410Seed } from "./philips-sonicare-7100-hx7420-vs-6500-hx7410";
 import { zojirushiCvGb22VsTigerPimG220Seed } from "./zojirushi-cv-gb22-vs-tiger-pim-g220";
 import { panasonicBeFd633VsBridgestoneA6xc41Seed } from "./panasonic-be-fd633-vs-bridgestone-a6xc41";
@@ -221,6 +222,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   djiOsmoAction6VsGoproHero13BlackSeed,
   amazonFireTvStick4kMaxVs4kSelectSeed,
   amazonEchoShow8VsEchoShow5Seed,
+  amazonEchoDotMaxVsEchoDot5thSeed,
   philipsSonicare7100Hx7420Vs6500Hx7410Seed,
   nintendoSwitch2VsSwitchOledSeed,
 ];
