@@ -1,0 +1,166 @@
+{
+  "id": "karcher-k2-silent-vs-k3-silent-plus-2026-10-06",
+  "articleId": "karcher-k2-silent-vs-k3-silent-plus",
+  "source": "Fresh product selection and research by Claude Code against Kärcher Japan official product pages and online shop display, and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-06",
+  "articleReady": true,
+  "category": "掃除・住まい",
+  "selection": {
+    "reason": "ケルヒャーの家庭用高圧洗浄機のK 2 サイレントとK 3 サイレント プラスは、圧力・吐出水量が同じで、冷却方式・質量・ホース長・電源周波数・価格が異なり、購入時の迷いが明確。掃除・住まいカテゴリで屋外清掃の記事がなく、バックログの候補。",
+    "duplicateCheck": "src/content/articles にケルヒャーの高圧洗浄機の記事なし（2026-10-06確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "ケルヒャー K 2 サイレント",
+      "model": "1.600-920.0（16009200）",
+      "officialUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-2-silent-um-16009200.html",
+      "officialImageUrl": "https://s1.kaercher-media.com/mam/16009200/mainproduct/df4b5fe5-b89d-4bab-a367-bb5ff29e53dc/d0.jpg",
+      "imageEvidence": "ケルヒャー日本公式商品ページのメイン画像（1600x1600 JPEG、HTTP 200、2026-10-06取得）。800x800に縮小して public/products/karcher-k2-silent.jpg と src/assets/products に保存。画像には付属のフォームノズル等が写っている。",
+      "officialSpecs": {
+        "voltage": "100V",
+        "frequency": "50-60Hz",
+        "maxPressure": "max. 10MPa",
+        "waterFlow": "max. 360L/h",
+        "power": "1.25kW",
+        "weight": "5.8kg（アクセサリーを含まない）",
+        "size": "538x293x303mm",
+        "hose": "高圧ホース8m",
+        "cooling": "空冷式",
+        "accessories": "フォームジェット0.3L、バリオスプレーランス、サイクロンジェットノズル、高圧ホース8m",
+        "waterHose": "付属しない（公式ページ記載）"
+      },
+      "officialStorePriceJpy": 30311,
+      "officialStoreUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-2-silent-um-16009200.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B07GXDCP3C",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは今回確認していない（検索ページがHTTP 503を返したため。not-recorded）。"
+    },
+    "right": {
+      "name": "ケルヒャー K 3 サイレント プラス（東日本/50Hz地域用）",
+      "model": "1.603-200.0（16032000）",
+      "officialUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-3-50hz-16032000.html",
+      "officialImageUrl": "https://s1.kaercher-media.com/mam/16032000/mainproduct/194434/d0.jpg",
+      "imageEvidence": "ケルヒャー日本公式商品ページのメイン画像（1600x1600 JPEG、HTTP 200、2026-10-06取得）。800x800に縮小して public/products/karcher-k3-silent-plus.jpg と src/assets/products に保存。60Hz地域用（1.603-201.0）も同じ外観の画像。",
+      "officialSpecs": {
+        "voltage": "100V",
+        "frequency": "50Hz用（60Hz用は1.603-201.0）",
+        "maxPressure": "max. 10MPa",
+        "waterFlow": "max. 360L/h",
+        "power": "1.3kW",
+        "weight": "12.7kg（アクセサリーを含まない）",
+        "size": "394x289x542mm",
+        "hose": "高圧ホース10m",
+        "cooling": "水冷式モーター",
+        "accessories": "バリオスプレーランス、サイクロンジェットノズル、高圧ホース10m、洗浄剤タンク標準搭載",
+        "waterHose": "付属しない（公式ページ記載）",
+        "warranty": "メーカー保証3年（購入後1か月以内のユーザー登録が条件）"
+      },
+      "officialStorePriceJpy": 33880,
+      "officialStoreUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-3-50hz-16032000.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0CTZJ7K6R",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは今回確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "ケルヒャー公式オンラインショップの税込表示（配送料別）。K 2 サイレントは30,311円、K 3 サイレント プラス（50Hz）は33,880円（2026-10-06確認）。K 3のページには『3m 水道ホースセット 2,970円 期間限定特別セット』の表示があり、33,880円は本体のみの価格と解釈している（確認は画面の文言のみ）。",
+    "keyDifferences": [
+      "モーターの冷却方式はK 2が空冷式、K 3が水冷式",
+      "質量は5.8kgと12.7kg、寸法は538x293x303mmと394x289x542mm",
+      "高圧ホースは8mと10m",
+      "周波数はK 2が50-60Hz兼用、K 3は50Hz用1.603-200.0と60Hz用1.603-201.0",
+      "洗浄剤タンクはK 3が標準搭載、K 2はフォームジェット付属",
+      "公式オンラインショップ価格は30,311円と33,880円"
+    ],
+    "commonSpecs": [
+      "最大許容圧力10MPa",
+      "吐出水量 最大360L/h",
+      "給水温度 最大40℃",
+      "100V",
+      "バリオスプレーランス・サイクロンジェットノズル付属",
+      "水道ホースは付属しない"
+    ],
+    "caveat": "Amazonの出品名は、K 3が『ベランダセット (50Hz) 1.603-200.0』となっているが、注文番号は公式の『K 3 サイレント プラス（東日本/50Hz地域用）1.603-200.0』と一致する。出品の同梱物（セット内容）は確認していない。Amazonの表示価格（K 2が25,338円、K 3が39,929円）は記事に載せていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B07GXDCP3C",
+    "right": "https://www.amazon.co.jp/dp/B0CTZJ7K6R",
+    "leftAsin": "B07GXDCP3C",
+    "rightAsin": "B0CTZJ7K6R",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-06"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「ケルヒャー(Karcher) K 2 サイレント 1.600-920.0」とASIN B07GXDCP3Cを確認し、注文番号（メーカー型番）が公式ページと一致することを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『工具・機械』と販売手数料率4.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B07GXDCP3C?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、ケルヒャー(Karcher) K 2 サイレント 1.600-920.0の商品詳細ページに到達。ツールバーに販売手数料率4.00%を表示（2026-10-06）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「ケルヒャー 高圧洗浄機 K3 サイレント プラス ベランダセット (50Hz) 1.603-200.0 イエロー (Karcher)」とASIN B0CTZJ7K6Rを確認し、注文番号（メーカー型番）が公式ページと一致することを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『工具・機械』と販売手数料率4.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0CTZJ7K6R?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、ケルヒャー 高圧洗浄機 K3 サイレント プラス ベランダセット (50Hz) 1.603-200.0 イエロー (Karcher)の商品詳細ページに到達。ツールバーに販売手数料率4.00%を表示（2026-10-06）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天の検索がHTTP 503を返したため確認していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。公式ページのレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "AmazonのK 3出品（ベランダセット）の同梱物は未確認。",
+    "公式オンラインショップのK 3価格33,880円が本体のみの価格かは画面の文言からの解釈。",
+    "K 3の60Hz用（1.603-201.0）のAmazonリンクは作成していない。",
+    "価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様・価格・画像、Amazonの注文番号一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

@@ -85,13 +85,18 @@
     "replacementNote": "2026-10-05: 旧ASIN B0DJVPRG63 は【整備済み品】の商品ページで、在庫切れ・再入荷予定なしになっていた。Amazonで型番G-PPD-004WL-BKを検索し、新品の商品ページ B0CGR5B9FS（Logicool G PRO X SUPERLIGHT 2、G-PPD-004WL-BK、残り1点・24,500円、販売元は第三者セラー）を確認して差し替えた。Amazon限定パッケージ（G-PPD-004WL-BKd）は型番表記が異なるため採用しなかった。"
   },
   "rakuten": {
-    "status": "verified",
+    "status": "partial",
     "directProductUrls": {
       "left": "https://item.rakuten.co.jp/logicool/gproxsl-wldexbk/",
       "right": "https://item.rakuten.co.jp/logicool/g-ppd-004wl-bk/"
     },
     "left": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fgproxsl-wldexbk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
-    "right": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fg-ppd-004wl-bk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb21wIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D"
+    "right": null,
+    "statusBySide": {
+      "left": "verified",
+      "right": "unavailable"
+    },
+    "rightUnavailableNote": "2026-10-05: 右（PRO X SUPERLIGHT 2、楽天 g-ppd-004wl-bk）は成果リンクが商品ページではなくtransition.afl.rakuten.co.jpへ送られ、運営者が楽天の商品ページで売り切れを確認したため楽天CTAを非表示にした。Amazonの確認済み商品リンクは維持。"
   },
   "social": {
     "status": "none",

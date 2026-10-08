@@ -480,6 +480,17 @@ export function hostnameOf(value) {
  * レジストリ URL のホストを自動追加しない。
  * リダイレクト追従後にこのホスト集合に含まれることのみで合格とする。
  */
+/**
+ * 楽天の成果リンク (hb.afl.rakuten.co.jp) が商品ページではなくこの中継ページへ
+ * 送られるのは、商品が売り切れ・販売停止のとき。在庫は復活し得るため、監査では
+ * エラーにせず警告として記録する（CTAは維持する）。購入先の許可ホストではない。
+ * 成果リンク以外の経路で同ホストへ着地した場合は従来どおりエラー。
+ */
+export const UNAVAILABLE_LANDING_HOSTS = Object.freeze([
+  "transition.afl.rakuten.co.jp",
+]);
+export const UNAVAILABLE_LANDING_SOURCE_HOST = "hb.afl.rakuten.co.jp";
+
 export function outboundHostAllowlist() {
   return new Set(ALLOWED_OUTBOUND_HOSTS);
 }
@@ -591,6 +602,7 @@ export async function resolveFinalUrl(target, options = {}) {
  * verified CTA 全件の最終遷移先を検証する。
  * - 初期ホストが許可リスト内ならネットワークアクセスせず合格
  * - それ以外はリダイレクト追従し、最終ホストが許可リスト内であること
+ * - 楽天の成果リンクが売り切れ用の中継ページへ着地した場合は警告（checked.unavailable=true）
  * - ネットワークエラーは原則 fail-closed。allowNetworkSkip=true のとき warn-only
  * 戻り値: { errors, warnings, checked }
  */
@@ -660,7 +672,14 @@ export async function auditVerifiedCtaDestinations({
               hops,
             },
           };
-          if (finalHost === null || !allowlist.has(finalHost)) {
+          if (
+            finalHost !== null &&
+            UNAVAILABLE_LANDING_HOSTS.includes(finalHost) &&
+            initialHost === UNAVAILABLE_LANDING_SOURCE_HOST
+          ) {
+            result.checked.unavailable = true;
+            result.warning = `${cta.article}: CTA "${cta.key}" lands on ${finalHost}, the Rakuten page shown when an item is sold out or unavailable. The CTA is kept; re-check stock later (${url})`;
+          } else if (finalHost === null || !allowlist.has(finalHost)) {
             result.error = `${cta.article}: CTA "${cta.key}" (${url}) ultimately lands on ${finalHost ?? "(unparseable)"}, which is not in the verified CTA allowlist (${[...allowlist].join(", ")})`;
           } else if (status >= 400) {
             // 許可ホストでも、削除・販売終了などで商品ページが失われた到達先は合格にしない。

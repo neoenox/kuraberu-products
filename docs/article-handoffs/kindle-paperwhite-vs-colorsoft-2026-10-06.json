@@ -1,0 +1,157 @@
+{
+  "id": "kindle-paperwhite-vs-colorsoft-2026-10-06",
+  "articleId": "kindle-paperwhite-vs-colorsoft",
+  "source": "Fresh product selection and research by Claude Code against Amazon.co.jp product detail pages (Amazon is the manufacturer and seller of Kindle devices; Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-06",
+  "articleReady": true,
+  "category": "電子書籍リーダー",
+  "selection": {
+    "reason": "最新のKindle PaperwhiteとKindle Colorsoftは、本体サイズ・容量・防水が共通でカラー表示・バッテリー・価格だけが異なり、購入時の迷いが明確。バックログの候補。既存のKobo記事（Kobo同士の比較）とは対象商品が異なる。",
+    "duplicateCheck": "src/content/articles にKindleを扱う記事なし（2026-10-06確認）。kobo-clara-colour-vs-libra-colour はKobo同士の比較で対象が異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "Kindle Paperwhite 16GB 最新モデル（グラファイト）",
+      "model": "Kindle Paperwhite 16GB（2026年発売）",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/51Rzu7iIm0L._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（本体のみ、HTTP 200、2026-10-06取得）。800x800の白背景正方形に整えて public/products/kindle-paperwhite-2026.jpg と src/assets/products に保存。元画像は476x553で、拡大している。",
+      "officialSpecs": {
+        "display": "7インチ Amazon Paperwhiteディスプレイ、フロントライト内蔵、300ppi",
+        "size": "174.7mm x 126.8mm x 6.8mm",
+        "weight": "204g",
+        "storage": "16GB（使用可能10.8GB）",
+        "battery": "最大12週間",
+        "charging": "USB-C、20W電源アダプターで約2.5時間",
+        "waterproof": "IPX8等級",
+        "wifi": "2.4GHz・5.0GHz",
+        "release": "2026年11月11日（予約受付中）"
+      },
+      "officialStorePriceJpy": 39980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Kindle端末はAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Kindle Colorsoft 16GB 最新モデル（グラファイト）",
+      "model": "Kindle Colorsoft 16GB（2026年発売）",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0GV62167S",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/516lfLKwr6L._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページの商品画像（本体のみ、HTTP 200、2026-10-06取得）。800x800の白背景正方形に整えて public/products/kindle-colorsoft-2026.jpg と src/assets/products に保存。元画像は508x585で、拡大している。",
+      "officialSpecs": {
+        "display": "7インチ Amazon Colorsoftディスプレイ、フロントライト内蔵、300ppi（白黒）／150ppi（カラー）",
+        "size": "174.7mm x 126.8mm x 6.8mm",
+        "weight": "204g",
+        "storage": "16GB（使用可能10.8GB）",
+        "battery": "最大8週間（明るさ設定13・ワイヤレス接続オフで1日30分使用）",
+        "charging": "USB-C、20W電源アダプターで約2.5時間",
+        "waterproof": "IPX8等級",
+        "wifi": "2.4GHz・5.0GHz",
+        "release": "2026年11月11日（予約受付中）"
+      },
+      "officialStorePriceJpy": 51980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0GV62167S",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GV62167S",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "Kindle端末はAmazon自社の商品で、楽天市場の商品詳細ページは確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Amazon.co.jpの商品ページの税込表示（予約受付中）。Kindle Paperwhite 16GBは39,980円、Kindle Colorsoft 16GBは51,980円（2026-10-06確認）。",
+    "keyDifferences": [
+      "カラー表示はKindle Colorsoftのみ（解像度は白黒300ppi・カラー150ppi）",
+      "バッテリー持続時間はPaperwhiteが最大12週間、Colorsoftが最大8週間",
+      "Amazon表示価格は39,980円と51,980円"
+    ],
+    "commonSpecs": [
+      "7インチディスプレイ・フロントライト内蔵・色調調節ライト",
+      "174.7×126.8×6.8mm・204g",
+      "16GB（使用可能10.8GB）",
+      "IPX8等級の防水",
+      "USB-C・20W電源アダプターで約2.5時間",
+      "Wi-Fi 2.4GHz・5.0GHz",
+      "発売予定日2026年11月11日"
+    ],
+    "caveat": "どちらも予約受付中で、発売予定日・価格は変更される場合がある。Amazonの比較表に載っているKindle Paperwhiteシグニチャー エディション（44,980円）は比較に含めていない。Amazonの商品ページは主要な出品元・販売元がAmazonであることを確認していない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+    "right": "https://www.amazon.co.jp/dp/B0GV62167S",
+    "leftAsin": "B0GV5VHTL6",
+    "rightAsin": "B0GV62167S",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-06"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon | Kindle Paperwhite 16GB 最新モデル - より薄く、より軽い、7インチディスプレイ、色調調節ライト、グラファイト」とASIN B0GV5VHTL6を確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Kindleデバイス』と販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GV5VHTL6?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon | Kindle Paperwhite 16GB 最新モデル - より薄く、より軽い、7インチディスプレイ、色調調節ライト、グラファイトの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-06）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon | Kindle Colorsoft 16GB 最新モデル - より薄く、より軽い、7インチカラーディスプレイ、色調調節ライト、グラファイト」とASIN B0GV62167Sを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Kindleデバイス』と販売手数料率4.50%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GV62167S?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon | Kindle Colorsoft 16GB 最新モデル - より薄く、より軽い、7インチカラーディスプレイ、色調調節ライト、グラファイトの商品詳細ページに到達。ツールバーに販売手数料率4.50%を表示（2026-10-06）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天の確認済み購入先はない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。両商品とも発売前（予約受付中）で実利用者の投稿がまだ少ない可能性があるが、存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "どちらも発売前で、発売予定日・価格・配送予定は変更される場合がある。",
+    "Kindle Paperwhiteシグニチャー エディションなど他モデルは比較していない。"
+  ],
+  "publicationDecision": "Amazonの商品一致・仕様・価格・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

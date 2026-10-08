@@ -95,6 +95,15 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "airpods-5-vs-airpods-4-anc",
   "dainichi-hd-lx1226-vs-hd-lx1026",
   "zojirushi-ee-dg35-vs-ee-dg50",
+  "ipad-a16-vs-ipad-air-m4",
+  "switchbot-hub3-vs-hub2",
+  "kindle-paperwhite-vs-colorsoft",
+  "karcher-k2-silent-vs-k3-silent-plus",
+  "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
+  "dji-osmo-action-6-vs-gopro-hero13-black",
+  "amazon-fire-tv-stick-4k-max-vs-4k-select",
+  "amazon-echo-show-8-vs-echo-show-5",
+  "nintendo-switch-2-vs-switch-oled",
 ]);
 export function isPublishedArticlePath(path) {
   const slug = String(path).match(/^\/articles\/([^/]+)\/?$/)?.[1];

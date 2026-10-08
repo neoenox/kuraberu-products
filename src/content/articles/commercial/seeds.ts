@@ -69,6 +69,15 @@ import { omronHem7281tVsTerumoP2020Seed } from "./omron-hem-7281t-vs-terumo-p202
 import { jukiHzlF400jpVsBrotherPs202Seed } from "./juki-hzl-f400jp-vs-brother-ps202";
 import { omronMc681VsTerumoC205Seed } from "./omron-mc-681-vs-terumo-c205";
 import { fitbitCharge6VsXiaomiSmartBand9Seed } from "./fitbit-charge-6-vs-xiaomi-smart-band-9";
+import { ipadA16VsIpadAirM4Seed } from "./ipad-a16-vs-ipad-air-m4";
+import { switchbotHub3VsHub2Seed } from "./switchbot-hub3-vs-hub2";
+import { kindlePaperwhiteVsColorsoftSeed } from "./kindle-paperwhite-vs-colorsoft";
+import { karcherK2SilentVsK3SilentPlusSeed } from "./karcher-k2-silent-vs-k3-silent-plus";
+import { sharpHotcookKnHw24kVsKnHw24hSeed } from "./sharp-hotcook-kn-hw24k-vs-kn-hw24h";
+import { djiOsmoAction6VsGoproHero13BlackSeed } from "./dji-osmo-action-6-vs-gopro-hero13-black";
+import { nintendoSwitch2VsSwitchOledSeed } from "./nintendo-switch-2-vs-switch-oled";
+import { amazonFireTvStick4kMaxVs4kSelectSeed } from "./amazon-fire-tv-stick-4k-max-vs-4k-select";
+import { amazonEchoShow8VsEchoShow5Seed } from "./amazon-echo-show-8-vs-echo-show-5";
 import { zojirushiCvGb22VsTigerPimG220Seed } from "./zojirushi-cv-gb22-vs-tiger-pim-g220";
 import { panasonicBeFd633VsBridgestoneA6xc41Seed } from "./panasonic-be-fd633-vs-bridgestone-a6xc41";
 import { irisFkC5VsPanasonicFdF06x2Seed } from "./iris-fk-c5-vs-panasonic-fd-f06x2";
@@ -203,4 +212,13 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   omronMc681VsTerumoC205Seed,
   fitbitCharge6VsXiaomiSmartBand9Seed,
   zojirushiCvGb22VsTigerPimG220Seed,
+  ipadA16VsIpadAirM4Seed,
+  switchbotHub3VsHub2Seed,
+  kindlePaperwhiteVsColorsoftSeed,
+  karcherK2SilentVsK3SilentPlusSeed,
+  sharpHotcookKnHw24kVsKnHw24hSeed,
+  djiOsmoAction6VsGoproHero13BlackSeed,
+  amazonFireTvStick4kMaxVs4kSelectSeed,
+  amazonEchoShow8VsEchoShow5Seed,
+  nintendoSwitch2VsSwitchOledSeed,
 ];

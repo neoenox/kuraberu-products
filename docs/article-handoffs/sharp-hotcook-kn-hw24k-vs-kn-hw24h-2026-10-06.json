@@ -1,0 +1,191 @@
+{
+  "id": "sharp-hotcook-kn-hw24k-vs-kn-hw24h-2026-10-06",
+  "articleId": "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
+  "source": "Fresh product selection and research by Claude Code against Sharp Japan official product pages, news releases and COCORO STORE price display, Amazon.co.jp product detail page and Rakuten Biccamera product page (Amazon Associates toolbar and Rakuten Affiliate link creation observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-06",
+  "articleReady": true,
+  "category": "生活家電",
+  "selection": {
+    "reason": "ホットクック2.4Lタイプの2026年新モデルKN-HW24K（2026年9月17日発売）と、同容量・同サイズの2024年モデルKN-HW24Hは、生成AI・もっとトレー・冷凍のまま調理などが異なり、買い替え・選び分けの迷いが明確。バックログの候補。",
+    "duplicateCheck": "src/content/articles にシャープのホットクックの記事なし（2026-10-06確認）。recolte-automatic-cooker-vs-panasonic-nf-pc400（他社の電気調理鍋）とは対象が異なる。"
+  },
+  "products": {
+    "left": {
+      "name": "シャープ ヘルシオ ホットクック KN-HW24K",
+      "model": "KN-HW24K",
+      "officialUrl": "https://jp.sharp/hotcook/products/knhw24k/",
+      "officialImageUrl": "https://jp.sharp/hotcook/products/knhw24k/images/ogp.jpg",
+      "imageEvidence": "シャープ公式商品ページのog:image（1200x630 JPEG、HTTP 200、2026-10-06取得）。本体部分を切り出し800x800に整えて public/products/sharp-hotcook-kn-hw24k.jpg と src/assets/products に保存。背景（キッチンの写真）が写っている。",
+      "officialSpecs": {
+        "capacity": "2.4L（満水容量4.7L）",
+        "power": "800W、交流100V 50-60Hz共用",
+        "size": "345×305×256mm",
+        "weight": "約6.0kg",
+        "display": "3インチ メニュー名表示",
+        "menuCount": "197（自動186／手動11）",
+        "accessory": "もっとトレー、メニュー集、取扱説明書",
+        "release": "2026年9月17日",
+        "msrp": "オープン価格",
+        "genAi": "クックトーク対応（COCORO HOME登録が必要）",
+        "twoTier": "2段調理30メニュー",
+        "frozen": "冷凍のまま調理 10メニュー新搭載"
+      },
+      "officialStorePriceJpy": 82500,
+      "officialStoreUrl": "https://cocorostore.jp.sharp/kn-hw24k-b.html",
+      "amazonProductPage": null,
+      "amazonSearchQuery": "シャープ ヘルシオ ホットクック KN-HW24K",
+      "rakutenProductPage": "https://item.rakuten.co.jp/biccamera/4550556205153/",
+      "rakutenListingEvidence": "楽天ビック（biccamera）の商品ページのタイトル「SHARP｜シャープ 水なし自動調理鍋 2.4L HEALSIO（ヘルシオ）ホットクック proシリーズ プレミアムブラック KN-HW24K-B」とJAN 4550556205153、価格82,500円を確認（2026-10-06）。"
+    },
+    "right": {
+      "name": "シャープ ヘルシオ ホットクック KN-HW24H",
+      "model": "KN-HW24H",
+      "officialUrl": "https://jp.sharp/hotcook/products/knhw24h/",
+      "officialImageUrl": "https://jp.sharp/hotcook/products/knhw24h/images/ogp.jpg",
+      "imageEvidence": "シャープ公式商品ページのog:image（1200x630 JPEG、HTTP 200、2026-10-06取得）。本体部分を切り出し800x800に整えて public/products/sharp-hotcook-kn-hw24h.jpg と src/assets/products に保存。背景（キッチンの写真）が写っている。",
+      "officialSpecs": {
+        "capacity": "2.4L（満水容量4.7L）",
+        "power": "800W、交流100V 50-60Hz共用",
+        "size": "345×305×256mm",
+        "weight": "約6.0kg",
+        "display": "3インチ メニュー名表示",
+        "menuCount": "172（自動161／手動11）",
+        "accessory": "蒸しトレイ、メニュー集、取扱説明書",
+        "announced": "2024年7月23日（ニュースリリース）",
+        "msrp": "オープン価格"
+      },
+      "officialStorePriceJpy": 77000,
+      "officialStoreUrl": "https://cocorostore.jp.sharp/kn-hw24h-b.html",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DP2LJ7DF",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場のKN-HW24Hは、確認できた出品が第三者の店舗中心で、商品詳細ページを確定していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "メーカー希望小売価格はどちらもオープン価格。記事の価格はシャープ公式通販COCORO STOREの税込表示（KN-HW24K-Bが82,500円、KN-HW24H-Bが77,000円、2026-10-06確認）。",
+    "keyDifferences": [
+      "生成AIサービス「クックトーク」への対応はKN-HW24K（ホットクックで初）",
+      "同梱トレーはKN-HW24Kがもっとトレー（2段調理30メニュー）、KN-HW24Hが蒸しトレイ",
+      "冷凍のまま調理できる新10メニューはKN-HW24K",
+      "掲載メニュー数は197と172",
+      "COCORO STORE価格は82,500円と77,000円"
+    ],
+    "commonSpecs": [
+      "調理容量2.4L（満水容量4.7L）",
+      "345×305×256mm・約6.0kg",
+      "定格消費電力800W・100V 50-60Hz共用",
+      "3インチ画面・無線LAN対応",
+      "色はプレミアムブラック／プレミアムホワイト"
+    ],
+    "caveat": "KN-HW24Hの2段調理メニュー数、およびKN-HW24Hの『冷凍した肉や魚も解凍不要で調理』の記載とKN-HW24Kの冷凍のまま調理10メニューの細かな違いは確認していない。AmazonのKN-HW24H出品の出荷元・販売元は第三者の店舗（PCボンバー）で、Amazonの価格は記事に載せていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "search",
+      "right": "verified"
+    },
+    "left": null,
+    "right": "https://www.amazon.co.jp/dp/B0DP2LJ7DF",
+    "rightAsin": "B0DP2LJ7DF",
+    "productPages": {
+      "right": "https://www.amazon.co.jp/dp/B0DP2LJ7DF"
+    },
+    "searchEvidence": {
+      "left": {
+        "query": "シャープ ホットクック KN-HW24K",
+        "observedAtJst": "2026-10-06",
+        "result": "Amazon検索結果にKN-HW24Kの商品詳細ページは見つからなかった（未確認。unavailableとは判定しない）。"
+      }
+    },
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-06"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "not-found",
+            "evidence": "Amazon検索（KN-HW24K／KN-HW24K-B／ホットクック proシリーズ）でKN-HW24Kの商品詳細ページは見つからなかった。未確認であり、販売不可とは判定しない（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "not-shown",
+            "evidence": "商品詳細ページを確認できていないため、この商品固有の対象可否は未確認。"
+          },
+          "taggedUrl": {
+            "state": "not-recorded",
+            "evidence": "商品詳細URLがないためタグ付きURLは作成していない（not-recorded）。検索CTAはビルド時にタグを付与する。"
+          },
+          "destination": {
+            "state": "not-recorded",
+            "evidence": "商品詳細ページを確認できていないため、遷移先の確認は未実施（not-recorded）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「KN-HW24H-B(シャープ)」とASIN B0DP2LJ7DFを確認。出荷元・販売元は第三者の店舗（PCボンバー）（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DP2LJ7DF?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、KN-HW24H-Bの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-06）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "unverified"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4550556205153%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": null,
+    "leftProductPage": "https://item.rakuten.co.jp/biccamera/4550556205153/",
+    "leftProductVerified": true,
+    "generation": "2026-10-06に楽天アフィリエイト公式画面（affiliate.rakuten.co.jp）へログインした状態で、商品詳細URLを入力して生成。リンクタイプは「リンクのみ」。ソース欄のURLをそのまま使用（改変なし）。HTTP GET最終遷移先が楽天ビックの商品ページ（HTTP 200）であることを確認。",
+    "browserEvidence": {
+      "observedAtJst": "2026-10-06",
+      "ui": "楽天アフィリエイトにログインした画面の「URLを入力してリンクを作成」から商品ページごとに作成。",
+      "bySide": {
+        "left": {
+          "inputUrl": "https://item.rakuten.co.jp/biccamera/4550556205153/",
+          "productTitle": "SHARP｜シャープ 水なし自動調理鍋 2.4L HEALSIO（ヘルシオ）ホットクック proシリーズ プレミアムブラック KN-HW24K-B",
+          "shopName": "楽天ビック",
+          "productMatch": "楽天ビックの商品ページのタイトルで型番KN-HW24K-Bを確認し、アフィリエイト画面のプレビューURLが同一商品ページであることを確認。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://biccamera.rakuten.co.jp/item/4550556205153/",
+          "finalHttpStatus": 200
+        }
+      }
+    }
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。KN-HW24Kは発売直後のため投稿が少ない可能性があるが、存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "AmazonのKN-HW24K商品詳細ページは確認できず、検索CTAを表示する（unavailableとは判定していない）。",
+    "KN-HW24Hの楽天商品詳細ページは確定していない。",
+    "KN-HW24Hの2段調理メニュー数と冷凍調理の細かな差は未確認。",
+    "価格・在庫・販売状況は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様・価格・画像、KN-HW24Kの楽天（楽天ビック）の商品一致と生成URLの遷移先、KN-HW24HのAmazonの商品一致・対象表示・遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

@@ -12,268 +12,231 @@
 
 ## 新規作成・確認中
 
-### Apple AirPods 5（USB-C充電ケース） vs アクティブノイズキャンセリング搭載AirPods 4
+現在、作成中の記事はない。
 
-- slug: airpods-5-vs-airpods-4-anc
-- Issue: #926（https://github.com/neoenox/kuraberu-products/issues/926）
-- 状態: 2026-10-04公開。公式仕様、Amazonの両商品ページ、楽天の両成果リンクの遷移先を再確認済み
-- 比較軸: Apple公表のANC比較、防塵・耐汗耐水等級、ケース機能、ANC有効時の電池持ち・本体寸法と重量
-- 公式URL:
-  - https://www.apple.com/jp/airpods-5/specs/
-  - https://www.apple.com/jp/airpods/compare/
-  - https://support.apple.com/ja-jp/121204
-- 画像: Apple公式仕様ページの画像を public/products/ と src/assets/products/ に保存
-- 販売先: Amazonは両商品ともASIN付き商品リンク（タグは実行時に付与）。楽天は両商品とも成果リンク
-- SNS: RedditのAirPods 5使用感を確認したが、AirPods 4 ANCとの同条件比較ではないため不採用。SNS欄は表示しない
-- handoff: docs/article-handoffs/airpods-5-vs-airpods-4-anc-2026-09-30.json
+## 現在の公開済み（74本）
 
-### 象印 スチーム式加湿器 EE-DG35 vs EE-DG50
+2026-10-07に本番URLへ直接アクセスし、HTTP 200で公開されていた記事だけを載せている（`nintendo-switch-2-vs-switch-oled`は同日のデプロイ後に実測して追加）。公開状況は`public/_redirects`やコード上の記事の有無ではなく、本番の実測を正とする。
 
-- slug: `zojirushi-ee-dg35-vs-ee-dg50`
-- 状態: 2026-10-05作成（Draft PR）。公式仕様、象印公式ストア価格、Amazon・楽天の商品一致、各購入先リンクを確認済み
-- 比較軸: 適用床面積、定格加湿能力、容量、加湿時消費電力、外形寸法・質量、公式ストア価格（連続加湿時間・タイマー・機能は共通）
-- 公式URL:
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
-- 購入先: Amazonは両商品ともASIN付き（EE-DG35-WA: B0HGF9J1MT / EE-DG50-WA: B0HGF5B9D8、対象・2.00%、タグ付きURLの遷移先確認済み）。楽天はケーズデンキ楽天市場店、成果URLは両商品生成済み
-- SNS: 適格な実利用投稿は未確認のため欄を非掲載
-- handoff: `docs/article-handoffs/zojirushi-ee-dg35-vs-ee-dg50-2026-10-05.json`
+| slug                                                 | 状態                         |
+| ---------------------------------------------------- | ---------------------------- |
+| `airpods-5-vs-airpods-4-anc`                         | 公開済み                     |
+| `anker-a121a-vs-a2688`                               | 公開済み                     |
+| `anker-a1664-vs-a1654`                               | 公開済み                     |
+| `anker-nano-a1638-vs-power-bank-a1256`               | 公開済み                     |
+| `anker-nano-power-bank-vs-zolo-a1688`                | 公開済み                     |
+| `anker-solix-c300-vs-jackery-240-new`                | 公開済み                     |
+| `anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max` | 公開済み                     |
+| `crucial-x10-pro-vs-kingston-xs2000`                 | 公開済み                     |
+| `dainichi-hd-lx1226-vs-hd-lx1026`                    | 公開済み                     |
+| `dji-osmo-action-6-vs-gopro-hero13-black`            | 公開済み                     |
+| `elecom-de-c85-vs-de-c86`                            | 公開済み                     |
+| `garmin-forerunner-570-vs-coros-pace-4`              | 公開済み                     |
+| `instax-mini-13-vs-mini-41`                          | 公開済み                     |
+| `instax-mini-evo-vs-evo-cinema`                      | 公開済み                     |
+| `ipad-a16-vs-ipad-air-m4`                            | 公開済み                     |
+| `iphone-18-pro-vs-pixel-11-pro`                      | 公開済み                     |
+| `jbl-flip-7-vs-charge-6`                             | 公開済み                     |
+| `jbl-tour-pro-3-vs-live-beam-3`                      | 公開済み                     |
+| `karcher-k2-silent-vs-k3-silent-plus`                | 公開済み                     |
+| `kindle-paperwhite-vs-colorsoft`                     | 公開済み                     |
+| `kobo-clara-colour-vs-libra-colour`                  | 公開済み                     |
+| `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み                     |
+| `logicool-pebble-m350s-vs-m650`                      | 公開済み                     |
+| `logicool-pro-x-superlight-2-dex-vs-superlight-2`    | 公開済み                     |
+| `nintendo-switch-2-vs-switch-oled`                   | 公開済み                     |
+| `pixel-watch-5-vs-galaxy-watch9`                     | 公開済み                     |
+| `sharp-hotcook-kn-hw24k-vs-kn-hw24h`                 | 公開済み                     |
+| `shokz-openfit-2-plus-vs-openfit-2`                  | 公開済み                     |
+| `sony-wf-1000xm6-vs-linkbuds-fit`                    | 公開済み                     |
+| `sony-wf-c710n-vs-linkbuds-fit`                      | 公開済み                     |
+| `sony-wf-c710n-vs-soundcore-liberty-5`               | 公開済み                     |
+| `sony-zv-1-ii-vs-zv-1f`                              | 公開済み                     |
+| `sony-zv-e10m2-vs-nikon-z30`                         | 公開済み                     |
+| `switchbot-hub3-vs-hub2`                             | 公開済み                     |
+| `amazon-fire-tv-stick-4k-max-vs-4k-select`           | 公開済み                     |
+| `amazon-echo-show-8-vs-echo-show-5`                  | 公開済み                     |
+| `t-fal-ko5901jp-vs-zoujirushi-ck-pa08`               | 公開済み                     |
+| `tanita-bc-772-vs-omron-hbf-702t`                    | 公開済み                     |
+| `tefal-cy8768jp-vs-panasonic-sr-mp300`               | 公開済み                     |
+| `tefal-dv4030j0-vs-dv8070j0`                         | 公開済み                     |
+| `tefal-ko5901jp-vs-ko8601j0`                         | 公開済み                     |
+| `tempur-original-vs-nishikawa-air-pillow`            | 公開済み                     |
+| `thermos-jdp-501-vs-zojirushi-sm-za48`               | 公開済み                     |
+| `thermos-kfm-020-vs-kfi-020`                         | 公開済み                     |
+| `thermos-tiger-bottle`                               | 公開済み                     |
+| `tiger-jpv-l100-vs-jpv-m100`                         | 公開済み                     |
+| `tiger-mta-j050-guide`                               | 公開済み                     |
+| `tiger-pcj-a080-vs-pcm-a080`                         | 公開済み                     |
+| `tiger-pct-a120-vs-pct-a150`                         | 公開済み                     |
+| `toshiba-er-d3000b-vs-aladdin-agt-g13b`              | 公開済み                     |
+| `toshiba-tw-127xm5l-vs-panasonic-na-lx127el`         | 公開済み                     |
+| `tp-link-archer-be550-vs-be450`                      | 公開済み                     |
+| `yamajitsu-film-holder-242286-vs-242287`             | 公開済み                     |
+| `yamazaki-condor-wagon-vs-self-wagon`                | 公開済み                     |
+| `yamazaki-dishwasher-rack-241925-vs-241926`          | 公開済み                     |
+| `yamazaki-dust-wagon-45l-2division-vs-3division`     | 公開済み                     |
+| `yamazaki-free-broom-32-vs-45`                       | 公開済み                     |
+| `yamazaki-laundry-wire-basket-m-vs-l`                | 公開済み                     |
+| `yamazaki-magnet-kitchen-shelf-240005-vs-241830`     | 公開済み（購入リンク未設定） |
+| `yamazaki-ofuda-stand-rin-vs-single`                 | 公開済み                     |
+| `yamazaki-rainmat-f216-vs-lonstep`                   | 公開済み（購入リンク未設定） |
+| `yamazaki-refrigerator-rack-240057-vs-240059`        | 公開済み                     |
+| `yamazaki-tower-desk-panel-vs-pen-stand`             | 公開済み                     |
+| `zojirushi-ck-pa08-vs-ck-dc08`                       | 公開済み                     |
+| `zojirushi-cv-gb22-vs-tiger-pim-g220`                | 公開済み                     |
+| `zojirushi-ec-kv50-vs-ec-ma60`                       | 公開済み                     |
+| `zojirushi-ee-dg35-vs-ee-dg50`                       | 公開済み                     |
+| `zojirushi-ee-dg50-vs-ee-rv50`                       | 公開済み                     |
+| `zojirushi-ee-tc60-vs-dainichi-hd-lx1026`            | 公開済み                     |
+| `zojirushi-eq-aa22-vs-eq-sa22`                       | 公開済み                     |
+| `zojirushi-eq-ja22-vs-eq-fa22`                       | 公開済み                     |
+| `zojirushi-eq-sb22-vs-eq-ah22`                       | 公開済み                     |
+| `zojirushi-nx-ab10-vs-nw-wd10`                       | 公開済み                     |
+| `zojirushi-nx-ab10-vs-tiger-jrt-a100`                | 公開済み                     |
 
-## 現在の公開済み（122本）
+## 公開されていない記事（99本）
 
-| slug                                              | 状態                           |
+記事ページのコードと記事データは残っているが、2026-10-07の実測で本番がHTTP 302（`/404.html`）を返した記事。過去に記事を取り下げた運用（履歴: `ops: take comparison articles offline`、`ops: withdraw existing articles from public site`）の結果とみられる。再公開するときは、公式情報・購入導線を再確認し、品質ゲートを通してから`PUBLISHED_ARTICLE_PAGE_SLUGS`へ追加する。
+
+| slug                                              | 旧バックログの状態             |
 | ------------------------------------------------- | ------------------------------ |
+| `airpods-pro-3-vs-sony-wf-1000xm6`                | 表に記載なし                   |
+| `amazon-echo-dot-5th-vs-google-nest-mini-2nd`     | 公開済み                       |
+| `anessa-perfect-uv-vs-biore-aqua-rich`            | 公開済み                       |
+| `anker-soundcore-liberty-4-nc-vs-sony-wf-c710n`   | 公開済み                       |
+| `apple-watch-se-vs-xiaomi-redmi-watch-5`          | 公開済み                       |
 | `babybjorn`                                       | 公開済み                       |
 | `babybjorn-bouncer`                               | 公開済み                       |
 | `babybjorn-cradle`                                | 公開済み                       |
 | `babybjorn-onekai`                                | 公開済み                       |
 | `babybjorn-potty`                                 | 公開済み                       |
+| `balmuda-the-toaster-vs-aladdin-graphite-toaster` | 公開済み                       |
+| `braun-series9pro-vs-series7`                     | 公開済み                       |
+| `bruno-boe021-vs-iris-php-1002tc`                 | 公開済み                       |
+| `canon-pixus-ts8830-vs-epson-ep-887a`             | 公開済み                       |
+| `casio-px-s1100-vs-yamaha-p-225`                  | 公開済み                       |
 | `combi-the-s-plus-vs-premium`                     | 公開済み                       |
+| `dainichi-efh-1219d-vs-panasonic-ds-fwx1200`      | 公開済み                       |
+| `dainichi-hd-rxt525-vs-panasonic-fe-kxu07`        | 公開済み                       |
+| `delonghi-ecam22112b-vs-ecam25023sb`              | 公開済み                       |
+| `dyson-v12-detect-slim-vs-shark-evo-power`        | 公開済み                       |
+| `dyson-v12-vs-micro-plus`                         | 公開済み                       |
+| `fitbit-charge-6-vs-xiaomi-smart-band-9`          | 公開済み                       |
+| `gopro-hero13-black-vs-dji-osmo-action-5-pro`     | 公開済み                       |
+| `hitachi-bd-sx130k-vs-bd-stx130k`                 | 公開済み                       |
+| `hitachi-pv-bl1c4-vs-dyson-sv46-ff`               | 表に記載なし                   |
+| `hitachi-ras-aj2226s-vs-daikin-s406atep`          | 表に記載なし                   |
+| `iris-fk-c5-vs-panasonic-fd-f06x2`                | 公開済み                       |
+| `irobot-roomba-j9plus-vs-j7`                      | 公開済み                       |
+| `juki-hzl-f400jp-vs-brother-ps202`                | 公開済み                       |
 | `kingjim-tepra-sr-r2500p-vs-sr-mk1`               | 公開済み                       |
+| `logicool-k650-vs-k580`                           | 公開済み                       |
+| `logicool-lift-vs-m550`                           | 公開済み                       |
+| `logicool-mx-keys-s-for-mac-vs-k780`              | 公開済み                       |
+| `logicool-mx-keys-s-vs-mx-keys-mini`              | 公開済み                       |
+| `logicool-mx-master-3s-vs-m650`                   | 公開済み                       |
+| `logicool-mx-master-3s-vs-mx-anywhere-3s`         | 公開済み                       |
+| `logicool-zone-vibe-100-vs-zone-300`              | 公開済み                       |
+| `makita-cl107-vs-cl286`                           | 公開済み                       |
 | `merries-newborn`                                 | 公開済み                       |
 | `merries-pants`                                   | 公開済み                       |
+| `montbell-tri-pack-vs-anello-backpack`            | 公開済み                       |
 | `moony-m`                                         | 公開済み                       |
+| `nitori-n-sleep-vs-nishikawa-air-mattress`        | 公開済み                       |
+| `omron-hem-7281t-vs-terumo-p2020`                 | 公開済み                       |
+| `omron-mc-681-vs-terumo-c205`                     | 公開済み                       |
 | `pampers-newborn`                                 | 公開済み                       |
 | `panasonic-baby-monitor-kx-hc705`                 | 公開済み                       |
+| `panasonic-be-fd633-vs-bridgestone-a6xc41`        | 公開済み                       |
+| `panasonic-db-bm1l-vs-db-rm3m`                    | 公開済み                       |
+| `panasonic-eh-na0j-vs-eh-na0g`                    | 公開済み                       |
+| `panasonic-eh-na0k-vs-eh-ne9n`                    | 公開済み                       |
+| `panasonic-eh-na0k-vs-panasonic-eh-na9m`          | 表に記載なし                   |
+| `panasonic-eh-na9m-guide`                         | 公開済み                       |
 | `panasonic-eh-na9m-vs-eh-na7m`                    | 公開済み                       |
+| `panasonic-eh-na9m-vs-refa-beautech`              | 公開済み                       |
+| `panasonic-eh-nc80-vs-eh-nc50`                    | 公開済み                       |
 | `panasonic-eh-ne7m-vs-eh-ne5m`                    | 公開済み                       |
+| `panasonic-ep-ma110-vs-ep-ma121`                  | 公開済み                       |
+| `panasonic-es-lt4b-vs-es-lv7j`                    | 公開済み                       |
+| `panasonic-es-lv9w-vs-es-lv7w`                    | 公開済み                       |
+| `panasonic-es-pv6a-vs-es-pv3a`                    | 公開済み                       |
+| `panasonic-es-wp9b-vs-es-wg0b`                    | 公開済み                       |
+| `panasonic-ew-da19-vs-ew-da49`                    | 公開済み                       |
+| `panasonic-ew-dp57-vs-ew-dt73`                    | 公開済み                       |
+| `panasonic-ew-dp57-vs-philips-hx9911`             | 公開済み                       |
+| `panasonic-f-px60c-vs-f-px70c`                    | 公開済み                       |
 | `panasonic-f-yhvx120-vs-f-yhvx90`                 | 公開済み（公式画像・導線更新） |
+| `panasonic-hh-cf1285a-vs-iris-cl12dl`             | 公開済み                       |
+| `panasonic-mc-jp860k-vs-mc-sb70km`                | 公開済み                       |
+| `panasonic-mc-nx810km-vs-mc-nx700k`               | 公開済み                       |
+| `panasonic-mc-sb53k-vs-mc-sb33j`                  | 公開済み                       |
 | `panasonic-mc-sb55k-vs-mc-sb35k`                  | 公開済み                       |
+| `panasonic-ne-bs6e-vs-ne-bs5e`                    | 公開済み                       |
+| `panasonic-ne-bs9c-vs-ne-ubs10c`                  | 公開済み                       |
 | `panasonic-ne-fl1a-vs-ne-fl1c`                    | 公開済み                       |
+| `panasonic-ne-ms4c-vs-ne-bs5c`                    | 公開済み                       |
+| `panasonic-ni-fs70a-vs-ni-fs60b`                  | 公開済み                       |
+| `panasonic-nr-f55hy3-vs-sharp-sj-mf55r`           | 公開済み                       |
+| `panasonic-nt-t501-vs-nt-d700`                    | 公開済み                       |
+| `panasonic-sq-ld560-vs-sq-ld540`                  | 公開済み                       |
+| `panasonic-washer-na-lx129c-vs-hitachi-bd-sx130k` | 公開済み                       |
+| `philips-s9000-vs-braun-series9pro`               | 公開済み                       |
 | `pigeon-bottle-160-240`                           | 公開済み                       |
 | `pigeon-bottle-240`                               | 公開済み                       |
 | `pigeon-slim-240`                                 | 公開済み                       |
-| `sharp-kc-s50-vs-fu-s50`                          | 公開済み                       |
-| `shupot`                                          | 公開済み                       |
-| `tefal-dv4030j0-vs-dv8070j0`                      | 公開済み                       |
-| `tefal-ko5901jp-vs-ko8601j0`                      | 公開済み                       |
-| `thermos-kfm-020-vs-kfi-020`                      | 公開済み                       |
-| `thermos-tiger-bottle`                            | 公開済み                       |
-| `tiger-mta-j050-guide`                            | 公開済み                       |
-| `tiger-jpv-l100-vs-jpv-m100`                      | 公開済み                       |
-| `yamazaki-condor-wagon-vs-self-wagon`             | 公開済み                       |
-| `yamazaki-dust-wagon-45l-2division-vs-3division`  | 公開済み                       |
-| `yamazaki-free-broom-32-vs-45`                    | 公開済み                       |
-| `yamazaki-tower-desk-panel-vs-pen-stand`          | 公開済み                       |
-| `zojirushi-ck-pa08-vs-ck-dc08`                    | 公開済み                       |
-| `zojirushi-eq-aa22-vs-eq-sa22`                    | 公開済み                       |
-| `panasonic-nt-t501-vs-nt-d700`                    | 公開済み                       |
-| `panasonic-ne-bs9c-vs-ne-ubs10c`                  | 公開済み                       |
-| `panasonic-mc-jp860k-vs-mc-sb70km`                | 公開済み                       |
-| `panasonic-sq-ld560-vs-sq-ld540`                  | 公開済み                       |
-| `panasonic-ni-fs70a-vs-ni-fs60b`                  | 公開済み                       |
-| `panasonic-eh-na0j-vs-eh-na0g`                    | 公開済み                       |
-| `panasonic-mc-sb53k-vs-mc-sb33j`                  | 公開済み                       |
-| `panasonic-ew-dp57-vs-ew-dt73`                    | 公開済み                       |
-| `panasonic-ew-da19-vs-ew-da49`                    | 公開済み                       |
-| `panasonic-es-lv9w-vs-es-lv7w`                    | 公開済み                       |
-| `panasonic-eh-nc80-vs-eh-nc50`                    | 公開済み                       |
-| `panasonic-eh-na0k-vs-eh-ne9n`                    | 公開済み                       |
-| `panasonic-ep-ma110-vs-ep-ma121`                  | 公開済み                       |
-| `panasonic-es-wp9b-vs-es-wg0b`                    | 公開済み                       |
-| `logicool-mx-keys-s-vs-mx-keys-mini`              | 公開済み                       |
-| `logicool-mx-keys-s-for-mac-vs-k780`              | 公開済み                       |
-| `logicool-k650-vs-k580`                           | 公開済み                       |
-| `logicool-mx-master-3s-vs-m650`                   | 公開済み                       |
-| `logicool-mx-master-3s-vs-mx-anywhere-3s`         | 公開済み                       |
-| `logicool-lift-vs-m550`                           | 公開済み                       |
-| `logicool-zone-vibe-100-vs-zone-300`              | 公開済み                       |
-| `roborock-qrevo-curv-vs-dreame-x50`               | 公開済み                       |
-| `makita-cl107-vs-cl286`                           | 公開済み                       |
-| `recolte-automatic-cooker-vs-panasonic-nf-pc400`  | 公開済み                       |
-| `sharp-kc-s50-vs-panasonic-f-vxw55`               | 公開済み                       |
-| `anker-soundcore-liberty-4-nc-vs-sony-wf-c710n`   | 公開済み                       |
-| `panasonic-eh-na9m-vs-refa-beautech`              | 公開済み                       |
-| `dyson-v12-vs-micro-plus`                         | 公開済み                       |
-| `braun-series9pro-vs-series7`                     | 公開済み                       |
-| `delonghi-ecam22112b-vs-ecam25023sb`              | 公開済み                       |
-| `irobot-roomba-j9plus-vs-j7`                      | 公開済み                       |
-| `anessa-perfect-uv-vs-biore-aqua-rich`            | 公開済み                       |
-| `apple-watch-se-vs-xiaomi-redmi-watch-5`          | 公開済み                       |
-| `dyson-v12-detect-slim-vs-shark-evo-power`        | 公開済み                       |
-| `hitachi-bd-sx130k-vs-bd-stx130k`                 | 公開済み                       |
-| `montbell-tri-pack-vs-anello-backpack`            | 公開済み                       |
-| `nitori-n-sleep-vs-nishikawa-air-mattress`        | 公開済み                       |
-| `panasonic-eh-na9m-guide`                         | 公開済み                       |
-| `panasonic-es-lt4b-vs-es-lv7j`                    | 公開済み                       |
-| `panasonic-es-pv6a-vs-es-pv3a`                    | 公開済み                       |
-| `panasonic-f-px60c-vs-f-px70c`                    | 公開済み                       |
-| `panasonic-mc-nx810km-vs-mc-nx700k`               | 公開済み                       |
-| `panasonic-ne-bs6e-vs-ne-bs5e`                    | 公開済み                       |
-| `panasonic-ne-ms4c-vs-ne-bs5c`                    | 公開済み                       |
-| `panasonic-washer-na-lx129c-vs-hitachi-bd-sx130k` | 公開済み                       |
-| `philips-s9000-vs-braun-series9pro`               | 公開済み                       |
 | `re-fa-straight-iron-vs-panasonic-eh-hs0e`        | 公開済み                       |
+| `recolte-automatic-cooker-vs-panasonic-nf-pc400`  | 公開済み                       |
+| `regza-32v35s-vs-regza-43m550m`                   | 表に記載なし                   |
+| `roborock-qrevo-curv-vs-dreame-x50`               | 公開済み                       |
 | `samsonite-c-lite-vs-proteca-maxpass`             | 公開済み                       |
 | `sharp-heater-hv-r55-vs-iris-uhk500`              | 公開済み                       |
+| `sharp-kc-s50-vs-fu-s50`                          | 公開済み                       |
+| `sharp-kc-s50-vs-panasonic-f-vxw55`               | 公開済み                       |
+| `shupot`                                          | 公開済み                       |
 | `sony-bravia-55-xr80-vs-regza-55z870n`            | 公開済み                       |
+| `sony-wh-1000xm6-vs-airpods-max`                  | 表に記載なし                   |
 | `sony-wh-1000xm6-vs-wh-1000xm5`                   | 公開済み                       |
-| `t-fal-ko5901jp-vs-zoujirushi-ck-pa08`            | 公開済み                       |
-| `tempur-original-vs-nishikawa-air-pillow`         | 公開済み                       |
-| `thermos-jdp-501-vs-zojirushi-sm-za48`            | 公開済み                       |
-| `tiger-pcj-a080-vs-pcm-a080`                      | 公開済み                       |
-| `tiger-pct-a120-vs-pct-a150`                      | 公開済み                       |
-| `yamajitsu-film-holder-242286-vs-242287`          | 公開済み                       |
-| `yamazaki-laundry-wire-basket-m-vs-l`             | 公開済み                       |
-| `yamazaki-refrigerator-rack-240057-vs-240059`     | 公開済み                       |
-| `zojirushi-ec-kv50-vs-ec-ma60`                    | 公開済み                       |
-| `zojirushi-eq-ja22-vs-eq-fa22`                    | 公開済み                       |
-| `zojirushi-eq-sb22-vs-eq-ah22`                    | 公開済み                       |
-| `zojirushi-nx-ab10-vs-tiger-jrt-a100`             | 公開済み                       |
-| `yamazaki-ofuda-stand-rin-vs-single`              | 公開済み                       |
-| `yamazaki-dishwasher-rack-241925-vs-241926`       | 公開済み                       |
-| `dainichi-hd-rxt525-vs-panasonic-fe-kxu07`        | 公開済み                       |
-| `tefal-cy8768jp-vs-panasonic-sr-mp300`            | 公開済み                       |
-| `panasonic-db-bm1l-vs-db-rm3m`                    | 公開済み                       |
-| `tanita-bc-772-vs-omron-hbf-702t`                 | 公開済み                       |
-| `panasonic-ew-dp57-vs-philips-hx9911`             | 公開済み                       |
-| `casio-px-s1100-vs-yamaha-p-225`                  | 公開済み                       |
-| `omron-hem-7281t-vs-terumo-p2020`                 | 公開済み                       |
-| `iris-fk-c5-vs-panasonic-fd-f06x2`                | 公開済み                       |
-| `juki-hzl-f400jp-vs-brother-ps202`                | 公開済み                       |
-| `omron-mc-681-vs-terumo-c205`                     | 公開済み                       |
-| `fitbit-charge-6-vs-xiaomi-smart-band-9`          | 公開済み                       |
-| `zojirushi-cv-gb22-vs-tiger-pim-g220`             | 公開済み                       |
-| `panasonic-be-fd633-vs-bridgestone-a6xc41`        | 公開済み                       |
-| `dainichi-efh-1219d-vs-panasonic-ds-fwx1200`      | 公開済み                       |
-| `yamazaki-rainmat-f216-vs-lonstep`                | 公開済み（購入リンク未設定）   |
-| `yamazaki-magnet-kitchen-shelf-240005-vs-241830`  | 公開済み（購入リンク未設定）   |
-| `canon-pixus-ts8830-vs-epson-ep-887a`             | 公開済み                       |
-| `gopro-hero13-black-vs-dji-osmo-action-5-pro`     | 公開済み                       |
-| `panasonic-nr-f55hy3-vs-sharp-sj-mf55r`           | 公開済み                       |
-| `amazon-echo-dot-5th-vs-google-nest-mini-2nd`     | 公開済み                       |
-| `panasonic-hh-cf1285a-vs-iris-cl12dl`             | 公開済み                       |
-| `bruno-boe021-vs-iris-php-1002tc`                 | 公開済み                       |
-| `balmuda-the-toaster-vs-aladdin-graphite-toaster` | 公開済み                       |
-
-記事の公開日・変更日・公式確認日は `src/content/articles.ts` を正本とする。ここには履歴やPR番号を重複して持たせない。
+| `soundcore-liberty-5-pro-vs-liberty-4-pro`        | 公開済み                       |
+| `switch-2-vs-switch-2-zelda`                      | 表に記載なし                   |
 
 ## 次の候補
 
-現在、確定した次の候補はない。ここに挙げていた10件はすべて公開済みのため、
-2026-09-11に候補節をリセットした。公開済み記事は上の表を正とする。
+公開済み記事は上の表を正とし、各記事の確認記録は`docs/article-handoffs/`のhandoffを参照する
+（2026-10-05に候補節をリセット）。以下は公式情報が未確認の候補で（2026-10-07に既存カテゴリの空白を見て5本を補充。アクセス実績は参照していない。公式ページの存在は検索結果で確認しただけで、現行モデルの世代・型番は未確認）、記事化前に公式URLの再取得が必要。
 
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
 
-### Logicool Pebble Mouse 2 M350s vs Signature M650
+### SwitchBot ロックUltra vs ロックPro
 
-- slug: `logicool-pebble-m350s-vs-m650`
-- 状態: 記事・購入リンク確認済み（2026-09-26、変更の取り込み待ち）
-- 比較軸: 公式価格、重量、Easy-Switch、SmartWheel、ボタン数、Logi Boltレシーバー、電池寿命、保証
-- 公式URL:
-  - https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse
-  - https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse
-- Amazon: M350sGR / M650MGR の商品詳細ページを直接確認し、ASINと商品型番の一致を2026-09-26確認済み
-- 楽天: M350sGR / M650MGR のロジクール公式ストア商品詳細ページと成果URL遷移先を2026-09-26再確認済み
-- SNS: X・YouTubeの埋め込み候補を確認できず不採用。SNS欄は表示しない
-- 公開条件: 記事データ、handoff、購入リンクの品質ゲートを通し、PRの必須CIを確認する
+- 選定理由: スマートロックは公開中の記事にないカテゴリで、公開中のスマートホーム記事（SwitchBot ハブ3 vs ハブ2）から読者が移りやすい。
+- 状態: 候補（公式情報は未確認。2026-10-07にSwitchBot公式の両商品ページの存在だけを検索で確認）
+- 想定比較軸: 解錠スピード、静音モード、バッテリー（充電式か電池式か）、本体デザイン、対応するカギの形状、公式価格
+- 確認すること: SwitchBot公式の両商品ページ（`switchbot-lock-ultra`、`switchbot-lock-pro`）、型番、現行販売状況、単体かセット品かの商品一致、Amazon・楽天の商品一致
+- 注意: 顔認証・指紋認証セットなど構成違いが多いため、比較は本体単体に絞る。
 
-### Crucial X10 Pro 2TB vs Kingston XS2000 2TB
+### DJI Mini 5 Pro vs Mini 4 Pro
 
-- slug: `crucial-x10-pro-vs-kingston-xs2000`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 最大読込・書込速度、IP55、落下耐性のメーカー記載条件、外形寸法・重量
-- 公式URL:
-  - https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9
-  - https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive
-- 購入先: 楽天成果URLは両商品確認済み。KingstonはAmazonタグ付き成果URLと遷移先も確認済み。CrucialはAmazon対象外のため楽天CTAのみ
-- 画像: 公式CDNの両画像を取得確認。Production CSPへ両ホストを追加
-- SNS: 適格性を裏付けられる投稿なしとして欄を非掲載（handoffに検索範囲・除外理由を記録）
-- handoff: `docs/article-handoffs/crucial-x10-pro-vs-kingston-xs2000-2026-09-27.json`
+- 選定理由: ドローンは未着手で、アクションカメラ記事（Osmo Action 6）からDJIの読者が移りやすい。
+- 状態: 候補（公式情報は未確認。Mini 5 Proの日本での発売状況を、2026-10-07の検索では確認できなかった。記事化前にDJI日本の公式ページで現行モデルを確認する）
+- 想定比較軸: センサー、障害物検知、飛行時間、映像性能、重量（250g未満か）、公式価格
+- 確認すること: DJI日本の両商品ページ、現行の販売状況、コンボ構成の違い、航空法などの注意書き、購入導線の商品一致
+- 注意: コンボ構成（送信機の種類）で価格が大きく変わるため、比較する構成を先に決める。
 
-### 象印 スチーム式加湿器 EE-DG50 vs EE-RV50
+### フィリップス ソニッケアー 上位モデルと中位モデルの比較
 
-- slug: `zojirushi-ee-dg50-vs-ee-rv50`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 容量、連続加湿時間、運転モード・タイマー、外形寸法・質量、公式ストア価格（加湿能力・適用床面積・消費電力は共通）
-- 公式URL:
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/
-  - https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/
-- Amazon: EE-DG50-WA（B0HGF5B9D8）/ EE-RV50-WA（B0HGFGSYXX）の商品詳細ページで型番一致を2026-09-29確認。対象可否はツールバーで確認済み（対象・2.00%）。タグ付きURLの遷移先も確認済み
-- 楽天: ケーズデンキ 楽天市場店の商品詳細ページで型番・JAN一致を2026-09-29確認。成果URLは生成済み
-- SNS: 適格な実利用投稿を確認できず不採用。SNS欄は表示しない
-- 購入先: 楽天成果URLは両商品確認済み。AmazonもツールバーとタグURLの遷移先を確認済み（対象・2.00%、ビルド時にtag付与）
-- handoff: `docs/article-handoffs/zojirushi-ee-dg50-vs-ee-rv50-2026-09-29.json`
-
-### 楽天Kobo Clara Colour vs Libra Colour
-
-- slug: `kobo-clara-colour-vs-libra-colour`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 画面サイズ・解像度、内蔵メモリ、ページめくりボタン、Koboスタイラス2対応、サイズ・質量、公式ページ価格（Kaleido 3・ComfortLight PRO・IPX8・バッテリー目安は共通）
-- 公式URL:
-  - https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/
-  - https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/
-- 購入先: 楽天ブックス（楽天Kobo公式ストア）の商品ページで商品名・価格一致、楽天市場商品検索APIで成果URLを取得（verified）。Amazon（B0D5D1DXZY / B0D5HSRM75）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式の仕様表用画像（他社マンガの写り込みなし、ホワイト・低解像度）
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/kobo-clara-colour-vs-libra-colour-2026-09-29.json`
-
-### 富士フイルム instax mini 13 vs instax mini 41
-
-- slug: `instax-mini-13-vs-mini-41`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: セルフタイマー・セルフィーミラー、カラー展開、デザイン、サイズ・質量、使用電池（レンズ・撮影範囲・フラッシュ・現像時間は共通）
-- 公式URL:
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、mini 13はPREMOA、mini 41はケーズデンキ）。Amazon（B0G5P496HD / B0F43J12FV）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式デザインページの正面画像（mini 13はクレイホワイト）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: Xの個人購入者の投稿を各1件採用（2026-09-30確認、mini 13・mini 41）。どちらも短い好意的な投稿
-- handoff: `docs/article-handoffs/instax-mini-13-vs-mini-41-2026-09-29.json`
-
-### 富士フイルム instax mini Evo vs instax mini Evo Cinema
-
-- slug: `instax-mini-evo-vs-evo-cinema`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: 動画撮影、エフェクト、液晶モニター、AF、無線通信、サイズ・質量、カラー展開（レンズ・プリント出力時間・プリント可能枚数は共通）
-- 公式URL:
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo
-  - https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、EvoはマップカメラBLACK、Evo CinemaはJoshin web）。Amazon（B0C85H3GTH / B0GGNPV24C）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: 公式デザインページの画像（EvoはBLACK正面、Evo Cinemaは斜め前方）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/instax-mini-evo-vs-evo-cinema-2026-09-29.json`
-
-### ソニー VLOGCAM ZV-1 II vs ZV-1F
-
-- slug: `sony-zv-1-ii-vs-zv-1f`
-- 状態: 公開条件確認済み（PR・本番デプロイ検証中）
-- 比較軸: レンズ（18-50mmズームと20mm単焦点）、AF方式、連写、HD動画の記録形式、内蔵ND、電池持ち、質量（センサー・液晶・4K動画・背景ぼけ切り換えは共通）
-- 公式URL:
-  - https://www.sony.jp/vlogcam/products/ZV-1M2/
-  - https://www.sony.jp/vlogcam/products/ZV-1F/
-- 購入先: 楽天市場商品検索APIで成果URLを取得（verified、ZV-1 IIはJoshin web、ZV-1Fは楽天ビック）。Amazon（B0C6614QWT / B0BJ5L8RCG）はツールバーで対象確認（手数料率2.00%）、タグ付きURLの遷移先も確認済み（verified）
-- 画像: ソニー公式の画像（ZV-1 IIはブラックとホワイトの2台、ZV-1Fはホワイト）
-- 価格: どちらもオープン価格。販売店の価格は掲載しない
-- SNS: 適格な投稿を確認できず不採用。SNS欄は表示しない
-- handoff: `docs/article-handoffs/sony-zv-1-ii-vs-zv-1f-2026-09-29.json`
+- 選定理由: 公開済みの美容・健康記事に電動歯ブラシがない。フィリップス公式に製品比較ページがある。
+- 状態: 候補（対象型番は未確定。公式で現行ラインナップを確認して決める）
+- 想定比較軸: ブラッシングモード、センサー、バッテリー、付属品、替ブラシの種類、公式価格
+- 確認すること: フィリップス公式の対象型番ページ（`philips.co.jp/c-m-pe/electric-toothbrushes`）、型番と販売名、Amazon・楽天の商品一致、既存のフィリップス記事（`panasonic-ew-dp57-vs-philips-hx9911`は別カテゴリで、2026-10-07時点で非公開）との重複
 
 ## 追加確認・保留
 
 ### アップリカ ラクーナ クッションフリー AF vs プラス AE
 
+- 2026-10-05再確認: aprica.jpは商品一覧が403、チャイルドシート配下が404で、HTTP確認できず。保留を継続。
 - 保留理由: 公式サイトで対象商品ページを安定して確認できない場合は記事化しない。
 - 再開条件: 現行公式ページと両モデルの仕様・画像を個別にHTTP確認できること。
 
@@ -289,6 +252,7 @@
 - 新記事は必ずブランチ → PR → 必須 `pnpm verify` → マージの順で反映する
 - 記事化前に公式URLを再取得し、対象商品・型番・比較軸を確認する
 - 記事化後は `src/content/articles.ts` とこのバックログの状態を同じ変更で更新する
+- 「現在の公開済み」の表は、本番URLがHTTP 200を返す記事だけにする。公開・取り下げのたびに、本番を実測して表と「公開されていない記事」を更新する
 - 本番デプロイはGitマージとは別工程。Direct Uploadの実体と公開URLを確認してから完了扱いにする
 - 価格・在庫・体験談は、確認できないものを推測して掲載しない
 

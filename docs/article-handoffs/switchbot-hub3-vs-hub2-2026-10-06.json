@@ -1,0 +1,190 @@
+{
+  "id": "switchbot-hub3-vs-hub2-2026-10-06",
+  "articleId": "switchbot-hub3-vs-hub2",
+  "source": "Fresh product selection and research by Claude Code against SwitchBot Japan official product pages and SwitchBot Help Center, and Amazon.co.jp / Rakuten Biccamera product detail pages (Amazon Associates toolbar and Rakuten Affiliate link creation observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-06",
+  "articleReady": true,
+  "category": "スマートホーム",
+  "selection": {
+    "reason": "ハブ3（ダイヤル・人感検知・30台Matter連携）とハブ2（小型・低価格）はどちらも赤外線スマートリモコンで、機能差と価格差（16,980円と9,980円）が購入時の迷いに直結する。公開済み記事のスマートホームはEcho Dotのみで、バックログの候補だった。",
+    "duplicateCheck": "src/content/articles にSwitchBotを扱う記事なし（2026-10-06確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "SwitchBot ハブ3",
+      "model": "W7202101",
+      "officialUrl": "https://www.switchbot.jp/products/switchbot-hub3",
+      "officialImageUrl": "https://www.switchbot.jp/cdn/shop/files/Hub3_JP_1600x1600_04_2x_da011668-9041-4c4f-9ed3-846f255fb5ea.webp",
+      "imageEvidence": "SwitchBot公式商品ページのギャラリー画像（Hub3_JP_1600x1600_04、白背景の本体単体、HTTP 200、2026-10-06取得）。800x800に整えて public/products/switchbot-hub3.jpg と src/assets/products に保存。2026-10-07に、受賞バッジの写り込みと画面上部の切れを避けるため、og画像の切り出しから差し替えた。",
+      "officialSpecs": {
+        "size": "126×94×38mm",
+        "weight": "190g",
+        "operatingTemperature": "-20°C~65°C",
+        "communication": "802.11b/g/n 2.4GHz Wi-Fi、Bluetooth Low Energy",
+        "irRange": "最大30m",
+        "display": "IPSディスプレイ",
+        "dial": "Dial Master（ダイヤル）",
+        "matterSubDevices": "30台（ヘルプセンター）",
+        "motionDetection": "あり（ヘルプセンター）",
+        "irDatabase": "約101,000以上のリモコン"
+      },
+      "officialStorePriceJpy": 16980,
+      "officialStoreUrl": "https://www.switchbot.jp/products/switchbot-hub3",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DWDQYLXG",
+      "rakutenProductPage": "https://item.rakuten.co.jp/biccamera/0810150543353/",
+      "rakutenListingEvidence": "楽天ビック（biccamera）の商品ページのタイトル「SwitchBot｜スイッチボット ハブ3 W7202101」とJAN 0810150543353を確認（2026-10-06）。"
+    },
+    "right": {
+      "name": "SwitchBot ハブ2",
+      "model": "W3202106",
+      "officialUrl": "https://www.switchbot.jp/products/switchbot-hub2",
+      "officialImageUrl": "https://www.switchbot.jp/cdn/shop/files/JP_Hub_2_2x_9a0ec3fb-beee-4124-8957-7de541b7eba2.webp?v=1745810078",
+      "imageEvidence": "SwitchBot公式商品ページのog:image（800x800に取得、2026-10-06）。上部の販売台数表記と下部の注記を切り落とし、800x800の白背景正方形に整えて public/products/switchbot-hub2.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "size": "80×70×23mm",
+        "weight": "63g",
+        "operatingTemperature": "-20℃～40℃",
+        "communication": "Wi-Fi 2.4GHz帯のみ対応（公式ページ記載）",
+        "matterSubDevices": "8台（ヘルプセンター）",
+        "motionDetection": "なし（ヘルプセンター）",
+        "irDatabase": "対応可能な製品型番101,000以上"
+      },
+      "officialStorePriceJpy": 9980,
+      "officialStoreUrl": "https://www.switchbot.jp/products/switchbot-hub2",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0BM8VS13P",
+      "rakutenProductPage": "https://item.rakuten.co.jp/biccamera/0850043739784/",
+      "rakutenListingEvidence": "楽天ビック（biccamera）の商品ページのタイトル「SwitchBot｜スイッチボット ハブ2 W3202106」とJAN 0850043739784を確認（2026-10-06）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "SwitchBot公式ストア（switchbot.jp）の税込表示。ハブ3は16,980円、ハブ2は9,980円（2026-10-06確認）。",
+    "keyDifferences": [
+      "本体のダイヤル（Dial Master）／Bluetoothリモコンはハブ3のみ",
+      "人感検知（Motion detection）はハブ3のみ（ヘルプセンター比較表）",
+      "Matterで連携できるサブデバイス数はハブ2が8台、ハブ3が30台",
+      "天気・日時・CO2状態・ロック状態の表示はハブ3のみ",
+      "本体サイズ・重量は126×94×38mm・190gと80×70×23mm・63g",
+      "公式ストア価格は16,980円と9,980円"
+    ],
+    "commonSpecs": [
+      "赤外線リモコンの学習・操作（101,000以上の型番）",
+      "温湿度センサー・照度センサー",
+      "Matter機能",
+      "本体でのシーン操作",
+      "赤外線家電のオフライン操作",
+      "2.4GHz Wi-Fi"
+    ],
+    "caveat": "ヘルプセンターの比較表は英語版ページ。ハブ3の赤外線送信範囲（最大30m）はハブ2の公式ページに記載がなく比較していない。Amazonのハブ2商品ページには新しいモデル（SwitchBot AIハブ）がある旨の表示があったが、本記事の比較対象外。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DWDQYLXG",
+    "right": "https://www.amazon.co.jp/dp/B0BM8VS13P",
+    "leftAsin": "B0DWDQYLXG",
+    "rightAsin": "B0BM8VS13P",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-06"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「SwitchBot スマートリモコン ハブ3 赤外線家電を管理 Alexa - 2.4インチモニター付き」とASIN B0DWDQYLXGを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率4.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DWDQYLXG?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、SwitchBot スマートリモコン ハブ3 赤外線家電を管理 Alexa - 2.4インチモニター付きの商品詳細ページに到達。ツールバーに販売手数料率4.00%を表示（2026-10-06）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「スイッチボット(SwitchBot) SwitchBot スマートリモコン ハブ2 赤外線家電を管理」とASIN B0BM8VS13Pを確認（2026-10-06）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率4.00%を表示。『対象外』の表示はなし（2026-10-06）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0BM8VS13P?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、スイッチボット(SwitchBot) SwitchBot スマートリモコン ハブ2 赤外線家電を管理の商品詳細ページに到達。ツールバーに販売手数料率4.00%を表示（2026-10-06）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F0810150543353%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "right": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F0850043739784%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+    "leftProductPage": "https://item.rakuten.co.jp/biccamera/0810150543353/",
+    "leftProductVerified": true,
+    "rightProductPage": "https://item.rakuten.co.jp/biccamera/0850043739784/",
+    "rightProductVerified": true,
+    "generation": "2026-10-06に楽天アフィリエイト公式画面（affiliate.rakuten.co.jp）へログインした状態で、商品詳細URLを入力して生成。リンクタイプは「リンクのみ」。ソース欄のURLをそのまま使用（改変なし）。両URLのHTTP GET最終遷移先が楽天ビックの商品ページ（HTTP 200）であることを確認。",
+    "browserEvidence": {
+      "observedAtJst": "2026-10-06",
+      "ui": "楽天アフィリエイトにログインした画面の「URLを入力してリンクを作成」から商品ページごとに作成。",
+      "bySide": {
+        "left": {
+          "inputUrl": "https://item.rakuten.co.jp/biccamera/0810150543353/",
+          "productTitle": "SwitchBot｜スイッチボット ハブ3 W7202101",
+          "shopName": "楽天ビック",
+          "productMatch": "楽天ビックの商品ページのタイトルで商品名・型番を確認し、アフィリエイト画面のプレビューURLが同一商品ページであることを確認。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://biccamera.rakuten.co.jp/item/0810150543353/",
+          "finalHttpStatus": 200
+        },
+        "right": {
+          "inputUrl": "https://item.rakuten.co.jp/biccamera/0850043739784/",
+          "productTitle": "SwitchBot｜スイッチボット ハブ2 W3202106",
+          "shopName": "楽天ビック",
+          "productMatch": "楽天ビックの商品ページのタイトルで商品名・型番を確認し、アフィリエイト画面のプレビューURLが同一商品ページであることを確認。",
+          "linkType": "リンクのみ（hybrid_url）",
+          "outerHost": "hb.afl.rakuten.co.jp",
+          "finalDestination": "https://biccamera.rakuten.co.jp/item/0850043739784/",
+          "finalHttpStatus": 200
+        }
+      }
+    }
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。公式ストアのレビュー欄にある購入者コメントは根拠として使っていない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "ハブ2の赤外線送信範囲は公式ページに記載がなく未確認。",
+    "ハブ2→ハブ3の設定移行の可否はヘルプセンターの該当記事を未読のため断定していない。",
+    "Amazon・楽天・公式ストアの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様・価格・画像、Amazonの商品一致・対象表示・遷移先、楽天のアフィリエイト生成と遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
