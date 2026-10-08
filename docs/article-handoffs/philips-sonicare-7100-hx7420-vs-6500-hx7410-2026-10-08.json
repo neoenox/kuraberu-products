@@ -1,0 +1,158 @@
+{
+  "id": "philips-sonicare-7100-hx7420-vs-6500-hx7410-2026-10-08",
+  "articleId": "philips-sonicare-7100-hx7420-vs-6500-hx7410",
+  "source": "Fresh product selection and research by Claude Code against Philips Japan official product pages and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-08",
+  "articleReady": true,
+  "category": "美容・健康",
+  "selection": {
+    "reason": "フィリップス日本の現行ラインナップ（9900プレステージ、ダイアモンドクリーン9000、7100、6500、3100、2100）のうち、同じエントリーシリーズと案内される7100シリーズと6500シリーズは、モード数・ブラシヘッド・価格が異なり、選ぶ迷いが明確。電動歯ブラシは公開中の記事にないカテゴリ。バックログの候補を、型番を確定して記事化した。",
+    "duplicateCheck": "src/pages/articles と src/content/articles（commercial と旧形式）にソニッケアー・電動歯ブラシの記事なし（2026-10-08確認）。philips-s9000-vs-braun-series9pro などはシェーバーで別カテゴリ。"
+  },
+  "products": {
+    "left": {
+      "name": "フィリップス ソニッケアー 7100シリーズ",
+      "model": "HX7420/10",
+      "officialUrl": "https://www.philips.co.jp/c-p/HX7420_10/series-7100-rechargeable-toothbrush",
+      "officialImageUrl": "https://images.philips.com/is/image/philipsconsumer/b2e704eaf8ae4a78bb15b137011fe99a",
+      "imageEvidence": "フィリップス日本のHX7420/10商品ページのog:image（透過PNG、900x900に取得、HTTP 200、2026-10-08）。白背景に合成し800x800で public/products/philips-sonicare-7100-hx7420.jpg と src/assets/products に保存。画像のボタン表示は4つ。",
+      "officialSpecs": {
+        "vibration": "毎分約31,000ストローク",
+        "modes": "4モード・3段階の強さ",
+        "brushHead": "プレミアムガムケアブラシヘッド",
+        "sensor": "過圧防止センサー機能（視覚認識方式）",
+        "pacer": "ペーサー機能・スマートタイマー機能",
+        "accessory": "トラベルケース1個",
+        "colors": "ブラック、ホワイト",
+        "series": "エントリーシリーズ",
+        "gumHealth": "ガムヘルスモード使用時、約2週間で歯ぐきの健康を推進"
+      },
+      "officialStorePriceJpy": null,
+      "officialStoreUrl": "https://www.philips.co.jp/c-p/HX7420_10/series-7100-rechargeable-toothbrush",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FMKSS5G4",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは今回確認していない（not-recorded）。"
+    },
+    "right": {
+      "name": "フィリップス ソニッケアー 6500シリーズ",
+      "model": "HX7410/10",
+      "officialUrl": "https://www.philips.co.jp/c-p/HX7410_10/series-6500-rechargeable-toothbrush",
+      "officialImageUrl": "https://images.philips.com/is/image/philipsconsumer/c721401150d54b22bc1fb2d401042b67",
+      "imageEvidence": "フィリップス日本のHX7410/10商品ページのog:image（透過PNG、900x900に取得、HTTP 200、2026-10-08）。白背景に合成し800x800で public/products/philips-sonicare-6500-hx7410.jpg と src/assets/products に保存。画像のボタン表示は3つ。",
+      "officialSpecs": {
+        "vibration": "毎分約31,000ストローク",
+        "modes": "3モード・3段階の強さ",
+        "brushHead": "プレミアムクリーンブラシヘッド（従来のホワイトプラスの約4倍の面積で歯に触れる）",
+        "sensor": "過圧防止センサー機能（視覚認識方式）",
+        "pacer": "ペーサー機能・スマートタイマー機能",
+        "accessory": "トラベルケース1個",
+        "colors": "ネイビーブルー、ホワイト",
+        "series": "エントリーシリーズ"
+      },
+      "officialStorePriceJpy": null,
+      "officialStoreUrl": "https://www.philips.co.jp/c-p/HX7410_10/series-6500-rechargeable-toothbrush",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FMKMJTPJ",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは今回確認していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "priceBasis": "フィリップス日本の公式ページに価格の記載がない。記事の価格はAmazon.co.jpの商品ページの税込表示（7100 HX7420/10が38,280円、6500 HX7410/10が18,800円、いずれもAmazon.co.jp限定・トラベルケース付きのホワイト、2026-10-08確認）。",
+    "keyDifferences": [
+      "ブラッシングモードは7100が4モード、6500が3モード",
+      "付属ブラシヘッドは7100がプレミアムガムケア、6500がプレミアムクリーン",
+      "ガムヘルスモードで約2週間で歯ぐきの健康を推進との案内は7100のみ",
+      "本体色はブラック／ホワイトとネイビーブルー／ホワイト",
+      "Amazon表示価格は38,280円と18,800円"
+    ],
+    "commonSpecs": [
+      "毎分約31,000ストローク",
+      "過圧防止センサー機能（視覚認識方式）",
+      "ペーサー機能・スマートタイマー機能",
+      "トラベルケース1個",
+      "エントリーシリーズ"
+    ],
+    "caveat": "公式ページの『技術仕様』の表（バッテリー・充電・重量など）は取得できず、比較していない。ブラッシングモードの名称は公式ページの本文からは確認できず、製品画像のボタン表示の数のみ確認した。Amazonのリンク先はAmazon.co.jp限定の出品（ホワイト、トラベルケース付き）で、公式の型番と一致するが、同梱品が公式の標準構成と同一かは未確認。7100のAmazon表示価格が6500の約2倍と大きいため、購入時点の価格確認が特に必要。レビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0FMKSS5G4",
+    "right": "https://www.amazon.co.jp/dp/B0FMKMJTPJ",
+    "leftAsin": "B0FMKSS5G4",
+    "rightAsin": "B0FMKMJTPJ",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-08"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「フィリップス 電動歯ブラシ ソニッケアー 7100 歯ぐきケアを強化 HX7420/10（Amazon.co.jp限定・トラベルケース付き・ホワイト）」とASIN B0FMKSS5G4を確認し、型番がフィリップス公式の型番と一致することを確認。出荷元・販売元はAmazon.co.jp。Amazon表示価格38,280円（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FMKSS5G4?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、フィリップス 電動歯ブラシ ソニッケアー 7100 歯ぐきケアを強化 HX7420/10（Amazon.co.jp限定・トラベルケース付き・ホワイト）の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-08）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「フィリップス 電動歯ブラシ ソニッケアー 6500 歯と歯ぐきを守る HX7410/10（Amazon.co.jp限定・トラベルケース付き・ホワイト）」とASIN B0FMKMJTPJを確認し、型番がフィリップス公式の型番と一致することを確認。出荷元・販売元はAmazon.co.jp。Amazon表示価格18,800円（2026-10-08）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『キッチン&ダイニング』と販売手数料率2.00%を表示。『対象外』の表示はなし（2026-10-08）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FMKMJTPJ?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、フィリップス 電動歯ブラシ ソニッケアー 6500 歯と歯ぐきを守る HX7410/10（Amazon.co.jp限定・トラベルケース付き・ホワイト）の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-08）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天の商品詳細ページは確認していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。フィリップス公式ページや Amazon のレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "公式ページの技術仕様表（バッテリー・充電・重量など）は未取得。",
+    "Amazonの出品（Amazon.co.jp限定・トラベルケース付き）の同梱品が公式の標準構成と同一かは未確認。",
+    "替えブラシの互換性は未確認。",
+    "価格・在庫・セールは購入時点で変動する。"
+  ],
+  "publicationDecision": "公式の仕様（機能・モード・ブラシヘッド）と画像、Amazonの型番一致・対象表示・タグ付きURLの遷移先は確認済み。公式の技術仕様表と価格は未取得のため、公開判断・マージ・本番反映はユーザーの指示を待つ。Draft PRとする。"
+}
