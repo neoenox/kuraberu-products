@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（41本）
+## 現在の公開済み（42本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -42,6 +42,7 @@
 | `kindle-paperwhite-vs-colorsoft`                     | 公開済み |
 | `kindle-vs-kindle-paperwhite`                        | 公開済み |
 | `ipad-mini-a17-pro-vs-ipad-a16`                      | 公開済み |
+| `apple-watch-series-12-vs-se-3`                      | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -156,13 +157,6 @@
 - 状態: 候補（公式情報は未確認。2026-10-08のAmazon検索で、Kindle Scribe Colorsoft（2026年発売）の存在を確認。比較相手のKindle Scribeの現行モデルは、単体の商品ページを特定できていない）
 - 想定比較軸: カラー表示、画面サイズ、ペンの種類、ストレージ、バッテリー、価格
 - 確認すること: Amazon.co.jpの両商品ページ、世代・容量の組み合わせ、ペンが付属する構成か、発売前か販売中か
-
-### Apple Watch Series 12 vs Apple Watch SE 3
-
-- 選定理由: スマートウォッチは公開中の記事に旧形式のApple Watch SE記事しかなく、Apple公式で現行ラインナップを確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-08にApple日本の比較ページで、Series 12・Ultra 4・SE 3などの存在を確認。どのモデルが現行販売中かは未確認）
-- 想定比較軸: ディスプレイ、チップ、健康機能、バッテリー、サイズ・素材、公式価格
-- 確認すること: Apple日本の比較ページと両仕様ページ、現行の販売状況、ケースサイズ・素材・GPS/セルラーの構成の決め方、Amazon・楽天の商品一致
 
 ## 追加確認・保留
 
