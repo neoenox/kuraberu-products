@@ -86,6 +86,7 @@ describe("article metadata", () => {
       "ipad-a16-vs-ipad-air-m4",
       "switchbot-hub3-vs-hub2",
       "kindle-paperwhite-vs-colorsoft",
+      "kindle-vs-kindle-paperwhite",
       "karcher-k2-silent-vs-k3-silent-plus",
       "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
       "dji-osmo-action-6-vs-gopro-hero13-black",
