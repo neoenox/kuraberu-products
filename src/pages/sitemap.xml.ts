@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
 import { site } from "../config/site";
 import { publishedArticleMetadata } from "../content/articles";
-import { diagnosisCategories } from "../data/diagnoses";
 import {
   ARTICLE_LIST_PAGE_SIZE,
   maxDate,
@@ -55,14 +54,10 @@ const staticPaths: SitemapEntry[] = [
   { path: "/about/" },
   { path: "/privacy/" },
   { path: "/disclaimer/" },
-  { path: "/tools/product-finder/" },
   { path: "/guides/" },
   { path: "/guides/instax-mini-film-price/" },
   { path: "/guides/instax-mini-pattern-film-price/" },
   { path: "/guides/sd-card-price-per-gb/" },
-  ...diagnosisCategories.map((category) => ({
-    path: `/tools/product-finder/${category.slug}/` as const,
-  })),
 ];
 
 const articleEntries: SitemapEntry[] = publishedArticleMetadata.map(

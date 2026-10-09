@@ -20,8 +20,6 @@ import type { KeyDiffRow } from './VisualKeyDifferences.astro';
 import { articleMetadata as allArticles, publishedArticleMetadata } from '../content/articles';
 import { articlePurchaseLinks } from '../lib/products';
 import type { ArticleMetadata, ComparisonSide } from '../content/articles';
-import { getComparisonV2Entry } from '../content/articles/comparison-v2';
-import { manualArticleSeeds } from '../content/articles/manual-seeds';
 
 interface SpecRow {
   label: string;
@@ -191,95 +189,7 @@ if (props.articleId) {
       diagnosisHref: props.diagnosisHref,
     };
   } else {
-    // Fallback: comparison-v2 + manual seeds mode
-    let compEntry;
-    try {
-      compEntry = getComparisonV2Entry(props.articleId as any);
-    } catch {
-      throw new Error(`Article ${props.articleId} missing leftModel/rightModel and no comparison-v2 entry`);
-    }
-    const seed = manualArticleSeeds.find((s) => s.id === props.articleId);
-
-    const toSideFromComp = (side: "left" | "right"): Side => ({
-      brand: compEntry[side].brand,
-      line: compEntry[side].line,
-      tagline: compEntry[side].tagline,
-      image: compEntry[side].image,
-      imageAlt: compEntry[side].imageAlt,
-      officialHref: compEntry[side].officialHref,
-      guidePoints: [...compEntry[side].guidePoints],
-      productId: compEntry[side].productId,
-      purchaseHref: (articlePurchaseLinks as Record<string, { purchaseUrl: string }>)[`${purchaseKey}:${side}`]?.purchaseUrl,
-    });
-
-    const leftSide = toSideFromComp("left");
-    const rightSide = toSideFromComp("right");
-
-    const productFaq = [
-      {
-        question: `${leftSide.line}と${rightSide.line}の主な違いは？`,
-        answer: `主要な差分はこの記事の比較表で確認できます。価格・在庫・仕様は変動するため、購入時点の公式ページと販売ページを確認してください。`,
-      },
-      {
-        question: `どちらを選べばよい？`,
-        answer: `用途・置き場所・対応機器・サイズを優先順位にして、公式仕様と販売ページを照らし合わせてください。`,
-      },
-      {
-        question: `比較対象はどのように選んでいますか？`,
-        answer: `メーカー公式ページで商品を特定でき、共通する仕様とモデルごとの差分を確認できる組み合わせを比較対象にしています。`,
-      },
-    ];
-
-    const faq = seed?.faqEntries?.length ? [...seed.faqEntries] : productFaq;
-    const specsRows = compEntry.rows.map((row: { label: string; left: string; right: string }) => ({
-      label: row.label, left: row.left, right: row.right,
-    }));
-
-    const officialLinks = [
-      { label: `${leftSide.line} 公式商品ページ`, href: leftSide.officialHref },
-      { label: `${rightSide.line} 公式商品ページ`, href: rightSide.officialHref },
-    ];
-
-    const sourceLinks: SourceLink[] = seed?.sourceLinks
-      ? seed.sourceLinks.map((l) => ({ label: l.label, href: l.url, checkedAt: l.date }))
-      : [
-          { label: `${leftSide.line} 公式商品ページ`, href: leftSide.officialHref, checkedAt: article.productInfoCheckedAt },
-          { label: `${rightSide.line} 公式商品ページ`, href: rightSide.officialHref, checkedAt: article.productInfoCheckedAt },
-        ];
-
-    resolved = {
-      articleMetadata: article,
-      left: leftSide,
-      right: rightSide,
-      keyDiffRows: specsRows,
-      lead: seed?.lead ?? article.summary,
-      summaryParagraph: undefined,
-      officialDescription:
-        seed?.officialProse
-          ?.map((s) => {
-            const items = s.items.map((item) =>
-              /[。！？]$/.test(item) ? item : `${item}。`,
-            );
-            return `${s.heading}：${items.join('')}`;
-          })
-          .join('\n') ?? `比較の根拠は、各メーカー公式の商品ページで確認した情報です。`,
-      officialLinks,
-      specRows: props.specRows,
-      socialProofQuery: seed?.socialProofQuery ?? `${leftSide.brand} ${leftSide.line} ${rightSide.line}`,
-      socialProofCheckedAt: seed?.socialProofCheckedAt,
-      socialProofHasPosts: seed?.socialProofHasPosts,
-      socialProofBestMatch: seed?.socialProofBestMatch,
-      embeds: seed?.embeds,
-      faqEntries: faq,
-      leftPurchaseName: `${leftSide.brand} ${leftSide.line}`,
-      leftPurchaseAudience: leftSide.tagline,
-      rightPurchaseName: `${rightSide.brand} ${rightSide.line}`,
-      rightPurchaseAudience: rightSide.tagline,
-      sourceLinks,
-      purchaseWarning: props.purchaseWarning ?? '価格・在庫・仕様は変更される可能性があります。購入時点の公式ページと販売ページを確認してください。',
-      disclaimer: props.disclaimer ?? seed?.disclaimer ?? 'この比較は、メーカー公式の商品ページで確認できる情報を根拠にしています。個人の感想や口コミは比較の根拠にしていません。',
-      diagnosisHref: compEntry.diagnosisHref,
-    };
+    throw new Error(`Article ${props.articleId} is missing leftModel/rightModel/keyDiffRows/lead/faqEntries`);
   }
 } else if (props.articleMetadata && props.left && props.right) {
   // --- 明示モード: 全プロップを直接渡す（後方互換） ---

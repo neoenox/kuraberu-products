@@ -103,7 +103,7 @@ function compareByScoreThenNewest<T extends RelatedArticleCandidate>(
 
 /**
  * 記事一覧から現在の記事（currentPath）に対する関連記事を選ぶ。
- * - 現在記事がメタデータに無いページ（/tools/product-finder/ 等）は、
+ * - 現在記事がメタデータに無いページ（一覧ページ等）は、
  *   従来どおり同カテゴリを上限件数で返す（カテゴリフォールバック）。
  * - それ以外はスコア順で上位を related、残りを others として返す。
  */

@@ -65,7 +65,7 @@ if (!hasDist) {
 describe.skipIf(!hasDist)("comparison memo (rendered dist)", () => {
   it("renders memo controls while keeping article links without JavaScript", () => {
     const articleHtml = readFileSync(
-      "dist/articles/pampers-newborn/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     const memoHtml = readFileSync("dist/memo/index.html", "utf8");

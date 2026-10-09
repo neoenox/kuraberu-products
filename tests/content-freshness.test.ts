@@ -1,8 +1,12 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { pampersNewbornArticle } from "../src/content/articles";
+import { publishedArticleMetadata } from "../src/content/articles";
 import { daysSinceCheck, isContentStale } from "../src/lib/content-freshness";
+
+const echoDotArticle = publishedArticleMetadata.find(
+  (article) => article.id === "amazon-echo-dot-max-vs-echo-dot-5th",
+)!;
 
 describe("content freshness", () => {
   it("uses calendar dates without negative ages", () => {
@@ -17,9 +21,9 @@ describe("content freshness", () => {
   });
 
   it("keeps product-info and purchase-link check dates separate", () => {
-    expect(pampersNewbornArticle.productInfoCheckedAt).toBe("2026-07-31");
-    expect(pampersNewbornArticle.purchaseLinkStatus).toBe("verified");
-    expect(pampersNewbornArticle.purchaseLinksCheckedAt).toBe("2026-09-03");
+    expect(echoDotArticle.productInfoCheckedAt).toBe("2026-10-08");
+    expect(echoDotArticle.purchaseLinkStatus).toBe("verified");
+    expect(echoDotArticle.purchaseLinksCheckedAt).toBe("2026-10-08");
   });
 });
 
@@ -35,20 +39,20 @@ if (!hasDist) {
 describe.skipIf(!hasDist)("content freshness (rendered dist)", () => {
   it("renders factual check dates and update history", () => {
     const html = readFileSync(
-      "dist/articles/pampers-newborn/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     // v3 短縮で verification-summary（商品情報確認日）は廃止。
     // 確認日は冒頭の TrustLine（✓ 公式確認済み（日付）・広告を含みます）と
     // 情報源一覧で表示する。
-    expect(html).toContain("✓ 公式確認済み（2026-07-31）");
-    expect(html).toContain('datetime="2026-07-31"');
-    expect(html).toContain("2026-07-31確認");
+    expect(html).toContain("✓ 公式確認済み（2026-10-08）");
+    expect(html).toContain('datetime="2026-10-08"');
+    expect(html).toContain("2026-10-08確認");
     expect(html).not.toContain("最終確認日は未記録");
     expect(html).not.toContain("購入リンク：未確認");
     expect(html).toContain("更新履歴");
-    expect(html).toContain("メーカー公式の商品機能とサイズ情報を確認");
-    expect(html).toContain("価格や在庫を保証しません");
+    expect(html).toContain("公式仕様の比較表を更新");
+    expect(html).toContain("価格・在庫は変動するため");
   });
 
   it("does not leak bottle-only specs into other article pages", () => {
@@ -61,8 +65,6 @@ describe.skipIf(!hasDist)("content freshness (rendered dist)", () => {
 
     for (const slug of articleDirs) {
       const html = readFileSync(join(articlesDir, slug, "index.html"), "utf8");
-      if (["thermos-tiger-bottle", "tiger-mta-j050-guide"].includes(slug))
-        continue;
       for (const term of bottleOnlyTerms) {
         expect(html, `${slug} contains ${term}`).not.toContain(term);
       }

@@ -62,13 +62,13 @@ describe.skipIf(!existsSync("dist"))(
         html.indexOf('id="purchase"'),
       );
     });
-    it("provides three real exploration links and preserves old category pages", () => {
+    it("provides real exploration links and preserves old category pages", () => {
       const top = parse(readFileSync("dist/index.html", "utf8"));
       expect(
         top
           .querySelectorAll(".top-entry-links a")
           .map((link) => link.getAttribute("href")),
-      ).toEqual(["/articles/", "#guides", "/tools/product-finder/"]);
+      ).toEqual(["/articles/", "#guides"]);
       for (const category of ["オーディオ", "完全ワイヤレスイヤホン"]) {
         const page = parse(
           readFileSync(`dist/articles/category/${category}/index.html`, "utf8"),

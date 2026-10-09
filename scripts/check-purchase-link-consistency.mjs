@@ -316,9 +316,10 @@ export function countPurchaseLinkStatuses(srcDirectory = "src") {
     const key = m[1];
     if (key in counts) counts[key] += 1;
   }
-  // articles/*.ts のモジュール記事も集計
-  const modularDir = path.join(srcDirectory, "content", "articles");
-  if (fs.existsSync(modularDir)) {
+  // articles/*.ts のモジュール記事と、articles/commercial/*.ts の商用シードも集計
+  for (const dirName of ["", "commercial"]) {
+    const modularDir = path.join(srcDirectory, "content", "articles", dirName);
+    if (!fs.existsSync(modularDir)) continue;
     for (const entry of fs.readdirSync(modularDir, { withFileTypes: true })) {
       if (!entry.isFile() || !entry.name.endsWith(".ts")) continue;
       const file = path.join(modularDir, entry.name);

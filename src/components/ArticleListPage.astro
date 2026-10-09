@@ -16,7 +16,6 @@ interface Props {
   description: string;
   heading: string;
   lead: string;
-  showDiagnosisNote?: boolean;
   articles: readonly ArticleMetadata[];
   totalCount: number;
   countNote?: string;
@@ -36,7 +35,6 @@ const {
   description,
   heading,
   lead,
-  showDiagnosisNote = false,
   articles,
   totalCount,
   countNote = '',
@@ -70,11 +68,6 @@ const discoveryIndex = discoverySource.map((article) => ({
     <p class="eyebrow">比較記事</p>
     <h1>{heading}</h1>
     <p class="lead">{lead}</p>
-    {showDiagnosisNote && (
-      <div class="diagnosis-index-note">
-        <p><strong>「どちらも良さそうで決められない」場合はこちら：</strong><a href="/tools/product-finder/">30秒で自分に合う商品を診断 →</a></p>
-      </div>
-    )}
 
     <form class="article-filters" role="search" aria-label="比較記事を検索" data-discovery-form>
       <label>

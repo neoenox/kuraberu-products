@@ -66,15 +66,17 @@ describe("editorial comparison shell", () => {
     expect(html).not.toContain("公式確認済み");
   });
 
-  it("keeps the pampers-newborn article on the canonical comparison composition", () => {
+  it("keeps a current comparison article on the canonical comparison composition", () => {
     // 【純粋な構造確認】このテストはページソースの構成検査である。
-    // 守るもの: 代表記事（パンパース新生児）が v3 標準骨格
+    // 守るもの: 代表記事（Echo Dot Max vs Echo Dot）が v3 標準骨格
     // （ArticleComparisonV2 + ArticleSocialProof）で構成され、廃止済みの
     // DifferenceList へ戻っていないこと。ジャンプ先アンカー自体の存在は
     // 上の render テストが担保する。ページ全体の最終描画は verify チェーンの
     // scripts/check-rendered-html.mjs と playwright e2e（test:e2e）が担保する。
-    const article = read("src/pages/articles/pampers-newborn/index.astro");
-    // pampers-newborn is now data-driven via ArticleComparisonPage or CommercialArticlePage
+    const article = read(
+      "src/pages/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.astro",
+    );
+    // 現行記事は CommercialArticlePage でデータ駆動に描画される
     expect(article).toMatch(
       /ArticleComparisonPage|CommercialArticlePage|ManualArticlePage|ArticleComparisonV2/,
     );

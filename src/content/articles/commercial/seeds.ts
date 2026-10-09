@@ -25,8 +25,6 @@ import { reFaStraightIronVsPanasonicEhHs0eSeed } from "./re-fa-straight-iron-vs-
 import { nitoriNSleepVsNishikawaAirMattressSeed } from "./nitori-n-sleep-vs-nishikawa-air-mattress";
 import { appleWatchSeVsXiaomiRedmiWatch5Seed } from "./apple-watch-se-vs-xiaomi-redmi-watch-5";
 import { sonyBravia55Xr80VsRegza55z870nSeed } from "./sony-bravia-55-xr80-vs-regza-55z870n";
-import { hitachiBdSx130kVsBdStx130kSeed } from "./hitachi-bd-sx130k-vs-bd-stx130k";
-import { panasonicNtT501VsNtD700Seed } from "./panasonic-nt-t501-vs-nt-d700";
 import { panasonicNeBs9cVsNeUbs10cSeed } from "./panasonic-ne-bs9c-vs-ne-ubs10c";
 import { panasonicMcJp860kVsMcSb70kmSeed } from "./panasonic-mc-jp860k-vs-mc-sb70km";
 import { panasonicSqLd560VsSqLd540Seed } from "./panasonic-sq-ld560-vs-sq-ld540";
@@ -48,7 +46,6 @@ import { logicoolMxMaster3sVsMxAnywhere3sSeed } from "./logicool-mx-master-3s-vs
 import { logicoolLiftVsM550Seed } from "./logicool-lift-vs-m550";
 import { logicoolZoneVibe100VsZone300Seed } from "./logicool-zone-vibe-100-vs-zone-300";
 import { sonyWh1000xm6VsWh1000xm5Seed } from "./sony-wh-1000xm6-vs-wh-1000xm5";
-import { ankerSoundcoreLiberty4NcVsSonyWfC710nSeed } from "./anker-soundcore-liberty-4-nc-vs-sony-wf-c710n";
 import { panasonicNeBs6eVsNeBs5eSeed } from "./panasonic-ne-bs6e-vs-ne-bs5e";
 import { panasonicEsPv6aVsEsPv3aSeed } from "./panasonic-es-pv6a-vs-es-pv3a";
 import { yamazakiRefrigeratorRack240057Vs240059Seed } from "./yamazaki-refrigerator-rack-240057-vs-240059";
@@ -167,8 +164,6 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   nitoriNSleepVsNishikawaAirMattressSeed,
   appleWatchSeVsXiaomiRedmiWatch5Seed,
   sonyBravia55Xr80VsRegza55z870nSeed,
-  hitachiBdSx130kVsBdStx130kSeed,
-  panasonicNtT501VsNtD700Seed,
   panasonicNeBs9cVsNeUbs10cSeed,
   panasonicMcJp860kVsMcSb70kmSeed,
   panasonicSqLd560VsSqLd540Seed,
@@ -190,7 +185,6 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   logicoolLiftVsM550Seed,
   logicoolZoneVibe100VsZone300Seed,
   sonyWh1000xm6VsWh1000xm5Seed,
-  ankerSoundcoreLiberty4NcVsSonyWfC710nSeed,
   panasonicNeBs6eVsNeBs5eSeed,
   panasonicEsPv6aVsEsPv3aSeed,
   yamazakiRefrigeratorRack240057Vs240059Seed,
