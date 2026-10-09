@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（39本）
+## 現在の公開済み（40本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -40,6 +40,7 @@
 | `jbl-tour-pro-3-vs-live-beam-3`                      | 公開済み |
 | `karcher-k2-silent-vs-k3-silent-plus`                | 公開済み |
 | `kindle-paperwhite-vs-colorsoft`                     | 公開済み |
+| `kindle-vs-kindle-paperwhite`                        | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -154,13 +155,6 @@
 - 状態: 候補（公式情報は未確認。2026-10-08のAmazon検索で、Kindle Scribe Colorsoft（2026年発売）の存在を確認。比較相手のKindle Scribeの現行モデルは、単体の商品ページを特定できていない）
 - 想定比較軸: カラー表示、画面サイズ、ペンの種類、ストレージ、バッテリー、価格
 - 確認すること: Amazon.co.jpの両商品ページ、世代・容量の組み合わせ、ペンが付属する構成か、発売前か販売中か
-
-### Amazon Kindle vs Kindle Paperwhite
-
-- 選定理由: Kindleの入門機と上位機の迷いは検索需要が見込める。公開中のPaperwhite vs Colorsoft記事とは比較相手が異なる。
-- 状態: 候補（公式情報は未確認。2026-10-06のAmazonの比較表に、Kindle（29,980円）とKindle Paperwhite（39,980円）が載っていたことのみ確認）
-- 想定比較軸: 画面サイズ・解像度、ストレージ、防水、フロントライト、バッテリー、価格
-- 確認すること: Amazon.co.jpの両商品ページ、世代・容量・色の組み合わせ、公開中のPaperwhite記事との重複
 
 ### iPad mini（A17 Pro） vs iPad（A16）
 
