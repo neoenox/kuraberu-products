@@ -1,0 +1,164 @@
+{
+  "id": "apple-watch-series-12-vs-se-3-2026-10-09",
+  "articleId": "apple-watch-series-12-vs-se-3",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-09",
+  "articleReady": true,
+  "category": "スマートウォッチ",
+  "selection": {
+    "reason": "Apple Watch Series 12とSE 3は、価格・バッテリー・輝度・センサー・ケース素材が異なり、標準モデルと廉価モデルの選択で迷いが明確。バックログの候補。公開中のスマートウォッチ記事はApple Watch SE（旧）とRedmi Watch 5の比較のみ。",
+    "duplicateCheck": "src/content/articles にApple Watch SE（旧）とXiaomi Redmi Watch 5の比較記事（apple-watch-se-vs-xiaomi-redmi-watch-5）があるが、対象の組み合わせ・世代が異なる（2026-10-09確認）。Series 12とSE 3を比較する記事はない。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple Watch Series 12（GPSモデル）42mmブラックアルミニウムケース・ブラックスポーツバンド S/M",
+      "model": "Apple Watch Series 12 GPS 42mm",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-series-12/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61sh4B9aMQL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0HJB812TG）の2枚目の商品画像（前面、932x1500、HTTP 200、2026-10-09取得）。800x800の白背景正方形に整えて public/products/apple-watch-series-12-42mm.jpg と src/assets/products に保存。元画像でバンドの上下が切れている。",
+      "officialSpecs": {
+        "chip": "S11（64ビットデュアルコア、4コアNeural Engine）",
+        "display": "LTPO3広視野角OLED常時表示Retina、1Hzのリフレッシュレート、326ppi、ピーク輝度2,000ニト、Ceramic Shield 2（アルミニウム）",
+        "size42mm": "縦42mm・横37mm・厚さ9.7mm、374x446ピクセル",
+        "weight": "アルミニウム GPSモデル32.2g（42mm）",
+        "battery": "通常使用で最大24時間、低電力モードで最大38時間、約30分で最大80%充電",
+        "sensors": "第2世代の電気心拍センサー、光学式心拍センサー、血中酸素ウェルネスセンサー、水深計（6mまで）、水温センサー",
+        "apps": "心電図アプリ、血中酸素ウェルネスアプリ",
+        "water": "ISO 22810:2010の50メートルの耐水性能、IP6X防塵",
+        "cases": "アルミニウム・チタニウム・セラミック（46mm・42mm）",
+        "storage": "64GB"
+      },
+      "officialStorePriceJpy": 71800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-watch/apple-watch",
+      "officialPriceNote": "Appleオンラインストア（apple.com/jp/shop/buy-watch/apple-watch）のApple Watch Series 12は71,800円から（税込、2026-10-09確認）。構成ごとの価格は未取得。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HJB812TG",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していない。Apple製品は第三者の転売店が多く、信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple Watch SE 3（GPSモデル）40mmスターライトアルミニウムケース・サンドスポーツバンド S/M",
+      "model": "Apple Watch SE 3 GPS 40mm",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-se-3/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61rqiyr7pRL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0HJB1CR9Q）の2枚目の商品画像（前面、859x1500、HTTP 200、2026-10-09取得）。800x800の白背景正方形に整えて public/products/apple-watch-se-3-40mm.jpg と src/assets/products に保存。元画像でバンドの上下が切れている。",
+      "officialSpecs": {
+        "chip": "S10（64ビットデュアルコア、4コアNeural Engine）",
+        "display": "LTPO OLED常時表示Retina、326ppi、ピーク輝度1,000ニト、最小輝度2ニト、Ion-X前面ガラス",
+        "size40mm": "縦40mm・横34mm・厚さ10.7mm、324x394ピクセル",
+        "weight": "GPSモデル26.3g（40mm）",
+        "battery": "通常使用で最大18時間、低電力モードで最大32時間、約45分で最大80%充電",
+        "sensors": "第2世代の光学式心拍センサー、皮膚温センサー",
+        "water": "ISO 22810:2010の50メートルの耐水性能",
+        "cases": "アルミニウム（44mm・40mm）、ミッドナイト・スターライト",
+        "storage": "64GB"
+      },
+      "officialStorePriceJpy": 41800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-watch/apple-watch",
+      "officialPriceNote": "Appleオンラインストア（apple.com/jp/shop/buy-watch/apple-watch）のApple Watch SE 3は41,800円から（税込、2026-10-09確認）。構成ごとの価格は未取得。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HJB1CR9Q",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していない。Apple製品は第三者の転売店が多く、信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの税込表示『から』（最小構成）。Series 12は71,800円から、SE 3は41,800円から（2026-10-09確認）。Amazonの表示価格は、Series 12（42mmブラック・GPS）71,800円、SE 3（40mmスターライト・GPS）41,800円で、Appleの『から』価格と一致した。",
+    "keyDifferences": [
+      "チップはS11とS10",
+      "ピーク輝度は2,000ニトと1,000ニト",
+      "バッテリーは通常使用で最大24時間と最大18時間、低電力モードで最大38時間と最大32時間",
+      "高速充電は約30分で最大80%と約45分で最大80%",
+      "血中酸素ウェルネス・心電図・水深計・水温センサーはSeries 12の仕様ページに記載があり、SE 3の仕様ページには見当たらない",
+      "ケースはアルミニウム・チタニウム・セラミック（46mm・42mm）とアルミニウム（44mm・40mm）",
+      "価格は71,800円からと41,800円から"
+    ],
+    "commonSpecs": [
+      "容量64GB",
+      "Apple Intelligenceのパワーを活用するSiri",
+      "常時表示Retinaディスプレイ（326ppi）",
+      "50メートルの耐水性能（ISO 22810:2010）",
+      "5G RedCapとLTE対応（Cellularモデル）",
+      "Bluetooth 5.3"
+    ],
+    "caveat": "比較は小さいサイズ（42mm・40mm）のアルミニウムケース・GPSモデル。46mm・44mm、チタニウム・セラミックケース、Cellularモデル、バンド違いは比較していない。Apple公式の価格は『から』表示で、構成別の価格は取得していない。SE 3の仕様ページにない機能は『記載が見当たらない』としており、非対応とは断定していない。Amazonのページのレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0HJB812TG",
+    "right": "https://www.amazon.co.jp/dp/B0HJB1CR9Q",
+    "leftAsin": "B0HJB812TG",
+    "rightAsin": "B0HJB1CR9Q",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-09"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple Watch Series 12（GPSモデル） | 42mmブラックアルミニウムケースとブラックスポーツバンド - S/M。健康 + フィットネス + 睡眠記録、心拍数、安全」とASIN B0HJB812TGを確認。表示価格71,800円（税込）・在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-09）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、ページのツールバー表示（HTMLのテキスト）で確認。『対象外』の表示はなし（2026-10-09）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HJB812TG?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon.co.jp: Apple Watch Series 12（GPSモデル） | 42mmブラックアルミニウムケースとブラックスポーツバンド - S/M。健康 + フィットネス + 睡眠記録、心拍数、安全の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-09）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple Watch SE 3（GPSモデル） | 40mmスターライトアルミニウムケースとサンドスポーツバンド - S/M。Fitness + 睡眠 + 周期記録、心拍数、バイタル、安全」とASIN B0HJB1CR9Qを確認。表示価格41,800円（税込）・在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-09）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、ページのツールバー表示（HTMLのテキスト）で確認。『対象外』の表示はなし（2026-10-09）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HJB1CR9Q?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon.co.jp: Apple Watch SE 3（GPSモデル） | 40mmスターライトアルミニウムケースとサンドスポーツバンド - S/M。Fitness + 睡眠 + 周期記録、心拍数、バイタル、安全の商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-09）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Appleの価格は『から』表示で、構成別（ケース・サイズ・Cellular）の価格は未確認。",
+    "SE 3の仕様ページにない機能（血中酸素・心電図・水深計など）は、記載が見当たらないだけで、非対応とは確認していない。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
