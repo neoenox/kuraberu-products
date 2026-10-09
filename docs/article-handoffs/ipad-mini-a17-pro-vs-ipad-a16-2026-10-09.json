@@ -1,0 +1,168 @@
+{
+  "id": "ipad-mini-a17-pro-vs-ipad-a16-2026-10-09",
+  "articleId": "ipad-mini-a17-pro-vs-ipad-a16",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-09",
+  "articleReady": true,
+  "category": "タブレット",
+  "selection": {
+    "reason": "iPad mini（A17 Pro）とiPad（A16）は、画面サイズ・質量・チップ・Apple Pencil Pro対応・USB-C転送速度・価格が異なり、小型か大画面かの選択で迷いが明確。バックログの候補。",
+    "duplicateCheck": "公開中のipad-a16-vs-ipad-air-m4はiPad（A16）とiPad Air（M4）の比較で、iPad miniを扱う記事は src/pages/articles と src/content/articles にない（2026-10-09確認）。iPad（A16）側の仕様・画像は同記事の確認結果を再利用し、Appleの仕様ページと価格は2026-10-09に再取得した。"
+  },
+  "products": {
+    "left": {
+      "name": "iPad mini（A17 Pro）Wi-Fi 128GB",
+      "model": "iPad mini（A17 Pro）",
+      "officialUrl": "https://www.apple.com/jp/ipad-mini/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61o2-3zoWmL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0DK467P86、スペースグレイ）の1枚目の商品画像（1202x1500、HTTP 200、2026-10-09取得）。800x800の白背景正方形に整えて public/products/ipad-mini-a17-pro.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "A17 Pro（6コアCPU、5コアGPU、16コアNeural Engine）",
+        "display": "8.3インチLiquid Retina、2,266x1,488、326ppi、広色域（P3）、True Tone、500ニト、フルラミネーション、反射防止コーティング、耐指紋性撥油コーティング",
+        "pencil": "Apple Pencil Pro、Apple Pencil（USB-C）",
+        "wireless": "Wi-Fi 6E（802.11ax）、Bluetooth 5.3",
+        "usb": "USB 3（最大10Gb/s）",
+        "storage": "128GB・256GB・512GB",
+        "dimensions": "195.4x134.8x6.3mm",
+        "weight": "293g（Wi-Fi）、297g（Wi-Fi + Cellular）",
+        "battery": "Wi-Fiでのインターネット利用、ビデオ再生：最大10時間（19.3Wh）",
+        "camera": "12MP広角、12MPセンターフレーム（フロント）",
+        "appleIntelligence": "仕様ページに記載あり"
+      },
+      "officialStorePriceJpy": 99800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad/ipad-mini",
+      "officialPriceNote": "Appleオンラインストア（apple.com/jp/shop/buy-ipad/ipad-mini）のWi-Fi 128GBは99,800円（税込、2026-10-09確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DK467P86",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していない。Apple製品は第三者の転売店が多く、信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "11インチ iPad（A16）Wi-Fi 128GB",
+      "model": "iPad（A16）11インチ",
+      "officialUrl": "https://www.apple.com/jp/ipad-11/specs/",
+      "officialImageUrl": "https://www.apple.com/v/ipad-11/d/images/overview/hero/hero__crzh9misvcuq_large.jpg",
+      "imageEvidence": "公開中のipad-a16-vs-ipad-air-m4で取得・保存済みのApple Japan公式ヒーロー画像（public/products/ipad-a16-hero.jpg）を再利用（2026-10-06取得）。",
+      "officialSpecs": {
+        "chip": "A16（5コアCPU、4コアGPU、16コアNeural Engine）",
+        "display": "11インチLiquid Retina、2,360x1,640、264ppi、500ニト、True Tone、耐指紋性撥油コーティング",
+        "pencil": "Apple Pencil（USB-C）、Apple Pencil（第1世代、USB-C - Apple Pencilアダプタ使用）",
+        "wireless": "Wi-Fi 6（802.11ax）、Bluetooth 5.3",
+        "storage": "128GB・256GB・512GB",
+        "dimensions": "248.6x179.5x7mm",
+        "weight": "477g（Wi-Fi）、481g（Wi-Fi + Cellular）",
+        "battery": "Wi-Fiでのインターネット利用、ビデオ再生：最大10時間（28.93Wh）",
+        "camera": "12MP広角、12MPセンターフレーム（横向き）",
+        "appleIntelligence": "仕様ページに記載なし",
+        "memory": "仕様ページに記載なし",
+        "usb": "USB 2.0（最大480Mb/s）",
+        "bluetooth": "Bluetooth 5.3"
+      },
+      "officialStorePriceJpy": 74800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad/ipad",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の検索結果は第三者の転売店が中心で、Apple製品として信頼できる販売店の商品詳細ページを今回は特定していない。商品一致を確認できないため成果URLは作成していない（not-recorded）。",
+      "officialPriceNote": "Appleオンラインストア（apple.com/jp/shop/buy-ipad/ipad）のWi-Fi 128GBは74,800円（税込、2026-10-09確認）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの税込表示（Wi-Fi 128GB）。iPad miniは99,800円、iPad（A16）は74,800円（2026-10-09確認）。Amazonの表示価格はiPad mini（スペースグレイ）99,800円、iPad（A16）（シルバー）71,800円で、色・時期により変動する。",
+    "keyDifferences": [
+      "画面は8.3インチ（326ppi）と11インチ（264ppi）",
+      "質量（Wi-Fi）は293gと477g",
+      "チップはA17 ProとA16",
+      "Apple Pencil Proに対応するのはiPad miniのみ（iPad（A16）はApple Pencil（USB-C）と、アダプタ経由で第1世代）",
+      "無線はWi-Fi 6EとWi-Fi 6",
+      "USB-CはUSB 3（10Gb/s）とUSB 2.0（480Mb/s）",
+      "Appleオンラインストア価格は99,800円と74,800円"
+    ],
+    "commonSpecs": [
+      "容量128GB・256GB・512GB",
+      "バッテリー最大10時間（Wi-Fiでのインターネット利用、ビデオ再生）",
+      "Bluetooth 5.3",
+      "500ニトの輝度",
+      "12MP広角カメラ",
+      "Apple Pencil（USB-C）対応"
+    ],
+    "caveat": "iPad（A16）のApple Intelligence対応可否はAppleの仕様ページに記載がなく、確認していないため比較していない。価格はWi-Fi 128GBモデルのApple表示で、Wi-Fi + Cellularモデルや他容量は比較していない。Amazonのページのレビュー欄の購入者コメントは根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DK467P86",
+    "right": "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+    "leftAsin": "B0DK467P86",
+    "rightAsin": "B0DZ7WF87P",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-09"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon | Apple iPad mini(A17 Pro):Apple Intelligence、8.3 インチ Liquid Retina ディスプレ イ、128GB、Wi-Fi 6E、12MP フロントカメラ/12MP バックカメ ラ、Touch ID、一日中使えるバッテリー ‒ スペースグレイ」とASIN B0DK467P86を確認。表示価格99,800円（税込）・在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-09）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を画面上で確認。『対象外』の文言はページのHTMLにあるが画面には表示されていない（2026-10-09）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DK467P86?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon | Apple iPad mini(A17 Pro):Apple Intelligence、8.3 インチ Liquid Retina ディスプレ イ、128GB、Wi-Fi 6E、12MP フロントカメラ/12MP バックカメ ラ、Touch ID、一日中使えるバッテリー ‒ スペースグレイの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-09）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple 11 インチ iPad (A16): 11 インチモデル、Liquid Retina ディスプレイ、128GB、Wi-Fi 6、12MP フロント/12MP バックカメラ、Touch ID、一日中使えるバ ッテリー - シルバー」とASIN B0DZ7WF87Pを確認。表示価格71,800円（税込）・在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-09）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を画面上で確認。『対象外』の文言はページのHTMLにあるが画面には表示されていない（2026-10-09）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DZ7WF87P?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Amazon.co.jp: Apple 11 インチ iPad (A16): 11 インチモデル、Liquid Retina ディスプレイ、128GB、Wi-Fi 6、12MP フロント/12MP バックカメラ、Touch ID、一日中使えるバ ッテリー - シルバーの商品詳細ページに到達。ツールバーに販売手数料率2.00%を表示（2026-10-09）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場の検索結果は第三者の転売店が中心で、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "iPad（A16）のApple Intelligence対応はAppleの仕様ページに記載がなく未確認。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

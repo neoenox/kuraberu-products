@@ -41,6 +41,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "switchbot-hub3-vs-hub2",
   "kindle-paperwhite-vs-colorsoft",
   "kindle-vs-kindle-paperwhite",
+  "ipad-mini-a17-pro-vs-ipad-a16",
   "karcher-k2-silent-vs-k3-silent-plus",
   "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
   "dji-osmo-action-6-vs-gopro-hero13-black",
