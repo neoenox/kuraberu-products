@@ -201,7 +201,9 @@ describe("regression: registry split must not silence announcements (2026-09-06)
     // found zero articles and every deploy skipped announcement drafting.
     expect(shimOnly.length).toBe(0);
     expect(combined.length).toBeGreaterThan(shimOnly.length);
-    expect(combined.map((article) => article.id)).toContain("babybjorn");
+    expect(combined.map((article) => article.id)).toContain(
+      "panasonic-baby-monitor-kx-hc705",
+    );
   });
 
   it("announces an article that exists only in a per-article file", () => {
@@ -213,7 +215,7 @@ describe("regression: registry split must not silence announcements (2026-09-06)
     );
     expect(announcements.length).toBeGreaterThan(0);
     expect(announcements.map((entry) => entry.article.id)).toContain(
-      "babybjorn",
+      "panasonic-baby-monitor-kx-hc705",
     );
   });
 

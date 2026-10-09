@@ -1,15 +1,16 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import {
-  pampersNewbornArticle,
-  publishedArticleMetadata,
-} from "../src/content/articles";
+import { publishedArticleMetadata } from "../src/content/articles";
 import {
   discoverySearchParams,
   matchesArticle,
   normalizeDiscoveryText,
   parseDiscoveryState,
 } from "../src/lib/article-discovery";
+
+const echoDotArticle = publishedArticleMetadata.find(
+  (article) => article.id === "amazon-echo-dot-max-vs-echo-dot-5th",
+)!;
 
 describe("article discovery", () => {
   it("normalizes width, case and whitespace", () => {
@@ -19,21 +20,19 @@ describe("article discovery", () => {
   });
   it("matches typed metadata across query, category and tag", () => {
     expect(
-      matchesArticle(pampersNewbornArticle, {
-        query: "パンパース 新生児",
-        category: "育児用品",
-        tag: "紙おむつ",
+      matchesArticle(echoDotArticle, {
+        query: "Echo Dot スマートスピーカー",
+        category: "スマートホーム",
+        tag: "Alexa",
       }),
     ).toBe(true);
-    expect(matchesArticle(pampersNewbornArticle, { query: "飲料" })).toBe(
-      false,
-    );
+    expect(matchesArticle(echoDotArticle, { query: "紙おむつ" })).toBe(false);
   });
   it("matches model numbers that appear only in the subjects line", () => {
     // 型番が headline に登場しない記事（例: 日立 BD-SX130K vs BD-STX130K）でも、
     // card-subjects 行（comparisonSubjects 由来）が検索対象になること。
     const article = {
-      ...pampersNewbornArticle,
+      ...echoDotArticle,
       id: "hitachi-bd-sx130k-vs-bd-stx130k",
       title: "日立 BD-SX130K と BD-STX130K、どっち？｜くらべる商品メモ",
       headline: "日立のドラム式洗濯乾燥機を比較。操作パネル・温水・乾燥で選ぶ",

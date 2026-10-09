@@ -8,7 +8,6 @@ import {
 } from "../src/lib/memo-state";
 import { comparisonProjectStorageKey } from "../src/lib/comparison-project";
 import { comparisonMemoStorageKey } from "../src/lib/comparison-memo";
-import { addProductArticlesToMemo } from "../src/lib/diagnosis-comparison-memo";
 import { buildMemoProducts, memoProductId } from "../src/lib/memo-products";
 
 function storage() {
@@ -26,19 +25,6 @@ it("keeps product identity exact and combines repeated article references", () =
   const products = buildMemoProducts();
   expect(new Set(products.map((p) => p.id)).size).toBe(products.length);
   expect(products.some((p) => p.references.length > 1)).toBe(true);
-});
-it("keeps diagnosis additions compatible with restored snapshots", () => {
-  const s = storage();
-  const state = readMemoState(s, ["a"]);
-  state.project.purpose = "保持";
-  saveMemoState(s, state);
-  Object.defineProperty(globalThis, "localStorage", {
-    value: s,
-    configurable: true,
-  });
-  addProductArticlesToMemo({ articleUrls: ["/articles/a/"] }, ["a"]);
-  expect(readMemoState(s, ["a"]).ids).toEqual(["a"]);
-  expect(readMemoState(s, ["a"]).project.purpose).toBe("保持");
 });
 it("migrates legacy fields without turning saved articles into candidates", () => {
   const s = storage();

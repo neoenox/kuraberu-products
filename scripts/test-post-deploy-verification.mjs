@@ -36,12 +36,12 @@ const MIN_EXPECTED_ARTICLE_COUNT = 50;
 // ─── Representative articles ────────────────────────────────────────────────
 // These cover different content types and features:
 const ARTICLES = [
-  "articles/pampers-newborn/index.html", // verified purchase, comparison
-  "articles/thermos-tiger-bottle/index.html", // comparison, verified purchase
-  "articles/babybjorn/index.html", // comparison, autoload X embed
-  "articles/tiger-mta-j050-guide/index.html", // guide article
-  "articles/shupot/index.html", // multiple autoload X embeds
-  "articles/zojirushi-ec-kv50-vs-ec-ma60/index.html", // comparison
+  "articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html", // verified Amazon purchase, comparison
+  "articles/switchbot-hub3-vs-hub2/index.html", // comparison, verified purchase
+  "articles/sony-wf-c710n-vs-linkbuds-fit/index.html", // comparison, autoload X embed
+  "articles/panasonic-baby-monitor-kx-hc705/index.html", // guide article
+  "articles/instax-mini-13-vs-mini-41/index.html", // multiple autoload X embeds
+  "articles/kobo-clara-colour-vs-libra-colour/index.html", // comparison
 ];
 
 /**

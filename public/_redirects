@@ -1,3 +1,7 @@
+# Removed tool routes (product-finder diagnosis was deleted on 2026-10-09)
+/tools/product-finder /404.html 302
+/tools/product-finder/* /404.html 302
+
 # Withdrawn article routes
 /articles/airpods-pro-3-vs-sony-wf-1000xm6/* /404.html 302
 /articles/amazon-echo-dot-5th-vs-google-nest-mini-2nd/* /404.html 302

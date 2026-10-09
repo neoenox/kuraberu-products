@@ -43,7 +43,7 @@ function isThirdPartyRequest(url: string): boolean {
   }
 }
 
-const X_ARTICLE_PATH = "/articles/thermos-tiger-bottle/";
+const X_ARTICLE_PATH = "/articles/instax-mini-13-vs-mini-41/";
 const YOUTUBE_ARTICLE_PATH = "/articles/anker-nano-a1638-vs-power-bank-a1256/";
 const X_LOADED_TIMEOUT = 30_000;
 
@@ -76,8 +76,12 @@ test.describe("default-display embeds (network level)", () => {
     });
 
     await page.goto(X_ARTICLE_PATH, { waitUntil: "domcontentloaded" });
-    const embed = page.locator('#sns [data-external-embed][data-provider="x"]');
-    await expect(embed).toHaveAttribute("data-auto-display", "true");
+    // この記事には X の投稿が複数ある。最初の1件で、既定表示の仕組みを確認する。
+    const embed = page
+      .locator('#sns [data-external-embed][data-provider="x"]')
+      .first();
+    // この記事の X 投稿は autoload 指定（読者の操作なしで読み込む）。
+    await expect(embed).toHaveAttribute("data-autoload", "true");
     // No click, no consent step: the embed loads on its own.
     await expect(embed).toHaveAttribute("data-embed-state", "loaded", {
       timeout: X_LOADED_TIMEOUT,
@@ -139,9 +143,16 @@ test.describe("default-display embeds (network level)", () => {
     });
 
     await page.goto(X_ARTICLE_PATH, { waitUntil: "networkidle" });
-    const embed = page.locator('#sns [data-external-embed][data-provider="x"]');
-    await expect(embed).toHaveAttribute("data-embed-state", "idle");
-    await expect(embed.locator("iframe")).toHaveCount(0);
+    const embeds = page.locator(
+      '#sns [data-external-embed][data-provider="x"]',
+    );
+    // この記事には X の投稿が複数ある。すべてが「表示しない」状態になる。
+    expect(await embeds.count()).toBeGreaterThan(0);
+    for (const embed of await embeds.all()) {
+      await expect(embed).toHaveAttribute("data-embed-state", "idle");
+      await expect(embed.locator("iframe")).toHaveCount(0);
+    }
+    const embed = embeds.first();
     const bar = page.locator("[data-embed-consent-bar]");
     await expect(bar).toContainText("表示しない設定になっています");
     await expect(bar.locator("[data-embed-consent-allow]")).toHaveText(

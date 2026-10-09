@@ -2,7 +2,6 @@ import {
   additionalCommercialArticleSeeds,
   publishedArticleMetadata,
 } from "../content/articles";
-import { comparisonV2 } from "../content/articles/comparison-v2";
 
 export function memoProductId(name: string): string {
   // 完全一致する表記のみ統合。型番・色・容量を推測して同一商品としない。
@@ -24,24 +23,15 @@ export interface MemoProduct {
 export function buildMemoProducts(): MemoProduct[] {
   const products = new Map<string, MemoProduct>();
   for (const article of publishedArticleMetadata) {
-    const legacy = Object.entries(comparisonV2).find(
-      ([id]) => id === article.id,
-    )?.[1];
     const seed = additionalCommercialArticleSeeds.find(
       (s) => s.id === article.id,
     );
     const rows =
-      seed?.verifiedRows ??
-      article.keyDiffRows ??
-      article.verifiedRows ??
-      legacy?.rows ??
-      [];
+      seed?.verifiedRows ?? article.keyDiffRows ?? article.verifiedRows ?? [];
     const sides: readonly ("left" | "right")[] =
       article.productCount === 1 ? ["left"] : ["left", "right"];
     for (const side of sides) {
-      const model =
-        (side === "left" ? article.leftModel : article.rightModel) ??
-        legacy?.[side];
+      const model = side === "left" ? article.leftModel : article.rightModel;
       const name =
         (side === "left" ? seed?.leftProduct : seed?.rightProduct) ??
         (model

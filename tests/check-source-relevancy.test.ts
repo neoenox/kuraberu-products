@@ -112,7 +112,10 @@ describe("source relevancy gate (issue #370)", () => {
 
   it("runs against the real registry without throwing and reports a summary", () => {
     const { findings, checkedSources } = checkSourceRelevancy();
-    expect(checkedSources).toBeGreaterThan(0);
+    // 旧形式の記事を整理した後は、検査対象（src/content/articles/*.ts の出典URL）が
+    // 0件のこともある。対象が空でも例外を出さず、概要を返すことを確かめる。
+    expect(checkedSources).toBeGreaterThanOrEqual(0);
+    expect(Array.isArray(findings)).toBe(true);
     for (const finding of findings) {
       for (const violation of finding.violations) {
         expect(violation.url).toMatch(/^https:\/\//);

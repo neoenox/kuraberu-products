@@ -8,7 +8,6 @@ import { rakutenAffiliateSearchUrl } from "../src/lib/rakuten-affiliate";
 // 重いレジストリは収集時に静的importする。テスト内の動的 import は高負荷の
 // フルランで 5 秒タイムアウトを起こすため（動的 import 自体の問題ではない）。
 import { articlePurchaseLinks } from "../src/lib/products";
-import { hairDryerProducts } from "../src/data/products/hair-dryers";
 
 const DEFAULT_ID = "34e76967.d5cc3ae1.34e76968.3eade5e6";
 
@@ -98,12 +97,6 @@ describe("toAffiliateRakutenSearchUrl / toAffiliateRakutenUrl (#387)", () => {
       expect(entry.purchaseUrl).not.toMatch(/search\.rakuten\.co\.jp/);
       expect(entry.purchaseUrl).not.toContain("<");
       expect(entry.purchaseUrl).not.toContain("<");
-    }
-    for (const product of hairDryerProducts) {
-      for (const link of product.purchaseLinks) {
-        if (link.provider !== "rakuten") continue;
-        expect(isAffiliateRakutenUrl(link.url)).toBe(true);
-      }
     }
   });
 

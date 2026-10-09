@@ -28,7 +28,7 @@ export interface ArticleLayout {
   ctaEvent: string;
   pageViewEvent: string;
   placements: readonly string[];
-  /** 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下） */
+  /** 診断結果カードのクリック計測用 placement（診断ツールは2026-10-09に削除。受信側の互換のため値だけ残す） */
   diagnosisPlacement: string;
   /** 記事ではない解説ページ（/guides/ 配下）の購入リンク用 placement */
   guidePlacement: string;

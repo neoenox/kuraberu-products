@@ -178,22 +178,9 @@ describe("daysSince / findStaleEntries", () => {
 });
 
 describe("collectArticleClaims", () => {
-  it("includes product-master specs when the article references a product record", () => {
-    const { claims, officialUrls } = collectArticleClaims(
-      "thermos-tiger-bottle",
-    );
-    expect(claims).toEqual(
-      expect.arrayContaining(["約0.2kg", "約0.26kg", "6.5×8.0×22.0cm"]),
-    );
-    expect(officialUrls).toEqual(
-      expect.arrayContaining([
-        "https://www.thermos.jp/product/series/jnl-s00.html",
-      ]),
-    );
-  });
-
   it("does not fold in product-master specs when the article only uses articlePurchaseLinks", () => {
-    const { claims } = collectArticleClaims("moony-m");
+    // 現行記事は商品マスタ（src/lib/products.ts の Product レコード）を参照しない。
+    const { claims } = collectArticleClaims("panasonic-baby-monitor-kx-hc705");
     expect(claims.some((claim) => claim.includes("約0.2kg"))).toBe(false);
   });
 });

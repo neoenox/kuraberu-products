@@ -11,7 +11,7 @@ export const ARTICLE_LAYOUT = {
   pageViewEvent: "page_view",
   // PurchaseCard / NextStepBlock の placement prop が取り得る値
   placements: ["article-end", "next-step"],
-  // 診断結果カードのクリック計測用 placement（/tools/product-finder/ 配下）
+  // 診断結果カードのクリック計測用 placement（診断ツールは2026-10-09に削除。イベント受信側の互換のため値だけ残す）
   diagnosisPlacement: "diagnosis-result",
   // 記事ではない解説ページ（/guides/ 配下）の購入リンク用 placement
   guidePlacement: "guide",
@@ -58,22 +58,12 @@ export const ARTICLE_LAYOUT = {
     weights: { tag: 3, use: 2, audience: 2, category: 1 },
     brandTagWeight: 1,
     brandTags: [
-      "パンパース",
-      "メリーズ",
-      "ムーニー",
-      "ピジョン",
-      "ベビービョルン",
-      "アップリカ",
-      "コンビ",
       "タイガー",
       "パナソニック",
       "ティファール",
       "シャープ",
-      "サーモス",
       "山崎実業",
-      "山崎産業",
       "象印",
-      "キングジム",
     ],
   },
   // 記事のコンテンツタイプ。productCount から機械的に導出する

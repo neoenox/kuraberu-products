@@ -235,41 +235,46 @@ describe("real article data", () => {
     }
   });
 
-  it("selects genuinely relevant neighbors for shupot", () => {
-    const { related } = selectRelatedArticles(
-      articleMetadata,
-      "/articles/shupot/",
-      "育児用品",
-    );
-    const paths = related.map((article) => article.path);
-    // ピジョンの哺乳びん記事は ブランド一致で関連候補に入る
-    expect(paths).toContain("/articles/pigeon-bottle-160-240/");
-    expect(paths).toContain("/articles/pigeon-bottle-240/");
-  });
-
-  it("selects the water-bottle guide for thermos-tiger-bottle", () => {
-    const { related } = selectRelatedArticles(
-      articleMetadata,
-      "/articles/thermos-tiger-bottle/",
-      "生活雑貨",
-    );
-    const paths = related.map((article) => article.path);
-    expect(paths[0]).toBe("/articles/tiger-mta-j050-guide/");
-  });
-
   it("keeps the brandTags list in sync with the articles", () => {
     expect(findUnusedBrandTags(articleMetadata)).toEqual([]);
   });
 
-  it("keeps the baby-monitor article within its own category (no brand-only noise)", () => {
+  it("ranks a brand-tag-only match below any same-category article (no brand-only noise)", () => {
+    // ブランド名タグだけの一致（弱信号）は、同カテゴリの記事より上に来ない。
+    // 現行の記事群では、育児用品はベビーモニター1本だけなので、実データでは
+    // 同カテゴリの関連記事が存在しない。そのため合成データで規則そのものを確かめる。
+    const current = {
+      path: "/articles/current/",
+      category: "育児用品",
+      tags: ["パナソニック", "見守り"],
+      audiences: ["保護者"],
+      uses: ["見守り"],
+      publishedAt: "2026-08-01",
+    };
+    const sameCategory = {
+      path: "/articles/same-category/",
+      category: "育児用品",
+      tags: ["その他"],
+      audiences: ["その他"],
+      uses: ["その他"],
+      publishedAt: "2026-07-01",
+    };
+    const brandOnly = {
+      path: "/articles/brand-only/",
+      category: "生活家電",
+      tags: ["パナソニック"],
+      audiences: ["その他2"],
+      uses: ["その他2"],
+      publishedAt: "2026-09-01",
+    };
     const { related } = selectRelatedArticles(
-      articleMetadata,
-      "/articles/panasonic-baby-monitor-kx-hc705/",
-      "育児用品",
+      [current, brandOnly, sameCategory],
+      current.path,
+      current.category,
     );
-    expect(related.length).toBeGreaterThan(0);
-    for (const article of related) {
-      expect(article.category, article.path).toBe("育児用品");
-    }
+    const paths = related.map((article) => article.path);
+    expect(paths.indexOf(sameCategory.path)).toBeLessThan(
+      paths.indexOf(brandOnly.path),
+    );
   });
 });

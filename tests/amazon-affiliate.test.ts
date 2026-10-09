@@ -24,19 +24,18 @@ describe("Amazon Associates integration", () => {
     vi.unstubAllEnvs();
   });
 
-  it("keeps the thermos comparison wired to both verified product ASINs", () => {
+  it("keeps the Echo Dot comparison wired to both verified product ASINs", () => {
     const source = readFileSync(
-      "src/pages/articles/thermos-tiger-bottle/index.astro",
+      "src/content/articles/commercial/amazon-echo-dot-max-vs-echo-dot-5th.ts",
       "utf8",
     );
     expect(source).toContain(
-      "amazonHref: 'https://www.amazon.co.jp/dp/B0D9XZ5MQF'",
+      'leftAmazonUrl: "https://www.amazon.co.jp/dp/B0DKLWZY2Z"',
     );
     expect(source).toContain(
-      "amazonHref: 'https://www.amazon.co.jp/dp/B0FGCX6KN4'",
+      'rightAmazonUrl: "https://www.amazon.co.jp/dp/B09B8SZLLG"',
     );
-    expect(source).toContain("showAmazon={true}");
-    expect(source).toContain("showNextStepPurchaseCtas={false}");
+    expect(source).toContain('amazonLinkStatus: "verified"');
   });
 
   it("normalizes an optional tracking ID and rejects malformed values", () => {

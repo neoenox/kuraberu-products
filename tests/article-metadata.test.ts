@@ -7,66 +7,17 @@ import {
   articleMetadata,
   publicArticleMetadata,
   publishedArticleMetadata,
-  babybjornArticle,
-  babybjornBouncerArticle,
-  babybjornOnekaiArticle,
-  cradleArticle,
-  combiTheSArticle,
-  tigerRiceArticle,
-  tigerPctA120VsPctA150Article,
-  zojirushiCoffeeArticle,
-  panasonicVacuumArticle,
-  panasonicHairDryerArticle,
   defineArticleMetadata,
-  merriesNewbornArticle,
-  merriesPantsArticle,
-  moonyMArticle,
-  pampersNewbornArticle,
   panasonicBabyMonitorArticle,
   panasonicEhNa9mGuideArticle,
-  pigeonBottle240Article,
-  pigeonSlim240Article,
-  thermosTigerBottleArticle,
-  tefalKettleArticle,
-  pigeonBottleSizeArticle,
-  pottyArticle,
-  shupotArticle,
-  sharpKcS50VsFuS50Article,
-  yamazakiTowerDeskPanelArticle,
-  yamazakiCondorWagonArticle,
-  yamazakiFreeBroomArticle,
-  yamazakiDustWagonArticle,
-  zojirushiElectricKettleArticle,
-  zojirushiEqSb22VsAh22Article,
-  zojirushiToasterArticle,
-  tefalGarmentSteamerArticle,
-  kingjimTepraArticle,
-  panasonicMcNx810kmVsMcNx700kArticle,
-  panasonicFyhvx120VsFyhvx90Article,
-  panasonicNeFl1aVsNeFl1cArticle,
-  panasonicNeMs4cVsNeBs5cArticle,
-  panasonicAirCleanerArticle,
-  panasonicShaverEsLt4bVsEsLv7jArticle,
-  thermosKfm020VsKfi020Article,
-  tigerMtaJ050GuideArticle,
-  panasonicEhNa9mVsEhNa7mArticle,
-  tigerKettlePcjVsPcmArticle,
   additionalCommercialArticles,
-  yamajitsuFilmHolderArticle,
-  yamazakiLaundryWireBasketArticle,
-  yamazakiOfudaStandArticle,
-  yamazakiDishwasherRackArticle,
-  yamazakiMagnetKitchenShelfArticle,
-  yamazakiRainmatF216VsLonstepArticle,
-  canonPixusTs8830VsEpsonEp887aArticle,
-  goproHero13VsDjiAction5ProArticle,
-  panasonicF55hy3VsSharpMf55rArticle,
-  echoDot5thVsNestMini2ndArticle,
-  panasonicHhCf1285aVsIrisCl12dlArticle,
-  brunoBoe021VsIrisPhp1002tcArticle,
-  balmudaTheToasterVsAladdinArticle,
 } from "../src/content/articles";
 import { _setBuildReferenceDate } from "../src/content/articles/types";
+
+// 比較記事（productCount 2）の代表として、現行の公開記事を使う。
+const amazonEchoDotMaxFixture = additionalCommercialArticles.find(
+  (article) => article.id === "amazon-echo-dot-max-vs-echo-dot-5th",
+)!;
 import { site } from "../src/config/site";
 
 function extractJsonLd(html: string): Record<string, unknown>[] {
@@ -116,22 +67,12 @@ describe("article metadata", () => {
     }
     expect(publicArticleMetadata.length).toBeGreaterThan(0);
     const newlyPublishedIds = [
-      "yamazaki-dishwasher-rack-241925-vs-241926",
-      "panasonic-mc-nx810km-vs-mc-nx700k",
       "sony-wh-1000xm6-vs-wh-1000xm5",
       "roborock-qrevo-curv-vs-dreame-x50",
       "makita-cl107-vs-cl286",
       "recolte-automatic-cooker-vs-panasonic-nf-pc400",
       "sharp-kc-s50-vs-panasonic-f-vxw55",
       "panasonic-eh-na9m-vs-refa-beautech",
-      "panasonic-f-px60c-vs-f-px70c",
-      "panasonic-es-lt4b-vs-es-lv7j",
-      "yamajitsu-film-holder-242286-vs-242287",
-      "yamazaki-laundry-wire-basket-m-vs-l",
-      "yamazaki-ofuda-stand-rin-vs-single",
-      "zojirushi-eq-aa22-vs-eq-sa22",
-      "zojirushi-eq-sb22-vs-eq-ah22",
-      "anker-soundcore-liberty-4-nc-vs-sony-wf-c710n",
       "panasonic-ne-bs6e-vs-ne-bs5e",
       "panasonic-es-pv6a-vs-es-pv3a",
       "yamazaki-refrigerator-rack-240057-vs-240059",
@@ -216,11 +157,6 @@ describe("article metadata", () => {
         (article) => article.id === "garmin-forerunner-570-vs-coros-pace-4",
       ),
     ).toBe(true);
-    expect(
-      publicArticleMetadata.some(
-        (article) => article.id === "thermos-tiger-bottle",
-      ),
-    ).toBe(true);
   });
 
   it("keeps the article page directories synchronized with the canonical master", () => {
@@ -246,105 +182,20 @@ describe("article metadata", () => {
     expect(memoPage).toContain("publishedArticleMetadata");
     expect(sitemap).toContain("publishedArticleMetadata.map((article)");
     expect(sitemap).toContain("article.modifiedAt");
-    expect(articleIndex).not.toContain("thermos-tiger-bottle");
-    expect(memoPage).not.toContain("thermos-tiger-bottle");
-    expect(sitemap).not.toContain("thermos-tiger-bottle");
-  });
-
-  it("keeps the saved water-bottle article renderable in the memo page", () => {
-    const memoPage = readFileSync("src/pages/memo.astro", "utf8");
-    const waterBottle = articleMetadata.find(
-      (article) => article.id === "thermos-tiger-bottle",
-    );
-
-    expect(waterBottle).toBeDefined();
-    expect(memoPage).toContain("{publishedArticleMetadata.map((article) => (");
-    expect(memoPage).toContain(
-      "data-memo-template data-article-id={article.id}",
-    );
-    // memo-app.ts に抽出された初期化ロジックが読み込まれることを確認
-    expect(memoPage).toContain('import { initMemoApp } from "../lib/memo-app"');
-    expect(articleMetadata.map((article) => article.path)).toContain(
-      waterBottle!.path,
-    );
   });
 
   it("keeps one typed canonical source for article listings and pages", () => {
-    expect(articleMetadata).toEqual([
-      pampersNewbornArticle,
-      merriesNewbornArticle,
-      merriesPantsArticle,
-      pigeonBottle240Article,
-      pigeonSlim240Article,
-      moonyMArticle,
-      shupotArticle,
-      babybjornArticle,
-      babybjornOnekaiArticle,
-      babybjornBouncerArticle,
-      cradleArticle,
-      pottyArticle,
-      pigeonBottleSizeArticle,
-      combiTheSArticle,
-      tigerRiceArticle,
-      tigerPctA120VsPctA150Article,
-      zojirushiCoffeeArticle,
-      panasonicVacuumArticle,
-      panasonicHairDryerArticle,
-      tefalKettleArticle,
-      panasonicNeFl1aVsNeFl1cArticle,
-      panasonicAirCleanerArticle,
-      panasonicShaverEsLt4bVsEsLv7jArticle,
-      sharpKcS50VsFuS50Article,
-      thermosTigerBottleArticle,
-      yamazakiTowerDeskPanelArticle,
-      yamazakiCondorWagonArticle,
-      yamazakiFreeBroomArticle,
-      yamazakiDustWagonArticle,
-      zojirushiElectricKettleArticle,
-      zojirushiEqSb22VsAh22Article,
-      zojirushiToasterArticle,
-      tefalGarmentSteamerArticle,
-      kingjimTepraArticle,
-      panasonicMcNx810kmVsMcNx700kArticle,
-      panasonicFyhvx120VsFyhvx90Article,
-      panasonicBabyMonitorArticle,
-      panasonicEhNa9mGuideArticle,
-      thermosKfm020VsKfi020Article,
-      tigerMtaJ050GuideArticle,
-      panasonicEhNa9mVsEhNa7mArticle,
-      tigerKettlePcjVsPcmArticle,
-      yamajitsuFilmHolderArticle,
-      yamazakiLaundryWireBasketArticle,
-      yamazakiOfudaStandArticle,
-      yamazakiDishwasherRackArticle,
-      yamazakiMagnetKitchenShelfArticle,
-      yamazakiRainmatF216VsLonstepArticle,
-      canonPixusTs8830VsEpsonEp887aArticle,
-      goproHero13VsDjiAction5ProArticle,
-      echoDot5thVsNestMini2ndArticle,
-      brunoBoe021VsIrisPhp1002tcArticle,
-      balmudaTheToasterVsAladdinArticle,
-      panasonicHhCf1285aVsIrisCl12dlArticle,
-      panasonicF55hy3VsSharpMf55rArticle,
-      panasonicNeMs4cVsNeBs5cArticle,
-      ...additionalCommercialArticles,
-    ]);
-    expect(pampersNewbornArticle.path).toBe("/articles/pampers-newborn/");
-    expect(
-      pampersNewbornArticle.modifiedAt >= pampersNewbornArticle.publishedAt,
-    ).toBe(true);
-    expect(merriesNewbornArticle.path).toBe("/articles/merries-newborn/");
-    expect(
-      merriesNewbornArticle.modifiedAt >= merriesNewbornArticle.publishedAt,
-    ).toBe(true);
-    expect(pigeonBottle240Article.path).toBe("/articles/pigeon-bottle-240/");
-    expect(
-      pigeonBottle240Article.modifiedAt >= pigeonBottle240Article.publishedAt,
-    ).toBe(true);
-    expect(pigeonSlim240Article.path).toBe("/articles/pigeon-slim-240/");
-    expect(
-      pigeonSlim240Article.modifiedAt >= pigeonSlim240Article.publishedAt,
-    ).toBe(true);
+    // 記事一覧・ページ・商用シードの3系統が同じ記事集合を指す。
+    const ids = articleMetadata.map((article) => article.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    const commercialIds = additionalCommercialArticles.map((a) => a.id);
+    for (const id of commercialIds) expect(ids, id).toContain(id);
+    expect(ids).toContain(panasonicBabyMonitorArticle.id);
+    expect(ids).toContain(panasonicEhNa9mGuideArticle.id);
+    for (const article of articleMetadata) {
+      expect(article.path, article.id).toBe(`/articles/${article.id}/`);
+      expect(article.modifiedAt >= article.publishedAt, article.id).toBe(true);
+    }
   });
 
   it("requires every article to declare a positive product count", () => {
@@ -406,13 +257,13 @@ describe("article metadata", () => {
   it("rejects invalid product counts", () => {
     expect(() =>
       defineArticleMetadata({
-        ...pampersNewbornArticle,
+        ...amazonEchoDotMaxFixture,
         productCount: 0,
       } as never),
     ).toThrow("productCount must be a positive integer");
     expect(() =>
       defineArticleMetadata({
-        ...pampersNewbornArticle,
+        ...amazonEchoDotMaxFixture,
         productCount: 1.5,
       } as never),
     ).toThrow("productCount must be a positive integer");
@@ -421,13 +272,13 @@ describe("article metadata", () => {
   it("rejects invalid and contradictory dates", () => {
     expect(() =>
       defineArticleMetadata({
-        ...pampersNewbornArticle,
+        ...amazonEchoDotMaxFixture,
         publishedAt: "2026-02-30",
       }),
     ).toThrow();
     expect(() =>
       defineArticleMetadata({
-        ...pampersNewbornArticle,
+        ...amazonEchoDotMaxFixture,
         publishedAt: "2026-08-01",
         modifiedAt: "2026-07-31",
       }),
@@ -439,7 +290,7 @@ describe("article metadata", () => {
 describe.skipIf(!hasDist)("article metadata (rendered dist)", () => {
   it("renders dates consistently in HTML, meta and Article JSON-LD", () => {
     const html = readFileSync(
-      "dist/articles/pampers-newborn/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     const article = extractJsonLd(html).find(
@@ -447,30 +298,30 @@ describe.skipIf(!hasDist)("article metadata (rendered dist)", () => {
     );
 
     expect(article).toBeDefined();
-    expect(article?.headline).toBe(pampersNewbornArticle.headline);
-    expect(article?.datePublished).toBe(pampersNewbornArticle.publishedAt);
-    expect(article?.dateModified).toBe(pampersNewbornArticle.modifiedAt);
+    expect(article?.headline).toBe(amazonEchoDotMaxFixture.headline);
+    expect(article?.datePublished).toBe(amazonEchoDotMaxFixture.publishedAt);
+    expect(article?.dateModified).toBe(amazonEchoDotMaxFixture.modifiedAt);
     expect(article?.url).toBe(article?.mainEntityOfPage);
     expect(article?.image).toBe(
-      new URL(pampersNewbornArticle.imagePath!, `${site.url}/`).toString(),
+      new URL(amazonEchoDotMaxFixture.imagePath!, `${site.url}/`).toString(),
     );
     expect(html).toContain(
-      `<meta property="article:published_time" content="${pampersNewbornArticle.publishedAt}">`,
+      `<meta property="article:published_time" content="${amazonEchoDotMaxFixture.publishedAt}">`,
     );
     expect(html).toContain(
-      `<meta property="article:modified_time" content="${pampersNewbornArticle.modifiedAt}">`,
+      `<meta property="article:modified_time" content="${amazonEchoDotMaxFixture.modifiedAt}">`,
     );
-    expect(html).toContain(`datetime="${pampersNewbornArticle.publishedAt}"`);
-    expect(html).toContain(`datetime="${pampersNewbornArticle.modifiedAt}"`);
+    expect(html).toContain(`datetime="${amazonEchoDotMaxFixture.publishedAt}"`);
+    expect(html).toContain(`datetime="${amazonEchoDotMaxFixture.modifiedAt}"`);
   });
 
   it("renders the product count meta for article pages", () => {
     const html = readFileSync(
-      "dist/articles/pampers-newborn/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     expect(html).toContain(
-      `<meta name="article:product-count" content="${pampersNewbornArticle.productCount}">`,
+      `<meta name="article:product-count" content="${amazonEchoDotMaxFixture.productCount}">`,
     );
   });
 
@@ -479,7 +330,7 @@ describe.skipIf(!hasDist)("article metadata (rendered dist)", () => {
     // 宣言する記事がゼロのまま 2026-08-18 に経路ごと削除された。
     // 将来も mid-cta meta が出力されないことを代表記事で確認する。
     const pampersHtml = readFileSync(
-      "dist/articles/pampers-newborn/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     expect(pampersHtml).not.toContain('name="article:mid-cta"');
@@ -513,7 +364,7 @@ describe.skipIf(!hasDist)("article metadata (rendered dist)", () => {
 
   it("marks a two-product article as a comparison with a comparison section", () => {
     const html = readFileSync(
-      "dist/articles/zojirushi-ck-pa08-vs-ck-dc08/index.html",
+      "dist/articles/amazon-echo-dot-max-vs-echo-dot-5th/index.html",
       "utf8",
     );
     expect(html).toContain(
@@ -567,15 +418,6 @@ describe.skipIf(!hasDist)(
         { "@type": "Product", name: "Dreame X50 Ultra" },
       ]);
     });
-
-    it("omits about on a comparison article without declared product names", () => {
-      const html = readFileSync(
-        "dist/articles/zojirushi-ck-pa08-vs-ck-dc08/index.html",
-        "utf8",
-      );
-      const article = articleOf(html);
-      expect(article.about).toBeUndefined();
-    });
   },
 );
 
@@ -623,7 +465,6 @@ describe.skipIf(!hasDist)("article trust line (rendered dist)", () => {
 describe.skipIf(!hasDist)("public commercial article quality gate", () => {
   it("renders concrete comparison rows without placeholder wording", () => {
     const articleSlugs = [
-      "panasonic-mc-nx810km-vs-mc-nx700k",
       "roborock-qrevo-curv-vs-dreame-x50",
       "makita-cl107-vs-cl286",
       "recolte-automatic-cooker-vs-panasonic-nf-pc400",
@@ -644,114 +485,41 @@ describe.skipIf(!hasDist)("public commercial article quality gate", () => {
   });
 });
 
-describe.skipIf(!hasDist)("article diagnosis CTA (rendered dist)", () => {
-  it("renders exactly one next-step block on every comparison article, before #specs", () => {
+describe.skipIf(!hasDist)("article purchase layout (rendered dist)", () => {
+  it("keeps purchase links in the single article-end purchase section on every current article", () => {
+    // 旧形式の記事は整理済み。現行テンプレート（目次付き）の記事は、
+    // 結論直後の next-step 欄を出さず、購入先を記事末尾の1か所にまとめる。
     let comparisonPages = 0;
+    const publishedIds = new Set(
+      publishedArticleMetadata.map((article) => article.id),
+    );
     for (const slug of articleSlugs()) {
+      // 撤去済みの記事（本番では404にする）は対象外。公開記事だけを検査する。
+      if (!publishedIds.has(slug)) continue;
       const html = readFileSync(`dist/articles/${slug}/index.html`, "utf8");
       const contentType = html.match(
         /<meta name="article:content-type" content="(guide|comparison)">/i,
       )?.[1];
-      const blockCount = (
-        html.match(
-          /<section\b[^>]*\bnext-step\b[^>]*\bdata-next-step\b[^>]*>/gi,
-        ) ?? []
-      ).length;
-      // Legacy article pages are explicitly allowlisted and may use their
-      // historical shell. The next-step contract applies to the current
-      // comparison composition only.
-      if (!html.includes('class="article-comparison-v2"')) continue;
-      if (
-        html.includes('class="article-toc"') &&
-        html.includes('data-next-step-purchase="disabled"')
-      )
-        continue;
-      if (contentType === "guide") {
-        expect(
-          blockCount,
-          `${slug}: guide must not render next-step block`,
-        ).toBe(0);
-        continue;
-      }
+      if (contentType === "guide") continue;
       comparisonPages += 1;
+      expect(html, `${slug}: toc template`).toContain('class="article-toc"');
       expect(
-        blockCount,
-        `${slug}: comparison must render one next-step block`,
-      ).toBe(1);
-      const diagnosisLink = html.match(
-        /<a class="next-step__diagnosis-link" href="([^"]+)"/,
-      );
-      const supportedDiagnosis = new Set([
-        "pigeon-bottle-160-240",
-        "pigeon-bottle-240",
-        "pigeon-slim-240",
-        "moony-m",
-        "merries-newborn",
-        "merries-pants",
-        "pampers-newborn",
-        "shupot",
-      ]);
-      if (supportedDiagnosis.has(slug)) {
-        expect(
-          diagnosisLink,
-          `${slug}: supported diagnosis CTA`,
-        ).not.toBeNull();
-      } else {
-        expect(diagnosisLink, `${slug}: unsupported diagnosis CTA`).toBeNull();
-      }
-      const buyLinks = html.match(
-        /<a\b[^>]*class="[^"]*\bnext-step__buy\b[^"]*"[^>]*>/gi,
-      );
-      const article = articleMetadata.find((item) => item.id === slug);
-      const nextStepPurchaseDisabled =
-        /data-next-step-purchase="disabled"/i.test(html);
+        /<section\b[^>]*\bnext-step\b[^>]*\bdata-next-step(?![-\w])[^>]*>/i.test(
+          html,
+        ),
+        `${slug}: must not render a next-step block`,
+      ).toBe(false);
       expect(
-        buyLinks?.length ?? 0,
-        `${slug}: next-step purchase buttons respect the article layout`,
-      ).toBe(
-        nextStepPurchaseDisabled
-          ? 0
-          : (article?.rakutenLinkStatus ?? article?.purchaseLinkStatus) ===
-                "verified" ||
-              (article?.rakutenLinkStatus ?? article?.purchaseLinkStatus) ===
-                "direct"
-            ? 2 - (article?.rakutenUnavailableSides?.length ?? 0)
-            : 0,
-      );
-      const specsIndex = html.indexOf('id="specs"');
-      const blockIndex = html.indexOf('class="next-step"');
-      if (specsIndex !== -1) {
-        expect(
-          blockIndex,
-          `${slug}: next-step block before #specs`,
-        ).toBeGreaterThan(-1);
-        expect(
-          blockIndex,
-          `${slug}: next-step block before #specs`,
-        ).toBeLessThan(specsIndex);
-      }
+        /data-placement="next-step"/.test(html),
+        `${slug}: must not render next-step purchase links`,
+      ).toBe(false);
+      expect(html, `${slug}: purchase section`).toContain('id="purchase"');
+      expect(
+        /next-step__diagnosis-link/.test(html),
+        `${slug}: must not link to a diagnosis`,
+      ).toBe(false);
     }
     expect(comparisonPages).toBeGreaterThan(30);
-  });
-
-  it("links bottle/diaper comparisons to their matching diagnosis category", () => {
-    const expectations: Record<string, string> = {
-      "pigeon-bottle-160-240": "/tools/product-finder/baby-bottle/",
-      "pigeon-bottle-240": "/tools/product-finder/baby-bottle/",
-      "pigeon-slim-240": "/tools/product-finder/baby-bottle/",
-      "moony-m": "/tools/product-finder/diaper/",
-      "merries-newborn": "/tools/product-finder/diaper/",
-      "merries-pants": "/tools/product-finder/diaper/",
-      "pampers-newborn": "/tools/product-finder/diaper/",
-      shupot: "/tools/product-finder/diaper/",
-    };
-    for (const [slug, href] of Object.entries(expectations)) {
-      const html = readFileSync(`dist/articles/${slug}/index.html`, "utf8");
-      const match = html.match(
-        /<a class="next-step__diagnosis-link" href="([^"]+)"/,
-      );
-      expect(match?.[1], `${slug} diagnosis href`).toBe(href);
-    }
   });
 });
 
@@ -767,10 +535,6 @@ describe("article card audiences 向き line", () => {
 
   it("does not mix unrelated product categories into known comparison cards", () => {
     const expectations = [
-      {
-        id: "panasonic-nt-t501-vs-nt-d700",
-        forbidden: /オーブンレンジ|冷蔵庫|冷凍室/,
-      },
       { id: "panasonic-ne-bs9c-vs-ne-ubs10c", forbidden: /冷蔵庫|冷凍室/ },
       { id: "panasonic-es-wp9b-vs-es-wg0b", forbidden: /レイザー式シェーバー/ },
       { id: "panasonic-eh-na0k-vs-eh-ne9n", forbidden: /Care/ },
@@ -790,7 +554,6 @@ describe("article card audiences 向き line", () => {
 
   it("does not leak unrelated category wording into article audiences", () => {
     const forbiddenByArticle: ReadonlyArray<readonly [string, RegExp]> = [
-      ["panasonic-nt-t501-vs-nt-d700", /オーブンレンジ|冷蔵庫|冷凍室/],
       ["panasonic-ne-bs9c-vs-ne-ubs10c", /冷蔵庫|冷凍室/],
       ["panasonic-eh-na0k-vs-eh-ne9n", /Care機能/],
       ["panasonic-es-wp9b-vs-es-wg0b", /レイザー式シェーバー/],

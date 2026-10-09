@@ -56,26 +56,17 @@ afterAll(() => {
 });
 
 describe("purchase link consistency gate (registry keys)", () => {
-  it("keeps the BabyBjorn HARMONY/MINI CTAs on verified item pages", async () => {
+  it("keeps registry Rakuten CTAs on verified item pages", async () => {
     const { articlePurchaseLinks } = await import("../src/lib/products");
-    expect(articlePurchaseLinks["babybjorn:left"].purchaseUrl).toContain(
-      "item.rakuten.co.jp%2Fbabybjorn%2Fbaby-carrier-harmony%2F",
-    );
-    expect(articlePurchaseLinks["babybjorn:right"].purchaseUrl).toContain(
-      "item.rakuten.co.jp%2Fbabybjorn%2Fbaby-carrier-mini-3d%2F",
-    );
-    expect(articlePurchaseLinks["babybjorn:left"].purchaseUrl).toMatch(
-      /^https:\/\/hb\.afl\.rakuten\.co\.jp\/ichiba\//,
-    );
-    expect(articlePurchaseLinks["babybjorn:right"].purchaseUrl).toMatch(
-      /^https:\/\/hb\.afl\.rakuten\.co\.jp\/ichiba\//,
-    );
-    expect(articlePurchaseLinks["babybjorn:left"].purchaseUrl).not.toMatch(
-      /a\.r10\.to/,
-    );
-    expect(articlePurchaseLinks["babybjorn:right"].purchaseUrl).not.toMatch(
-      /a\.r10\.to/,
-    );
+    // 例: 楽天で商品詳細を確認済みのソニー WF-C710N 記事（pc= が商品詳細URL）。
+    for (const side of ["left", "right"] as const) {
+      const url =
+        articlePurchaseLinks[`sony-wf-c710n-vs-linkbuds-fit:${side}`]
+          .purchaseUrl;
+      expect(url).toMatch(/^https:\/\/hb\.afl\.rakuten\.co\.jp\/ichiba\//);
+      expect(url).toContain("pc=https%3A%2F%2Fitem.rakuten.co.jp%2F");
+      expect(url).not.toMatch(/a\.r10\.to/);
+    }
   });
 
   it("extracts registry keys from an ArticleComparisonV2 page in left/right order", () => {
@@ -332,7 +323,9 @@ describe("verified CTA destination audit (issue #342)", () => {
     }
     // レジストリは JSON のみが正規の編集対象のため、旧来のような
     // 商品定数参照・関数参照は構造的に存在し得ない。全エントリは文字列リテラル。
-    expect(entries.get("thermos-tiger-bottle:left")).toMatch(/^https:\/\//);
+    expect(entries.get("sony-wf-c710n-vs-linkbuds-fit:left")).toMatch(
+      /^https:\/\//,
+    );
     expect(loadRegistryKeys("src").size).toBe(entries.size);
   });
 
