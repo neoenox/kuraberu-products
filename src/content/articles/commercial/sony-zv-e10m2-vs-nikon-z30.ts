@@ -32,8 +32,7 @@ export const sonyZvE10m2VsNikonZ30Seed: CommercialArticleSeed = {
   rightImage: "/products/nikon-z30.jpg",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0D97HW6S6",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0B5CP9X1X",
-  leftRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/ichiba/57ed5f71.fb653054.57ed5f72.1781caa3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4548736160675-34-39044-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+  leftRakutenUrl: null,
   rightRakutenUrl:
     "https://hb.afl.rakuten.co.jp/ichiba/5701c911.d88f4b8a.5701c912.ee48bcf8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Femedama%2F4960759910615%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
   officialSources: [
