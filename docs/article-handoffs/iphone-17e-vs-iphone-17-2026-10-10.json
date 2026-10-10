@@ -66,10 +66,16 @@
   },
   "researchDateJst": "2026-10-10",
   "social": {
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "検証可能な公式情報を中心に構成。記事にSNS投稿を採用しないため、SNS欄と検索リンクは出さない。",
-    "status": "none"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      "https://www.youtube.com/watch?v=ZM6Hfemszq8"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      "https://www.youtube.com/watch?v=ZM6Hfemszq8"
+    ],
+    "note": "2026-10-10にYouTubeのoEmbedで両動画の存在・タイトル・投稿者・埋め込み可否を直接確認。投稿日と実利用の根拠は検索抜粋ベースで、1件目は楽天購入の記載、2件目は約1か月の使い込みの記載あり。説明文全文の確認と記事ページでのブラウザー表示確認は未実施。抜粋範囲に案件・PR表記なし。比較の根拠には使わず参考情報のみ。"
   },
   "source": "Fresh product selection and research verified against manufacturer pages and Amazon Japan product detail pages",
   "unconfirmed": [

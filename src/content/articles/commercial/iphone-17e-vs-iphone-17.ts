@@ -186,6 +186,39 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
       ],
     },
   ],
+  socialProofHasPosts: true,
+  socialProofBestMatch: "model",
+  socialProofCheckedAt: "2026-10-10",
+  socialProofQuery: "iPhone 17e iPhone 17 使用感 レビュー",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      title: "今買うならiPhone 17か17eどっち？買い方も含め考察",
+      match: "model",
+      purpose: "iPhone 17と17eの比較検討に関する使用・購入の感想",
+      author: "Appleが大好きなんだよ",
+      summary:
+        "iPhone 17と17eの性能・機能の比較と価格・買い方の考察。楽天購入の記載あり。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=ZM6Hfemszq8",
+      title:
+        "【結論】iPhone 17eを17・16eと使い比べて感じた、選ぶメリット・デメリット",
+      match: "model",
+      purpose: "17eをメインスマホとして使い込んだ上での17・16e比較の感想",
+      author: "こにたく | konitaku",
+      summary:
+        "17eを約1か月使い込んだ上での17・16eとの比較。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   sourceLinks: [
     {
       label: "iPhone 17e 技術仕様",
@@ -217,7 +250,17 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
       url: "https://www.amazon.co.jp/dp/B0FQGJ6H6X",
       date: "2026-10-10",
     },
+    {
+      label: "YouTube iPhone 17と17eの比較検討",
+      url: "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      date: "2026-10-10",
+    },
+    {
+      label: "YouTube iPhone 17eの使い比べ",
+      url: "https://www.youtube.com/watch?v=ZM6Hfemszq8",
+      date: "2026-10-10",
+    },
   ],
   disclaimer:
-    "仕様は2026年10月10日にメーカー公式ページで確認しました。本体価格は日本向けの確定価格を公式ページで確認できていないため記載しません。カメラの倍率やバッテリー時間はメーカー表記の仕様であり、実際の画質や使用時間を示す共通試験ではありません。価格、在庫、色、販売条件は購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれます。",
+    "仕様は2026年10月10日にメーカー公式ページで確認しました。本体価格は日本向けの確定価格を公式ページで確認できていないため記載しません。カメラの倍率やバッテリー時間はメーカー表記の仕様であり、実際の画質や使用時間を示す共通試験ではありません。価格、在庫、色、販売条件は購入時点の販売ページでご確認ください。SNSの感想は個人の使用感で、比較の根拠ではありません。この記事にはアフィリエイトリンクが含まれます。",
 };
