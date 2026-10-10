@@ -77,9 +77,11 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
         "17eの仕様ページにProMotionの記載は見当たらない。非対応とは断定していない",
     },
     {
-      label: "ピーク輝度（HDR／屋外）",
-      left: "1,200ニト／2,000ニト",
-      right: "1,600ニト／3,000ニト",
+      label: "ピーク輝度（HDR）",
+      left: "1,200ニト",
+      right: "1,600ニト",
+      highlightNote:
+        "17は屋外ピーク3,000ニトの記載もあるが、17eの仕様ページには屋外ピークの記載が見当たらない",
       highlight: "right",
       direction: "higher-is-better",
     },
