@@ -1,0 +1,162 @@
+{
+  "id": "macbook-air-13-vs-15-m5-2026-10-10",
+  "articleId": "macbook-air-13-vs-15-m5",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-10",
+  "articleReady": true,
+  "category": "ノートパソコン",
+  "selection": {
+    "reason": "MacBook Airの13インチと15インチは、画面サイズ・バッテリー・スピーカー・重さ・価格が異なり、サイズ違いの選択で迷いが明確。バックログの候補。公開中の記事にノートパソコンのカテゴリーはない。",
+    "duplicateCheck": "公開中の記事にMacBookの比較記事はない（2026-10-10確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple MacBook Air 13インチ（M5・10コアCPU/8コアGPU・16GB・512GB）ミッドナイト",
+      "model": "MacBook Air 13 M5",
+      "officialUrl": "https://www.apple.com/jp/macbook-air/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71eX66ytH+L._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GR1T11D6）の1枚目の商品画像（1500x911，正面、HTTP 200、2026-10-10取得、ユーザーの許可を得て取得）。800x800の白背景に収め、public/products と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "Apple M5（10コアCPU、8コアGPU、16コアNeural Engine）",
+        "display": "13.6インチ、2,560x1,664、224ppi、500ニト",
+        "battery": "53.8Wh、ビデオストリーミング最大18時間、ワイヤレスインターネット最大15時間",
+        "speakers": "4スピーカー",
+        "weight": "1.23kg、1.13x30.41x21.5cm",
+        "ports": "Thunderbolt 4（USB-C）x2、MagSafe 3、3.5mmヘッドフォンジャック",
+        "wireless": "Wi-Fi 7、Bluetooth 6",
+        "memory": "16GB（24GB・32GBに変更可）",
+        "storage": "512GB SSD"
+      },
+      "officialStorePriceJpy": 224800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-mac/macbook-air/13-インチ",
+      "officialPriceNote": "Appleオンラインストアの購入ページで224,800円から（税込、2026-10-10確認、16GB・512GBの構成、色によらず同額）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GR1T11D6",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple MacBook Air 15インチ（M5・10コアCPU/10コアGPU・16GB・512GB）ミッドナイト",
+      "model": "MacBook Air 15 M5",
+      "officialUrl": "https://www.apple.com/jp/macbook-air/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/718d4Eu7cFL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GR1PRMDS）の1枚目の商品画像（1500x912，正面、HTTP 200、2026-10-10取得、ユーザーの許可を得て取得）。800x800の白背景に収め、public/products と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "Apple M5（10コアCPU、10コアGPU、16コアNeural Engine）",
+        "display": "15.3インチ、2,880x1,864、224ppi、500ニト",
+        "battery": "66.5Wh、ビデオストリーミング最大18時間、ワイヤレスインターネット最大15時間",
+        "speakers": "フォースキャンセリングウーファーを備えた6スピーカー",
+        "weight": "1.51kg、1.15x34.04x23.76cm",
+        "ports": "Thunderbolt 4（USB-C）x2、MagSafe 3、3.5mmヘッドフォンジャック",
+        "wireless": "Wi-Fi 7、Bluetooth 6",
+        "memory": "16GB（24GB・32GBに変更可）",
+        "storage": "512GB SSD"
+      },
+      "officialStorePriceJpy": 264800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-mac/macbook-air/15-インチ",
+      "officialPriceNote": "Appleオンラインストアの購入ページで264,800円から（税込、2026-10-10確認、16GB・512GBの構成、色によらず同額）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GR1PRMDS",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの税込表示『から』。13インチ（16GB・512GB・8コアGPU）は224,800円から、15インチ（16GB・512GB・10コアGPU）は264,800円から（2026-10-10確認、購入ページのHTML原文）。Amazonの表示価格は13インチ224,800円、15インチ262,612円で、15インチはAppleの『から』価格と一致しない（購入時点で変動）。",
+    "keyDifferences": [
+      "画面は13.6インチ（2,560x1,664）と15.3インチ（2,880x1,864）",
+      "バッテリー容量は53.8Whと66.5Wh",
+      "スピーカーは4スピーカーと6スピーカー（フォースキャンセリングウーファー）",
+      "質量は1.23kgと1.51kg",
+      "比較構成のGPUは8コアと10コア",
+      "価格は224,800円からと264,800円から"
+    ],
+    "commonSpecs": [
+      "Apple M5（10コアCPU、16コアNeural Engine）",
+      "500ニトの輝度",
+      "最大18時間のビデオストリーミング",
+      "Wi-Fi 7、Bluetooth 6",
+      "Thunderbolt 4（USB-C）x2、MagSafe 3",
+      "12MPセンターフレームカメラ、Touch ID",
+      "色（スカイブルー・シルバー・スターライト・ミッドナイト）"
+    ],
+    "caveat": "比較は16GB・512GB・ミッドナイトの構成。13インチは8コアGPU、15インチは10コアGPUで、GPUの違いは構成の違い。24GB・1TB以上・ほかの色は比較していない。仕様・価格はApple公式の仕様ページと購入ページのHTML原文で確認した。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GR1T11D6",
+    "right": "https://www.amazon.co.jp/dp/B0GR1PRMDS",
+    "leftAsin": "B0GR1T11D6",
+    "rightAsin": "B0GR1PRMDS",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-10"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで「Amazon.co.jp: Apple 2026 MacBook Air M5チップ搭載13インチノートブック」（16GB・512GB・ミッドナイト）とASIN B0GR1T11D6を確認。表示価格224,800円（税込）（2026-10-10）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、ページのツールバー表示で確認。『対象外』の表示はなし（2026-10-10）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GR1T11D6?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、「Amazon.co.jp: Apple 2026 MacBook Air M5チップ搭載13インチノートブック」（16GB・512GB・ミッドナイト）の商品詳細ページに到達（2026-10-10）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで「Amazon.co.jp: Apple 2026 MacBook Air M5チップ搭載15インチノートブック」（16GB・512GB・ミッドナイト）とASIN B0GR1PRMDSを確認。表示価格262,612円（税込）（2026-10-10）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、ページのツールバー表示で確認。『対象外』の表示はなし（2026-10-10）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GR1PRMDS?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、「Amazon.co.jp: Apple 2026 MacBook Air M5チップ搭載15インチノートブック」（16GB・512GB・ミッドナイト）の商品詳細ページに到達（2026-10-10）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Appleの価格は『から』表示で、24GB・1TB以上など他構成の価格は未確認。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する（Amazonの15インチは262,612円と表示）。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

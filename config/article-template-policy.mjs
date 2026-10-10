@@ -44,6 +44,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "ipad-mini-a17-pro-vs-ipad-a16",
   "apple-watch-series-12-vs-se-3",
   "iphone-17e-vs-iphone-17",
+  "macbook-air-13-vs-15-m5",
   "karcher-k2-silent-vs-k3-silent-plus",
   "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
   "dji-osmo-action-6-vs-gopro-hero13-black",

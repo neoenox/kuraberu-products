@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（43本）
+## 現在の公開済み（44本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -44,6 +44,7 @@
 | `ipad-mini-a17-pro-vs-ipad-a16`                      | 公開済み |
 | `apple-watch-series-12-vs-se-3`                      | 公開済み |
 | `iphone-17e-vs-iphone-17`                            | 公開済み |
+| `macbook-air-13-vs-15-m5`                            | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -172,14 +173,6 @@
 - 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、AirPods Pro 3（B0FRZ3SZWX）とGoogle Pixel Buds Pro 2（B0FN3KT3C8、Moonstone）の存在を確認。AppleとGoogleの公式ページが開くことのみ確認）
 - 想定比較軸: ノイズキャンセリング、バッテリー、心拍センサー・補聴機能、対応端末、IP等級、価格
 - 確認すること: Apple日本・Googleストアの公式仕様ページ、Amazonの両商品ページ（色の扱い）、Pixel Buds Pro 2の現行販売状況、既存の非公開記事（`airpods-pro-3-vs-sony-wf-1000xm6`）との重複
-
-### MacBook Air 13インチ vs 15インチ（M5）
-
-- 選定理由: ノートPCは公開中の記事にないカテゴリで、画面サイズ違いの選択は迷いが明確。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、2026年のMacBook Air M5の13インチ（B0GR1T11D6）と15インチ（B0GR1PRMDS）の存在を確認。Apple日本の仕様ページが開くことのみ確認）
-- 想定比較軸: 画面サイズ、質量、バッテリー、スピーカー、ポート、公式価格
-- 確認すること: Apple日本の仕様・購入ページ、比較する構成（メモリ・ストレージ・色）を先に決める、Amazonの両商品ページが同じ構成か、公開中のApple記事との重複
-- 注意: メモリ・ストレージ・色の違いで価格と商品ページが分かれるため、比較する構成を1つに絞る。
 
 ### Roborock Qrevo L Pro vs Qrevo Curv 2 Flow
 
