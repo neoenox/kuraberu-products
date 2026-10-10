@@ -204,8 +204,37 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
   ],
   socialProofQuery: "iPhone 17e iPhone 17 違い 使用感 X YouTube",
   socialProofCheckedAt: "2026-10-10",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      title: "今買うならiPhone 17か17eどっち？買い方も含め考察",
+      match: "model",
+      purpose: "iPhone 17と17eの比較検討に関する使用・購入の感想",
+      author: "Appleが大好きなんだよ",
+      summary:
+        "iPhone 17と17eの性能・機能の比較と価格・買い方の考察。楽天購入の記載あり。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=ZM6Hfemszq8",
+      title:
+        "【結論】iPhone 17eを17・16eと使い比べて感じた、選ぶメリット・デメリット",
+      match: "model",
+      purpose: "17eをメインスマホとして使い込んだ上での17・16e比較の感想",
+      author: "こにたく | konitaku",
+      summary:
+        "17eを約1か月使い込んだ上での17・16eとの比較。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "iPhone 17e",
@@ -245,7 +274,17 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
       url: "https://www.apple.com/jp/shop/buy-iphone/iphone-17",
       date: "2026-10-10",
     },
+    {
+      label: "YouTube iPhone 17と17eの比較検討",
+      url: "https://www.youtube.com/watch?v=AN3eWFg2hRM",
+      date: "2026-10-10",
+    },
+    {
+      label: "YouTube iPhone 17eの使い比べ",
+      url: "https://www.youtube.com/watch?v=ZM6Hfemszq8",
+      date: "2026-10-10",
+    },
   ],
   disclaimer:
-    "仕様と価格は2026年10月10日にApple公式サイトで確認しました。価格は256GBのSIMフリーモデルの表示です。商品画像はAmazonの商品ページの画像を使用しています。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様と価格は2026年10月10日にApple公式サイトで確認しました。価格は256GBのSIMフリーモデルの表示です。商品画像はAmazonの商品ページの画像を使用しています。SNSの感想は個人の使用感で、比較の根拠ではありません。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
