@@ -110,6 +110,7 @@ import { ankerSolixC300VsJackery240NewSeed } from "./anker-solix-c300-vs-jackery
 import { pixelWatch5VsGalaxyWatch9Seed } from "./pixel-watch-5-vs-galaxy-watch9";
 import { zojirushiEeTc60VsDainichiHdLx1026Seed } from "./zojirushi-ee-tc60-vs-dainichi-hd-lx1026";
 import { iphone18ProVsPixel11ProSeed } from "./iphone-18-pro-vs-pixel-11-pro";
+import { iphone17eVsIphone17Seed } from "./iphone-17e-vs-iphone-17";
 import { sonyZvE10m2VsNikonZ30Seed } from "./sony-zv-e10m2-vs-nikon-z30";
 import { ankerSoundcoreLiberty5ProVsLiberty5ProMaxSeed } from "./anker-soundcore-liberty-5-pro-vs-liberty-5-pro-max";
 import { dainichiHdLx1226VsHdLx1026Seed } from "./dainichi-hd-lx1226-vs-hd-lx1026";
@@ -141,6 +142,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   ankerSolixC300VsJackery240NewSeed,
   dainichiHdLx1226VsHdLx1026Seed,
   iphone18ProVsPixel11ProSeed,
+  iphone17eVsIphone17Seed,
   sonyZvE10m2VsNikonZ30Seed,
   ankerSoundcoreLiberty5ProVsLiberty5ProMaxSeed,
   pixelWatch5VsGalaxyWatch9Seed,

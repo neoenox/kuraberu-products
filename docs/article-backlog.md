@@ -191,7 +191,7 @@
 ### iPhone 17e vs iPhone 17
 
 - 選定理由: 公開中のスマートフォン記事は1本のみで、価格を抑えたiPhoneと標準モデルの迷いは検索需要が見込める。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、iPhone 17e 256GB（B0GQVYHYFK）とiPhone 17 256GB（B0FQG97CDB）の存在を確認）
+- 状態: 作成中（draft）。2026-10-10にApple日本の両仕様ページとAmazonの両商品詳細ページ（17e: B0GQVHLG38、17: B0FQGJ6H6X、256GB）を直接確認し、`iphone-17e-vs-iphone-17`のseedとhandoffをdraftで登録。日本向け本体価格は未確認のため価格比較なし。楽天とSNSは未採用。
 - 想定比較軸: 画面サイズ・リフレッシュレート、チップ、カメラ、バッテリー、ストレージ、公式価格
 - 確認すること: Apple日本の両仕様ページと購入ページ、比較する容量・色を1つに絞る、Amazonの両商品ページが同じ構成か、公開中のiPhone記事（iPhone 18 Pro vs Pixel 11 Pro）との重複
 

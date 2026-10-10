@@ -1,0 +1,137 @@
+{
+  "articleId": "iphone-17e-vs-iphone-17",
+  "articleReady": true,
+  "category": "スマートフォン",
+  "comparison": {
+    "batteryCaveat": "電池持ちの公称値は測定アダプタや条件が異なるため、数字だけで実使用時間の優劣を付けない。",
+    "cameraCaveat": "望遠倍率や画素数の仕様比較であり、共通基準で測った画質比較ではない。倍率だけで撮影品質を順位付けしない。",
+    "keyDifferences": [
+      "公式仕様の画面はiPhone 17が6.3インチ・ProMotion最大120Hz・常時表示・Dynamic Island、iPhone 17eが6.1インチ",
+      "公式仕様のGPUコア数はiPhone 17が5コア、iPhone 17eが4コア。CPUはどちらも6コア、Neural Engineは16コア",
+      "背面カメラはiPhone 17が48MPデュアル、iPhone 17eが48MP単眼。超広角・マクロ・空間写真の記載はiPhone 17のみ",
+      "フロントカメラはiPhone 17が18MPセンターフレーム、iPhone 17eが12MP TrueDepth",
+      "メーカー公称のビデオ再生はiPhone 17が最大30時間、iPhone 17eが最大26時間。測定条件が異なるため直接優劣を付けない",
+      "本体はiPhone 17eが169g・146.7mm、iPhone 17が177g・149.6mm。iPhone 17eが8g軽い",
+      "どちらもデュアルeSIMで物理SIM非対応。容量はどちらも256GB・512GB"
+    ],
+    "officialPricesVerified": false,
+    "officialSpecsVerified": true,
+    "priceBasis": "日本向け本体価格の確定値をApple日本公式ページで確認できていないため、本記事では価格比較を行わない。米国Newsroomのドル価格は日本価格ではないため転記しない。"
+  },
+  "id": "iphone-17e-vs-iphone-17-2026-10-10",
+  "products": {
+    "left": {
+      "amazonAsin": "B0GQVHLG38",
+      "amazonListingEvidence": "2026-10-10にAmazon.co.jpの商品詳細ページへ直接アクセスしHTTP 200を確認。ページタイトルにApple iPhone 17e 256GBと表示され、URLのASIN B0GQVHLG38と一致。容量の選択や購入は行わず、販売価格・在庫は転記しない。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GQVHLG38",
+      "imageEvidence": "2026-10-10にApple日本公式17eページのHTMLからog:image URLを取得し、HEADでContent-Type image/pngを確認。Chromeでの目視確認は未実施のため、公式プロモーション画像の断定は表示確認時に行う。",
+      "model": "iPhone 17e",
+      "name": "Apple iPhone 17e 256GB",
+      "officialImageUrl": "https://www.apple.com/v/iphone-17e/e/images/meta/iphone17e_overview__b9tcq8ttub9e_og.png?202609080800",
+      "officialSpecs": {
+        "battery": "ビデオ再生最大26時間、ストリーミング最大21時間。20W以上で30分最大50%",
+        "capacity": "256GB",
+        "dimensions": "146.7 × 71.5 × 7.80 mm",
+        "display": "6.1-inch Super Retina XDR, 2532x1170, 460ppi",
+        "rearCamera": "48MP Fusion main single, 2x optical-quality telephoto, up to 10x digital zoom",
+        "sim": "dual eSIM; no physical SIM",
+        "weight": "169g"
+      },
+      "officialUrl": "https://www.apple.com/jp/iphone-17e/specs/"
+    },
+    "right": {
+      "amazonAsin": "B0FQGJ6H6X",
+      "amazonListingEvidence": "2026-10-10にAmazon.co.jpの商品詳細ページへ直接アクセスしHTTP 200を確認。ページタイトルにApple iPhone 17 256GB SIMフリーと表示され、URLのASIN B0FQGJ6H6Xと一致。容量の選択や購入は行わず、販売価格・在庫は転記しない。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FQGJ6H6X",
+      "imageEvidence": "2026-10-10にApple日本公式17ページのHTMLからog:image URLを取得し、HEADでContent-Type image/pngを確認。Chromeでの目視確認は未実施のため、公式プロモーション画像の断定は表示確認時に行う。",
+      "model": "iPhone 17",
+      "name": "Apple iPhone 17 256GB",
+      "officialImageUrl": "https://www.apple.com/v/iphone-17/i/images/meta/iphone-17_overview__cg0rlzmbhl7m_og.png?202609172040",
+      "officialSpecs": {
+        "battery": "ビデオ再生最大30時間、ストリーミング最大27時間。40W以上で20分最大50%",
+        "capacity": "256GB",
+        "dimensions": "149.6 × 71.5 × 7.95 mm",
+        "display": "6.3-inch Super Retina XDR, 2622x1206, ProMotion up to 120Hz",
+        "rearCamera": "48MP Dual Fusion main plus ultrawide, macro, spatial photo, up to 10x digital zoom",
+        "sim": "dual eSIM; no physical SIM",
+        "weight": "177g"
+      },
+      "officialUrl": "https://www.apple.com/jp/iphone-17/specs/"
+    }
+  },
+  "publicationDecision": "Apple日本公式仕様・画像と両商品のAmazon商品詳細リンクを確認し、256GBモデルで比較。楽天は未確認のため表示しない。SNSは採用しない。日本向け本体価格は未確認のため価格比較を行わず、公開条件のうち価格確認を除く必須項目が揃ったためarticleReadyとする。seedはdraftのまま検証ゲートを通す。",
+  "rakuten": {
+    "generation": "楽天の商品・アフィリエイト確認は未実施。ログイン済みChromeの楽天アフィリエイト公式画面での生成が必要なため、本セッションでは行わない。",
+    "status": "unverified"
+  },
+  "researchDateJst": "2026-10-10",
+  "social": {
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "検証可能な公式情報を中心に構成。記事にSNS投稿を採用しないため、SNS欄と検索リンクは出さない。",
+    "status": "none"
+  },
+  "source": "Fresh product selection and research verified against manufacturer pages and Amazon Japan product detail pages",
+  "unconfirmed": [
+    "日本向け本体価格の確定値と割引・下取り条件は未確認。記事内で価格の断定を行わない。",
+    "楽天市場の商品詳細ページと成果URLは未確認。楽天ボタンは表示しない。",
+    "AmazonのASIN単位のアソシエイト適格性表示は未観察。カテゴリ料率からの推定は行わない。",
+    "公式画像の目視確認は未実施。表示確認時に公式プロモーション画像と判別できることを確認する。",
+    "カメラの画質や電池の実使用時間の優劣は未検証。仕様の数字だけで順位付けしない。"
+  ],
+  "amazon": {
+    "browserEvidence": {
+      "bySide": {
+        "left": {
+          "destination": {
+            "evidence": "タグを加える前のAmazon B0GQVHLG38商品詳細ページで商品名・容量を照合。クリックによる遷移確認は行わず、記事表示では正しいASINを基底遷移先として維持することを検証。",
+            "state": "verified"
+          },
+          "eligibility": {
+            "evidence": "ASIN固有のアソシエイト適格性表示は観察していない。カテゴリ料率表示のみから商品別適格性を断定しない。",
+            "state": "not-shown"
+          },
+          "productMatch": {
+            "evidence": "2026-10-10にAmazon.co.jpのB0GQVHLG38商品詳細ページへ直接アクセスしHTTP 200とタイトル内のApple iPhone 17e 256GBを確認。URLのASINと一致。",
+            "state": "verified"
+          },
+          "taggedUrl": {
+            "evidence": "記事ソースはタグなしASIN商品ページのみを保持。描画時にPUBLIC_AMAZON_ASSOCIATE_TAGから成果タグを付与する。タグ値は記録しない。",
+            "state": "verified"
+          }
+        },
+        "right": {
+          "destination": {
+            "evidence": "タグを加える前のAmazon B0FQGJ6H6X商品詳細ページで商品名・容量を照合。クリックによる遷移確認は行わず、記事表示では正しいASINを基底遷移先として維持することを検証。",
+            "state": "verified"
+          },
+          "eligibility": {
+            "evidence": "ASIN固有のアソシエイト適格性表示は観察していない。カテゴリ料率表示のみから商品別適格性を断定しない。",
+            "state": "not-shown"
+          },
+          "productMatch": {
+            "evidence": "2026-10-10にAmazon.co.jpのB0FQGJ6H6X商品詳細ページへ直接アクセスしHTTP 200とタイトル内のApple iPhone 17 256GB SIMフリーを確認。URLのASINと一致。",
+            "state": "verified"
+          },
+          "taggedUrl": {
+            "evidence": "記事ソースはタグなしASIN商品ページのみを保持。描画時にPUBLIC_AMAZON_ASSOCIATE_TAGから成果タグを付与する。タグ値は記録しない。",
+            "state": "verified"
+          }
+        }
+      },
+      "sessionIndicator": {
+        "evidence": "アソシエイト・ツールバーの表示は観察していない。HTTPによる商品詳細ページの直接確認のみを実施し、ログイン状態の推定は行わない。認証情報やCookieは保存しない。",
+        "observedAtJst": "2026-10-10",
+        "state": "not-recorded"
+      }
+    },
+    "productPages": {
+      "left": "https://www.amazon.co.jp/dp/B0GQVHLG38",
+      "right": "https://www.amazon.co.jp/dp/B0FQGJ6H6X"
+    },
+    "status": "verified",
+    "statusBySide": { "left": "verified", "right": "verified" },
+    "left": "https://www.amazon.co.jp/dp/B0GQVHLG38",
+    "right": "https://www.amazon.co.jp/dp/B0FQGJ6H6X"
+  }
+}
