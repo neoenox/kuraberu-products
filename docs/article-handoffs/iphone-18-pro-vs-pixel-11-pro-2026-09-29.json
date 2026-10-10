@@ -70,10 +70,7 @@
   },
   "amazon": {
     "status": "partial",
-    "statusBySide": {
-      "left": "search",
-      "right": "verified"
-    },
+    "statusBySide": { "left": "search", "right": "verified" },
     "searchLinks": {
       "left": {
         "query": "Apple iPhone 18 Pro 256GB",
@@ -84,9 +81,7 @@
     },
     "right": "https://www.amazon.co.jp/dp/B0HC3B8NG6",
     "rightAsin": "B0HC3B8NG6",
-    "productPages": {
-      "right": "https://www.amazon.co.jp/dp/B0HC3B8NG6"
-    },
+    "productPages": { "right": "https://www.amazon.co.jp/dp/B0HC3B8NG6" },
     "browserEvidence": {
       "sessionIndicator": {
         "state": "observed",
@@ -148,10 +143,16 @@
     "generation": "2026-09-29にログイン済みChromeの楽天アフィリエイト公式画面へ各商品詳細URLを入力。商品リンク作成画面の商品名・容量・色・ショップを確認し、出力された成果URLのpc=遷移先が入力した商品詳細ページと一致することを確認。iPhoneページでは256GBが選択肢として掲載され、実際の容量選択や購入は行わず販売価格は転記しない。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "検証可能な公式情報を中心に構成。記事にSNS投稿を採用しないため、SNS欄と検索リンクは出さない。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=wTM2VlD58T0",
+      "https://www.youtube.com/watch?v=mK5m6ghHxgE"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=wTM2VlD58T0",
+      "https://www.youtube.com/watch?v=mK5m6ghHxgE"
+    ],
+    "note": "2026-10-10にYouTubeのoEmbedで両動画の存在・タイトル・投稿者・埋め込み可否を直接確認。1件目は投稿者自身の購入記載あり、2件目は実機検証の記載あり。投稿日と説明文全文の確認、記事ページでのブラウザー表示確認は未実施。抜粋範囲に案件・PR表記なし。比較の根拠には使わず参考情報のみ。"
   },
   "unconfirmed": [
     "iPhone 18 Pro 256GBのAmazon商品詳細ページとASINは未確認。Amazonボタンは検索結果へ案内し、検索時点で表示された別モデル・アクセサリーを本商品として扱わない。",

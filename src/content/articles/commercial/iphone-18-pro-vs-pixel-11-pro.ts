@@ -151,6 +151,40 @@ export const iphone18ProVsPixel11ProSeed: CommercialArticleSeed = {
     "nanoSIMを残す必要があるなら、物理SIMに対応するPixelの仕様と通信会社の対応を確認する",
     "普段使うOS、周辺機器、写真・メッセージの移行方法と、容量・色の在庫を購入先で確認する",
   ],
+  socialProofHasPosts: true,
+  socialProofBestMatch: "model",
+  socialProofCheckedAt: "2026-10-10",
+  socialProofQuery: "iPhone 18 Pro Pixel 11 Pro 実機レビュー 使用感",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=wTM2VlD58T0",
+      title:
+        "【実機レビュー】ついに登場したiPhone18 Proの速報レビューです。やっぱりいいですね！ もちろん、僕も買ってます",
+      match: "model",
+      purpose: "iPhone 18 Proの実機速報レビューと購入者の感想",
+      author: "戸田覚：ガジェット【辛口】点数評価",
+      summary:
+        "実機の速報レビュー。投稿者自身も購入したとの記載あり。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=mK5m6ghHxgE",
+      title:
+        "【実機レビュー】Pixel 11 Proを使ってみた！Googleの小型ハイエンドスマホの実力は？Pixel 10とも比較",
+      match: "model",
+      purpose: "Pixel 11 Proの実機レビューとPixel 10比較の感想",
+      author: "モバイルドットコムTV",
+      summary:
+        "ゲーム動作・カメラ画質・電池持ちなどの実機検証とPixel 10比較。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Apple iPhone 18 Pro",
@@ -207,7 +241,17 @@ export const iphone18ProVsPixel11ProSeed: CommercialArticleSeed = {
       url: "https://www.amazon.co.jp/dp/B0HC3B8NG6",
       date: "2026-10-03",
     },
+    {
+      label: "YouTube iPhone 18 Pro実機レビュー",
+      url: "https://www.youtube.com/watch?v=wTM2VlD58T0",
+      date: "2026-10-10",
+    },
+    {
+      label: "YouTube Pixel 11 Pro実機レビュー",
+      url: "https://www.youtube.com/watch?v=mK5m6ghHxgE",
+      date: "2026-10-10",
+    },
   ],
   disclaimer:
-    "仕様と価格は2026年10月3日にメーカー公式ページで確認しました。価格は確認時点の公式掲載価格で、割引・下取り・販売店価格を含みません。カメラの倍率はメーカー表記の仕様であり、実際の画質を示す共通試験ではありません。電池持ちは使用条件で変わります。価格、在庫、色、販売条件は購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれます。",
+    "仕様と価格は2026年10月3日にメーカー公式ページで確認しました。価格は確認時点の公式掲載価格で、割引・下取り・販売店価格を含みません。カメラの倍率はメーカー表記の仕様であり、実際の画質を示す共通試験ではありません。電池持ちは使用条件で変わります。価格、在庫、色、販売条件は購入時点の販売ページでご確認ください。SNSの感想は個人の使用感で、比較の根拠ではありません。この記事にはアフィリエイトリンクが含まれます。",
 };
