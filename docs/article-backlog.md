@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（42本）
+## 現在の公開済み（43本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -43,6 +43,7 @@
 | `kindle-vs-kindle-paperwhite`                        | 公開済み |
 | `ipad-mini-a17-pro-vs-ipad-a16`                      | 公開済み |
 | `apple-watch-series-12-vs-se-3`                      | 公開済み |
+| `iphone-17e-vs-iphone-17`                            | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -187,13 +188,6 @@
 - 想定比較軸: 吸引力、モップの方式、ステーションの機能、障害物回避、本体サイズ、価格
 - 確認すること: ロボロック公式の日本語商品ページ（URLの特定）、Amazonの両商品ページ、型番・色、既存の非公開記事（`roborock-qrevo-curv-vs-dreame-x50`）との重複
 - 注意: 旧記事のQrevo Curvとは別モデル。型番が似ているため、取り違えないよう型番を先に確認する。
-
-### iPhone 17e vs iPhone 17
-
-- 選定理由: 公開中のスマートフォン記事は1本のみで、価格を抑えたiPhoneと標準モデルの迷いは検索需要が見込める。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、iPhone 17e 256GB（B0GQVYHYFK）とiPhone 17 256GB（B0FQG97CDB）の存在を確認）
-- 想定比較軸: 画面サイズ・リフレッシュレート、チップ、カメラ、バッテリー、ストレージ、公式価格
-- 確認すること: Apple日本の両仕様ページと購入ページ、比較する容量・色を1つに絞る、Amazonの両商品ページが同じ構成か、公開中のiPhone記事（iPhone 18 Pro vs Pixel 11 Pro）との重複
 
 ## 追加確認・保留
 
