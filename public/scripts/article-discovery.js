@@ -74,14 +74,12 @@
       ].join(" "),
     );
 
-  // 同義語展開: クエリ語を同義語集合で拡張してから記事テキストと照合する。
-  const expandQueryWithSynonyms = (terms) => {
-    const expanded = [...terms];
-    for (const term of terms) {
-      const syns = SYNONYMS.get(term);
-      if (syns) expanded.push(...syns);
-    }
-    return expanded;
+  // 同義語照合: クエリ語同士はAND、各クエリ語とその同義語同士はORで照合する。
+  // サーバ側 (src/lib/article-discovery.ts の expandQueryTermGroups) と
+  // 同一の仕様に保つこと。
+  const termMatches = (term, text) => {
+    const group = [term, ...(SYNONYMS.get(term) ?? [])];
+    return group.some((candidate) => text.includes(candidate));
   };
 
   const createCard = (article) => {
@@ -180,9 +178,7 @@
             article.category === category.value ||
             article.categoryGroup === category.value) &&
           (!(tag && tag.value) || (article.tags || []).includes(tag.value)) &&
-          expandQueryWithSynonyms(terms).every((term) =>
-            articleSearchText(article).includes(term),
-          ),
+          terms.every((term) => termMatches(term, articleSearchText(article))),
       );
       results.replaceChildren(...matches.map(createCard));
       visible = matches.length;

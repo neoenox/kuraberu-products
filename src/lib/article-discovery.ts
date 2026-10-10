@@ -45,15 +45,24 @@ export const SYNONYMS: ReadonlyMap<string, readonly string[]> = new Map([
   ["片付け", ["収納"]],
 ]);
 
-export function expandWithSynonyms(text: string): string {
-  const normalized = normalizeDiscoveryText(text);
-  const expanded: string[] = [normalized];
-  for (const [key, synonyms] of SYNONYMS) {
-    if (normalized.includes(key)) {
-      expanded.push(...synonyms);
+/**
+ * クエリ語ごとの照合グループを作る。各グループは「検索語自体＋同義語」の
+ * OR集合で、グループ同士（＝検索語同士）はANDで照合する。
+ * 同義語を展開して全部ANDすると検索結果が減るだけなのでやらない。
+ * クライアント側 (article-discovery.js の termMatches) と同一の仕様に保つこと。
+ */
+export function expandQueryTermGroups(
+  terms: readonly string[],
+): readonly (readonly string[])[] {
+  return terms.map((term) => {
+    const group = [term];
+    for (const [key, synonyms] of SYNONYMS) {
+      if (term.includes(key)) {
+        group.push(...synonyms);
+      }
     }
-  }
-  return expanded.join(" ");
+    return group;
+  });
 }
 
 export function normalizeDiscoveryText(value: string): string {
@@ -94,8 +103,10 @@ export function matchesArticle(
       ...subjects,
     ].join(" "),
   );
-  const expandedQuery = expandWithSynonyms(query);
-  return expandedQuery.split(" ").every((term) => haystack.includes(term));
+  const terms = query.split(" ").filter(Boolean);
+  return expandQueryTermGroups(terms).every((group) =>
+    group.some((candidate) => haystack.includes(candidate)),
+  );
 }
 
 export function parseDiscoveryState(

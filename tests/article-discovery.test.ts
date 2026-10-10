@@ -28,6 +28,38 @@ describe("article discovery", () => {
     ).toBe(true);
     expect(matchesArticle(echoDotArticle, { query: "紙おむつ" })).toBe(false);
   });
+  it("matches any synonym in the group (OR), not all of them", () => {
+    // 「軽い」は「軽量」「重量」に展開される。展開語のどれか1つに
+    // 一致すればよく、全部を含む必要はない（ANDにすると結果が減る）。
+    const lightArticle = {
+      ...echoDotArticle,
+      title: "軽量ボディのスマートスピーカー",
+      headline: "軽量ボディのスマートスピーカー",
+      summary: "持ち運び用の小型モデル",
+    };
+    expect(matchesArticle(lightArticle, { query: "軽い" })).toBe(true);
+    expect(matchesArticle(echoDotArticle, { query: "軽い" })).toBe(false);
+  });
+  it("keeps AND across query terms while using OR within synonym groups", () => {
+    const lightQuietArticle = {
+      ...echoDotArticle,
+      title: "軽量で静音のスマートスピーカー",
+      headline: "軽量で静音のスマートスピーカー",
+      summary: "寝室向けの小型モデル",
+    };
+    expect(matchesArticle(lightQuietArticle, { query: "軽い 静か" })).toBe(
+      true,
+    );
+    const lightOnlyArticle = {
+      ...echoDotArticle,
+      title: "軽量ボディのスマートスピーカー",
+      headline: "軽量ボディのスマートスピーカー",
+      summary: "持ち運び用の小型モデル",
+    };
+    expect(matchesArticle(lightOnlyArticle, { query: "軽い 静か" })).toBe(
+      false,
+    );
+  });
   it("matches model numbers that appear only in the subjects line", () => {
     // 型番が headline に登場しない記事（例: 日立 BD-SX130K vs BD-STX130K）でも、
     // card-subjects 行（comparisonSubjects 由来）が検索対象になること。
