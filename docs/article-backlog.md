@@ -154,7 +154,9 @@
 ### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
 
 - 選定理由: 公開中のKindle記事（Paperwhite vs Colorsoft）から読者が移りやすい。手書きノート対応のKindleは未着手。
-- 状態: 候補（公式情報は未確認。2026-10-08のAmazon検索で、Kindle Scribe Colorsoft（2026年発売）の存在を確認。比較相手のKindle Scribeの現行モデルは、単体の商品ページを特定できていない）
+- 状態: 候補（公式情報を一部確認。2026-10-10にAmazon公式プレスリリース（https://press.aboutamazon.com/jp/2026/5/amazon-launches-new-kindle-scribe-lineup-in-japan-including-kindle-scribe-colorsoft-the-first-color-display-model）で、新Kindle Scribeシリーズ（2026年6月10日出荷開始予定）を確認。AmazonのASIN・商品詳細ページ・画像は未確認）
+- プレスリリースで確認した値（税込）: 画面11インチ（反射防止）、厚さ5.4mm、質量400g、バッテリーは「数週間」（時間の記載なし）。Kindle Scribe（フロントライト搭載）は32GB 89,980円・64GB 98,980円、フロントライト非搭載は16GB 72,980円。Kindle Scribe Colorsoftは32GB 106,980円・64GB 115,980円（グラファイト/フィグ）。画面解像度・ペンの仕様は記載なし。
+- 注意: 画面サイズ・厚さ・質量はプレスリリース上、新シリーズ共通の記載で、Colorsoftとの違いは主に色表示と価格。比較軸は「カラー表示の有無と価格差」が中心になる。比較する容量（32GBどうし）を先に決める。
 - 想定比較軸: カラー表示、画面サイズ、ペンの種類、ストレージ、バッテリー、価格
 - 確認すること: Amazon.co.jpの両商品ページ、世代・容量の組み合わせ、ペンが付属する構成か、発売前か販売中か
 
