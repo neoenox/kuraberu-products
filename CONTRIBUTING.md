@@ -74,6 +74,8 @@ pnpm check:spec-claims
 pnpm test
 ```
 
+`pnpm test` は事前に `astro build`（約30秒）を実行し、`dist` 依存のテストも走らせます。開発中の素早い確認には `pnpm test:unit` を使えます。ビルドを挟まず vitest だけを実行し、`dist` が無ければ dist 依存テスト（約46件）はスキップされます。古い `dist` が残っていると、その内容に対して検証されるため、提出前は必ず `pnpm test` を実行してください。
+
 `check:external-link-syntax` はネットワーク到達性を保証しません。公開前のリンク到達性は別の受入確認として実施します。
 
 `check:source-relevancy` と `check:price-claims` は warn-first 運用です（`--strict` 付きでのみ違反を失敗にします）。公式正規ページの例外は `docs/source-relevancy-allowlist.md` に登録します。
