@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（47本）
+## 現在の公開済み（48本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -48,6 +48,7 @@
 | `airpods-pro-3-vs-pixel-buds-pro-2`                  | 公開済み |
 | `roborock-qrevo-l-pro-vs-qrevo-curv-2-flow`          | 公開済み |
 | `kindle-scribe-vs-scribe-colorsoft`                  | 公開済み |
+| `ipad-air-11-vs-13-m4`                               | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -165,14 +166,6 @@
 - 想定比較軸: ノイズキャンセリング、バッテリー、質量、対応コーデック、空間オーディオ、マルチポイント、価格
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
 - 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
-
-### iPad Air 11インチ vs 13インチ（M4）
-
-- 選定理由: 公開中のiPad記事は、iPad（A16）とiPad Air（M4）、iPad mini（A17 Pro）とiPad（A16）の2本で、Airのサイズ違いの選択は未着手。画面サイズ違いの迷いが明確で、Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-11にAmazon.co.jpの検索で、Apple 11インチiPad Air（M4）の128GBモデル（Wi-Fi・Cellularなど3つのASIN: B0GQWJCR4K、B0GQW5P438、B0GQWSBMQ1）と、Apple 13インチiPad Air（M4）の128GBモデル（3つのASIN: B0GQX1P8TR、B0GQWBTM4G、B0GQWQ5YBN）の存在を確認。どのASINがWi-Fiモデルかは未確認。仕様・価格・ツールバーの表示も未確認）
-- 想定比較軸: 画面サイズ、質量、スピーカー、バッテリー、対応アクセサリ、公式価格
-- 確認すること: Apple日本の仕様・購入ページ、比較する構成（Wi-Fi、128GB、色）を1つに絞る、両ASINの商品名・価格・ツールバーの表示（画面表示で判断し、HTMLの文言検索はしない）、公開中のiPad記事（ipad-a16-vs-ipad-air-m4）との重複
-- 注意: 色・容量・通信の違いでASINが分かれる。同じ構成同士を比べる。
 
 ### PlayStation 5 Pro vs PlayStation 5 デジタル・エディション
 

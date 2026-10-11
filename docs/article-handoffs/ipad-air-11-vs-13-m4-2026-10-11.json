@@ -1,0 +1,160 @@
+{
+  "id": "ipad-air-11-vs-13-m4-2026-10-11",
+  "articleId": "ipad-air-11-vs-13-m4",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages (raw HTML) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "タブレット",
+  "selection": {
+    "reason": "iPad Airの11インチと13インチは、画面サイズ・輝度・バッテリー・重さ・価格が異なり、サイズ違いの選択で迷いが明確。バックログの候補（#1107で補充）。公開中のiPad記事は、iPad（A16）とiPad Air（M4）、iPad mini（A17 Pro）とiPad（A16）の比較で、Airのサイズ違いはない。",
+    "duplicateCheck": "公開中のipad-a16-vs-ipad-air-m4は、iPad（A16）とiPad Air（M4）の比較で、対象の組み合わせが異なる（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple 11インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "model": "11インチiPad Air（M4）Wi-Fi 128GB",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/713iOnE9UGL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GQWSBMQ1）の1枚目の商品画像（前面と4色の側面、1320x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/ipad-air-11-m4-blue-128gb.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "10.86インチ（長方形として対角線を測った値）、Liquid Retina（IPS）、2,360x1,640、264ppi、500ニト",
+        "chip": "Apple M4（8コアCPU、9コアGPU、16コアNeural Engine、12GBユニファイドメモリ）",
+        "battery": "28.93Wh、Wi-Fiでのインターネット利用・ビデオ再生は最大10時間",
+        "size": "247.6x178.5x6.1mm、Wi-Fiモデル464g、Wi-Fi + Cellularモデル465g",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6",
+        "pencil": "Apple Pencil Pro、Apple Pencil（USB-C）に対応（同梱物はiPad Air、USB-C充電ケーブル、20W USB-C電源アダプタ）",
+        "storage": "128GB、256GB、512GB、1TB",
+        "colors": "ブルー、パープル、スターライト、スペースグレイ"
+      },
+      "officialStorePriceJpy": 129800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad/ipad-air",
+      "officialPriceNote": "Appleオンラインストアの購入ページで、Wi-Fiモデル・128GBは129,800円（税込、2026-10-11確認、全色同額）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GQWSBMQ1",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple 13インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "model": "13インチiPad Air（M4）Wi-Fi 128GB",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71Z145CNSmL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GQX1P8TR）の1枚目の商品画像（前面と4色の側面、1370x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/ipad-air-13-m4-blue-128gb.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "12.9インチ（長方形として対角線を測った値）、Liquid Retina（IPS）、2,732x2,048、264ppi、600ニト",
+        "chip": "Apple M4（8コアCPU、9コアGPU、16コアNeural Engine、12GBユニファイドメモリ）",
+        "battery": "36.59Wh、Wi-Fiでのインターネット利用・ビデオ再生は最大10時間",
+        "size": "280.6x214.9x6.1mm、Wi-Fiモデル616g、Wi-Fi + Cellularモデル617g",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6",
+        "pencil": "Apple Pencil Pro、Apple Pencil（USB-C）に対応",
+        "storage": "128GB、256GB、512GB、1TB",
+        "colors": "ブルー、パープル、スターライト、スペースグレイ"
+      },
+      "officialStorePriceJpy": 169800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-ipad/ipad-air",
+      "officialPriceNote": "Appleオンラインストアの購入ページで、Wi-Fiモデル・128GBは169,800円（税込、2026-10-11確認、全色同額）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GQX1P8TR",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの購入ページの税込表示（Wi-Fiモデル・128GB）。11インチは129,800円、13インチは169,800円（2026-10-11確認）。Amazonの表示価格（ブルー）も、129,800円と169,800円で、Appleの価格と一致した。",
+    "keyDifferences": [
+      "画面は10.86インチ（2,360x1,640）と12.9インチ（2,732x2,048）",
+      "輝度は500ニトと600ニト",
+      "バッテリー容量は28.93Whと36.59Wh",
+      "質量（Wi-Fiモデル）は464gと616g",
+      "本体サイズは247.6x178.5x6.1mmと280.6x214.9x6.1mm",
+      "価格は129,800円と169,800円"
+    ],
+    "commonSpecs": [
+      "Apple M4チップ（8コアCPU・9コアGPU）と12GBユニファイドメモリ",
+      "12MPカメラ、12MPセンターフレームカメラ（前面）",
+      "Apple Pencil Pro対応",
+      "Wi-Fi 7、Bluetooth 6",
+      "Wi-Fiでのビデオ再生が最大10時間",
+      "128GBから1TBの容量、4色"
+    ],
+    "caveat": "比較は128GB・Wi-Fiモデル・ブルー。256GB以上、Wi-Fi + Cellularモデル、ほかの色は比較していない。Amazonの商品ページは色ごとにASINが分かれる。Apple Pencil、Magic Keyboardなどのアクセサリは別売りで、比較に含めていない。バッテリーの駆動時間は使用条件による目安。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GQWSBMQ1",
+    "right": "https://www.amazon.co.jp/dp/B0GQX1P8TR",
+    "leftAsin": "B0GQWSBMQ1",
+    "rightAsin": "B0GQX1P8TR",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple 11インチiPad Air（M4）：Liquid Retinaディスプレイ、128GB、12MPフロント/バックカメラ、Apple N1によるWi-Fi 7、Touch ID、一日中使えるバッテリー — ブルー」、色「ブルー」、サイズ「128GB」、スタイル「Wi-Fi」、ASIN B0GQWSBMQ1を確認。表示価格129,800円（税込）、出荷元・販売元はAmazon.co.jp、在庫あり（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GQWSBMQ1?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple 11インチiPad Air（M4）128GB・ブルーの商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple 13インチiPad Air（M4）：Liquid Retinaディスプレイ、128GB、12MPフロント/バックカメラ、Apple N1によるWi-Fi 7、Touch ID、一日中使えるバッテリー — ブルー」、色「ブルー」、サイズ「128GB」、スタイル「Wi-Fi」、ASIN B0GQX1P8TRを確認。表示価格169,800円（税込）、出荷元・販売元はAmazon.co.jp、在庫あり（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GQX1P8TR?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple 13インチiPad Air（M4）128GB・ブルーの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Appleの価格は128GB・Wi-Fiモデルの表示で、256GB以上・Cellularの価格は未確認。",
+    "Apple Pencil・Magic Keyboardなどのアクセサリの対応・価格は、比較に含めていない。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
