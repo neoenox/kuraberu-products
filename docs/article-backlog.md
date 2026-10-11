@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（45本）
+## 現在の公開済み（46本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -46,6 +46,7 @@
 | `iphone-17e-vs-iphone-17`                            | 公開済み |
 | `macbook-air-13-vs-15-m5`                            | 公開済み |
 | `airpods-pro-3-vs-pixel-buds-pro-2`                  | 公開済み |
+| `roborock-qrevo-l-pro-vs-qrevo-curv-2-flow`          | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -161,14 +162,6 @@
 - 想定比較軸: ノイズキャンセリング、バッテリー、質量、対応コーデック、空間オーディオ、マルチポイント、価格
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
 - 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
-
-### Roborock Qrevo L Pro vs Qrevo Curv 2 Flow
-
-- 選定理由: ロボット掃除機は公開中の記事がなく、水拭き対応のモデル選びは迷いやすい。2026年モデルが両方Amazonに単体の商品ページがある。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、Qrevo L Pro（B0GXB5HWWD、2026年モデル）とQrevo Curv 2 Flow（B0GXB2RZ9Y）の存在を確認。ロボロック公式の日本語ページのURLは未特定）
-- 想定比較軸: 吸引力、モップの方式、ステーションの機能、障害物回避、本体サイズ、価格
-- 確認すること: ロボロック公式の日本語商品ページ（URLの特定）、Amazonの両商品ページ、型番・色、既存の非公開記事（`roborock-qrevo-curv-vs-dreame-x50`）との重複
-- 注意: 旧記事のQrevo Curvとは別モデル。型番が似ているため、取り違えないよう型番を先に確認する。
 
 ### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
 
