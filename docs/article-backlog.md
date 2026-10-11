@@ -154,13 +154,6 @@
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
 
-### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
-
-- 選定理由: 公開中のKindle記事（Paperwhite vs Colorsoft）から読者が移りやすい。手書きノート対応のKindleは未着手。
-- 状態: 候補（公式情報は未確認。2026-10-08のAmazon検索で、Kindle Scribe Colorsoft（2026年発売）の存在を確認。比較相手のKindle Scribeの現行モデルは、単体の商品ページを特定できていない）
-- 想定比較軸: カラー表示、画面サイズ、ペンの種類、ストレージ、バッテリー、価格
-- 確認すること: Amazon.co.jpの両商品ページ、世代・容量の組み合わせ、ペンが付属する構成か、発売前か販売中か
-
 ### Sony WH-1000XM6 vs Bose QuietComfort Ultra Headphones（第2世代）
 
 - 選定理由: ヘッドホンは公開中の記事がなく（イヤホンのみ）、ノイズキャンセリングのヘッドホンは検索需要が見込める。ソニーの旧記事（`sony-wh-1000xm6-vs-wh-1000xm5`など）は本番で非公開で、比較相手が異なる。
@@ -178,6 +171,13 @@
 - 注意: 旧記事のQrevo Curvとは別モデル。型番が似ているため、取り違えないよう型番を先に確認する。
 
 ## 追加確認・保留
+
+### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
+
+- 2026-10-11確認: Amazon.co.jpに、Kindle Scribe（64GB・グラファイト、B0FC1YGR6X、98,980円）とKindle Scribe Colorsoft（64GB・グラファイト、B0FC1XTK8P、115,980円）の単体の商品詳細ページがある。どちらも、ページ上に「この商品はAmazonアソシエイトプログラムの対象外商品の1つです。こちらの商品への直接リンクはサポートされていません」と表示された（ログイン済みChromeで直接確認）。32GBのColorsoft（B0FC217W9L）、フィグ色のColorsoft（B0FC25LQGT）も、同じ形式のページ。
+- 楽天は、第三者の出品（中古・並行品）しか見つからず、同じ商品を信頼できる販売店の商品詳細ページとして特定できなかった。Amazonの検索CTAは、確認済みの購入先に数えない決まりのため、各商品に確認済みの購入先がなく、公開できない。
+- 公式仕様（Amazon.co.jpの商品ページ）は取得できている: 11インチ・300ppi、厚さ5.4mm・質量400g（両方）、バッテリーは読書で最大12週間（Scribe）と最大8週間（Colorsoft）、手書きで最大2週間（両方）、Colorsoftはカラー表示（カラー150ppi）、ペン10色・ハイライター5色。
+- 再開条件: AmazonのアソシエイトプログラムでKindle Scribe系の商品が対象になること、または、楽天でAmazon公式または同等に信頼できる販売店の商品詳細ページが確認できること。
 
 ### SwitchBot ロックUltra vs ロックPro
 
