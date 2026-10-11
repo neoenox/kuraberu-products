@@ -1,0 +1,161 @@
+{
+  "id": "iphone-air-vs-iphone-17-2026-10-11",
+  "articleId": "iphone-air-vs-iphone-17",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages (raw HTML) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "スマートフォン",
+  "selection": {
+    "reason": "iPhone Airと標準モデルのiPhone 17は、厚さ・質量・カメラ構成・バッテリー・MagSafe出力・価格が異なり、薄型か標準かの選択で迷いが明確。バックログの候補（#1110で補充）。",
+    "duplicateCheck": "公開中のiphone-17e-vs-iphone-17は、iPhone 17eとiPhone 17の比較で、iPhone Airを含まない。iPhone 17が共通だが、比較軸と購入構成（512GB）が異なる（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple iPhone Air 512GB スカイブルー",
+      "model": "iPhone Air 512GB SIMフリー",
+      "officialUrl": "https://www.apple.com/jp/iphone-air/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61Ce-6B6x+L._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FQFPZW9G）の1枚目の商品画像（スカイブルー・背面と前面、1208x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/iphone-air-512gb-skyblue.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "6.5インチ（対角）Super Retina XDR OLED、2,736x1,260、460ppi、最大120HzのProMotion、標準1,000ニト・HDR 1,600ニト・屋外3,000ニト",
+        "chip": "A19 Pro（6コアCPU、5コアGPU、16コアNeural Engine）",
+        "camera": "48MP Fusionカメラシステム（Fusionメイン1眼、光学品質2倍の望遠）、フロント18MPセンターフレーム。超広角の記載は見当たらない",
+        "battery": "ビデオ再生最大27時間、ストリーミング最大22時間（Appleの測定条件）",
+        "size": "74.7x156.2x5.64mm、165g、チタニウム、前面Ceramic Shield 2・背面Ceramic Shield",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6、デュアルeSIM（物理SIM非対応）、USB-C（USB 2）、最大20WのMagSafe/Qi2",
+        "storage": "256GB、512GB、1TB",
+        "colors": "スペースブラック、クラウドホワイト、ライトゴールド、スカイブルー"
+      },
+      "officialStorePriceJpy": 224800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-iphone/iphone-air",
+      "officialPriceNote": "Appleオンラインストアの購入ページ（HTML内のfullPrice表示）で、256GBは189,800円、512GBは224,800円、1TBは294,800円（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FQFPZW9G",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple iPhone 17 512GB ミストブルー",
+      "model": "iPhone 17 512GB SIMフリー",
+      "officialUrl": "https://www.apple.com/jp/iphone-17/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61vwtM-DqRL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FQG5NDCX）の1枚目の商品画像（ミストブルー・背面と前面、1210x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/iphone-17-512gb-mistblue.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "6.3インチ（対角）Super Retina XDR OLED、2,622x1,206、460ppi、最大120HzのProMotion、標準1,000ニト・HDR 1,600ニト・屋外3,000ニト",
+        "chip": "A19（6コアCPU、5コアGPU、16コアNeural Engine）",
+        "camera": "48MP Dual Fusionカメラシステム（Fusionメイン＋48MP Fusion超広角13mm・120°）、フロント18MPセンターフレーム",
+        "battery": "ビデオ再生最大30時間、ストリーミング最大27時間（Appleの測定条件）",
+        "size": "71.5x149.6x7.95mm、177g、アルミニウム、前面Ceramic Shield 2・背面カラーインフューズドガラス",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6、デュアルeSIM（物理SIM非対応）、USB-C（USB 2・DisplayPort）、最大25WのMagSafe/Qi2",
+        "storage": "256GB、512GB",
+        "colors": "ブラック、ホワイト、ミストブルー、セージ、ラベンダー"
+      },
+      "officialStorePriceJpy": 194800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-iphone/iphone-17",
+      "officialPriceNote": "Appleオンラインストアの購入ページ（HTML内のfullPrice表示）で、256GBは159,800円、512GBは194,800円（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FQG5NDCX",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの購入ページの税込表示（512GB）。iPhone Airは224,800円、iPhone 17は194,800円（2026-10-11確認）。Amazonの表示価格も、Airは224,800円（付与ポイント2,248pt＝1%と一致）、17は194,800円で、Appleの価格と一致した。",
+    "keyDifferences": [
+      "厚さと質量は5.64mm・165gと7.95mm・177g",
+      "画面は6.5インチ（2,736x1,260）と6.3インチ（2,622x1,206）",
+      "チップはA19 ProとA19",
+      "背面カメラはFusionメイン1眼と、メイン＋超広角の2眼",
+      "ビデオ再生は最大27時間と最大30時間",
+      "MagSafe/Qi2は最大20Wと最大25W",
+      "価格は224,800円と194,800円（512GB）"
+    ],
+    "commonSpecs": [
+      "最大120HzのProMotion、輝度（1,000/1,600/3,000ニト）",
+      "48MPのFusionメインカメラ、18MPのセンターフレームフロントカメラ",
+      "IP68、Ceramic Shield 2の前面",
+      "デュアルeSIM（物理SIM非対応）、USB-C、Wi-Fi 7、Bluetooth 6",
+      "Face ID、アクションボタン、カメラコントロール"
+    ],
+    "caveat": "比較は512GBのSIMフリーモデルで、色はスカイブルーとミストブルー。256GB、1TB（Airのみ）、ほかの色は比較していない。Amazonの商品ページは色・容量ごとにASINが分かれる。2026-10-11時点で、Amazonで確認したiPhone 17の256GB（セージB0FQG97CDB、ミストブルーB0FQG91G3M、ブラックB0FQGJ6H6X）は在庫切れの表示だったため、512GBで比較した。チップの性能差の実測・評価はしていない。バッテリーの時間はAppleの測定条件による目安。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0FQFPZW9G",
+    "right": "https://www.amazon.co.jp/dp/B0FQG5NDCX",
+    "leftAsin": "B0FQFPZW9G",
+    "rightAsin": "B0FQG5NDCX",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple iPhone Air 512GB (SIMフリー) | 最大120HzのProMotionを採用した6.5インチディスプレイ…」、色「スカイブルー」、サイズ「512 GB」、ASIN B0FQFPZW9Gを確認。表示価格224,800円（税込、ポイント2,248pt 1%）、在庫あり（2026-10-11）。出荷元・販売元の名称は記録していない（not-recorded）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FQFPZW9G?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple iPhone Air 512GB・スカイブルーの商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple iPhone 17 512GB (SIMフリー)：ProMotionを採用した6.3インチディスプレイ、A19チップ…」、色「ミストブルー」、サイズ「512 GB」、ASIN B0FQG5NDCXを確認。表示価格194,800円（税込、ポイント1,948pt 1%）、在庫あり（2026-10-11）。出荷元・販売元の名称は記録していない（not-recorded）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FQG5NDCX?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple iPhone 17 512GB・ミストブルーの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Appleの価格は512GBの表示。256GB・1TBの比較、ほかの色は未確認。",
+    "出荷元・販売元の名称は記録していない（not-recorded）。",
+    "チップ・カメラ・バッテリーの実測や評価はしていない（Appleの仕様ページの記載の比較）。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

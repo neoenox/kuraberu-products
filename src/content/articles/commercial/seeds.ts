@@ -78,6 +78,7 @@ import { airpodsPro3VsPixelBudsPro2Seed } from "./airpods-pro-3-vs-pixel-buds-pr
 import { roborockQrevoLProVsQrevoCurv2FlowSeed } from "./roborock-qrevo-l-pro-vs-qrevo-curv-2-flow";
 import { kindleScribeVsScribeColorsoftSeed } from "./kindle-scribe-vs-scribe-colorsoft";
 import { ipadAir11Vs13M4Seed } from "./ipad-air-11-vs-13-m4";
+import { iphoneAirVsIphone17Seed } from "./iphone-air-vs-iphone-17";
 import { karcherK2SilentVsK3SilentPlusSeed } from "./karcher-k2-silent-vs-k3-silent-plus";
 import { sharpHotcookKnHw24kVsKnHw24hSeed } from "./sharp-hotcook-kn-hw24k-vs-kn-hw24h";
 import { djiOsmoAction6VsGoproHero13BlackSeed } from "./dji-osmo-action-6-vs-gopro-hero13-black";
@@ -229,6 +230,7 @@ export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
   roborockQrevoLProVsQrevoCurv2FlowSeed,
   kindleScribeVsScribeColorsoftSeed,
   ipadAir11Vs13M4Seed,
+  iphoneAirVsIphone17Seed,
   karcherK2SilentVsK3SilentPlusSeed,
   sharpHotcookKnHw24kVsKnHw24hSeed,
   djiOsmoAction6VsGoproHero13BlackSeed,

@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（48本）
+## 現在の公開済み（49本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -49,6 +49,7 @@
 | `roborock-qrevo-l-pro-vs-qrevo-curv-2-flow`          | 公開済み |
 | `kindle-scribe-vs-scribe-colorsoft`                  | 公開済み |
 | `ipad-air-11-vs-13-m4`                               | 公開済み |
+| `iphone-air-vs-iphone-17`                            | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -174,13 +175,6 @@
 - 想定比較軸: ケースの素材とサイズ、バッテリー、ディスプレイの輝度、耐水・深度、アクションボタン、公式価格
 - 確認すること: Apple日本の仕様・購入ページ、比較する構成（Ultraは49mmでCellularのみ。Series 12は同じGPS + Cellularモデルで比べる）を決める、色・バンドを1つに絞る、両ASINの商品名・価格・ツールバーの表示、公開中のapple-watch-series-12-vs-se-3との重複
 - 注意: ケース・バンドの違いでASINが分かれる。旧世代のUltra 3と取り違えない。
-
-### Apple iPhone Air vs iPhone 17
-
-- 選定理由: 公開中のiPhone記事は、iPhone 17e vs iPhone 17とiPhone 18 Pro vs Pixel 11 Proの2本で、薄型のiPhone Airと標準モデルの選択は未着手。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-11にAmazon.co.jpの検索で、Apple iPhone Air 256GB（SIMフリー、色違いで複数のASIN。例: B0FQG1QPLW、B0FQFLWSWZ、B0FQG5SZS9）の存在を確認。iPhone 17 256GBは、iPhone 17e vs iPhone 17の記事で確認済みのASINがある（ブラックのASINは未確認）。iPhone Airの仕様・価格・ツールバーの表示は未確認）
-- 想定比較軸: 厚さと質量、画面サイズとリフレッシュレート、カメラ構成、バッテリー、チップ、公式価格
-- 確認すること: Apple日本の両仕様ページと購入ページ、比較する容量（256GB）・色を1つに絞る、iPhone AirのASINと色の対応、両ASINの商品名・価格・ツールバーの表示、公開中のiphone-17e-vs-iphone-17との重複（iPhone 17が共通）
 
 ### Insta360 X5 vs DJI Osmo 360 II
 
