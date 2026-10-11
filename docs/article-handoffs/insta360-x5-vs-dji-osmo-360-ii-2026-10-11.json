@@ -1,0 +1,164 @@
+{
+  "id": "insta360-x5-vs-dji-osmo-360-ii-2026-10-11",
+  "articleId": "insta360-x5-vs-dji-osmo-360-ii",
+  "source": "Fresh product selection and research by Claude Code against Insta360 Japan / DJI Japan official product and store pages (rendered pages read via BrowserSkill) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "アクションカメラ",
+  "selection": {
+    "reason": "8K対応の360度カメラの主要2機種で、センサー・8Kのフレームレート・防水・バッテリー・内蔵ストレージ・価格が異なり、選択で迷いが明確。バックログの候補（#1110で補充）。公開中のアクションカメラ記事は、DJI Osmo Action 6 vs GoPro HERO13 Blackの1本で、360度カメラは未着手。",
+    "duplicateCheck": "公開中のdji-osmo-action-6-vs-gopro-hero13-blackは、アクションカメラ（360度ではない）の比較で、対象の組み合わせが異なる（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Insta360 X5 通常版（ブラック）",
+      "model": "Insta360 X5 通常版（microSDカードなし）",
+      "officialUrl": "https://www.insta360.com/jp/product/insta360-x5",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61m2oUob8NL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0DZCBYCNY）の1枚目の商品画像（470x1246、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/insta360-x5-standard.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "sensor": "1/1.28インチ×2、F2.0、焦点距離6mm",
+        "video360": "8K 7680x3840@30/25/24fps、5.7K+ 5760x2880@30/25/24fps、5.7K 5760x2880@60fpsまで、4K 3840x1920@120fpsまで",
+        "singleLens": "4K 3840x2160@60fpsまで",
+        "photo": "約72MP（11904x5952）、約18MP",
+        "size": "46x124.5x38.2mm、200g",
+        "battery": "2400mAh、連続録画 8K30fps 93分・8K24fps耐久モード115分・5.7K30fps 135分・5.7K24fps耐久モード208分（ラボ環境）、20分で80%充電",
+        "water": "15m（本体）",
+        "storage": "microSD（UHS-I V30以上）。内蔵ストレージの記載は見当たらない",
+        "wireless": "Wi-Fi、BLE 5.2、動作温度-20℃〜40℃",
+        "colors": "ミッドナイト・ブラック、サテン・ホワイト"
+      },
+      "officialStorePriceJpy": 84800,
+      "officialStoreUrl": "https://store.insta360.com/jp/product/x5",
+      "officialPriceNote": "Insta360公式ストアの購入ページで、X5 通常版（microSDカードなし、ミッドナイト・ブラック）は84,800円（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0DZCBYCNY",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "DJI Osmo 360 II スタンダードコンボ",
+      "model": "DJI Osmo 360 II スタンダードコンボ",
+      "officialUrl": "https://www.dji.com/jp/360-2/specs",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71NB4kHJJUL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GL1MX4N2）の1枚目の商品画像（本体と同梱物、1075x1209、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/dji-osmo-360-ii-standard-combo.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "sensor": "2つの1/1.1インチ スクエアCMOS、f/1.9、ISO100〜51200",
+        "video360": "パノラマ動画 8K 7680x3840@24/25/30/48/50/60fps、6K@24〜60fps",
+        "singleLens": "4K(16:9) 3840x2160@25/30/50/60fps、ブースト動画は最大120fps",
+        "photo": "パノラマ写真 15520x7760（120MP）、シングルレンズ6400x4800（30.72MP）",
+        "size": "61x36.3x81mm、183g",
+        "battery": "2150mAh（8.3Wh）、最大100分の8K/30fpsパノラマ動画撮影（25℃のラボ環境）",
+        "water": "10m（防水ケースなし）、50m（防水ケース使用時）",
+        "storage": "128GB内蔵ストレージ（105GB使用可能）、microSD最大1TB",
+        "screen": "2.0インチタッチ画面、314x556、800cd/㎡",
+        "wireless": "Wi-Fi 6（802.11ax）、BLE 5.4、動作環境温度-20℃〜45℃"
+      },
+      "officialStorePriceJpy": 93610,
+      "officialStoreUrl": "https://store.dji.com/jp/product/osmo-360-2",
+      "officialPriceNote": "DJIストアの購入ページで、Osmo 360 II スタンダードコンボは93,610円（税込、2026-10-11確認）。同梱物は、Osmo 360 II、Osmo 360 カメラプロテクティブポーチ、レンズクリーニングクロス、USB-C PDケーブル、シリコンレンズキャップ 2、Osmo エクストリームバッテリーPlus（2150mAh）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GL1MX4N2",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "各社の公式ストアの税込表示。X5 通常版は84,800円、Osmo 360 II スタンダードコンボは93,610円（2026-10-11確認）。Amazonの表示価格も、84,800円と93,610円で、公式ストアの価格と一致した。",
+    "keyDifferences": [
+      "センサーは1/1.28インチ×2と1/1.1インチ×2",
+      "8K動画の最大フレームレートは30fpsと60fps",
+      "本体の防水は15mと10m（Osmo 360 IIは防水ケースで50m）",
+      "バッテリー容量は2,400mAhと2,150mAh",
+      "内蔵ストレージはX5の記載が見当たらず、Osmo 360 IIは128GB",
+      "重さは200gと183g",
+      "価格は84,800円と93,610円"
+    ],
+    "commonSpecs": [
+      "2つのレンズによる8Kの360度動画",
+      "シングルレンズの4K動画（最大60fps）",
+      "microSDカードの使用",
+      "Wi-Fi・Bluetooth、専用アプリ・ソフトでの編集"
+    ],
+    "caveat": "比較はX5の通常版（microSDカードなし）とOsmo 360 IIのスタンダードコンボ。同梱物は異なる。X5のスターターキット・エッセンシャルキット、Osmo 360 IIのアドベンチャーコンボなどの別構成、旧世代のOsmo 360は比較していない。連続撮影時間は各社の測定条件（ラボ環境）による目安で、条件が異なる。画質・手ぶれ補正・編集の使い心地の優劣は評価していない。X5の仕様欄に画面の記載は見当たらなかった。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0DZCBYCNY",
+    "right": "https://www.amazon.co.jp/dp/B0GL1MX4N2",
+    "leftAsin": "B0DZCBYCNY",
+    "rightAsin": "B0GL1MX4N2",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Insta360 X5 通常版 ｜8K対応・防水・360度全景アクションカメラ…」、色「ブラック」、スタイル「通常版」、ASIN B0DZCBYCNYを確認。表示価格84,800円（税込）、在庫あり、出荷元・販売元は「Insta360 公式ストア」（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0DZCBYCNY?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Insta360 X5 通常版の商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「DJI Osmo 360 II スタンダードコンボ 8K 360°カメラ…」、色「Osmo 360 II スタンダードコンボ」、ASIN B0GL1MX4N2を確認。表示価格93,610円（税込、ポイント937pt 1%）、出荷元・販売元は「Amazon.co.jp」（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『カメラ・写真』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GL1MX4N2?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、DJI Osmo 360 II スタンダードコンボの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "X5の別構成（スターターキット等）、Osmo 360 IIの別構成（アドベンチャーコンボ等）の価格・同梱物は比較していない。",
+    "X5の仕様欄の画面の記載、内蔵ストレージの有無（記載が見当たらないだけで非搭載の断定ではない）。",
+    "画質・手ぶれ補正・編集の使い心地の優劣は評価していない（公式仕様の比較）。",
+    "公式ストアとAmazonの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "各社の公式仕様・価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。ユーザーの「全て実施して」の指示（/goal）に基づき、CI通過後にマージ・本番反映する。"
+}
