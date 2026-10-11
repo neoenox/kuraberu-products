@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（43本）
+## 現在の公開済み（45本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -44,6 +44,8 @@
 | `ipad-mini-a17-pro-vs-ipad-a16`                      | 公開済み |
 | `apple-watch-series-12-vs-se-3`                      | 公開済み |
 | `iphone-17e-vs-iphone-17`                            | 公開済み |
+| `macbook-air-13-vs-15-m5`                            | 公開済み |
+| `airpods-pro-3-vs-pixel-buds-pro-2`                  | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -152,34 +154,13 @@
 新たに着手する場合は、選定基準に沿ってslug・比較軸・公式URL・購入導線の
 確認状態をここへ追記し、公開時に上の表へ移す。
 
-### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
-
-- 選定理由: 公開中のKindle記事（Paperwhite vs Colorsoft）から読者が移りやすい。手書きノート対応のKindleは未着手。
-- 状態: 候補（公式情報は未確認。2026-10-08のAmazon検索で、Kindle Scribe Colorsoft（2026年発売）の存在を確認。比較相手のKindle Scribeの現行モデルは、単体の商品ページを特定できていない）
-- 想定比較軸: カラー表示、画面サイズ、ペンの種類、ストレージ、バッテリー、価格
-- 確認すること: Amazon.co.jpの両商品ページ、世代・容量の組み合わせ、ペンが付属する構成か、発売前か販売中か
-
 ### Sony WH-1000XM6 vs Bose QuietComfort Ultra Headphones（第2世代）
 
 - 選定理由: ヘッドホンは公開中の記事がなく（イヤホンのみ）、ノイズキャンセリングのヘッドホンは検索需要が見込める。ソニーの旧記事（`sony-wh-1000xm6-vs-wh-1000xm5`など）は本番で非公開で、比較相手が異なる。
 - 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、WH-1000XM6（B0F77PMC1P、ブラック）とBose QuietComfort Ultra Headphones（第2世代）（B0FL2HYBGJ）の存在を確認。ソニー・ボーズの公式ページが開くことのみ確認）
 - 想定比較軸: ノイズキャンセリング、バッテリー、質量、対応コーデック、空間オーディオ、マルチポイント、価格
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
-
-### Apple AirPods Pro 3 vs Google Pixel Buds Pro 2
-
-- 選定理由: 公開中のイヤホン記事はAirPods 5とソニー・Ankerが中心で、Pixel Budsが未着手。スマホ記事（iPhone vs Pixel）から読者が移りやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、AirPods Pro 3（B0FRZ3SZWX）とGoogle Pixel Buds Pro 2（B0FN3KT3C8、Moonstone）の存在を確認。AppleとGoogleの公式ページが開くことのみ確認）
-- 想定比較軸: ノイズキャンセリング、バッテリー、心拍センサー・補聴機能、対応端末、IP等級、価格
-- 確認すること: Apple日本・Googleストアの公式仕様ページ、Amazonの両商品ページ（色の扱い）、Pixel Buds Pro 2の現行販売状況、既存の非公開記事（`airpods-pro-3-vs-sony-wf-1000xm6`）との重複
-
-### MacBook Air 13インチ vs 15インチ（M5）
-
-- 選定理由: ノートPCは公開中の記事にないカテゴリで、画面サイズ違いの選択は迷いが明確。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、2026年のMacBook Air M5の13インチ（B0GR1T11D6）と15インチ（B0GR1PRMDS）の存在を確認。Apple日本の仕様ページが開くことのみ確認）
-- 想定比較軸: 画面サイズ、質量、バッテリー、スピーカー、ポート、公式価格
-- 確認すること: Apple日本の仕様・購入ページ、比較する構成（メモリ・ストレージ・色）を先に決める、Amazonの両商品ページが同じ構成か、公開中のApple記事との重複
-- 注意: メモリ・ストレージ・色の違いで価格と商品ページが分かれるため、比較する構成を1つに絞る。
+- 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
 
 ### Roborock Qrevo L Pro vs Qrevo Curv 2 Flow
 
@@ -190,6 +171,13 @@
 - 注意: 旧記事のQrevo Curvとは別モデル。型番が似ているため、取り違えないよう型番を先に確認する。
 
 ## 追加確認・保留
+
+### Amazon Kindle Scribe vs Kindle Scribe Colorsoft（2026年発売）
+
+- 2026-10-11確認: Amazon.co.jpに、Kindle Scribe（64GB・グラファイト、B0FC1YGR6X、98,980円）とKindle Scribe Colorsoft（64GB・グラファイト、B0FC1XTK8P、115,980円）の単体の商品詳細ページがある。どちらも、ページ上に「この商品はAmazonアソシエイトプログラムの対象外商品の1つです。こちらの商品への直接リンクはサポートされていません」と表示された（ログイン済みChromeで直接確認）。32GBのColorsoft（B0FC217W9L）、フィグ色のColorsoft（B0FC25LQGT）も、同じ形式のページ。
+- 楽天は、第三者の出品（中古・並行品）しか見つからず、同じ商品を信頼できる販売店の商品詳細ページとして特定できなかった。Amazonの検索CTAは、確認済みの購入先に数えない決まりのため、各商品に確認済みの購入先がなく、公開できない。
+- 公式仕様（Amazon.co.jpの商品ページ）は取得できている: 11インチ・300ppi、厚さ5.4mm・質量400g（両方）、バッテリーは読書で最大12週間（Scribe）と最大8週間（Colorsoft）、手書きで最大2週間（両方）、Colorsoftはカラー表示（カラー150ppi）、ペン10色・ハイライター5色。
+- 再開条件: AmazonのアソシエイトプログラムでKindle Scribe系の商品が対象になること、または、楽天でAmazon公式または同等に信頼できる販売店の商品詳細ページが確認できること。
 
 ### SwitchBot ロックUltra vs ロックPro
 
