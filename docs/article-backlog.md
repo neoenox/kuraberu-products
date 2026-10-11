@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（49本）
+## 現在の公開済み（50本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -49,6 +49,7 @@
 | `roborock-qrevo-l-pro-vs-qrevo-curv-2-flow`          | 公開済み |
 | `kindle-scribe-vs-scribe-colorsoft`                  | 公開済み |
 | `ipad-air-11-vs-13-m4`                               | 公開済み |
+| `apple-watch-ultra-4-vs-series-12`                   | 公開済み |
 | `iphone-air-vs-iphone-17`                            | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
@@ -167,14 +168,6 @@
 - 想定比較軸: ノイズキャンセリング、バッテリー、質量、対応コーデック、空間オーディオ、マルチポイント、価格
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
 - 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
-
-### Apple Watch Ultra 4 vs Apple Watch Series 12
-
-- 選定理由: 公開中のスマートウォッチ記事は、Apple Watch Series 12 vs SE 3など。Apple Watchの最上位（Ultra）と標準モデルの選択は未着手。Apple公式で比較軸を確認しやすい。
-- 状態: 候補（公式情報は未確認。2026-10-11にAmazon.co.jpの検索で、Apple Watch Ultra 4（GPS + Cellularモデル、49mm、ケース・バンドの組み合わせ違いで複数のASIN。例: B0HJB33G86、B0HJ9VSRVN、B0HJ9ZJ8RG）と、Apple Watch Series 12（GPSモデル・GPS + Cellularモデルの複数のASIN。例: GPS + Cellularの46mmブラック B0HJB5FWD3）の存在を確認。仕様・価格・ツールバーの表示は未確認。同じ検索に旧世代のApple Watch Ultra 3も表示された）
-- 想定比較軸: ケースの素材とサイズ、バッテリー、ディスプレイの輝度、耐水・深度、アクションボタン、公式価格
-- 確認すること: Apple日本の仕様・購入ページ、比較する構成（Ultraは49mmでCellularのみ。Series 12は同じGPS + Cellularモデルで比べる）を決める、色・バンドを1つに絞る、両ASINの商品名・価格・ツールバーの表示、公開中のapple-watch-series-12-vs-se-3との重複
-- 注意: ケース・バンドの違いでASINが分かれる。旧世代のUltra 3と取り違えない。
 
 ### Insta360 X5 vs DJI Osmo 360 II
 
