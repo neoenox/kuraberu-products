@@ -1,0 +1,158 @@
+{
+  "id": "apple-watch-ultra-4-vs-series-12-2026-10-11",
+  "articleId": "apple-watch-ultra-4-vs-series-12",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages (raw HTML) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "スマートウォッチ",
+  "selection": {
+    "reason": "Apple Watchの最上位Ultra 4と標準モデルSeries 12は、ケース素材・サイズ・バッテリー・耐水・ダイビング・価格が異なり、選択で迷いが明確。バックログの候補（#1110で補充）。",
+    "duplicateCheck": "公開中のapple-watch-series-12-vs-se-3は、Series 12とSE 3の比較で、Ultra 4を含まない（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple Watch Ultra 4（GPS + Cellular）49mm ブラックチタニウムケース トランスルーセントブラックオーシャンバンド",
+      "model": "Apple Watch Ultra 4 GPS + Cellular 49mm",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-ultra-4/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71sXQXqRwOL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0HJB33G86）の1枚目の商品画像（1347x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/apple-watch-ultra-4-black-ocean.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "case": "チタニウムケース（グレード5）、ナチュラル／ブラック、49x44mm、厚さ12mm、63.1g（ブラック）",
+        "display": "LTPO3広視野角OLED常時表示Retina、422x514、326ppi、1,245平方ミリメートル、フラットサファイアクリスタル、ピーク輝度3,000ニト",
+        "chip": "S11（64ビットデュアルコア）、4コアNeural Engine、64GB",
+        "battery": "通常使用で最大50時間、低電力モードで最大84時間、屋外ワークアウトで最大18時間。約45分で最大80%、15分で最大18時間の通常使用",
+        "water": "ISO 22810:2010にもとづく100m、EN13319に準拠した水深40mまでのレクリエーショナルダイビング、水深計・水温センサー",
+        "buttons": "カスタマイズできるアクションボタン、サイレン",
+        "wireless": "Wi-Fi 2.4GHz/5GHz、Bluetooth 5.3、高精度2周波GPS（GPS、Galileo、QZSS、BeiDou）、第2世代超広帯域チップ、衛星通信（緊急SOS、メッセージ、「探す」）"
+      },
+      "officialStorePriceJpy": 142800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-watch/apple-watch-ultra",
+      "officialPriceNote": "Appleオンラインストアの購入ページで、Apple Watch Ultra 4（49mmチタニウムケース、GPS + Cellular）は142,800円から（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HJB33G86",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple Watch Series 12（GPS + Cellular）46mm ブラックアルミニウムケース ブラックスポーツバンド S/M",
+      "model": "Apple Watch Series 12 GPS + Cellular 46mm アルミニウム",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-series-12/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61DZVYVsvGL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0HJB5FWD3）の1枚目の商品画像（1264x1500、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/apple-watch-series-12-46mm-black-cellular.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "case": "アルミニウム／チタニウム／セラミックのケース、46mm・42mm。46mmアルミニウムは46x40mm、厚さ9.7mm、38.6g（GPS + Cellular）",
+        "display": "LTPO3広視野角OLED常時表示Retina、416x496（46mm）、326ppi、1,196平方ミリメートル、Ceramic Shield 2（アルミニウム）、ピーク輝度2,000ニト",
+        "chip": "S11（64ビットデュアルコア）、4コアNeural Engine、64GB",
+        "battery": "通常使用で最大24時間、低電力モードで最大38時間、屋外ワークアウトで最大10時間。約30分で最大80%、15分で最大12時間の通常使用",
+        "water": "ISO 22810:2010にもとづく50m（泳げる耐水性能）、6mまで測定できる水深計、水温センサー",
+        "buttons": "アクションボタン・サイレンの記載は見当たらない",
+        "wireless": "Wi-Fi 2.4GHz/5GHz、Bluetooth 5.3、L1高精度GPS（GPS、GLONASS、Galileo、QZSS、BeiDou）、第2世代超広帯域チップ。衛星通信の記載は見当たらない"
+      },
+      "officialStorePriceJpy": 98800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-watch/apple-watch",
+      "officialPriceNote": "Appleオンラインストアの購入ページで、Apple Watch Series 12の46mmアルミニウム・GPS + Cellularは98,800円から（税込、HTML内のcomparativeDisplayPrice表示、2026-10-11確認）。同ページのSeries 12の最安値表示は71,800円から（GPSモデル等）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0HJB5FWD3",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの購入ページの税込「から」表示。Ultra 4（GPS + Cellular）は142,800円から、Series 12の46mmアルミニウム・GPS + Cellularは98,800円から（2026-10-11確認）。Amazonの表示価格（Ultra 4 ブラック＋トランスルーセントブラックオーシャンバンドは142,800円、Series 12 46mm ブラックアルミニウムは98,800円）は、Appleの「から」価格と一致した。",
+    "keyDifferences": [
+      "ケースはグレード5チタニウム（49mm・12mm・63.1g）とアルミニウム（46mm・9.7mm・38.6g）",
+      "ピーク輝度は3,000ニトと2,000ニト",
+      "バッテリーは通常使用で最大50時間と最大24時間",
+      "耐水は100m（ダイビング40mまで）と50m",
+      "アクションボタン・サイレン・衛星通信はUltra 4の仕様ページにのみ記載",
+      "価格は142,800円からと98,800円から"
+    ],
+    "commonSpecs": [
+      "S11チップ・64GB",
+      "LTPO3 OLED常時表示、326ppi、1Hz",
+      "第2世代の電気心拍センサー・皮膚温センサー・ECG・睡眠アプリ",
+      "Bluetooth 5.3、第2世代の超広帯域チップ",
+      "GPS + Cellularモデル（5G対応）"
+    ],
+    "caveat": "比較はGPS + Cellularモデルで、Ultra 4は49mmブラックチタニウム＋トランスルーセントブラックオーシャンバンド、Series 12は46mmブラックアルミニウム＋ブラックスポーツバンドS/M。Series 12のチタニウム・セラミック、42mm、GPSモデル、ほかのバンドは比較していない。Amazonの商品ページはケースの色とバンドの組み合わせごとにASINが分かれ、価格が変わる（例: Ultra 4のミラネーゼループは159,800円）。ケース重量にバンドは含まない。バッテリーの時間はAppleの測定条件による目安。健康機能の精度や使い心地は評価していない。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0HJB33G86",
+    "right": "https://www.amazon.co.jp/dp/B0HJB5FWD3",
+    "leftAsin": "B0HJB33G86",
+    "rightAsin": "B0HJB5FWD3",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple Watch Ultra 4（GPS + Cellularモデル） | 49mmブラックチタニウムケースとトランスルーセントブラックオーシャンバンド」、ASIN B0HJB33G86を確認。表示価格142,800円（税込、ポイント1,428pt 1%）、在庫あり（2026-10-11）。出荷元・販売元の名称は記録していない（not-recorded）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HJB33G86?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple Watch Ultra 4のブラックチタニウム・オーシャンバンドの商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple Watch Series 12（GPS + Cellularモデル） | 46mmブラックアルミニウムケースとブラックスポーツバンド - S/M」、スタイル「46mm」、サイズ「S/M」、ASIN B0HJB5FWD3を確認。表示価格98,800円（税込、ポイント988pt 1%）、在庫あり（2026-10-11）。出荷元・販売元の名称は記録していない（not-recorded）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0HJB5FWD3?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple Watch Series 12の46mmブラックアルミニウム・ブラックスポーツバンドの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "Series 12のチタニウム・セラミック、42mm、GPSモデルの価格・比較は未確認。",
+    "出荷元・販売元の名称は記録していない（not-recorded）。",
+    "健康機能の精度・使い心地は評価していない（Appleの仕様ページの記載の比較）。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。ユーザーの「公開まで」の指示（/goal）に基づき、CI通過後にマージ・本番反映する。"
+}
