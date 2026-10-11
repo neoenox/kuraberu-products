@@ -1,0 +1,159 @@
+{
+  "id": "roborock-qrevo-l-pro-vs-qrevo-curv-2-flow-2026-10-11",
+  "articleId": "roborock-qrevo-l-pro-vs-qrevo-curv-2-flow",
+  "source": "Fresh product selection and research by Claude Code against Roborock Japan official product pages (jp.roborock.com) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "ロボット掃除機",
+  "selection": {
+    "reason": "Qrevo L ProとQrevo Curv 2 Flowは、モップの方式（回転モップとローラーモップ）・吸引力・障害物の認識・価格が異なり、全自動ロボット掃除機で迷いが明確。バックログの候補。公開中の記事にロボット掃除機のカテゴリーはない。",
+    "duplicateCheck": "非公開の旧記事 roborock-qrevo-curv-vs-dreame-x50 は、旧モデルのQrevo Curvとドリームの比較で、組み合わせ・モデルが異なる（2026-10-11確認）。Qrevo L ProとQrevo Curv 2 Flowを比較する記事はない。"
+  },
+  "products": {
+    "left": {
+      "name": "Roborock Qrevo L Pro",
+      "model": "Qrevo L Pro",
+      "officialUrl": "https://jp.roborock.com/pages/roborock-qrevo-l-pro",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61Z-yZb00PL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GXB5HWWD）の1枚目の商品画像（本体とドック、1438x1500、HTTP 200、2026-10-11取得、ユーザーの許可を得て取得）。800x800の白背景に収め、public/products/roborock-qrevo-l-pro-2026.jpg と src/assets/products に保存。画像にスマートフォンとウォッチが写っている。",
+      "officialSpecs": {
+        "suction": "最大18,500Pa（HyperForce吸引、Roborockの社内試験）",
+        "mop": "昇降式デュアル回転モップ、30段階の水量調節、最大毎分200回転、最大10mm自動リフトアップ",
+        "dock": "最大75℃の高温モップ洗浄（内部ヒーター出力の温度）、約45℃の温風乾燥、自動ゴミ収集（紙パックで最大約65日分）",
+        "obstacle": "Reactive Tech障害物回避（ストラクチャードライト、幅5cm・高さ3cm以上の物体を回避）",
+        "size": "本体350×353×96.5mm、ドック340×487×519mm",
+        "smart": "Matter対応（Alexa・Siri・Google Home）",
+        "notFound": "ナビゲーション方式、ペット向け機能、価格の記載は、公式ページに見当たらない"
+      },
+      "officialStorePriceJpy": null,
+      "officialStoreUrl": null,
+      "officialPriceNote": "ロボロック公式の日本語ページに価格の記載が見当たらない。Amazon.co.jpの表示価格は59,990円（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GXB5HWWD",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Roborock Qrevo Curv 2 Flow",
+      "model": "Qrevo Curv 2 Flow",
+      "officialUrl": "https://jp.roborock.com/pages/roborock-qrevo-curv-2-flow",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61grvSiQXjL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GXB2RZ9Y）の1枚目の商品画像（本体とドック、1500x1281、HTTP 200、2026-10-11取得、ユーザーの許可を得て取得）。800x800の白背景に収め、public/products/roborock-qrevo-curv-2-flow.jpg と src/assets/products に保存。画像にスマートフォンとウォッチが写っている。",
+      "officialSpecs": {
+        "suction": "最大20,000Pa（HyperForce吸引、Roborockの社内試験）",
+        "mop": "幅270mmのローラーモップ、最大毎分220回転、最大15Nのモップ圧、最大15mm自動リフトアップ",
+        "dock": "75℃の高温モップ洗浄、55℃の温風乾燥、自動ゴミ収集（最大65日間）",
+        "obstacle": "Reactive AI障害物認識（ストラクチャードライトとRGBカメラ、200種類以上の障害物）",
+        "navigation": "PreciSense LiDARナビゲーション",
+        "pet": "ペットの見守り（ビデオ通話・撮影・居場所の確認）、ペットに近づくとメインブラシを停止",
+        "smart": "内蔵音声アシスタント「Hello Rocky」、Matter（今後のOTAアップデートで利用可能予定）",
+        "size": "本体353×353×119mm、ドック450×450×450mm"
+      },
+      "officialStorePriceJpy": null,
+      "officialStoreUrl": null,
+      "officialPriceNote": "ロボロック公式の日本語ページに価格の記載が見当たらない。Amazon.co.jpの表示価格は69,990円（税込、2026-10-11確認）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GXB2RZ9Y",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": false,
+    "priceBasis": "ロボロック公式の日本語ページに価格の記載が見当たらないため、Amazon.co.jpの表示価格（税込、2026-10-11確認）を使用。Qrevo L Proは59,990円、Qrevo Curv 2 Flowは69,990円。",
+    "keyDifferences": [
+      "最大吸引力は18,500Paと20,000Pa",
+      "モップは2枚の回転モップとローラーモップ（幅270mm）",
+      "カーペット時のモップの持ち上げは最大10mmと最大15mm",
+      "障害物の認識はReactive Tech（ストラクチャードライト）とReactive AI（RGBカメラを加えた200種類以上）",
+      "PreciSense LiDARナビゲーションとペット向けの機能は、Curv 2 Flowのみ公式ページに記載がある",
+      "本体の高さは96.5mmと119mm",
+      "Amazonの表示価格は59,990円と69,990円"
+    ],
+    "commonSpecs": [
+      "HyperForce吸引",
+      "ドックでの自動ゴミ収集（約65日分の目安）",
+      "最大75℃の高温モップ洗浄と温風乾燥",
+      "ストラクチャードライトによる障害物の回避",
+      "Roborockアプリ、Matter"
+    ],
+    "caveat": "吸引力・モップ回転数・持ち上げ高さ・ゴミ収集日数は、Roborockの社内試験に基づく記載。ロボロック公式の価格は確認できず、Amazonの表示価格を使用した。Qrevo L Proの公式ページに見当たらない項目（ナビゲーション方式、ペット向け機能）は、非搭載とは断定していない。旧モデルのQrevo Curv、Qrevo Curv 2 Pro、Qrevo Edge 2との比較は含まない。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GXB5HWWD",
+    "right": "https://www.amazon.co.jp/dp/B0GXB2RZ9Y",
+    "leftAsin": "B0GXB5HWWD",
+    "rightAsin": "B0GXB2RZ9Y",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon | roborock (ロボロック) Qrevo L Pro ロボット掃除機 水拭き両用 モップ温水洗浄 全自動お掃除ロボット【26年モデル・初心者向け】」とASIN B0GXB5HWWDを確認。同じ商品群の表示は「Qrevo L Pro｜エントリー全自動モデル」。表示価格59,990円（税込）、在庫あり（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率2.00%を、ページのツールバー表示で確認。ツールバーのカテゴリー欄は『キッチン&ダイニング』と表示。HTML内の『対象外』の文言は、確認済みの別ページにもあるツールバーのポップアップ用のひな形で、画面表示の判定ではないため、根拠にしていない（2026-10-11）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GXB5HWWD?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Roborock Qrevo L Proの商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon | roborock (ロボロック) Qrevo Curv 2 Flow ロボット掃除機 水拭き両用 モップ自動洗浄 【26年革新モップカバー搭載】」とASIN B0GXB2RZ9Yを確認。同じ商品群の表示は「Qrevo Curv 2 Flow｜ローラー型・高コスパモデル」。表示価格69,990円（税込）、在庫あり（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率2.00%を、ページのツールバー表示で確認。ツールバーのカテゴリー欄は『キッチン&ダイニング』と表示。HTML内の『対象外』の文言は、確認済みの別ページにもあるツールバーのポップアップ用のひな形で、画面表示の判定ではないため、根拠にしていない（2026-10-11）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GXB2RZ9Y?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Roborock Qrevo Curv 2 Flowの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "ロボロック公式の価格は未確認。価格はAmazonの表示価格で、購入時点で変動する。",
+    "Qrevo L Proの公式ページに、ナビゲーション方式とペット向け機能の記載は見当たらない。",
+    "吸引力・モップ回転数などはRoborockの社内試験に基づく値で、第三者の測定は確認していない。"
+  ],
+  "publicationDecision": "ロボロック公式の仕様と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

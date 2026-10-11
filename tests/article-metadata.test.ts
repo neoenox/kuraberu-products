@@ -92,6 +92,7 @@ describe("article metadata", () => {
       "iphone-17e-vs-iphone-17",
       "macbook-air-13-vs-15-m5",
       "airpods-pro-3-vs-pixel-buds-pro-2",
+      "roborock-qrevo-l-pro-vs-qrevo-curv-2-flow",
       "karcher-k2-silent-vs-k3-silent-plus",
       "sharp-hotcook-kn-hw24k-vs-kn-hw24h",
       "dji-osmo-action-6-vs-gopro-hero13-black",
