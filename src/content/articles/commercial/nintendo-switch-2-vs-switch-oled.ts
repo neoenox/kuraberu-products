@@ -169,8 +169,36 @@ export const nintendoSwitch2VsSwitchOledSeed: CommercialArticleSeed = {
   ],
   socialProofQuery: "Switch 2 有機EL 違い 使用感 X YouTube",
   socialProofCheckedAt: "2026-10-07",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=FDuDyTJn6g0",
+      title: "【開封レビュー】Switch2は結局買いなのか？ガチで比較！",
+      match: "model",
+      purpose: "Switch 2の開封と比較の感想",
+      author: "KENT for 任天堂ゲームレビュー",
+      summary:
+        "Switch 2の開封と比較レビュー。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=eOU9E5h1bWo",
+      title: "買って大正解‼スイッチ有機ELモデルを遂に開封＆紹介",
+      match: "model",
+      purpose: "有機ELモデルの購入・開封紹介の感想",
+      author: "くま丸ちゃんねる【ニンテンドー商品・ガジェット紹介】",
+      summary:
+        "有機ELモデル（ホワイト）の購入・開封紹介。個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Nintendo Switch 2（日本語・国内専用）",
@@ -210,7 +238,17 @@ export const nintendoSwitch2VsSwitchOledSeed: CommercialArticleSeed = {
       url: "https://www.nintendo.com/jp/hardware/detail/switch-oled/",
       date: "2026-10-07",
     },
+    {
+      label: "YouTube Switch 2開封・比較レビュー",
+      url: "https://www.youtube.com/watch?v=FDuDyTJn6g0",
+      date: "2026-10-10",
+    },
+    {
+      label: "YouTube 有機ELモデル開封・紹介",
+      url: "https://www.youtube.com/watch?v=eOU9E5h1bWo",
+      date: "2026-10-10",
+    },
   ],
   disclaimer:
-    "仕様と希望小売価格は2026年10月7日に任天堂の公式ページで確認しました。比較は、Nintendo Switch 2が日本語・国内専用版、Nintendo Switch（有機ELモデル）がホワイトを基準にしています。商品画像は任天堂の公式ページのパッケージ画像です。互換性の対応状況は更新されることがあるため、遊びたいソフトは任天堂の互換性ページでご確認ください。価格・在庫は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様と希望小売価格は2026年10月7日に任天堂の公式ページで確認しました。比較は、Nintendo Switch 2が日本語・国内専用版、Nintendo Switch（有機ELモデル）がホワイトを基準にしています。商品画像は任天堂の公式ページのパッケージ画像です。互換性の対応状況は更新されることがあるため、遊びたいソフトは任天堂の互換性ページでご確認ください。価格・在庫は変動するため、購入時点の販売ページでご確認ください。SNSの感想は個人の使用感で、比較の根拠ではありません。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
