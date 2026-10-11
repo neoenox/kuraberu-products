@@ -104,10 +104,27 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
       "可能なら店頭で握り心地を試す",
       "購入先で色・価格・在庫を確認する",
     ],
-    socialProofHasPosts: false,
-    socialProofCheckedAt: "2026-09-24",
+    socialProofHasPosts: true,
+    socialProofBestMatch: "model",
+    socialProofCheckedAt: "2026-10-11",
     socialProofQuery:
       "Logicool PRO X SUPERLIGHT 2 DEX SUPERLIGHT 2 使用感 レビュー",
+    embeds: [
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=-ZWS4O06baM",
+        title:
+          "Logitech G Pro X Superlight 2 DEX - Review & Comparison with Superlight 2",
+        match: "model",
+        purpose: "DEXとSUPERLIGHT 2の比較レビューの感想",
+        author: "UserFlyn",
+        summary:
+          "DEXとSUPERLIGHT 2の比較レビュー。個人の使用感で、比較の根拠ではない。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+    ],
     sourceLinks: [
       {
         label: "ロジクールG公式・DEX",
@@ -124,7 +141,12 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
         url: "https://press.logicool.co.jp/ja-jp/pro-x-superlight-2-dex/",
         date: "2026-09-24",
       },
+      {
+        label: "YouTube DEXとSUPERLIGHT 2の比較レビュー",
+        url: "https://www.youtube.com/watch?v=-ZWS4O06baM",
+        date: "2026-10-11",
+      },
     ],
     disclaimer:
-      "仕様・価格・在庫は変更される場合があります。購入前に公式ページと販売ページで最新情報をご確認ください。",
+      "仕様・価格・在庫は変更される場合があります。購入前に公式ページと販売ページで最新情報をご確認ください。SNSの感想は個人の使用感で、比較の根拠ではありません。",
   };

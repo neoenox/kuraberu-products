@@ -31,10 +31,7 @@
     }
   },
   "amazon": {
-    "statusBySide": {
-      "left": "direct",
-      "right": "direct"
-    },
+    "statusBySide": { "left": "direct", "right": "direct" },
     "browserEvidence": {
       "sessionIndicator": {
         "state": "not-checked",
@@ -92,18 +89,14 @@
     },
     "left": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fgproxsl-wldexbk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
     "right": null,
-    "statusBySide": {
-      "left": "verified",
-      "right": "unavailable"
-    },
+    "statusBySide": { "left": "verified", "right": "unavailable" },
     "rightUnavailableNote": "2026-10-05: 右（PRO X SUPERLIGHT 2、楽天 g-ppd-004wl-bk）は成果リンクが商品ページではなくtransition.afl.rakuten.co.jpへ送られ、運営者が楽天の商品ページで売り切れを確認したため楽天CTAを非表示にした。Amazonの確認済み商品リンクは維持。"
   },
   "social": {
-    "status": "none",
-    "searchedPlatforms": ["X", "YouTube", "Reddit", "TikTok", "note"],
-    "directPostUrls": [],
-    "embedUrls": [],
-    "reason": "専用のX・Reddit検索接続が利用できず、一般検索でも広告判定と実利用を同時に直接確認できる埋め込み候補を採用できなかった。言及者がいないという意味ではないため、SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": ["https://www.youtube.com/watch?v=-ZWS4O06baM"],
+    "embedUrls": ["https://www.youtube.com/watch?v=-ZWS4O06baM"],
+    "note": "2026-10-11にYouTubeのoEmbedで動画の存在・タイトル・投稿者・埋め込み可否を直接確認。説明文全文の確認、記事ページでのブラウザー表示確認は未実施。抜粋範囲に案件・PR表記なし。比較の根拠には使わず参考情報のみ。"
   },
   "unconfirmedItems": []
 }
