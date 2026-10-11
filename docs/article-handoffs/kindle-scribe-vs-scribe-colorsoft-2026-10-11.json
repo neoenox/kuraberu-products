@@ -1,0 +1,158 @@
+{
+  "id": "kindle-scribe-vs-scribe-colorsoft-2026-10-11",
+  "articleId": "kindle-scribe-vs-scribe-colorsoft",
+  "source": "Fresh product selection and research by Claude Code against Amazon.co.jp product detail pages (Kindle is sold by Amazon, so the product page is the manufacturer's page; Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "電子書籍リーダー",
+  "selection": {
+    "reason": "Kindle ScribeとKindle Scribe Colorsoftは、カラー表示の有無・読書のバッテリー・価格が異なり、手書きノート対応のKindleで迷いが明確。バックログの候補。公開中のKindle記事（Paperwhite vs Colorsoft）から読者が移りやすく、手書きノート対応のKindleは未着手だった。同日に、HTML内の非表示のひな形の文言を『対象外』と誤認して保留にしたが、ツールバーの画面表示（カテゴリー『Kindleデバイス』、販売手数料率4.50%）で対象を確認し直し、訂正した（#1100）。",
+    "duplicateCheck": "公開中のKindle記事は、kindle-paperwhite-vs-colorsoft、kindle-vs-kindle-paperwhite。Scribe系を比較する記事はない（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Amazon Kindle Scribe 64GB グラファイト",
+      "model": "Kindle Scribe (2026年発売) フロントライト搭載モデル 64GB",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71jmcZLd25L._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FC1YGR6X）の2枚目の商品画像（本体とペン、背面と前面、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/kindle-scribe-2026-64gb.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "11インチ反射防止ディスプレイ、解像度300ppi、フォント最適化技術、16階調グレースケール、フロントライト、明るさ自動調整、色調調節ライト",
+        "battery": "読書：最大12週間、手書き：最大2週間（明るさ設定13、ワイヤレス接続オフで1日30分使用した場合）、充電は約3時間（USB-C 20W充電アダプター）",
+        "size": "本体189x245x5.4mm（ゴム足を除く）、400g",
+        "pen": "プレミアムペン付属（155x8.8mm、17g）、充電・ペアリング不要、消しゴム機能。カラー機能はKindle Scribe Colorsoft限定",
+        "performance": "前モデルと比べて書き込みもページめくりも約40%高速化（プロセッサーの記載は見当たらない）",
+        "storage": "32GB／64GB",
+        "colors": "グラファイト"
+      },
+      "officialStorePriceJpy": 98980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+      "officialPriceNote": "Amazon.co.jpの商品ページの表示は98,980円（税込、64GB・グラファイト、2026-10-11確認）。Kindleの販売元はAmazon。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場は、中古・並行品などの第三者の出品が中心で、同じ商品の信頼できる商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Amazon Kindle Scribe Colorsoft 64GB グラファイト",
+      "model": "Kindle Scribe Colorsoft (2026年発売) 64GB",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/71swjGQl6ZL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FC1XTK8P）の2枚目の商品画像（本体とペン、背面と前面、HTTP 200、2026-10-11取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/kindle-scribe-colorsoft-2026-64gb.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "display": "11インチ反射防止カラーディスプレイ、解像度300ppi（白黒）・150ppi（カラー）、内蔵型ライト、フォント最適化技術、16階調グレースケール、明るさ自動調整、色調調節ライト（酸化物半導体ディスプレイ）",
+        "battery": "読書：最大8週間、手書き：最大2週間（明るさ設定13、ワイヤレス接続オフで1日30分使用した場合）、充電は約3時間（USB-C 20W充電アダプター）",
+        "size": "本体189x245x5.4mm（ゴム足を除く）、400g",
+        "pen": "プレミアムペン付属（155x8.8mm、17g）、充電・ペアリング不要、消しゴム機能。ペン10色、ハイライター5色、シェーダーツール",
+        "performance": "クアッドコアプロセッサー搭載",
+        "storage": "32GB／64GB",
+        "colors": "グラファイト、フィグ"
+      },
+      "officialStorePriceJpy": 115980,
+      "officialStoreUrl": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+      "officialPriceNote": "Amazon.co.jpの商品ページの表示は115,980円（税込、64GB・グラファイト、2026-10-11確認）。Kindleの販売元はAmazon。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場は、中古・並行品などの第三者の出品が中心で、同じ商品の信頼できる商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Amazon.co.jpの商品ページの税込表示（Kindleの販売元のページ）。Scribeは98,980円、Scribe Colorsoftは115,980円（64GB・グラファイト、2026-10-11確認）。",
+    "keyDifferences": [
+      "Colorsoftはカラー表示（カラー150ppi）に対応",
+      "読書のバッテリーは最大12週間と最大8週間",
+      "Colorsoftのみ、ペン10色・ハイライター5色・シェーダーツールの記載がある",
+      "Colorsoftはクアッドコアプロセッサーの記載がある（Scribeの商品ページに記載は見当たらない）",
+      "色はグラファイトのみと、グラファイト・フィグ",
+      "価格は98,980円と115,980円"
+    ],
+    "commonSpecs": [
+      "11インチの反射防止ディスプレイ（300ppi）",
+      "厚さ5.4mm・質量400g",
+      "プレミアムペン付属（充電・ペアリング不要）",
+      "明るさ自動調整と色調調節ライト",
+      "32GB／64GB",
+      "手書きで最大2週間のバッテリー、約3時間の充電"
+    ],
+    "caveat": "比較は64GB・グラファイトの構成。32GBとColorsoftのフィグは比較していない。Amazonにはフロントライト非搭載のKindle Scribeの別モデルもあるが、対象外。Scribeの商品ページにプロセッサーの記載が見当たらないことは、搭載していないことを意味しない。バッテリーの駆動時間は使用条件による目安。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+    "right": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+    "leftAsin": "B0FC1YGR6X",
+    "rightAsin": "B0FC1XTK8P",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: New Amazon Kindle Scribe | 11インチディスプレイ、64GBストレージ、ノート機能搭載、明るさ自動調整、色調調節ライト、プレミアムペン付き、グラファイト」とASIN B0FC1YGR6Xを確認。表示価格98,980円（税込）（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Kindleデバイス』と販売手数料率4.50%を、bsk observeの画面表示で確認。ツールバーに『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FC1YGR6X?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、New Amazon Kindle Scribe（64GB・グラファイト）の商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: New Amazon Kindle Scribe Colorsoft | 11インチカラーディスプレイ、64GBストレージ、ノート機能搭載、明るさ自動調整、色調調節ライト、プレミアムペン付き、グラファイト」とASIN B0FC1XTK8Pを確認。表示価格115,980円（税込）（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『Kindleデバイス』と販売手数料率4.50%を、bsk observeの画面表示で確認。ツールバーに『対象外』の画面表示はなし（2026-10-11）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FC1XTK8P?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、New Amazon Kindle Scribe Colorsoft（64GB・グラファイト）の商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場は中古・並行品などの第三者の出品が中心で、同じ商品の信頼できる商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "仕様と価格は、Amazon.co.jpの商品ページ（Kindleの販売元のページ）の記載。別のメーカー公式サイトは確認していない。",
+    "Scribeの商品ページに、プロセッサーの記載は見当たらない。",
+    "Amazonの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "Amazon.co.jpの商品ページの仕様・価格と、ツールバーの表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}
