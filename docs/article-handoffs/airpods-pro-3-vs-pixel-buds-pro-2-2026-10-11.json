@@ -1,0 +1,161 @@
+{
+  "id": "airpods-pro-3-vs-pixel-buds-pro-2-2026-10-11",
+  "articleId": "airpods-pro-3-vs-pixel-buds-pro-2",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan and Google Store Japan official spec/price pages and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-11",
+  "articleReady": true,
+  "category": "ワイヤレスイヤホン",
+  "selection": {
+    "reason": "AirPods Pro 3とPixel Buds Pro 2は、対応端末・防塵耐水・バッテリー・心拍数センサー・価格が異なり、iPhone向けとAndroid向けのノイズキャンセリングイヤホンで迷いが明確。バックログの候補。最初の候補（Sony WH-1000XM6 vs Bose QuietComfort Ultra Headphones 第2世代）は、Boseの公式ページから重さ・Bluetoothのバージョン・対応コーデックを確認できず、商品選定からやり直した。",
+    "duplicateCheck": "公開中のイヤホン記事にAirPods Pro 3とPixel Buds Pro 2の比較はない。非公開の旧記事（airpods-pro-3-vs-sony-wf-1000xm6）とは比較相手が異なる（2026-10-11確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple AirPods Pro 3（単品・MagSafe充電ケース USB-C）",
+      "model": "AirPods Pro 3",
+      "officialUrl": "https://www.apple.com/jp/airpods-pro/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61kX+MI8wvL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FQFQDN6K）の1枚目の商品画像（イヤホン2個、1500x931、HTTP 200、2026-10-11取得、ユーザーの許可を得て取得）。800x800の白背景に収め、public/products/airpods-pro-3-single.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "Apple H2ヘッドフォンチップ（ケースは第2世代のApple超広帯域チップ）",
+        "noiseCancelling": "アクティブノイズキャンセリング",
+        "battery": "ANC有効時にイヤホン単体で最大8時間（空間オーディオとヘッドトラッキング有効時は最大7.5時間）、ケース併用で最大24時間、ケースで5分充電すると約1時間の再生",
+        "weight": "イヤホン5.55g、MagSafe充電ケース43.99g",
+        "water": "防塵性能と耐汗耐水性能（IP57）：AirPods Proと充電ケース",
+        "bluetooth": "Bluetooth 5.3",
+        "charging": "MagSafe充電器、Apple Watchの充電器、Qi規格の充電器、USB-Cコネクタに対応",
+        "health": "ワークアウトのための心拍数センサー、ヒアリング補助機能",
+        "other": "パーソナライズされた空間オーディオとダイナミックヘッドトラッキング、ライブ翻訳"
+      },
+      "officialStorePriceJpy": 42800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-airpods/airpods-pro-3",
+      "officialPriceNote": "Appleオンラインストアの購入ページの表示は42,800円（2026-10-11確認）。税込の明記は、ページ上で確認できていない。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FQFQDN6K",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Google Pixel Buds Pro 2 Moonstone（GA10076-JP）",
+      "model": "Pixel Buds Pro 2 Moonstone",
+      "officialUrl": "https://store.google.com/jp/product/pixel_buds_pro_2_specs?hl=ja",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/41pHQzRMx-L._AC_SL1000_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0FN3KT3C8）の商品画像（ケースとイヤホン、634x837、HTTP 200、2026-10-11取得、ユーザーの許可を得て取得）。1枚目の画像は『正規品の判別方法』の注意書きだったため使わず、画像一覧からケースとイヤホンの画像を選んだ。800x800の白背景に収め、public/products/pixel-buds-pro-2-moonstone.jpg と src/assets/products に保存。",
+      "officialSpecs": {
+        "chip": "Google Tensor A1",
+        "noiseCancelling": "Silent Seal 2.0を使用したアクティブノイズキャンセリング、外部音取り込みモード",
+        "battery": "ANC有効時にイヤホン単体で最長8時間、ケース併用で最長30時間。ANC無効時はイヤホン単体で最長12時間、ケース併用で最長48時間。ケースで5分充電すると、ANCオフなら最長1.5時間",
+        "weight": "イヤホン4.7g（Mサイズのイヤーチップ使用時）、ケース65.0g（イヤホンを含む）",
+        "water": "イヤホン：IP54、ケース：IPX4",
+        "bluetooth": "Bluetooth 5.4",
+        "charging": "USB-Cポート、Qi認証済みワイヤレス充電",
+        "compatibility": "Bluetooth 4.0以降の機器とペア設定可。すべての機能にはGoogleアカウントとAndroid 6.0以降のコンパニオンスマートフォンが必要",
+        "colorsOnGoogleStore": "Porcelain、Olive、Hazel、Peony（Moonstoneは、2026-10-11のGoogle Storeに表示なし）"
+      },
+      "officialStorePriceJpy": 36800,
+      "officialStoreUrl": "https://store.google.com/jp/product/pixel_buds_pro_2?hl=ja",
+      "officialPriceNote": "Google Storeの商品ページの表示は36,800円（2026-10-11確認）。税込の明記は、ページ上で確認できていない。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0FN3KT3C8",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場の商品詳細ページは確認していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "公式ストアの表示価格。AirPods Pro 3はApple 42,800円、Pixel Buds Pro 2はGoogle Store 36,800円（2026-10-11確認）。Amazonの表示価格は、AirPods Pro 3（単品）が42,800円（税込）でAppleと一致、Pixel Buds Pro 2のMoonstoneは27,000円（税込）でGoogle Storeの価格と一致しない（Moonstoneは現在のGoogle Storeの色にない）。",
+    "keyDifferences": [
+      "チップはApple H2とGoogle Tensor A1",
+      "防塵・耐水はイヤホンとケースがIP57と、イヤホンIP54・ケースIPX4",
+      "ケース併用・ANC有効の再生時間は最大24時間と最大30時間",
+      "イヤホン1個の質量は5.55gと4.7g",
+      "Bluetoothは5.3と5.4",
+      "心拍数センサーとヒアリング補助機能は、AirPods Pro 3のみ記載がある",
+      "価格は42,800円と36,800円"
+    ],
+    "commonSpecs": [
+      "アクティブノイズキャンセリング",
+      "ANC有効時にイヤホン単体で最大8時間",
+      "USB-CとQiのワイヤレス充電ケース"
+    ],
+    "caveat": "ケースの質量はAirPods Pro 3がケースのみ、Pixel Buds Pro 2がイヤホンを含む値で、条件が異なるため優劣を付けていない。Pixel Buds Pro 2の仕様ページに心拍数センサー・ヒアリング補助機能の記載が見当たらないことは、非対応とは断定していない。ノイズキャンセリングの度合いは、公式の測定値がないため比較していない。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0FQFQDN6K",
+    "right": "https://www.amazon.co.jp/dp/B0FN3KT3C8",
+    "leftAsin": "B0FQFQDN6K",
+    "rightAsin": "B0FN3KT3C8",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-11"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Apple AirPods Pro 3 ワイヤレスイヤホン、アクティブノイズキャンセリング、ライブ翻訳、心拍センサー、補聴機能」、パターン「AirPods Pro 3」、ASIN B0FQFQDN6Kを確認。表示価格42,800円（税込）（2026-10-11）。同じ商品群のASIN B0FRZ3SZWXは「AirPods Pro 3 + AppleCare+セット」で、バックログの候補メモのASINとは異なるため使っていない。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率2.00%を、ページのツールバー表示で確認。ツールバーのカテゴリー欄は『楽器』と表示。商品ページへの『対象外』の表示はなし（2026-10-11）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FQFQDN6K?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Apple AirPods Pro 3の商品詳細ページに到達（2026-10-11）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Amazon.co.jp: Google Pixel Buds Pro 2 Moonstone GA10076-JP」とASIN B0FN3KT3C8を確認。表示価格27,000円（税込）（2026-10-11）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーに販売手数料率2.00%を、ページのツールバー表示で確認。ツールバーのカテゴリー欄は『楽器』と表示。商品ページへの『対象外』の表示はなし（2026-10-11）。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0FN3KT3C8?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Google Pixel Buds Pro 2 Moonstone GA10076-JPの商品詳細ページに到達（2026-10-11）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "AppleとGoogle Storeの価格は、税込の明記を確認できていない。",
+    "Pixel Buds Pro 2のMoonstoneは、現在のGoogle Storeの色に表示されない。Amazonの価格（27,000円）は公式価格（36,800円）と異なり、販売元・在庫状況は未確認。",
+    "Appleの仕様ページに、ANC無効時の再生時間の記載は見当たらない。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+  ],
+  "publicationDecision": "AppleとGoogle Storeの仕様・価格と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
+}

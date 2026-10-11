@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（44本）
+## 現在の公開済み（45本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -45,6 +45,7 @@
 | `apple-watch-series-12-vs-se-3`                      | 公開済み |
 | `iphone-17e-vs-iphone-17`                            | 公開済み |
 | `macbook-air-13-vs-15-m5`                            | 公開済み |
+| `airpods-pro-3-vs-pixel-buds-pro-2`                  | 公開済み |
 | `kobo-clara-colour-vs-libra-colour`                  | 公開済み |
 | `logicool-mx-master-4-vs-mx-master-3s`               | 公開済み |
 | `logicool-pebble-m350s-vs-m650`                      | 公開済み |
@@ -166,13 +167,7 @@
 - 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、WH-1000XM6（B0F77PMC1P、ブラック）とBose QuietComfort Ultra Headphones（第2世代）（B0FL2HYBGJ）の存在を確認。ソニー・ボーズの公式ページが開くことのみ確認）
 - 想定比較軸: ノイズキャンセリング、バッテリー、質量、対応コーデック、空間オーディオ、マルチポイント、価格
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
-
-### Apple AirPods Pro 3 vs Google Pixel Buds Pro 2
-
-- 選定理由: 公開中のイヤホン記事はAirPods 5とソニー・Ankerが中心で、Pixel Budsが未着手。スマホ記事（iPhone vs Pixel）から読者が移りやすい。
-- 状態: 候補（公式情報は未確認。2026-10-09にAmazon.co.jpの検索で、AirPods Pro 3（B0FRZ3SZWX）とGoogle Pixel Buds Pro 2（B0FN3KT3C8、Moonstone）の存在を確認。AppleとGoogleの公式ページが開くことのみ確認）
-- 想定比較軸: ノイズキャンセリング、バッテリー、心拍センサー・補聴機能、対応端末、IP等級、価格
-- 確認すること: Apple日本・Googleストアの公式仕様ページ、Amazonの両商品ページ（色の扱い）、Pixel Buds Pro 2の現行販売状況、既存の非公開記事（`airpods-pro-3-vs-sony-wf-1000xm6`）との重複
+- 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
 
 ### Roborock Qrevo L Pro vs Qrevo Curv 2 Flow
 
