@@ -2,9 +2,7 @@
 /** Derive the published backlog table from the publication allowlist (#1068). */
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import {
-  PUBLISHED_ARTICLE_PAGE_SLUGS,
-} from "../config/article-template-policy.mjs";
+import { PUBLISHED_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
 
 const BACKLOG = fileURLToPath(
   new URL("../docs/article-backlog.md", import.meta.url),
@@ -24,7 +22,10 @@ export function publishedTable(slugs) {
 
 export function updatePublishedBacklog(markdown, slugs) {
   const sectionStart = markdown.indexOf("## 現在の公開済み（");
-  const nextSection = markdown.indexOf("\n## 公開されていない記事", sectionStart);
+  const nextSection = markdown.indexOf(
+    "\n## 公開されていない記事",
+    sectionStart,
+  );
   if (sectionStart < 0 || nextSection < 0) {
     throw new Error("Published backlog section boundaries not found");
   }
