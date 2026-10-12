@@ -49,6 +49,7 @@ export const PUBLISHED_ARTICLE_PAGE_SLUGS = new Set([
   "roborock-qrevo-l-pro-vs-qrevo-curv-2-flow",
   "kindle-scribe-vs-scribe-colorsoft",
   "ipad-air-11-vs-13-m4",
+  "macbook-pro-14-vs-16-m5-pro",
   "galaxy-s26-ultra-vs-s26",
   "insta360-x5-vs-dji-osmo-360-ii",
   "apple-watch-ultra-4-vs-series-12",
