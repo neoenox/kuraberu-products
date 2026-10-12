@@ -39,16 +39,15 @@ export function updatePublishedBacklog(markdown, slugs) {
     .replace(heading, "## 現在の公開済み（" + new Set(slugs).size + "本）")
     .replace(table, publishedTable(slugs) + "\n");
   return (
-    markdown.slice(0, sectionStart) + section + markdown.slice(nextSection)
+    markdown.slice(0, sectionStart) +
+    section +
+    markdown.slice(nextSection)
   );
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const original = readFileSync(BACKLOG, "utf8");
-  const updated = updatePublishedBacklog(
-    original,
-    PUBLISHED_ARTICLE_PAGE_SLUGS,
-  );
+  const updated = updatePublishedBacklog(original, PUBLISHED_ARTICLE_PAGE_SLUGS);
   if (process.argv.includes("--write")) {
     writeFileSync(BACKLOG, updated);
     console.log("Published backlog table regenerated.");
