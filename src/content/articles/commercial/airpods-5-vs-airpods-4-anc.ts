@@ -140,9 +140,23 @@ export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
     "耳への合い方は仕様値から判断できないため、装着感を重視する場合は試着する",
   ],
   socialProofQuery: "AirPods 5 AirPods 4 ANC 使用感 比較 X YouTube Reddit",
-  socialProofCheckedAt: "2026-09-30",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=iv17pH3HaV8",
+      title: "【実機レビュー】AirPods第4世代【ノイズキャンセリング】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "かじがや電器店",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "AirPods 5（USB-C充電ケース）",

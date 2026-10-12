@@ -167,5 +167,36 @@ export const dainichiHdLx1226VsHdLx1026Seed: CommercialArticleSeed = {
   ],
   disclaimer:
     "この記事には広告リンクが含まれます。リンクを経由した購入により運営者が報酬を受け取る場合があります。仕様は2026年10月5日にダイニチ公式の仕様表で確認したメーカー公称値です。加湿量は室温20℃・湿度30％の場合で、室内の温度・湿度条件により変わります。価格・在庫は変更されることがあります。",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
+  socialProofBestMatch: "series",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=zWXGtNKCoHg",
+      title:
+        "【お手入れの手軽さと電気代も重要】ダイニチの加湿器、満足度高いです。",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "CAFUA / 庶民派ガジェッター",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=Npefg1vIkCU",
+      title:
+        "【冬支度 2023】この冬いちばん部屋を潤してくれる加湿器がこちらです｜ガレージハウスの乾燥対策: ダイニチ HD LX1022【購入レポート】",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "HOUSE WITH GARAGE",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
 };

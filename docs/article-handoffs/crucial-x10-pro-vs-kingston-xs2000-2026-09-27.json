@@ -130,11 +130,13 @@
     "rightUnavailableNote": "2026-10-04: 旧購入先（manoangel）は在庫切れで、成果リンクが商品ページではなくtransition.afl.rakuten.co.jpへ送られていた。楽天でSXS2000/2000Gの出品5件を確認したが、すべて在庫切れのため楽天CTAを非表示にした。Amazonの確認済み商品リンクは維持。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "X検索は利用可能な検索バックエンドがなく、Jina経由の検索も403で投稿を直接確認できなかった。YouTube候補は個別に確認し、Lon.TVとMardee Reviews TechはAmazonアフィリエイトリンク、Box.co.ukは販売店自身の販促動画のため不採用。Kingston XS2000のGP動画は実測をうたうが、確認できた説明文が定型的で2TB個体の試験か特定できず、動画内容も取得時に401となったため根拠として不採用。Девайснаяのユーザー体験動画も内容・提供関係を直接確認できず不採用。適格性を確認できた投稿は0件とし、SNS欄は掲載しない。これは適格な投稿が存在しないとの断定ではない。"
+    "status": "adopted",
+    "directPostUrls": ["https://www.youtube.com/watch?v=Ge0RmEQj4Ew"],
+    "embedUrls": ["https://www.youtube.com/watch?v=Ge0RmEQj4Ew"],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
-  "unconfirmed": [],
+  "unconfirmed": [
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
+  ],
   "publicationDecision": "各商品に確認済みの購入先URLがあり、SNS適格投稿は確認できなかったためSNS欄は非掲載。Crucial公式画像CDNとKingston公式画像CDNの画像配信を確認済み。CrucialはAmazon対象外のため楽天CTAのみ、Kingstonは楽天・Amazon CTAを表示する。公開条件を満たしたためarticleReady=trueとし、明示された本番公開依頼に従いdraftを解除する。"
 }

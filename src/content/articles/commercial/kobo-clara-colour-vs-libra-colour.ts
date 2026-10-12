@@ -178,9 +178,39 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
     "内蔵メモリを多く使う予定なら、約32GBのLibra Colourを確認する",
   ],
   socialProofQuery: "Kobo Clara Colour Libra Colour 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-29",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=sIjtXAqvDQk",
+      title:
+        "【新モデル】Kobo Libra Colourをレビュー！カラーで電子書籍を読めるの最高すぎる",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "電子書籍ターミナル | アーク",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=M04qeuEaDiI",
+      title:
+        "【新モデル】Kobo Clara BWとKobo Clara Colourを比較レビュー！買うならどっち？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "電子書籍ターミナル | アーク",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Kobo Clara Colour",

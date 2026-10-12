@@ -188,9 +188,24 @@ export const insta360X5VsDjiOsmo360IiSeed: CommercialArticleSeed = {
     "X5を選ぶ場合は、別にmicroSDカードが必要か、付属品の構成（スターターキットなど）をInsta360公式ストアで確認する",
   ],
   socialProofQuery: "Insta360 X5 DJI Osmo 360 II 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=h6tN8VpuMSE",
+      title: "【自腹購入】insta360 X5と迷ったがDJI Osmo 360を買ってしまった…。",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "やまたけ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Insta360 X5",

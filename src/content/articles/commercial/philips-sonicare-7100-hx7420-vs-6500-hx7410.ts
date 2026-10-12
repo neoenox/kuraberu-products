@@ -160,9 +160,39 @@ export const philipsSonicare7100Hx7420Vs6500Hx7410Seed: CommercialArticleSeed =
       "購入前に、販売ページの型番（HX7420/10かHX7410/10か）と同梱品が、記事の比較と同じかを確認する",
     ],
     socialProofQuery: "ソニッケアー 7100 6500 違い 使用感 X YouTube",
-    socialProofCheckedAt: "2026-10-08",
-    socialProofHasPosts: false,
+    socialProofCheckedAt: "2026-10-12",
+    socialProofHasPosts: true,
     socialProofBestMatch: "model",
+    embeds: [
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=Y8-mm24XFjs",
+        title:
+          "【電動歯ブラシ】PHILIPSの電動歯ブラシで人気のソニッケアー｜最上位モデルは価格に見合った価値があるのか🤔",
+        match: "series",
+        purpose: "実際に使用・購入した人の感想",
+        author: "Keisuke Ichikawa",
+        summary:
+          "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=sPzzpqp3D_s",
+        title:
+          "【比較】電動歯ブラシ ソニッケアーの値段による違い【買う前に見てシリーズ｜フィリップス｜HX6428｜HX6554】",
+        match: "series",
+        purpose: "実際に使用・購入した人の感想",
+        author: "J-BLASTチャンネル",
+        summary:
+          "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+    ],
     officialProse: [
       {
         heading: "ソニッケアー 7100シリーズ（HX7420/10）",

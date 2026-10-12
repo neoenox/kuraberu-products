@@ -167,9 +167,36 @@ export const karcherK2SilentVsK3SilentPlusSeed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     "ケルヒャー K2 サイレント K3 サイレント プラス 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-06",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=t8S318Ps82E",
+      title:
+        "【高圧洗浄機】約2年使ってみた『K2サイレント』の良かったところ・悪かったところ！おすすめ商品も紹介！【ケルヒャー（Karcher）】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ジェームス / 洗車チャンネル",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=cqWHyfAr4WQ",
+      title: "Karcher K3高圧洗浄機サイレントプラス開封・レビュー",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Bretharian Vegetta 不食ベジッタの伊豆ど田舎暮らし",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "ケルヒャー K 2 サイレント",

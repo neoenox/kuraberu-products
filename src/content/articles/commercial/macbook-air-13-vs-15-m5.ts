@@ -188,9 +188,38 @@ export const macbookAir13Vs15M5Seed: CommercialArticleSeed = {
     "メモリ（24GB）やストレージ（1TB以上）を増やしたい場合は、Appleの購入ページで構成と価格を確認する",
   ],
   socialProofQuery: "MacBook Air M5 13インチ 15インチ 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-10",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=aTD-lsrH2ew",
+      title:
+        "【使用レビュー】M5 MacBook Air 24GB・1TBを5ヶ月毎日使ってわかった良い点・注意点",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "attala log 暮らしとガジェット",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=cZHOmV6HWQA",
+      title:
+        "MacBook Air 【M5】  13インチvs15インチ めちゃくちゃ迷った50歳が正直に答えます",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ふみのMac生活",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "MacBook Air 13インチ（M5）",

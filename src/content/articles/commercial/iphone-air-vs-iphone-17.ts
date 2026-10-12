@@ -200,9 +200,37 @@ export const iphoneAirVsIphone17Seed: CommercialArticleSeed = {
     "256GBや1TB（Airのみ）など、別の容量や色が必要な場合は、Appleの購入ページとAmazonの商品ページで構成と在庫を確認する",
   ],
   socialProofQuery: "iPhone Air iPhone 17 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=a2f1HNbnqts",
+      title: "iPhone Airを3ヶ月メイン端末として使った正直な感想",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "よいこチャンネル / 岩間よいこ",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=rCXFWJf160I",
+      title:
+        "【長期使用レビュー】iPhone 17を半年使って分かった、メリットと気になる点。17eとどっち？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "みやじぃ iPhone / ショートカット",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "iPhone Air",

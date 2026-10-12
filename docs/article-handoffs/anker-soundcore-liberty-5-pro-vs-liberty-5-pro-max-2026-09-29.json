@@ -155,26 +155,22 @@
     "note": "UNVERIFIED / unavailable。発明したアフィリエイトURLは登録しない。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "searchAttempt": {
-      "checkedAtJst": "2026-09-29",
-      "queries": [
-        "Soundcore Liberty 5 Pro",
-        "Liberty 5 Pro Max",
-        "D1203",
-        "D1204",
-        "サウンドコア リバティ 5 Pro Max"
-      ],
-      "result": "X/YouTubeの埋め込み許可リスト向けに、広告・PR・アフィリエイトを除いた実利用投稿の元URLを本作業では採用できなかった。適格投稿が存在しないとの断定ではない。"
-    },
-    "note": "採用SNSなし。SNS欄は省略。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=bhVMcDiVzzc",
+      "https://www.youtube.com/watch?v=s7a1O5fWqWY"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=bhVMcDiVzzc",
+      "https://www.youtube.com/watch?v=s7a1O5fWqWY"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
     "楽天の商品詳細URLと成果URLは未確認のためunavailable",
     "Amazonアソシエイト・ツールバーの商品別適格性表示は未確認",
-    "Proのケースディスプレイ解像度・インチ数は公式で1.78インチAMOLEDとしては記載なし（搭載事実のみ確認）"
+    "Proのケースディスプレイ解像度・インチ数は公式で1.78インチAMOLEDとしては記載なし（搭載事実のみ確認）",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
-  "publicationDecision": "Anker公式で両商品の名称・型番・仕様・公式価格・公式画像を確認。Amazon商品詳細でASIN一致とブラックSKUを確認し、各商品に確認済みAmazon購入先がある。楽天はunavailableでCTA非表示。SNS採用なしで欄非表示。Amazonのみで各商品1つ以上の確認済み購入先があるためarticleReady=trueとし、draft解除を優先する。 2026-10-03にAnker Japan公式の2商品ページ（価格・型番・重量・再生時間・IP55・ケース画面・マグネット充電・AIボイスレコーダー）とAmazonの両商品ページ（ミッドナイトブラック、在庫あり、公式と同価格）を再確認した。楽天は両商品とも商品を確認できておらず、今回は再確認していない。"
+  "publicationDecision": "Anker公式で両商品の名称・型番・仕様・公式価格・公式画像を確認。Amazon商品詳細でASIN一致とブラックSKUを確認し、各商品に確認済みAmazon購入先がある。楽天はunavailableでCTA非表示。SNSは、2026-10-12にYouTubeの実使用動画を採用した（socialを参照）。Amazonのみで各商品1つ以上の確認済み購入先があるためarticleReady=trueとし、draft解除を優先する。 2026-10-03にAnker Japan公式の2商品ページ（価格・型番・重量・再生時間・IP55・ケース画面・マグネット充電・AIボイスレコーダー）とAmazonの両商品ページ（ミッドナイトブラック、在庫あり、公式と同価格）を再確認した。楽天は両商品とも商品を確認できておらず、今回は再確認していない。"
 }
