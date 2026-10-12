@@ -162,9 +162,25 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
     "加湿能力と適用床面積は同じなので、部屋の広さではなく給水頻度と本体サイズで選ぶ",
   ],
   socialProofQuery: "象印 EE-DG50 EE-RV50 加湿器 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-29",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=xcC5GsjM6Hc",
+      title:
+        "売り切れ御免！象印のスチーム式加湿器にお洒落なSTANモデルが登場！定番ハイパワーモデルとの違いを検証！",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "よしお　プロ目線の暮らし家電とガジェット",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "象印 EE-DG50",

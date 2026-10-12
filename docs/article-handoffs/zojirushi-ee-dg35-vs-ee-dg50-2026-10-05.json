@@ -158,15 +158,21 @@
     "right": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232533%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "2026年9月発売の新モデルのため、本調査では実利用者による適格な投稿を確認していない（2026-10-05時点で本格的な検索は未実施。適格投稿が存在しないとの断定ではない）。SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=ioYtIzclCcs",
+      "https://www.youtube.com/watch?v=2g0kFQZUArA"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=ioYtIzclCcs",
+      "https://www.youtube.com/watch?v=2g0kFQZUArA"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
-    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
     "楽天成果URLの遷移先は実機で開いて確認していない。",
-    "楽天・Amazonの販売価格と在庫は購入時点で変動する。"
+    "楽天・Amazonの販売価格と在庫は購入時点で変動する。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "publicationDecision": "公式の商品名・型番・仕様・画像・公式ストア価格とAmazon/楽天の商品一致は確認済み。楽天成果URLは両商品で生成済み、Amazonはツールバー対象確認とタグ付きURLの遷移先確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
 }

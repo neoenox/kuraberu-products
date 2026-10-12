@@ -117,8 +117,25 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
       ],
     },
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-18",
+  socialProofHasPosts: true,
+  socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=QW3_f4l0Ric",
+      title:
+        "『 MX MASTER 3S 』が最高のマウスである3つの理由。前作の『 MX MASTER 3 』とも比較してみよう！【 長期レビュー 】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "うしゃすらいむ【ガジェット紹介】",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery:
     "Logitech MX Master 4 MX2400GR MX Master 3S MX2300GR review",
   sourceLinks: [

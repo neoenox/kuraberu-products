@@ -160,9 +160,38 @@ export const amazonEchoShow8VsEchoShow5Seed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     "Echo Show 8 2025 Echo Show 5 第3世代 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-08",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=BYUsccuf3kQ",
+      title:
+        "デザイン、音、操作感良し。新型Amazon Echo Show 8（2025年モデル）を買った。",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "きすけ / ガジェットの本音",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=PEI4Hx-adaI",
+      title: "Echo Show 5 第3世代を半額で購入🔥 第2世代と比較してみた！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "変デジ研究所",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Echo Show 8（2025年発売）",

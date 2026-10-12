@@ -216,5 +216,32 @@ export const pixelWatch5VsGalaxyWatch9Seed: CommercialArticleSeed = {
   ],
   disclaimer:
     "この記事には広告リンクが含まれます。リンクを経由した購入により運営者が報酬を受け取る場合があります。掲載した仕様と公式ストア価格は2026年10月3日に確認した情報で、変更されることがあります。価格・在庫・販売カラーは各販売ページでご確認ください。バッテリー時間はメーカー公称で、利用状況や設定によって変わります。健康機能は医療上の診断や治療を目的としたものではありません。",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
+  socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=q3QdItgz9aE",
+      title: "Google Pixel Watch 5 Hands-On: Every NEW Feature Explained!",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Chase the Summit",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=hIawo39Ga68",
+      title: "Real Galaxy Watch 9 Review: 6 Weeks + Gear",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Arielle-Viking Venturer",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
 };

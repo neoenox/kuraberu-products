@@ -181,16 +181,23 @@
     "right": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=F2o-KjzWWZw",
+      "https://www.youtube.com/watch?v=tyjYw_FGgzQ"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=F2o-KjzWWZw",
+      "https://www.youtube.com/watch?v=tyjYw_FGgzQ"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
     "楽天の成果URLの遷移先はクリックして確認していない。",
     "Evoの公式仕様に動画撮影の記載がないことを、機能がないとは断定していない。",
     "Evo Cinemaの外形寸法は公式の表記順が不明確（39.4×132.5×100.1mm）で、Evoとは直接比較していない。",
-    "Evoの発売時期、Evo Cinemaのカラー名は公式ページで確認できず、記事に掲載していない。"
+    "Evoの発売時期、Evo Cinemaのカラー名は公式ページで確認できず、記事に掲載していない。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }

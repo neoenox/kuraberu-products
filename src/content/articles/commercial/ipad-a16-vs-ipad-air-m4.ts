@@ -182,9 +182,25 @@ export const ipadA16VsIpadAirM4Seed: CommercialArticleSeed = {
     "チップとメモリに余裕を持たせたい、1TBまでの容量が必要、新しい無線規格を使いたい場合はiPad Air（M4）を確認する",
   ],
   socialProofQuery: "iPad A16 iPad Air M4 11インチ 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-06",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=IuLOeOkHEPg",
+      title: "【iPad A16】3ヶ月使った本音レビュー｜買ってよかった？不満点も！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author:
+        "MagipapaChannel /PC作業の効率化を日々模索するシニアの動画チャンネル",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "11インチ iPad（A16）",

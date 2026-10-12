@@ -131,11 +131,39 @@ export const garminForerunner570VsCorosPace4Seed: CommercialArticleSeed = {
     "重さを優先するなら標準シリコンバンドで40gのPACE 4を選ぶ",
     "電池持ちは公称条件の違いを確認し、自分のGPS設定や使い方に近い数値で比べる",
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-25",
+  socialProofHasPosts: true,
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery:
     "Garmin Forerunner 570 COROS PACE 4 使用感 レビュー 個人購入",
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=iQcWDS0l3nE",
+      title:
+        "【GARMIN】高性能ランニングウォッチ GARMIN Forerunner 570 ！このスマートウォッチはなぜ良いのか？5つのポイントで徹底解説【ガーミン フォアランナー570】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "スマートウォッチ・ラボ / Smart Watch Lab",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=N4LXTGnHi2Q",
+      title:
+        "COROS PACE 4 Black Crystal実使用レビュー｜ChatGPT連携が秀逸。HUAWEIから乗り換えた感想",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "買って、使って、売って。",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Garmin Forerunner 570 42mm Black",

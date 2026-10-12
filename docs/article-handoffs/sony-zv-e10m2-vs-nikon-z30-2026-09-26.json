@@ -73,14 +73,15 @@
     "leftUnavailableNote": "2026-10-09: 左（ソニー ZV-E10 II、楽天 jism/4548736160675-34-39044-n）の商品ページがHTTP 404（出品の終了）になり、成果リンクの到達先が商品ページではなくなったため、楽天CTAを非表示にした。Amazonの確認済み商品リンクと右側の楽天リンクは維持。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "SNS投稿は採用しない。記事の比較根拠はメーカー公式仕様に限定し、SNS欄は表示しない。SNS全体に投稿がないとの意味ではなく、X検索はブラウザーでタイムアウトして調査を完了できていない。"
+    "status": "adopted",
+    "directPostUrls": ["https://www.youtube.com/watch?v=5GkpSQeAHpM"],
+    "embedUrls": ["https://www.youtube.com/watch?v=5GkpSQeAHpM"],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
     "Xを含むSNS投稿の採否調査（YouTube検索では今回の記事に適合する投稿を確認できず、X検索はブラウザーでタイムアウト）",
-    "楽天以外も含むリンク先・在庫・価格の継続確認"
+    "楽天以外も含むリンク先・在庫・価格の継続確認",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "draftReason": null,
   "publishStatus": "published",

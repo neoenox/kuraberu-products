@@ -180,9 +180,25 @@ export const kindleScribeVsScribeColorsoftSeed: CommercialArticleSeed = {
     "容量（32GB・64GB）と色（Colorsoftはフィグも選べる）を、Amazonの商品ページで確認する",
   ],
   socialProofQuery: "Kindle Scribe Colorsoft 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=OKLAse5Oi48",
+      title:
+        "Kindle Scribe Colorsoftをレビュー！11インチ×カラーの読書体験は最高！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "電子書籍ターミナル | アーク",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Kindle Scribe",

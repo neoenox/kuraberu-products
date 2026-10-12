@@ -196,9 +196,37 @@ export const appleWatchSeries12VsSe3Seed: CommercialArticleSeed = {
     "ケースの素材（チタニウム・セラミック）やサイズ（46mm・42mm）を選びたい場合は、Series 12を確認する",
   ],
   socialProofQuery: "Apple Watch Series 12 SE 3 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-09",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=JlrPp02dCwo",
+      title: "新型Apple Watch Series 12買ったぞ！1日使ってみた",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ワタナベカズマサ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=hQdll-8Bvtk",
+      title:
+        "Apple Watch SE3の1ヶ月使用レビュー｜全シリーズ使ったけどSEがおすすめな理由",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "CAFUA / 庶民派ガジェッター",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Apple Watch Series 12",

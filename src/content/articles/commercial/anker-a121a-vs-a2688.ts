@@ -118,8 +118,39 @@ export const ankerA121aVsA2688Seed: CommercialArticleSeed = {
     "USB-C×2＋USB-A×1の3ポートで足りるか確認する",
     "購入前に販売ページで価格・カラー・在庫を確認する",
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-22",
+  socialProofHasPosts: true,
+  socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=v7uOyKEn8Js",
+      title:
+        "【8月1日発売】世界最小クラスの70W充電器「Anker Nano Charger (70W, 3 Ports)」を買ったけど予想もしない怪現象が！【アンカー】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "セゴリータ三世 / Segorita the 3rd",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=trc2dUZ0nOA",
+      title:
+        "【1ヶ月使ってみた】Anker Prime Wall Charger 100Wは買いです【万能ACアダプター】",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "じょん / TAILOR TECH LIFE",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery:
     "Anker Nano Charger A121A Prime Charger A2688 使用感 レビュー",
   officialProse: [

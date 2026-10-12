@@ -172,9 +172,37 @@ export const ipadAir11Vs13M4Seed: CommercialArticleSeed = {
     "容量（256GB以上）や通信（Cellular）を増やしたい場合は、Appleの購入ページで構成と価格を確認する",
   ],
   socialProofQuery: "iPad Air M4 11インチ 13インチ 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=aEu2lWAevGo",
+      title: "【iPad】M4 iPad Air 13インチを購入！9年ぶりに新調したぞ！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "まさとチャンネル",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=ACeyeAPGEEs",
+      title:
+        "【開封】M4 iPad Air 13インチモデル ／ 購入の理由と使用目的もお話しします。",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "まいぷらチャンネル",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "11インチiPad Air（M4）",
