@@ -59,7 +59,7 @@ describe("check-embed-liveness", () => {
     ).toBeNull();
   });
 
-  it("never interprets an embed endpoint 4xx as a confirmed post removal", () => {
+  it("treats embed API 4xx as inconclusive", () => {
     expect(classifyProbeResult({ status: 200, body: "{}" })).toBe("alive");
     expect(classifyProbeResult({ status: 201, body: "{}" })).toBe("alive");
     // 400: URL/リクエスト形式、401/403: 認証・権限・Bot制限、
@@ -70,7 +70,8 @@ describe("check-embed-liveness", () => {
     expect(
       classifyProbeResult({ status: null, body: "", error: "timeout" }),
     ).toBe("inconclusive");
-    expect(classifyProbeResult({ status: null, body: "" })).toBe("inconclusive");
+    const missingStatus = classifyProbeResult({ status: null, body: "" });
+    expect(missingStatus).toBe("inconclusive");
   });
 
   it("matches embed markers in escaped oEmbed bodies", () => {
