@@ -119,11 +119,13 @@ test("[mobile] search and tap navigate on small screens", async ({
     await firstLink.click();
   }
   await expect(page).toHaveURL(/\/articles\/.+\//);
-  expect(
-    await page.evaluate(
+  // 画像読み込み中の過渡的なはみ出しを避けるため、収束まで再試行する。
+  await expect(async () => {
+    const overflow = await page.evaluate(
       () =>
-        document.documentElement.scrollWidth <=
+        document.documentElement.scrollWidth >
         document.documentElement.clientWidth,
-    ),
-  ).toBe(true);
+    );
+    expect(overflow).toBe(false);
+  }).toPass({ timeout: 10000 });
 });
