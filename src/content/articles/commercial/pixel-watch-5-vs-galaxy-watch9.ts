@@ -217,6 +217,7 @@ export const pixelWatch5VsGalaxyWatch9Seed: CommercialArticleSeed = {
   disclaimer:
     "この記事には広告リンクが含まれます。リンクを経由した購入により運営者が報酬を受け取る場合があります。掲載した仕様と公式ストア価格は2026年10月3日に確認した情報で、変更されることがあります。価格・在庫・販売カラーは各販売ページでご確認ください。バッテリー時間はメーカー公称で、利用状況や設定によって変わります。健康機能は医療上の診断や治療を目的としたものではありません。",
   socialProofHasPosts: true,
+  socialProofBestMatch: "model",
   embeds: [
     {
       provider: "youtube",

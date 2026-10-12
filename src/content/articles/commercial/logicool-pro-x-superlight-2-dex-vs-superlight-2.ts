@@ -105,6 +105,7 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
       "購入先で色・価格・在庫を確認する",
     ],
     socialProofHasPosts: true,
+    socialProofBestMatch: "model",
     embeds: [
       {
         provider: "youtube",

@@ -168,6 +168,7 @@ export const dainichiHdLx1226VsHdLx1026Seed: CommercialArticleSeed = {
   disclaimer:
     "この記事には広告リンクが含まれます。リンクを経由した購入により運営者が報酬を受け取る場合があります。仕様は2026年10月5日にダイニチ公式の仕様表で確認したメーカー公称値です。加湿量は室温20℃・湿度30％の場合で、室内の温度・湿度条件により変わります。価格・在庫は変更されることがあります。",
   socialProofHasPosts: true,
+  socialProofBestMatch: "series",
   embeds: [
     {
       provider: "youtube",
