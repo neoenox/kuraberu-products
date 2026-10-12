@@ -2,7 +2,9 @@
 /** Derive the published backlog table from the publication allowlist (#1068). */
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { PUBLISHED_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
+import {
+  PUBLISHED_ARTICLE_PAGE_SLUGS,
+} from "../config/article-template-policy.mjs";
 
 const BACKLOG = fileURLToPath(
   new URL("../docs/article-backlog.md", import.meta.url),
@@ -36,7 +38,9 @@ export function updatePublishedBacklog(markdown, slugs) {
   const section = oldSection
     .replace(heading, "## 現在の公開済み（" + new Set(slugs).size + "本）")
     .replace(table, publishedTable(slugs) + "\n");
-  return markdown.slice(0, sectionStart) + section + markdown.slice(nextSection);
+  return (
+    markdown.slice(0, sectionStart) + section + markdown.slice(nextSection)
+  );
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
@@ -49,7 +53,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     writeFileSync(BACKLOG, updated);
     console.log("Published backlog table regenerated.");
   } else if (updated !== original) {
-    console.error("Published backlog table drift: run pnpm check:backlog-publication -- --write");
+    console.error(
+      "Published backlog table drift: run pnpm check:backlog-publication -- --write",
+    );
     process.exitCode = 1;
   } else {
     console.log("Published backlog table: up to date.");
