@@ -14,7 +14,7 @@
 
 現在、作成中の記事はない。
 
-## 現在の公開済み（52本）
+## 現在の公開済み（53本）
 
 検索・記事一覧・サイトマップに載る記事（`config/article-template-policy.mjs`の`PUBLISHED_ARTICLE_PAGE_SLUGS`）だけを載せている。公開状況は、コード上の記事の有無ではなく、本番の実測（HTTP 200かつ`robots`が`index`）を正とする。
 
@@ -49,6 +49,7 @@
 | `roborock-qrevo-l-pro-vs-qrevo-curv-2-flow`          | 公開済み |
 | `kindle-scribe-vs-scribe-colorsoft`                  | 公開済み |
 | `ipad-air-11-vs-13-m4`                               | 公開済み |
+| `macbook-pro-14-vs-16-m5-pro`                        | 公開済み |
 | `galaxy-s26-ultra-vs-s26`                            | 公開済み |
 | `insta360-x5-vs-dji-osmo-360-ii`                     | 公開済み |
 | `apple-watch-ultra-4-vs-series-12`                   | 公開済み |
@@ -171,13 +172,37 @@
 - 確認すること: ソニー・ボーズの公式仕様ページ、Amazonの両商品ページ（色違い・LE版の扱い）、型番・世代、既存の非公開記事との重複
 - 2026-10-11確認: ソニー公式（sony.jp）の仕様ページで質量254g、連続再生30時間（NC ON）、Bluetooth 5.3、対応コーデックSBC・AAC・LDAC・LC3を確認できた。ボーズ公式（bose.co.jp）の製品ページには、価格（59,400円）とバッテリー（30時間、15分で3時間）、モードの記載はあるが、質量・Bluetoothのバージョン・対応コーデックの記載が見当たらず、取扱説明書のPDFからも取得できなかった。公式情報が不足するため、記事化を見送った。再開条件: ボーズ公式の技術仕様を取得できること
 
-### Apple MacBook Pro 14インチ vs 16インチ（M5 Pro）
+### Google Pixel 11 vs Pixel 11 Pro
 
-- 選定理由: 公開中のMac記事は、MacBook Air 13と15（M5）の1本のみで、Proのサイズ違いは未着手。画面・バッテリー・重さ・価格の違いが明確。
-- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、2026年モデルのMacBook Pro 14.2インチ（M5 Pro 15コアCPU・16コアGPU）B0GR1KP26Q・B0GR1VZY4W、16.2インチ（M5 Pro 18コアCPU・20コアGPU）B0GR1SS1QP、14.2インチ（M5 Max）B0GR1KNBX2の存在を確認。14インチと16インチでチップの構成が異なる点、構成（メモリ・SSD・色）の対応、価格・ツールバーの表示は未確認）
-- 想定比較軸: 画面サイズ、チップ構成（CPU・GPUのコア数）、バッテリー駆動時間、質量、ポート、公式価格
-- 確認すること: Apple日本の仕様・購入ページ、比較する構成（メモリ・SSD・色）を揃える、両ASINの商品名・価格・ツールバーの表示、チップ構成の違いを記事で明示できるか
-- 注意: 同じ14インチでもM5 ProとM5 Maxの別ASINがある。整備済み品（2025年モデル）と取り違えない。
+- 選定理由: 公開中のスマートフォン記事に、Pixel 11 Pro（iPhone 18 Pro vs Pixel 11 Pro）はあるが、Pixel 11と11 Proの比較は未着手。標準モデルと上位モデルの選択は迷いが明確。
+- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Pixel 11 SIMフリー 256GB オブシディアン B0HHHTTM95、Pixel 11 Pro 256GB SIMフリー（オブシディアン B0HC3B8NG6、オリーブ B0HC3BNS1T）の存在を確認。仕様・価格・ツールバーの表示・販売元は未確認。同じ検索に、容量・色を選ぶ形式の別出品も表示された）
+- 想定比較軸: 画面サイズ、カメラ構成とズーム、バッテリー、重さ、メモリ・容量、公式価格
+- 確認すること: Google Store Japanの両仕様・価格、比較する容量（256GB）・色を揃える、両ASINの商品名・価格・販売元・ツールバーの表示、公開中のiphone-18-pro-vs-pixel-11-proとの重複（Pixel 11 Proが共通）
+- 注意: 色・容量違いのASINと、第三者の出品を取り違えない。
+
+### Samsung Galaxy Z Fold8 vs Galaxy Z Flip8
+
+- 選定理由: 折りたたみスマートフォンは公開中の記事がなく、FoldとFlipは形状も用途も違うため、選択で迷いが明確。
+- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Galaxy Z Fold8 256GB グラファイト B0H5VQTTP8、Galaxy Z Flip8 256GB（グラファイト B0H5VWFLVW、ピンク B0H5VWR9RP、クリーム B0H5W21FCM）の存在を確認。仕様・価格・ツールバーの表示・販売元は未確認）
+- 想定比較軸: 画面サイズ（内側・外側）、厚さ・重さ、カメラ、バッテリー、折りたたみ時の大きさ、公式価格
+- 確認すること: Samsung Japanの両仕様・価格、比較する容量（256GB）・色（グラファイト）を揃える、両ASINの商品名・価格・販売元・ツールバーの表示
+- 注意: Z Fold8 Ultraなど、名称の似た別モデルがある場合は取り違えない。
+
+### Meta Quest 3S vs Meta Quest 3
+
+- 選定理由: VR/MRヘッドセットは公開中の記事がなく、3Sと3は価格差・画質・容量で迷いが明確。
+- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Meta Quest 3S 128GB（ゲームのバンドル品 B0F8VJ57Q1）、Meta Quest 3 512GB B0CF1DLZPY、Meta Quest 3 128GB B0CB3WXL12、3S 256GB B09JMJX9DT等の存在を確認。バンドル品と単体品の区別、旧世代・並行輸入の有無、価格・ツールバーの表示は未確認）
+- 想定比較軸: レンズ・解像度、視野角、容量、プロセッサ、価格、重さ
+- 確認すること: Meta公式の仕様と価格、ゲームのバンドルなしの単体のASINを特定する、容量を揃えるか決める、両ASINの価格・販売元・ツールバーの表示
+- 注意: バンドル品（ゲーム同梱）を、単体品と取り違えない。
+
+### ASUS ROG Xbox Ally vs ROG Xbox Ally X
+
+- 選定理由: ポータブルゲーミングPCは公開中の記事がなく、通常版とXは、チップ・メモリ・ストレージ・バッテリーが異なり、選択で迷いが明確。
+- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、ROG Xbox Ally RC73YA（Ryzen Z2 A・16GB・512GB）B0FPLQXZR5、ROG Xbox Ally X RC73XA（Ryzen AI Z2 Extreme・24GB・1TB）B0FPLP6N4F、旧世代のROG Ally X RC72LA B0D7M6KHS6の存在を確認。価格・販売元・ツールバーの表示は未確認）
+- 想定比較軸: プロセッサ、メモリ、ストレージ、バッテリー容量、重さ、価格
+- 確認すること: ASUS Japanの両仕様・価格、両ASINの商品名・価格・販売元・ツールバーの表示、旧世代（Ally X RC72LA）と取り違えない
+- 注意: ROG Allyの旧世代と、Xboxの名称が付いた現行モデルを取り違えない。
 
 ## 追加確認・保留
 

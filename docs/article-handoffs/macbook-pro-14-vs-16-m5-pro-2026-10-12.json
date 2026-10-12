@@ -1,0 +1,167 @@
+{
+  "id": "macbook-pro-14-vs-16-m5-pro-2026-10-12",
+  "articleId": "macbook-pro-14-vs-16-m5-pro",
+  "source": "Fresh product selection and research by Claude Code against Apple Japan official spec/purchase pages (raw HTML) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-12",
+  "articleReady": true,
+  "category": "ノートパソコン",
+  "selection": {
+    "reason": "MacBook Proの14インチと16インチ（M5 Pro）は、画面・チップ構成・バッテリー・電源アダプタ・重さ・価格が異なり、サイズ違いの選択で迷いが明確。バックログの候補（#1118で補充）。",
+    "duplicateCheck": "公開中のmacbook-air-13-vs-15-m5はMacBook Airの比較で、対象が異なる（2026-10-12確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Apple 2026 MacBook Pro 14インチ（M5 Pro 15コアCPU・16コアGPU・24GB・1TB）シルバー",
+      "model": "MacBook Pro 14インチ M5 Pro（15コアCPU・16コアGPU）",
+      "officialUrl": "https://www.apple.com/jp/macbook-pro/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61S-s5Bf5TL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GR1KP26Q）の1枚目の商品画像（1500x907、HTTP 200、2026-10-12取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/macbook-pro-14-m5-pro-silver.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "display": "14.2インチ Liquid Retina XDR、3,024x1,964、254ppi、持続輝度1,000ニト・ピーク1,600ニト（HDR）、最大120Hz",
+        "chip": "Apple M5 Pro（5つのスーパーコアと10の高性能コアの15コアCPU、16コアGPU、16コアNeural Engine、307GB/sのメモリ帯域幅）",
+        "battery": "72.4Wh、ビデオストリーミング最大22時間、ワイヤレスインターネット最大14時間（M5 Pro）",
+        "adapter": "70W USB-C電源アダプタ（15コアCPUのM5 Proに付属）、USB-C - MagSafe 3ケーブル（2m）",
+        "ports": "Thunderbolt 5×3、HDMI、SDXCカードスロット、MagSafe 3、3.5mmヘッドフォンジャック、外部ディスプレイ最大3台（M5 Pro）",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6、Thread",
+        "size": "高さ1.55cm・幅31.26cm・奥行き22.12cm、1.60kg（M5 Pro）",
+        "colors": "スペースブラック、シルバー"
+      },
+      "officialStorePriceJpy": 429800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-mac/macbook-pro",
+      "officialPriceNote": "Appleオンラインストアの購入ページ（HTML内のcomparativeDisplayPrice）で、14インチ M5 Pro（15コアCPU・16コアGPU）は429,800円から（税込、2026-10-12確認）。Amazonの24GB・1TB・シルバーの表示価格429,800円と一致した。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GR1KP26Q",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Apple 2026 MacBook Pro 16インチ（M5 Pro 18コアCPU・20コアGPU・48GB・1TB）シルバー",
+      "model": "MacBook Pro 16インチ M5 Pro（18コアCPU・20コアGPU）",
+      "officialUrl": "https://www.apple.com/jp/macbook-pro/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61abJjqQA7L._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GR1FPZSG）の1枚目の商品画像（1500x917、HTTP 200、2026-10-12取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/macbook-pro-16-m5-pro-silver.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "display": "16.2インチ Liquid Retina XDR、3,456x2,234、254ppi、持続輝度1,000ニト・ピーク1,600ニト（HDR）、最大120Hz",
+        "chip": "Apple M5 Pro（6つのスーパーコアと12の高性能コアの18コアCPU、20コアGPU、16コアNeural Engine、307GB/sのメモリ帯域幅）",
+        "battery": "100Wh、ビデオストリーミング最大24時間、ワイヤレスインターネット最大17時間（M5 Pro）",
+        "adapter": "140W USB-C電源アダプタ、USB-C - MagSafe 3ケーブル（2m）",
+        "ports": "Thunderbolt 5×3、HDMI、SDXCカードスロット、MagSafe 3、3.5mmヘッドフォンジャック",
+        "wireless": "Apple N1、Wi-Fi 7、Bluetooth 6、Thread",
+        "size": "高さ1.68cm・幅35.57cm・奥行き24.81cm、2.14kg（M5 Pro）",
+        "memory": "Appleの16インチ M5 Proの構成に24GBと48GBがある。Amazon商品ページの構成は48GB・1TB"
+      },
+      "officialStorePriceJpy": 519800,
+      "officialStoreUrl": "https://www.apple.com/jp/shop/buy-mac/macbook-pro",
+      "officialPriceNote": "Appleオンラインストアの購入ページで、16インチ M5 Pro（18コアCPU・20コアGPU）の標準構成は519,800円から（税込、2026-10-12確認）。比較に使うAmazonの48GB・1TB構成（627,800円）の、Appleでの価格は確認していない（unverified）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GR1FPZSG",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Appleオンラインストアの標準構成の税込「から」価格（14インチ 429,800円、16インチ 519,800円）と、Amazonの表示価格（14インチ 24GB・1TB 429,800円、16インチ 48GB・1TB 627,800円）。14インチはAppleとAmazonで一致。16インチのAmazon構成（48GB）は、Appleの標準構成とメモリが異なり、Appleでの価格は未確認。",
+    "keyDifferences": [
+      "画面は14.2インチ（3,024x1,964）と16.2インチ（3,456x2,234）",
+      "チップはM5 Proで、15コアCPU・16コアGPUと18コアCPU・20コアGPU",
+      "バッテリーは72.4Whと100Wh（ビデオ再生最大22時間と最大24時間）",
+      "付属の電源アダプタは70Wと140W",
+      "質量は1.60kgと2.14kg",
+      "価格は標準構成で429,800円からと519,800円から"
+    ],
+    "commonSpecs": [
+      "Liquid Retina XDR（持続1,000ニト・最大120Hz）",
+      "Thunderbolt 5×3・HDMI・SDXC・MagSafe 3",
+      "Wi-Fi 7・Bluetooth 6",
+      "12MPセンターフレームカメラ・6スピーカー・Touch ID"
+    ],
+    "caveat": "比較はAmazonで販売されているシルバー・1TBの構成で、14インチは15コアCPU・16コアGPU・24GB、16インチは18コアCPU・20コアGPU・48GBと、チップのコア数とメモリが異なる。スペースブラック、2TB以上、M5 Max、Nano-texture、整備済み品、3年保証付きセットは比較していない。メモリが同じ構成（24GB）の16インチは、Amazonで単体の商品を特定できなかった。バッテリーの時間はAppleの測定条件による目安。性能の差は評価していない。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GR1KP26Q",
+    "right": "https://www.amazon.co.jp/dp/B0GR1FPZSG",
+    "leftAsin": "B0GR1KP26Q",
+    "rightAsin": "B0GR1FPZSG",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-12"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple 2026 MacBook Pro 15コアCPU、16コアGPUのM5 Proチップ搭載ノートパソコン：…14.2インチLiquid Retina XDRディスプレイ、24GBユニファイドメモリ、1TBのSSDストレージ - シルバー」、色「シルバー」、サイズ「1TB SSD」、スタイル「15コアCPU / 16コアGPU / 24GBメモリ」、ASIN B0GR1KP26Qを確認。表示価格429,800円（税込）、出荷元・販売元はAmazon.co.jp（2026-10-12）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-12）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GR1KP26Q?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、MacBook Pro 14インチ M5 Pro シルバーの商品詳細ページに到達（2026-10-12）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Apple 2026 MacBook Pro 18コアCPU、20コアGPUのM5 Proチップ搭載ノートパソコン：…16.2インチLiquid Retina XDRディスプレイ、48GBユニファイドメモリ、1TBのSSDストレージ - シルバー」、色「シルバー」、サイズ「1TB SSD」、スタイル「18コアCPU / 20コアGPU / 48GBメモリ」、ASIN B0GR1FPZSGを確認。表示価格627,800円（税込）、出荷元・販売元はAmazon.co.jp（2026-10-12）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『パソコン・周辺機器』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-12）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GR1FPZSG?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、MacBook Pro 16インチ M5 Pro シルバーの商品詳細ページに到達（2026-10-12）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=kNmTfkVK_6I",
+      "https://www.youtube.com/watch?v=H99C6DOKccw",
+      "https://www.youtube.com/watch?v=TpY0O9KSqDA"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=kNmTfkVK_6I",
+      "https://www.youtube.com/watch?v=H99C6DOKccw",
+      "https://www.youtube.com/watch?v=TpY0O9KSqDA"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
+  },
+  "unconfirmed": [
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "16インチ M5 Pro（48GB・1TB）のAppleでの価格は未確認。メモリが同じ24GBの16インチは、Amazonで単体の商品を特定できなかった。",
+    "スペースブラック・2TB以上・M5 Max・Nano-textureの価格・比較は未確認。",
+    "チップの性能差・実際のバッテリー持ち・使い心地は評価していない（Appleの仕様ページの記載の比較）。",
+    "AmazonとAppleの価格・在庫は購入時点で変動する。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
+  ],
+  "publicationDecision": "Appleの仕様・標準構成の価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。ユーザーの「おまかせ」の指示と、これまでの「本番反映までやって」の指示に基づき、CI通過後にマージ・本番反映する。"
+}
