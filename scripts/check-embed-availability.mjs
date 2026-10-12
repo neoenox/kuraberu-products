@@ -164,7 +164,7 @@ export async function checkYouTubeEmbed(
   if (status === 200 && json && typeof json.html === "string") {
     return { url, outcome: "available" };
   }
-  if (status === 401 || status === 404) {
+  if (status === 400 || status === 401 || status === 404) {
     return { url, outcome: "unavailable", reason: `oembed-http-${status}` };
   }
   return {

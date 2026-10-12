@@ -103,7 +103,7 @@ describe("checkYouTubeEmbed", () => {
     expect(result).toMatchObject({ url, outcome: "available" });
   });
 
-  it.each([401, 404])("marks oEmbed %i as unavailable", async (status) => {
+  it.each([400, 401, 404])("marks oEmbed %i as unavailable", async (status) => {
     const result = await checkYouTubeEmbed(url, {
       fetchImpl: mockFetch(status, {}) as never,
     });
