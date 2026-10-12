@@ -132,8 +132,38 @@ export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
     "どちらもQi2・10000mAh・ワイヤレス最大15Wに対応することを確認する",
     "購入前に販売ページで価格・カラー・在庫を確認する",
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-22",
+  socialProofHasPosts: true,
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=NbhU3IJaU3w",
+      title:
+        "Amazonで発売直後に400点以上売り上げた「Anker MagGo Power Bank 10000mAh Slim」購入レビュー！iPhone16に最適のモバイルバッテリーは良いんだけど…",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "セゴリータ三世 / Segorita the 3rd",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=4EC1vcBPVTo",
+      title:
+        "【爆売れ中】Anker新型のQi2対応10,000mAhモバイルバッテリー買ってみた",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ワタナベカズマサ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery: "Anker MagGo Power Bank A1664 A1654 使用感 レビュー",
   officialProse: [
     {

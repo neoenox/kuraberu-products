@@ -36,11 +36,19 @@
     "right": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1654%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"
   },
   "social": {
-    "status": "none",
-    "searchedPlatforms": ["X", "YouTube", "Reddit", "TikTok", "note"],
-    "directPostUrls": [],
-    "embedUrls": [],
-    "reason": "直接確認でき、実利用・非PR・非広告・非アフィリエイトの条件を同時に満たす投稿は採用0件。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=NbhU3IJaU3w",
+      "https://www.youtube.com/watch?v=4EC1vcBPVTo"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=NbhU3IJaU3w",
+      "https://www.youtube.com/watch?v=4EC1vcBPVTo"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
-  "unconfirmedItems": []
+  "unconfirmedItems": [],
+  "unconfirmed": [
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
+  ]
 }

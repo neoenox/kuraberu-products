@@ -166,16 +166,17 @@
     "right": "https://hb.afl.rakuten.co.jp/hgc/g00r7ldn.w78maaf9.g00r7ldn.w78mb4d0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736147058%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F13873290%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "検索では実利用者による適格な投稿を確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": ["https://www.youtube.com/watch?v=SQA2G2UtbfI"],
+    "embedUrls": ["https://www.youtube.com/watch?v=SQA2G2UtbfI"],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
     "楽天の成果URLの遷移先はクリックして確認していない。",
     "ZV-1Fの公式仕様表に内蔵NDフィルターの記載がないことを、機能がないとは断定していない。",
     "ZV-1 IIの発売時期、ZV-1Fの発売時期は今回の取得ページで確認できず、記事に掲載していない。",
-    "ZV-1 IIの画像はブラックとホワイトの2台が写っており、購入先はホワイトを選んでいる。"
+    "ZV-1 IIの画像はブラックとホワイトの2台が写っており、購入先はホワイトを選んでいる。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }

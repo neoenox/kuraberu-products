@@ -183,9 +183,24 @@ export const roborockQrevoLProVsQrevoCurv2FlowSeed: CommercialArticleSeed = {
     "置き場所が限られる場合は、本体とドックのサイズ（高さ96.5mmと119mm、ドック340×487×519mmと450×450×450mm）を確認する",
   ],
   socialProofQuery: "Qrevo L Pro Qrevo Curv 2 Flow 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=bRPxom6Hw_4",
+      title:
+        "【実売8万円台で神コスパ】ロボロックQrevo Curv 2 Flowの完成度が高い！唯一気になった弱点は…【本音レビュー】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "よしお　プロ目線の暮らし家電とガジェット",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Roborock Qrevo L Pro",

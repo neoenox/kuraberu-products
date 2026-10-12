@@ -191,9 +191,37 @@ export const appleWatchUltra4VsSeries12Seed: CommercialArticleSeed = {
     "Series 12は、ケースの素材（アルミニウム・チタニウム・セラミック）、サイズ（42mm・46mm）、バンドを、Appleの購入ページで確認する",
   ],
   socialProofQuery: "Apple Watch Ultra 4 Series 12 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=wj_mMbNImi4",
+      title:
+        "【1週間使ってみた】Apple Watch Ultra 4 は異次元のバッテリー保ちでした",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "借金しゅうへい",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=JlrPp02dCwo",
+      title: "新型Apple Watch Series 12買ったぞ！1日使ってみた",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ワタナベカズマサ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Apple Watch Ultra 4",

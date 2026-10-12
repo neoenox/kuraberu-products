@@ -166,9 +166,39 @@ export const sharpHotcookKnHw24kVsKnHw24hSeed: CommercialArticleSeed = {
     "容量・サイズ・消費電力・画面は同じなので、置き場所や家族の人数では差が出ない",
   ],
   socialProofQuery: "ホットクック KN-HW24K KN-HW24H 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-06",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=HXhcXIlPNIM",
+      title:
+        "【ホットクック新旧比較】KN-HW24H・KN-HW24K｜費用なら旧型、二段献立なら新型",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "家電マスター・タコ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=Qpx8c2pGW-o",
+      title:
+        "6年使ったホットクックが壊れたので3台目を買いました｜新型と旧型の違い・互換性を正直レビュー",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ぴち夫婦-こどもが寝たあとに-",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "KN-HW24K（新モデル）",

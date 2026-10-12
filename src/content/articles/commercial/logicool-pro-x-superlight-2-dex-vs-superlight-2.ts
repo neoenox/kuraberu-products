@@ -104,8 +104,24 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
       "可能なら店頭で握り心地を試す",
       "購入先で色・価格・在庫を確認する",
     ],
-    socialProofHasPosts: false,
-    socialProofCheckedAt: "2026-09-24",
+    socialProofHasPosts: true,
+    embeds: [
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=RFvXAe7g5NA",
+        title:
+          "【Logicool】新型GPROの形状が最高過ぎた1カ月レビュー┃ GPROX sl2 DEX",
+        match: "model",
+        purpose: "実際に使用・購入した人の感想",
+        author: "JUNUJ【デバイス紹介】",
+        summary:
+          "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+    ],
+    socialProofCheckedAt: "2026-10-12",
     socialProofQuery:
       "Logicool PRO X SUPERLIGHT 2 DEX SUPERLIGHT 2 使用感 レビュー",
     sourceLinks: [

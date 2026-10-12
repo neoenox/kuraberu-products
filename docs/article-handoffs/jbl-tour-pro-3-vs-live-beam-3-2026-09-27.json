@@ -145,32 +145,16 @@
     "generation": "2026-09-27にログイン済みChromeの楽天アフィリエイト公式画面へ各商品詳細URLを入力。商品リンク作成画面の商品名・型番・ショップと、ソース欄のhb.afl.rakuten.co.jp URLを確認。両URLのpc=遷移先は入力した各商品詳細ページと一致。Live Beam 3の販売ページ本文にはブラック型番JBLLIVEBEAM3BLKが含まれる。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "candidatesNotAdopted": [
-      {
-        "url": "https://www.reddit.com/r/JBL/comments/1v7raez/switched_to_jbl_tour_pro_3_review_need_advice/",
-        "product": "Tour Pro 3",
-        "reason": "ChatGPT調査で利用者レビュー候補として確認。今回のサイト品質ゲートで要求されるXまたはYouTubeの埋め込み対象ではないため記事へ採用しない。"
-      },
-      {
-        "url": "https://www.reddit.com/r/Earbuds/comments/1da6f75/jbl_live_beam_3_initial_review/",
-        "product": "Live Beam 3",
-        "reason": "ChatGPT調査で初期利用レビュー候補として確認。今回のサイト品質ゲートで要求されるXまたはYouTubeの埋め込み対象ではないため記事へ採用しない。"
-      },
-      {
-        "url": "https://www.reddit.com/r/JBL/comments/1heqtbl/",
-        "product": "Tour Pro 3とLive Beam 3の比較候補",
-        "reason": "ChatGPT調査で所有者による比較候補として確認。今回の記事の埋め込み欄には採用しない。"
-      }
-    ],
-    "note": "Xに適切な投稿は見つからず、確認したYouTube候補は広告・販売促進、または個人の実利用と非PRを確認できないため不採用。TikTokはアクセス制限により直接確認できなかった。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": ["https://www.youtube.com/watch?v=KtmJU5s2-Z8"],
+    "embedUrls": ["https://www.youtube.com/watch?v=KtmJU5s2-Z8"],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
     "Live Beam 3のメーカー公式オンラインストア表示は確認日時点の状態であり、メーカー販売終了を意味しない。",
     "Live Beam 3の公式ページでTour Pro 3固有機能の記載を確認できないことは、非対応を意味しない。",
-    "適格な実利用SNS投稿は確認できなかったが、対象SNS全体に投稿がないとの断定はしない。"
+    "適格な実利用SNS投稿は確認できなかったが、対象SNS全体に投稿がないとの断定はしない。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
-  "publicationDecision": "JBL公式の商品名・型番・仕様・画像・希望小売価格を確認。Amazonの公式リンク生成UIで両商品のリンク生成と商品詳細遷移を確認した。商品別の適格性表示は確認できず、共通ツールバーのカテゴリーと手数料率のみを記録。記事ソースにはASIN付きの正規商品詳細URLのみ保存し、本番では承認済みruntime環境設定がタグを付与する。楽天アフィリエイト公式UIでも両商品の成果URLを生成済み。採用可能なSNS埋め込みは確認できなかったためSNS欄は表示しない。両商品に確認済み購入先があるため記事ready。"
+  "publicationDecision": "JBL公式の商品名・型番・仕様・画像・希望小売価格を確認。Amazonの公式リンク生成UIで両商品のリンク生成と商品詳細遷移を確認した。商品別の適格性表示は確認できず、共通ツールバーのカテゴリーと手数料率のみを記録。記事ソースにはASIN付きの正規商品詳細URLのみ保存し、本番では承認済みruntime環境設定がタグを付与する。楽天アフィリエイト公式UIでも両商品の成果URLを生成済み。SNSは、2026-10-12にYouTubeの実使用動画を採用した（socialを参照）。両商品に確認済み購入先があるため記事ready。"
 }

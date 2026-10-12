@@ -137,9 +137,25 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
     "ドライバー構成だけで音質を決めず、装着感や使いたい機能も含めて選ぶ",
   ],
   socialProofQuery: "JBL Tour Pro 3 JBL Live Beam 3 user review X YouTube",
-  socialProofCheckedAt: "2026-09-27",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=KtmJU5s2-Z8",
+      title:
+        "【絶賛レビューは真実か？】JBL TOUR PRO 3 購入した理由5点と気になる点3点【自腹レビュー】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "けむのガジェットチャンネル",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "JBL Tour Pro 3",

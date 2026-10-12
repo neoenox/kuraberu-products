@@ -149,9 +149,25 @@ export const amazonEchoDotMaxVsEchoDot5thSeed: CommercialArticleSeed = {
     "接続したいスマートホーム機器が、選ぶ機種の接続方式（ハブ内蔵か、Wi-Fi・Matterか）に対応しているかを確認する",
   ],
   socialProofQuery: "Echo Dot Max Echo Dot 第5世代 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-08",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=J3RTL2BpPyY",
+      title:
+        "【新しくなって帰ってきた】Eco Dot第5世代でできる事【Amazonアレクサがある生活】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Yuji-ライフハック",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Echo Dot Max（2025年発売）",

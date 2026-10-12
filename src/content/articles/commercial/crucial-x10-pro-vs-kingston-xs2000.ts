@@ -120,8 +120,23 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     'X / YouTube: "Crucial X10 Pro" "Kingston XS2000" 2TB user experience',
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=Ge0RmEQj4Ew",
+      title:
+        "最強コスパSSDを発見したかもしれない！【Kingston XS2000 ポータブル SSD】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Wataru Nishida 西田航",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Crucial X10 Pro 2TB",
