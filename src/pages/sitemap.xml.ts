@@ -28,7 +28,10 @@ const publishedCategories = [
 ];
 // The category route emits both leaf and group pages; keep sitemap in sync.
 const categoryEntries: SitemapEntry[] = [
-  ...new Set([...publishedCategories, ...publishedCategories.map(categoryGroup)]),
+  ...new Set([
+    ...publishedCategories,
+    ...publishedCategories.map(categoryGroup),
+  ]),
 ]
   .sort()
   .map((category) => ({
