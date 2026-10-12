@@ -1,0 +1,162 @@
+{
+  "id": "galaxy-s26-ultra-vs-s26-2026-10-12",
+  "articleId": "galaxy-s26-ultra-vs-s26",
+  "source": "Fresh product selection and research by Claude Code against Samsung Japan official spec/purchase pages (rendered pages read via BrowserSkill) and Amazon.co.jp product detail pages (Amazon Associates toolbar observed in the logged-in Chrome via BrowserSkill)",
+  "researchDateJst": "2026-10-12",
+  "articleReady": true,
+  "category": "スマートフォン",
+  "selection": {
+    "reason": "Galaxy S26 UltraとGalaxy S26は、画面・カメラ・バッテリー・Sペン・重さ・価格が異なり、同シリーズの最上位と標準モデルの選択で迷いが明確。バックログの候補（#1118で補充）。公開中のスマートフォン記事にAndroidの国内版Galaxyはない。",
+    "duplicateCheck": "公開中のスマートフォン記事（iphone-18-pro-vs-pixel-11-pro、iphone-17e-vs-iphone-17、iphone-air-vs-iphone-17）にGalaxy S26は含まれない。pixel-watch-5-vs-galaxy-watch9はウォッチの記事で対象が異なる（2026-10-12確認）。"
+  },
+  "products": {
+    "left": {
+      "name": "Samsung Galaxy S26 Ultra 256GB ブラック（SIMフリー）",
+      "model": "Galaxy S26 Ultra 256GB",
+      "officialUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26-ultra/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61wDFzyOzXL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GK98Z3GP）の1枚目の商品画像（1274x1293、HTTP 200、2026-10-12取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/galaxy-s26-ultra-256gb-black.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "display": "174.9mm（6.9インチ）、3120x1440（QHD+）、Dynamic AMOLED 2X、最大120Hz、Sペン対応",
+        "camera": "約2億画素F1.4＋約5,000万画素F2.9＋約5,000万画素F1.9＋約1,000万画素F2.4、光学3倍・5倍、デジタル最大100倍、フロント約1,200万画素F2.2、8K@30fps",
+        "storage": "メモリ12GB、ストレージ256GB（使用可能224.9GB）、デュアルSIM（Nano-SIM+eSIM）",
+        "size": "163.6x78.1x7.9mm、214g",
+        "battery": "5,000mAh（標準）、動画再生最大31時間（標準値）",
+        "wireless": "Wi-Fi 7（802.11be）、Bluetooth 6.0、UWB対応、USB Type-C（USB 3.2 Gen 1）",
+        "software": "セキュリティアップデート2033年2月28日まで",
+        "colors": "コバルト バイオレット、スカイ ブルー、ブラック、ホワイト、シルバー シャドウ、ピンク ゴールド（Samsung.com限定色あり）"
+      },
+      "officialStorePriceJpy": 239800,
+      "officialStoreUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26-ultra/buy/",
+      "officialPriceNote": "Samsung.comの購入ページで、256GB｜12GBは239,800円（税込、2026-10-12確認。キャンペーン・下取りの割引は含めない）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GK98Z3GP",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    },
+    "right": {
+      "name": "Samsung Galaxy S26 256GB スカイブルー（SIMフリー）",
+      "model": "Galaxy S26 256GB",
+      "officialUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26/specs/",
+      "officialImageUrl": "https://m.media-amazon.com/images/I/61xeRmXDSLL._AC_SL1500_.jpg",
+      "imageEvidence": "Amazon.co.jp商品ページ（B0GK9CLD8Z）の1枚目の商品画像（977x1183、HTTP 200、2026-10-12取得、ユーザーの常時許可のもと取得）。800x800の白背景に収め、public/products/galaxy-s26-256gb-skyblue.jpg と src/assets/products に保存（画像容量予算のため品質68で圧縮）。",
+      "officialSpecs": {
+        "display": "159.3mm（6.3インチ）、2340x1080（FHD+）、Dynamic AMOLED 2X、最大120Hz。Sペン対応の記載は見当たらない",
+        "camera": "約5,000万画素F1.8＋約1,000万画素F2.4＋約1,200万画素F2.2、光学3倍、デジタル最大30倍、フロント約1,200万画素F2.2、8K@30fps",
+        "storage": "メモリ12GB、ストレージ256GB（使用可能225.3GB）、デュアルSIM（Nano-SIM+eSIM）",
+        "size": "149.6x71.7x7.2mm、167g",
+        "battery": "4,300mAh（標準）、動画再生最大31時間（標準値）",
+        "wireless": "Wi-Fi 7（802.11be）、Bluetooth 5.4、USB Type-C（USB 3.2 Gen 1）。UWBの記載は見当たらない",
+        "software": "セキュリティアップデート2033年2月28日まで",
+        "colors": "スカイ ブルー、ブラック、ホワイト（Samsung.com限定色あり）。仕様ページはS26とS26+の共通ページ"
+      },
+      "officialStorePriceJpy": 155800,
+      "officialStoreUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26/buy/",
+      "officialPriceNote": "Samsung.comの購入ページで、256GB｜12GBは155,800円（税込、2026-10-12確認。キャンペーン・下取りの割引は含めない）。",
+      "amazonProductPage": "https://www.amazon.co.jp/dp/B0GK9CLD8Z",
+      "rakutenProductPage": null,
+      "rakutenListingEvidence": "楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していないため、成果URLは作成していない（not-recorded）。"
+    }
+  },
+  "comparison": {
+    "officialSpecsVerified": true,
+    "officialPricesVerified": true,
+    "priceBasis": "Samsung.comの購入ページの税込表示（256GB）。S26 Ultraは239,800円、S26は155,800円（2026-10-12確認）。Amazonの表示価格も、239,800円と155,800円で、Samsung.comの価格と一致した。",
+    "keyDifferences": [
+      "画面は6.9インチ（3120x1440）と6.3インチ（2340x1080）",
+      "背面カメラは4眼（約2億画素含む・光学3倍/5倍）と3眼（光学3倍）",
+      "バッテリー容量は5,000mAhと4,300mAh",
+      "Sペン対応はS26 Ultraのみ記載",
+      "質量は214gと167g",
+      "Bluetoothは6.0と5.4",
+      "価格は239,800円と155,800円"
+    ],
+    "commonSpecs": [
+      "Dynamic AMOLED 2X・最大120Hz",
+      "メモリ12GB・256GB（このモデル）",
+      "8K/30fps動画撮影、フロント約1,200万画素",
+      "デュアルSIM、USB 3.2 Gen 1、Wi-Fi 7",
+      "動画再生最大31時間（標準値）",
+      "セキュリティアップデート2033年2月28日まで"
+    ],
+    "caveat": "比較は256GBのSIMフリーモデルで、S26 Ultraはブラック、S26はスカイブルー。512GB、ほかの色、整備済み品、Galaxy S26+は比較していない。S26の仕様ページはS26とS26+の共通で、S26の値（画面サイズ・質量・バッテリー）は、ページの注記とGalaxy S26の値として確認した。チップ名の記載は両ページのテキストに見当たらず、クロック周波数とコア数の記載のみ比較した。画質・処理性能・発熱の優劣は評価していない。Amazonのレビュー欄は根拠として使っていない。"
+  },
+  "amazon": {
+    "status": "verified",
+    "statusBySide": {
+      "left": "verified",
+      "right": "verified"
+    },
+    "left": "https://www.amazon.co.jp/dp/B0GK98Z3GP",
+    "right": "https://www.amazon.co.jp/dp/B0GK9CLD8Z",
+    "leftAsin": "B0GK98Z3GP",
+    "rightAsin": "B0GK9CLD8Z",
+    "browserEvidence": {
+      "sessionIndicator": {
+        "state": "observed",
+        "evidence": "Amazon商品ページにアソシエイト・ツールバーが表示されることを、ログイン済みChromeで直接観察。ログイン情報やアカウント本人性は記録しない。",
+        "observedAtJst": "2026-10-12"
+      },
+      "bySide": {
+        "left": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Samsung Galaxy S26 Ultra 256GB｜ブラック｜Galaxy AI対応｜SIMフリースマホ…」、色「ブラック」、サイズ「256GB」、ASIN B0GK98Z3GPを確認。表示価格239,800円（税込、ポイント2,398pt 1%）、在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-12）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-12）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GK98Z3GP?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Galaxy S26 Ultra 256GB・ブラックの商品詳細ページに到達（2026-10-12）。"
+          }
+        },
+        "right": {
+          "productMatch": {
+            "state": "verified",
+            "evidence": "Amazon.co.jp商品詳細ページで商品名「Samsung Galaxy S26 256GB｜スカイブルー｜Galaxy AI対応｜SIMフリースマホ…」、色「スカイブルー」、サイズ「256GB」、ASIN B0GK9CLD8Zを確認。表示価格155,800円（税込、ポイント1,558pt 1%）、在庫あり、出荷元・販売元はAmazon.co.jp（2026-10-12）。"
+          },
+          "eligibility": {
+            "state": "eligible-indicator-observed",
+            "evidence": "アソシエイト・ツールバーにカテゴリー『携帯電話・スマートフォン』と販売手数料率2.00%を、bsk observeの画面表示で確認。『対象外』の画面表示はなし（2026-10-12）。HTML内の『対象外』の文言は、全商品ページにあるポップアップ用のひな形で、根拠にしていない。"
+          },
+          "taggedUrl": {
+            "state": "verified",
+            "evidence": "記事のリンクはビルド時にストアID kuraberuprodu-22 を付与した https://www.amazon.co.jp/dp/B0GK9CLD8Z?tag=kuraberuprodu-22 の形式。ダイアログからの完全リンク（linkId付き）のコピーは取得していない。"
+          },
+          "destination": {
+            "state": "verified",
+            "evidence": "上記タグ付きURLをログイン済みChromeで開き、最終URLにtag=kuraberuprodu-22が残り、Galaxy S26 256GB・スカイブルーの商品詳細ページに到達（2026-10-12）。"
+          }
+        }
+      }
+    }
+  },
+  "rakuten": {
+    "status": "unverified",
+    "statusBySide": {
+      "left": "unverified",
+      "right": "unverified"
+    },
+    "note": "成果URLは未作成（not-recorded）。楽天市場では、公式または信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
+  },
+  "social": {
+    "status": "none",
+    "directPostUrls": [],
+    "embedUrls": [],
+    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+  },
+  "unconfirmed": [
+    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
+    "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
+    "512GB・ほかの色・Galaxy S26+の価格と比較は未確認。",
+    "SペンのS26 Ultraへの同梱の有無は確認していない（仕様ページは「Sペン対応」のみ）。",
+    "チップ名・実際の処理性能・画質・発熱は評価していない（公式仕様の記載の比較）。",
+    "Samsung.comとAmazonの価格・在庫・キャンペーンは購入時点で変動する。"
+  ],
+  "publicationDecision": "Samsung Japanの仕様・価格と、Amazonの商品一致・ツールバーの表示・タグ付きURLの遷移先は確認済み。ユーザーの「本番反映までやって」の指示に基づき、CI通過後にマージ・本番反映する。"
+}
