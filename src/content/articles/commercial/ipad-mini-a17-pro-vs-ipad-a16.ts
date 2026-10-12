@@ -172,9 +172,37 @@ export const ipadMiniA17ProVsIpadA16Seed: CommercialArticleSeed = {
     "外部ストレージなどでUSB-Cの転送速度を使いたい場合は、USB 3（10Gb/s）対応のiPad miniを確認する",
   ],
   socialProofQuery: "iPad mini A17 Pro iPad A16 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-09",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=1lCXjjSHkuE",
+      title: "iPad mini A17 Proにどハマりしました。",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "スワン",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=IuLOeOkHEPg",
+      title: "【iPad A16】3ヶ月使った本音レビュー｜買ってよかった？不満点も！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author:
+        "MagipapaChannel /PC作業の効率化を日々模索するシニアの動画チャンネル",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "iPad mini（A17 Pro）",

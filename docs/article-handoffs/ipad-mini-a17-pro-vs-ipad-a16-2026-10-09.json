@@ -153,16 +153,22 @@
     "note": "成果URLは未作成（not-recorded）。楽天市場の検索結果は第三者の転売店が中心で、Apple製品として信頼できる販売店の商品詳細ページを特定していない。Amazonが両商品で確認済みのため、購入先条件はAmazonで満たす。"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "本調査では実利用者の適格な投稿の検索を実施していない。適格投稿が存在しないとの断定ではない。SNS欄は表示しない。"
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=1lCXjjSHkuE",
+      "https://www.youtube.com/watch?v=IuLOeOkHEPg"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=1lCXjjSHkuE",
+      "https://www.youtube.com/watch?v=IuLOeOkHEPg"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
-    "SNS上の実利用者の投稿は確認していない（欄は非表示）。",
     "楽天の商品詳細ページと成果URLは未確認・未作成（not-recorded）。",
     "iPad（A16）のApple Intelligence対応はAppleの仕様ページに記載がなく未確認。",
-    "AmazonとAppleの価格・在庫は購入時点で変動する。"
+    "AmazonとAppleの価格・在庫は購入時点で変動する。",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "publicationDecision": "Appleの仕様・価格と、Amazonの商品一致・対象表示・タグ付きURLの遷移先は確認済み。公開判断・マージ・本番反映はユーザーの指示を待つためDraft PRとする。"
 }

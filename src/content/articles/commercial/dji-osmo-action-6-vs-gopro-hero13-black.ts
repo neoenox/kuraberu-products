@@ -175,9 +175,23 @@ export const djiOsmoAction6VsGoproHero13BlackSeed: CommercialArticleSeed = {
     "価格は同梱品が異なるため、購入先の販売ページで同じ構成かを確認してから比べる",
   ],
   socialProofQuery: "Osmo Action 6 HERO13 Black 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-07",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=rh7gkIiXeyM",
+      title: "【GoProレビュー】４ヶ月使ってみた感想。（Hero 13 Black）",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ぺこちゅーぶ!",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "DJI Osmo Action 6",

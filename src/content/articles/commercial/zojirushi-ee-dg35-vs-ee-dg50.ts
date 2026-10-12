@@ -163,9 +163,39 @@ export const zojirushiEeDg35VsEeDg50Seed: CommercialArticleSeed = {
     "連続加湿時間・タイマー・お手入れ機能は共通なので、部屋の広さとサイズで選ぶ",
   ],
   socialProofQuery: "象印 EE-DG35 EE-DG50 加湿器 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-05",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=ioYtIzclCcs",
+      title:
+        "【家電レビュー】フィルター交換が不要の象印加湿器を買ってみた。旧型と違いは・・・",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "M CHANNEL  BLOG",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=2g0kFQZUArA",
+      title:
+        "【ガジェット紹介】象印 スチーム加湿器をこの冬に導入したら生活の質が爆あがりしました。",
+      match: "series",
+      purpose: "実際に使用・購入した人の感想",
+      author: "やーすんとくつろぐ...",
+      summary:
+        "個人の使用感で、比較の根拠ではない。同シリーズまたは近い型番の動画。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "象印 EE-DG35",

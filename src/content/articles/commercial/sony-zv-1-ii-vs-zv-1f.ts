@@ -189,9 +189,23 @@ export const sonyZv1M2VsZv1fSeed: CommercialArticleSeed = {
     "センサー、液晶、4K動画は共通なので、レンズとAF、携帯性の好みで選ぶ",
   ],
   socialProofQuery: "ソニー ZV-1 II ZV-1F 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-29",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=SQA2G2UtbfI",
+      title: "Vlog初心者がZV-1F買った正直レビュー📷🤍｜iPhoneとの差は？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "shirona vlog",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "VLOGCAM ZV-1 II",

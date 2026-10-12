@@ -174,9 +174,37 @@ export const kindleVsKindlePaperwhiteSeed: CommercialArticleSeed = {
     "充電の頻度を減らしたい場合は、最大12週間のKindle Paperwhiteを確認する",
   ],
   socialProofQuery: "Kindle Kindle Paperwhite 2026 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-09",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=S1w3H2l_gMQ",
+      title:
+        "Kindle 無印モデル（第11世代）を実機レビュー！使ってわかったメリット・デメリット",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "VOICE KUROSUKE",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=2KlhDnxFLeg",
+      title:
+        "【最新版】Kindle Paperwhite 第12世代の実力をガチ検証！買って後悔しない？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "CCガジェット│ りくたろ",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Kindle 16GB 最新モデル",

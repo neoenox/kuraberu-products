@@ -164,9 +164,24 @@ export const switchbotHub3VsHub2Seed: CommercialArticleSeed = {
     "AppleのHomeアプリなどにMatterで連携したいデバイスが9台以上になりそうならハブ3を確認する",
   ],
   socialProofQuery: "SwitchBot ハブ3 ハブ2 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-06",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=PrJWpkpia6Y",
+      title: "【ハブ2で良くない？】Switchbotハブ2vsハブ3徹底比較",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "うちすま | おうちスマート化計画",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "SwitchBot ハブ3",

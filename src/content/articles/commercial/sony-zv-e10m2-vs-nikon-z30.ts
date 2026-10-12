@@ -125,10 +125,24 @@ export const sonyZvE10m2VsNikonZ30Seed: CommercialArticleSeed = {
     "ボディの画素数と質量だけでなく、購入予定レンズを含む重さも確認する",
     "必要なフレームレート、記録方式、メモリーカードの条件を公式仕様で照合する",
   ],
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofQuery:
     'YouTube: "ZV-E10 II" "Nikon Z30"; X: same exact-model query',
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=5GkpSQeAHpM",
+      title: "コスパ最強！Sony ZV-E10 IIを買った理由と僕の使い方を解説します！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "かつきしょうへい",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   disclaimer:
     "本記事はメーカー公式ページで確認できる仕様を比較しています。重量はメーカー公称値で、レンズや付属品を含む撮影時の重量とは異なります。販売価格・在庫・付属レンズは販売ページで購入時点の内容をご確認ください。",
 };

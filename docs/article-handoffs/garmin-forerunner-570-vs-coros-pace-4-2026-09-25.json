@@ -59,13 +59,20 @@
     "note": "Affiliate URLs for both products were supplied by the user and point to their corresponding Rakuten product detail pages."
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "note": "Search found videos with affiliate disclosures and review-unit disclosure, plus personal posts on Reddit/note. None met the non-promotional X/YouTube embed requirement; no SNS section is rendered."
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=iQcWDS0l3nE",
+      "https://www.youtube.com/watch?v=N4LXTGnHi2Q"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=iQcWDS0l3nE",
+      "https://www.youtube.com/watch?v=N4LXTGnHi2Q"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "unconfirmed": [
-    "Amazon Forerunner 570 color/size variants require shopper selection on the product detail page"
+    "Amazon Forerunner 570 color/size variants require shopper selection on the product detail page",
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
   "draftReason": "Amazon・楽天の購入URLを左右の商品ごとに登録済み。ローカル表示の確認待ち。"
 }

@@ -161,9 +161,36 @@ export const kindlePaperwhiteVsColorsoftSeed: CommercialArticleSeed = {
     "サイズ・質量・容量・防水は共通なので、カラーが必要かどうかと価格で選ぶ",
   ],
   socialProofQuery: "Kindle Paperwhite Colorsoft 2026 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-06",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=8lR2gItdZ4c",
+      title:
+        "1年以上使ってわかったKindle Paperwhite（第12世代）が最強の理由｜おすすめできる人・できない人は？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "VOICE KUROSUKE",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=T2Lp7GWoYwo",
+      title: "【実機レビュー】Amazon Kindle Colorsoftを買ってみた",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "スマサポチャンネル",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Kindle Paperwhite 16GB 最新モデル",

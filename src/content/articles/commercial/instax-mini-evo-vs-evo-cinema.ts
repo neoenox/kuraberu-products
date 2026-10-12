@@ -179,9 +179,38 @@ export const instaxMiniEvoVsEvoCinemaSeed: CommercialArticleSeed = {
     "レンズ、プリント出力時間、プリント可能枚数は共通なので、動画の有無とエフェクトの好みで選ぶ",
   ],
   socialProofQuery: "instax mini Evo Evo Cinema 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-29",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=F2o-KjzWWZw",
+      title:
+        "【デジカメ＋チェキ】撮る楽しさ、再発見！instax mini Evoを買ったら撮影が楽し過ぎて毎日持ち歩くカメラになった！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ULTRA-Base Gadget & Game Vlog",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=tyjYw_FGgzQ",
+      title:
+        "【動画が撮れるチェキ】instax mini Evo Cinemaと青山デート | まさかの初期不良...？でも最高の思い出が撮れました。",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "高澤 けーすけ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "instax mini Evo",

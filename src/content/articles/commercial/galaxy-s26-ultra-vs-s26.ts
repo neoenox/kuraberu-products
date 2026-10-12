@@ -182,8 +182,23 @@ export const galaxyS26UltraVsS26Seed: CommercialArticleSeed = {
   ],
   socialProofQuery: "Galaxy S26 Ultra S26 違い 使用感 X YouTube",
   socialProofCheckedAt: "2026-10-12",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=jaY3iZYB4Uc",
+      title:
+        "【本音解説】Galaxy S26 Ultra レビュー 今年も傑作 悔しいけど神機 もう他に移れない完璧なスマホ",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ZAKI LABO",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Galaxy S26 Ultra",

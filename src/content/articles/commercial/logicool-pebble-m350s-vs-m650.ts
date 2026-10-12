@@ -149,10 +149,25 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "SmartWheelとサイドボタンを重視するならM650を選ぶ",
     "購入前に販売ページでカラー・価格・在庫を確認する",
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-26",
+  socialProofHasPosts: true,
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery: "Logicool Pebble Mouse 2 M350s Signature M650 使用感",
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=yrP39AJ4Fxw",
+      title:
+        "【ロジクールマウス】静音・小さい・高速スクロールがそろった定番マウスをレビューしてみた！高級品よりもこっちを検討すべし！【Signature M650MGR】",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "はるたんガジェット",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   socialProofDirectPosts: [],
   officialProse: [
     {

@@ -127,8 +127,36 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
     "電池持ちやスマホへの給電を重視するならCharge 6を選ぶ",
     "購入前に販売ページでカラー、価格、在庫を確認する",
   ],
-  socialProofHasPosts: false,
-  socialProofCheckedAt: "2026-09-21",
+  socialProofHasPosts: true,
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=H1jPe5xT5lk",
+      title: "JBL FLIP7 最速レビュー(最新AI技術搭載！Bluetoothスピーカー)",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "大河ちゃんねる",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=TLyj4WF7YCA",
+      title:
+        "JBL CHARGE 6 【実機レビュー】ポータブルスピーカー選びで後悔しないために",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "おすすめ本舗ラボ",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
+  socialProofCheckedAt: "2026-10-12",
   socialProofQuery: "JBL Flip 7 Charge 6 使用感 レビュー",
   officialProse: [
     {

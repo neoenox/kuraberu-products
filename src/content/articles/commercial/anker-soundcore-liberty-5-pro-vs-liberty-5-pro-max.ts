@@ -144,9 +144,38 @@ export const ankerSoundcoreLiberty5ProVsLiberty5ProMaxSeed: CommercialArticleSee
       "購入前に公式と販売ページで色・在庫・最新仕様を確認する",
     ],
     socialProofQuery: "Soundcore Liberty 5 Pro Max Liberty 5 Pro review",
-    socialProofCheckedAt: "2026-09-29",
-    socialProofHasPosts: false,
+    socialProofCheckedAt: "2026-10-12",
+    socialProofHasPosts: true,
     socialProofBestMatch: "model",
+    embeds: [
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=bhVMcDiVzzc",
+        title:
+          "Anker Soundcore Liberty 5 Proを買ってみた。Maxじゃないけどどう？",
+        match: "model",
+        purpose: "実際に使用・購入した人の感想",
+        author: "電子レンジマン",
+        summary:
+          "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+      {
+        provider: "youtube",
+        url: "https://www.youtube.com/watch?v=s7a1O5fWqWY",
+        title: "Anker新型キター！Soundcore Libiety 5 Pro Max買ってみた",
+        match: "model",
+        purpose: "実際に使用・購入した人の感想",
+        author: "ワタナベカズマサ",
+        summary:
+          "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+        autoload: true,
+        autoDisplay: true,
+        compact: true,
+      },
+    ],
     officialProse: [
       {
         heading: "Soundcore Liberty 5 Pro（D1203）",

@@ -40,13 +40,22 @@
     "right": "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fcharge-6%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D"
   },
   "social": {
-    "status": "none",
-    "directPostUrls": [],
-    "embedUrls": [],
-    "excludedCandidates": []
+    "status": "adopted",
+    "directPostUrls": [
+      "https://www.youtube.com/watch?v=H1jPe5xT5lk",
+      "https://www.youtube.com/watch?v=TLyj4WF7YCA"
+    ],
+    "embedUrls": [
+      "https://www.youtube.com/watch?v=H1jPe5xT5lk",
+      "https://www.youtube.com/watch?v=TLyj4WF7YCA"
+    ],
+    "note": "2026-10-12にYouTube検索で実使用・購入者の動画を探し、oEmbedで存在・タイトル・投稿者・埋め込み可否を確認し、概要欄で提供・貸出・PR・案件の表記を確認した。企業提供・貸出・PR表記のある動画は除外した。採用動画は、概要欄にPR・提供・貸出の表記がないもの（一部は、概要欄にアフィリエイト広告の注記のみ）。個人の使用感で、比較の根拠には使わず参考にのみ使う。記事ページでのブラウザー表示確認は別途実施。検索範囲は日本語のYouTubeのみで、他のSNSは未確認。"
   },
   "caveats": [
     "公式価格は販売時期・カラー・販売店によって変動するため、本文では固定価格を比較根拠にしていない。",
-    "SNSの採用投稿は今回の確認範囲では確定できなかったため、SNS欄は表示しない。"
+    "SNSは、2026-10-12にYouTubeの実使用動画を採用した（socialを参照）。"
+  ],
+  "unconfirmed": [
+    "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ]
 }

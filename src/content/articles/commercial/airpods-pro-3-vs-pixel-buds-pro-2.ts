@@ -192,9 +192,36 @@ export const airpodsPro3VsPixelBudsPro2Seed: CommercialArticleSeed = {
     "予算を確認し、公式ストアの表示価格（42,800円と36,800円）と、Amazonの商品ページの価格を見比べる",
   ],
   socialProofQuery: "AirPods Pro 3 Pixel Buds Pro 2 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-11",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=UsxlTEd0Pi8",
+      title:
+        "【買うなら試着】AirPods Pro3を１ヶ月！再レビュー・特性/注意点が見えて来た・私のお気に入り順位1位は〇〇",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "Appleが大好きなんだよ",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=9b3nOiwt8zQ",
+      title: "Google Pixel Buds Pro 2を長期レビューしたけれど・・・",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "ちょっぴー",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "AirPods Pro 3",

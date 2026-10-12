@@ -162,9 +162,39 @@ export const amazonFireTvStick4kMaxVs4kSelectSeed: CommercialArticleSeed = {
     "アプリを多く入れたい場合や、リモコンのアプリボタンを使いたい場合は、16GBとEnhancedリモコンの4K Maxを確認する",
   ],
   socialProofQuery: "Fire TV Stick 4K Max 4K Select 違い 使用感 X YouTube",
-  socialProofCheckedAt: "2026-10-08",
-  socialProofHasPosts: false,
+  socialProofCheckedAt: "2026-10-12",
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=BW9dDRlK3aI",
+      title:
+        "Amazon Fire TV Stick 4K Max 第2世代をレビュー！│第1世代と変わった？おすすめ？",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "まみよし",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=tWAZ6pTi2jo",
+      title:
+        "Fire TV Stick 4K Select 開封！ Fire TV Stick HDとどっちがいい？低スペックでも結構Vega OSで動くけど注意ポイントも！",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "かじまっくチャンネル",
+      summary:
+        "個人の使用感で、比較の根拠ではない。概要欄にアフィリエイト表記あり。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Fire TV Stick 4K Max（第2世代）",

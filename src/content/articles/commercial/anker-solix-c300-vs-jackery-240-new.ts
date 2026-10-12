@@ -135,8 +135,22 @@ export const ankerSolixC300VsJackery240NewSeed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     "Anker Solix C300 A1722 Jackery 240 New JE-240A 使用感 レビュー",
-  socialProofHasPosts: false,
+  socialProofHasPosts: true,
   socialProofBestMatch: "model",
+  embeds: [
+    {
+      provider: "youtube",
+      url: "https://www.youtube.com/watch?v=hDwqhf2X6z0",
+      title: "【車中泊】Jackery240New＋ソーラーパネル40 Miniセット レビュー",
+      match: "model",
+      purpose: "実際に使用・購入した人の感想",
+      author: "5分間さんぽ",
+      summary: "個人の使用感で、比較の根拠ではない。",
+      autoload: true,
+      autoDisplay: true,
+      compact: true,
+    },
+  ],
   officialProse: [
     {
       heading: "Anker Solix C300",
