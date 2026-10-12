@@ -4,13 +4,14 @@
  *
  * 記事seedの embeds[] から投稿URLを集め、無認証で叩ける公式エンドポイントで
  * 存在・埋め込み可否を確認する。
- * - YouTube: oEmbed (200 + embed HTMLあり = alive、4xx = removed)
- * - X: publish.twitter.com oEmbed (200 = alive、404 = removed)
- * - Reddit: redditmedia embed (200 = alive、4xx = removed)
+ * - YouTube: oEmbed (200 + embed HTMLあり = ALIVE、4xx = WARN)
+ * - X: publish.twitter.com oEmbed (200 + embed HTMLあり = ALIVE、4xx = WARN)
+ * - Reddit: redditmedia embed (200 + embed HTMLあり = ALIVE、4xx = WARN)
  * - TikTok / Pinterest: 未配線のため SKIP
  *
- * 判定は3値で、ネットワーク障害・タイムアウトは inconclusive (WARN) とし、
- * 既存記事の削除理由にしない。FAIL (removed確定) がある場合のみ exit 1。
+ * 判定はALIVE/WARN/SKIP。埋め込みエンドポイントの4xxは投稿の削除確定を
+ * 意味しない（権限、埋め込み禁止、Bot制限等）ため必ずWARNにとどめる。
+ * ネットワーク障害・タイムアウトもWARN。投稿の削除判定・記事の自動変更は行わない。
  * 外部依存のため verify ゲートには組み込まず、手動・定期実行用とする。
  * 使い方: node scripts/check-embed-liveness.mjs
  */
@@ -93,8 +94,9 @@ export function buildProbeRequest(provider, canonicalUrl) {
 }
 
 /**
- * プローブ結果の分類。removed確定の場合のみ 'removed' を返す。
- * 通信障害・タイムアウト・想定外応答は 'inconclusive' とし、削除理由にしない。
+ * プローブ結果の分類。到達して埋め込み応答が得られた場合のみ 'alive'。
+ * 4xx（404を含む）は埋め込み拒否・Bot制限等でも発生するため、
+ * 投稿削除の確定根拠とみなさず 'inconclusive' とする。
  * @param {{ status: number | null, body?: string, error?: unknown }} result
  */
 export function classifyProbeResult({ status, error }) {
@@ -102,9 +104,6 @@ export function classifyProbeResult({ status, error }) {
   if (typeof status !== "number") return "inconclusive";
   if (status >= 200 && status < 300) {
     return "alive";
-  }
-  if (status === 400 || status === 401 || status === 403 || status === 404) {
-    return "removed";
   }
   return "inconclusive";
 }
@@ -202,33 +201,27 @@ async function main() {
     }
     const result = await probe(request);
     const verdict = classifyProbeResult(result);
-    const markerOk =
+    const markerMissing =
       verdict === "alive" &&
       request.expectEmbedMarker &&
       !hasEmbedMarker(result.body, request.expectEmbedMarker);
     verdicts.push({
       url: canonical,
-      status: verdict === "alive" && markerOk ? "WARN" : verdict.toUpperCase(),
-      detail:
-        verdict === "alive" && markerOk
-          ? "到達するが埋め込みマーカーなし"
-          : (result.error ?? `HTTP ${result.status}`),
+      status: verdict === "alive" && !markerMissing ? "ALIVE" : "WARN",
+      detail: markerMissing
+        ? "到達するが埋め込みマーカーなし"
+        : (result.error ?? `HTTP ${result.status}`),
     });
   }
-  let removed = 0;
   for (const v of verdicts) {
     console.log(`${v.status} ${v.url} (${v.detail})`);
-    if (v.status === "REMOVED") removed += 1;
   }
   console.log(
-    `embed liveness: ${verdicts.length} URLs, ${removed} removed, ` +
-      `${verdicts.filter((v) => v.status === "WARN").length} inconclusive, ` +
+    `embed liveness: ${verdicts.length} URLs, ` +
+      `${verdicts.filter((v) => v.status === "ALIVE").length} alive, ` +
+      `${verdicts.filter((v) => v.status === "WARN").length} needs review, ` +
       `${verdicts.filter((v) => v.status === "SKIP").length} skipped`,
   );
-  if (removed > 0) {
-    console.error("Removed embeds found. Inspect before touching articles.");
-    process.exit(1);
-  }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
