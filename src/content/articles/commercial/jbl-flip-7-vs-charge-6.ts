@@ -128,6 +128,7 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
     "購入前に販売ページでカラー、価格、在庫を確認する",
   ],
   socialProofHasPosts: true,
+  socialProofBestMatch: "model",
   embeds: [
     {
       provider: "youtube",

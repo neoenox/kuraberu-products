@@ -118,6 +118,7 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
     },
   ],
   socialProofHasPosts: true,
+  socialProofBestMatch: "model",
   embeds: [
     {
       provider: "youtube",

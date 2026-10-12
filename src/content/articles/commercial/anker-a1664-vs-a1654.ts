@@ -133,6 +133,7 @@ export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
     "購入前に販売ページで価格・カラー・在庫を確認する",
   ],
   socialProofHasPosts: true,
+  socialProofBestMatch: "model",
   embeds: [
     {
       provider: "youtube",
