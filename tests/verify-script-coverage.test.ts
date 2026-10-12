@@ -16,6 +16,8 @@ const scripts: Record<string, string> = JSON.parse(
 const EXEMPT: Record<string, string> = {
   "check:external-link-reachability":
     "ネットワーク依存のため .github/workflows/check-external-links.yml で定期実行する",
+  "check:embed-availability":
+    "ネットワーク依存のため .github/workflows/check-embed-availability.yml で定期実行する",
 };
 
 const scriptFile = (command: string) =>
