@@ -59,17 +59,18 @@ describe("check-embed-liveness", () => {
     ).toBeNull();
   });
 
-  it("classifies only confirmed removals as removed", () => {
+  it("never interprets an embed endpoint 4xx as a confirmed post removal", () => {
     expect(classifyProbeResult({ status: 200, body: "{}" })).toBe("alive");
-    for (const status of [400, 401, 403, 404]) {
-      expect(classifyProbeResult({ status, body: "" })).toBe("removed");
+    expect(classifyProbeResult({ status: 201, body: "{}" })).toBe("alive");
+    // 400: URL/リクエスト形式、401/403: 認証・権限・Bot制限、
+    // 404: 埋め込み不可・非公開等でも発生し、投稿削除の証拠にはならない。
+    for (const status of [400, 401, 403, 404, 410, 429, 500]) {
+      expect(classifyProbeResult({ status, body: "" })).toBe("inconclusive");
     }
-    // 通信障害・想定外応答は削除理由にしない
     expect(
       classifyProbeResult({ status: null, body: "", error: "timeout" }),
     ).toBe("inconclusive");
-    expect(classifyProbeResult({ status: 500, body: "" })).toBe("inconclusive");
-    expect(classifyProbeResult({ status: 429, body: "" })).toBe("inconclusive");
+    expect(classifyProbeResult({ status: null, body: "" })).toBe("inconclusive");
   });
 
   it("matches embed markers in escaped oEmbed bodies", () => {
