@@ -162,7 +162,7 @@ export const philipsSonicare7100Hx7420Vs6500Hx7410Seed: CommercialArticleSeed =
     socialProofQuery: "ソニッケアー 7100 6500 違い 使用感 X YouTube",
     socialProofCheckedAt: "2026-10-12",
     socialProofHasPosts: true,
-    socialProofBestMatch: "model",
+    socialProofBestMatch: "series",
     embeds: [
       {
         provider: "youtube",
