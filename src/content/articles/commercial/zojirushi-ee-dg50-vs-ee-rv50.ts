@@ -4,10 +4,10 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   id: "zojirushi-ee-dg50-vs-ee-rv50",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-29",
-  productInfoCheckedAt: "2026-09-29",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "zojirushi-ee-dg50-vs-ee-rv50-2026-09-29",
-  purchaseLinksCheckedAt: "2026-09-29",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -53,7 +53,7 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   ],
   verifiedRows: [
     {
-      label: "象印公式オンラインストア価格（税込・2026-09-29確認）",
+      label: "象印公式オンラインストア価格（税込・2026-10-13確認）",
       left: "27,280円",
       right: "21,780円",
       highlight: "right",
@@ -152,7 +152,7 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
     {
       question: "価格と在庫はどこで確認できますか？",
       answer:
-        "メーカー希望小売価格はどちらもオープン価格です。2026-09-29確認時点の象印公式オンラインストア価格（税込）はEE-DG50 ホワイトが27,280円、EE-RV50 ホワイトが21,780円でした。どちらも季節限定品と案内されているため、価格や在庫は購入時点の販売ページでご確認ください。",
+        "メーカー希望小売価格はどちらもオープン価格です。2026-10-13確認時点の象印公式オンラインストア価格（税込）はEE-DG50 ホワイトが27,280円、EE-RV50 ホワイトが21,780円でした。どちらも季節限定品と案内されているため、価格や在庫は購入時点の販売ページでご確認ください。",
     },
   ],
   decisionGuideSteps: [
@@ -203,24 +203,24 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
     {
       label: "象印 EE-DG35･50 公式仕様・機能",
       url: "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "象印 EE-RV35･50 公式仕様・機能",
       url: "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "象印公式オンラインストア EE-DG50 WA（価格・商品画像）",
       url: "https://www.zojirushi-direct.com/category/HUMIDIFIER/EEDG50_WA.html",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "象印公式オンラインストア EE-RV50 WA（価格・商品画像）",
       url: "https://www.zojirushi-direct.com/category/HUMIDIFIER/EERV50_WA.html",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様は2026年9月29日に象印マホービン公式ページで、価格は同日に象印公式オンラインストアで確認しました。連続加湿時間や適用床面積はメーカーの目安で、使用環境により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様は2026年10月13日に象印マホービン公式ページで、価格は同日に象印公式オンラインストアで確認しました。連続加湿時間や適用床面積はメーカーの目安で、使用環境により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
