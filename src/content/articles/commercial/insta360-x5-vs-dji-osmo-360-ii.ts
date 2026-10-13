@@ -190,7 +190,7 @@ export const insta360X5VsDjiOsmo360IiSeed: CommercialArticleSeed = {
   socialProofQuery: "Insta360 X5 DJI Osmo 360 II 違い 使用感 X YouTube",
   socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
-  socialProofBestMatch: "model",
+  socialProofBestMatch: "series",
   embeds: [
     {
       provider: "youtube",
