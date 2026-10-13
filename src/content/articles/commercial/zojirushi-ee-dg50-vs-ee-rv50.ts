@@ -164,7 +164,7 @@ export const zojirushiEeDg50VsEeRv50Seed: CommercialArticleSeed = {
   socialProofQuery: "象印 EE-DG50 EE-RV50 加湿器 使用感 X YouTube",
   socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
-  socialProofBestMatch: "model",
+  socialProofBestMatch: "series",
   embeds: [
     {
       provider: "youtube",
