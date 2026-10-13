@@ -4,10 +4,10 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
   id: "jbl-tour-pro-3-vs-live-beam-3",
   draft: false,
   publishedAt: "2026-09-27",
-  modifiedAt: "2026-09-27",
-  productInfoCheckedAt: "2026-09-27",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "jbl-tour-pro-3-vs-live-beam-3-2026-09-27",
-  purchaseLinksCheckedAt: "2026-09-27",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -178,24 +178,24 @@ export const jblTourPro3VsLiveBeam3Seed: CommercialArticleSeed = {
     {
       label: "JBL Tour Pro 3 公式仕様・画像・価格",
       url: "https://jp.jbl.com/TOUR-PRO-3.html",
-      date: "2026-09-27",
+      date: "2026-10-13",
     },
     {
       label: "JBL Live Beam 3 公式仕様・画像・価格",
       url: "https://jp.jbl.com/LIVEBEAM3.html",
-      date: "2026-09-27",
+      date: "2026-10-13",
     },
     {
       label: "JBL Tour Pro 3 ブラック 楽天市場商品ページ",
       url: "https://item.rakuten.co.jp/ikeshibu/860068/",
-      date: "2026-09-27",
+      date: "2026-10-13",
     },
     {
       label: "JBL Live Beam 3 楽天市場商品ページ",
       url: "https://item.rakuten.co.jp/akky2018/au-jbl-livebeam3-/",
-      date: "2026-09-27",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様とメーカー希望小売価格は2026年9月27日に各社公式ページで確認しました。再生時間はメーカー公称値で、実使用では音量、コーデック、ANCなどの設定により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれます。",
+    "仕様とメーカー希望小売価格は2026年10月13日に各社公式ページで確認しました。再生時間はメーカー公称値で、実使用では音量、コーデック、ANCなどの設定により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれます。",
 };
