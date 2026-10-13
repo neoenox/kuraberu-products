@@ -14,6 +14,8 @@
  * 使い方:
  *   node scripts/check-git-scope.mjs --expect-branch agent/foo
  *   node scripts/check-git-scope.mjs --expect-branch agent/foo --expect-remote neoenox/kuraberu-products
+ * 破壊的操作の直前にもう一度 --expect-head <sha>つきで実行し、
+ * 取得時からHEADが動いていないことを確認してから操作すること。
  */
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -61,6 +63,15 @@ export function checkScope(state) {
     );
   }
   if (
+    state.expectHead &&
+    state.head &&
+    !state.head.startsWith(state.expectHead)
+  ) {
+    errors.push(
+      `HEAD不一致: 期待=${state.expectHead} 実際=${state.head.slice(0, 7)}。他者が操作した可能性があるため停止します`,
+    );
+  }
+  if (
     state.expectRemote &&
     !(state.originUrl ?? "").includes(state.expectRemote)
   ) {
@@ -93,6 +104,7 @@ function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--expect-branch") out.expectBranch = argv[++i];
     else if (argv[i] === "--expect-remote") out.expectRemote = argv[++i];
+    else if (argv[i] === "--expect-head") out.expectHead = argv[++i];
   }
   return out;
 }
@@ -113,6 +125,7 @@ function collectState(cwd, opts) {
     ),
     expectBranch: opts.expectBranch,
     expectRemote: opts.expectRemote,
+    expectHead: opts.expectHead,
   };
 }
 

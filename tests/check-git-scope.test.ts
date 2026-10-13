@@ -86,4 +86,29 @@ describe("check-git-scope", () => {
   it("fails outside a git repository", () => {
     expect(checkScope({ insideRepo: false }).ok).toBe(false);
   });
+
+  it("stops when HEAD moved since it was last observed", () => {
+    const base = {
+      insideRepo: true,
+      currentBranch: "agent/foo",
+      head: "abc1234567890",
+      originUrl: "https://github.com/neoenox/kuraberu-products",
+      worktrees: [],
+    };
+    expect(checkScope({ ...base, expectHead: "abc1234" }).ok).toBe(true);
+    const moved = checkScope({ ...base, expectHead: "def5678" });
+    expect(moved.ok).toBe(false);
+    expect(moved.errors.join("\n")).toContain("HEAD不一致");
+  });
+
+  it("passes when no expectations are set", () => {
+    const { ok } = checkScope({
+      insideRepo: true,
+      currentBranch: "agent/foo",
+      head: "abc1234",
+      originUrl: "https://github.com/neoenox/kuraberu-products",
+      worktrees: [],
+    });
+    expect(ok).toBe(true);
+  });
 });
