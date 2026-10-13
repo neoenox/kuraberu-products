@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
   id: "anker-a1664-vs-a1654",
   publishedAt: "2026-09-22",
-  modifiedAt: "2026-09-22",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "anker-a1664-vs-a1654-2026-09-22",
-  productInfoCheckedAt: "2026-09-22",
-  purchaseLinksCheckedAt: "2026-09-22",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title:
     "Anker MagGo Power Bank A1664とA1654の違いを比較｜薄型とスタンド付きはどっち？",
@@ -54,8 +54,10 @@ export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
     {
       label: "公式価格（税込）",
       left: "9,990円",
-      right: "9,990円",
+      right: "9,990円（2026-10-13時点で30%OFFの販売価格6,990円を表示）",
       highlight: null,
+      highlightNote:
+        "セールは期間限定の可能性があります。購入前に公式ストアで確認",
     },
     {
       label: "厚さ",
@@ -123,7 +125,7 @@ export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
     {
       question: "価格に違いはある？",
       answer:
-        "今回確認した公式価格は、どちらも税込9,990円です。販売価格や在庫は購入前に確認してください。",
+        "今回確認した公式価格は、どちらも税込9,990円です。2026年10月13日時点では、A1654の公式ストアに30%OFF（6,990円）の表示がありました。セールは変わる可能性があるため、販売価格や在庫は購入前に確認してください。",
     },
   ],
   decisionGuideSteps: [
@@ -186,32 +188,32 @@ export const ankerA1664VsA1654Seed: CommercialArticleSeed = {
     {
       label: "Anker A1664公式",
       url: "https://www.ankerjapan.com/products/a1664",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Anker A1654公式",
       url: "https://www.ankerjapan.com/products/a1654",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Amazon A1664",
       url: "https://www.amazon.co.jp/dp/B0DB1HFZLK",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Amazon A1654",
       url: "https://www.amazon.co.jp/dp/B0CFTT82RH",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 A1664",
       url: "https://item.rakuten.co.jp/anker/a1664/",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 A1654",
       url: "https://item.rakuten.co.jp/anker/a1654/",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
   ],
   disclaimer:

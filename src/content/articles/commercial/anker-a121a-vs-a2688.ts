@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const ankerA121aVsA2688Seed: CommercialArticleSeed = {
   id: "anker-a121a-vs-a2688",
   publishedAt: "2026-09-22",
-  modifiedAt: "2026-09-22",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "anker-a121a-vs-a2688-2026-09-22",
-  productInfoCheckedAt: "2026-09-22",
-  purchaseLinksCheckedAt: "2026-09-22",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title:
     "Anker Nano Charger 70WとPrime Charger 100Wの違いを比較｜3ポート充電器はどっち？",
@@ -173,32 +173,32 @@ export const ankerA121aVsA2688Seed: CommercialArticleSeed = {
     {
       label: "Anker Nano Charger A121A 公式",
       url: "https://www.ankerjapan.com/products/a121a",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Anker Prime Charger A2688 公式",
       url: "https://www.ankerjapan.com/products/a2688",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Amazon A121A",
       url: "https://www.amazon.co.jp/dp/B0F99FCSX7",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "Amazon A2688",
       url: "https://www.amazon.co.jp/dp/B0D73JBJ56",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 A121A",
       url: "https://item.rakuten.co.jp/anker/a121a/",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 A2688",
       url: "https://item.rakuten.co.jp/anker/a2688/",
-      date: "2026-09-22",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
