@@ -10,7 +10,7 @@
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { SYNONYMS } from "../src/lib/article-discovery";
+import { SYNONYMS, expandQueryTermGroups } from "../src/lib/article-discovery";
 
 const clientSource = readFileSync(
   "public/scripts/article-discovery.js",
@@ -45,11 +45,11 @@ function parseSynonymEntries(literal: string): Map<string, string[]> {
   return entries;
 }
 
-describe("article discovery synonym parity", () => {
-  const clientEntries = parseSynonymEntries(
-    extractClientMapLiteral(clientSource),
-  );
+const clientEntries = parseSynonymEntries(
+  extractClientMapLiteral(clientSource),
+);
 
+describe("article discovery synonym parity", () => {
   it("client dictionary is non-empty and parseable", () => {
     expect(clientEntries.size).toBeGreaterThan(0);
   });
@@ -66,5 +66,50 @@ describe("article discovery synonym parity", () => {
         ...serverSynonyms,
       ]);
     }
+  });
+});
+
+/** JS 側の expandTermGroup 関数ソースを抽出する。 */
+function loadClientExpander(): (term: string) => string[] {
+  const marker = "const expandTermGroup = (term) => {";
+  const start = clientSource.indexOf(marker);
+  expect(
+    start,
+    "client JS must define `const expandTermGroup = ...`",
+  ).toBeGreaterThanOrEqual(0);
+  let depth = 0;
+  let end = -1;
+  for (let i = start; i < clientSource.length; i++) {
+    if (clientSource[i] === "{") depth++;
+    else if (clientSource[i] === "}") {
+      depth--;
+      if (depth === 0) {
+        end = i;
+        break;
+      }
+    }
+  }
+  expect(end, "client expandTermGroup must be balanced").toBeGreaterThan(start);
+  const factory = new Function(
+    "SYNONYMS",
+    `${clientSource.slice(start, end + 1)}; return expandTermGroup;`,
+  ) as (synonyms: Map<string, string[]>) => (term: string) => string[];
+  return factory(new Map(clientEntries));
+}
+
+describe("article discovery expansion parity", () => {
+  const expandClient = loadClientExpander();
+
+  it.each([
+    "軽い",
+    "重い",
+    "静か",
+    "手入れが簡単",
+    "超軽い",
+    "安いもの",
+    "掃除",
+    "存在しない語XYZ",
+  ])("expands %s identically on both sides", (term) => {
+    expect(expandClient(term)).toEqual([...expandQueryTermGroups([term])[0]]);
   });
 });
