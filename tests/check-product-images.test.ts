@@ -147,7 +147,7 @@ describe("checkProductImages", () => {
         'export const seed = {\nid: "pub-vs-x",\nleftImage: "/products/pub.png",\n};',
       "public/products/pub.png": "x",
     });
-    const onlyPub = (p) => p === "/articles/pub-vs-x/";
+    const onlyPub = (p: string) => p === "/articles/pub-vs-x/";
     const refs = collectSourceRefs(seedDir(dir, "src"), {
       isPublished: onlyPub,
     });
@@ -163,7 +163,7 @@ describe("checkProductImages", () => {
           { file: "b", name: "gone.png" },
         ],
         path.join(dir, "public", "products"),
-      ).map((entry) => entry.name),
+      ).map((entry: { name: string }) => entry.name),
     ).toEqual(["gone.png"]);
   });
 
