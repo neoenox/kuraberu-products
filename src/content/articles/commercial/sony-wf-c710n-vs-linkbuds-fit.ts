@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyWfC710nVsLinkbudsFitSeed: CommercialArticleSeed = {
   id: "sony-wf-c710n-vs-linkbuds-fit",
   publishedAt: "2026-09-24",
-  modifiedAt: "2026-09-24",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "sony-wf-c710n-vs-linkbuds-fit-2026-09-24",
-  productInfoCheckedAt: "2026-09-24",
-  purchaseLinksCheckedAt: "2026-09-24",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title: "ソニー WF-C710NとLinkBuds Fitの違いを比較｜電池持ち・重さ・価格",
   headline:
@@ -139,7 +139,7 @@ export const sonyWfC710nVsLinkbudsFitSeed: CommercialArticleSeed = {
     "公式価格は12,100円差。販売店の価格・在庫・カラーも確認する",
   ],
   socialProofQuery: "Sony WF-C710N LinkBuds Fit 実際に使った 感想",
-  socialProofCheckedAt: "2026-09-24",
+  socialProofCheckedAt: "2026-10-13",
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   socialProofDirectPosts: [
@@ -186,52 +186,52 @@ export const sonyWfC710nVsLinkbudsFitSeed: CommercialArticleSeed = {
     {
       label: "ソニー WF-C710N 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/WF-C710N/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "ソニー WF-C710N 公式仕様",
       url: "https://www.sony.jp/headphone/products/WF-C710N/spec.html",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "ソニー LinkBuds Fit 公式商品ページ",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "ソニー LinkBuds Fit 公式仕様",
       url: "https://www.sony.jp/headphone/products/LinkBuds_Fit/spec.html",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "Amazon WF-C710N ブラック",
       url: "https://www.amazon.co.jp/dp/B0F3XFNHCW",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "Amazon LinkBuds Fit ホワイト",
       url: "https://www.amazon.co.jp/dp/B0DHZZTPV6",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 WF-C710N",
       url: "https://item.rakuten.co.jp/e-earphone/sony-wfc710n/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 LinkBuds Fit WF-LS910N",
       url: "https://item.rakuten.co.jp/e-earphone/sony-wfls910n/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "Reddit WF-C710N 実利用投稿",
       url: "https://www.reddit.com/r/SonyHeadphones/comments/1l8t11v/the_wfc710n_sound_awesome/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
     {
       label: "Reddit LinkBuds Fit 実利用投稿",
       url: "https://www.reddit.com/r/SonyHeadphones/comments/1gm8ngl/linkbuds_fit_impressions_vs_linkbuds_s/",
-      date: "2026-09-24",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
