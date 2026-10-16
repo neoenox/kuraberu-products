@@ -16,6 +16,8 @@ const scripts: Record<string, string> = JSON.parse(
 const EXEMPT: Record<string, string> = {
   "check:external-link-reachability":
     "ネットワーク依存のため .github/workflows/check-external-links.yml で定期実行する",
+  "check:git-scope":
+    "作業者のcheckoutを検証するエージェント用ガードのためCIゲートに組み込まない",
   "check:embed-liveness":
     "外部サービス依存のため手動・定期実行とし、CIゲートに組み込まない",
 };
