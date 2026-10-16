@@ -1,5 +1,9 @@
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  checkEmbedAvailability,
   checkRedditEmbed,
   checkXEmbed,
   checkYouTubeEmbed,
@@ -218,5 +222,98 @@ describe("toLinkOutcome", () => {
     expect(toLinkOutcome("available")).toBe("reachable");
     expect(toLinkOutcome("unavailable")).toBe("broken");
     expect(toLinkOutcome("inconclusive")).toBe("inconclusive");
+  });
+});
+
+describe("checkEmbedAvailability", () => {
+  function fixtureSeeds(dir: string): string {
+    const seedDir = path.join(dir, "seeds");
+    mkdirSync(seedDir, { recursive: true });
+    writeFileSync(
+      path.join(seedDir, "a-vs-b.ts"),
+      [
+        "export const seed = {",
+        "  embeds: [",
+        '    { provider: "youtube", url: "https://www.youtube.com/watch?v=ok000000001", title: "t" },',
+        '    { provider: "reddit", url: "https://www.reddit.com/r/x/comments/abc1234/t/", author: "someone", title: "t" },',
+        "  ],",
+        "};",
+      ].join("\n"),
+    );
+    return seedDir;
+  }
+
+  function okFetch(url: string) {
+    if (url.includes("youtube.com")) {
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ html: "<iframe></iframe>" }),
+      };
+    }
+    return {
+      ok: true,
+      status: 200,
+      json: async () => ({
+        data: [{ id: "abc1234", author: "someone", removed_by: null }],
+      }),
+    };
+  }
+
+  it("saves state and reports every URL as available", async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "embed-avail-"));
+    const seedDir = fixtureSeeds(dir);
+    const statePath = path.join(dir, "state.json");
+    const summary = await checkEmbedAvailability({
+      seedDir,
+      fetchImpl: okFetch as never,
+      statePath,
+    });
+    expect(summary.total).toBe(2);
+    const saved = JSON.parse(readFileSync(statePath, "utf8"));
+    expect(
+      saved.urls["https://www.youtube.com/watch?v=ok000000001"],
+    ).toMatchObject({ lastOutcome: "reachable" });
+    expect(
+      saved.urls["https://www.reddit.com/r/x/comments/abc1234/t/"],
+    ).toMatchObject({ lastOutcome: "reachable" });
+  });
+
+  it("fails immediately when any embed is confirmed gone", async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "embed-avail-"));
+    const seedDir = fixtureSeeds(dir);
+    const badFetch = async (url: string) =>
+      url.includes("youtube.com")
+        ? { ok: false, status: 404, json: async () => ({}) }
+        : {
+            ok: true,
+            status: 200,
+            json: async () => ({
+              data: [{ id: "abc1234", author: "someone", removed_by: null }],
+            }),
+          };
+    await expect(
+      checkEmbedAvailability({
+        seedDir,
+        fetchImpl: badFetch as never,
+        statePath: path.join(dir, "state.json"),
+      }),
+    ).rejects.toThrow(/unavailable embeds/);
+  });
+
+  it("keeps a YouTube 200-without-html as inconclusive, not broken", async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "embed-avail-"));
+    const seedDir = fixtureSeeds(dir);
+    const inconclusiveFetch = async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({}),
+    });
+    const summary = await checkEmbedAvailability({
+      seedDir,
+      fetchImpl: inconclusiveFetch as never,
+      statePath: path.join(dir, "state.json"),
+    });
+    expect(summary.total).toBe(2);
   });
 });
