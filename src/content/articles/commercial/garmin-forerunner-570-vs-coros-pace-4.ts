@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const garminForerunner570VsCorosPace4Seed: CommercialArticleSeed = {
   id: "garmin-forerunner-570-vs-coros-pace-4",
   publishedAt: "2026-09-25",
-  modifiedAt: "2026-09-25",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "garmin-forerunner-570-vs-coros-pace-4-2026-09-25",
-  productInfoCheckedAt: "2026-09-25",
-  purchaseLinksCheckedAt: "2026-09-25",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title: "Garmin Forerunner 570とCOROS PACE 4を比較｜地図・通話・重さの違い",
   headline: "ランニングウォッチ2機種を比較。地図や通話機能を使うならどっち？",
@@ -184,17 +184,17 @@ export const garminForerunner570VsCorosPace4Seed: CommercialArticleSeed = {
     {
       label: "Garmin Forerunner 570 42mm Black 公式製品ページ",
       url: "https://www.garmin.co.jp/products/wearables/forerunner-570-42-black/",
-      date: "2026-09-25",
+      date: "2026-10-13",
     },
     {
       label: "COROS PACE 4 公式製品ページ",
       url: "https://coros.com/jp/pace4",
-      date: "2026-09-25",
+      date: "2026-10-13",
     },
     {
       label: "COROS PACE 4 公式販売ページ",
       url: "https://coros.com/jp/buy/pace4",
-      date: "2026-09-25",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
