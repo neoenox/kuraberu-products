@@ -39,7 +39,6 @@
     "check:price-claims": "node scripts/check-price-claims.mjs check",
     "check:csp-embed": "node scripts/check-csp-embed-consistency.mjs check",
     "check:git-scope": "node scripts/check-git-scope.mjs",
-    "check:embed-liveness": "node scripts/check-embed-liveness.mjs",
     "announce:draft": "node scripts/generate-x-announcements.mjs",
     "article:add": "node scripts/article-add.mjs",
     "check:article-workflow": "node scripts/check-article-workflow.mjs",
