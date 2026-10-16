@@ -6,6 +6,7 @@ import {
 } from "../src/content/articles";
 
 import { site } from "../src/config/site";
+import { categoryGroup } from "../src/lib/article-categories";
 
 const SITE_ORIGIN = site.url;
 
@@ -62,6 +63,34 @@ describe("sitemap.xml (#390)", () => {
         .at(-1)!;
       expect(lastmodOf(xml, categoryLoc(category))).toBe(expected);
     }
+  });
+
+  it("includes category-group URLs exactly once with the newest group modification", async () => {
+    const xml = await sitemapXml();
+    const allLocs = locs(xml);
+    const categories = [
+      ...new Set(publishedArticleMetadata.map((article) => article.category)),
+    ];
+    const groups = [...new Set(categories.map(categoryGroup))];
+
+    for (const group of groups) {
+      const groupUrl = categoryLoc(group);
+      const newest = publishedArticleMetadata
+        .filter((article) => categoryGroup(article.category) === group)
+        .map((article) => article.modifiedAt)
+        .sort()
+        .at(-1)!;
+      expect(allLocs.filter((url) => url === groupUrl)).toHaveLength(1);
+      expect(lastmodOf(xml, groupUrl)).toBe(newest);
+    }
+
+    // The route emits one page per distinct leaf or group category.
+    const generatedCategories = new Set([...categories, ...groups]);
+    const listedCategories = allLocs.filter((url) =>
+      url.includes("/articles/category/"),
+    );
+    expect(listedCategories).toHaveLength(generatedCategories.size);
+    expect(new Set(listedCategories).size).toBe(listedCategories.length);
   });
 
   it("lists pagination pages with the latest modifiedAt across articles", async () => {

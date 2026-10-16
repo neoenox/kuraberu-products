@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
   id: "logicool-pebble-m350s-vs-m650",
   publishedAt: "2026-09-23",
-  modifiedAt: "2026-09-26",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "logicool-pebble-m350s-vs-m650-2026-09-23",
-  productInfoCheckedAt: "2026-09-26",
-  purchaseLinksCheckedAt: "2026-09-26",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   rakutenLinkStatus: "verified",
   amazonLinkStatus: "verified",
@@ -189,22 +189,22 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     {
       label: "Pebble Mouse 2 M350s 公式商品ページ",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse",
-      date: "2026-09-26",
+      date: "2026-10-13",
     },
     {
       label: "Signature M650 公式商品ページ",
       url: "https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse",
-      date: "2026-09-26",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 M350sGR",
       url: "https://item.rakuten.co.jp/logicool/m350sgr/",
-      date: "2026-09-26",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 M650MGR",
       url: "https://item.rakuten.co.jp/logicool/m650mgr/",
-      date: "2026-09-26",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
