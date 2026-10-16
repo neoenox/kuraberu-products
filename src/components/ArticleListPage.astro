@@ -6,6 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { normalizeDiscoveryText } from '../lib/article-discovery';
 import { safeJsonForScript } from '../lib/safe-json';
 import { comparisonSubjects } from '../lib/article-subjects';
+import { resolveImage } from '../lib/image-resolver';
 
 type ArticleListPagination =
   | { mode: 'first'; totalPages: number }
@@ -57,7 +58,10 @@ const discoveryIndex = discoverySource.map((article) => ({
   audiences: article.audiences,
   uses: article.uses,
   modifiedAt: article.modifiedAt,
-  imagePath: article.imagePath,
+  // JS描画カードは生の /products/ パスをそのまま img src に使うため、
+  // distに存在しないと404になる。解決済みの最適化URLを載せる。
+  // 外部URL・未設定はそのまま（クライアントが従来通り扱う）。
+  imagePath: resolveImage(article.imagePath)?.src ?? article.imagePath,
   subjects: comparisonSubjects(article),
   productCount: article.productCount,
 }));

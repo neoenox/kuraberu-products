@@ -4,10 +4,10 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
   id: "instax-mini-13-vs-mini-41",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-30",
-  productInfoCheckedAt: "2026-09-29",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "instax-mini-13-vs-mini-41-2026-09-29",
-  purchaseLinksCheckedAt: "2026-09-29",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -177,7 +177,7 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
     "レンズ、撮影範囲、フラッシュ、現像時間は共通なので、機能とデザインの好みで選ぶ",
   ],
   socialProofQuery: "instax mini 13 mini 41 比較 使用感 X YouTube",
-  socialProofCheckedAt: "2026-09-30",
+  socialProofCheckedAt: "2026-10-13",
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   socialProofDirectPosts: [
@@ -241,19 +241,19 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
     {
       label: "富士フイルム instax mini 13 公式仕様",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13/specifications",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "富士フイルム instax mini 41 公式仕様",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41/specifications",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "富士フイルム instax 製品の価格表・JANコード一覧",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/jan",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様とカラー、価格の表記は2026年9月29日に富士フイルム公式ページで確認しました。撮影可能パック数や現像時間はメーカーの試験条件による目安で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様とカラー、価格の表記は2026年10月13日に富士フイルム公式ページで確認しました。撮影可能パック数や現像時間はメーカーの試験条件による目安で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
