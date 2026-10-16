@@ -22,9 +22,16 @@ param(
     # - Articles with external embeds (autoload consent gate)
     # - Articles with verified purchase links
     # - Articles with unverified purchase links
+    #
+    # Every path MUST be a served article: its slug must be a member of
+    # PUBLISHED_ARTICLE_PAGE_SLUGS in config/article-template-policy.mjs.
+    # Slugs that are not listed are pruned from the production build (#1088)
+    # and would make this verifier read a stale/absent page and fail deployment.
+    # This is enforced by tests/post-deploy-article-paths.test.ts.
     [string[]]$ArticlePaths = @(
         '/articles/anker-nano-a1638-vs-power-bank-a1256/',
-        '/articles/anker-nano-power-bank-vs-zolo-a1688/',
+        '/articles/amazon-echo-dot-max-vs-echo-dot-5th/',
+        '/articles/sony-wf-c710n-vs-linkbuds-fit/',
         '/articles/logicool-mx-master-4-vs-mx-master-3s/'
     ),
     [string[]]$NonIndexableOkPaths = @('/memo/'),
