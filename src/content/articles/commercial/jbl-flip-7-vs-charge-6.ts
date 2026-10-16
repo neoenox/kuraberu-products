@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
   id: "jbl-flip-7-vs-charge-6",
   publishedAt: "2026-09-21",
-  modifiedAt: "2026-09-21",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "jbl-flip-7-vs-charge-6-2026-09-21",
-  productInfoCheckedAt: "2026-09-21",
-  purchaseLinksCheckedAt: "2026-09-21",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title: "JBL Flip 7とCharge 6の違いを比較｜軽さ・音量・電池持ちは？",
   headline: "JBLの防水ポータブルスピーカーを比較。持ち運びやすさと大音量の違い",
@@ -179,22 +179,22 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
     {
       label: "JBL Flip 7 公式商品ページ",
       url: "https://jp.jbl.com/FLIP-7.html",
-      date: "2026-09-21",
+      date: "2026-10-13",
     },
     {
       label: "JBL Charge 6 公式商品ページ",
       url: "https://jp.jbl.com/CHARGE-6.html",
-      date: "2026-09-21",
+      date: "2026-10-13",
     },
     {
       label: "JBL Flip 7 楽天市場公式ストア",
       url: "https://item.rakuten.co.jp/jblstore/flip-7/",
-      date: "2026-09-21",
+      date: "2026-10-13",
     },
     {
       label: "JBL Charge 6 楽天市場公式ストア",
       url: "https://item.rakuten.co.jp/jblstore/charge-6/",
-      date: "2026-09-21",
+      date: "2026-10-13",
     },
   ],
   disclaimer:

@@ -3,10 +3,10 @@ import type { CommercialArticleSeed } from "./types";
 export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
   id: "tp-link-archer-be550-vs-be450",
   publishedAt: "2026-09-23",
-  modifiedAt: "2026-09-25",
+  modifiedAt: "2026-10-13",
   handoffManifestId: "tp-link-archer-be550-vs-be450-2026-09-23",
-  productInfoCheckedAt: "2026-09-23",
-  purchaseLinksCheckedAt: "2026-09-23",
+  productInfoCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   title: "TP-Link Archer BE550とBE450の違いを比較｜6GHzか10Gbpsポートか",
   headline:
@@ -113,7 +113,7 @@ export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
   ],
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
-  socialProofCheckedAt: "2026-09-23",
+  socialProofCheckedAt: "2026-10-13",
   socialProofQuery: "TP-Link Archer BE550 BE450 user experience Reddit",
   embeds: [
     {
@@ -167,42 +167,42 @@ export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
     {
       label: "TP-Link Archer BE550 公式製品ページ",
       url: "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be550/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "TP-Link Archer BE450 公式製品ページ",
       url: "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be450/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "Amazon Archer BE550/A",
       url: "https://www.amazon.co.jp/dp/B0CWR5F88G",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 Archer BE550/A TP-Linkダイレクト",
       url: "https://item.rakuten.co.jp/tplinkdirect/8885020623956/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "Amazon Archer BE450",
       url: "https://www.amazon.co.jp/dp/B0DG1JKNTQ",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "楽天市場 Archer BE450 ピースリーショップ",
       url: "https://item.rakuten.co.jp/ppp-shop/10dg1jkntq/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "Reddit Archer BE550の利用投稿",
       url: "https://www.reddit.com/r/TpLink/comments/1wa0emz/complete_despair_with_archer_be550_re815xere700x/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
     {
       label: "Reddit Archer BE450の利用投稿",
       url: "https://www.reddit.com/r/TpLink/comments/1uxte6j/is_it_supposed_to_be_connecting_to_24g/",
-      date: "2026-09-23",
+      date: "2026-10-13",
     },
   ],
   disclaimer:

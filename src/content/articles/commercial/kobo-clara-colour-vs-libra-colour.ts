@@ -4,10 +4,10 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
   id: "kobo-clara-colour-vs-libra-colour",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-29",
-  productInfoCheckedAt: "2026-09-29",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "kobo-clara-colour-vs-libra-colour-2026-09-29",
-  purchaseLinksCheckedAt: "2026-09-29",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -54,7 +54,7 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
   ],
   verifiedRows: [
     {
-      label: "楽天Kobo公式ページの価格（2026-09-29確認）",
+      label: "楽天Kobo公式ページの価格（2026-10-13確認）",
       left: "29,800円",
       right: "41,800円",
       highlight: "left",
@@ -168,7 +168,7 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
     {
       question: "価格と在庫はどこで確認できますか？",
       answer:
-        "2026-09-29確認時点の楽天Kobo公式ページの価格は、Clara Colourが29,800円、Libra Colourが41,800円です。スリープカバーなどが付いたセット商品は別価格で、端末本体の価格ではありません。価格や在庫、取り扱い色は変わるため、購入時点の販売ページで確認してください。",
+        "2026-10-13確認時点の楽天Kobo公式ページの価格は、Clara Colourが29,800円、Libra Colourが41,800円です。スリープカバーなどが付いたセット商品は別価格で、端末本体の価格ではありません。価格や在庫、取り扱い色は変わるため、購入時点の販売ページで確認してください。",
     },
   ],
   decisionGuideSteps: [
@@ -234,15 +234,15 @@ export const koboClaraColourVsLibraColourSeed: CommercialArticleSeed = {
       label:
         "楽天Kobo Kobo Clara Colour 公式商品ページ・電子書籍リーダー比較表",
       url: "https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label:
         "楽天Kobo Kobo Libra Colour 公式商品ページ・電子書籍リーダー比較表",
       url: "https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様と価格は2026年9月29日に楽天Kobo公式ページ（楽天ブックス）で確認しました。バッテリー持続時間や収録冊数はメーカーの目安・理論値で、使用環境により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様と価格は2026年10月13日に楽天Kobo公式ページ（楽天ブックス）で確認しました。バッテリー持続時間や収録冊数はメーカーの目安・理論値で、使用環境により変わります。価格・在庫・取扱色は変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
