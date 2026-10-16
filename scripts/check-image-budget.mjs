@@ -43,14 +43,24 @@ const IMAGE_EXTENSIONS = new Set([
 async function listImages(directory) {
   const base = fileURLToPath(directory);
   if (!existsSync(base)) return [];
-  const entries = await readdir(base, { withFileTypes: true });
-  return entries
-    .filter(
-      (entry) =>
+  const images = [];
+  const pending = [base];
+  while (pending.length > 0) {
+    const dir = pending.pop();
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      const file = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        pending.push(file);
+      } else if (
         entry.isFile() &&
-        IMAGE_EXTENSIONS.has(extname(entry.name).toLowerCase()),
-    )
-    .map((entry) => join(base, entry.name));
+        IMAGE_EXTENSIONS.has(extname(entry.name).toLowerCase())
+      ) {
+        images.push(file);
+      }
+      // Ignore symbolic links: they may escape the image budget directory.
+    }
+  }
+  return images;
 }
 
 /** 画像サイズ予算の違反を返す。 */

@@ -50,6 +50,13 @@ git worktree list --porcelain
 - 競合範囲が解消できない作業は、解除条件を記録して保留します。
 - ローカル作業完了後は、統合済み、再開条件なし、未コミット差分なしを確認してから不要なworktreeを削除します。
 
+### 並行セッション安全（共有マシン）
+
+- 自分が作ったworktree・branch以外のパスでGit操作をしません。操作前に`node scripts/check-git-scope.mjs --expect-branch <自分のbranch>`で作業対象を検証します。
+- 破壊的操作の直前は`--expect-head <確認済みSHA>`つきで再検証し、HEADが動いていないことを確認してから実行します。
+- 他セッションのworktree・branchに対するreset・clean・削除・checkout・mergeは行いません。競合を見つけたら操作を止めて記録します。
+- 一時branch名は他と衝突しないよう用途が分かる名前にします。
+
 ## Remote-only GitHub作業の開始前確認
 
 1. repository metadata、default branch、Exact base HEADをGitHubから再取得します。
