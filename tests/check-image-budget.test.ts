@@ -1,4 +1,4 @@
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -33,6 +33,27 @@ describe("check-image-budget", () => {
     const { errors } = await checkImageBudget({ catalogs, maxFileBytes: 100 });
     expect(errors).toHaveLength(2);
     expect(errors[0]).toContain("big.png");
+    expect(errors[1]).toContain("total");
+  });
+
+  it("checks nested product images but ignores other file types", async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "image-budget-nested-"));
+    const nested = path.join(dir, "brand", "model");
+    mkdirSync(nested, { recursive: true });
+    writeFileSync(path.join(nested, "oversized.webp"), Buffer.alloc(110));
+    writeFileSync(path.join(nested, "notes.txt"), Buffer.alloc(500));
+    writeFileSync(path.join(dir, "thumb.png"), Buffer.alloc(20));
+
+    const { count, total, errors } = await checkImageBudget({
+      catalogs: [
+        { dir: pathToFileURL(`${dir}${path.sep}`), maxTotalBytes: 100 },
+      ],
+      maxFileBytes: 100,
+    });
+    expect(count).toBe(2);
+    expect(total).toBe(130);
+    expect(errors).toHaveLength(2);
+    expect(errors[0]).toContain("oversized.webp");
     expect(errors[1]).toContain("total");
   });
 
