@@ -80,6 +80,8 @@
 
 記事ページのコードと記事データは残っているが、2026-10-07の実測で本番がHTTP 302（`/404.html`）を返した記事。過去に記事を取り下げた運用（履歴: `ops: take comparison articles offline`、`ops: withdraw existing articles from public site`）の結果とみられる。再公開するときは、公式情報・購入導線を再確認し、品質ゲートを通してから`PUBLISHED_ARTICLE_PAGE_SLUGS`へ追加する。
 
+公開許可外URLはHTMLを配信しない（#1088）。`PUBLISHED_ARTICLE_PAGE_SLUGS`に載らない記事は、`scripts/prune-unpublished-articles.mjs`が本番ビルド（`dist/articles/<slug>/`）から除去する。以前はrobots `noindex`を宣言する保持中の初稿を配信対象に残していたが、静的アセットが`_redirects`より優先されてHTTP 200で配信され、`noindex`だけではURL直打ち・一時索引を防げなかったため撤廃した。`noindex`は補助的な多重防御として残るが、非配信の根拠は生成物からの除去（prune）である。
+
 | slug                                              | 旧バックログの状態 |
 | ------------------------------------------------- | ------------------ |
 | `airpods-pro-3-vs-sony-wf-1000xm6`                | 表に記載なし       |
