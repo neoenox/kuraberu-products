@@ -123,6 +123,8 @@ pnpm test
 git diff --check
 ```
 
+チェック一覧の正は `config/verification-manifest.mjs` です。`pnpm exec node scripts/check-verification-manifest.mjs` で package.json / CI / docs の不一致を検出できます。
+
 終了codeだけでなく、実行件数、skip、warning、生成page数、差分を確認します。Production設定検証はtest用URLを使い、本物のsecretを使用しません。
 
 ### Remote-only GitHub作業
