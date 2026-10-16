@@ -76,10 +76,17 @@
 
   // 同義語照合: クエリ語同士はAND、各クエリ語とその同義語同士はORで照合する。
   // サーバ側 (src/lib/article-discovery.ts の expandQueryTermGroups) と
-  // 同一の仕様に保つこと。
+  // 同一の仕様に保つこと。辞書キーを含む複合語（例: 「手入れが簡単」）も
+  // 展開する。完全一致のみだと複合語が展開されずサーバと食い違う (#1139)。
+  const expandTermGroup = (term) => {
+    const group = [term];
+    for (const [key, synonyms] of SYNONYMS) {
+      if (term.includes(key)) group.push(...synonyms);
+    }
+    return group;
+  };
   const termMatches = (term, text) => {
-    const group = [term, ...(SYNONYMS.get(term) ?? [])];
-    return group.some((candidate) => text.includes(candidate));
+    return expandTermGroup(term).some((candidate) => text.includes(candidate));
   };
 
   const createCard = (article) => {
