@@ -4,6 +4,11 @@
  * 各グループは「保留理由」「解除条件」「見直し期限（reviewBy）」を持つ。
  * 期限を過ぎたグループは tests/unpublished-article-holds.test.ts が失敗する。
  * 期限が来たら、公開（品質ゲート通過）か削除かを決めて台帳を更新する。
+ *
+ * 配信契約（方針A, #1088 / #1154）: 未公開の記事URLはビルドから除去され、
+ * public/_redirects の `/articles/<slug>/* → /404.html 302` で配信停止される。
+ * そのため公開したら、PUBLISHED_ARTICLE_PAGE_SLUGS へ追加するだけでなく
+ * _redirects の302行も削除する（tests/unpublished-article-holds.test.ts が検証）。
  */
 export const UNPUBLISHED_HOLD_GROUPS = [
   {
