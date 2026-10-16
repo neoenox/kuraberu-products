@@ -18,6 +18,8 @@ const EXEMPT: Record<string, string> = {
     "ネットワーク依存のため .github/workflows/check-external-links.yml で定期実行する",
   "check:embed-availability":
     "ネットワーク依存のため .github/workflows/check-embed-availability.yml で定期実行する",
+  "check:git-scope":
+    "作業者のcheckoutを検証するエージェント用ガードのためCIゲートに組み込まない",
 };
 
 const scriptFile = (command: string) =>
