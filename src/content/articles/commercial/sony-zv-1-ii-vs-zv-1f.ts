@@ -4,10 +4,10 @@ export const sonyZv1M2VsZv1fSeed: CommercialArticleSeed = {
   id: "sony-zv-1-ii-vs-zv-1f",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-29",
-  productInfoCheckedAt: "2026-09-29",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "sony-zv-1-ii-vs-zv-1f-2026-09-29",
-  purchaseLinksCheckedAt: "2026-09-29",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -228,24 +228,24 @@ export const sonyZv1M2VsZv1fSeed: CommercialArticleSeed = {
     {
       label: "ソニー VLOGCAM ZV-1 II 主な仕様",
       url: "https://www.sony.jp/vlogcam/products/ZV-1M2/spec/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "ソニー VLOGCAM ZV-1F 主な仕様",
       url: "https://www.sony.jp/vlogcam/products/ZV-1F/spec.html",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "ソニー VLOGCAM ZV-1 II 商品情報",
       url: "https://www.sony.jp/vlogcam/products/ZV-1M2/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "ソニー VLOGCAM ZV-1F 商品情報",
       url: "https://www.sony.jp/vlogcam/products/ZV-1F/",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様とカラー、価格の表記は2026年9月29日にソニー公式ページで確認しました。電池持ちや連続撮影速度は、メーカーの測定条件による値・最高値で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様とカラー、価格の表記は2026年10月13日にソニー公式ページで確認しました。電池持ちや連続撮影速度は、メーカーの測定条件による値・最高値で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };

@@ -20,11 +20,11 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
     leftPoint: "右手に沿う非対称形状を選びたい人向け",
     rightPoint: "左右対称形状を選びたい人向け",
     publishedAt: "2026-09-24",
-    modifiedAt: "2026-10-05",
+    modifiedAt: "2026-10-13",
     handoffManifestId:
       "logicool-pro-x-superlight-2-dex-vs-superlight-2-2026-09-24",
-    productInfoCheckedAt: "2026-09-24",
-    purchaseLinksCheckedAt: "2026-10-05",
+    productInfoCheckedAt: "2026-10-13",
+    purchaseLinksCheckedAt: "2026-10-13",
     purchaseLinkStatus: "verified",
     leftAmazonLinkStatus: "direct",
     rightAmazonLinkStatus: "direct",
@@ -129,17 +129,17 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
       {
         label: "ロジクールG公式・DEX",
         url: "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x-superlight-2-dex",
-        date: "2026-09-24",
+        date: "2026-10-13",
       },
       {
         label: "ロジクールG公式・SUPERLIGHT 2",
         url: "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x2-superlight-wireless-mouse",
-        date: "2026-09-24",
+        date: "2026-10-13",
       },
       {
         label: "ロジクール公式発表・シリーズ比較",
         url: "https://press.logicool.co.jp/ja-jp/pro-x-superlight-2-dex/",
-        date: "2026-09-24",
+        date: "2026-10-13",
       },
     ],
     disclaimer:

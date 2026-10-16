@@ -4,10 +4,10 @@ export const instaxMiniEvoVsEvoCinemaSeed: CommercialArticleSeed = {
   id: "instax-mini-evo-vs-evo-cinema",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-09-29",
-  productInfoCheckedAt: "2026-09-29",
+  modifiedAt: "2026-10-13",
+  productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "instax-mini-evo-vs-evo-cinema-2026-09-29",
-  purchaseLinksCheckedAt: "2026-09-29",
+  purchaseLinksCheckedAt: "2026-10-13",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -233,19 +233,19 @@ export const instaxMiniEvoVsEvoCinemaSeed: CommercialArticleSeed = {
     {
       label: "富士フイルム instax mini Evo 公式仕様",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo/specifications",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "富士フイルム instax mini Evo Cinema 公式仕様",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema/specifications",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
     {
       label: "富士フイルム instax 製品の価格表・JANコード一覧",
       url: "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/jan",
-      date: "2026-09-29",
+      date: "2026-10-13",
     },
   ],
   disclaimer:
-    "仕様とカラー、価格の表記は2026年9月29日に富士フイルム公式ページで確認しました。プリント可能枚数や記録枚数はメーカーの条件による目安で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
+    "仕様とカラー、価格の表記は2026年10月13日に富士フイルム公式ページで確認しました。プリント可能枚数や記録枚数はメーカーの条件による目安で、使用環境により変わります。価格・在庫・取扱色は販売店ごとに変動するため、購入時点の販売ページでご確認ください。この記事にはアフィリエイトリンクが含まれる場合があります。",
 };
