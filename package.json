@@ -34,6 +34,7 @@
     "check:post-deploy": "node scripts/test-post-deploy-verification.mjs",
     "check:external-link-syntax": "node scripts/check-external-links.mjs",
     "check:external-link-reachability": "node scripts/check-external-link-reachability.mjs",
+    "check:embed-availability": "node scripts/check-embed-availability.mjs",
     "check:source-relevancy": "node scripts/check-source-relevancy.mjs check",
     "check:price-claims": "node scripts/check-price-claims.mjs check",
     "check:csp-embed": "node scripts/check-csp-embed-consistency.mjs check",

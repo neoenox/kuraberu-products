@@ -1,0 +1,54 @@
+name: embed availability
+
+# Adopted social-proof embeds (YouTube/Reddit/X) still exist and stay
+# embeddable. Seeds are checked directly, so no preview build is needed.
+# Weekly cadence + state thresholds keep external access minimal:
+# a single failure never blocks; only persistent signals do.
+on:
+  schedule:
+    - cron: "37 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # releases/v7.0.1
+        with:
+          persist-credentials: false
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # releases/v7.0.0
+        with:
+          node-version-file: .node-version
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Restore embed availability state
+        id: restore-state
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: node scripts/check-embed-availability.mjs --restore-state
+      - name: Check embed availability
+        id: availability
+        run: pnpm check:embed-availability
+      - name: Preserve embed availability state
+        if: ${{ !cancelled() && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && steps.restore-state.outcome == 'success' && (steps.availability.outcome == 'success' || steps.availability.outcome == 'failure') }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: embed-availability-state
+          path: data/embed-availability-state.json
+          retention-days: 90
+          if-no-files-found: error
+          overwrite: true
