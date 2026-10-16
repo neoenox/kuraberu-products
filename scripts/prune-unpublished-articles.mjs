@@ -5,9 +5,11 @@
 // dist/articles/<slug>/index.html が存在するのに slug が sitemap に無いページを
 // 「sitemap 非掲載」と判定する。
 //
-// ただし sitemap 非掲載でも、HTML が robots noindex を宣言しているページは
-// 商品情報確認日まで意図的に保持されている初稿(公開対象外)なので削除しない。
-// 削除対象は「非掲載かつ indexable」= 契約違反の異常ページのみ。
+// 公開許可外の記事 URL は HTML 自体を配信しない方針（#1088）。
+// sitemap 非掲載の記事ディレクトリは robots の宣言内容に関わらずすべて除去する。
+// 以前は robots noindex を宣言する「保持中の初稿」を意図的に残していたが、
+// 静的アセットが存在すると _redirects より優先されて 200 配信されてしまい、
+// noindex だけでは URL 直打ちや一時索引を防げなかったため撤廃した。
 // （旧実装はレンダ済み HTML の meta[name=article:published] を読んでいたが、
 // 実際に出力されるのは property="article:published_time" で一致せず、
 // 常に何も検出しないデッドゲートだったため置き換えた。）
@@ -72,14 +74,6 @@ export function collectSitemapArticleSlugs(distDirectory = "dist") {
   return slugs;
 }
 
-/** HTML が robots noindex を宣言しているか（保持対象の初稿ページ）。 */
-function declaresNoindex(html) {
-  const content =
-    html.match(/<meta\s+name="robots"\s+content="([^"]+)"/i)?.[1] ??
-    html.match(/<meta\s+content="([^"]+)"\s+name="robots"/i)?.[1];
-  return Boolean(content && content.split(",").includes("noindex"));
-}
-
 /**
  * 削除対象（公開対象漏れ）の記事ディレクトリ一覧。
  * - dist/articles が無ければ何もせず空配列を返す。
@@ -101,9 +95,7 @@ export function collectUnpublishedArticleDirectories(distDirectory = "dist") {
       .join("/");
     if (!ARTICLE_PAGE_PATTERN.test(relative)) continue;
     if (publishedSlugs.has(entry.name)) continue;
-    // noindex 宣言付きの非掲載ページは意図的な保持(確認日前の初稿)なので残す。
-    const html = fs.readFileSync(indexHtml, "utf8");
-    if (declaresNoindex(html)) continue;
+    // 公開許可外(#1088): sitemap 非掲載の記事は robots 宣言に関わらず配信しない。
     targets.push(path.join(articlesRoot, entry.name));
   }
   return targets.sort();

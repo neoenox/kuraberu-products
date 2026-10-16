@@ -32,11 +32,6 @@ function writeArticle(distDirectory: string, slug: string, robots?: string) {
   );
 }
 
-/** 保持対象(確認日前の初稿)の記事: sitemap 非掲載 + noindex 宣言付き。 */
-function writeHeldArticle(distDirectory: string, slug: string) {
-  writeArticle(distDirectory, slug, "noindex,nofollow");
-}
-
 function writeSitemap(
   distDirectory: string,
   paths: string[],
@@ -167,23 +162,24 @@ describe("prune unpublished articles", () => {
     ).toBe(true);
   });
 
-  it("keeps unlisted pages that declare robots noindex (held drafts)", () => {
+  it("removes unlisted pages even when they declare robots noindex (#1088)", () => {
     const directory = fixtureDist();
-    writeHeldArticle(directory, "held-draft");
+    // 公開許可外(#1088): noindex 宣言の有無に関わらず、sitemap 非掲載の
+    // 記事ディレクトリはすべて配信対象から除去する。
+    writeArticle(directory, "held-draft", "noindex,nofollow");
     writeArticle(directory, "anomaly");
     writeArticle(directory, "live-b");
     writeSitemap(directory, ["/articles/live-b/"]);
 
-    // 非掲載でも noindex 宣言があれば保持、宣言のない異常ページのみ削除。
     expect(
       collectUnpublishedArticleDirectories(directory).map((item) =>
         path.basename(item),
       ),
-    ).toEqual(["anomaly"]);
+    ).toEqual(["anomaly", "held-draft"]);
 
     pruneUnpublishedArticles({ distDirectory: directory });
     expect(existsSync(path.join(directory, "articles", "held-draft"))).toBe(
-      true,
+      false,
     );
     expect(existsSync(path.join(directory, "articles", "anomaly"))).toBe(false);
     expect(existsSync(path.join(directory, "articles", "live-b"))).toBe(true);
