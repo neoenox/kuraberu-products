@@ -74,7 +74,7 @@ pnpm check:spec-claims
 pnpm test
 ```
 
-`pnpm test` は事前に `astro build`（約30秒）を実行し、`dist` 依存のテストも走らせます。開発中の素早い確認には `pnpm test:unit` を使えます。ビルドを挟まず vitest だけを実行し、`dist` が無ければ dist 依存テスト（約46件）はスキップされます。古い `dist` が残っていると、その内容に対して検証されるため、提出前は必ず `pnpm test` を実行してください。
+`pnpm test` はビルドを挟まずに vitest を実行します（開発中の素早い確認用）。`dist` が無ければ dist 依存テスト（約46件）はスキップされます。dist 依存テストの分類は `tests/dist-suites.mjs` が唯一の情報源で、`pnpm test:unit` はそこから除外したユニットのみ、`pnpm test:dist` は dist スイートのみ（`dist` が無ければ失敗）を実行します。dist の生成物まで検証する場合は `pnpm build && pnpm test:dist`（または `pnpm verify`）を実行してください。古い `dist` が残っているとその内容に対して検証されるため、dist スイートを回す前に再ビルドしてください。
 
 `check:external-link-syntax` はネットワーク到達性を保証しません。公開前のリンク到達性は別の受入確認として実施します。
 
