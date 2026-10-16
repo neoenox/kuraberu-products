@@ -5,3 +5,11 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# Article HTML must revalidate instead of being cached for days. Unpublished
+# articles are pruned from the build (#1088); a long-lived edge cache entry for
+# a removed URL would keep serving stale HTML after it should 404. Pinning the
+# header here prevents TTL drift from re-caching article HTML with a long
+# shared max-age.
+/articles/*
+  Cache-Control: public, max-age=0, must-revalidate
+
