@@ -10,7 +10,11 @@
  */
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { SYNONYMS, expandQueryTermGroups, normalizeDiscoveryText } from "../src/lib/article-discovery";
+import {
+  SYNONYMS,
+  expandQueryTermGroups,
+  normalizeDiscoveryText,
+} from "../src/lib/article-discovery";
 
 const clientSource = readFileSync(
   "public/scripts/article-discovery.js",
@@ -113,7 +117,6 @@ describe("article discovery expansion parity", () => {
     expect(expandClient(term)).toEqual([...expandQueryTermGroups([term])[0]]);
   });
 });
-
 
 /** 実際のブラウザ用 termMatches を抽出して検索結果の一致を比較する。 */
 function loadClientTermMatcher(): (term: string, text: string) => boolean {
