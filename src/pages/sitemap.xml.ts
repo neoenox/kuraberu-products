@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro";
 import { site } from "../config/site";
 import { publishedArticleMetadata } from "../content/articles";
+import { categoryGroup } from "../lib/article-categories";
 import {
   ARTICLE_LIST_PAGE_SIZE,
   maxDate,
@@ -22,16 +23,26 @@ const latestModifiedAt = maxDate(
   publishedArticleMetadata.map((article) => article.modifiedAt),
 );
 
-const categoryEntries: SitemapEntry[] = [
+const publishedCategories = [
   ...new Set(publishedArticleMetadata.map((article) => article.category)),
+];
+// The category route emits both leaf and group pages; keep sitemap in sync.
+const categoryEntries: SitemapEntry[] = [
+  ...new Set([
+    ...publishedCategories,
+    ...publishedCategories.map(categoryGroup),
+  ]),
 ]
   .sort()
   .map((category) => ({
     path: `/articles/category/${category}/`,
-    // カテゴリ内の公開記事で最も新しい modifiedAt
     lastmod: maxDate(
       publishedArticleMetadata
-        .filter((article) => article.category === category)
+        .filter(
+          (article) =>
+            article.category === category ||
+            categoryGroup(article.category) === category,
+        )
         .map((article) => article.modifiedAt),
     ),
   }));
