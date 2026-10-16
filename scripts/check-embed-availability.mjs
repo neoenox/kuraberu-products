@@ -29,6 +29,25 @@ export const YOUTUBE_OEMBED_ENDPOINT = "https://www.youtube.com/oembed";
 export const X_OEMBED_ENDPOINT = "https://publish.x.com/oembed";
 export const ARCTIC_SUBMISSION_ENDPOINT =
   "https://api.pullpush.io/reddit/search/submission/";
+// Providers we can probe without credentials. Anything else is SKIPped.
+export const SUPPORTED_PROVIDERS = ["youtube", "reddit", "x"];
+// oEmbed html must actually carry the embed element, otherwise a 200 only
+// proves the endpoint answered, not that the post stays embeddable.
+export const YOUTUBE_EMBED_MARKERS = ["/embed/"];
+export const X_EMBED_MARKERS = [
+  "platform.x.com/widgets.js",
+  "platform.twitter.com/widgets.js",
+];
+
+/**
+ * True when `html` carries one of the required embed markers. oEmbed json
+ * escapes slashes (`\/`), so normalize before matching.
+ */
+export function hasEmbedMarker(html, markers) {
+  if (typeof html !== "string") return false;
+  const normalized = html.replaceAll("\\/", "/");
+  return markers.some((marker) => normalized.includes(marker));
+}
 
 /**
  * Find `embeds: [...]` array spans in a seed source file.
@@ -148,9 +167,9 @@ async function fetchJson(url, { fetchImpl, timeoutMs }) {
 }
 
 /**
- * YouTube: oEmbed 200 (+html) means the video exists and stays embeddable.
- * 401/404 mean private/deleted. Anything else is inconclusive (bot defense
- * and transient errors must not fail the run on their own).
+ * YouTube: oEmbed 200 with an embed marker means the video exists and stays
+ * embeddable. 401/404 mean private/deleted. Anything else is inconclusive
+ * (bot defense and transient errors must not fail the run on their own).
  */
 export async function checkYouTubeEmbed(
   url,
@@ -162,6 +181,13 @@ export async function checkYouTubeEmbed(
     timeoutMs,
   });
   if (status === 200 && json && typeof json.html === "string") {
+    if (!hasEmbedMarker(json.html, YOUTUBE_EMBED_MARKERS)) {
+      return {
+        url,
+        outcome: "inconclusive",
+        reason: "oembed-missing-embed-marker",
+      };
+    }
     return { url, outcome: "available" };
   }
   if (status === 400 || status === 401 || status === 404) {
@@ -226,9 +252,10 @@ export async function checkRedditEmbed(
 }
 
 /**
- * X: official oEmbed. 200 means the post exists and stays embeddable,
- * 404 means deleted/protected. 401/403 stay inconclusive (login-wall and
- * bot-defense responses are ambiguous).
+ * X: official oEmbed. 200 with an embed marker means the post exists and
+ * stays embeddable, 404 means deleted/protected. 401/403 stay inconclusive
+ * (login-wall and bot-defense responses are ambiguous). A 200 without the
+ * widget marker is inconclusive, not available.
  */
 export async function checkXEmbed(
   url,
@@ -239,7 +266,17 @@ export async function checkXEmbed(
     fetchImpl,
     timeoutMs,
   });
-  if (status === 200 && json && typeof json.author_name === "string") {
+  if (status === 200 && json) {
+    if (typeof json.html !== "string") {
+      return { url, outcome: "inconclusive", reason: "oembed-missing-html" };
+    }
+    if (!hasEmbedMarker(json.html, X_EMBED_MARKERS)) {
+      return {
+        url,
+        outcome: "inconclusive",
+        reason: "oembed-missing-embed-marker",
+      };
+    }
     return { url, outcome: "available" };
   }
   if (status === 404) {
@@ -264,11 +301,14 @@ export async function checkEmbedAvailability({
   timeoutMs = EMBED_TIMEOUT_MS,
   statePath = EMBED_STATE_FILE,
 } = {}) {
-  const records = collectEmbedRecords(seedDir).filter((record) =>
-    ["youtube", "reddit", "x"].includes(record.provider),
-  );
+  const records = collectEmbedRecords(seedDir);
   const seen = new Map();
+  const skipped = [];
   for (const record of records) {
+    if (!SUPPORTED_PROVIDERS.includes(record.provider)) {
+      skipped.push(record);
+      continue;
+    }
     if (!seen.has(record.url)) seen.set(record.url, []);
     seen.get(record.url).push(record);
   }
@@ -337,8 +377,16 @@ export async function checkEmbedAvailability({
   if (unavailable.length) {
     throw new Error(`unavailable embeds:\n${unavailable.join("\n")}`);
   }
-  console.log(`embed availability ok: ${seen.size} URLs`);
-  return { total: seen.size, warnings };
+  for (const record of skipped) {
+    console.log(
+      `SKIP: ${record.url} (${record.provider} is not probed without credentials)`,
+    );
+  }
+  console.log(
+    `embed availability ok: ${seen.size} URLs` +
+      (skipped.length ? `, ${skipped.length} skipped` : ""),
+  );
+  return { total: seen.size, skipped: skipped.length, warnings };
 }
 
 export function restoreEmbedStateArtifact({

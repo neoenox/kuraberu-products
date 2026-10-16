@@ -9,6 +9,7 @@ import {
   checkYouTubeEmbed,
   collectEmbedRecords,
   extractEmbedBlocks,
+  hasEmbedMarker,
   parseEmbedRecords,
   parseRedditId,
   toLinkOutcome,
@@ -97,14 +98,36 @@ describe("collectEmbedRecords", () => {
   });
 });
 
+describe("hasEmbedMarker", () => {
+  it("matches markers after unescaping oEmbed slashes", () => {
+    expect(
+      hasEmbedMarker('<iframe src="\\/embed\\/abc"></iframe>', ["/embed/"]),
+    ).toBe(true);
+    expect(hasEmbedMarker("<iframe></iframe>", ["/embed/"])).toBe(false);
+    expect(hasEmbedMarker(undefined as never, ["/embed/"])).toBe(false);
+  });
+});
+
 describe("checkYouTubeEmbed", () => {
   const url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
-  it("marks oEmbed 200 with html as available", async () => {
+  it("marks oEmbed 200 with an embed marker as available", async () => {
+    const result = await checkYouTubeEmbed(url, {
+      fetchImpl: mockFetch(200, {
+        html: '<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>',
+      }) as never,
+    });
+    expect(result).toMatchObject({ url, outcome: "available" });
+  });
+
+  it("marks oEmbed 200 without an embed marker as inconclusive", async () => {
     const result = await checkYouTubeEmbed(url, {
       fetchImpl: mockFetch(200, { html: "<iframe></iframe>" }) as never,
     });
-    expect(result).toMatchObject({ url, outcome: "available" });
+    expect(result).toMatchObject({
+      outcome: "inconclusive",
+      reason: "oembed-missing-embed-marker",
+    });
   });
 
   it.each([400, 401, 404])("marks oEmbed %i as unavailable", async (status) => {
@@ -192,11 +215,30 @@ describe("checkRedditEmbed", () => {
 describe("checkXEmbed", () => {
   const url = "https://x.com/example_user/status/1234567890";
 
-  it("marks oEmbed 200 with author as available", async () => {
+  it("marks oEmbed 200 with an embed marker as available", async () => {
     const result = await checkXEmbed(url, {
-      fetchImpl: mockFetch(200, { author_name: "someone" }) as never,
+      fetchImpl: mockFetch(200, {
+        html: '<blockquote><script src="https://platform.x.com/widgets.js"></script></blockquote>',
+      }) as never,
     });
     expect(result).toMatchObject({ url, outcome: "available" });
+  });
+
+  it("marks oEmbed 200 without the widget marker as inconclusive", async () => {
+    const missingMarker = await checkXEmbed(url, {
+      fetchImpl: mockFetch(200, { html: "<blockquote></blockquote>" }) as never,
+    });
+    expect(missingMarker).toMatchObject({
+      outcome: "inconclusive",
+      reason: "oembed-missing-embed-marker",
+    });
+    const missingHtml = await checkXEmbed(url, {
+      fetchImpl: mockFetch(200, { author_name: "someone" }) as never,
+    });
+    expect(missingHtml).toMatchObject({
+      outcome: "inconclusive",
+      reason: "oembed-missing-html",
+    });
   });
 
   it("marks oEmbed 404 as unavailable", async () => {
@@ -248,7 +290,9 @@ describe("checkEmbedAvailability", () => {
       return {
         ok: true,
         status: 200,
-        json: async () => ({ html: "<iframe></iframe>" }),
+        json: async () => ({
+          html: '<iframe src="https://www.youtube.com/embed/ok000000001"></iframe>',
+        }),
       };
     }
     return {
@@ -315,5 +359,29 @@ describe("checkEmbedAvailability", () => {
       statePath: path.join(dir, "state.json"),
     });
     expect(summary.total).toBe(2);
+  });
+
+  it("skips providers that cannot be probed without credentials", async () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "embed-avail-"));
+    const seedDir = path.join(dir, "seeds");
+    mkdirSync(seedDir, { recursive: true });
+    writeFileSync(
+      path.join(seedDir, "a-vs-b.ts"),
+      [
+        "export const seed = {",
+        "  embeds: [",
+        '    { provider: "tiktok", url: "https://www.tiktok.com/@x/video/123", title: "t" },',
+        "  ],",
+        "};",
+      ].join("\n"),
+    );
+    const summary = await checkEmbedAvailability({
+      seedDir,
+      fetchImpl: (async () => {
+        throw new Error("must not probe skipped providers");
+      }) as never,
+      statePath: path.join(dir, "state.json"),
+    });
+    expect(summary).toMatchObject({ total: 0, skipped: 1 });
   });
 });
