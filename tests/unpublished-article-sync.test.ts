@@ -6,6 +6,7 @@ import {
   additionalCommercialArticleSeeds,
   publishedArticleMetadata,
 } from "../src/content/articles";
+import { UNPUBLISHED_HOLD_GROUPS } from "../config/unpublished-article-holds.mjs";
 
 /**
  * 未公開記事の同期契約（Refs #389）。
@@ -70,6 +71,21 @@ describe("unpublished article sync (#389)", () => {
       expect(
         publishedPaths.has(`/articles/${slug}/`),
         `${slug} must not be published`,
+      ).toBe(false);
+    }
+  });
+
+  it("keeps held drafts out of the withdrawn mechanisms", () => {
+    const heldSlugs = UNPUBLISHED_HOLD_GROUPS.flatMap((group) => group.slugs);
+    expect(heldSlugs.length).toBeGreaterThan(0);
+    const withdrawn = new Set([
+      ...redirectArticleSlugs(),
+      ...functionArticleSlugs(),
+    ]);
+    for (const slug of heldSlugs) {
+      expect(
+        withdrawn.has(slug),
+        `${slug} is a held draft (noindex) and must not be redirected/404'd as withdrawn`,
       ).toBe(false);
     }
   });
