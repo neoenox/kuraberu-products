@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
   id: "airpods-5-vs-airpods-4-anc",
   publishedAt: "2026-10-04",
-  modifiedAt: "2026-10-04",
+  modifiedAt: "2026-10-17",
   productInfoCheckedAt: "2026-10-04",
   handoffManifestId: "airpods-5-vs-airpods-4-anc-2026-09-30",
   purchaseLinksCheckedAt: "2026-10-04",
@@ -59,6 +59,14 @@ export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（税込・2026-10-17確認）",
+      left: "23,800円（Appleオンラインストア）",
+      right: "販売店で確認",
+      highlight: null,
+      highlightNote:
+        "AppleオンラインストアのAirPods 5（USB-C充電ケース）は税込23,800円です。ANC搭載AirPods 4は2026-10-17時点でApple公式ストアの価格を確認できないため、販売店の販売ページで購入時点の価格を確認してください。",
+    },
     {
       label: "ANC（Appleの公表比較）",
       left: "ANC搭載AirPods 4との比較で最大1.5倍",
@@ -190,6 +198,11 @@ export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
       label: "Apple アクティブノイズキャンセリング搭載AirPods 4 技術仕様",
       url: "https://support.apple.com/ja-jp/121204",
       date: "2026-10-04",
+    },
+    {
+      label: "Apple AirPods 5 購入ページ（価格）",
+      url: "https://www.apple.com/jp/shop/buy-airpods/airpods-5",
+      date: "2026-10-17",
     },
   ],
   disclaimer:
