@@ -20,7 +20,7 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
     leftPoint: "右手に沿う非対称形状を選びたい人向け",
     rightPoint: "左右対称形状を選びたい人向け",
     publishedAt: "2026-09-24",
-    modifiedAt: "2026-10-13",
+    modifiedAt: "2026-10-17",
     handoffManifestId:
       "logicool-pro-x-superlight-2-dex-vs-superlight-2-2026-09-24",
     productInfoCheckedAt: "2026-10-13",
@@ -46,6 +46,14 @@ export const logicoolProXSuperlight2DexVsSuperlight2Seed: CommercialArticleSeed 
       },
     ],
     verifiedRows: [
+      {
+        label: "価格（税込・2026-10-17確認）",
+        left: "26,950円（ロジクールG公式）",
+        right: "26,950円（ロジクールG公式）",
+        highlight: null,
+        highlightNote:
+          "ロジクールG公式オンラインストアでは、DEX・SUPERLIGHT 2とも税込26,950円です（2026-10-17確認）。SUPERLIGHT 2は公式ストアで在庫切れ（入荷通知）となる場合があります。",
+      },
       {
         label: "形状",
         left: "右手に沿う非対称形状",

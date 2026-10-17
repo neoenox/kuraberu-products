@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const ankerNanoA1638VsA1256Seed: CommercialArticleSeed = {
   id: "anker-nano-a1638-vs-power-bank-a1256",
   publishedAt: "2026-09-18",
-  modifiedAt: "2026-10-02",
+  modifiedAt: "2026-10-17",
   handoffManifestId: "anker-nano-a1638-vs-power-bank-a1256-2026-09-18",
   productInfoCheckedAt: "2026-10-02",
   purchaseLinksCheckedAt: "2026-10-02",
@@ -44,6 +44,14 @@ export const ankerNanoA1638VsA1256Seed: CommercialArticleSeed = {
     { label: "A1256公式", url: "https://www.ankerjapan.com/products/a1256" },
   ],
   verifiedRows: [
+    {
+      label: "価格（税込・2026-10-17確認）",
+      left: "7,990円（Anker公式）",
+      right: "5,990円（Anker公式）",
+      highlight: null,
+      highlightNote:
+        "Anker公式のA1638は税込7,990円、A1256は税込5,990円です（2026-10-17確認）。A1256はAnker公式で販売終了となっており、後継はA1638です。価格は変更される場合があります。",
+    },
     {
       label: "単ポート最大出力",
       left: "45W",

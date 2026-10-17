@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
   id: "logicool-mx-master-4-vs-mx-master-3s",
   publishedAt: "2026-09-18",
-  modifiedAt: "2026-10-02",
+  modifiedAt: "2026-10-17",
   handoffManifestId: "logicool-mx-master-4-vs-mx-master-3s-2026-09-18",
   productInfoCheckedAt: "2026-10-02",
   purchaseLinksCheckedAt: "2026-10-01",
@@ -43,6 +43,15 @@ export const logicoolMxMaster4VsMxMaster3sSeed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（税込・2026-10-17確認）",
+      left: "21,890円（Logicool公式オンラインストア）",
+      right: "17,820円（Logicool公式オンラインストア）",
+      highlight: "right",
+      highlightNote:
+        "Logicool公式オンラインストアの表示価格（税込）です（2026-10-17確認）。MX Master 4は18,905〜21,890円、MX Master 3Sは16,200〜17,820円の幅があります。",
+      direction: "lower-is-better",
+    },
     {
       label: "サイズ",
       left: "88.2×128.2×50.8mm",

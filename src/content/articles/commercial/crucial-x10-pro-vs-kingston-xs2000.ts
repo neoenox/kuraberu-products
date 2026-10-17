@@ -4,7 +4,7 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
   id: "crucial-x10-pro-vs-kingston-xs2000",
   draft: false,
   publishedAt: "2026-09-27",
-  modifiedAt: "2026-10-13",
+  modifiedAt: "2026-10-17",
   productInfoCheckedAt: "2026-09-27",
   handoffManifestId: "crucial-x10-pro-vs-kingston-xs2000-2026-09-27",
   purchaseLinksCheckedAt: "2026-10-13",
@@ -55,6 +55,14 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（2026-10-17確認）",
+      left: "販売店で確認",
+      right: "販売店で確認",
+      highlight: null,
+      highlightNote:
+        "Crucial X10 ProとKingston XS2000は、メーカー公式サイトに日本円の販売価格の掲載を2026-10-17時点で確認できないため、販売店の販売ページで購入時点の価格を確認してください。",
+    },
     {
       label: "最大シーケンシャル読込速度（メーカー公称）",
       left: "最大2,100MB/s",

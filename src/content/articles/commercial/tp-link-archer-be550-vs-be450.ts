@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
   id: "tp-link-archer-be550-vs-be450",
   publishedAt: "2026-09-23",
-  modifiedAt: "2026-10-13",
+  modifiedAt: "2026-10-17",
   handoffManifestId: "tp-link-archer-be550-vs-be450-2026-09-23",
   productInfoCheckedAt: "2026-10-13",
   purchaseLinksCheckedAt: "2026-10-13",
@@ -52,6 +52,14 @@ export const tpLinkArcherBe550VsBe450Seed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（2026-10-17確認）",
+      left: "販売店で確認",
+      right: "20,800円（TP-Link公式）",
+      highlight: null,
+      highlightNote:
+        "TP-Link公式のArcher BE450は20,800円です（税込・税抜の記載なし）。Archer BE550は公式製品ページに価格の記載がないため、購入時点の販売価格は販売店で確認してください。",
+    },
     {
       label: "Wi-Fiの周波数帯",
       left: "トライバンド（6GHz・5GHz・2.4GHz）",
