@@ -91,4 +91,11 @@ describe("article layout config", () => {
     expect(() => contentTypeFor(1.5)).toThrow();
     expect(() => contentTypeFor(NaN)).toThrow();
   });
+
+  it("caps the top page latest list at 8 articles (#1090)", () => {
+    // 外部監査 2026-10-10 P2-4（24件＋価格ガイド3件でトップが長い）に対する判断（2026-10-17）:
+    // 監査案「6〜8件」の上限 8 を採用した。全記事への導線は /articles/ にはった「比較記事をすべて見る」が担う。
+    // 実測: 24件=7.4画面 / 8件=4.9画面（desktop 1280×800）。値は article-layout.mjs が唯一の情報源。
+    expect(ARTICLE_LAYOUT.topPage.latestLimit).toBe(8);
+  });
 });

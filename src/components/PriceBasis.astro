@@ -1,0 +1,39 @@
+---
+import { priceAgeDays } from '../lib/reading-costs';
+
+interface Props {
+  checkedAt: string;
+}
+
+// 価格ガイドの「基準日」を、本文の上部で 1 行にまとめて目立たせるラベル。
+// 淡色の注意書き（.notice / .meta）に埋もれていた基準日を、取得日と経過日数つきで示す。
+// 経過日数はビルド時点の値だと古くなるため、PriceCheckedAt と同じく表示時に再計算する。
+const { checkedAt } = Astro.props;
+const days = priceAgeDays(checkedAt);
+const [year, month, day] = checkedAt.split('-').map(Number);
+const label = `${year}年${month}月${day}日`;
+const ageText =
+  days === null
+    ? '確認日を要確認'
+    : `取得から${days}日${days >= 7 ? '（再確認をおすすめします）' : ''}`;
+---
+
+<p class="price-basis" data-price-basis={checkedAt}>
+  <span class="price-basis-label">価格の基準日</span>
+  <time datetime={checkedAt}>{label}</time>
+  <span class="price-basis-age" data-price-basis-age>{ageText}</span>
+</p>
+<script>
+  import { priceAgeDays } from '../lib/reading-costs';
+
+  document.querySelectorAll<HTMLElement>('[data-price-basis]').forEach((node) => {
+    const days = priceAgeDays(node.dataset.priceBasis ?? '');
+    const age = node.querySelector('[data-price-basis-age]');
+    if (age) {
+      age.textContent =
+        days === null
+          ? '確認日を要確認'
+          : `取得から${days}日${days >= 7 ? '（再確認をおすすめします）' : ''}`;
+    }
+  });
+</script>

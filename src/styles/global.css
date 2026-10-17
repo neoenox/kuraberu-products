@@ -575,6 +575,35 @@ a {
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
+/* 価格ガイドの基準日（PriceBasis）: 本文上部で、基準日と経過日数を 1 行で目立たせる。
+   注意書き（.notice）より少し強く見せ、日付を最も読ませたい（#1090）。 */
+.price-basis {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0.75rem 1.1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--accent-soft);
+  font-size: 0.95rem;
+}
+.price-basis-label {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.price-basis time {
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.price-basis-age {
+  color: var(--muted);
+}
+
 /* 記事冒頭の信頼表示（TrustLine）: 「✓ 公式確認済み（日付）・広告を含みます」の 1 行 */
 .trust-line {
   margin: 0.25rem 0 1.25rem;

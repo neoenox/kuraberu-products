@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PriceBasis from '../../../components/PriceBasis.astro';
 import {
   INSTAX_PATTERN_CHECKED_AT,
   PATTERN_PACK_SHEETS,
@@ -49,6 +50,8 @@ const diffLabel = (each: number) => {
     <p class="lead">
       チェキの絵柄つきフィルムは、無地より、どれだけ高いのか。楽天市場の価格を、10枚入り1パックの、1枚あたりに直して比べました。結論は、<strong>モノクロームは無地より安く、ほかの柄は1枚あたり{minGap}〜{maxGap}円高い</strong>です。
     </p>
+
+    <PriceBasis checkedAt={INSTAX_PATTERN_CHECKED_AT} />
 
     <p class="notice">広告・PRを含みます。価格は{checkedLabel}に取得した値で、順位は価格だけで決めています。</p>
 
