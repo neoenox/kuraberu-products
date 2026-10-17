@@ -2,14 +2,7 @@
 
 ## 開発環境
 
-- Node.js: `^20.19.1` または `>=22.12.0`
-- 標準Node: `.node-version`
-- pnpm: `packageManager` に記載したバージョン
-
-```bash
-corepack enable
-pnpm install --frozen-lockfile
-```
+セットアップ手順と必要環境（Node / pnpm のバージョン、`.node-version`）は [README.md](./README.md) の「開発」を参照してください。
 
 秘密値は `.env` またはGit管理外の安全な保管場所で管理します。`.env.example` には変数名と安全な例だけを記載してください。
 
@@ -51,28 +44,7 @@ pnpm verify
 git diff --check
 ```
 
-個別確認が必要な場合 (`package.json` の実体に合わせること):
-
-```bash
-pnpm format:check
-pnpm lint
-pnpm typecheck
-pnpm validate:env
-pnpm validate:content
-pnpm build
-pnpm check:image-magic
-pnpm check:css-usage
-pnpm check:rendered
-pnpm check:deployment
-pnpm check:post-deploy
-pnpm check:external-link-syntax
-pnpm check:official-links
-pnpm check:source-relevancy
-pnpm check:price-claims
-pnpm check:csp-embed
-pnpm check:spec-claims
-pnpm test
-```
+個別のチェックだけを実行する場合は `package.json` の script 名を直接指定します。チェック一覧の正は `config/verification-manifest.mjs` で、`pnpm exec node scripts/check-verification-manifest.mjs` が package.json / CI / docs の不一致を検出します。
 
 `pnpm test` はビルドを挟まずに vitest を実行します（開発中の素早い確認用）。`dist` が無ければ dist 依存テスト（約46件）はスキップされます。dist 依存テストの分類は `tests/dist-suites.mjs` が唯一の情報源で、`pnpm test:unit` はそこから除外したユニットのみ、`pnpm test:dist` は dist スイートのみ（`dist` が無ければ失敗）を実行します。dist の生成物まで検証する場合は `pnpm build && pnpm test:dist`（または `pnpm verify`）を実行してください。古い `dist` が残っているとその内容に対して検証されるため、dist スイートを回す前に再ビルドしてください。
 

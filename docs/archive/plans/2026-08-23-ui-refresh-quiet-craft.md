@@ -1,3 +1,5 @@
+> 記録: 過去時点のスナップショットです。現行ルールではありません（[docs/README.md](../../README.md)）。
+
 # Quiet Craft UI Refresh 実装計画
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
@@ -8,7 +10,7 @@
 
 **Tech Stack:** Astro 7 + 静的CSS（global.css）。品質ゲートは `pnpm verify`。
 
-**Design doc:** docs/plans/2026-08-23-ui-refresh-quiet-craft-design.md
+**Design doc:** docs/archive/plans/2026-08-23-ui-refresh-quiet-craft-design.md
 
 ---
 
@@ -234,7 +236,7 @@ Expected: PASS
 - **2026-08-23 視覚リフレッシュ（Quiet Craft）**: 上記DNAと禁止リストは不変のまま、
   日本語見出しトラッキングの緩和・シャドウの精緻化・hoverモーションの静穏化・
   セクション見出しの縦積み統一を実施。
-  詳細: docs/plans/2026-08-23-ui-refresh-quiet-craft-design.md
+  詳細: docs/archive/plans/2026-08-23-ui-refresh-quiet-craft-design.md
 ```
 
 **Step 2:** Commit: `git commit -m "docs: record Quiet Craft refresh in UI/UX spec"`
