@@ -33,7 +33,7 @@
 
 #### 3.1.1 Quiet Craft 方針（2026-08-23 追記）
 
-「洗練・モダン」方向の視覚リフレッシュ（`docs/plans/2026-08-23-ui-refresh-quiet-craft-design.md`）で確立した方針。上記の配色DNAは維持したまま、表現の精度を上げる:
+「洗練・モダン」方向の視覚リフレッシュ（`docs/archive/plans/2026-08-23-ui-refresh-quiet-craft-design.md`）で確立した方針。上記の配色DNAは維持したまま、表現の精度を上げる:
 
 - **色は `:root` トークン経由で使う**: 補助テキスト色は `var(--ink-soft)` に一本化し、各所のフォールバック直書き（`#666`, `#555` 等）を禁止する
 - **シャドウは2層構成**: `--card-shadow-sm/md/lg` は「近接のシャープな影＋遠方の柔らかい影」の2層。単一のぼかし影は使わない
@@ -262,7 +262,7 @@ Hero「くらべて、選ぶ。」
   - 購入ボタンは `data-placement="next-step"` でクリック計測に参加。哺乳瓶・おむつ記事は対応する診断カテゴリへ、それ以外は診断一覧（/tools/product-finder/）へ遷移させる
   - 商品ガイドには置かない
 - 比較テンプレート直後の「まとめ：…」段落（結論の重複）は置かない（2026-08-18 に全記事から削除済み）
-- 仕様・品質ゲートの詳細は docs/article-layout-v3-2026-08.md「結論直後の「次にすること」1ブロック（NextStepBlock）」
+- 仕様は本書 4.4。実装は `src/components/NextStepBlock.astro` と `config/article-layout.mjs`（`placements` の `next-step`）、順序の例外は `docs/rendered-gate-allowlist.md`
 
 ### 4.5 ナビゲーション（BaseLayout）
 

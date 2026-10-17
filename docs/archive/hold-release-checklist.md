@@ -1,3 +1,5 @@
+> 記録: 過去時点のスナップショットです。現行ルールではありません（[docs/README.md](../README.md)）。
+
 # HOLD Release Checklist
 
 **Branch**: `fix/production-hold-release-p1`
