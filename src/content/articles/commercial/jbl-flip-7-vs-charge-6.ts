@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
   id: "jbl-flip-7-vs-charge-6",
   publishedAt: "2026-09-21",
-  modifiedAt: "2026-10-13",
+  modifiedAt: "2026-10-17",
   handoffManifestId: "jbl-flip-7-vs-charge-6-2026-09-21",
   productInfoCheckedAt: "2026-10-13",
   purchaseLinksCheckedAt: "2026-10-13",
@@ -54,6 +54,14 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（2026-10-17確認）",
+      left: "販売店で確認",
+      right: "販売店で確認",
+      highlight: null,
+      highlightNote:
+        "JBL公式オンラインストアの価格は時期やキャンペーンで変動するため、購入時点の価格は販売ページで確認してください。",
+    },
     {
       label: "重量",
       left: "約0.56kg",

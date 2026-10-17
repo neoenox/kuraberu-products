@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const garminForerunner570VsCorosPace4Seed: CommercialArticleSeed = {
   id: "garmin-forerunner-570-vs-coros-pace-4",
   publishedAt: "2026-09-25",
-  modifiedAt: "2026-10-13",
+  modifiedAt: "2026-10-17",
   handoffManifestId: "garmin-forerunner-570-vs-coros-pace-4-2026-09-25",
   productInfoCheckedAt: "2026-10-13",
   purchaseLinksCheckedAt: "2026-10-13",
@@ -49,6 +49,15 @@ export const garminForerunner570VsCorosPace4Seed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "価格（税込・2026-10-17確認）",
+      left: "74,800円（Garmin公式オンラインストア）",
+      right: "36,300円（COROS公式サイト）",
+      highlight: "right",
+      highlightNote:
+        "Garmin公式オンラインストアのForerunner 570 42mmは税込74,800円、COROS公式サイトのPACE 4は税込36,300円です（2026-10-17確認）。価格は変更される場合があります。",
+      direction: "lower-is-better",
+    },
     {
       label: "時計上の地図表示",
       left: "地図表示なし",
