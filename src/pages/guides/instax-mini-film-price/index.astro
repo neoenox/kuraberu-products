@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PriceBasis from '../../../components/PriceBasis.astro';
 import {
   INSTAX_FILM_CHECKED_AT,
   instaxFilmOffers,
@@ -43,6 +44,8 @@ const checkedLabel = `${year}年${month}月${day}日`;
     <p class="lead">
       チェキのフィルムは、まとめ買いすれば、どれだけ安くなるのか。楽天市場の価格を、1枚あたりに直して比べました。結論は、<strong>安くなるが、差は1枚あたり約{Math.round(tenPack.each - best.each)}円</strong>です。
     </p>
+
+    <PriceBasis checkedAt={INSTAX_FILM_CHECKED_AT} />
 
     <p class="notice">広告・PRを含みます。価格は{checkedLabel}に取得した値で、順位は価格だけで決めています。</p>
 

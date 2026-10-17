@@ -27,3 +27,36 @@ test("compact introduction retains full text and links only compatible cost guid
     "確認から",
   );
 });
+
+// 価格ガイド本文の上部に、基準日と経過日数を 1 行で示すラベルを出す（#1090）。
+// 以前は注意書き（.notice）/メタ行（.meta, 0.88rem の淡色）に埋もれていた。
+const guides = [
+  ["/guides/sd-card-price-per-gb/", "SDカード"],
+  ["/guides/instax-mini-film-price/", "instax mini フィルム"],
+  ["/guides/instax-mini-pattern-film-price/", "instax mini 絵柄つきフィルム"],
+] as const;
+
+for (const [path, name] of guides) {
+  test(`price guide labels the price basis date: ${name}`, async ({ page }) => {
+    await page.goto(path);
+    const basis = page.locator("[data-price-basis]");
+    await expect(basis).toHaveCount(1);
+    await expect(basis).toHaveAttribute("data-price-basis", "2026-09-30");
+    await expect(basis).toContainText("価格の基準日");
+    await expect(basis).toContainText("2026年9月30日");
+    await expect(basis.locator("[data-price-basis-age]")).toContainText(
+      "取得から",
+    );
+    // 注意書きより前に置き、読み飛ばされない位置に出す。
+    expect(
+      await page.evaluate(() => {
+        const b = document.querySelector("[data-price-basis]");
+        const n = document.querySelector(".notice");
+        if (!b || !n) return "missing";
+        return b.compareDocumentPosition(n) & Node.DOCUMENT_POSITION_FOLLOWING
+          ? "before"
+          : "after";
+      }),
+    ).toBe("before");
+  });
+}

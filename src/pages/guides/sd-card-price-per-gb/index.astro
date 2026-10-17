@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PriceBasis from '../../../components/PriceBasis.astro';
 import { SD_CARD_CHECKED_AT, perGb, sdCardOffers } from '../../../data/sd-card-prices';
 import { ARTICLE_LAYOUT } from '../../../../config/article-layout.mjs';
 import { isAffiliateRakutenUrl } from '../../../../config/runtime-env.mjs';
@@ -44,6 +45,8 @@ const checkedLabel = `${year}年${month}月${day}日`;
     <p class="lead">
       4K動画を撮るカメラには、速い SD カードが要ります。容量が大きいほど、1GBあたりは安くなるのか。楽天市場の価格を、1GBあたりに直して比べました。結論は、<strong>大きい容量ほど安く、サンディスクは{smallest.capacityGb}GBと{largest.capacityGb}GBで、1GBあたり約{dropPercent}％の差</strong>です。
     </p>
+
+    <PriceBasis checkedAt={SD_CARD_CHECKED_AT} />
 
     <p class="notice">広告・PRを含みます。価格は{checkedLabel}に取得した値で、順位は価格だけで決めています。</p>
 
