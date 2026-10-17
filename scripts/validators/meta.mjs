@@ -52,7 +52,11 @@ export function validateArticlePurchaseLinkStatus(relative, html) {
     ...html.matchAll(/<a\b[^>]*\bdata-cta-event="purchase"[^>]*>/gi),
   ].length;
   if (ctaCount === 0) return [];
-  return [];
+  const status = readArticlePurchaseLinkStatus(relative, html);
+  if (status === "verified" || status === "direct") return [];
+  return [
+    `${relative}: ${ctaCount} purchase CTA(s) rendered but article:purchase-link-status is ${JSON.stringify(status)} (must be verified|direct; purchase CTA is fail-closed)`,
+  ];
 }
 
 // 記事のコンテンツタイプを
