@@ -145,3 +145,63 @@ type ArticleData = {
 - `left/rightRakutenUrl` を持つ記事数、registry のエントリ数とURL種別（`hb.afl` か `item.rakuten.co.jp` か）
 - `verifiedRows` / `keyDiffRows` / `leftModel` / `rightModel` / `officialProse` / `sourceLinks` の宣言記事数
 - `assets/products` と `public/products` のbasename重複数
+
+## 付録A: 計画の前提検証（2026-10-17 再計測）
+
+本docのマージ（#1164）後、Phase 1/2 が対象とする範囲を独立に再計測した。主要な数値は一致したが、**Phase 1/2 の前提に関わる2点の訂正**がある。
+
+### A.1 再現した数値（一致）
+
+- `article-purchase-links.json`: 55 エントリ = アフィリエイトURL 14 + 素の `item.rakuten.co.jp` 41
+- 画像: `src/assets/products` 333 / `public/products` 111 / basename 重複 111（public は assets の部分集合）
+- 商業記事シード: `*.ts` 126本。インフラ5本（`types`/`index`/`create`/`seeds`/`images`）を除くと **121本**が記事シード（§1.1 の「122ファイル」と1本差＝数え方の差）
+
+### A.2 訂正1: 商品マスタは registry から機械変換できない
+
+registry は **55キー / 29記事ID** のみで、**公開53スラッグのうち登録があるのは2件**（`sony-wf-c710n-vs-linkbuds-fit`, `logicool-pro-x-superlight-2-dex-vs-superlight-2`）。公開中の商業記事の購入URLは seed の `left/rightRakutenUrl` ＋楽天APIで解決され、registry はフォールバックに留まる（`src/components/CommercialArticlePage.astro:83-126`）。
+
+→ Phase 1 の変換元は registry ではなく **seed 121本 + handoff台帳 57本**を主とする必要がある（registry だけでは実データの一部しか覆わない）。
+
+registry には孤児も存在する:
+
+- `hitachi-pv-bl1c4-vs-dyson-sv46-ff`（2件）… 対応する seed ファイルが無い
+- `panasonic-baby-monitor-kx-hc705` / `panasonic-eh-na9m-guide` … `CUSTOM_ARTICLE_PAGE_SLUGS` の非比較ページ
+
+### A.3 訂正2: registry 整合ゲートは商業記事を対象外にしている（付録として§1.3の対象範囲を補足）
+
+`scripts/check-purchase-link-consistency.mjs` は `CommercialArticlePage` を使うソースを明示的にスキップする（`:220` は `return;`、`:400` は `continue;`。理由コメント: 楽天APIで解決するため）。未公開記事もスキップする（`:459`）。
+
+したがって §1.3 の「registry 参照の強制と final hop 検証」が実効するのは主に手書き比較ページであり、**公開中の商業記事における seed URL と registry URL の不一致は検出されない**。
+
+→ Phase 2 の「`check-purchase-link-consistency` を registry からマスタへ委譲」には、**現状の除外を解除する作業（＝新たに強制力を得る変更）**が含まれる。
+
+実データにも不一致がある（公開2記事。遷移先の商品ページは同一で `ut=` パラメータのみ差分）:
+
+| 記事:side                                              | seed `ut`                   | registry `ut`          |
+| ------------------------------------------------------ | --------------------------- | ---------------------- |
+| `sony-wf-c710n-vs-linkbuds-fit:right`                  | `com:"down"`（`comp` なし） | `com:1`, `comp:"down"` |
+| `logicool-pro-x-superlight-2-dex-vs-superlight-2:left` | `com:1`, `bbtn:1`           | `btn:1`（`com` なし）  |
+
+### A.4 宣言と実装が乖離している検証（fail-closed の穴）
+
+`scripts/validators/article-meta.mjs:38-45` の `validateArticlePurchaseLinkStatus` は、コメントで「CTAがある場合は fail-closed にする」と宣言しているが、`ctaCount` を数えた後に **常に `[]` を返す no-op**（`:44`）。購入CTAに対する fail-closed 検証は現状機能していない（next-step ブロックのボタン数は `validateArticleNextStep`（`:137-227`）が別途検証する）。
+
+### A.5 記事横断の商品重複（§1.2 の「記事内重複」とは別軸）
+
+同一 ASIN が**複数の記事**に現れるケースが4件ある。商品マスタ導入の直接の根拠になる。
+
+| ASIN         | 記事                                                                    |
+| ------------ | ----------------------------------------------------------------------- |
+| `B0F3XFNHCW` | `sony-wf-c710n-vs-linkbuds-fit`, `sony-wf-c710n-vs-soundcore-liberty-5` |
+| `B0GV5VHTL6` | `kindle-paperwhite-vs-colorsoft`, `kindle-vs-kindle-paperwhite`         |
+| `B0DZ7WF87P` | `ipad-a16-vs-ipad-air-m4`, `ipad-mini-a17-pro-vs-ipad-a16`              |
+| `B0HGF5B9D8` | `zojirushi-ee-dg35-vs-ee-dg50`, `zojirushi-ee-dg50-vs-ee-rv50`          |
+
+seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/product/`・percent-encoded を含む全パターン）。4組とも、記事間で商品の状態を突合する仕組みは無い。
+
+### A.6 Phase 1 に載せられる小さな検証項目
+
+1. 同一 ASIN が複数記事にあるとき、`*LinkStatus` が全記事で一致すること（マスタ未導入でも実装可能）
+2. registry の孤児検出（対応する seed の無いエントリ）
+3. `validateArticlePurchaseLinkStatus` の実装（宣言どおり fail-closed に）
+4. `CommercialArticlePage` の除外をやめ、seed ↔ registry の URL 一致を検証（A.3 の2件を修正して通す）
