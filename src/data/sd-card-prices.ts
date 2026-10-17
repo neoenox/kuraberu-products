@@ -1,9 +1,23 @@
 // フルサイズ SDXC カード（UHS-I U3・V30）の 1GB あたり価格。
 // 価格は楽天市場商品検索 API で取得した値（税込・送料込み表示の出品のみ）。
 // 送料別・並行輸入品・microSD・複数枚セット・ノーブランド品は比較に入れない。
+// 「海外リテール」と記載された出品は、その旨と保証の注意を note に書いた場合のみ掲載する（#1091）。
 // 容量ごとに、送料込みで在庫のある出品のうち最安の 1 件を、ブランドごとに載せる。
 
 export const SD_CARD_CHECKED_AT = "2026-09-30";
+
+// 「海外リテール」と記載された出品について、販売ページの流通形態・保証を確認した記録（#1091）。
+// 監査指摘（外部監査 2026-10-10 P3-7）に対して、ページに書かれていないことは断定しない方針で扱う。
+export const sdCardOverseasRetailReview = {
+  reviewedAt: "2026-10-17",
+  /** 確認した販売ページ（note に「海外リテール」と書いた出品の itemUrl と一致させる） */
+  references: [
+    "https://item.rakuten.co.jp/kazamidori/4582563857148/",
+    "https://item.rakuten.co.jp/kazamidori/4582563857209/",
+  ],
+  finding:
+    "両ページとも商品名に「海外リテール」の記載があった。一方で「並行輸入品」の記載は無く、保証条件の記載も見つからなかった。断定できないため、掲載は継続し、note で注意喚起する。",
+} as const;
 
 export interface SdCardOffer {
   /** クリック計測用の識別子（英数字とハイフン） */
@@ -89,7 +103,7 @@ export const sdCardOffers: readonly SdCardOffer[] = [
     itemUrl: "https://item.rakuten.co.jp/kazamidori/4582563857148/",
     affiliateUrl:
       "https://hb.afl.rakuten.co.jp/hgc/g00q2htn.w78ma2fe.g00q2htn.w78mb951/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkazamidori%2F4582563857148%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkazamidori%2Fi%2F10020989%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
-    note: "販売ページに「海外リテール」と書かれています。国内向けの製品とは、パッケージや保証の扱いが違う場合があります。",
+    note: "販売ページに「海外リテール」と書かれています。国内向けの製品とは、パッケージや保証の扱いが違う場合があり、販売ページに保証条件の記載は見つかりませんでした（2026年10月17日確認）。購入前に販売ページでご確認ください。",
   },
   {
     id: "sd-card-kioxia-512",
@@ -100,7 +114,7 @@ export const sdCardOffers: readonly SdCardOffer[] = [
     itemUrl: "https://item.rakuten.co.jp/kazamidori/4582563857209/",
     affiliateUrl:
       "https://hb.afl.rakuten.co.jp/hgc/g00q2htn.w78ma2fe.g00q2htn.w78mb951/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkazamidori%2F4582563857209%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fkazamidori%2Fi%2F10020991%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
-    note: "販売ページに「海外リテール」と書かれています。国内向けの製品とは、パッケージや保証の扱いが違う場合があります。",
+    note: "販売ページに「海外リテール」と書かれています。国内向けの製品とは、パッケージや保証の扱いが違う場合があり、販売ページに保証条件の記載は見つかりませんでした（2026年10月17日確認）。購入前に販売ページでご確認ください。",
   },
 ];
 
