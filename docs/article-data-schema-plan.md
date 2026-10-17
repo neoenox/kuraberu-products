@@ -150,22 +150,24 @@ type ArticleData = {
 
 本docのマージ（#1164）後、Phase 1/2 が対象とする範囲を独立に再計測した。主要な数値は一致したが、**Phase 1/2 の前提に関わる2点の訂正**がある。
 
+> 更新: PR #1166（2026-10-17）で Phase 1 の4項目を実装し、あわせて再計測で判明した誤り（A.2 の孤児3件 → 0件、シード 121 → 130件）を本付録に反映した。各項目の実装状況は A.2〜A.6 の各所に記載。
+
 ### A.1 再現した数値（一致）
 
 - `article-purchase-links.json`: 55 エントリ = アフィリエイトURL 14 + 素の `item.rakuten.co.jp` 41
 - 画像: `src/assets/products` 333 / `public/products` 111 / basename 重複 111（public は assets の部分集合）
-- 商業記事シード: `*.ts` 126本。インフラ5本（`types`/`index`/`create`/`seeds`/`images`）を除くと **121本**が記事シード（§1.1 の「122ファイル」と1本差＝数え方の差）
+- 商業記事シード: `*.ts` 126本。インフラ5本（`types`/`index`/`create`/`seeds`/`images`）を除くと 121本だが、**1ファイルに複数シードを束ねた `kakaku-september-2026.ts` があるため、`commercialArticleSeeds` の実数は 130件**（PR #1166 で訂正。§1.1 の「122ファイル」はファイル数）
 
 ### A.2 訂正1: 商品マスタは registry から機械変換できない
 
 registry は **55キー / 29記事ID** のみで、**公開53スラッグのうち登録があるのは2件**（`sony-wf-c710n-vs-linkbuds-fit`, `logicool-pro-x-superlight-2-dex-vs-superlight-2`）。公開中の商業記事の購入URLは seed の `left/rightRakutenUrl` ＋楽天APIで解決され、registry はフォールバックに留まる（`src/components/CommercialArticlePage.astro:83-126`）。
 
-→ Phase 1 の変換元は registry ではなく **seed 121本 + handoff台帳 57本**を主とする必要がある（registry だけでは実データの一部しか覆わない）。
+→ Phase 1 の変換元は registry ではなく **seed 130件 + handoff台帳 57本**を主とする必要がある（registry だけでは実データの一部しか覆わない）。
 
-registry には孤児も存在する:
+registry の孤児は **0件**（29記事IDすべてが seed か専用ページに対応。PR #1166 で検出テストを追加）:
 
-- `hitachi-pv-bl1c4-vs-dyson-sv46-ff`（2件）… 対応する seed ファイルが無い
-- `panasonic-baby-monitor-kx-hc705` / `panasonic-eh-na9m-guide` … `CUSTOM_ARTICLE_PAGE_SLUGS` の非比較ページ
+- ~~`hitachi-pv-bl1c4-vs-dyson-sv46-ff`（2件）… 対応する seed ファイルが無い~~ → 誤り。シードは複数シード束 `src/content/articles/commercial/kakaku-september-2026.ts` にあり、ページも存在する（未公開）。ファイル名だけを見た判定ミス
+- `panasonic-baby-monitor-kx-hc705` / `panasonic-eh-na9m-guide` … seed は無いが `CUSTOM_ARTICLE_PAGE_SLUGS` の専用ページが registry を参照している（孤児ではない）
 
 ### A.3 訂正2: registry 整合ゲートは商業記事を対象外にしている（付録として§1.3の対象範囲を補足）
 
@@ -175,7 +177,7 @@ registry には孤児も存在する:
 
 → Phase 2 の「`check-purchase-link-consistency` を registry からマスタへ委譲」には、**現状の除外を解除する作業（＝新たに強制力を得る変更）**が含まれる。
 
-実データにも不一致がある（公開2記事。遷移先の商品ページは同一で `ut=` パラメータのみ差分）:
+実データにも不一致がある（公開2記事。遷移先の商品ページは同一で `ut=` パラメータのみ差分）。**PR #1166 で解消済み** — 描画は seed 優先で、handoff台帳（`docs/article-handoffs/*.json`）の affiliateUrl も seed と一致するため、registry を seed に合わせた（レンダリング出力は不変）:
 
 | 記事:side                                              | seed `ut`                   | registry `ut`          |
 | ------------------------------------------------------ | --------------------------- | ---------------------- |
@@ -184,7 +186,7 @@ registry には孤児も存在する:
 
 ### A.4 宣言と実装が乖離している検証（fail-closed の穴）
 
-`scripts/validators/article-meta.mjs:38-45` の `validateArticlePurchaseLinkStatus` は、コメントで「CTAがある場合は fail-closed にする」と宣言しているが、`ctaCount` を数えた後に **常に `[]` を返す no-op**（`:44`）。購入CTAに対する fail-closed 検証は現状機能していない（next-step ブロックのボタン数は `validateArticleNextStep`（`:137-227`）が別途検証する）。
+`scripts/validators/article-meta.mjs:38-45` の `validateArticlePurchaseLinkStatus` は、コメントで「CTAがある場合は fail-closed にする」と宣言しているが、`ctaCount` を数えた後に **常に `[]` を返す no-op**（`:44`）。購入CTAに対する fail-closed 検証は現状機能していない（next-step ブロックのボタン数は `validateArticleNextStep`（`:137-227`）が別途検証する）。→ **PR #1166 で fail-closed に実装済み**（live は `scripts/validators/meta.mjs`、`article-meta.mjs` 側は参照の無い死にコード）。
 
 ### A.5 記事横断の商品重複（§1.2 の「記事内重複」とは別軸）
 
@@ -201,7 +203,7 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 
 ### A.6 Phase 1 に載せられる小さな検証項目
 
-1. 同一 ASIN が複数記事にあるとき、`*LinkStatus` が全記事で一致すること（マスタ未導入でも実装可能）
-2. registry の孤児検出（対応する seed の無いエントリ）
-3. `validateArticlePurchaseLinkStatus` の実装（宣言どおり fail-closed に）
-4. `CommercialArticlePage` の除外をやめ、seed ↔ registry の URL 一致を検証（A.3 の2件を修正して通す）
+1. 同一 ASIN が複数記事にあるとき、`*LinkStatus` が全記事で一致すること（マスタ未導入でも実装可能）→ **PR #1166 で実装**（`tests/article-product-identity.test.ts`）
+2. registry の孤児検出（対応する seed の無いエントリ）→ **PR #1166 で実装**（実際の孤児は0件）
+3. `validateArticlePurchaseLinkStatus` の実装（宣言どおり fail-closed に）→ **PR #1166 で実装**
+4. `CommercialArticlePage` の除外をやめ、seed ↔ registry の URL 一致を検証（A.3 の2件を修正して通す）→ **PR #1166 で実装**（A.3 の2件は registry を seed に合わせて解消）
