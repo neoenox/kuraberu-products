@@ -90,17 +90,34 @@ function sectionsOf(html: string) {
 }
 
 describe("rendered article CTA audit", () => {
-  it("allows purchase CTAs for any article regardless of purchase-link-status", () => {
+  it("fails closed when a purchase CTA renders without a verified purchase-link-status", () => {
+    // 状態メタが無い（旧テンプレート）・unavailable は CTA を許可しない（fail-closed）。
     expect(
       validateArticlePurchaseLinkStatus(
         "articles/example/index.html",
         '<a data-cta-event="purchase" href="https://a.r10.to/example">購入</a>',
       ),
-    ).toEqual([]);
+    ).toHaveLength(1);
     expect(
       validateArticlePurchaseLinkStatus(
         "articles/example/index.html",
         '<meta name="article:purchase-link-status" content="unavailable"><a data-cta-event="purchase" href="https://a.r10.to/example">購入</a>',
+      ),
+    ).toHaveLength(1);
+    // verified / direct は許可する。
+    for (const status of ["verified", "direct"]) {
+      expect(
+        validateArticlePurchaseLinkStatus(
+          "articles/example/index.html",
+          `<meta name="article:purchase-link-status" content="${status}"><a data-cta-event="purchase" href="https://a.r10.to/example">購入</a>`,
+        ),
+      ).toEqual([]);
+    }
+    // CTA が無ければ状態に関わらず許可する。
+    expect(
+      validateArticlePurchaseLinkStatus(
+        "articles/example/index.html",
+        '<meta name="article:purchase-link-status" content="unavailable">',
       ),
     ).toEqual([]);
   });

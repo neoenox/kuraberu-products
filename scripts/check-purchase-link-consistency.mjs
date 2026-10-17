@@ -302,6 +302,8 @@ export function checkPurchaseLinkConsistency({ srcDirectory = "src" } = {}) {
       registryKeys,
     );
   }
+  // 商用記事は seed の楽天URLを描画するため、registry との突合を別途行う（#1064）。
+  errors.push(...findCommercialSeedRegistryDrift({ srcDirectory }));
   return errors;
 }
 
@@ -465,6 +467,35 @@ export function collectCommercialCtaUrls({
     }
   }
   return ctas.sort((a, b) => a.key.localeCompare(b.key));
+}
+
+/**
+ * 公開済みの商用記事 seed の楽天URL と registry の purchaseUrl の一致を検査する（#1064）。
+ *
+ * 商用記事の描画は seed の楽天URLを優先し（CommercialArticlePage.astro:97-126）、
+ * registry はそのフォールバックになる。両方に値がある場合は registry が seed に
+ * 一致していなければならない（registry 側が独自にドリフトするのを防ぐ）。
+ * Amazon URL は collectCommercialCtaUrls と同じ理由で対象外。
+ * 戻り値: 不一致メッセージの配列（0件なら一致）。
+ */
+export function findCommercialSeedRegistryDrift({
+  srcDirectory = "src",
+  isPublished = isPublishedArticlePath,
+} = {}) {
+  const registry = loadRegistryEntries(srcDirectory);
+  const errors = [];
+  for (const { article, key, url } of collectCommercialCtaUrls({
+    srcDirectory,
+    isPublished,
+  })) {
+    const side = key.endsWith("-left") ? "left" : "right";
+    const registryUrl = registry.get(`${article}:${side}`);
+    if (!registryUrl || registryUrl === url) continue;
+    errors.push(
+      `${article}:${side}: registry purchaseUrl must match seed ${side}RakutenUrl (the seed is what renders). registry=${registryUrl} seed=${url}`,
+    );
+  }
+  return errors;
 }
 
 /** 正規化済みホスト名（小文字・末尾ドット除去）。無効な URL は null。 */
