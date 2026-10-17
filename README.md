@@ -10,7 +10,7 @@ Astro + TypeScript で構築した、日本向けの2商品比較サイトです
 - SNS等の感想を扱う場合も、比較根拠とは分離して参考情報として示す
 - 記事ごとに検証日・出典・変更履歴を管理する
 
-開発・レビュー規約は [CONTRIBUTING.md](./CONTRIBUTING.md)、AIエージェントと並行作業の安全規約は [AGENTS.md](./AGENTS.md) を参照してください。
+開発・レビュー規約は [CONTRIBUTING.md](./CONTRIBUTING.md)、AIエージェントと並行作業の安全規約は [AGENTS.md](./AGENTS.md) を参照してください。コンテンツと広告の詳細規約は [AGENTS.md](./AGENTS.md) の「コンテンツと広告」にあります。
 
 ## 開発
 
@@ -40,14 +40,7 @@ pnpm verify
 pnpm test:e2e
 ```
 
-E2E はローカルの Astro build を起動し、Chromium で次を確認します。
-
-- 外部 embed は同意前に third-party request を発生させない
-- 診断の required / optional 質問を実ブラウザ操作で進められる
-- 未確認の商品購入リンクでは購入 CTA を表示しない
-- 公開ページの主要な遷移と生成 HTML の browser-level 契約を維持する
-
-PR の必須チェックでは、静的・生成物ゲート（`pnpm verify`）と browser/network ゲート（`pnpm test:e2e`）を別 job として実行します。E2E の失敗は skip、timeout 延長、assertion の弱体化で隠さず、原因を修正します。
+E2E はローカルの Astro build を起動し、Chromium で実ブラウザの操作・表示・ネットワーク契約（外部 embed の同意前リクエスト、診断の required / optional 進行、未確認の商品購入リンクでの購入 CTA 非表示など）を確認します。PR の必須チェックでは `verify` と `e2e` を別 job として実行し、E2E の失敗は skip、timeout 延長、assertion の弱体化で隠さず原因を修正します。確認項目と運用の詳細は [CONTRIBUTING.md](./CONTRIBUTING.md) を参照してください。
 
 外部リンクの実到達性は別ゲートです。
 

@@ -102,28 +102,12 @@ Remote-only作業では、ローカルworktreeの有無やローカルprocessを
 
 ### ローカル作業
 
-変更内容に応じ、次を直列で実行します。
+変更内容に応じ、`config/verification-manifest.mjs` に定義されたチェックを直列で実行します（一覧の正は同マニフェスト。`pnpm exec node scripts/check-verification-manifest.mjs` が package.json / CI / docs の不一致を検出します）。
 
-```bash
-pnpm format:check
-pnpm lint
-pnpm typecheck
-pnpm validate:env
-pnpm validate:content
-pnpm build
-pnpm check:rendered
-pnpm check:deployment
-pnpm check:external-link-syntax
-pnpm check:official-links
-pnpm check:source-relevancy
-pnpm check:price-claims
-pnpm check:csp-embed
-pnpm check:spec-claims
-pnpm test
-git diff --check
-```
+- 反復作業中: `pnpm verify:fast`
+- Ready化前: `pnpm verify` と `git diff --check`
 
-チェック一覧の正は `config/verification-manifest.mjs` です。`pnpm exec node scripts/check-verification-manifest.mjs` で package.json / CI / docs の不一致を検出できます。
+ネットワーク依存の購入リンク整合性と `vitest` は `verify:fast` の対象外です。
 
 終了codeだけでなく、実行件数、skip、warning、生成page数、差分を確認します。Production設定検証はtest用URLを使い、本物のsecretを使用しません。
 
@@ -137,8 +121,9 @@ git diff --check
 
 ## GitとPR
 
+`CONTRIBUTING.md` の「Issueとブランチ」「CommitとPR」に従います。エージェント固有の追加規約:
+
 - default branchへ直接commitまたはpushしません。
-- 1つのPRへ無関係な目的を混在させません。
 - ローカル作業ではstaging対象を明示し、未関連差分を含めません。
 - force pushを行いません。
 - 他担当branchの書換え、削除、流用を行いません。

@@ -5,7 +5,7 @@
 // 重みと上限は config/article-layout.mjs の relatedSelection が唯一の情報源で、
 // RelatedArticles.astro と品質ゲートがここを経由する。
 //
-// 方針（docs/article-layout-v3-2026-08.md）:
+// 方針（config/article-layout.mjs の relatedSelection が唯一の情報源）:
 // - 用途（uses）・製品タイプ（tags）・検索意図（audiences）の一致が主信号
 // - 同カテゴリ一致は補助信号（+category）
 // - ブランド名タグ（パナソニック など）は一致しても弱信号（brandTagWeight）。
