@@ -4,10 +4,10 @@ export const instaxMiniEvoVsEvoCinemaSeed: CommercialArticleSeed = {
   id: "instax-mini-evo-vs-evo-cinema",
   draft: false,
   publishedAt: "2026-09-29",
-  modifiedAt: "2026-10-13",
+  modifiedAt: "2026-10-17",
   productInfoCheckedAt: "2026-10-13",
   handoffManifestId: "instax-mini-evo-vs-evo-cinema-2026-09-29",
-  purchaseLinksCheckedAt: "2026-10-13",
+  purchaseLinksCheckedAt: "2026-10-17",
   purchaseLinkStatus: "verified",
   amazonLinkStatus: "verified",
   rakutenLinkStatus: "verified",
@@ -36,8 +36,7 @@ export const instaxMiniEvoVsEvoCinemaSeed: CommercialArticleSeed = {
   rightPoint: "動画撮影と動画QRコード付きプリントを楽しみたい人向け",
   leftAmazonUrl: "https://www.amazon.co.jp/dp/B0C85H3GTH",
   rightAmazonUrl: "https://www.amazon.co.jp/dp/B0GGNPV24C",
-  leftRakutenUrl:
-    "https://hb.afl.rakuten.co.jp/hgc/g00prnmn.w78maa38.g00prnmn.w78mba41/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmapcamera%2F4547410520088%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmapcamera%2Fi%2F12050274%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+  leftRakutenUrl: null,
   rightRakutenUrl:
     "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
   leftImage: "/products/instax-mini-evo-black.jpg",

@@ -169,16 +169,21 @@
     }
   },
   "rakuten": {
-    "status": "verified",
+    "status": "partial",
+    "left": null,
+    "right": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
     "leftProductPage": "https://item.rakuten.co.jp/mapcamera/4547410520088/",
-    "leftShop": "マップカメラ楽天市場店",
-    "leftProductVerified": true,
     "rightProductPage": "https://item.rakuten.co.jp/jism/4547410562293-34-1793-n/",
-    "rightShop": "Joshin web 家電とPCの大型専門店",
+    "leftProductVerified": true,
     "rightProductVerified": true,
+    "leftShop": "マップカメラ楽天市場店",
+    "rightShop": "Joshin web 家電とPCの大型専門店",
     "generation": "2026-09-29に楽天市場商品検索API（IchibaItem Search 20260701）へアフィリエイトID付きで問い合わせ、返却された成果URL（affiliateUrl）を記載。商品名とJAN入りの商品ページURLを確認。認証情報は保存しない。成果URLをクリックしての遷移先確認は未実施。",
-    "left": "https://hb.afl.rakuten.co.jp/hgc/g00prnmn.w78maa38.g00prnmn.w78mba41/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmapcamera%2F4547410520088%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmapcamera%2Fi%2F12050274%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
-    "right": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a"
+    "statusBySide": {
+      "left": "unavailable",
+      "right": "verified"
+    },
+    "leftUnavailableNote": "2026-10-17: 左（富士フイルム instax mini Evo ブラック、楽天 マップカメラ楽天市場店 mapcamera/4547410520088）の商品ページがHTTP 404（出品の終了）になり、成果リンクの到達先が商品ページではなくなったため、楽天CTAを非表示にした。Amazonの確認済み商品リンクと右側の楽天リンクは維持。"
   },
   "social": {
     "status": "adopted",
@@ -199,5 +204,5 @@
     "Evoの発売時期、Evo Cinemaのカラー名は公式ページで確認できず、記事に掲載していない。",
     "YouTube以外のSNS（X・Reddit等）は未確認。YouTube動画は検索結果から選んだ例で、網羅的な調査ではない。"
   ],
-  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（verified）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
+  "publicationDecision": "公式仕様・カラー・価格表記・画像、Amazon/楽天の商品一致、楽天成果URL（右のみverified。左は2026-10-17に出品終了で404となり非表示化）、Amazonの対象可否とタグ付きURLの遷移先（verified）を確認済み。所有者の指示により2026-09-29に公開。"
 }
