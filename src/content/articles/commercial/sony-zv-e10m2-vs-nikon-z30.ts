@@ -3,7 +3,7 @@ import type { CommercialArticleSeed } from "./types";
 export const sonyZvE10m2VsNikonZ30Seed: CommercialArticleSeed = {
   id: "sony-zv-e10m2-vs-nikon-z30",
   publishedAt: "2026-10-03",
-  modifiedAt: "2026-10-03",
+  modifiedAt: "2026-10-17",
   productInfoCheckedAt: "2026-10-03",
   handoffManifestId: "sony-zv-e10m2-vs-nikon-z30-2026-09-26",
   purchaseLinksCheckedAt: "2026-10-03",
@@ -54,6 +54,14 @@ export const sonyZvE10m2VsNikonZ30Seed: CommercialArticleSeed = {
     },
   ],
   verifiedRows: [
+    {
+      label: "メーカー希望小売価格",
+      left: "オープン価格",
+      right: "オープン価格",
+      highlight: null,
+      highlightNote:
+        "ソニーZV-E10 IIとニコンZ30は、いずれもメーカーがオープン価格（オープンプライス）としており、販売価格は販売店ごとに異なります。購入時点の価格は販売店の販売ページで確認してください。",
+    },
     {
       label: "4K UHD動画の最高フレームレート",
       left: "60p",
