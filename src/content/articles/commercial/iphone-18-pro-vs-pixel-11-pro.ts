@@ -153,7 +153,7 @@ export const iphone18ProVsPixel11ProSeed: CommercialArticleSeed = {
   ],
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
-  socialProofCheckedAt: "2026-10-10",
+  socialProofCheckedAt: "2026-10-18",
   socialProofQuery: "iPhone 18 Pro Pixel 11 Pro 実機レビュー 使用感",
   embeds: [
     {
@@ -183,6 +183,19 @@ export const iphone18ProVsPixel11ProSeed: CommercialArticleSeed = {
       autoload: true,
       autoDisplay: true,
       compact: true,
+    },
+    {
+      provider: "reddit",
+      url: "https://www.reddit.com/r/GooglePixel/comments/1wqkjt0/kinda_regret/pchtpu8/",
+      title: "Pixel 11 ProとiPhone 18 Proを併用する利用者の投稿",
+      match: "model",
+      purpose: "両機を日常的に併用する利用者の使用感（補足情報）",
+      summary:
+        "Pixel 11 Pro（512GB）とiPhone 18 Proを併用している利用者のコメント。両機の型番に触れ、日常的に両方を使っていると述べています。個人の感想で、比較の根拠ではない。",
+      author: "dakk33",
+      community: "GooglePixel",
+      tone: "mixed",
+      autoDisplay: true,
     },
   ],
   officialProse: [

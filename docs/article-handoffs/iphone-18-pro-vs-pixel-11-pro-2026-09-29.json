@@ -146,13 +146,15 @@
     "status": "adopted",
     "directPostUrls": [
       "https://www.youtube.com/watch?v=wTM2VlD58T0",
-      "https://www.youtube.com/watch?v=mK5m6ghHxgE"
+      "https://www.youtube.com/watch?v=mK5m6ghHxgE",
+      "https://www.reddit.com/r/GooglePixel/comments/1wqkjt0/kinda_regret/pchtpu8/"
     ],
     "embedUrls": [
       "https://www.youtube.com/watch?v=wTM2VlD58T0",
-      "https://www.youtube.com/watch?v=mK5m6ghHxgE"
+      "https://www.youtube.com/watch?v=mK5m6ghHxgE",
+      "https://www.reddit.com/r/GooglePixel/comments/1wqkjt0/kinda_regret/pchtpu8/"
     ],
-    "note": "2026-10-10にYouTubeのoEmbedで両動画の存在・タイトル・投稿者・埋め込み可否を直接確認。1件目は投稿者自身の購入記載あり、2件目は実機検証の記載あり。投稿日と説明文全文の確認、記事ページでのブラウザー表示確認は未実施。抜粋範囲に案件・PR表記なし。比較の根拠には使わず参考情報のみ。"
+    "note": "YouTube 2本は2026-10-10にoEmbedで存在・タイトル・投稿者・埋め込み可否を確認済み。2026-10-18にRedditの個人投稿（r/GooglePixel, u/dakk33）を追加候補として公開API（api.pullpush.io）で本文・投稿者・投稿日（2026-09-28）を確認し、両機（Pixel 11 Pro 512GB / iPhone 18 Pro）の併用記載を確認した。記事作成者による最終目視（投稿の表示・前後文脈）は未実施。抜粋範囲に案件・PR表記なし。比較の根拠には使わず参考情報のみ。"
   },
   "unconfirmed": [
     "iPhone 18 Pro 256GBのAmazon商品詳細ページとASINは未確認。Amazonボタンは検索結果へ案内し、検索時点で表示された別モデル・アクセサリーを本商品として扱わない。",
