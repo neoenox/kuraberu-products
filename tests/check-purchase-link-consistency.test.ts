@@ -26,6 +26,7 @@ import {
   loadRegistryKeys,
   outboundHostAllowlist,
   resolveFinalUrl,
+  validateCommercialCtaDestinations,
 } from "../scripts/check-purchase-link-consistency.mjs";
 import {
   mkdtempSync,
@@ -233,17 +234,31 @@ describe("purchase link consistency gate (registry keys)", () => {
     expect(errors).toEqual([]);
   });
 
-  it("skips the commercial template (dynamic API resolution)", () => {
-    const source = `<CommercialArticlePage articleId="x" />
-<PurchaseCard href={leftSearch} />`;
+  it("checks commercial template pages like any other page (#1064 Phase 2d)", () => {
+    // 実ページの形（コンポーネントへ articleId を渡すだけ）は違反にならない。
+    const cleanErrors: string[] = [];
+    checkArticleSource(
+      `<CommercialArticlePage articleId="x" />`,
+      "pages/articles/x/index.astro",
+      cleanErrors,
+      registry,
+    );
+    expect(cleanErrors).toEqual([]);
+
+    // 除外解除により、ページソースへの購入URL直書きは他記事と同じく fail-closed。
     const errors: string[] = [];
     checkArticleSource(
-      source,
+      `<CommercialArticlePage articleId="x" />
+<PurchaseCard href={leftSearch} />`,
       "pages/articles/x/index.astro",
       errors,
       registry,
     );
-    expect(errors).toEqual([]);
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain(
+      "must come from the articlePurchaseLinks registry",
+    );
+    expect(errors[0]).toContain("leftSearch");
   });
 
   it("reports a missing registry when running the full check", () => {
@@ -614,7 +629,7 @@ describe("verified CTA destination audit (issue #342)", () => {
     );
   });
 
-  it("collects Rakuten CTAs from published, non-draft commercial seeds only", () => {
+  it("collects Rakuten CTAs from non-draft commercial seeds, including unpublished (#1064 Phase 2d)", () => {
     const directory = mkdtempSync(join(tmpdir(), "cta-commercial-"));
     try {
       const seedDir = join(directory, "content", "articles", "commercial");
@@ -638,11 +653,9 @@ describe("verified CTA destination audit (issue #342)", () => {
         join(seedDir, "seeds.ts"),
         'export const ids = { id: "published-a" };',
       );
-      const ctas = collectCommercialCtaUrls({
-        srcDirectory: directory,
-        isPublished: (path: string) => path !== "/articles/unlisted-c/",
-      });
-      // Amazon は対象外。draft と公開許可リスト外の記事、seed 以外のモジュールは除外。
+      const ctas = collectCommercialCtaUrls({ srcDirectory: directory });
+      // Amazon は対象外。draft と seed 以外のモジュールは除外。Phase 2d で公開
+      // 許可リストによる除外を解除したため、未公開の非下書き seed も対象になる。
       expect(ctas).toEqual([
         {
           article: "published-a",
@@ -654,10 +667,62 @@ describe("verified CTA destination audit (issue #342)", () => {
           key: "published-a:rakuten-right",
           url: "https://item.rakuten.co.jp/shop/published-a/",
         },
+        {
+          article: "unlisted-c",
+          key: "unlisted-c:rakuten-left",
+          url: "https://hb.afl.rakuten.co.jp/ichiba/unlisted-c/left",
+        },
+        {
+          article: "unlisted-c",
+          key: "unlisted-c:rakuten-right",
+          url: "https://item.rakuten.co.jp/shop/unlisted-c/",
+        },
       ]);
     } finally {
       rmSync(directory, { recursive: true, force: true });
     }
+  });
+
+  // 除外解除で新たに強制力が生まれる検査。CommercialArticlePage は confirmed でない
+  // 遷移先の seed URL を描画しないため、これまでは「CTA が黙って消える」だけだった。
+  it("rejects commercial CTAs whose seed URL is not a product detail page (#1064 Phase 2d)", () => {
+    const ctas = [
+      {
+        article: "a",
+        key: "a:rakuten-left",
+        url: "https://hb.afl.rakuten.co.jp/ichiba/x/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshop%2F123%2F",
+      },
+      {
+        article: "a",
+        key: "a:rakuten-right",
+        url: "https://item.rakuten.co.jp/shop/456/",
+      },
+      {
+        article: "b",
+        key: "b:rakuten-left",
+        url: "https://hb.afl.rakuten.co.jp/ichiba/y/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fweb%2F%3Fv%3Dsony",
+      },
+      {
+        article: "b",
+        key: "b:rakuten-right",
+        url: "https://hb.afl.rakuten.co.jp/ichiba/z/",
+      },
+    ];
+    const errors = validateCommercialCtaDestinations({ ctas });
+    expect(errors).toHaveLength(2);
+    expect(errors[0]).toContain('b: CTA "b:rakuten-left"');
+    expect(errors[0]).toContain("must point to a product detail page");
+    expect(errors[1]).toContain('b: CTA "b:rakuten-right"');
+  });
+
+  it("accepts every commercial CTA in the repository (#1064 Phase 2d)", () => {
+    // 実データの不変条件: 全商用 seed の楽天 CTA が商品詳細ページを指す。
+    expect(validateCommercialCtaDestinations({ srcDirectory: "src" })).toEqual(
+      [],
+    );
+    expect(
+      collectCommercialCtaUrls({ srcDirectory: "src" }).length,
+    ).toBeGreaterThan(0);
   });
 
   it("rejects chains that exceed the redirect hop cap", async () => {

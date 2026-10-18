@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { isPublishedArticlePath } from "../config/article-template-policy.mjs";
+import { isVerifiedRakutenPurchaseDestination } from "../config/runtime-env.mjs";
 
 // 購入リンクの単一情報源ゲート（購入URL集約の恒久化）。
 //
@@ -21,8 +21,10 @@ import { isPublishedArticlePath } from "../config/article-template-policy.mjs";
 //   差が出る（pigeon-bottle-240 / logicool-zone 等）。式レベルなら常に一致する。
 // - 作者が「片方だけ直す」ミスをした瞬間に、ビルドが失敗する。
 //
-// 対象: src/pages/articles/*/index.astro（手書き記事）。商用記事
-// （CommercialArticlePage）はビルド時に Rakuten API で URL を解決するため対象外。
+// 対象: src/pages/articles/*/index.astro（手書き記事 + 商用テンプレート記事）。
+// 商用記事（CommercialArticlePage）は購入URLを seed から描画し、どの販売先を案内
+// できるかの可否は商品マスタ（check:product-master）が正となる。購入URLをページ
+// ソースへ直書きしない点は手書き記事と同じ規則で検査する（#1064 Phase 2d で除外を解除）。
 //
 // Issue #342: 上記に加え、purchaseLinkStatus === "verified" の記事が参照する
 // 購入URL（アウトバウンドCTA）の最終遷移先を機械検証する。
@@ -216,8 +218,9 @@ export function loadRegistryEntries(srcDirectory) {
 }
 
 // 1 記事のソースを検査する。エラーを errors に積む。
+// #1064 Phase 2d: 商用テンプレート記事（CommercialArticlePage）も除外しない。
+// 購入URLは seed（描画値）+ 商品マスタ（可否）由来で、ページソースに直書きしない。
 export function checkArticleSource(source, relative, errors, registryKeys) {
-  if (/CommercialArticlePage/.test(source)) return; // テンプレート側で 1 回だけ検査
   // ArticleComparisonPage with explicit left/right props: the component renders
   // PurchaseCard internally, so no page-level PurchaseCard to compare against.
   // CTA destination is checked separately by auditVerifiedCtaDestinations.
@@ -302,8 +305,11 @@ export function checkPurchaseLinkConsistency({ srcDirectory = "src" } = {}) {
       registryKeys,
     );
   }
-  // 商用記事は seed の楽天URLを描画するため、registry との突合を別途行う（#1064）。
+  // 商用記事は seed の楽天URLを描画し、可否は商品マスタが正。registry の商用キーが
+  // 残っている間は seed との不一致を検出する（#1064 Phase 2d）。
   errors.push(...findCommercialSeedRegistryDrift({ srcDirectory }));
+  // 除外解除: 商用記事の楽天 CTA が商品詳細ページを指していることも検証する。
+  errors.push(...validateCommercialCtaDestinations({ srcDirectory }));
   return errors;
 }
 
@@ -399,7 +405,10 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
     if (!fs.existsSync(file)) continue;
     if (statuses.get(slug) !== "verified") continue;
     const source = fs.readFileSync(file, "utf8");
-    if (/CommercialArticlePage/.test(source)) continue; // API 解決のため対象外
+    // 商用テンプレート記事の CTA は seed（描画値）から collectCommercialCtaUrls が
+    // 収集する（可否は商品マスタが正）。ここで registry 経由も通すと二重収集に
+    // なるため、registry 参照の対象からは外す（#1064 Phase 2d）。
+    if (/CommercialArticlePage/.test(source)) continue;
 
     // 1. Direct references (ArticleComparisonV2 / NextStepBlock / PurchaseCard)
     const exprs = [
@@ -438,17 +447,19 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
 const COMMERCIAL_SEED_DIR = "content/articles/commercial";
 
 /**
- * 公開済みの商用記事 seed から楽天の購入 URL を収集する。
+ * 商用記事 seed から楽天の購入 URL を収集する（下書きは除く）。
+ *
  * 本番は PURCHASE_LINK_MODE=direct で seed の URL をそのまま描画するため、
- * 公開許可リストに載った記事の楽天 CTA を週次監査の対象にする。
+ * seed の楽天 CTA を監査（遷移先の到達確認）の対象にする。どの販売先を案内できる
+ * かの可否は商品マスタ（`check:product-master`）が正で、ここは描画される URL を
+ * 集めるだけにする。
+ * #1064 Phase 2d: 公開許可リストによる除外を解除し、未公開の非下書き seed も
+ * 対象にした（公開直前に遷移先を検証できる）。下書きは作業中の値を含むため除外する。
  * Amazon の商品 URL は対象外: GitHub ランナーからはボット対策ページが返り得て、
  * ホストの確認だけでは ASIN の商品差し替えも検出できないため。
  * 戻り値: [{ article, key, url }]（key は `<id>:rakuten-left|right`）
  */
-export function collectCommercialCtaUrls({
-  srcDirectory = "src",
-  isPublished = isPublishedArticlePath,
-} = {}) {
+export function collectCommercialCtaUrls({ srcDirectory = "src" } = {}) {
   const directory = path.join(srcDirectory, COMMERCIAL_SEED_DIR);
   const ctas = [];
   if (!fs.existsSync(directory)) return ctas;
@@ -458,7 +469,6 @@ export function collectCommercialCtaUrls({
     if (!/\bhandoffManifestId\s*:/.test(source)) continue; // seed 以外のモジュール
     const id = /\bid\s*:\s*"([^"]+)"/.exec(source)?.[1];
     if (!id || /\bdraft\s*:\s*true\b/.test(source)) continue;
-    if (!isPublished(`/articles/${id}/`)) continue;
     for (const side of ["left", "right"]) {
       const url = new RegExp(`\\b${side}RakutenUrl\\s*:\\s*"([^"]+)"`).exec(
         source,
@@ -470,23 +480,45 @@ export function collectCommercialCtaUrls({
 }
 
 /**
- * 公開済みの商用記事 seed の楽天URL と registry の purchaseUrl の一致を検査する（#1064）。
+ * 商用記事 seed の楽天 CTA が「商品詳細ページ」を指しているかを検証する（#1064 Phase 2d）。
+ *
+ * 除外解除で新たに強制力が生まれる部分。CommercialArticlePage は confirmed でない
+ * 遷移先（検索結果ページ等）の seed URL を描画せず CTA を畳むため、これまでは
+ * 「CTA が黙って消える」だけでCIは通っていた。ここで fail-closed にする。
+ * 収集元（collectCommercialCtaUrls）をそのまま検証するので、対象範囲は常に一致する。
+ * 検索結果ページは購入導線にならない（Issue #436）という規則の商用記事版。
+ * 戻り値: 問題点の配列（0件なら正常）
+ */
+export function validateCommercialCtaDestinations({
+  srcDirectory = "src",
+  ctas = collectCommercialCtaUrls({ srcDirectory }),
+} = {}) {
+  const errors = [];
+  for (const { article, key, url } of ctas) {
+    if (isVerifiedRakutenPurchaseDestination(url)) continue;
+    errors.push(
+      `${article}: CTA "${key}" must point to a product detail page (found: ${url})`,
+    );
+  }
+  return errors;
+}
+
+/**
+ * 商用記事 seed の楽天URL と registry の purchaseUrl の一致を検査する（#1064）。
  *
  * 商用記事の描画は seed の楽天URLを優先し（CommercialArticlePage.astro:97-126）、
  * registry はそのフォールバックになる。両方に値がある場合は registry が seed に
  * 一致していなければならない（registry 側が独自にドリフトするのを防ぐ）。
+ * Phase 2d の registry→マスタ委譲後も、registry の商用キーが残っている間は
+ * この突合を維持する（キー削除は別 Phase）。
  * Amazon URL は collectCommercialCtaUrls と同じ理由で対象外。
  * 戻り値: 不一致メッセージの配列（0件なら一致）。
  */
-export function findCommercialSeedRegistryDrift({
-  srcDirectory = "src",
-  isPublished = isPublishedArticlePath,
-} = {}) {
+export function findCommercialSeedRegistryDrift({ srcDirectory = "src" } = {}) {
   const registry = loadRegistryEntries(srcDirectory);
   const errors = [];
   for (const { article, key, url } of collectCommercialCtaUrls({
     srcDirectory,
-    isPublished,
   })) {
     const side = key.endsWith("-left") ? "left" : "right";
     const registryUrl = registry.get(`${article}:${side}`);

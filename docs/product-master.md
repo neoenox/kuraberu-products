@@ -1,4 +1,4 @@
-# 商品マスタ（`src/data/products/`）（#1064 Phase 1 / Phase 2a・2b・2c）
+# 商品マスタ（`src/data/products/`）（#1064 Phase 1 / Phase 2a・2b・2c・2d）
 
 商品IDを安定キーとし、商品ごとの販売先（Amazon / 楽天）のアフィリエイト可否状態を
 1箇所で持つデータです。計画と受入条件は `docs/article-data-schema-plan.md`（§2.1 スキーマ、
@@ -86,7 +86,7 @@ seed では `sourceLinks` の URL にのみ現れ CTA は `search` のため、`
 | `model-wf-c710n`    | `sony-wf-c710n-vs-linkbuds-fit:left`, `sony-wf-c710n-vs-soundcore-liberty-5:left`        | `model`  |
 | `model-wf-ls910n`   | `sony-wf-c710n-vs-linkbuds-fit:right`, `sony-wf-1000xm6-vs-linkbuds-fit:right`           | `model`  |
 
-## 記事→マスタ参照（Phase 2a / 2b / 2c）
+## 記事→マスタ参照（Phase 2a / 2b / 2c / 2d）
 
 記事seedは `{side}ProductId` でマスタの商品を明示参照します（`src/content/articles/commercial/types.ts`）。
 無い場合（未公開seedなど）は **ASIN > model > name** の優先でマスタから導出します（生成スクリプトと同じ順序）。
@@ -125,6 +125,21 @@ fail-closed にする規則:
 - 値（表示名・画像・URL）は引き続き**記事seedを優先**します（`{side}RakutenUrl` → registry → 実行時API）。
 - 2026-10-18 実測では、公開53の106スロットで**マスタの可否と記事のURL有無は完全に一致**しており
   （`seller-state ok`）、Phase 2c による出力の変化はありません（`dist` 全突合で差分ゼロ）。
+
+### CTA検証のマスタ委譲・商用記事の除外解除（Phase 2d）
+
+商用記事の CTA の正を **seed（描画値）+ 商品マスタ（可否）**とし、`scripts/check-purchase-link-consistency.mjs`
+の商用記事の除外を解除しました（計画 付録A.3 / A.10）。
+
+- 商用テンプレート記事のページソースも通常検査します（購入URLの直書き禁止・末尾カードとのキー順序一致）。
+- `collectCommercialCtaUrls` は**未公開の非下書き seed も対象**にします（下書きは作業中の値を含むため除外）。
+- 新規 `validateCommercialCtaDestinations` が、商用 seed の楽天URLが**商品詳細ページ**であることを
+  fail-closed に検証します（検索結果ページ等のURLはこれまで CTA が黙って消えるだけで CI は通っていました）。
+- registry の商用キーが残っている間は、seed との一致検査（`findCommercialSeedRegistryDrift`）を維持します。
+  キーの削除は別 Phase です。
+
+解除で新たに出る違反は**0件**でした（商用ページ130件・未公開seedの楽天URL4件・全56件の遷移先検証）。
+監査対象の商用 CTA は 52 → **56件**になります（表示は不変）。
 
 ### 併走の既知差分（2026-10-18 実測・`tests/product-master-resolution.test.ts` で固定）
 
@@ -179,10 +194,11 @@ Phase 2c ではこの5点を**表示へ反映しません**（記事が確認し
 ## Phase 2 以降への引き継ぎ
 
 - 記事→マスタ参照の併走移行。**解決層・検証は 2a、全スロットへの `productId` 付与は 2b、
-  CTAの可否判断の委譲は 2c で完了**。表示に使う**値**（表示名・画像・URL）は記事seedを優先したままです。
-- 2d: `check-purchase-link-consistency.mjs` の registry 検証をマスタへ委譲し、商業記事の除外（計画 §付録A.3）を解除する。
-  2026-10-18 実測では、公開53の106スロットで registry が実効URLになった例は**0件**（seed の `{side}RakutenUrl` が52件、
+  CTAの可否判断の委譲は 2c、CTA検証のマスタ委譲と商用記事の除外解除は 2d で完了**。
+  表示に使う**値**（表示名・画像・URL）は記事seedを優先したままです。
+- 2026-10-18 実測では、公開53の106スロットで registry が実効URLになった例は**0件**（seed の `{side}RakutenUrl` が52件、
   残り54件は明示的な非表示）で、registry のうち公開53に属するキーは3件だけでした。
+  2d 完了後の registry の商用キー（4件・公開3記事 + 未公開1記事）の**削除**は残作業です。
 - 記事間で割れた値5点（商品名2・楽天URL3）をマスタへ寄せるかは、記事作成者の判断として保留しています。
 - 楽天の実行時API解決分と、公開53スラッグ以外のシードをマスタへ拡充する。
 - 画像の一元化（計画 Phase 5）で `image` を実体パスへ寄せる。
