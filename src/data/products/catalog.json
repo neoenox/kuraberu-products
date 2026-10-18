@@ -1,0 +1,1941 @@
+{
+  "version": 1,
+  "generatedFrom": "docs/article-data-schema-plan.md §2.1 / seed(公開53) + docs/article-handoffs",
+  "products": [
+    {
+      "id": "amazon-b07gxdcp3c",
+      "brand": "ケルヒャー",
+      "line": "K 2 サイレント（1.600-920.0）",
+      "model": "1.600-920.0（16009200）",
+      "name": "ケルヒャー K 2 サイレント（1.600-920.0）",
+      "image": "/products/karcher-k2-silent.jpg",
+      "officialUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-2-silent-um-16009200.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B07GXDCP3C",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b098b8pfxy",
+      "brand": "Nintendo",
+      "line": "Switch（有機ELモデル）ホワイト",
+      "model": "本体 HEG-001（パッケージ HEG-S-KAAAA、JAN 4902370548495）",
+      "name": "Nintendo Switch（有機ELモデル）ホワイト",
+      "image": "/products/nintendo-switch-oled-white.jpg",
+      "officialUrl": "https://www.nintendo.com/jp/hardware/detail/switch-oled/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B098B8PFXY",
+          "checkedAt": "2026-10-07"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F16882955%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-07"
+        }
+      },
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "id": "amazon-b09b2rlplv",
+      "brand": "Amazon",
+      "line": "Echo Show 5（第3世代）",
+      "model": "Echo Show 5 第3世代",
+      "name": "Amazon Echo Show 5（第3世代）",
+      "image": "/products/amazon-echo-show-5-3rd-gen.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B09B2RLPLV",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b09b8szllg",
+      "brand": "Amazon",
+      "line": "Echo Dot（第5世代）",
+      "model": "Echo Dot 第5世代（チャコール）",
+      "name": "Amazon Echo Dot（第5世代）",
+      "image": "/products/amazon-echo-dot-5th-gen.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B09B8SZLLG",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b09f6279py",
+      "brand": "Kingston",
+      "line": "XS2000 2TB（SXS2000/2000G）",
+      "model": "SXS2000/2000G",
+      "name": "Kingston XS2000 2TB（SXS2000/2000G）",
+      "image": "https://media.kingston.com/kingston/product/sxs2000_4000gb_tn.png",
+      "officialUrl": "https://www.kingston.com/en/external-ssd/xs2000-external-usb-c-solid-state-drive",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B09F6279PY?th=1&linkCode=ll2&tag=kuraberuprodu-22&linkId=1059556899f99acaec1e90d4b5e7f9a0&ref_=as_li_ss_tl",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-09-27"
+    },
+    {
+      "id": "amazon-b09q5shdr3",
+      "brand": "Logicool",
+      "line": "Signature M650 M650MGR",
+      "model": "M650MGR",
+      "name": "Logicool Signature M650 M650MGR",
+      "image": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/m650-signature-wireless-mouse",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B09Q5SHDR3?tag=kuraberuprodu-22",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm650mgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0b1q6vb16",
+      "brand": "Logicool",
+      "line": "MX Master 3S MX2300GR（グラファイト）",
+      "name": "Logicool MX Master 3S MX2300GR（グラファイト）",
+      "image": "/products/logicool-mx-master-3s.png",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-4",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0B1Q6VB16",
+          "checkedAt": "2026-10-01"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "amazon-b0b5cp9x1x",
+      "brand": "ニコン",
+      "line": "Z30 ボディ",
+      "model": "Z30",
+      "name": "ニコン Z30 ボディ",
+      "image": "/products/nikon-z30.jpg",
+      "officialUrl": "https://www.nikon-image.com/products/mirrorless/lineup/z_30/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0B5CP9X1X",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/5701c911.d88f4b8a.5701c912.ee48bcf8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Femedama%2F4960759910615%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0bj5l8rcg",
+      "brand": "ソニー",
+      "line": "VLOGCAM ZV-1F ホワイト（ZV-1F W）",
+      "model": "ZV-1F W（JAN 4548736147058）",
+      "name": "ソニー VLOGCAM ZV-1F ホワイト（ZV-1F W）",
+      "image": "/products/sony-zv-1f-white.jpg",
+      "officialUrl": "https://www.sony.jp/vlogcam/products/ZV-1F/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0BJ5L8RCG",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00r7ldn.w78maaf9.g00r7ldn.w78mb4d0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4548736147058%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F13873290%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0bm8vs13p",
+      "brand": "SwitchBot",
+      "line": "ハブ2（W3202106）",
+      "model": "W3202106",
+      "name": "SwitchBot ハブ2（W3202106）",
+      "image": "/products/switchbot-hub2.jpg",
+      "officialUrl": "https://www.switchbot.jp/products/switchbot-hub2",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0BM8VS13P",
+          "checkedAt": "2026-10-06"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F0850043739784%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0bymml97x",
+      "brand": "Anker",
+      "line": "Power Bank (10000mAh, 30W) A1256",
+      "name": "Anker Power Bank (10000mAh, 30W) A1256",
+      "image": "/products/anker-power-a1256.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a1638",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0BYMML97X",
+          "checkedAt": "2026-10-02"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "amazon-b0c6614qwt",
+      "brand": "ソニー",
+      "line": "VLOGCAM ZV-1 II ホワイト（ZV-1M2 W）",
+      "model": "ZV-1M2 W（JAN 4548736155725）",
+      "name": "ソニー VLOGCAM ZV-1 II ホワイト（ZV-1M2 W）",
+      "image": "/products/sony-zv-1-ii.jpg",
+      "officialUrl": "https://www.sony.jp/vlogcam/products/ZV-1M2/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0C6614QWT",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4548736155725-34-39044-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F13984550%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0c85h3gth",
+      "brand": "富士フイルム",
+      "line": "instax mini Evo ブラック",
+      "model": "instax mini Evo（BLACK、JAN 4547410520088）",
+      "name": "富士フイルム instax mini Evo ブラック",
+      "image": "/products/instax-mini-evo-black.jpg",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/minievo",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0C85H3GTH",
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0cftt82rh",
+      "brand": "Anker",
+      "line": "MagGo Power Bank (10000mAh) A1654",
+      "name": "Anker MagGo Power Bank (10000mAh) A1654",
+      "image": "/products/anker-a1654.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a1664",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0CFTT82RH",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1654%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0cgr5b9fs",
+      "brand": "Logicool",
+      "line": "G PRO X SUPERLIGHT 2",
+      "name": "Logicool G PRO X SUPERLIGHT 2",
+      "image": "/products/logicool-pro-x-superlight-2.png",
+      "officialUrl": "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x-superlight-2-dex",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0CGR5B9FS",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0cjr5hbmn",
+      "brand": "Logicool",
+      "line": "Pebble Mouse 2 M350s M350sGR",
+      "model": "M350sGR",
+      "name": "Logicool Pebble Mouse 2 M350s M350sGR",
+      "image": "https://resource.logitech.com/w_544%2Ch_466%2Car_7%3A6%2Cc_pad%2Cq_auto%2Cf_auto%2Cdpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/pebble-2-m350s-wireless-mouse",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0CJR5HBMN?tag=kuraberuprodu-22",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fm350sgr%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0ctzj7k6r",
+      "brand": "ケルヒャー",
+      "line": "K 3 サイレント プラス 50Hz地域用（1.603-200.0）",
+      "model": "1.603-200.0（16032000）",
+      "name": "ケルヒャー K 3 サイレント プラス 50Hz地域用（1.603-200.0）",
+      "image": "/products/karcher-k3-silent-plus.jpg",
+      "officialUrl": "https://www.kaercher.com/jp/home-garden/pressure-washers/k-3-50hz-16032000.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0CTZJ7K6R",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0cwr5f88g",
+      "brand": "TP-Link",
+      "line": "Archer BE550/A",
+      "name": "TP-Link Archer BE550/A",
+      "image": "/products/tp-link-archer-be550.jpg",
+      "officialUrl": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be550/",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0CWR5F88G",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57d512f5.e3c60952.57d512f6.6542e0ce/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftplinkdirect%2F8885020623956%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0d3t5zw6z",
+      "brand": "JBL",
+      "line": "Live Beam 3 ブラック（JBLLIVEBEAM3BLK）",
+      "model": "JBLLIVEBEAM3BLK",
+      "name": "JBL Live Beam 3 ブラック（JBLLIVEBEAM3BLK）",
+      "image": "/products/jbl-live-beam-3.png",
+      "officialUrl": "https://jp.jbl.com/LIVEBEAM3.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D3T5ZW6Z",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57f5a5ec.8c12c074.57f5a5ed.2891c8bc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakky2018%2Fau-jbl-livebeam3-%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0d5d1dxzy",
+      "brand": "Kobo",
+      "line": "Clara Colour ブラック",
+      "model": "Kobo Clara Colour",
+      "name": "Kobo Clara Colour ブラック",
+      "image": "/products/kobo-clara-colour.png",
+      "officialUrl": "https://books.rakuten.co.jp/event/e-book/ereaders/koboclaracolour/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D5D1DXZY",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.w78ma52d.g00q072n.w78mbc5c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F17822117%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21220736%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0d5hsrm75",
+      "brand": "Kobo",
+      "line": "Libra Colour ブラック",
+      "model": "Kobo Libra Colour",
+      "name": "Kobo Libra Colour ブラック",
+      "image": "/products/kobo-libra-colour.png",
+      "officialUrl": "https://books.rakuten.co.jp/event/e-book/ereaders/kobolibracolour/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D5HSRM75",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00q072n.w78ma52d.g00q072n.w78mbc5c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F17822115%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbook%2Fi%2F21220733%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0d5xgp6cw",
+      "brand": "Anker",
+      "line": "Solix C300 Portable Power Station（A1722）",
+      "model": "A1722",
+      "name": "Anker Solix C300 Portable Power Station（A1722）",
+      "image": "/products/anker-solix-c300.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a1722",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D5XGP6CW",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa17225z1%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0d73jbj56",
+      "brand": "Anker",
+      "line": "Prime Charger (100W, 3 Ports, GaN) A2688",
+      "model": "A2688N42",
+      "name": "Anker Prime Charger (100W, 3 Ports, GaN) A2688",
+      "image": "/products/anker-a2688.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a2688",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D73JBJ56",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa2688%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0d97hw6s6",
+      "brand": "ソニー",
+      "line": "VLOGCAM ZV-E10 II ボディ（ZV-E10M2）",
+      "model": "ZV-E10M2",
+      "name": "ソニー VLOGCAM ZV-E10 II ボディ（ZV-E10M2）",
+      "image": "/products/sony-zv-e10m2.jpg",
+      "officialUrl": "https://www.sony.jp/ichigan/products/ZV-E10M2/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0D97HW6S6",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0db1hfzlk",
+      "brand": "Anker",
+      "line": "MagGo Power Bank (10000mAh, Slim) A1664",
+      "name": "Anker MagGo Power Bank (10000mAh, Slim) A1664",
+      "image": "/products/anker-a1664.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a1664",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DB1HFZLK",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1664%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0df2f57lj",
+      "brand": "Logicool",
+      "line": "G PRO X SUPERLIGHT 2 DEX",
+      "name": "Logicool G PRO X SUPERLIGHT 2 DEX",
+      "image": "/products/logicool-pro-x-superlight-2-dex.png",
+      "officialUrl": "https://gaming.logicool.co.jp/ja-jp/shop/p/pro-x-superlight-2-dex",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0DF2F57LJ",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56ec17c0.0a9efc51.56ec17c1.98a500d4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flogicool%2Fgproxsl-wldexbk%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0dfxynswy",
+      "brand": "JBL",
+      "line": "Tour Pro 3 ブラック（JBLTOURPRO3BLK）",
+      "model": "JBLTOURPRO3BLK",
+      "name": "JBL Tour Pro 3 ブラック（JBLTOURPRO3BLK）",
+      "image": "/products/jbl-tour-pro-3.png",
+      "officialUrl": "https://jp.jbl.com/TOUR-PRO-3.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DFXYNSWY",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57f5a553.61c8b1e0.57f5a554.a743e08b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fikeshibu%2F860068%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0dg1jkntq",
+      "brand": "TP-Link",
+      "line": "Archer BE450",
+      "name": "TP-Link Archer BE450",
+      "image": "/products/tp-link-archer-be450.jpg",
+      "officialUrl": "https://www.tp-link.com/jp/home-networking/wifi-router/archer-be450/",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0DG1JKNTQ",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57d5367d.d65b2fc4.57d5367e.865c0ce6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fppp-shop%2F10dg1jkntq%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1iIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0dgjbnyvy",
+      "brand": "Apple",
+      "line": "アクティブノイズキャンセリング搭載AirPods 4（ワイヤレス充電ケース）",
+      "model": "アクティブノイズキャンセリング搭載AirPods 4",
+      "name": "Apple アクティブノイズキャンセリング搭載AirPods 4（ワイヤレス充電ケース）",
+      "image": "/products/airpods-4-anc.png",
+      "officialUrl": "https://support.apple.com/ja-jp/121204",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0DGJBNYVY",
+          "checkedAt": "2026-10-04"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/58021d7e.4983f3fd.58021d7f.1b074964/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fapple-rm2409012%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-04"
+        }
+      },
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "id": "amazon-b0dk467p86",
+      "brand": "Apple",
+      "line": "iPad mini（A17 Pro）Wi-Fi 128GB",
+      "model": "iPad mini（A17 Pro）",
+      "name": "iPad mini（A17 Pro）Wi-Fi 128GB",
+      "image": "/products/ipad-mini-a17-pro.jpg",
+      "officialUrl": "https://www.apple.com/jp/ipad-mini/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DK467P86",
+          "checkedAt": "2026-10-09"
+        }
+      },
+      "checkedAt": "2026-10-09"
+    },
+    {
+      "id": "amazon-b0dklwzy2z",
+      "brand": "Amazon",
+      "line": "Echo Dot Max（2025年発売）",
+      "model": "Echo Dot Max 2025年発売（グラファイト）",
+      "name": "Amazon Echo Dot Max（2025年発売）",
+      "image": "/products/amazon-echo-dot-max-2025.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DKLWZY2Z",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0dnlr2nyn",
+      "brand": "Anker",
+      "line": "Nano Power Bank (10000mAh, 45W, 巻取り式 USB-Cケーブル) A1638",
+      "name": "Anker Nano Power Bank (10000mAh, 45W, 巻取り式 USB-Cケーブル) A1638",
+      "image": "/products/anker-nano-a1638.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a1638",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DNLR2NYN",
+          "checkedAt": "2026-10-02"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "amazon-b0dp2lj7df",
+      "brand": "シャープ",
+      "line": "ヘルシオ ホットクック KN-HW24H（2024年モデル）",
+      "model": "KN-HW24H",
+      "name": "シャープ ヘルシオ ホットクック KN-HW24H（2024年モデル）",
+      "image": "/products/sharp-hotcook-kn-hw24h.jpg",
+      "officialUrl": "https://jp.sharp/hotcook/products/knhw24h/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DP2LJ7DF",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0drcqtxff",
+      "brand": "GoPro",
+      "line": "HERO13 Black",
+      "model": "CHDHX-131-FW",
+      "name": "GoPro HERO13 Black",
+      "image": "/products/gopro-hero13-black-2026.jpg",
+      "officialUrl": "https://gopro.com/ja/jp/shop/cameras/buy/hero13black/CHDHX-131-master.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DRCQTXFF",
+          "checkedAt": "2026-10-07"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4595319442147%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-07"
+        }
+      },
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "id": "amazon-b0dwdqylxg",
+      "brand": "SwitchBot",
+      "line": "ハブ3（W7202101）",
+      "model": "W7202101",
+      "name": "SwitchBot ハブ3（W7202101）",
+      "image": "/products/switchbot-hub3.jpg",
+      "officialUrl": "https://www.switchbot.jp/products/switchbot-hub3",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DWDQYLXG",
+          "checkedAt": "2026-10-06"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F0810150543353%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0dyc1lm11",
+      "brand": "Amazon",
+      "line": "Echo Show 8（2025年発売）",
+      "model": "Echo Show 8 2025年発売",
+      "name": "Amazon Echo Show 8（2025年発売）",
+      "image": "/products/amazon-echo-show-8-2025.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DYC1LM11",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0dz7wf87p",
+      "brand": "Apple",
+      "line": "iPad（A16） Wi-Fi 128GB",
+      "model": "iPad（A16）11インチ",
+      "name": "11インチ iPad（A16） Wi-Fi 128GB",
+      "image": "/products/ipad-a16-hero.jpg",
+      "officialUrl": "https://www.apple.com/jp/ipad-11/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0dzcbycny",
+      "brand": "Insta360",
+      "line": "X5 通常版（ブラック）",
+      "model": "Insta360 X5 通常版（microSDカードなし）",
+      "name": "Insta360 X5 通常版（ブラック）",
+      "image": "/products/insta360-x5-standard.jpg",
+      "officialUrl": "https://www.insta360.com/jp/product/insta360-x5",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0DZCBYCNY",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0f1mz88ml",
+      "brand": "JBL",
+      "line": "Charge 6",
+      "model": "JBLCHARGE6BLK",
+      "name": "JBL Charge 6",
+      "image": "/products/jbl-charge-6.png",
+      "officialUrl": "https://jp.jbl.com/CHARGE-6.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0F1MZ88ML",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fcharge-6%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0f1n1bc2d",
+      "brand": "JBL",
+      "line": "Flip 7",
+      "model": "JBLFLIP7BLK",
+      "name": "JBL Flip 7",
+      "image": "/products/jbl-flip-7.png",
+      "officialUrl": "https://jp.jbl.com/FLIP-7.html",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0F1N1BC2D",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57c3d4c3.e7d52ec7.57c3d4c4.f833f919/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjblstore%2Fflip-7%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbSI6MSwiY29tIjoxLCJjb20iOjEsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYnRuIjoxLCJwcm9kIjowfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0f43j12fv",
+      "brand": "富士フイルム",
+      "line": "instax mini 41",
+      "model": "instax mini 41（通常版、JAN 4547410545173）",
+      "name": "富士フイルム instax mini 41",
+      "image": "/products/instax-mini-41.png",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini41",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0F43J12FV",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00tit6n.w78ma4ce.g00tit6n.w78mb45d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4547410545173%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fksdenki%2Fi%2F10512579%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0f99fcsx7",
+      "brand": "Anker",
+      "line": "Nano Charger (70W, 3 Ports) A121A",
+      "model": "A121AN11",
+      "name": "Anker Nano Charger (70W, 3 Ports) A121A",
+      "image": "/products/anker-a121a.jpg",
+      "officialUrl": "https://www.ankerjapan.com/products/a121a",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0F99FCSX7",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa121a%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJidG4iOjEsInByb2QiOjB9%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0f9l8d3cl",
+      "brand": "Garmin",
+      "line": "Forerunner 570 42mm Black (010-02970-30)",
+      "name": "Garmin Forerunner 570 42mm Black (010-02970-30)",
+      "image": "/products/garmin-forerunner-570-42mm.jpg",
+      "officialUrl": "https://www.garmin.co.jp/products/wearables/forerunner-570-42-black/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0F9L8D3CL",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57e30319.1e92bbba.57e3031a.961e804e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgarmin%2F010-02970-30%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIxMDB4MTAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0fc1xtk8p",
+      "brand": "Amazon",
+      "line": "Kindle Scribe Colorsoft 64GB グラファイト",
+      "model": "Kindle Scribe Colorsoft (2026年発売) 64GB",
+      "name": "Amazon Kindle Scribe Colorsoft 64GB グラファイト",
+      "image": "/products/kindle-scribe-colorsoft-2026-64gb.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FC1XTK8P",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fc1ygr6x",
+      "brand": "Amazon",
+      "line": "Kindle Scribe 64GB グラファイト",
+      "model": "Kindle Scribe (2026年発売) フロントライト搭載モデル 64GB",
+      "name": "Amazon Kindle Scribe 64GB グラファイト",
+      "image": "/products/kindle-scribe-2026-64gb.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FC1YGR6X",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fm3x3dw5",
+      "brand": "DJI",
+      "line": "Osmo Action 6 スタンダードコンボ",
+      "model": "Osmo Action 6",
+      "name": "DJI Osmo Action 6 スタンダードコンボ",
+      "image": "/products/dji-osmo-action-6.jpg",
+      "officialUrl": "https://www.dji.com/jp/osmo-action-6/specs",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FM3X3DW5",
+          "checkedAt": "2026-10-07"
+        }
+      },
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "id": "amazon-b0fmkmjtpj",
+      "brand": "フィリップス",
+      "line": "ソニッケアー 6500シリーズ HX7410/10",
+      "model": "HX7410/10",
+      "name": "フィリップス ソニッケアー 6500シリーズ HX7410/10",
+      "image": "/products/philips-sonicare-6500-hx7410.jpg",
+      "officialUrl": "https://www.philips.co.jp/c-p/HX7410_10/series-6500-rechargeable-toothbrush",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FMKMJTPJ",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0fmkss5g4",
+      "brand": "フィリップス",
+      "line": "ソニッケアー 7100シリーズ HX7420/10",
+      "model": "HX7420/10",
+      "name": "フィリップス ソニッケアー 7100シリーズ HX7420/10",
+      "image": "/products/philips-sonicare-7100-hx7420.jpg",
+      "officialUrl": "https://www.philips.co.jp/c-p/HX7420_10/series-7100-rechargeable-toothbrush",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FMKSS5G4",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0fn3kt3c8",
+      "brand": "Google",
+      "line": "Pixel Buds Pro 2 Moonstone（GA10076-JP）",
+      "model": "Pixel Buds Pro 2 Moonstone",
+      "name": "Google Pixel Buds Pro 2 Moonstone（GA10076-JP）",
+      "image": "/products/pixel-buds-pro-2-moonstone.jpg",
+      "officialUrl": "https://store.google.com/jp/product/pixel_buds_pro_2_specs?hl=ja",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FN3KT3C8",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fqfpzw9g",
+      "brand": "Apple",
+      "line": "iPhone Air 512GB スカイブルー",
+      "model": "iPhone Air 512GB SIMフリー",
+      "name": "Apple iPhone Air 512GB スカイブルー",
+      "image": "/products/iphone-air-512gb-skyblue.jpg",
+      "officialUrl": "https://www.apple.com/jp/iphone-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FQFPZW9G",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fqfqdn6k",
+      "brand": "Apple",
+      "line": "AirPods Pro 3（単品・MagSafe充電ケース USB-C）",
+      "model": "AirPods Pro 3",
+      "name": "Apple AirPods Pro 3（単品・MagSafe充電ケース USB-C）",
+      "image": "/products/airpods-pro-3-single.jpg",
+      "officialUrl": "https://www.apple.com/jp/airpods-pro/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FQFQDN6K",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fqg5ndcx",
+      "brand": "Apple",
+      "line": "iPhone 17 512GB ミストブルー",
+      "model": "iPhone 17 512GB SIMフリー",
+      "name": "Apple iPhone 17 512GB ミストブルー",
+      "image": "/products/iphone-17-512gb-mistblue.jpg",
+      "officialUrl": "https://www.apple.com/jp/iphone-17/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FQG5NDCX",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0fqg97cdb",
+      "brand": "Apple",
+      "line": "iPhone 17 256GB セージ",
+      "model": "iPhone 17 256GB",
+      "name": "Apple iPhone 17 256GB セージ",
+      "image": "/products/iphone-17-256gb.jpg",
+      "officialUrl": "https://www.apple.com/jp/iphone-17/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FQG97CDB",
+          "checkedAt": "2026-10-10"
+        }
+      },
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "id": "amazon-b0fr8m3ws8",
+      "brand": "Logicool",
+      "line": "MX Master 4 MX2400GR（グラファイト）",
+      "name": "Logicool MX Master 4 MX2400GR（グラファイト）",
+      "image": "/products/logicool-mx-master-4.png",
+      "officialUrl": "https://www.logicool.co.jp/ja-jp/shop/p/mx-master-4",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0FR8M3WS8",
+          "checkedAt": "2026-10-01"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "amazon-b0g14bym52",
+      "brand": "COROS",
+      "line": "PACE 4 シリコンバンド（ホワイト）",
+      "name": "COROS PACE 4 シリコンバンド（ホワイト）",
+      "image": "/products/coros-pace-4-white.webp",
+      "officialUrl": "https://www.garmin.co.jp/products/wearables/forerunner-570-42-black/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0G14BYM52",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57e303b5.b6ec375c.57e303b6.74494732/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcoros%2Fpace4%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0g2txbswj",
+      "brand": "Amazon",
+      "line": "Fire TV Stick 4K Max（第2世代）",
+      "model": "Fire TV Stick 4K Max",
+      "name": "Amazon Fire TV Stick 4K Max（第2世代）",
+      "image": "/products/amazon-fire-tv-stick-4k-max.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0G2TXBSWJ",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0g2txcwfh",
+      "brand": "Amazon",
+      "line": "Fire TV Stick 4K Select",
+      "model": "Fire TV Stick 4K Select",
+      "name": "Amazon Fire TV Stick 4K Select",
+      "image": "/products/amazon-fire-tv-stick-4k-select.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0G2TXCWFH",
+          "checkedAt": "2026-10-08"
+        }
+      },
+      "checkedAt": "2026-10-08"
+    },
+    {
+      "id": "amazon-b0g4smgd8c",
+      "brand": "Amazon",
+      "line": "Kindle 16GB 最新モデル（ウベパープル）",
+      "model": "Kindle 16GB 最新モデル",
+      "name": "Kindle 16GB 最新モデル（ウベパープル）",
+      "image": "/products/kindle-16gb-2026.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0G4SMGD8C",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0G4SMGD8C",
+          "checkedAt": "2026-10-09"
+        }
+      },
+      "checkedAt": "2026-10-09"
+    },
+    {
+      "id": "amazon-b0g5p496hd",
+      "brand": "富士フイルム",
+      "line": "instax mini 13 クレイホワイト",
+      "model": "instax mini 13（CLAY WHITE、JAN 4547410564662）",
+      "name": "富士フイルム instax mini 13 クレイホワイト",
+      "image": "/products/instax-mini-13-clay-white.png",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini13",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0G5P496HD",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00r8gxn.w78maa04.g00r8gxn.w78mb52c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpremoa%2F4547410564662%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpremoa%2Fi%2F11344473%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0ggnpv24c",
+      "brand": "富士フイルム",
+      "line": "instax mini Evo Cinema",
+      "model": "instax mini Evo Cinema（通常版、JAN 4547410562293）",
+      "name": "富士フイルム instax mini Evo Cinema",
+      "image": "/products/instax-mini-evo-cinema.png",
+      "officialUrl": "https://www.fujifilm.com/jp/ja/consumer/instax/cameras/mini_evo_cinema",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GGNPV24C",
+          "checkedAt": "2026-10-17"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/hgc/g00pukwn.w78ma1f3.g00pukwn.w78mb018/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4547410562293-34-1793-n%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjism%2Fi%2F14731792%2F&rafcid=wsc_i_is_5d23370e-9fc6-491b-bf94-c2110514493a",
+          "checkedAt": "2026-10-17"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0gk1qfgf6",
+      "brand": "Soundcore",
+      "line": "Liberty 5 Pro（D1203 / D1203N11 ミッドナイトブラック）",
+      "model": "D1203",
+      "name": "Soundcore Liberty 5 Pro（D1203 / D1203N11 ミッドナイトブラック）",
+      "image": "/products/soundcore-liberty-5-pro-vs-max.png",
+      "officialUrl": "https://www.ankerjapan.com/products/d1203",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GK1QFGF6",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0gk98z3gp",
+      "brand": "Samsung",
+      "line": "Galaxy S26 Ultra 256GB ブラック（SIMフリー）",
+      "model": "Galaxy S26 Ultra 256GB",
+      "name": "Samsung Galaxy S26 Ultra 256GB ブラック（SIMフリー）",
+      "image": "/products/galaxy-s26-ultra-256gb-black.jpg",
+      "officialUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26-ultra/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GK98Z3GP",
+          "checkedAt": "2026-10-12"
+        }
+      },
+      "checkedAt": "2026-10-12"
+    },
+    {
+      "id": "amazon-b0gk9cld8z",
+      "brand": "Samsung",
+      "line": "Galaxy S26 256GB スカイブルー（SIMフリー）",
+      "model": "Galaxy S26 256GB",
+      "name": "Samsung Galaxy S26 256GB スカイブルー（SIMフリー）",
+      "image": "/products/galaxy-s26-256gb-skyblue.jpg",
+      "officialUrl": "https://www.samsung.com/jp/smartphones/galaxy-s26/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GK9CLD8Z",
+          "checkedAt": "2026-10-12"
+        }
+      },
+      "checkedAt": "2026-10-12"
+    },
+    {
+      "id": "amazon-b0gl1mx4n2",
+      "brand": "DJI",
+      "line": "Osmo 360 II スタンダードコンボ",
+      "model": "DJI Osmo 360 II スタンダードコンボ",
+      "name": "DJI Osmo 360 II スタンダードコンボ",
+      "image": "/products/dji-osmo-360-ii-standard-combo.jpg",
+      "officialUrl": "https://www.dji.com/jp/360-2/specs",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GL1MX4N2",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0glf2tbd4",
+      "brand": "Soundcore",
+      "line": "Liberty 5 Pro Max（D1204 / D1204N11 ミッドナイトブラック）",
+      "model": "D1204",
+      "name": "Soundcore Liberty 5 Pro Max（D1204 / D1204N11 ミッドナイトブラック）",
+      "image": "/products/soundcore-liberty-5-pro-max.png",
+      "officialUrl": "https://www.ankerjapan.com/products/d1204",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GLF2TBD4",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "unavailable"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0gqvyhyfk",
+      "brand": "Apple",
+      "line": "iPhone 17e 256GB ソフトピンク",
+      "model": "iPhone 17e 256GB",
+      "name": "Apple iPhone 17e 256GB ソフトピンク",
+      "image": "/products/iphone-17e-256gb.jpg",
+      "officialUrl": "https://www.apple.com/jp/iphone-17e/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GQVYHYFK",
+          "checkedAt": "2026-10-10"
+        }
+      },
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "id": "amazon-b0gqwjcr4k",
+      "brand": "Apple",
+      "line": "iPad Air（M4） Wi-Fi 128GB",
+      "model": "iPad Air（M4）11インチ",
+      "name": "11インチ iPad Air（M4） Wi-Fi 128GB",
+      "image": "/products/ipad-air-m4-hero.jpg",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GQWJCR4K",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0gqwsbmq1",
+      "brand": "Apple",
+      "line": "11インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "model": "11インチiPad Air（M4）Wi-Fi 128GB",
+      "name": "Apple 11インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "image": "/products/ipad-air-11-m4-blue-128gb.jpg",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GQWSBMQ1",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0gqx1p8tr",
+      "brand": "Apple",
+      "line": "13インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "model": "13インチiPad Air（M4）Wi-Fi 128GB",
+      "name": "Apple 13インチiPad Air（M4）Wi-Fi 128GB ブルー",
+      "image": "/products/ipad-air-13-m4-blue-128gb.jpg",
+      "officialUrl": "https://www.apple.com/jp/ipad-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GQX1P8TR",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0gr1fpzsg",
+      "brand": "Apple",
+      "line": "2026 MacBook Pro 16インチ（M5 Pro 18コアCPU・20コアGPU・48GB・1TB）シルバー",
+      "model": "MacBook Pro 16インチ M5 Pro（18コアCPU・20コアGPU）",
+      "name": "Apple 2026 MacBook Pro 16インチ（M5 Pro 18コアCPU・20コアGPU・48GB・1TB）シルバー",
+      "image": "/products/macbook-pro-16-m5-pro-silver.jpg",
+      "officialUrl": "https://www.apple.com/jp/macbook-pro/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GR1FPZSG",
+          "checkedAt": "2026-10-12"
+        }
+      },
+      "checkedAt": "2026-10-12"
+    },
+    {
+      "id": "amazon-b0gr1kp26q",
+      "brand": "Apple",
+      "line": "2026 MacBook Pro 14インチ（M5 Pro 15コアCPU・16コアGPU・24GB・1TB）シルバー",
+      "model": "MacBook Pro 14インチ M5 Pro（15コアCPU・16コアGPU）",
+      "name": "Apple 2026 MacBook Pro 14インチ（M5 Pro 15コアCPU・16コアGPU・24GB・1TB）シルバー",
+      "image": "/products/macbook-pro-14-m5-pro-silver.jpg",
+      "officialUrl": "https://www.apple.com/jp/macbook-pro/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GR1KP26Q",
+          "checkedAt": "2026-10-12"
+        }
+      },
+      "checkedAt": "2026-10-12"
+    },
+    {
+      "id": "amazon-b0gr1prmds",
+      "brand": "Apple",
+      "line": "MacBook Air 15インチ（M5・10コアCPU/10コアGPU・16GB・512GB）ミッドナイト",
+      "model": "MacBook Air 15 M5",
+      "name": "Apple MacBook Air 15インチ（M5・10コアCPU/10コアGPU・16GB・512GB）ミッドナイト",
+      "image": "/products/macbook-air-15-m5.jpg",
+      "officialUrl": "https://www.apple.com/jp/macbook-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GR1PRMDS",
+          "checkedAt": "2026-10-10"
+        }
+      },
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "id": "amazon-b0gr1t11d6",
+      "brand": "Apple",
+      "line": "MacBook Air 13インチ（M5・10コアCPU/8コアGPU・16GB・512GB）ミッドナイト",
+      "model": "MacBook Air 13 M5",
+      "name": "Apple MacBook Air 13インチ（M5・10コアCPU/8コアGPU・16GB・512GB）ミッドナイト",
+      "image": "/products/macbook-air-13-m5.jpg",
+      "officialUrl": "https://www.apple.com/jp/macbook-air/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GR1T11D6",
+          "checkedAt": "2026-10-10"
+        }
+      },
+      "checkedAt": "2026-10-10"
+    },
+    {
+      "id": "amazon-b0gv5vhtl6",
+      "brand": "Amazon",
+      "line": "Kindle Paperwhite 16GB 最新モデル（グラファイト）",
+      "model": "Kindle Paperwhite 16GB 最新モデル",
+      "name": "Kindle Paperwhite 16GB 最新モデル（グラファイト）",
+      "image": "/products/kindle-paperwhite-2026.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GV5VHTL6",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0gv62167s",
+      "brand": "Amazon",
+      "line": "Kindle Colorsoft 16GB 最新モデル（グラファイト）",
+      "model": "Kindle Colorsoft 16GB（2026年発売）",
+      "name": "Kindle Colorsoft 16GB 最新モデル（グラファイト）",
+      "image": "/products/kindle-colorsoft-2026.jpg",
+      "officialUrl": "https://www.amazon.co.jp/dp/B0GV62167S",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GV62167S",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "amazon-b0gxb2rz9y",
+      "brand": "Roborock",
+      "line": "Qrevo Curv 2 Flow",
+      "model": "Qrevo Curv 2 Flow",
+      "name": "Roborock Qrevo Curv 2 Flow",
+      "image": "/products/roborock-qrevo-curv-2-flow.jpg",
+      "officialUrl": "https://jp.roborock.com/pages/roborock-qrevo-curv-2-flow",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GXB2RZ9Y",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0gxb5hwwd",
+      "brand": "Roborock",
+      "line": "Qrevo L Pro",
+      "model": "Qrevo L Pro",
+      "name": "Roborock Qrevo L Pro",
+      "image": "/products/roborock-qrevo-l-pro-2026.jpg",
+      "officialUrl": "https://jp.roborock.com/pages/roborock-qrevo-l-pro",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0GXB5HWWD",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0h362vdqg",
+      "brand": "Nintendo",
+      "line": "Switch 2（日本語・国内専用）",
+      "model": "Nintendo Switch 2 日本語・国内専用（JAN 4902370553024）",
+      "name": "Nintendo Switch 2（日本語・国内専用）",
+      "image": "/products/nintendo-switch-2-jp.jpg",
+      "officialUrl": "https://www.nintendo.com/jp/hardware/switch2/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0H362VDQG",
+          "checkedAt": "2026-10-07"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18210481%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-07"
+        }
+      },
+      "checkedAt": "2026-10-07"
+    },
+    {
+      "id": "amazon-b0h6b93696",
+      "brand": "Samsung",
+      "line": "Galaxy Watch9 44mm Bluetooth シルバー（SM-L350NZSJXJP）",
+      "model": "SM-L350NZSJXJP",
+      "name": "Samsung Galaxy Watch9 44mm Bluetooth シルバー（SM-L350NZSJXJP）",
+      "image": "/products/galaxy-watch9-44mm-silver.jpg",
+      "officialUrl": "https://www.samsung.com/jp/watches/galaxy-watch/galaxy-watch9-44mm-silver-bluetooth-sm-l350nzsjxjp/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0H6B93696",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "direct",
+          "url": "https://item.rakuten.co.jp/samsungonline/wtc_watch9/?variantId=r4986773260086",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0hc3b8ng6",
+      "brand": "Google",
+      "line": "Pixel 11 Pro 256GB",
+      "model": "Pixel 11 Pro 256GB",
+      "name": "Google Pixel 11 Pro 256GB",
+      "image": "/products/pixel-11-pro.jpg",
+      "officialUrl": "https://store.google.com/jp/product/pixel_11_pro_specs?hl=ja",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HC3B8NG6",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/580220e2.e788e5cf.580220e3.3d0b4bcb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbest1mobile%2Fpixel11pro%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0hgf5b9d8",
+      "brand": "象印",
+      "line": "スチーム式加湿器 EE-DG50 ホワイト（EE-DG50-WA）",
+      "model": "EE-DG50-WA",
+      "name": "象印 スチーム式加湿器 EE-DG50 ホワイト（EE-DG50-WA）",
+      "image": "/products/zojirushi-ee-dg50-wa.jpg",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HGF5B9D8",
+          "checkedAt": "2026-10-05"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232533%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-05"
+        }
+      },
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "id": "amazon-b0hgf9j1mt",
+      "brand": "象印",
+      "line": "スチーム式加湿器 EE-DG35 ホワイト（EE-DG35-WA）",
+      "model": "EE-DG35-WA",
+      "name": "象印 スチーム式加湿器 EE-DG35 ホワイト（EE-DG35-WA）",
+      "image": "/products/zojirushi-ee-dg35-wa.jpg",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-dg/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HGF9J1MT",
+          "checkedAt": "2026-10-05"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232519%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-05"
+        }
+      },
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "id": "amazon-b0hgfgsyxx",
+      "brand": "象印",
+      "line": "スチーム式加湿器 EE-RV50 ホワイト（EE-RV50-WA）",
+      "model": "EE-RV50-WA",
+      "name": "象印 スチーム式加湿器 EE-RV50 ホワイト（EE-RV50-WA）",
+      "image": "/products/zojirushi-ee-rv50-wa.jpg",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-rv/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HGFGSYXX",
+          "checkedAt": "2026-10-13"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232564%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "amazon-b0hgfkgf2n",
+      "brand": "象印",
+      "line": "スチーム式加湿器 EE-TC60（ソフトブラック）",
+      "model": "EE-TC60-BM",
+      "name": "象印 スチーム式加湿器 EE-TC60（ソフトブラック）",
+      "image": "/products/zojirushi-ee-tc60-black.png",
+      "officialUrl": "https://www.zojirushi.co.jp/syohin/life/humidifier/ee-tc/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HGFKGF2N",
+          "checkedAt": "2026-10-03"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4974305232502%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "amazon-b0hj9vnbz8",
+      "brand": "Apple",
+      "line": "AirPods 5（USB-C充電ケース）",
+      "model": "AirPods 5",
+      "name": "Apple AirPods 5（USB-C充電ケース）",
+      "image": "/products/airpods-5-hero.jpg",
+      "officialUrl": "https://www.apple.com/jp/airpods-5/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "direct",
+          "url": "https://www.amazon.co.jp/dp/B0HJ9VNBZ8",
+          "checkedAt": "2026-10-04"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/580adb2a.5e046fc2.580adb2b.309f9903/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftry3%2F4549995725049%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-04"
+        }
+      },
+      "checkedAt": "2026-10-04"
+    },
+    {
+      "id": "amazon-b0hjb1cr9q",
+      "brand": "Apple",
+      "line": "Watch SE 3（GPSモデル）40mmスターライトアルミニウムケース・サンドスポーツバンド S/M",
+      "model": "Apple Watch SE 3 GPS 40mm",
+      "name": "Apple Watch SE 3（GPSモデル）40mmスターライトアルミニウムケース・サンドスポーツバンド S/M",
+      "image": "/products/apple-watch-se-3-40mm.jpg",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-se-3/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HJB1CR9Q",
+          "checkedAt": "2026-10-09"
+        }
+      },
+      "checkedAt": "2026-10-09"
+    },
+    {
+      "id": "amazon-b0hjb33g86",
+      "brand": "Apple",
+      "line": "Watch Ultra 4（GPS + Cellular）49mm ブラックチタニウムケース トランスルーセントブラックオーシャンバンド",
+      "model": "Apple Watch Ultra 4 GPS + Cellular 49mm",
+      "name": "Apple Watch Ultra 4（GPS + Cellular）49mm ブラックチタニウムケース トランスルーセントブラックオーシャンバンド",
+      "image": "/products/apple-watch-ultra-4-black-ocean.jpg",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-ultra-4/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HJB33G86",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0hjb5fwd3",
+      "brand": "Apple",
+      "line": "Watch Series 12（GPS + Cellular）46mm ブラックアルミニウムケース ブラックスポーツバンド S/M",
+      "model": "Apple Watch Series 12 GPS + Cellular 46mm アルミニウム",
+      "name": "Apple Watch Series 12（GPS + Cellular）46mm ブラックアルミニウムケース ブラックスポーツバンド S/M",
+      "image": "/products/apple-watch-series-12-46mm-black-cellular.jpg",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-series-12/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HJB5FWD3",
+          "checkedAt": "2026-10-11"
+        }
+      },
+      "checkedAt": "2026-10-11"
+    },
+    {
+      "id": "amazon-b0hjb812tg",
+      "brand": "Apple",
+      "line": "Watch Series 12（GPSモデル）42mmブラックアルミニウムケース・ブラックスポーツバンド S/M",
+      "model": "Apple Watch Series 12 GPS 42mm",
+      "name": "Apple Watch Series 12（GPSモデル）42mmブラックアルミニウムケース・ブラックスポーツバンド S/M",
+      "image": "/products/apple-watch-series-12-42mm.jpg",
+      "officialUrl": "https://www.apple.com/jp/apple-watch-series-12/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "verified",
+          "url": "https://www.amazon.co.jp/dp/B0HJB812TG",
+          "checkedAt": "2026-10-09"
+        }
+      },
+      "checkedAt": "2026-10-09"
+    },
+    {
+      "id": "model-a3957n11",
+      "brand": "Soundcore",
+      "line": "Liberty 5 ミッドナイトブラック A3957N11",
+      "model": "A3957N11",
+      "name": "Soundcore Liberty 5 ミッドナイトブラック A3957N11",
+      "image": "/products/soundcore-liberty-5.jpg",
+      "officialUrl": "https://www.sony.jp/headphone/products/WF-C710N/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "Soundcore Liberty 5 ミッドナイトブラック A3957N11"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa3957%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "model-ct2000x10prossd9",
+      "brand": "Crucial",
+      "line": "X10 Pro 2TB（CT2000X10PROSSD9）",
+      "model": "CT2000X10PROSSD9",
+      "name": "Crucial X10 Pro 2TB（CT2000X10PROSSD9）",
+      "image": "https://assets.micron.com/adobe/assets/urn:aaid:aem:e74216b8-9132-4aec-8481-2f7861387c80/renditions/transformpng-1024-1024.png/as/crucial-x10-pro-black-isolated-left.png",
+      "officialUrl": "https://www.crucial.com/ssd/x10-pro/CT2000X10PROSSD9",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "Crucial X10 Pro 2TB（CT2000X10PROSSD9）"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57f32d04.2786676a.57f32d05.d4b822af/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftales-store%2F202506050037110649528938428%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-09-27"
+    },
+    {
+      "id": "model-ga10892-us",
+      "brand": "Google",
+      "line": "Pixel Watch 5 45mm Bluetooth/Wi-Fi（Polished Silver / Fog、GA10892-US）",
+      "model": "GA10892-US",
+      "name": "Google Pixel Watch 5 45mm Bluetooth/Wi-Fi（Polished Silver / Fog、GA10892-US）",
+      "image": "/products/pixel-watch-5-45mm-fog.webp",
+      "officialUrl": "https://store.google.com/jp/product/pixel_watch_5?hl=ja",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "Google Pixel Watch 5 45mm Bluetooth/Wi-Fi（Polished Silver / Fog、GA10892-US）"
+        },
+        "rakuten": {
+          "state": "direct",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57fd415b.b966fb8c.57fd415e.2a4a71fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18748531%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "model-hd-lx1026",
+      "brand": "ダイニチ",
+      "line": "ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+      "model": "HD-LX1026",
+      "name": "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+      "image": "/products/dainichi-hd-lx1026-w.jpg",
+      "officialUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037248%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "model-hd-lx1226",
+      "brand": "ダイニチ",
+      "line": "ハイブリッド式加湿器 HD-LX1226（チャコールブラック）",
+      "model": "HD-LX1226",
+      "name": "ダイニチ ハイブリッド式加湿器 HD-LX1226（チャコールブラック）",
+      "image": "/products/dainichi-hd-lx1226-k.jpg",
+      "officialUrl": "https://www.dainichi-net.co.jp/products/humidifier/lineup/lx2026/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "ダイニチ ハイブリッド式加湿器 HD-LX1226（チャコールブラック）"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f11025.74f68efc.56f11026.2c30f66b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F4951272037309%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-05"
+        }
+      },
+      "checkedAt": "2026-10-05"
+    },
+    {
+      "id": "model-iphone-18-pro",
+      "brand": "Apple",
+      "line": "iPhone 18 Pro 256GB",
+      "model": "iPhone 18 Pro",
+      "name": "Apple iPhone 18 Pro 256GB",
+      "image": "/products/iphone-18-pro.png",
+      "officialUrl": "https://www.apple.com/jp/iphone-18-pro/specs/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "Apple iPhone 18 Pro 256GB"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/58021d7e.4983f3fd.58021d7f.1b074964/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Frakutenmobile-store%2Fiphone-18-pro%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "model-je-240a",
+      "brand": "Jackery",
+      "line": "ポータブル電源 240 New（JE-240A）",
+      "model": "JE-240A",
+      "name": "Jackery ポータブル電源 240 New（JE-240A）",
+      "image": "/products/jackery-240-new.jpg",
+      "officialUrl": "https://www.jackery.jp/products/explorer-240-new",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "Jackery ポータブル電源 240 New（JE-240A）"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57fa6fe4.a1c9bf9a.57fa6fe5.2fbe93ef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjackery-japan%2Fn-p-240200-bkor-jk2%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-03"
+        }
+      },
+      "checkedAt": "2026-10-03"
+    },
+    {
+      "id": "model-kn-hw24k",
+      "brand": "シャープ",
+      "line": "ヘルシオ ホットクック KN-HW24K（新モデル・2026年）",
+      "model": "KN-HW24K",
+      "name": "シャープ ヘルシオ ホットクック KN-HW24K（新モデル・2026年）",
+      "image": "/products/sharp-hotcook-kn-hw24k.jpg",
+      "officialUrl": "https://jp.sharp/hotcook/products/knhw24k/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "シャープ ヘルシオ ホットクック KN-HW24K（新モデル・2026年）"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/56f0289d.f9b018d4.56f0289e.4ee25694/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4550556205153%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9",
+          "checkedAt": "2026-10-06"
+        }
+      },
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "model-wf-1000xm6",
+      "brand": "ソニー",
+      "line": "ワイヤレスノイズキャンセリングステレオヘッドセット WF-1000XM6",
+      "model": "WF-1000XM6",
+      "name": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-1000XM6",
+      "image": "/products/sony-wf-1000xm6.jpg",
+      "officialUrl": "https://www.sony.jp/headphone/products/WF-1000XM6/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-1000XM6"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57a4962c.d331655a.57a4962d.2b976f04/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4548736171763%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtZSI6MSwibmFtcCI6InJpZ2h0IiwiY29tIjoxLCJjb21wIjoiZG93biIsInByaWNlIjoxLCJib3IiOjEsImNvbCI6MSwiYmJ0biI6MSwicHJvZCI6MCwiYW1wIjpmYWxzZX0%3D",
+          "checkedAt": "2026-10-02"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "model-wf-c710n",
+      "brand": "ソニー",
+      "line": "ワイヤレスノイズキャンセリングステレオヘッドセット WF-C710N",
+      "model": "WF-C710N",
+      "name": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-C710N",
+      "image": "/products/sony-wf-c710n.jpg",
+      "officialUrl": "https://www.sony.jp/headphone/products/WF-C710N/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-C710N"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfc710n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0ZXh0Iiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-13"
+    },
+    {
+      "id": "model-wf-ls910n",
+      "brand": "ソニー",
+      "line": "ワイヤレスノイズキャンセリングステレオヘッドセット LinkBuds Fit WF-LS910N",
+      "model": "WF-LS910N",
+      "name": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット LinkBuds Fit WF-LS910N",
+      "image": "/products/sony-linkbuds-fit.jpg",
+      "officialUrl": "https://www.sony.jp/headphone/products/LinkBuds_Fit/",
+      "sellers": {
+        "amazon": {
+          "state": "search",
+          "query": "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット LinkBuds Fit WF-LS910N"
+        },
+        "rakuten": {
+          "state": "verified",
+          "url": "https://hb.afl.rakuten.co.jp/ichiba/57d889c6.e5bc007a.57d889c7.e2780091/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-earphone%2Fsony-wfls910n%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJpdGVtIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW1lIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+          "checkedAt": "2026-10-13"
+        }
+      },
+      "checkedAt": "2026-10-02"
+    }
+  ]
+}
