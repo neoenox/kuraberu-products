@@ -32,8 +32,10 @@ export const appleWatchUltra4VsSeries12Seed: CommercialArticleSeed = {
   lead: "Apple Watch Ultra 4とSeries 12は、S11チップ、64GBの容量、常時表示のLTPO3 OLEDディスプレイ、第2世代の電気心拍センサーと皮膚温センサー、ECG、睡眠アプリ、Bluetooth 5.3、第2世代の超広帯域チップ、Digital Crown、GPS + Cellularモデル（5G対応のモバイル通信）が共通です。違いは、ケース（グレード5のチタニウムと、アルミニウム）、サイズ（49mm・厚さ12mmと46mm・厚さ9.7mm）、重さ（63.1gと38.6g）、ピーク輝度（3,000ニトと2,000ニト）、バッテリー（通常使用で最大50時間と最大24時間）、耐水性能（100mとダイビング40mと、50m）、アクションボタンとサイレンの有無、衛星通信、GPSの方式、価格（142,800円からと、98,800円から）です。この記事では、Ultra 4のブラックチタニウム、Series 12の46mmブラックアルミニウムで比べています。",
   leftProduct:
     "Apple Watch Ultra 4（GPS + Cellular）49mm ブラックチタニウムケース トランスルーセントブラックオーシャンバンド",
+  leftProductId: "amazon-b0hjb33g86",
   rightProduct:
     "Apple Watch Series 12（GPS + Cellular）46mm ブラックアルミニウムケース ブラックスポーツバンド S/M",
+  rightProductId: "amazon-b0hjb5fwd3",
   leftPoint:
     "バッテリー（最大50時間）、100mの耐水性能とダイビング、アクションボタン、衛星通信を重視し、44,000円高くなっても、大きめの本体（63.1g）でよい人向け",
   rightPoint:

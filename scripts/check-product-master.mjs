@@ -66,9 +66,13 @@ function main() {
   // 記事seedの商品参照（#1064 Phase 2a）は既定ファイルのときだけ検証する。
   // `--file` はスキーマ検証専用（マスタ単体を差し替えて試す用途を壊さないため）。
   let checkedSlots = 0;
+  let explicitSlots = 0;
   if (errors.length === 0 && file === DEFAULT_MASTER_PATH) {
     const refs = checkArticleProductRefs();
     checkedSlots = refs.slots.length;
+    explicitSlots = refs.slots.filter(
+      (slot) => typeof slot.productId === "string" && slot.productId,
+    ).length;
     errors.push(...refs.errors);
   }
   if (errors.length > 0) {
@@ -78,7 +82,9 @@ function main() {
   }
   console.log(`product-master check passed: ${file}`);
   if (checkedSlots > 0) {
-    console.log(`article-product-refs check passed: ${checkedSlots} slots`);
+    console.log(
+      `article-product-refs check passed: ${checkedSlots} slots (explicit ${explicitSlots} / derived ${checkedSlots - explicitSlots})`,
+    );
   }
 }
 

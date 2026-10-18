@@ -31,8 +31,10 @@ export const ankerSoundcoreLiberty5ProVsLiberty5ProMaxSeed: CommercialArticleSee
     lead: "Soundcore Liberty 5 ProとLiberty 5 Pro Maxは、ウルトラノイズキャンセリング4.0や9.2mmドライバー、公称バッテリーなど主要スペックが共通の兄弟機です。差は充電ケースまわりに集中します。Pro Maxは1.78インチAMOLEDと壁紙、マグネット対応ワイヤレス充電、Max専用のAIボイスレコーダーを備え、公式価格は36,990円。Proは小画面ディスプレイとマグネット非対応のワイヤレス充電で26,990円、ケース込みも約68.5gと軽めです。AIレコーダーは公式シリーズ比較でもPro非搭載・Max搭載です。",
     leftProduct:
       "Soundcore Liberty 5 Pro（D1203 / D1203N11 ミッドナイトブラック）",
+    leftProductId: "amazon-b0gk1qfgf6",
     rightProduct:
       "Soundcore Liberty 5 Pro Max（D1204 / D1204N11 ミッドナイトブラック）",
+    rightProductId: "amazon-b0glf2tbd4",
     leftPoint: "価格と軽い充電ケースを重視する人向け",
     rightPoint: "AMOLEDケースとAIボイスレコーダーを重視する人向け",
     leftAmazonUrl: "https://www.amazon.co.jp/dp/B0GK1QFGF6",

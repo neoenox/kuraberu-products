@@ -32,8 +32,10 @@ export const pixelWatch5VsGalaxyWatch9Seed: CommercialArticleSeed = {
   lead: "比較するのはPixel Watch 5の45mm Bluetooth/Wi-Fiモデルと、Galaxy Watch9の44mm Bluetoothモデルです。Pixel Watch 5は64GBのストレージとAndroid 12以降への対応をメーカーが案内し、Galaxy Watch9は本体34g、32GBストレージ、44mmで445mAhの電池を備えます。電池持ちはAOD（常時表示）の条件やメーカーごとの試験方法が同一と確認できないため、購入前に自分の使い方と各公式仕様を照らし合わせてください。",
   leftProduct:
     "Google Pixel Watch 5 45mm Bluetooth/Wi-Fi（Polished Silver / Fog、GA10892-US）",
+  leftProductId: "model-ga10892-us",
   rightProduct:
     "Samsung Galaxy Watch9 44mm Bluetooth シルバー（SM-L350NZSJXJP）",
+  rightProductId: "amazon-b0h6b93696",
   leftPoint:
     "64GBストレージ。45mmは常時表示で最長40時間、Android 12以降の多くのスマートフォンに対応",
   rightPoint:

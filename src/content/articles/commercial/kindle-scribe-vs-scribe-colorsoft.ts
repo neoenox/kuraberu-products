@@ -37,7 +37,9 @@ export const kindleScribeVsScribeColorsoftSeed: CommercialArticleSeed = {
     "読書を長く使いたい、価格を抑えたいなら白黒のKindle Scribe（Amazonで98,980円、読書で最大12週間）、ハイライトや書き込みに色を使いたいならKindle Scribe Colorsoft（Amazonで115,980円、読書で最大8週間）が候補です。",
   lead: "Kindle ScribeとKindle Scribe Colorsoftは、11インチの反射防止ディスプレイ、厚さ5.4mm・質量400g、プレミアムペン付属（充電・ペアリング不要）、明るさ自動調整と色調調節ライト、32GB/64GBのストレージ、USB-Cでの充電（約3時間）が共通です。違いは、カラー表示の有無（解像度は白黒300ppi、Colorsoftのカラーは150ppi）、バッテリー（読書で最大12週間と最大8週間）、プロセッサーの記載、カラー対応のペンのツール、色（グラファイトのみと、グラファイト・フィグ）、価格（Amazonで98,980円と115,980円）です。この記事では、どちらも64GB・グラファイトで比べています。",
   leftProduct: "Amazon Kindle Scribe 64GB グラファイト",
+  leftProductId: "amazon-b0fc1ygr6x",
   rightProduct: "Amazon Kindle Scribe Colorsoft 64GB グラファイト",
+  rightProductId: "amazon-b0fc1xtk8p",
   leftPoint:
     "白黒でよく、読書のバッテリー（最大12週間）と価格（17,000円低い）を重視する人向け",
   rightPoint:

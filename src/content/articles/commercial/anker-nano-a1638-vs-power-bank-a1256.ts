@@ -24,7 +24,9 @@ export const ankerNanoA1638VsA1256Seed: CommercialArticleSeed = {
   lead: "結論：巻取り式ケーブルと45W出力を使いたいならA1638、軽さを優先するならA1256です。",
   leftProduct:
     "Anker Nano Power Bank (10000mAh, 45W, 巻取り式 USB-Cケーブル) A1638",
+  leftProductId: "amazon-b0dnlr2nyn",
   rightProduct: "Anker Power Bank (10000mAh, 30W) A1256",
+  rightProductId: "amazon-b0bymml97x",
   leftPoint: "45W出力と巻取り式ケーブルを重視する人向け",
   rightPoint: "約220gの軽さを重視する人向け",
   decisionGuideSteps: [

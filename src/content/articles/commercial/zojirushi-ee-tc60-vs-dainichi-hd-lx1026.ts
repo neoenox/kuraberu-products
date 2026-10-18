@@ -28,7 +28,9 @@ export const zojirushiEeTc60VsDainichiHdLx1026Seed: CommercialArticleSeed = {
     "広い部屋での加湿量と対応畳数を優先するならダイニチ HD-LX1026、スチーム式でフィルターを使わない方式や本体の軽さを重視するなら象印 EE-TC60が比較候補です。",
   lead: "象印 EE-TC60はスチーム式で、最大加湿量600mL/h・プレハブ洋室17畳まで。ダイニチ HD-LX1026はハイブリッド式で、標準運転時の最大加湿量960mL/h・プレハブ洋室27畳までです。広い部屋をカバーしたいか、フィルターを使わない方式と軽さを重視するかで選び分けられます。運転方式やモードが異なるため、消費電力・運転時間・運転音は同じ条件の数字として単純比較できません。",
   leftProduct: "象印 スチーム式加湿器 EE-TC60（ソフトブラック）",
+  leftProductId: "amazon-b0hgfkgf2n",
   rightProduct: "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+  rightProductId: "model-hd-lx1026",
   leftPoint:
     "フィルター不要のスチーム式。重量2.8kgで、給水・湯捨てしやすい広口容器を備える",
   rightPoint:

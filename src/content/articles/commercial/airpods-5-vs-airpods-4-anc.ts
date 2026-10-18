@@ -37,8 +37,10 @@ export const airpods5VsAirpods4AncSeed: CommercialArticleSeed = {
   summary:
     "Appleが公表するANC比較試験とIP等級を重視するならAirPods 5、ワイヤレス充電ケースと「探す」用スピーカーを使いたいならANC搭載AirPods 4が候補です。ANC有効時の再生時間とイヤホン本体の寸法・重さは公式仕様で同じです。",
   leftProduct: "Apple AirPods 5（USB-C充電ケース）",
+  leftProductId: "amazon-b0hj9vnbz8",
   rightProduct:
     "Apple アクティブノイズキャンセリング搭載AirPods 4（ワイヤレス充電ケース）",
+  rightProductId: "amazon-b0dgjbnyvy",
   leftPoint: "Apple公表のANC比較試験とIP57の防塵・耐汗耐水性能を重視する人向け",
   rightPoint:
     "Qi／Apple Watch充電と「探す」用スピーカー付きケースを使いたい人向け",

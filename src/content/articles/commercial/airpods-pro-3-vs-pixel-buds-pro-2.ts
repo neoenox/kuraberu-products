@@ -36,7 +36,9 @@ export const airpodsPro3VsPixelBudsPro2Seed: CommercialArticleSeed = {
     "iPhoneと組み合わせ、防塵・耐汗耐水（IP57）や心拍数センサー、ヒアリング補助機能を重視するならAirPods Pro 3（42,800円）、ケース併用の再生時間とイヤホンの軽さ、Androidとの組み合わせを重視するならPixel Buds Pro 2（Google Storeで36,800円）が候補です。",
   lead: "AirPods Pro 3とPixel Buds Pro 2は、アクティブノイズキャンセリング、外部音取り込み、ワイヤレス充電ケース（USB-CとQi）、ノイズキャンセリング有効時にイヤホン単体で最大8時間の再生が共通です。違いは、チップ（Apple H2とGoogle Tensor A1）、防水・防塵（イヤホンとケースがIP57と、イヤホンIP54・ケースIPX4）、バッテリー（ケース併用でANC有効時に最大24時間と最大30時間）、質量（イヤホン1個で5.55gと4.7g）、Bluetoothのバージョン（5.3と5.4）、心拍数センサーとヒアリング補助機能の記載、対応する端末、価格（Appleで42,800円とGoogle Storeで36,800円）です。この記事では、AmazonのPixel Buds Pro 2は、Moonstone（GA10076-JP）の商品ページで比べています。",
   leftProduct: "Apple AirPods Pro 3（単品・MagSafe充電ケース USB-C）",
+  leftProductId: "amazon-b0fqfqdn6k",
   rightProduct: "Google Pixel Buds Pro 2 Moonstone（GA10076-JP）",
+  rightProductId: "amazon-b0fn3kt3c8",
   leftPoint:
     "iPhoneとの組み合わせで、IP57の防塵・耐汗耐水、心拍数センサー、ヒアリング補助機能を重視する人向け",
   rightPoint:

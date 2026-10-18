@@ -31,7 +31,9 @@ export const amazonEchoShow8VsEchoShow5Seed: CommercialArticleSeed = {
     "8.7インチの画面、空間オーディオ、13MPカメラ、スマートホームハブ内蔵を重視するならEcho Show 8（2025年発売）、デスクや枕元で価格を抑えて使うならEcho Show 5（第3世代）が候補です。",
   lead: "Echo Show 8（2025年発売）とEcho Show 5（第3世代）は、どちらもAlexaを搭載し、音楽やニュース、ビデオ通話、カメラでの見守りに使えるAmazonのスマートディスプレイです。Amazonの商品ページの比較表では、違いは画面サイズ（8.7インチHDと5.5インチ）、スピーカー（フルレンジドライバー2個・2.8インチウーファー・空間オーディオと、1.7インチスピーカー1個）、カメラ（自動フレーミング付き13MPと2MP）、スマートホームハブ内蔵の有無、本体サイズ、価格（39,980円と17,980円）です。確認日は2026年10月8日です。",
   leftProduct: "Amazon Echo Show 8（2025年発売）",
+  leftProductId: "amazon-b0dyc1lm11",
   rightProduct: "Amazon Echo Show 5（第3世代）",
+  rightProductId: "amazon-b09b2rlplv",
   leftPoint:
     "8.7インチの画面、空間オーディオ、13MPカメラ、スマートホームハブ内蔵を重視する人向け",
   rightPoint: "デスクや枕元などの小さな場所に、価格を抑えて置きたい人向け",

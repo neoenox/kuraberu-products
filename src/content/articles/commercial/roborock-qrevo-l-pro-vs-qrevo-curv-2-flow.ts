@@ -31,7 +31,9 @@ export const roborockQrevoLProVsQrevoCurv2FlowSeed: CommercialArticleSeed = {
     "価格を抑えて、全自動の吸引と水拭きを使いたいならQrevo L Pro（Amazonで59,990円）、ローラーモップ、20,000Paの吸引力、カメラによる障害物の認識を重視するならQrevo Curv 2 Flow（Amazonで69,990円）が候補です。",
   lead: "Qrevo L ProとQrevo Curv 2 Flowは、HyperForce吸引、ドックでの自動ゴミ収集（紙パックで最大約65日分）、最大75℃の高温モップ洗浄、温風乾燥、ストラクチャードライトによる障害物の回避、Roborockアプリとの連携が共通です。違いは、吸引力（最大18,500Paと最大20,000Pa）、モップの方式（2枚の回転モップと幅270mmのローラーモップ）、モップの持ち上げ（最大10mmと最大15mm）、障害物の認識（Reactive TechとRGBカメラを加えたReactive AI）、ナビゲーション、ペット向けの機能、本体とドックの大きさ、Amazonの価格（59,990円と69,990円）です。この記事では、Amazon.co.jpの商品ページ（26年モデル）で比べています。",
   leftProduct: "Roborock Qrevo L Pro",
+  leftProductId: "amazon-b0gxb5hwwd",
   rightProduct: "Roborock Qrevo Curv 2 Flow",
+  rightProductId: "amazon-b0gxb2rz9y",
   leftPoint:
     "価格を抑えて、吸引・水拭き・ゴミ収集・モップの洗浄乾燥まで自動化したい人向け。本体が薄い（高さ96.5mm）",
   rightPoint:

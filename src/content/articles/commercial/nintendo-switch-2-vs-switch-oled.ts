@@ -31,7 +31,9 @@ export const nintendoSwitch2VsSwitchOledSeed: CommercialArticleSeed = {
     "Switch 2専用ソフトを遊びたい、4K出力や256GBの保存メモリーを重視するならNintendo Switch 2、Switchソフトだけで十分で、希望小売価格の安さと本体の軽さ、有機ELの画面を重視するならSwitch（有機ELモデル）が候補です。",
   lead: "Nintendo Switch 2とNintendo Switch（有機ELモデル）は、どちらもTVモード・テーブルモード・携帯モードで遊べる任天堂のゲーム機です。任天堂の公式仕様では、Switch 2は7.9インチ・1920×1080の液晶（HDR、最大120Hz）、TV出力は最大4K（3840×2160）60fps、保存メモリーは256GBです。Switch（有機ELモデル）は7.0インチ・1280×720の有機EL、TV出力は最大1920×1080 60fps、保存メモリーは64GBです。Switch 2はSwitchのソフトも遊べますが、一部のソフトは完全な互換性がなく、Switch（有機ELモデル）ではSwitch 2専用ソフトは遊べません。確認日は2026年10月7日です。",
   leftProduct: "Nintendo Switch 2（日本語・国内専用）",
+  leftProductId: "amazon-b0h362vdqg",
   rightProduct: "Nintendo Switch（有機ELモデル）ホワイト",
+  rightProductId: "amazon-b098b8pfxy",
   leftPoint:
     "Switch 2専用ソフト、4K出力、256GBの保存メモリー、大きく高解像度の画面を重視する人向け",
   rightPoint:

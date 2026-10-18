@@ -31,7 +31,9 @@ export const amazonFireTvStick4kMaxVs4kSelectSeed: CommercialArticleSeed = {
     "Dolby VisionとDolby Atmos、Wi-Fi 6E、16GBのストレージを重視するならFire TV Stick 4K Max、4K視聴を価格を抑えて始めたいならFire TV Stick 4K Selectが候補です。",
   lead: "Fire TV Stick 4K MaxとFire TV Stick 4K Selectは、どちらも4K Ultra HDに対応し、Alexa対応の音声認識リモコンが付属するAmazonのスティック型ストリーミングデバイスです。Amazonの商品ページの比較表では、違いはWi-Fi規格（Wi-Fi 6EとWi-Fi 5）、ストレージ（16GBと8GB）、映像（Dolby Vision対応と非対応）、音声（Dolby Atmos対応と、Dolby Encodedオーディオのパススルーのみ）、付属リモコン（EnhancedとAlexa対応音声認識リモコン）、クラウドゲーム、価格（15,980円と10,980円）です。確認日は2026年10月8日です。",
   leftProduct: "Amazon Fire TV Stick 4K Max（第2世代）",
+  leftProductId: "amazon-b0g2txbswj",
   rightProduct: "Amazon Fire TV Stick 4K Select",
+  rightProductId: "amazon-b0g2txcwfh",
   leftPoint:
     "Dolby Vision・Dolby Atmos、Wi-Fi 6E、16GBのストレージ、Enhancedリモコンを重視する人向け",
   rightPoint: "4Kの視聴を、価格を抑えて手軽に始めたい人向け",

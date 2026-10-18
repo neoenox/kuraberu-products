@@ -30,7 +30,9 @@ export const zojirushiEeDg35VsEeDg50Seed: CommercialArticleSeed = {
     "木造和室6畳・プレハブ洋室10畳までの部屋で、本体を小さく軽く、価格を抑えたいならEE-DG35、8畳・13畳までの広めの部屋で加湿能力と容量を重視するならEE-DG50が候補です。",
   lead: "象印のEE-DG35とEE-DG50は、どちらも2026年9月発売のスチーム式加湿器です。強・中・弱の連続加湿時間（約8・16・32時間）、入・切タイマー、自動加湿、クエン酸洗浄モードなどの機能は、公式ページで共通と案内されています。違いは容量（3.0Lと4.0L）、定格加湿能力（350mL/hと480mL/h）、適用床面積の目安、加湿時の消費電力、本体の高さと質量、公式ストア価格です。適用床面積や連続加湿時間はメーカーの目安で、使用環境により変わります。",
   leftProduct: "象印 スチーム式加湿器 EE-DG35 ホワイト（EE-DG35-WA）",
+  leftProductId: "amazon-b0hgf9j1mt",
   rightProduct: "象印 スチーム式加湿器 EE-DG50 ホワイト（EE-DG50-WA）",
+  rightProductId: "amazon-b0hgf5b9d8",
   leftPoint:
     "木造和室〜6畳／プレハブ洋室〜10畳の部屋で、小さく軽い本体を選びたい人向け",
   rightPoint:

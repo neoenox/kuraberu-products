@@ -31,7 +31,9 @@ export const dainichiHdLx1226VsHdLx1026Seed: CommercialArticleSeed = {
     "本体サイズ・重さ・タンク容量・運転音は同じで、違いは加湿能力と消費電力です。プレハブ洋室28〜33畳クラスの広い部屋ならHD-LX1226、27畳までの部屋で消費電力を抑えたいならHD-LX1026が候補です。",
   lead: "ダイニチ HD-LX1226とHD-LX1026は、同じLX TYPE（2026年モデル）のハイブリッド式加湿器です。外形寸法・質量・7.0Lタンク・運転音は公式仕様で共通。HD-LX1226は標準運転の最大加湿量が1,200mL/hでプレハブ洋室33畳まで、HD-LX1026は960mL/hで27畳までです。その分、標準運転の最大消費電力はHD-LX1226が大きく、満水からの連続加湿時間は短くなります。",
   leftProduct: "ダイニチ ハイブリッド式加湿器 HD-LX1226（チャコールブラック）",
+  leftProductId: "model-hd-lx1226",
   rightProduct: "ダイニチ ハイブリッド式加湿器 HD-LX1026（スノーホワイト）",
+  rightProductId: "model-hd-lx1026",
   leftPoint: "標準最大1,200mL/h、プレハブ洋室33畳まで。広い部屋向け",
   rightPoint:
     "標準最大960mL/h、プレハブ洋室27畳まで。標準運転の消費電力が小さい",

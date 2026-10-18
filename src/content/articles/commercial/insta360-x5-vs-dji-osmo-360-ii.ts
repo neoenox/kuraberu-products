@@ -37,7 +37,9 @@ export const insta360X5VsDjiOsmo360IiSeed: CommercialArticleSeed = {
     "価格を抑え（84,800円）、15mの防水と大きなバッテリー（2,400mAh）を重視するならInsta360 X5、8K/60fpsの360度動画、内蔵ストレージ（128GB）、小さく軽い本体（183g）を重視するならDJI Osmo 360 II（93,610円）が候補です。",
   lead: "Insta360 X5とDJI Osmo 360 IIは、2つのレンズによる8Kの360度動画、シングルレンズ（フラット）の4K動画、microSDカードの使用、Wi-Fi・Bluetooth、アプリと専用ソフトでの編集に対応した360度カメラです。違いは、センサー（1/1.28インチと1/1.1インチ）、8K動画の最大フレームレート（30fpsと60fps）、本体の防水（15mと10m。Osmo 360 IIは防水ケースで50m）、バッテリー容量（2,400mAhと2,150mAh）、内蔵ストレージ（なしと128GB）、重さ・大きさ（200gと183g）、価格（84,800円と93,610円）です。この記事では、Insta360 X5の通常版と、Osmo 360 IIのスタンダードコンボで比べています。",
   leftProduct: "Insta360 X5 通常版（ブラック）",
+  leftProductId: "amazon-b0dzcbycny",
   rightProduct: "DJI Osmo 360 II スタンダードコンボ",
+  rightProductId: "amazon-b0gl1mx4n2",
   leftPoint:
     "価格を抑え、本体のみで15mの防水と大きなバッテリー（2,400mAh）を重視する人向け。内蔵ストレージはなく、microSDカードが必要",
   rightPoint:

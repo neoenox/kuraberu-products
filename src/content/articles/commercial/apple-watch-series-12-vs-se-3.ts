@@ -32,8 +32,10 @@ export const appleWatchSeries12VsSe3Seed: CommercialArticleSeed = {
   lead: "Apple Watch Series 12とApple Watch SE 3は、64GBの容量、Apple Intelligenceのパワーを活用するSiri、常時表示のRetinaディスプレイ、50メートルの耐水性能、5G RedCapとLTE対応（Cellularモデル）が共通です。違いは、チップ（S11とS10）、ディスプレイのピーク輝度（2,000ニトと1,000ニト）、バッテリー（通常使用で最大24時間と最大18時間）、充電速度（約30分で最大80%と約45分で最大80%）、血中酸素・心電図・水深計などのセンサーと機能の記載、ケースの素材と色、価格（Appleオンラインストアで71,800円からと41,800円から）です。この記事では、小さいサイズ（42mmと40mm）のGPSモデルで比べています。",
   leftProduct:
     "Apple Watch Series 12（GPSモデル）42mmブラックアルミニウムケース・ブラックスポーツバンド S/M",
+  leftProductId: "amazon-b0hjb812tg",
   rightProduct:
     "Apple Watch SE 3（GPSモデル）40mmスターライトアルミニウムケース・サンドスポーツバンド S/M",
+  rightProductId: "amazon-b0hjb1cr9q",
   leftPoint:
     "バッテリーの余裕、2,000ニトの明るいディスプレイ、心電図・血中酸素などの健康機能を重視し、価格が高くなってもよい人向け",
   rightPoint:

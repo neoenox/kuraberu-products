@@ -31,7 +31,9 @@ export const kindleVsKindlePaperwhiteSeed: CommercialArticleSeed = {
     "価格を抑え、140gの軽さと6インチの小さな本体を重視するならKindle、7インチの画面と最大12週間のバッテリー、IPX8等級の防水、色調調節ライトを重視するなら、価格が10,000円高くなるKindle Paperwhiteが候補です。",
   lead: "最新モデルのKindle（16GB）とKindle Paperwhite（16GB）は、フロントライト内蔵、解像度300ppi、16GB（使用可能なストレージ10.8GB）、Wi-Fi 2.4GHz・5.0GHz、USB-C充電が共通です。違いは、画面サイズ（6インチと7インチ）、本体サイズ・質量（152.8×108×6.9mm・140gと174.7×126.8×6.8mm・204g）、防水（Kindle Paperwhiteのみ）、色調調節ライト（Kindle Paperwhiteのみ）、バッテリー持続時間（最大6週間と最大12週間）、Amazonの表示価格（29,980円と39,980円）です。2026年10月9日時点で、Kindleは在庫あり、Kindle Paperwhiteは発売予定日が2026年11月11日で予約受付中です。",
   leftProduct: "Kindle 16GB 最新モデル（ウベパープル）",
+  leftProductId: "amazon-b0g4smgd8c",
   rightProduct: "Kindle Paperwhite 16GB 最新モデル（グラファイト）",
+  rightProductId: "amazon-b0gv5vhtl6",
   leftPoint:
     "価格を抑え、140gの軽さと6インチの小さな本体を重視し、防水や色調調節ライトは必須ではない人向け",
   rightPoint:

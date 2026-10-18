@@ -222,3 +222,14 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
   Amazon URL・画像は全106スロット一致。この一覧は `tests/product-master-resolution.test.ts` に固定
 - §2.2 の「`keyDiffRows` / `leftModel` / `rightModel` はデッド」は実測で裏付け（`src/content` に `leftModel:` 宣言は0件。
   `keyDiffRows` は `tests/article-metadata.test.ts` の4件のみ）。ただしコードパスは残るため削除は Phase 3
+
+### A.8 Phase 2b（公開53への `productId` 付与）の実装記録（2026-10-18）
+
+公開53の**全106スロットに `{side}ProductId` を付与**しました（53ファイル・1ファイルにつき2行）。
+付与位置は `{side}Product`（表示名）の直後、値は 2a の解決層が返す導出結果と同一です。
+
+- 記事ファイルには `export const x: T = {` と `= \n  {` の2形態があり、字下げ（2/4スペース）は各ファイルの既存に合わせた
+- 付与で `catalog.json` は変化しない（生成は ASIN > model > name の3キーで統合するため。`--check` で再現性を確認）
+- seed とマスタの値の差分は 2a と同じ **5点のみ**（名前2・楽天URL3）。付与は参照キーの追加だけで値は変更していない
+- 検証は `check:product-master` が `explicit 106 / derived 0` を出力し、`{side}ProductId` が導出結果と一致することを
+  fail-closed で確認する（`tests/product-master-resolution.test.ts` にも「全スロットが明示している」検証を追加）

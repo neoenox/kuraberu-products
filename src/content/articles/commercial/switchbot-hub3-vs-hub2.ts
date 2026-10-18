@@ -31,7 +31,9 @@ export const switchbotHub3VsHub2Seed: CommercialArticleSeed = {
     "赤外線家電の操作と温湿度・照度の自動化を、価格を抑えて始めたいならハブ2、本体のダイヤル操作や人感センサー、画面表示、30台までのMatter連携を重視するならハブ3が候補です。",
   lead: "SwitchBotのハブ3とハブ2は、どちらも赤外線リモコンを学習してスマホから操作でき、温湿度センサーと照度センサー、Matter機能、本体でのシーン操作、赤外線家電のオフライン操作に対応します。違いはSwitchBotヘルプセンターの比較表と公式ページに示されており、ハブ3だけがBluetoothリモコン（Dial Master）、人感検知、天気・日時の表示、CO2・ロック状態の表示を持ちます。Matterで連携できるサブデバイス数は、ハブ2が8台、ハブ3が30台です。本体サイズと公式ストア価格も異なります。確認日は2026年10月6日です。",
   leftProduct: "SwitchBot ハブ3（W7202101）",
+  leftProductId: "amazon-b0dwdqylxg",
   rightProduct: "SwitchBot ハブ2（W3202106）",
+  rightProductId: "amazon-b0bm8vs13p",
   leftPoint:
     "本体のダイヤル操作や人感検知、画面での天気・日時表示、30台までのMatter連携を重視する人向け",
   rightPoint:

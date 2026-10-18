@@ -31,7 +31,9 @@ export const kindlePaperwhiteVsColorsoftSeed: CommercialArticleSeed = {
     "文字中心の読書で、価格を抑えて最大12週間のバッテリーを重視するならKindle Paperwhite、マンガや表紙などをカラーで読みたいなら、バッテリーは最大8週間・価格は高くなるKindle Colorsoftが候補です。",
   lead: "最新モデルのKindle PaperwhiteとKindle Colorsoftは、7インチのディスプレイ、フロントライトと色調調節ライト、174.7×126.8×6.8mm・204gの本体、16GBの容量、IPX8等級の防水、USB-C充電が共通です。違いは、カラー表示の有無（ColorsoftはAmazon Colorsoftディスプレイ）、解像度の表記（Colorsoftは白黒300ppi・カラー150ppi）、バッテリー持続時間（最大12週間と最大8週間）、Amazonの表示価格（39,980円と51,980円）です。2026年10月6日時点でどちらも発売予定日は2026年11月11日で、Amazonで予約受付中です。",
   leftProduct: "Kindle Paperwhite 16GB 最新モデル（グラファイト）",
+  leftProductId: "amazon-b0gv5vhtl6",
   rightProduct: "Kindle Colorsoft 16GB 最新モデル（グラファイト）",
+  rightProductId: "amazon-b0gv62167s",
   leftPoint:
     "文字中心の読書で、価格を抑え、バッテリー持続時間（最大12週間）を重視する人向け",
   rightPoint:

@@ -31,7 +31,9 @@ export const ipadAir11Vs13M4Seed: CommercialArticleSeed = {
     "持ち運びやすさと価格を重視するなら11インチ（128GB・Wi-Fiで129,800円、464g）、広い画面と大きなバッテリーを重視するなら13インチ（169,800円、616g）が候補です。",
   lead: "iPad Airの11インチと13インチは、Apple M4チップ（8コアCPU・9コアGPU・12GBユニファイドメモリ）、12MPカメラ、Apple Pencil Pro対応、Wi-Fi 7、Touch ID、ステレオスピーカー、USB-Cコネクタ、Wi-Fiでのビデオ再生が最大10時間、4色の仕上げ、128GBから1TBの容量が共通です。違いは、画面サイズ（10.86インチと12.9インチ）と解像度、輝度（500ニトと600ニト）、バッテリー容量（28.93Whと36.59Wh）、質量（Wi-Fiモデルで464gと616g）、本体サイズ、価格（Appleオンラインストアで129,800円と169,800円）です。この記事では、どちらも128GB・Wi-Fiモデル・ブルーで比べています。",
   leftProduct: "Apple 11インチiPad Air（M4）Wi-Fi 128GB ブルー",
+  leftProductId: "amazon-b0gqwsbmq1",
   rightProduct: "Apple 13インチiPad Air（M4）Wi-Fi 128GB ブルー",
+  rightProductId: "amazon-b0gqx1p8tr",
   leftPoint:
     "持ち運びやすさと価格を重視し、11インチの画面で足りる人向け。464gで、40,000円低い価格から選べる",
   rightPoint:
