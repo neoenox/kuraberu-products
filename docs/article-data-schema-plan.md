@@ -177,6 +177,8 @@ registry の孤児は **0件**（29記事IDすべてが seed か専用ページ�
 
 → Phase 2 の「`check-purchase-link-consistency` を registry からマスタへ委譲」には、**現状の除外を解除する作業（＝新たに強制力を得る変更）**が含まれる。
 
+**→ Phase 2d で解除済み（2026-10-18・A.10）**。`:220`（商用ページソースのスキップ）と `:461`（未公開の商用seedのスキップ）を外しました。`:400`（`collectVerifiedCtaUrls`）は registry 経由の**二重収集**を避けるためスキップを残し、商用記事の CTA は seed（描画値）から収集し、可否はマスタが正であることをコメントで明示しました。解除にあたっての違反は `:220`・`:461`・新設の遷移先検証とも**0件**です。
+
 実データにも不一致がある（公開2記事。遷移先の商品ページは同一で `ut=` パラメータのみ差分）。**PR #1166 で解消済み** — 描画は seed 優先で、handoff台帳（`docs/article-handoffs/*.json`）の affiliateUrl も seed と一致するため、registry を seed に合わせた（レンダリング出力は不変）:
 
 | 記事:side                                              | seed `ut`                   | registry `ut`          |
@@ -257,3 +259,31 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 
 記事間で値が割れた5点（商品名2・楽天URL3）は**表示へ反映しません**。楽天URL3件のうち2件は別ショップ
 （e-earphone ⇔ r-kojima / ビックカメラ）で、差し替えると「記事が確認していない遷移先」になるためです（`docs/product-master.md`）。
+
+### A.10 Phase 2d（registry の商用キーをマスタへ委譲・除外解除）の実装記録（2026-10-18）
+
+商用記事の CTA の正を registry ではなく **seed（描画値）+ 商品マスタ（可否）**へ委譲し、A.3 の除外を解除しました。
+
+- `checkArticleSource`: 商用テンプレート記事のページソースも通常検査（購入URLの直書き禁止・末尾カードとのキー順序一致）。`:220` の無条件 `return` を削除
+- `collectCommercialCtaUrls`: 公開許可リストによる除外を解除し、**未公開の非下書き seed も監査対象**に（下書きは作業中の値を含むため除外を維持）。`isPublished` オプションは不要になり削除
+- 新規 `validateCommercialCtaDestinations`: 商用 seed の楽天URLが**商品詳細ページ**を指すことを fail-closed に検証（Issue #436 の規則の商用記事版）。これまでは confirmed でないURLは `CommercialArticlePage` が CTA を黙って畳むだけで CI は通っていた
+- `collectVerifiedCtaUrls` の `:400`: registry 経由は通さないまま（通すと seed と registry の二重収集になる）。商用記事は seed + マスタ由来であることをコメントで明示
+- `findCommercialSeedRegistryDrift`: registry の商用キーが残っている間は突合を維持（キー削除は別 Phase）
+- `checkPurchaseLinkConsistency` から新検証を呼び出し（`verify:lint` / CI で実行）
+
+実測（2026-10-18・base `05a3f54`。解除**前**のデータに対して測った「新たに強制力を得る」影響）:
+
+| 項目                                      | 結果                                           |
+| ----------------------------------------- | ---------------------------------------------- |
+| 商用ページソースの通常検査（`:220` 解除） | **130ページ・違反0件**                         |
+| 未公開 seed の楽天URL（`:461` 解除）      | **4件**（すべて商品詳細ページ。違反0件）       |
+| 商用 seed の楽天URL                       | 56件（公開52 / 未公開4 / 下書き0）             |
+| うち商品詳細ページでないもの（新検証）    | **0件**                                        |
+| 監査対象の商用 CTA                        | 52 → **56**                                    |
+| 解除で新たに出る違反の合計                | **0件**                                        |
+| 公開53スロットの seed URL とマスタ URL    | 同一49 / 遷移先同一1 / 別ショップ2 / 片側欠落0 |
+
+別ショップ2件（`sony-wf-c710n-vs-soundcore-liberty-5:left` = r-kojima ⇔ e-earphone、`sony-wf-1000xm6-vs-linkbuds-fit:right` = ビックカメラ ⇔ e-earphone）は、seed が記事の確認値なので**表示は seed のまま**（A.9 と同じ判断）。マスタへの統一は記事作成者の判断として保留します。
+
+検証: `node scripts/check-purchase-link-consistency.mjs` は
+`verified CTA destination audit: 56 CTAs (56 resolved, 0 skipped)` で exit 0。`pnpm verify:fast` / `pnpm verify` は緑、`dist` の差分は0（表示は不変）。
