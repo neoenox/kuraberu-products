@@ -155,6 +155,8 @@
 
 公開済み記事は上の表を正とし、各記事の確認記録は`docs/article-handoffs/`のhandoffを参照する。以下は公式情報が未確認の候補で（2026-10-08に5本、2026-10-09にさらに5本、2026-10-11にさらに5本を補充（うち2本は調査の結果、保留または記事化済み）。アクセス実績は参照していない。現行モデルの存在をAmazonの検索結果またはApple公式ページで確認しただけで、仕様・価格・型番は未確認）、記事化前に公式URLの再取得が必要。
 
+2026-10-18に、次の4候補でメーカー公式の仕様と価格を確認し、各節に結果を記録した（Google Pixel 11 vs Pixel 11 Pro、Samsung Galaxy Z Fold8 vs Galaxy Z Flip8、Meta Quest 3S vs Meta Quest 3、ASUS ROG Xbox Ally vs ROG Xbox Ally X）。この日は当環境からAmazon.co.jp（検索ページ・トップページ）がHTTP 503で応答せず、Amazonの商品詳細ページ（ASIN）の商品名・価格・販売元・ツールバー表示は再確認できていない。ASINを再確認できないことは「Amazonに存在しない」ことを意味しない。
+
 候補を選ぶときは、次を先に確認する（2026-10-07〜08の作業で、記事化できなかった例から）。
 
 - 両方の商品に、Amazonまたは楽天で、単体の商品詳細ページがある（セット品しかない商品は、購入先を確認できず公開できない）
@@ -177,34 +179,47 @@
 ### Google Pixel 11 vs Pixel 11 Pro
 
 - 選定理由: 公開中のスマートフォン記事に、Pixel 11 Pro（iPhone 18 Pro vs Pixel 11 Pro）はあるが、Pixel 11と11 Proの比較は未着手。標準モデルと上位モデルの選択は迷いが明確。
-- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Pixel 11 SIMフリー 256GB オブシディアン B0HHHTTM95、Pixel 11 Pro 256GB SIMフリー（オブシディアン B0HC3B8NG6、オリーブ B0HC3BNS1T）の存在を確認。仕様・価格・ツールバーの表示・販売元は未確認。同じ検索に、容量・色を選ぶ形式の別出品も表示された）
+- 状態: 候補（2026-10-18にGoogle Storeの公式仕様・価格を確認（下記）。Amazon.co.jpの商品詳細（ASIN）は未確認。2026-10-12にAmazon.co.jpの検索で、Pixel 11 SIMフリー 256GB オブシディアン B0HHHTTM95、Pixel 11 Pro 256GB SIMフリー（オブシディアン B0HC3B8NG6、オリーブ B0HC3BNS1T）の存在を確認。両ASINの商品名・価格・販売元・ツールバーの表示は未確認。同じ検索に、容量・色を選ぶ形式の別出品も表示された）
 - 想定比較軸: 画面サイズ、カメラ構成とズーム、バッテリー、重さ、メモリ・容量、公式価格
 - 確認すること: Google Store Japanの両仕様・価格、比較する容量（256GB）・色を揃える、両ASINの商品名・価格・販売元・ツールバーの表示、公開中のiphone-18-pro-vs-pixel-11-proとの重複（Pixel 11 Proが共通）
 - 注意: 色・容量違いのASINと、第三者の出品を取り違えない。
+- 2026-10-18確認: Google Store日本（`store.google.com/jp`）の商品・構成・仕様ページで両機の税込価格と主な仕様を確認。Pixel 11（256GB/12GB）＝136,800円、Pixel 11 Pro（256GB/12GB）＝174,800円。チップは両機ともTensor G6。画面はPixel 11が6.3インチActua（1,080×2,424、60〜120Hz、Gorilla Glass Victus 2）、Pixel 11 Proが6.3インチSuper Actua LTPO（1〜120Hz）。重量はPixel 11が197g、Pixel 11 Proが204g。カメラは両機とも光学5倍望遠（Pixel 11は48MP広角＋13MP超広角＋10.8MP望遠、Pixel 11 Proは50MP広角＋48MP超広角＋48MP望遠）。バッテリーはPixel 11が4,985mAh、Pixel 11 Proが4,850mAh。掲載価格は税込の定価で、下取り・キャンペーンを含まない。Pixel 11 Proの174,800円は、公開中の`iphone-18-pro-vs-pixel-11-pro`の公式価格と一致する。
+- 2026-10-18未確認: Amazon.co.jpの商品詳細ページ（Pixel 11 B0HHHTTM95、Pixel 11 Pro B0HC3B8NG6）は当環境からHTTP 503で到達できず、商品名・価格・販売元・ツールバー表示を再確認できなかった。
 
 ### Samsung Galaxy Z Fold8 vs Galaxy Z Flip8
 
 - 選定理由: 折りたたみスマートフォンは公開中の記事がなく、FoldとFlipは形状も用途も違うため、選択で迷いが明確。
-- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Galaxy Z Fold8 256GB グラファイト B0H5VQTTP8、Galaxy Z Flip8 256GB（グラファイト B0H5VWFLVW、ピンク B0H5VWR9RP、クリーム B0H5W21FCM）の存在を確認。仕様・価格・ツールバーの表示・販売元は未確認）
+- 状態: 候補（2026-10-18にSamsung日本公式の仕様を確認（下記）。税込価格とAmazonの商品詳細（ASIN）は未確認。2026-10-12にAmazon.co.jpの検索で、Galaxy Z Fold8 256GB グラファイト B0H5VQTTP8、Galaxy Z Flip8 256GB（グラファイト B0H5VWFLVW、ピンク B0H5VWR9RP、クリーム B0H5W21FCM）の存在を確認。両ASINの商品名・価格・販売元・ツールバーの表示は未確認）
 - 想定比較軸: 画面サイズ（内側・外側）、厚さ・重さ、カメラ、バッテリー、折りたたみ時の大きさ、公式価格
 - 確認すること: Samsung Japanの両仕様・価格、比較する容量（256GB）・色（グラファイト）を揃える、両ASINの商品名・価格・販売元・ツールバーの表示
 - 注意: Z Fold8 Ultraなど、名称の似た別モデルがある場合は取り違えない。
+- 2026-10-18確認: Samsung日本公式（`samsung.com/jp`）の製品ページで両機の主な仕様を確認。Galaxy Z Flip8はメイン約6.9インチ・カバー約4.1インチ、厚さ約6.1mm（開いた状態）、約180g、約5,000万画素広角（光学相当2倍）＋約1,200万画素超広角、4,300mAh、Snapdragon 8 Elite Gen 5 for Galaxy。Galaxy Z Fold8はメイン約7.6インチ・カバー約5.5インチ、厚さ約4.5mm（開いた状態）、約201g、約5,000万画素広角＋約5,000万画素超広角、4,800mAh、同じチップ。容量はいずれも256GB/512GB（12GB RAM）。
+- 2026-10-18未確認: 両機の税込価格。Samsung公式のbuyページがクライアント側描画で、サーバー応答HTMLに価格が含まれず取得できなかった。Amazon.co.jpもHTTP 503で、ASIN（Fold8 B0H5VQTTP8、Flip8 B0H5VWFLVW）の商品名・価格・販売元は再確認できていない。価格を軸にした比較は、公式価格を取得できるまで書かない。
+- 2026-10-18注意: 「Galaxy Z Fold8 Ultra」は別機種（メイン約8.0インチ・カバー約6.5インチ、約4.1mm、約215g、約2億画素広角、5,000mAh）で、Fold8と取り違えない。
+- 再開条件: Samsung公式で両機の税込価格を取得できること、またはAmazon.co.jpで両機の単体の商品詳細（販売元・価格）を再確認できること。
 
 ### Meta Quest 3S vs Meta Quest 3
 
 - 選定理由: VR/MRヘッドセットは公開中の記事がなく、3Sと3は価格差・画質・容量で迷いが明確。
-- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、Meta Quest 3S 128GB（ゲームのバンドル品 B0F8VJ57Q1）、Meta Quest 3 512GB B0CF1DLZPY、Meta Quest 3 128GB B0CB3WXL12、3S 256GB B09JMJX9DT等の存在を確認。バンドル品と単体品の区別、旧世代・並行輸入の有無、価格・ツールバーの表示は未確認）
+- 状態: 候補（2026-10-18にMeta日本公式の仕様・価格を確認（下記）。Amazon.co.jpの直販の新品単体は未確認。2026-10-12にAmazon.co.jpの検索で、Meta Quest 3S 128GB（ゲームのバンドル品 B0F8VJ57Q1）、Meta Quest 3 512GB B0CF1DLZPY、Meta Quest 3 128GB B0CB3WXL12、3S 256GB B09JMJX9DT等の存在を確認。バンドル品と単体品の区別、旧世代・並行輸入の有無、ASINの価格・販売元・ツールバーの表示は未確認）
 - 想定比較軸: レンズ・解像度、視野角、容量、プロセッサ、価格、重さ
 - 確認すること: Meta公式の仕様と価格、ゲームのバンドルなしの単体のASINを特定する、容量を揃えるか決める、両ASINの価格・販売元・ツールバーの表示
 - 注意: バンドル品（ゲーム同梱）を、単体品と取り違えない。
+- 2026-10-18確認: Meta日本公式（`meta.com/jp`）のbuy-nowページ（JSON-LD）・比較ページ・製品ページで価格と仕様を確認。Meta Quest 3S 128GB＝50,490円（定価59,400円）、Meta Quest 3 512GB＝102,300円。3Sはフレネルレンズ・1832×1920px/片目・水平96°/垂直90°・Snapdragon XR2 Gen 2・8GB・4324mAh（約2.5時間）・約514g。Quest 3はパンケーキレンズ・2064×2208px/片目・水平110°/垂直96°・同じSoC・8GB・5060mAh（約2.2時間）・約515g。
+- 2026-10-18確認（容量の制約）: 公式比較ページの現行ラインアップは「Quest 3S 128GB / Quest 3S 256GB / Quest 3 512GB」の3つのみで、Quest 3の128GB/256GBは掲載がない。容量を揃えた比較は組めず、「Quest 3S（128GBまたは256GB） vs Quest 3（512GB）」の構成になり、容量差を記事で明示する必要がある。
+- 2026-10-18確認（購入導線）: Meta公式ではQuest 3S 256GB（65,450円）が在庫切れ。Amazon.co.jpはQuest 3S 128GB（B09MJQKS5D）が「現在お取り扱いできません」、Quest 3 512GB（B0CF1DLZPY）は第三者出品（新品16件中、表示100,900円）のみで、Amazon直販の新品単体は確認できていない。
+- 2026-10-18未確認: Quest 3S 256GBのAmazon.co.jp単体ページ（ASIN）。質量（514g/515g）は公式ページ本文がクライアント側描画のため公式ページの文言を検索経由で確認したもので、一次取得での再確認が望ましい。
 
 ### ASUS ROG Xbox Ally vs ROG Xbox Ally X
 
 - 選定理由: ポータブルゲーミングPCは公開中の記事がなく、通常版とXは、チップ・メモリ・ストレージ・バッテリーが異なり、選択で迷いが明確。
-- 状態: 候補（公式情報は未確認。2026-10-12にAmazon.co.jpの検索で、ROG Xbox Ally RC73YA（Ryzen Z2 A・16GB・512GB）B0FPLQXZR5、ROG Xbox Ally X RC73XA（Ryzen AI Z2 Extreme・24GB・1TB）B0FPLP6N4F、旧世代のROG Ally X RC72LA B0D7M6KHS6の存在を確認。価格・販売元・ツールバーの表示は未確認）
+- 状態: 候補（2026-10-18にASUS公式の仕様・価格を確認（下記）。Amazon.co.jpの直販の新品単体は未確認。2026-10-12にAmazon.co.jpの検索で、ROG Xbox Ally RC73YA（Ryzen Z2 A・16GB・512GB）B0FPLQXZR5、ROG Xbox Ally X RC73XA（Ryzen AI Z2 Extreme・24GB・1TB）B0FPLP6N4F、旧世代のROG Ally X RC72LA B0D7M6KHS6の存在を確認。ASINの価格・販売元・ツールバーの表示は未確認）
 - 想定比較軸: プロセッサ、メモリ、ストレージ、バッテリー容量、重さ、価格
 - 確認すること: ASUS Japanの両仕様・価格、両ASINの商品名・価格・販売元・ツールバーの表示、旧世代（Ally X RC72LA）と取り違えない
 - 注意: ROG Allyの旧世代と、Xboxの名称が付いた現行モデルを取り違えない。
+- 2026-10-18確認: ASUS公式（`rog.asus.com/jp`）の仕様ページで両機を確認。型番はAllyがRC73YA-Z2A16G512（ASUS estore価格129,800円）、Ally XがRC73XA-Z2E24G1T（169,800円）。AllyはRyzen Z2 A（4コア/8スレッド）・16GB LPDDR5-6400・512GB SSD・60Wh・約670g、Ally XはRyzen AI Z2 Extreme（8コア/16スレッド）・24GB LPDDR5X・1TB SSD・80Wh・約715g。ディスプレイは両機とも7.0型1920×1080・120Hz、OSはWindows 11 Home。
+- 2026-10-18注意（世代）: ASUS公式には2026年モデル「ROG Xbox Ally X20（RC74XA）」が存在し、旧世代「ROG Ally X（RC72LA、2024）」もある。本候補は2025年モデルのRC73YA/RC73XAで、記事では世代と型番を必ず明示する。
+- 2026-10-18確認（購入導線）: Amazon.co.jpはAlly（B0FPLQXZR5）が第三者出品の新品（表示125,000円）、Ally X（B0FPLP6N4F）は中古品のみで、Amazon直販の新品単体は確認できていない。ASUS公式ストア（`store.asus.com/jp`）はHTTP 403で在庫・実売価格を取得できなかった。
 
 ## 追加確認・保留
 
