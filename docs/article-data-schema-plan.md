@@ -207,3 +207,18 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 2. registry の孤児検出（対応する seed の無いエントリ）→ **PR #1166 で実装**（実際の孤児は0件）
 3. `validateArticlePurchaseLinkStatus` の実装（宣言どおり fail-closed に）→ **PR #1166 で実装**
 4. `CommercialArticlePage` の除外をやめ、seed ↔ registry の URL 一致を検証（A.3 の2件を修正して通す）→ **PR #1166 で実装**（A.3 の2件は registry を seed に合わせて解消）
+
+### A.7 Phase 2a（解決層）の実装記録（2026-10-18 実測・base `8861e30`）
+
+§3 の Phase 2 を「2a: 解決層＋fail-closed 検証（表示は変えない）」「2b: 公開53スロットへの `productId` 付与」
+「2c: 表示の主経路をマスタへ」「2d: registry → マスタ委譲」に分割し、**2a を実装**しました（Issue #1180）。
+`{side}ProductId` は任意フィールドで、無ければ ASIN > model > name で導出します。表示・出力は未変更です。
+
+- 公開53の **106スロットはすべてマスタの100商品へ解決**（記事横断の統合6組は §A.5 のとおり）
+- 92スロットが ASIN、94スロットが handoff の `model` を持ち、**ASIN も model も無いスロットは0**
+- `model-` 11商品の `model` は handoff 台帳由来のため、seed 単体では再現できない
+  → §2.2 のとおり**明示 `productId` を正**とし、導出結果との不一致を fail-closed で検出する
+- 現行seedとマスタ値の差は **5点のみ**（商品名2件 = 最短名の採用と空白差、楽天URL3件 = 記事間で成果URLが割れた2商品）。
+  Amazon URL・画像は全106スロット一致。この一覧は `tests/product-master-resolution.test.ts` に固定
+- §2.2 の「`keyDiffRows` / `leftModel` / `rightModel` はデッド」は実測で裏付け（`src/content` に `leftModel:` 宣言は0件。
+  `keyDiffRows` は `tests/article-metadata.test.ts` の4件のみ）。ただしコードパスは残るため削除は Phase 3

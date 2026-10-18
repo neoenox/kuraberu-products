@@ -1,23 +1,26 @@
-# 商品マスタ（`src/data/products/`）（#1064 Phase 1）
+# 商品マスタ（`src/data/products/`）（#1064 Phase 1 / Phase 2a）
 
 商品IDを安定キーとし、商品ごとの販売先（Amazon / 楽天）のアフィリエイト可否状態を
 1箇所で持つデータです。計画と受入条件は `docs/article-data-schema-plan.md`（§2.1 スキーマ、
-§3 Phase 1）を参照してください。
+§3 Phase 1・2）を参照してください。
 
-- 本Phaseの目的は**マスタを新設し、単体でスキーマ検証できること**です。
-  記事の表示・検証・URL解決は**変更しません**（記事→マスタ参照の併走移行は Phase 2）。
-- 記事の差分はゼロです（`src/content/articles/**` と `src/components/**` は未変更）。
+- Phase 1 の目的は**マスタを新設し、単体でスキーマ検証できること**でした。
+- Phase 2a（2026-10-18）で**記事seedがマスタの商品を一意に参照できるかを検証する層**を追加しました。
+  記事の表示・出力は**変更しません**（`astro build` の `dist` 全突合で差分ゼロ）。
+- 記事側の差分はゼロです（`src/content/articles/**` は任意フィールドの型追加のみ、`src/components/**` は未変更）。
 
 ## 構成
 
-| ファイル                                | 種別    | 役割                                                                      |
-| --------------------------------------- | ------- | ------------------------------------------------------------------------- |
-| `src/data/products/catalog.json`        | 生成物  | 商品マスタ本体。**手で編集しない**（`build:product-master` で再生成する） |
-| `src/data/products/overrides.json`      | 手書き  | 人が確定した補完値（記事間で値が割れた販売先の代表URLなど）               |
-| `scripts/build-product-master.mjs`      | 生成    | seed + handoff台帳 → `catalog.json`（再現可能）                           |
-| `scripts/validators/product-master.mjs` | 検証    | スキーマ検証の純関数（fail-closed）                                       |
-| `scripts/check-product-master.mjs`      | 検証CLI | `check:product-master`。不正なら exit 1                                   |
-| `tests/product-master.test.ts`          | テスト  | スキーマ・再現性・カバレッジ・集約・fail-closed                           |
+| ファイル                                      | 種別    | 役割                                                                      |
+| --------------------------------------------- | ------- | ------------------------------------------------------------------------- |
+| `src/data/products/catalog.json`              | 生成物  | 商品マスタ本体。**手で編集しない**（`build:product-master` で再生成する） |
+| `src/data/products/overrides.json`            | 手書き  | 人が確定した補完値（記事間で値が割れた販売先の代表URLなど）               |
+| `scripts/build-product-master.mjs`            | 生成    | seed + handoff台帳 → `catalog.json`（再現可能）                           |
+| `scripts/validators/product-master.mjs`       | 検証    | スキーマ検証の純関数（fail-closed）                                       |
+| `scripts/validators/article-product-refs.mjs` | 検証    | 記事seed → マスタ商品の解決・参照検証の純関数（Phase 2a）                 |
+| `scripts/check-product-master.mjs`            | 検証CLI | `check:product-master`。不正なら exit 1（スキーマ + 記事参照）            |
+| `tests/product-master.test.ts`                | テスト  | スキーマ・再現性・カバレッジ・集約・fail-closed                           |
+| `tests/product-master-resolution.test.ts`     | テスト  | 記事参照の解決・併走の既知差分・fail-closed（Phase 2a）                   |
 
 ## 生成と検証
 
@@ -29,6 +32,8 @@ pnpm check:product-master                  # スキーマ検証（verify:fast / 
 
 `check:product-master` は `config/verification-manifest.mjs` の `STATIC_CHECKS` に登録しており、
 `pnpm verify:fast` と `pnpm verify:lint`（= CI の `verify.yml`）で毎回実行されます。
+既定ファイルを検証するときは、あわせて**記事seedの商品参照**（Phase 2a）も検証します
+（`--file` を渡したときはスキーマ検証のみ）。
 生成物の再現性は `tests/product-master.test.ts` が「生成結果 = コミット済み `catalog.json`」で検証します。
 
 ## 変換元（計画 §付録A.2 の帰結）
@@ -77,6 +82,41 @@ seed では `sourceLinks` の URL にのみ現れ CTA は `search` のため、`
 | `model-wf-c710n`    | `sony-wf-c710n-vs-linkbuds-fit:left`, `sony-wf-c710n-vs-soundcore-liberty-5:left`        | `model`  |
 | `model-wf-ls910n`   | `sony-wf-c710n-vs-linkbuds-fit:right`, `sony-wf-1000xm6-vs-linkbuds-fit:right`           | `model`  |
 
+## 記事→マスタ参照（Phase 2a）
+
+記事seedは任意で `{side}ProductId` を持てます（`src/content/articles/commercial/types.ts`）。
+無い場合は **ASIN > model > name** の優先でマスタから導出します（生成スクリプトと同じ順序）。
+
+- 解決と検証の純関数は `scripts/validators/article-product-refs.mjs` に置き、生成CLI・検証CLI・テストで共有します。
+- `check:product-master`（既定ファイル）が公開53の全106スロットを検証します。
+
+fail-closed にする規則:
+
+| 規則   | 内容                                                                                         |
+| ------ | -------------------------------------------------------------------------------------------- |
+| 実在   | `productId` を書いた場合、形式（`amazon-` / `model-` / `name-`）が正しくマスタに実在すること |
+| 一致   | `productId` は導出結果（ASIN > model > name）と同じ商品を指すこと                            |
+| 解決   | 公開スコープの全スロットがマスタの商品へ解決できること                                       |
+| 重複   | 同じ記事で同じ商品を左右に使わないこと                                                       |
+| 曖昧さ | 同じ `model` / 表示名が複数商品にある状態を作らないこと                                      |
+
+検証対象は**公開スコープの記事（106スロット）**です。マスタ自体が公開53スラッグを変換元にしているため、
+未公開seedが参照する商品は含まれません（拡充は Phase 2 以降）。
+
+### 併走の既知差分（2026-10-18 実測・`tests/product-master-resolution.test.ts` で固定）
+
+`{side}ProductId` は任意で、**Phase 2a の時点ではまだ付与していません**（付与は 2b）。
+現行seedとマスタ値を突合した差分は次の5点だけで、他は一致します。
+
+| 項目       | 差分数 | 内容                                                                                                  |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| 商品名     | 2件    | 「…WF-C710N **ブラック**」→「…WF-C710N」（最短名を採用）／`-Wi-Fi` → ` Wi-Fi`（空白差のみ）           |
+| Amazon URL | 0件    | 全スロット一致                                                                                        |
+| 画像       | 0件    | 全スロット一致                                                                                        |
+| 楽天 URL   | 3件    | 記事間で成果URLが割れた2商品（`model-wf-c710n` / `model-wf-ls910n`）。上記「同一商品の集約」と同じ2件 |
+
+この5点を表示へ反映するか（＝表示の主経路をマスタへ寄せるか）は Phase 2c の判断です。
+
 ## 決定規則（再現性のため固定）
 
 - 商品ID: ASIN があれば `amazon-<asin小文字>`、無ければ `model-<正規化model>`、どちらも無ければ `name-<sha1先頭12>`。
@@ -110,7 +150,8 @@ seed では `sourceLinks` の URL にのみ現れ CTA は `search` のため、`
 
 ## Phase 2 以降への引き継ぎ
 
-- 記事→マスタ参照の併走移行（seed の `leftProductId/rightProductId` は任意、無ければ従来フィールドへフォールバック）。
+- 記事→マスタ参照の併走移行。**解決層と検証は Phase 2a で実装済み**（`{side}ProductId` は任意、無ければ従来フィールドから導出）。
+  残りは公開53スロットへの `productId` 付与（2b）と、表示の主経路をマスタへ寄せる作業（2c）。
 - `check-purchase-link-consistency.mjs` の registry 検証をマスタへ委譲し、商業記事の除外（計画 §付録A.3）を解除する。
 - 楽天の実行時API解決分と、公開53スラッグ以外のシードをマスタへ拡充する。
 - 画像の一元化（計画 Phase 5）で `image` を実体パスへ寄せる。
