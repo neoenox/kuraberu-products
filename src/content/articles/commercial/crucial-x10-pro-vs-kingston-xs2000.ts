@@ -128,6 +128,7 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     'X / YouTube: "Crucial X10 Pro" "Kingston XS2000" 2TB user experience',
+  socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   embeds: [
