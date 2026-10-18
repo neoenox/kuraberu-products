@@ -16,6 +16,7 @@ import { commercialArticleImages } from '../content/articles/commercial/images';
 import type { CommercialArticleSeed } from '../content/articles/commercial/types';
 import type { DifferenceRow } from '../lib/comparison';
 import { resolvePurchaseHref } from '../lib/rakuten';
+import { isSellerUnavailable } from '../lib/product-master';
 import {
   isAffiliateRakutenUrl,
   isVerifiedRakutenPurchaseDestination,
@@ -94,8 +95,13 @@ const isVerifiedPurchaseUrl = (value: string | undefined) =>
 // #436: 検索結果ページは購入導線にならないため、フォールバックURLは渡さない。
 // 確認済み商品詳細URL（レジストリ or API選択）が無い場合は href を空にし、
 // purchaseLinkStatus の契約（verified/direct以外はCTA非表示）で fail-closed にする。
+// #1064 Phase 2c: 楽天CTAの**可否判断はマスタ（sellers.rakuten.state）を正**とする。
+// マスタが「楽天に対象商品が無い（unavailable）」と判定した商品では、記事が独自に
+// 確認したURLを持っていても CTA を出さない。表示に使う値は従来どおり記事seedを優先する。
+const leftRakutenHiddenByMaster = isSellerUnavailable(seed.leftProductId, 'rakuten');
+const rightRakutenHiddenByMaster = isSellerUnavailable(seed.rightProductId, 'rakuten');
 const [leftResolved, rightResolved] = await Promise.all([
-  leftRakutenOverride === null
+  leftRakutenOverride === null || leftRakutenHiddenByMaster
     ? Promise.resolve({ href: undefined, isAffiliate: false, product: undefined })
     : leftRakutenOverride && isVerifiedPurchaseUrl(leftRakutenOverride)
     ? Promise.resolve({ href: leftRakutenOverride, isAffiliate: isAffiliateRakutenUrl(leftRakutenOverride), product: undefined })
@@ -109,7 +115,7 @@ const [leftResolved, rightResolved] = await Promise.all([
         keyword: seed.leftProduct,
         requiredTerms: leftTerms,
       }),
-  rightRakutenOverride === null
+  rightRakutenOverride === null || rightRakutenHiddenByMaster
     ? Promise.resolve({ href: undefined, isAffiliate: false, product: undefined })
     : rightRakutenOverride && isVerifiedPurchaseUrl(rightRakutenOverride)
     ? Promise.resolve({ href: rightRakutenOverride, isAffiliate: isAffiliateRakutenUrl(rightRakutenOverride), product: undefined })

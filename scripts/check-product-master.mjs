@@ -14,7 +14,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { collectSlots } from "./build-product-master.mjs";
-import { validateArticleProductRefs } from "./validators/article-product-refs.mjs";
+import {
+  validateArticleProductRefs,
+  validateArticleSellerStates,
+} from "./validators/article-product-refs.mjs";
 import { validateProductMaster } from "./validators/product-master.mjs";
 
 export const DEFAULT_MASTER_PATH = "src/data/products/catalog.json";
@@ -38,18 +41,32 @@ export function checkProductMaster(file = DEFAULT_MASTER_PATH) {
 
 /**
  * 公開スコープの記事seedが、マスタの商品を一意に参照できるか検証する（#1064 Phase 2a）。
+ * あわせて、記事の販売先URLとマスタの可否判断（state）の整合も検証する（Phase 2c）。
  * 未公開seedはマスタの変換元ではないため対象外（未公開分の拡充は Phase 2 以降）。
  *
- * @returns {{ slots: object[], errors: string[] }} 検証したスロットと問題点
+ * @returns {{ slots: object[], errors: string[], sellerStateErrors: string[] }}
+ *   検証したスロット・問題点（参照 + 可否）・可否の問題点のみ
  */
 export function checkArticleProductRefs({ root = process.cwd() } = {}) {
   const slots = collectSlots(root);
   const file = path.join(root, DEFAULT_MASTER_PATH);
   if (!fs.existsSync(file)) {
-    return { slots, errors: [`${DEFAULT_MASTER_PATH}: not found`] };
+    return {
+      slots,
+      errors: [`${DEFAULT_MASTER_PATH}: not found`],
+      sellerStateErrors: [],
+    };
   }
   const master = JSON.parse(fs.readFileSync(file, "utf8"));
-  return { slots, errors: validateArticleProductRefs(slots, master) };
+  const sellerStateErrors = validateArticleSellerStates(slots, master);
+  return {
+    slots,
+    errors: [
+      ...validateArticleProductRefs(slots, master),
+      ...sellerStateErrors,
+    ],
+    sellerStateErrors,
+  };
 }
 
 function main() {
@@ -67,12 +84,14 @@ function main() {
   // `--file` はスキーマ検証専用（マスタ単体を差し替えて試す用途を壊さないため）。
   let checkedSlots = 0;
   let explicitSlots = 0;
+  let sellerStateErrors = 0;
   if (errors.length === 0 && file === DEFAULT_MASTER_PATH) {
     const refs = checkArticleProductRefs();
     checkedSlots = refs.slots.length;
     explicitSlots = refs.slots.filter(
       (slot) => typeof slot.productId === "string" && slot.productId,
     ).length;
+    sellerStateErrors = refs.sellerStateErrors.length;
     errors.push(...refs.errors);
   }
   if (errors.length > 0) {
@@ -83,7 +102,7 @@ function main() {
   console.log(`product-master check passed: ${file}`);
   if (checkedSlots > 0) {
     console.log(
-      `article-product-refs check passed: ${checkedSlots} slots (explicit ${explicitSlots} / derived ${checkedSlots - explicitSlots})`,
+      `article-product-refs check passed: ${checkedSlots} slots (explicit ${explicitSlots} / derived ${checkedSlots - explicitSlots} / seller-state ${sellerStateErrors === 0 ? "ok" : `${sellerStateErrors} mismatch(es)`})`,
     );
   }
 }
