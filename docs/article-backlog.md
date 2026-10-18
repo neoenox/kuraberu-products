@@ -155,7 +155,7 @@
 
 公開済み記事は上の表を正とし、各記事の確認記録は`docs/article-handoffs/`のhandoffを参照する。以下は公式情報が未確認の候補で（2026-10-08に5本、2026-10-09にさらに5本、2026-10-11にさらに5本を補充（うち2本は調査の結果、保留または記事化済み）。アクセス実績は参照していない。現行モデルの存在をAmazonの検索結果またはApple公式ページで確認しただけで、仕様・価格・型番は未確認）、記事化前に公式URLの再取得が必要。
 
-2026-10-18に、次の4候補でメーカー公式の仕様と価格を確認し、各節に結果を記録した（Google Pixel 11 vs Pixel 11 Pro、Samsung Galaxy Z Fold8 vs Galaxy Z Flip8、Meta Quest 3S vs Meta Quest 3、ASUS ROG Xbox Ally vs ROG Xbox Ally X）。この日は当環境からAmazon.co.jp（検索ページ・トップページ）がHTTP 503で応答せず、Amazonの商品詳細ページ（ASIN）の商品名・価格・販売元・ツールバー表示は再確認できていない。ASINを再確認できないことは「Amazonに存在しない」ことを意味しない。
+2026-10-18に、次の4候補でメーカー公式の仕様と価格を確認し、各節に結果を記録した（Google Pixel 11 vs Pixel 11 Pro、Samsung Galaxy Z Fold8 vs Galaxy Z Flip8、Meta Quest 3S vs Meta Quest 3、ASUS ROG Xbox Ally vs ROG Xbox Ally X）。この日は当環境からAmazon.co.jp（検索ページ・トップページ）がHTTP 503で応答せず、Amazonの商品詳細ページ（ASIN）の商品名・価格・販売元・ツールバー表示は再確認できていない。ASINを再確認できないことは「Amazonに存在しない」ことを意味しない。（例外として、Samsung Galaxy Z Fold8 / Z Flip8 の2機だけは、同日にヘッドレスChromeでクライアント側描画後のDOMを取得でき、Amazon.co.jpの商品名と価格を確認できた。販売元とツールバーの表示は未確認のまま。）
 
 候補を選ぶときは、次を先に確認する（2026-10-07〜08の作業で、記事化できなかった例から）。
 
@@ -189,14 +189,16 @@
 ### Samsung Galaxy Z Fold8 vs Galaxy Z Flip8
 
 - 選定理由: 折りたたみスマートフォンは公開中の記事がなく、FoldとFlipは形状も用途も違うため、選択で迷いが明確。
-- 状態: 候補（2026-10-18にSamsung日本公式の仕様を確認（下記）。税込価格とAmazonの商品詳細（ASIN）は未確認。2026-10-12にAmazon.co.jpの検索で、Galaxy Z Fold8 256GB グラファイト B0H5VQTTP8、Galaxy Z Flip8 256GB（グラファイト B0H5VWFLVW、ピンク B0H5VWR9RP、クリーム B0H5W21FCM）の存在を確認。両ASINの商品名・価格・販売元・ツールバーの表示は未確認）
+- 状態: 候補（2026-10-18にSamsung日本公式の仕様と販売価格、Amazon.co.jpの両ASINの商品名・価格を確認（下記）。Samsung公式の税込表示の有無と、Amazonの販売元・ツールバーの表示は未確認。2026-10-12にAmazon.co.jpの検索で、Galaxy Z Fold8 256GB グラファイト B0H5VQTTP8、Galaxy Z Flip8 256GB（グラファイト B0H5VWFLVW、ピンク B0H5VWR9RP、クリーム B0H5W21FCM）の存在を確認）
 - 想定比較軸: 画面サイズ（内側・外側）、厚さ・重さ、カメラ、バッテリー、折りたたみ時の大きさ、公式価格
 - 確認すること: Samsung Japanの両仕様・価格、比較する容量（256GB）・色（グラファイト）を揃える、両ASINの商品名・価格・販売元・ツールバーの表示
 - 注意: Z Fold8 Ultraなど、名称の似た別モデルがある場合は取り違えない。
 - 2026-10-18確認: Samsung日本公式（`samsung.com/jp`）の製品ページで両機の主な仕様を確認。Galaxy Z Flip8はメイン約6.9インチ・カバー約4.1インチ、厚さ約6.1mm（開いた状態）、約180g、約5,000万画素広角（光学相当2倍）＋約1,200万画素超広角、4,300mAh、Snapdragon 8 Elite Gen 5 for Galaxy。Galaxy Z Fold8はメイン約7.6インチ・カバー約5.5インチ、厚さ約4.5mm（開いた状態）、約201g、約5,000万画素広角＋約5,000万画素超広角、4,800mAh、同じチップ。容量はいずれも256GB/512GB（12GB RAM）。
-- 2026-10-18未確認: 両機の税込価格。Samsung公式のbuyページがクライアント側描画で、サーバー応答HTMLに価格が含まれず取得できなかった。Amazon.co.jpもHTTP 503で、ASIN（Fold8 B0H5VQTTP8、Flip8 B0H5VWFLVW）の商品名・価格・販売元は再確認できていない。価格を軸にした比較は、公式価格を取得できるまで書かない。
+- 2026-10-18未確認（当初）: 両機の税込価格。Samsung公式のbuyページがクライアント側描画で、サーバー応答HTMLに価格が含まれず取得できなかった。Amazon.co.jpもHTTP 503で、ASIN（Fold8 B0H5VQTTP8、Flip8 B0H5VWFLVW）の商品名・価格・販売元は再確認できていなかった。→ 同日、ヘッドレスChromeでクライアント側描画後のDOMを取得して再確認し、下記のとおり価格と在庫を確認した。
+- 2026-10-18確認（価格・在庫）: Samsung日本公式の購入ページとAmazon.co.jpの商品詳細（ASIN）で、比較する256GB（12GB RAM）の価格を確認した。取得はクライアント側描画後のDOM（ヘッドレスChrome、`chrome.exe --headless=new --virtual-time-budget=25000 --dump-dom`）。Samsung.comはGalaxy Z Fold8 256GB＝256,385円（取り消し線269,880円・13,495円引き）、Galaxy Z Flip8 256GB＝183,045円（取り消し線192,680円・9,635円引き）で、いずれも在庫あり（DOM内の`pAvailability`が`InStock`）。ページのバナーは「Samsung Week（10/8〜11/4） Galaxy製品が最大10％OFF」で、この256GBでの実測は約5％引き。取り消し線の価格に「定価」のラベルはない。Amazon.co.jpは、Galaxy Z Fold8（B0H5VQTTP8）＝269,880円、Galaxy Z Flip8（B0H5VWFLVW）＝192,680円（`a-price-whole`とJSON-LDの`displayPrice`が一致）で、どちらもSamsung.comの取り消し線価格と同額。Amazon側ではキャンペーン価格を確認できていない。商品名は「Samsung Galaxy Z Fold8 256GB|グラファイト|Galaxy AI対応|SIMフリースマホ 本体 端末|Samsung純正 国内正規品|FeliCa対応|7.6インチ|… SM-F971QZKASJP」で、国内正規品であることを確認した（Flip8も同様にSM-F776QZKASJP）。
+- 2026-10-18未確認（残り）: 両機の「税込」表示。Samsung公式のDOMには価格と通貨（`pPriceCurrency`＝JPY）はあるが、税込・税抜を示すラベルが見当たらない。Amazon.co.jpは商品名と価格のみで、販売元（Amazon.co.jp自身か第三者か）とツールバーの表示（アソシエイト対象の判断材料）を取得できていない。
 - 2026-10-18注意: 「Galaxy Z Fold8 Ultra」は別機種（メイン約8.0インチ・カバー約6.5インチ、約4.1mm、約215g、約2億画素広角、5,000mAh）で、Fold8と取り違えない。
-- 再開条件: Samsung公式で両機の税込価格を取得できること、またはAmazon.co.jpで両機の単体の商品詳細（販売元・価格）を再確認できること。
+- 再開条件: Amazon.co.jpで両機の販売元（Amazon.co.jpの直販か）とツールバーの表示を確認でき、確認済みの購入先が1つ以上になること。あわせて、Samsung公式で販売価格が税込であることを確認すること。税込と確認できるまでは、金額を示す場合も「2026-10-18時点でSamsung公式が表示していた販売価格」のように確認日つきで書き、税込や定価と断定しない。
 
 ### Meta Quest 3S vs Meta Quest 3
 
