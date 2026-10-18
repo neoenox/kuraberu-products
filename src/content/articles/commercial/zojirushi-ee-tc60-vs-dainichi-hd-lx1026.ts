@@ -179,6 +179,7 @@ export const zojirushiEeTc60VsDainichiHdLx1026Seed: CommercialArticleSeed = {
   ],
   disclaimer:
     "この記事には広告リンクが含まれます。リンクを経由した購入により運営者が報酬を受け取る場合があります。仕様・価格・在庫は変更されることがあります。適用床面積や加湿量は部屋の条件、運転モード、使用状況で変わるため、購入前にメーカー公式情報と販売ページをご確認ください。",
+  socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
   socialProofBestMatch: "series",
   embeds: [
