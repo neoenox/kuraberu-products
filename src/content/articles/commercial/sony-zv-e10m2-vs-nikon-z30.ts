@@ -133,6 +133,7 @@ export const sonyZvE10m2VsNikonZ30Seed: CommercialArticleSeed = {
     "ボディの画素数と質量だけでなく、購入予定レンズを含む重さも確認する",
     "必要なフレームレート、記録方式、メモリーカードの条件を公式仕様で照合する",
   ],
+  socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
   socialProofQuery:
     'YouTube: "ZV-E10 II" "Nikon Z30"; X: same exact-model query',

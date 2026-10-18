@@ -135,6 +135,7 @@ export const ankerSolixC300VsJackery240NewSeed: CommercialArticleSeed = {
   ],
   socialProofQuery:
     "Anker Solix C300 A1722 Jackery 240 New JE-240A 使用感 レビュー",
+  socialProofCheckedAt: "2026-10-12",
   socialProofHasPosts: true,
   socialProofBestMatch: "model",
   embeds: [
