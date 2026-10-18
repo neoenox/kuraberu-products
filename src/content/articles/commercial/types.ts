@@ -35,6 +35,13 @@ type CommercialArticleSeed = {
   /** 楽天商品詳細URL。nullを設定した場合は楽天リンクを自動検索しない。 */
   leftRakutenUrl?: `https://${string}` | null;
   rightRakutenUrl?: `https://${string}` | null;
+  /**
+   * 商品マスタ（`src/data/products/catalog.json`）の商品ID（#1064 Phase 2）。
+   * 省略時は ASIN > model > 表示名 で導出する。設定する場合は導出結果と同じ商品を指すこと
+   * （`check:product-master` が fail-closed で検証する）。
+   */
+  leftProductId?: string;
+  rightProductId?: string;
   officialSources?: readonly {
     label: string;
     url: `https://${string}`;

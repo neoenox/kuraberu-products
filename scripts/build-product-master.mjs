@@ -160,6 +160,8 @@ export function parseSeedSource(source, articleId) {
   for (const key of ["left", "right"]) {
     side[key] = {
       name: seedString(source, `${key}Product`),
+      /** 任意の明示参照（#1064 Phase 2）。無ければ ASIN > model > name で導出する。 */
+      productId: seedString(source, `${key}ProductId`),
       amazonUrl: seedString(source, `${key}AmazonUrl`),
       amazonAsin: asinOf(seedString(source, `${key}AmazonUrl`)),
       amazonStatus: effectiveStatus(
