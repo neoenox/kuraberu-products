@@ -80,11 +80,11 @@ ${embed('provider="x" match="series" url="https://x.com/a/status/1" title="t"')}
 
   it("accepts an embedded post supplied through an article social-proof slot", () => {
     const src = sourceFor(
-      `<ArticleComparisonPage socialProofQuery="q">
+      `<CommercialArticlePage articleId="sample-vs-other">
 <ArticleSocialProof slot="social-proof" query="q" hasPosts={true} bestMatch="series">
 ${embed('provider="x" match="series" url="https://x.com/a/status/1" title="t"')}
 </ArticleSocialProof>
-</ArticleComparisonPage>`,
+</CommercialArticlePage>`,
     );
     expect(findSnsRankViolations(sources(src))).toEqual([]);
   });

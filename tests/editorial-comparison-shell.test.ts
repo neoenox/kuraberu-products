@@ -78,7 +78,7 @@ describe("editorial comparison shell", () => {
     );
     // 現行記事は CommercialArticlePage でデータ駆動に描画される
     expect(article).toMatch(
-      /ArticleComparisonPage|CommercialArticlePage|ManualArticlePage|ArticleComparisonV2/,
+      /CommercialArticlePage|ManualArticlePage|ArticleComparisonV2/,
     );
     expect(article).not.toContain("DifferenceList");
   });

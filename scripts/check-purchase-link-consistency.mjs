@@ -134,26 +134,6 @@ export function extractNextStepHrefs(source) {
     }
     return out;
   }
-  // ArticleComparisonPage with explicit left/right props containing purchaseHref
-  const page = /<ArticleComparisonPage\b/.exec(source);
-  if (page) {
-    const remaining = source.slice(page.index);
-    const selfClose = remaining.indexOf("/>");
-    if (selfClose !== -1) {
-      const tag = remaining.slice(0, selfClose);
-      const out = [];
-      for (const key of ["left", "right"]) {
-        const literal = expressionAfterKey(tag, key);
-        if (literal === null) {
-          // articleId mode — no explicit left/right props
-          return null;
-        }
-        const href = /\bpurchaseHref:\s*([^,}]+)/.exec(literal);
-        out.push(href ? href[1].trim() : null);
-      }
-      return out;
-    }
-  }
   const block = /<NextStepBlock\b/.exec(source);
   if (block) {
     const close = source.indexOf("/>", block.index);
@@ -221,12 +201,6 @@ export function loadRegistryEntries(srcDirectory) {
 // #1064 Phase 2d: 商用テンプレート記事（CommercialArticlePage）も除外しない。
 // 購入URLは seed（描画値）+ 商品マスタ（可否）由来で、ページソースに直書きしない。
 export function checkArticleSource(source, relative, errors, registryKeys) {
-  // ArticleComparisonPage with explicit left/right props: the component renders
-  // PurchaseCard internally, so no page-level PurchaseCard to compare against.
-  // CTA destination is checked separately by auditVerifiedCtaDestinations.
-  if (/ArticleComparisonPage/.test(source) && /articleMetadata/.test(source))
-    return;
-
   const blockExprs = extractNextStepHrefs(source);
   const cardExprs = extractPurchaseCardHrefs(source);
 
@@ -410,7 +384,7 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
     // なるため、registry 参照の対象からは外す（#1064 Phase 2d）。
     if (/CommercialArticlePage/.test(source)) continue;
 
-    // 1. Direct references (ArticleComparisonV2 / NextStepBlock / PurchaseCard)
+    // Direct references (ArticleComparisonV2 / NextStepBlock / PurchaseCard)
     const exprs = [
       ...(extractNextStepHrefs(source) ?? []),
       ...extractPurchaseCardHrefs(source),
@@ -422,22 +396,6 @@ export function collectVerifiedCtaUrls({ srcDirectory = "src" } = {}) {
       seen.add(key);
       const url = registry.get(key);
       if (url) ctas.push({ article: slug, key, url });
-    }
-
-    // 2. ArticleComparisonPage with articleId: CTA keys are inferred from the
-    //    articleId (the component renders PurchaseCard with
-    //    articlePurchaseLinks[`${articleId}:left/right`]).
-    if (seen.size === 0) {
-      const idMatch = /articleId="([^"]+)"/.exec(source);
-      if (idMatch) {
-        for (const side of ["left", "right"]) {
-          const key = `${idMatch[1]}:${side}`;
-          // 空 URL は購入先を確認できない項目（CTA 非表示）なので監査対象にしない。
-          if (registry.get(key)) {
-            ctas.push({ article: slug, key, url: registry.get(key) });
-          }
-        }
-      }
     }
   }
   ctas.push(...collectCommercialCtaUrls({ srcDirectory }));

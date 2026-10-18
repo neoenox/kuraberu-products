@@ -136,6 +136,7 @@ type ArticleData = {
 - Phase 2 までは registry とマスタを併存させ、どちらか一方が欠けても fail-closed にする。
 - 交友関係のない大規模差分を作らない（1 Phase = 1 目的 = 1 PR）。
 - 各Phaseで `pnpm verify` と既存の全チェックを green に保つ。
+- Phase 3 は 3a（未使用の互換レンダラ退役）と 3b（旧フィールドの削除と `verifiedRows` 一本化）に分割して実施する（A.11）。
 
 ## 4. 参考: 調査の再現
 
@@ -287,3 +288,39 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 
 検証: `node scripts/check-purchase-link-consistency.mjs` は
 `verified CTA destination audit: 56 CTAs (56 resolved, 0 skipped)` で exit 0。`pnpm verify:fast` / `pnpm verify` は緑、`dist` の差分は0（表示は不変）。
+
+### A.11 Phase 3a（未使用の互換レンダラの退役）の実装記録（2026-10-19）
+
+Phase 3（比較軸の一本化）の前提として、互換レンダラ `src/components/ArticleComparisonPage.astro` を削除しました。実測で「このコンポーネントを使うページが 0 件」だったためです。メタデータの `keyDiffRows` / `leftModel` / `rightModel` の削除は 3b（別PR）で行います。
+
+実測（2026-10-19・base `5332f22`・fresh `astro build`）:
+
+| 項目                          | 結果                                                                                                                               |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `LEGACY_ARTICLE_PAGE_SLUGS`   | **空集合**（互換ページ0件）                                                                                                        |
+| 記事ページ132件のテンプレート | `CommercialArticlePage` 130 / 専用2（`panasonic-baby-monitor-kx-hc705`・`panasonic-eh-na9m-guide`）/ `ArticleComparisonPage` **0** |
+| `src` 全体の import           | 0件（自己参照のみ）                                                                                                                |
+| 互換レンダラ専用の CSS        | `src/styles/global.css` の `.source-links`（`check:css-usage` が未使用として検出）                                                 |
+
+実施:
+
+- `src/components/ArticleComparisonPage.astro` を削除
+- `config/article-template-policy.mjs`: `LEGACY_ARTICLE_PAGE_SLUGS` を削除し、`isTopPageArticlePath` は専用テンプレートのみを除外
+- `scripts/check-article-template-policy.mjs`: 互換許可リストの分岐を削除
+- `scripts/check-purchase-link-consistency.mjs`: `ArticleComparisonPage` の3分岐（next-step 式の抽出・ページソース検査の除外・`articleId` からの CTA キー推測）を削除
+- `scripts/external-embed-limit.mjs`: コンポーネント単位の埋め込み上限除外から本コンポーネントを削除
+- `src/styles/global.css`: `.source-links` を削除
+- tests 5件（`content-quality-gate` / `article-cta-consistency` / `check-purchase-link-consistency` / `editorial-comparison-shell` / `validate-sns-ranks`）を追随
+- docs: `chatgpt-article-handoff-manual.md` / `article-research-template.md` の互換レンダラ記述を更新
+
+検証（base `5332f22` との実ビルド突合）:
+
+| 項目              | 結果                                                                                                              |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| ビルド            | 181ページ                                                                                                         |
+| `dist` ファイル数 | 1800 / 1800                                                                                                       |
+| HTML 182件        | CSS バンドルのハッシュ参照を除いて**差分0**（5件は日付ロールオーバーによる「確認から18日 → 19日」の日数表示のみ） |
+| CSS バンドル      | `BaseLayout.*.css` のみ変化し、消えた宣言は `.source-links{gap:.75rem;display:grid}` の1件                        |
+| `pnpm verify`     | exit 0（95ファイル / 1111 passed + 1 skipped、181ページ、post-deploy 58/59 passed・1 skipped・0 failed）          |
+
+Phase 3 の残り（3b）: メタデータから `keyDiffRows` / `leftModel` / `rightModel` を削除し、比較軸を `verifiedRows` に一本化する。`pnpm article:add`（`scripts/article-add.mjs`）はこの旧3フィールドを生成し、`CommercialArticlePage` の `fallbackSeed` がそれを描画するため、3b では `CommercialArticleSeed` の生成へ移行する。

@@ -82,7 +82,9 @@ export const ARTICLE_LAYOUT = {
   // 順序が変わったらこの定義だけ直す（ゲートは自動追随する）。
   // 各配列は HTML に出現する順序で、省略可能なセクションは mustAppear: false。
   sectionOrder: {
-    // ArticleComparisonPage.astro（手動比較記事）のセクション順序。
+    // article-comparison-v2 セクションを持つ比較レイアウト記事のセクション順序
+    // （scripts/validators/article-sections.mjs の detectArticleTemplate が
+    //  source-note を持たない比較記事を comparisonPage と判定する）。
     // ArticleComparisonV2 内部の HeroComparison / VisualKeyDifferences /
     // NextStepBlock / TrustLine はすべて article-comparison-v2 セクションに含まれる。
     comparisonPage: [
