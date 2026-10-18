@@ -31,7 +31,9 @@ export const iphoneAirVsIphone17Seed: CommercialArticleSeed = {
     "薄さ（5.64mm）と大きめの画面（6.5インチ）、A19 Proチップを重視するならiPhone Air（512GBで224,800円）、超広角を含む2眼カメラ、バッテリーの余裕、速いMagSafe充電、価格の低さを重視するならiPhone 17（512GBで194,800円）が候補です。",
   lead: "iPhone AirとiPhone 17は、最大120HzのProMotion、最大3,000ニト（屋外）のピーク輝度、Ceramic Shield 2の前面、IP68等級の耐水性能、48MPのFusionメインカメラ、18MPのセンターフレームフロントカメラ、デュアルeSIM、USB-C、Wi-Fi 7、Face IDが共通です。違いは、厚さと質量（5.64mm・165gと7.95mm・177g）、画面サイズ（6.5インチと6.3インチ）、チップ（A19 ProとA19）、背面カメラ（メイン1眼と、メイン＋超広角の2眼）、ビデオ再生時間（最大27時間と最大30時間）、MagSafeの最大出力（20Wと25W）、本体の素材（チタニウムとアルミニウム）、色、価格（512GBで224,800円と194,800円）です。この記事では、512GBのモデルで比べています。",
   leftProduct: "Apple iPhone Air 512GB スカイブルー",
+  leftProductId: "amazon-b0fqfpzw9g",
   rightProduct: "Apple iPhone 17 512GB ミストブルー",
+  rightProductId: "amazon-b0fqg5ndcx",
   leftPoint:
     "薄さと軽さ、大きめの6.5インチ画面、チタニウムの本体、A19 Proチップを重視し、価格が30,000円高くなってもよい人向け。背面カメラは1眼",
   rightPoint:

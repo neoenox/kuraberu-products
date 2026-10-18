@@ -31,7 +31,9 @@ export const amazonEchoDotMaxVsEchoDot5thSeed: CommercialArticleSeed = {
     "ツイーターとウーファーの2スピーカー構成、スマートホームハブ内蔵（Zigbee、Matter、Threadボーダールーター）、Wi-Fi 6Eを重視するならEcho Dot Max（2025年発売）、寝室やコンパクトな部屋で価格を抑えて使うならEcho Dot（第5世代）が候補です。",
   lead: "Echo Dot Max（2025年発売）とEcho Dot（第5世代）は、どちらもAlexaを搭載した画面のないAmazonのスマートスピーカーです。Amazonの商品ページの技術仕様と比較表では、違いはスピーカー（0.8インチツイーターと2.5インチウーファーの2基構成と、1.73インチの前面放射型スピーカー1基）、スマートホームハブ内蔵の有無、Wi-Fi規格、センサーの種類、本体サイズと重量、価格（21,480円と13,980円）です。確認日は2026年10月8日です。",
   leftProduct: "Amazon Echo Dot Max（2025年発売）",
+  leftProductId: "amazon-b0dklwzy2z",
   rightProduct: "Amazon Echo Dot（第5世代）",
+  rightProductId: "amazon-b09b8szllg",
   leftPoint:
     "音の厚み、スマートホームハブ内蔵、Wi-Fi 6Eを重視してリビングなどに置きたい人向け",
   rightPoint: "寝室やコンパクトな部屋に、価格を抑えて置きたい人向け",

@@ -31,7 +31,9 @@ export const djiOsmoAction6VsGoproHero13BlackSeed: CommercialArticleSeed = {
     "1/1.1インチの大型センサー、可変絞り、8K動画、20m防水、50GBの内蔵ストレージを重視するならOsmo Action 6、5.3K60・4K120の動画と、レンズモッドやGPSなど拡張性、交換できるバッテリーを重視するならHERO13 Blackが候補です。",
   lead: "DJI Osmo Action 6とGoPro HERO13 Blackは、どちらも防水・手ぶれ補正・タッチ画面を備えた小型のアクションカメラです。公式仕様では、センサーがOsmo Action 6は1/1.1インチ、HERO13 Blackは1/1.9インチで、Osmo Action 6は可変絞り（f/2.0〜f/4.0）と8K動画、20m防水（ケースなし）、50GBの内蔵ストレージを備えます。HERO13 Blackは5.3K60・4K120の動画、10m防水、取り外し可能な1900mAhバッテリー、GPS、HBシリーズレンズの装着に対応します。確認日は2026年10月7日です。",
   leftProduct: "DJI Osmo Action 6 スタンダードコンボ",
+  leftProductId: "amazon-b0fm3x3dw5",
   rightProduct: "GoPro HERO13 Black",
+  rightProductId: "amazon-b0drcqtxff",
   leftPoint:
     "大型センサー、可変絞り、8K動画、20m防水、内蔵ストレージを重視する人向け",
   rightPoint:

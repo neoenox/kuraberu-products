@@ -31,7 +31,9 @@ export const karcherK2SilentVsK3SilentPlusSeed: CommercialArticleSeed = {
     "軽くコンパクトで収納しやすい本体を、50Hz・60Hz地域を問わず使いたいならK 2 サイレント、水冷式モーター、10mの高圧ホース、洗浄剤タンクを重視するならK 3 サイレント プラスが候補です。",
   lead: "ケルヒャーのK 2 サイレントとK 3 サイレント プラスは、どちらも最大許容圧力10MPa、吐出水量は最大360L/hの家庭用高圧洗浄機です。違いは、モーターの冷却方式（K 2 サイレントは空冷式、K 3 サイレント プラスは水冷式）、本体質量（5.8kgと12.7kg）、本体サイズ、高圧ホースの長さ（8mと10m）、電源周波数の対応です。K 2 サイレントは50Hz・60Hz兼用で、K 3 サイレント プラスは東日本（50Hz）用と西日本（60Hz）用に分かれています。確認日は2026年10月6日です。",
   leftProduct: "ケルヒャー K 2 サイレント（1.600-920.0）",
+  leftProductId: "amazon-b07gxdcp3c",
   rightProduct: "ケルヒャー K 3 サイレント プラス 50Hz地域用（1.603-200.0）",
+  rightProductId: "amazon-b0ctzj7k6r",
   leftPoint:
     "5.8kgの軽さと収納しやすさを重視し、50Hz・60Hzどちらの地域でも使いたい人向け",
   rightPoint:

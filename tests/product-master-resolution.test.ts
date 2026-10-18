@@ -50,6 +50,13 @@ const slots = collectSlots(root) as unknown as Slot[];
 const label = (slot: { articleId: string; side: string }) =>
   `${slot.articleId}:${slot.side}`;
 
+/** `productId` を除いた参照（導出 ASIN > model > name の検証用）。 */
+const withoutProductId = (slot: Slot): Slot => {
+  const copy: Slot = { ...slot };
+  delete copy.productId;
+  return copy;
+};
+
 /** seed値とマスタ値が食い違う項目を集める（併走の差分インベントリ）。 */
 function collectDiffs() {
   const index = buildMasterIndex(catalog);
@@ -101,12 +108,16 @@ describe("article → product master refs (#1064 Phase 2a)", () => {
     );
   });
 
+  it("公開53の全スロットが productId を明示している（Phase 2b）", () => {
+    const missing = slots
+      .filter((slot) => typeof slot.productId !== "string" || !slot.productId)
+      .map((slot) => label(slot));
+    expect(missing).toEqual([]);
+    // 明示値が導出結果（ASIN > model > name）と一致することは同じ関数が検証する
+    expect(validateArticleProductRefs(slots, catalog)).toEqual([]);
+  });
+
   it("productId を書かなくても ASIN > model > name で解決する（併走期間）", () => {
-    const withoutProductId = (slot: Slot): Slot => {
-      const copy: Slot = { ...slot };
-      delete copy.productId;
-      return copy;
-    };
     expect(
       validateArticleProductRefs(slots.map(withoutProductId), catalog),
     ).toEqual([]);
@@ -116,14 +127,18 @@ describe("article → product master refs (#1064 Phase 2a)", () => {
   it("解決の出所は ASIN > model > name の優先で決まる", () => {
     const index = buildMasterIndex(catalog);
     const withAsin = slots.find((slot) => slot.amazonAsin)!;
-    expect(resolveProductRef(index, withAsin).source).toBe("amazon");
+    expect(resolveProductRef(index, withoutProductId(withAsin)).source).toBe(
+      "amazon",
+    );
     const withoutAsin = slots.find(
       (slot) =>
         !slot.amazonAsin &&
         typeof slot.model === "string" &&
         index.byModel.has(slot.model),
     )!;
-    expect(resolveProductRef(index, withoutAsin).source).toBe("model");
+    expect(resolveProductRef(index, withoutProductId(withoutAsin)).source).toBe(
+      "model",
+    );
   });
 
   it("併走: seed とマスタの差分は既知の5点だけ（名前2・楽天URL3）", () => {

@@ -26,8 +26,10 @@ export const sonyWf1000xm6VsLinkbudsFitSeed: CommercialArticleSeed = {
   lead: "結論：ノイキャン・電池・充電の便利さならWF-1000XM6、軽さと価格ならLinkBuds Fitです。",
   leftProduct:
     "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-1000XM6",
+  leftProductId: "model-wf-1000xm6",
   rightProduct:
     "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット LinkBuds Fit WF-LS910N",
+  rightProductId: "model-wf-ls910n",
   leftPoint: "NCオン8時間・ワイヤレス充電・上位機のノイキャンを重視する人向け",
   rightPoint: "片耳約4.9g・29,700円・軽い装着感を重視する人向け",
   leftImage: "/products/sony-wf-1000xm6.jpg",

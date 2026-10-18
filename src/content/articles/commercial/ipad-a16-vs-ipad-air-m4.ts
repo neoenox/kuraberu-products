@@ -31,7 +31,9 @@ export const ipadA16VsIpadAirM4Seed: CommercialArticleSeed = {
     "価格を抑えて11インチのiPadを普段使いしたいならiPad（A16）、Apple Pencil Pro対応や反射防止・P3のディスプレイ、M4チップと12GBメモリの余裕を重視するならiPad Air（M4）が候補です。",
   lead: "どちらも2,360×1,640ピクセル・264ppiの11インチLiquid Retinaディスプレイを搭載し、12MPのカメラ構成やUSB-C、ステレオスピーカー、Wi-Fiでの最大10時間のバッテリー駆動は共通です。違いはチップ（A16とM4）、メモリ、ディスプレイの広色域・フルラミネーション・反射防止、対応Apple Pencil、Apple Intelligenceの記載、Wi-Fi 6とWi-Fi 7、質量と厚さ、Apple公式ストアの価格です。この記事は11インチのWi-Fiモデルを基準にし、公式ページの確認日は2026年10月6日です。",
   leftProduct: "11インチ iPad（A16） Wi-Fi 128GB",
+  leftProductId: "amazon-b0dz7wf87p",
   rightProduct: "11インチ iPad Air（M4） Wi-Fi 128GB",
+  rightProductId: "amazon-b0gqwjcr4k",
   leftPoint:
     "価格を抑えつつ、動画視聴や学習などの普段使いに十分な11インチを選びたい人向け",
   rightPoint:

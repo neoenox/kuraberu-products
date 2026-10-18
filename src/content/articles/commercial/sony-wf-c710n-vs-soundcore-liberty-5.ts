@@ -24,7 +24,9 @@ export const sonyWfC710nVsSoundcoreLiberty5Seed: CommercialArticleSeed = {
   lead: "Soundcore Liberty 5は公式価格が2,610円安く、LDACとIP55に対応。WF-C710Nはノイズキャンセリングオンで本体のみ最大8.5時間再生でき、Liberty 5より0.5時間長い仕様です。片耳の重さはいずれも約5.2gです。",
   leftProduct:
     "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-C710N ブラック",
+  leftProductId: "model-wf-c710n",
   rightProduct: "Soundcore Liberty 5 ミッドナイトブラック A3957N11",
+  rightProductId: "model-a3957n11",
   leftPoint: "NCオンで本体のみ最大8.5時間再生",
   rightPoint: "価格が2,610円安く、LDAC・IP55に対応",
   leftImage: "/products/sony-wf-c710n.jpg",

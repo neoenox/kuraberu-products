@@ -31,7 +31,9 @@ export const galaxyS26UltraVsS26Seed: CommercialArticleSeed = {
     "6.9インチの大画面、2億画素のカメラと光学5倍ズーム、5,000mAhのバッテリー、Sペンを重視するならGalaxy S26 Ultra（256GBで239,800円）、片手で扱いやすい167gの本体と価格の低さを重視するならGalaxy S26（256GBで155,800円）が候補です。",
   lead: "Galaxy S26 UltraとGalaxy S26は、Dynamic AMOLED 2X（有機EL）・最大120Hzのディスプレイ、メモリ12GB、ストレージ256GB（このモデル）、8K/30fpsの動画撮影、約1,200万画素のフロントカメラ、デュアルSIM（Nano-SIM + eSIM）、USB Type-C（USB 3.2 Gen 1）、Wi-Fi 7（802.11be）、動画再生最大31時間（Samsung公表値）、2033年2月28日までのセキュリティアップデートが共通です。違いは、画面（6.9インチ・QHD+と6.3インチ・FHD+）、背面カメラ（2億画素＋5,000万画素×2＋1,000万画素の4眼と、5,000万画素＋1,000万画素＋1,200万画素の3眼）、光学ズーム（3倍・5倍と3倍）、バッテリー容量（5,000mAhと4,300mAh）、Sペン対応の有無、質量（214gと167g）、本体サイズ、Bluetooth（6.0と5.4）、価格（256GBで239,800円と155,800円）です。この記事では、どちらも256GBのSIMフリーモデルで比べています。",
   leftProduct: "Samsung Galaxy S26 Ultra 256GB ブラック（SIMフリー）",
+  leftProductId: "amazon-b0gk98z3gp",
   rightProduct: "Samsung Galaxy S26 256GB スカイブルー（SIMフリー）",
+  rightProductId: "amazon-b0gk9cld8z",
   leftPoint:
     "6.9インチの大画面、光学5倍ズームを含む4眼カメラ、5,000mAhのバッテリー、Sペンを重視し、84,000円高くなっても、重い本体（214g）でよい人向け",
   rightPoint:

@@ -32,8 +32,10 @@ export const macbookAir13Vs15M5Seed: CommercialArticleSeed = {
   lead: "MacBook Airの13インチと15インチは、Apple M5チップ（10コアCPU）、16コアNeural Engine、500ニトの輝度、Wi-Fi 7、Bluetooth 6、Thunderbolt 4（USB-C）ポート2つ、MagSafe 3、12MPセンターフレームカメラ、Touch ID、最大18時間のビデオストリーミングが共通です。違いは、画面（13.6インチと15.3インチ）、バッテリー容量（53.8Whと66.5Wh）、スピーカー（4スピーカーと6スピーカー）、重さ（1.23kgと1.51kg）、本体サイズ、価格（Appleオンラインストアで224,800円からと264,800円から）です。この記事では、どちらもメモリ16GB・SSD 512GBの構成で比べています。GPUは、13インチが8コア、15インチが10コアの構成です。",
   leftProduct:
     "Apple MacBook Air 13インチ（M5・10コアCPU/8コアGPU・16GB・512GB）ミッドナイト",
+  leftProductId: "amazon-b0gr1t11d6",
   rightProduct:
     "Apple MacBook Air 15インチ（M5・10コアCPU/10コアGPU・16GB・512GB）ミッドナイト",
+  rightProductId: "amazon-b0gr1prmds",
   leftPoint:
     "持ち運びやすさと価格を重視し、13.6インチの画面で足りる人向け。1.23kgで、40,000円低い価格から選べる",
   rightPoint:

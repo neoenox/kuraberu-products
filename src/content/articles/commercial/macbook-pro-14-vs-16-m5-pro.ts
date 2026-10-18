@@ -32,8 +32,10 @@ export const macbookPro14Vs16M5ProSeed: CommercialArticleSeed = {
   lead: "MacBook Proの14インチと16インチ（どちらもM5 Pro）は、Liquid Retina XDRディスプレイ（1,000ニトの持続輝度・最大120Hz）、Thunderbolt 5ポート3つ・HDMI・SDXCカードスロット・MagSafe 3、Wi-Fi 7・Bluetooth 6、12MPのセンターフレームカメラ、6スピーカー、Touch IDが共通です。違いは、画面サイズ（14.2インチと16.2インチ）、チップの構成（15コアCPU・16コアGPUと18コアCPU・20コアGPU）、メモリ（この記事の構成は24GBと48GB）、バッテリー（72.4Whと100Wh・ビデオ再生最大22時間と最大24時間）、付属の電源アダプタ（70Wと140W）、質量（1.60kgと2.14kg）、本体サイズ、価格です。この記事では、Amazonで販売されているシルバー・1TBの構成で比べています。メモリとチップの構成が異なる点に注意してください。",
   leftProduct:
     "Apple 2026 MacBook Pro 14インチ（M5 Pro 15コアCPU・16コアGPU・24GB・1TB）シルバー",
+  leftProductId: "amazon-b0gr1kp26q",
   rightProduct:
     "Apple 2026 MacBook Pro 16インチ（M5 Pro 18コアCPU・20コアGPU・48GB・1TB）シルバー",
+  rightProductId: "amazon-b0gr1fpzsg",
   leftPoint:
     "持ち運びやすさ（1.60kg）と価格（429,800円）を重視する人向け。画面は14.2インチ、バッテリーは72.4Wh",
   rightPoint:

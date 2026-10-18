@@ -31,7 +31,9 @@ export const ipadMiniA17ProVsIpadA16Seed: CommercialArticleSeed = {
     "片手で持てる293gの小型本体、A17 Pro、Apple Pencil Proに対応するiPad miniは、価格が99,800円からです。11インチの大きな画面で価格を抑えたい（74,800円から）なら、iPad（A16）が候補です。",
   lead: "iPad mini（A17 Pro）と11インチiPad（A16）は、どちらも128GB・256GB・512GBの容量、最大10時間のバッテリー（Wi-Fiでのインターネット利用、ビデオ再生）、12MPの広角カメラ、USB-C、Apple Pencil（USB-C）対応が共通です。違いは、画面サイズ（8.3インチと11インチ）、本体の大きさと質量（293gと477g）、チップ（A17 ProとA16）、Apple Pencil Proの対応、無線（Wi-Fi 6EとWi-Fi 6）、USB-Cの転送速度（USB 3の10Gb/sとUSB 2.0の480Mb/s）、Appleオンラインストアの価格（99,800円からと74,800円から）です。",
   leftProduct: "iPad mini（A17 Pro）Wi-Fi 128GB",
+  leftProductId: "amazon-b0dk467p86",
   rightProduct: "11インチ iPad（A16）Wi-Fi 128GB",
+  rightProductId: "amazon-b0dz7wf87p",
   leftPoint:
     "片手で持てる小型・軽量（293g）の本体で、A17 ProとApple Pencil Proの対応を重視し、価格が高くなってもよい人向け",
   rightPoint: "11インチの大きな画面を、74,800円からの低い価格で選びたい人向け",

@@ -32,7 +32,9 @@ export const crucialX10ProVsKingstonXs2000Seed: CommercialArticleSeed = {
     "公称の最大読込速度を重視するならCrucial X10 Pro、同じ最大書込速度とIP55に加えて付属ラバースリーブや公称重量も確認して選びたいならKingston XS2000が候補です。",
   lead: "Crucial X10 ProとKingston XS2000は、どちらも2TBを選べるポータブルSSDです。メーカー公称の最大読込速度はX10 Proが2,100MB/s、XS2000が2,000MB/s。最大書込速度はいずれも2,000MB/sで、どちらもIP55に対応します。転送速度は接続機器や環境で変わるため、USB 3.2 Gen 2x2対応など利用環境も確認しましょう。",
   leftProduct: "Crucial X10 Pro 2TB（CT2000X10PROSSD9）",
+  leftProductId: "model-ct2000x10prossd9",
   rightProduct: "Kingston XS2000 2TB（SXS2000/2000G）",
+  rightProductId: "amazon-b09f6279py",
   leftPoint: "最大2,100MB/sの公称読込速度を重視する人向け",
   rightPoint: "公称28.9g・付属ラバースリーブも確認して選びたい人向け",
   leftImage:

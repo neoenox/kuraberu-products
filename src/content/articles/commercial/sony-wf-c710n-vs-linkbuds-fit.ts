@@ -25,8 +25,10 @@ export const sonyWfC710nVsLinkbudsFitSeed: CommercialArticleSeed = {
   lead: "価格を抑えて長く再生したいならWF-C710N、片耳の軽さやLDAC・LC3を重視するならLinkBuds Fit。どちらもノイズキャンセリング対応ですが、ソニー公式価格には12,100円の差があります。",
   leftProduct:
     "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット WF-C710N",
+  leftProductId: "model-wf-c710n",
   rightProduct:
     "ソニー ワイヤレスノイズキャンセリングステレオヘッドセット LinkBuds Fit WF-LS910N",
+  rightProductId: "model-wf-ls910n",
   leftPoint: "公式価格が低く、NCオンでも最大8.5時間再生",
   rightPoint: "片耳約4.9gで、LDAC・LC3にも対応",
   leftImage: "/products/sony-wf-c710n.jpg",

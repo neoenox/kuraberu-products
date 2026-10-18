@@ -31,7 +31,9 @@ export const instaxMini13VsMini41Seed: CommercialArticleSeed = {
     "セルフタイマーやセルフィーミラーを使って自撮りや集合写真を撮りたい、選べるカラーの中から好みの色にしたいならinstax mini 13、シンプルなクラシックデザインで小さめの本体を重視するならinstax mini 41が候補です。",
   lead: "instax mini 13とinstax mini 41は、どちらもinstax miniフィルムを使う富士フイルムのインスタントカメラです。レンズ、撮影範囲、シャッター、自動調光、フラッシュ、現像時間、電池の持ちの目安などの公式仕様は共通です。違いは、mini 13のセルフタイマーとセルフィーミラー、カラー展開（mini 13は5色、mini 41は通常版のみ）、デザイン、サイズと質量、使える電池の記載です。",
   leftProduct: "富士フイルム instax mini 13 クレイホワイト",
+  leftProductId: "amazon-b0g5p496hd",
   rightProduct: "富士フイルム instax mini 41",
+  rightProductId: "amazon-b0f43j12fv",
   leftPoint:
     "セルフタイマーとセルフィーミラーで自撮りや集合写真を撮りたい人向け",
   rightPoint: "クラシックなデザインで、少し小さめの本体を選びたい人向け",

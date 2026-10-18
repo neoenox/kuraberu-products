@@ -23,7 +23,9 @@ export const jblFlip7VsCharge6Seed: CommercialArticleSeed = {
     "軽さと携帯性ならFlip 7、低音の余裕・再生時間・スマホ充電ならCharge 6が向いています。",
   lead: "結論：持ち運びやすさならFlip 7、音量・電池・充電機能ならCharge 6です。",
   leftProduct: "JBL Flip 7",
+  leftProductId: "amazon-b0f1n1bc2d",
   rightProduct: "JBL Charge 6",
+  rightProductId: "amazon-b0f1mz88ml",
   leftPoint: "約560gで持ち運びやすく、最大14時間再生したい人向け",
   rightPoint:
     "約990gでも最大24時間再生とモバイルバッテリー機能を重視する人向け",

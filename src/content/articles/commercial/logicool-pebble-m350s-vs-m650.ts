@@ -31,7 +31,9 @@ export const logicoolPebbleM350sVsM650Seed: CommercialArticleSeed = {
     "軽さと最大3台のEasy-SwitchならM350s、SmartWheel・5ボタン・Logi Boltレシーバー同梱ならM650が向いています。",
   lead: "結論：携帯性と複数デバイス切替を重視するならM350s、スクロール操作とサイドボタンを重視するならM650です。",
   leftProduct: "Logicool Pebble Mouse 2 M350s M350sGR",
+  leftProductId: "amazon-b0cjr5hbmn",
   rightProduct: "Logicool Signature M650 M650MGR",
+  rightProductId: "amazon-b09q5shdr3",
   leftPoint: "76gの薄型ボディと最大3台のEasy-Switchを重視する人向け",
   rightPoint: "SmartWheel・5ボタン・Logi Boltレシーバー同梱を重視する人向け",
   leftImage:

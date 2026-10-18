@@ -31,7 +31,9 @@ export const iphone17eVsIphone17Seed: CommercialArticleSeed = {
     "価格を抑えて、A19チップのiPhoneを使いたいならiPhone 17e（256GBで124,800円）、120Hzの滑らかな画面、超広角カメラ、バッテリーの余裕、速いMagSafe充電を重視するならiPhone 17（256GBで159,800円）が候補です。",
   lead: "iPhone 17eとiPhone 17は、A19チップ、256GBと512GBのストレージ、Ceramic Shield 2の前面、IP68等級の耐水性能、48MPのFusionメインカメラ、デュアルeSIM（物理SIM非対応）、USB-C、Action Button、MagSafeとQi2のワイヤレス充電が共通です。違いは、画面（6.1インチと6.3インチ、最大120HzのProMotionの記載の有無、ピーク輝度）、背面カメラ（メイン1眼と、メイン＋超広角）、フロントカメラ（12MPと18MPのセンターフレーム）、ビデオ再生時間（最大26時間と最大30時間）、MagSafeの最大出力（15Wと25W）、Wi-FiとBluetoothの規格、質量（169gと177g）、色の数、価格（256GBで124,800円と159,800円）です。この記事では、256GBのモデルで比べています。",
   leftProduct: "Apple iPhone 17e 256GB ソフトピンク",
+  leftProductId: "amazon-b0gqvyhyfk",
   rightProduct: "Apple iPhone 17 256GB セージ",
+  rightProductId: "amazon-b0fqg97cdb",
   leftPoint:
     "A19チップのiPhoneを、35,000円低い価格で使いたい人向け。画面の滑らかさや超広角カメラにこだわらない人に向く",
   rightPoint:
