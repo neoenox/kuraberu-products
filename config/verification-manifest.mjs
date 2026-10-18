@@ -18,6 +18,7 @@ export const STATIC_CHECKS = [
   "node scripts/validate-build-env.mjs",
   "node scripts/validate-content.mjs",
   "node scripts/check-radius-tokens.mjs",
+  "node scripts/check-product-master.mjs check",
 ];
 
 /**
