@@ -233,3 +233,27 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 - seed とマスタの値の差分は 2a と同じ **5点のみ**（名前2・楽天URL3）。付与は参照キーの追加だけで値は変更していない
 - 検証は `check:product-master` が `explicit 106 / derived 0` を出力し、`{side}ProductId` が導出結果と一致することを
   fail-closed で確認する（`tests/product-master-resolution.test.ts` にも「全スロットが明示している」検証を追加）
+
+### A.9 Phase 2c（CTAの可否判断をマスタへ委譲）の実装記録（2026-10-18）
+
+**許可判断（state）だけをマスタへ委譲**し、表示に使う値は記事seedを優先したままにしました。
+
+- 新規 `src/lib/product-master.ts`: `isSellerUnavailable(productId, seller)` を入口に、マスタの指定を型付きで引く
+- `CommercialArticlePage.astro`: マスタが `unavailable` と判定した販売先（今回の対象は楽天）は、記事が独自に
+  確認したURLを持っていても CTA を出さない。マスタに記載が無い場合は従来どおり seed の判断に委ねる
+- 新規 `validateArticleSellerStates(refs, master)`: 可否を**双方向**で fail-closed 検証。
+  記事が商品詳細URLを書けるのはマスタが `verified` / `direct` のときだけで、逆（マスタは可なのにURLが無い）もエラー
+- `check:product-master` の出力を `106 slots (explicit 106 / derived 0 / seller-state ok)` に拡張
+
+実測（2026-10-18・base `905e881`）:
+
+| 項目                      | 結果                                                                                                   |
+| ------------------------- | ------------------------------------------------------------------------------------------------------ |
+| マスタの楽天 state        | `verified` 50 / `direct` 2 / `unavailable` 6 / 記載なし 48                                             |
+| 記事の `{side}RakutenUrl` | 文字列 52 / `null` 54                                                                                  |
+| 食い違い                  | **0件**（`seller-state ok`）。「記事は出せる×マスタは不可」「マスタは可×記事に出せるURLが無い」とも0件 |
+| 現行の実効URLの出所       | seed 52 / 明示的な非表示 54 / registry 0 / 実行時API 0                                                 |
+| 出力差分                  | `dist` 全突合（base `905e881`）で**1800ファイル / 差分0**、181ページ                                   |
+
+記事間で値が割れた5点（商品名2・楽天URL3）は**表示へ反映しません**。楽天URL3件のうち2件は別ショップ
+（e-earphone ⇔ r-kojima / ビックカメラ）で、差し替えると「記事が確認していない遷移先」になるためです（`docs/product-master.md`）。

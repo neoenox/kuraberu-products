@@ -48,6 +48,7 @@ export const RESOLUTION_SOURCES = ["productId", "amazon", "model", "name"];
  *   side: "left" | "right",
  *   productId?: string | null,
  *   amazonUrl?: string | null,
+ *   rakutenUrl?: string | null,
  *   model?: string | null,
  *   name?: string | null,
  * }} ProductRef
@@ -221,6 +222,57 @@ export function validateArticleProductRefs(refs, master) {
       );
     }
     seen.set(key, ref.side);
+  }
+  return errors;
+}
+
+/** 販売先キーと、記事seed側で商品詳細URLを持つフィールドの対応。 */
+const SELLER_URL_FIELDS = [
+  ["rakuten", "rakutenUrl"],
+  ["amazon", "amazonUrl"],
+];
+
+/**
+ * 記事スロットの販売先URL（商品詳細URL）と、マスタの可否判断（state）の整合を検証する
+ * （#1064 Phase 2c）。
+ *
+ * Phase 2c では CTA の**可否判断をマスタ（`sellers.*.state`）に委譲**し、表示に使う値は
+ * 記事seedを優先する。二重基準を作らないため、次の規則を fail-closed で検証する:
+ *
+ * 1. 記事が販売先の商品詳細URLを書けるのは、マスタがその販売先を `verified` / `direct`
+ *    （確認済みの商品詳細URLがある）と判定している場合だけ。マスタが `unavailable`
+ *    （対象外）・`search`（検索CTA）・記載なしなのに記事が詳細URLを持つ状態はエラー。
+ * 2. 逆に、マスタが `verified` / `direct` と判定しているのに URL が無い状態（URLの
+ *    記載漏れ）もエラー。
+ *
+ * 商品が解決できないスロット（規則1）は `validateArticleProductRefs` が報告するため、
+ * ここでは重複を避けて対象外にする。
+ *
+ * @param {ProductRef[]} refs
+ * @param {{ products?: Product[] } | null | undefined} master
+ * @returns {string[]} 問題点（空なら正常）
+ */
+export function validateArticleSellerStates(refs, master) {
+  const index = buildMasterIndex(master);
+  const errors = [];
+  for (const ref of refs ?? []) {
+    const { product } = resolveProductRef(index, ref);
+    if (!product) continue;
+    const label = refLabel(ref);
+    for (const [seller, field] of SELLER_URL_FIELDS) {
+      const url = ref?.[field];
+      const state = product.sellers?.[seller]?.state ?? null;
+      const available = state === "verified" || state === "direct";
+      if (typeof url === "string" && url && !available) {
+        errors.push(
+          `${label}: the article provides a ${seller} product URL but the master says ${seller} is ${JSON.stringify(state)}`,
+        );
+      } else if (!url && available) {
+        errors.push(
+          `${label}: the master says ${seller} is ${JSON.stringify(state)} but the article provides no ${seller} product URL`,
+        );
+      }
+    }
   }
   return errors;
 }

@@ -9,6 +9,7 @@ import {
   resolveDerived,
   resolveProductRef,
   validateArticleProductRefs,
+  validateArticleSellerStates,
 } from "../scripts/validators/article-product-refs.mjs";
 
 /**
@@ -141,6 +142,21 @@ describe("article → product master refs (#1064 Phase 2a)", () => {
     );
   });
 
+  it("マスタの可否（state）と記事の販売先URLが全スロットで整合する（Phase 2c）", () => {
+    expect(validateArticleSellerStates(slots, catalog)).toEqual([]);
+    const index = buildMasterIndex(catalog);
+    for (const slot of slots) {
+      const product = resolveProductRef(index, slot).product!;
+      const rakuten = product.sellers?.rakuten?.state ?? null;
+      const hasRakutenUrl =
+        typeof slot.rakutenUrl === "string" && Boolean(slot.rakutenUrl);
+      // 可否判断はマスタが正: 楽天の商品詳細URLを持てるのは verified / direct だけ
+      expect(hasRakutenUrl).toBe(
+        rakuten === "verified" || rakuten === "direct",
+      );
+    }
+  });
+
   it("併走: seed とマスタの差分は既知の5点だけ（名前2・楽天URL3）", () => {
     const diffs = collectDiffs();
     expect(diffs.unresolved).toEqual([]);
@@ -260,5 +276,67 @@ describe("validateArticleProductRefs (fail-closed)", () => {
     expect(
       resolveDerived(index, slot({ amazonUrl: kdpAsin })).product?.id,
     ).toBe("amazon-b0dz7wf87p");
+  });
+});
+
+describe("validateArticleSellerStates (fail-closed, #1064 Phase 2c)", () => {
+  const master = (state: string) => ({
+    version: 1,
+    products: [
+      {
+        id: "model-x",
+        brand: "Test",
+        line: "X",
+        name: "テスト商品X",
+        sellers: { rakuten: { state }, amazon: { state } },
+      },
+    ],
+  });
+  const slot = (over: Record<string, unknown> = {}) => ({
+    articleId: "example-article",
+    side: "left" as const,
+    productId: "model-x",
+    amazonUrl: null,
+    rakutenUrl: null,
+    model: "X",
+    name: "テスト商品X",
+    ...over,
+  });
+
+  it("マスタが対象外（unavailable）なのに記事がURLを持つとエラー", () => {
+    const errors = validateArticleSellerStates(
+      [slot({ rakutenUrl: "https://item.rakuten.co.jp/shop/x/" })],
+      master("unavailable"),
+    );
+    expect(errors.join()).toContain("example-article:left");
+    expect(errors.join()).toContain("unavailable");
+  });
+
+  it("マスタが検索CTA（search）なのに記事が Amazon URL を持つとエラー", () => {
+    const errors = validateArticleSellerStates(
+      [slot({ amazonUrl: "https://www.amazon.co.jp/dp/B0DZ7WF87P" })],
+      master("search"),
+    );
+    expect(errors.join()).toContain("amazon");
+    expect(errors.join()).toContain("search");
+  });
+
+  it("マスタが確認済み（verified）なのに記事がURLを持たないとエラー", () => {
+    const errors = validateArticleSellerStates([slot()], master("verified"));
+    expect(errors.join()).toContain("provides no");
+  });
+
+  it("マスタの可否とURLが一致していればエラーなし", () => {
+    expect(
+      validateArticleSellerStates(
+        [
+          slot({
+            rakutenUrl: "https://item.rakuten.co.jp/shop/x/",
+            amazonUrl: "https://www.amazon.co.jp/dp/B0DZ7WF87P",
+          }),
+        ],
+        master("verified"),
+      ),
+    ).toEqual([]);
   });
 });
