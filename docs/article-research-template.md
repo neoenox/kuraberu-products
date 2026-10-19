@@ -135,9 +135,9 @@ import CommercialArticlePage from "../../../components/CommercialArticlePage.ast
 - [ ] 価格・在庫・人気・口コミを公式根拠なしに記載していない
 - [ ] SNS情報を比較根拠にしていない
 
-> 旧 `ArticleComparisonPage` と `explicit` 方式は過去記事互換用であり、新規記事では使用しない。新規記事は `CommercialArticlePage` のみを使用する。
+> 旧互換レンダラ（`ArticleComparisonPage`）は #1064 Phase 3a で削除済み。新規記事は `CommercialArticlePage` のみを使用する。
 
-新規ページのテンプレート判定は `scripts/check-article-template-policy.mjs` で行う。過去記事の互換ページだけを許可リストに残し、許可リストにないページで `ArticleComparisonPage` を使うと検証に失敗する。過去記事の互換ページを現行テンプレートへ自動変換して表示を変えることはしない。
+新規ページのテンプレート判定は `scripts/check-article-template-policy.mjs` で行う。専用テンプレートの許可リスト（`config/article-template-policy.mjs` の `CUSTOM_ARTICLE_PAGE_SLUGS`）以外のページは `CommercialArticlePage` を使う必要があり、それ以外のテンプレートを使うと検証に失敗する。
 
 ### 5.2 商業記事（commercial）の新規作成
 

@@ -666,10 +666,6 @@ a {
 .source-list {
   padding-left: 1.2rem;
 }
-.source-links {
-  display: grid;
-  gap: 0.75rem;
-}
 
 .card-link {
   display: block;

@@ -1,9 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import {
-  CUSTOM_ARTICLE_PAGE_SLUGS,
-  LEGACY_ARTICLE_PAGE_SLUGS,
-} from "../config/article-template-policy.mjs";
+import { CUSTOM_ARTICLE_PAGE_SLUGS } from "../config/article-template-policy.mjs";
 
 const pagesRoot = join(process.cwd(), "src", "pages", "articles");
 const violations = [];
@@ -30,14 +27,6 @@ const routes = readdirSync(pagesRoot, { withFileTypes: true }).flatMap(
 );
 for (const { slug, pagePath } of routes) {
   const source = readFileSync(pagePath, "utf8");
-  if (LEGACY_ARTICLE_PAGE_SLUGS.has(slug)) {
-    if (!/ArticleComparisonPage/.test(source)) {
-      violations.push(
-        `${pagePath} is allowlisted as legacy but no longer uses ArticleComparisonPage`,
-      );
-    }
-    continue;
-  }
   if (CUSTOM_ARTICLE_PAGE_SLUGS.has(slug)) continue;
   if (!/<CommercialArticlePage\b/.test(source)) {
     violations.push(
@@ -50,5 +39,5 @@ if (violations.length) {
   process.exit(1);
 }
 console.log(
-  `article template policy ok: ${LEGACY_ARTICLE_PAGE_SLUGS.size} legacy and ${CUSTOM_ARTICLE_PAGE_SLUGS.size} custom pages are explicitly allowlisted`,
+  `article template policy ok: ${CUSTOM_ARTICLE_PAGE_SLUGS.size} custom pages are explicitly allowlisted`,
 );

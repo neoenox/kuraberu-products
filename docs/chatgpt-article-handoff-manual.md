@@ -60,7 +60,7 @@ Amazonの確認では、Amazonのセッション状態、商品ごとの対象�
 ### テンプレート固定ルール
 
 - 新規記事のページラッパーは必ず `CommercialArticlePage` を使う。`pnpm article:add` の出力を手書きで旧形式へ戻さない。
-- `ArticleComparisonPage` は過去記事の互換表示専用。既存の互換ページは変更せず、新規記事へコピーしない。
+- 旧互換レンダラ（`ArticleComparisonPage`）は #1064 Phase 3a で削除済み。新規記事は `CommercialArticlePage` のみを使用する。
 - `pnpm verify:lint` のテンプレートポリシー検査で、許可リストにない新規の旧テンプレート使用を止める。
 - レイアウトを変更するときは現行テンプレートとこの手順書を同じPRで更新し、過去記事の互換コードは別の変更として扱わない。
 

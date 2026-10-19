@@ -53,7 +53,6 @@ describe("公開記事コンテンツ品質ゲート", () => {
   //   正しい期待値（scripts/check-rendered-html.mjs が dist に対して同じ契約を照合する）。
   it("全PurchaseCardブロックがpurchaseLinkStatusを明示する", () => {
     const templateSources = [
-      join(root, "src/components/ArticleComparisonPage.astro"),
       join(root, "src/components/CommercialArticlePage.astro"),
       ...articlePages,
     ];
@@ -81,24 +80,18 @@ describe("公開記事コンテンツ品質ゲート", () => {
 
   // #371: 汎用FAQ（比較対象はどのように選んでいますか？等）がコンポーネントに
   // ハードコードされていないことを確認。デフォルトは商品固有の内容に置き換わっていること。
-  it("ArticleComparisonPage/CommercialArticlePageのデフォルトFAQが汎用テンプレでない", () => {
-    const comparisonSource = readFileSync(
-      join(root, "src/components/ArticleComparisonPage.astro"),
-      "utf8",
-    );
+  it("CommercialArticlePageのデフォルトFAQが汎用テンプレでない", () => {
     const commercialSource = readFileSync(
       join(root, "src/components/CommercialArticlePage.astro"),
       "utf8",
     );
-    // 汎用FAQの代表パターンを両方のコンポーネントで禁止
-    for (const source of [comparisonSource, commercialSource]) {
-      expect(source).not.toMatch(
-        /question:\s*["']どちらを選べばよいですか？["']/,
-      );
-      expect(source).not.toMatch(
-        /question:\s*["']価格や在庫は確認できますか？["']/,
-      );
-    }
+    // 汎用FAQの代表パターンを禁止
+    expect(commercialSource).not.toMatch(
+      /question:\s*["']どちらを選べばよいですか？["']/,
+    );
+    expect(commercialSource).not.toMatch(
+      /question:\s*["']価格や在庫は確認できますか？["']/,
+    );
   });
 
   it("PurchaseCardコンポーネントが販売先ごとの verified/direct 状態で CTA を表示すること (#549)", () => {
