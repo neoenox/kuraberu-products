@@ -16,7 +16,7 @@ param(
         '/sitemap.xml'
     ),
     # Representative article paths covering different content types:
-    # - Comparison articles (productCount=2, leftModel/rightModel)
+    # - Comparison articles (productCount=2, verifiedRows + CommercialArticleSeed)
     # - Guide articles (productCount=1, aboutProductNames)
     # - Commercial articles (CommercialArticlePage)
     # - Articles with external embeds (autoload consent gate)

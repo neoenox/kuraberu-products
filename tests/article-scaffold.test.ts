@@ -5,18 +5,42 @@ import { describe, expect, it } from "vitest";
 import YAML from "yaml";
 import * as prettier from "prettier";
 import {
-  slugToConstName,
+  slugToSeedName,
   validateInput,
-  renderArticleTs,
+  renderSeedTs,
   renderPageAstro,
-  applyIndexEdits,
-  applyShimEdits,
+  applySeedsEdits,
   runArticleAdd,
 } from "../scripts/article-add.mjs";
 
 const CHECKED_AT = "2026-09-03";
 
-function validInput() {
+type ScaffoldSide = {
+  brand: string;
+  model: string;
+  officialUrl: string;
+  image: string;
+  tagline: string;
+  guidePoints: string[];
+};
+
+type ScaffoldInput = {
+  slug: string;
+  category: string;
+  productType: string;
+  left: ScaffoldSide;
+  right: ScaffoldSide;
+  differences: {
+    label: string;
+    left: string;
+    right: string;
+    highlight?: string;
+  }[];
+  faq: { question: string; answer: string }[];
+  checkedAt: string;
+};
+
+function validInput(): ScaffoldInput {
   return {
     slug: "panasonic-ne-ms4c-vs-ne-bs5c",
     category: "キッチン家電",
@@ -48,19 +72,21 @@ function validInput() {
 
 function withTempRoot() {
   const root = mkdtempSync(join(tmpdir(), "article-add-"));
-  mkdirSync(join(root, "src", "content", "articles"), { recursive: true });
+  mkdirSync(join(root, "src", "content", "articles", "commercial"), {
+    recursive: true,
+  });
   mkdirSync(join(root, "src", "pages", "articles"), { recursive: true });
   mkdirSync(join(root, "public", "products"), { recursive: true });
   return root;
 }
 
-describe("slugToConstName", () => {
-  it("derives the export name from a slug", () => {
-    expect(slugToConstName("panasonic-ne-ms4c-vs-ne-bs5c")).toBe(
-      "panasonicNeMs4cVsNeBs5cArticle",
+describe("slugToSeedName", () => {
+  it("derives the seed export name from a slug", () => {
+    expect(slugToSeedName("panasonic-ne-ms4c-vs-ne-bs5c")).toBe(
+      "panasonicNeMs4cVsNeBs5cSeed",
     );
-    expect(slugToConstName("tiger-jpv-l100-vs-jpv-m100")).toBe(
-      "tigerJpvL100VsJpvM100Article",
+    expect(slugToSeedName("tiger-jpv-l100-vs-jpv-m100")).toBe(
+      "tigerJpvL100VsJpvM100Seed",
     );
   });
 });
@@ -98,6 +124,10 @@ differences:
     left: 14.2kg
     right: 14.7kg
     highlight: left
+  - label: 自動メニュー数
+    left: "51"
+    right: "55"
+    highlight: right
 faq:
   - question: どちらが軽い？
     answer: NE-MS4Cが14.2kgです。
@@ -148,10 +178,24 @@ checkedAt: ${CHECKED_AT}
     const badHighlight = validInput();
     badHighlight.differences = [
       { label: "本体質量", left: "14.2kg", right: "14.7kg", highlight: "both" },
+      { label: "自動メニュー数", left: "51", right: "55" },
     ];
     expect(
       validateInput(badHighlight, { root }).errors.some((message) =>
         message.includes("highlight"),
+      ),
+    ).toBe(true);
+  });
+
+  it("requires two verified comparison rows", () => {
+    const root = withTempRoot();
+    const oneRow = validInput();
+    oneRow.differences = [
+      { label: "本体質量", left: "14.2kg", right: "14.7kg" },
+    ];
+    expect(
+      validateInput(oneRow, { root }).errors.some((message) =>
+        message.includes("two rows"),
       ),
     ).toBe(true);
   });
@@ -169,21 +213,29 @@ checkedAt: ${CHECKED_AT}
 });
 
 describe("renderers", () => {
-  it("renders metadata only from YAML data", () => {
-    const ts = renderArticleTs(validInput());
+  it("renders a seed only from YAML data", () => {
+    const ts = renderSeedTs(validInput());
+    expect(ts).toContain(
+      "export const panasonicNeMs4cVsNeBs5cSeed: CommercialArticleSeed",
+    );
     expect(ts).toContain('id: "panasonic-ne-ms4c-vs-ne-bs5c"');
-    expect(ts).toContain("export const panasonicNeMs4cVsNeBs5cArticle");
-    expect(ts).toContain('path: "/articles/panasonic-ne-ms4c-vs-ne-bs5c/"');
-    expect(ts).toContain("NE-MS4C");
-    expect(ts).toContain("NE-BS5C");
+    expect(ts).toContain('leftProduct: "パナソニック NE-MS4C"');
+    expect(ts).toContain('rightProduct: "パナソニック NE-BS5C"');
+    expect(ts).toContain('leftPoint: "軽さ・シンプル操作なら"');
+    expect(ts).toContain('rightPoint: "表示・グリル機能なら"');
+    expect(ts).toContain('leftImage: "/products/panasonic-ne-ms4c.png"');
+    expect(ts).toContain("verifiedRows");
     expect(ts).toContain("本体質量");
     expect(ts).toContain("どちらが軽い？");
     expect(ts).toContain(CHECKED_AT);
+    expect(ts).not.toContain("defineArticleMetadata");
+    expect(ts).not.toContain("keyDiffRows");
+    expect(ts).not.toContain("leftModel");
   });
 
   it("renders prettier-clean TypeScript through the pipeline", async () => {
     const { formatTs } = await import("../scripts/article-add.mjs");
-    const { source, formatted } = await formatTs(renderArticleTs(validInput()));
+    const { source, formatted } = await formatTs(renderSeedTs(validInput()));
     expect(formatted).toBe(true);
     await expect(
       prettier.check(source, { parser: "typescript" }),
@@ -198,96 +250,69 @@ describe("renderers", () => {
   });
 });
 
-const INDEX_FIXTURE = `export { aArticle } from "./a";
+const SEEDS_FIXTURE = `import { aSeed } from "./a";
+import type { CommercialArticleSeed } from "./types";
 
-// Commercial article exports
-export { commercialArticleSeeds } from "./commercial";
-
-import { aArticle } from "./a";
-import { commercialArticleSeeds, createCommercialArticle } from "./commercial";
-
-export const articleMetadata = Object.freeze([
-  aArticle,
-  ...additionalCommercialArticles,
-]);
+export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
+  aSeed,
+];
 `;
 
-const SHIM_FIXTURE = `export {
-  aArticle,
-  // Commercial article exports
-  articleMetadata,
-} from "./articles/index";
-`;
-
-describe("registry edits", () => {
-  it("inserts export, import, and array entries", () => {
-    const next = applyIndexEdits(INDEX_FIXTURE, {
-      constName: "panasonicNeMs4cVsNeBs5cArticle",
+describe("seed registry edits", () => {
+  it("inserts the import and the array entry", () => {
+    const next = applySeedsEdits(SEEDS_FIXTURE, {
+      seedName: "panasonicNeMs4cVsNeBs5cSeed",
       slug: "panasonic-ne-ms4c-vs-ne-bs5c",
     });
     expect(next).toContain(
-      'export { panasonicNeMs4cVsNeBs5cArticle } from "./panasonic-ne-ms4c-vs-ne-bs5c";',
+      'import { panasonicNeMs4cVsNeBs5cSeed } from "./panasonic-ne-ms4c-vs-ne-bs5c";',
     );
-    expect(next).toContain(
-      'import { panasonicNeMs4cVsNeBs5cArticle } from "./panasonic-ne-ms4c-vs-ne-bs5c";',
+    expect(next).toContain("  panasonicNeMs4cVsNeBs5cSeed,\n];");
+    // import は既存 import 群の直後、配列の先頭は既存 seed の後ろに置く
+    expect(next.indexOf("panasonicNeMs4cVsNeBs5cSeed,")).toBeGreaterThan(
+      next.indexOf("  aSeed,"),
     );
-    expect(next).toContain("  panasonicNeMs4cVsNeBs5cArticle,\n");
-  });
-
-  it("adds the shim export", () => {
-    const next = applyShimEdits(SHIM_FIXTURE, {
-      constName: "panasonicNeMs4cVsNeBs5cArticle",
-    });
-    expect(next).toContain("  panasonicNeMs4cVsNeBs5cArticle,\n");
   });
 
   it("refuses double registration", () => {
-    const once = applyIndexEdits(INDEX_FIXTURE, {
-      constName: "panasonicNeMs4cVsNeBs5cArticle",
+    const once = applySeedsEdits(SEEDS_FIXTURE, {
+      seedName: "panasonicNeMs4cVsNeBs5cSeed",
       slug: "panasonic-ne-ms4c-vs-ne-bs5c",
     });
     expect(() =>
-      applyIndexEdits(once, {
-        constName: "panasonicNeMs4cVsNeBs5cArticle",
+      applySeedsEdits(once, {
+        seedName: "panasonicNeMs4cVsNeBs5cSeed",
         slug: "panasonic-ne-ms4c-vs-ne-bs5c",
       }),
     ).toThrow(/already registered/);
-    const shimOnce = applyShimEdits(SHIM_FIXTURE, {
-      constName: "panasonicNeMs4cVsNeBs5cArticle",
-    });
-    expect(() =>
-      applyShimEdits(shimOnce, {
-        constName: "panasonicNeMs4cVsNeBs5cArticle",
-      }),
-    ).toThrow(/already exported/);
   });
 });
 
 describe("runArticleAdd end to end", () => {
-  it("writes article, page, and registry updates into a fixture tree", async () => {
+  it("writes the seed, the page, and the registry update into a fixture tree", async () => {
     const root = withTempRoot();
     writeFileSync(
-      join(root, "src", "content", "articles", "index.ts"),
-      INDEX_FIXTURE,
+      join(root, "src", "content", "articles", "commercial", "seeds.ts"),
+      SEEDS_FIXTURE,
     );
-    writeFileSync(join(root, "src", "content", "articles.ts"), SHIM_FIXTURE);
     const yamlPath = join(root, "input.yaml");
     writeFileSync(yamlPath, YAML.stringify(validInput()));
 
     const result = await runArticleAdd({ root, yamlPath });
-    expect(result.constName).toBe("panasonicNeMs4cVsNeBs5cArticle");
+    expect(result.seedName).toBe("panasonicNeMs4cVsNeBs5cSeed");
 
-    const articleTs = readFileSync(
+    const seedTs = readFileSync(
       join(
         root,
         "src",
         "content",
         "articles",
+        "commercial",
         "panasonic-ne-ms4c-vs-ne-bs5c.ts",
       ),
       "utf-8",
     );
-    expect(articleTs).toContain("panasonicNeMs4cVsNeBs5cArticle");
+    expect(seedTs).toContain("panasonicNeMs4cVsNeBs5cSeed");
 
     const page = readFileSync(
       join(
@@ -302,11 +327,14 @@ describe("runArticleAdd end to end", () => {
     );
     expect(page).toContain('articleId="panasonic-ne-ms4c-vs-ne-bs5c"');
 
-    const index = readFileSync(
-      join(root, "src", "content", "articles", "index.ts"),
+    const seeds = readFileSync(
+      join(root, "src", "content", "articles", "commercial", "seeds.ts"),
       "utf-8",
     );
-    expect(index).toContain("panasonicNeMs4cVsNeBs5cArticle");
+    expect(seeds).toContain(
+      'import { panasonicNeMs4cVsNeBs5cSeed } from "./panasonic-ne-ms4c-vs-ne-bs5c";',
+    );
+    expect(seeds).toContain("  panasonicNeMs4cVsNeBs5cSeed,");
 
     // second run must fail on duplicates
     await expect(runArticleAdd({ root, yamlPath })).rejects.toThrow(/already/);
@@ -315,10 +343,9 @@ describe("runArticleAdd end to end", () => {
   it("supports --check mode without writing", async () => {
     const root = withTempRoot();
     writeFileSync(
-      join(root, "src", "content", "articles", "index.ts"),
-      INDEX_FIXTURE,
+      join(root, "src", "content", "articles", "commercial", "seeds.ts"),
+      SEEDS_FIXTURE,
     );
-    writeFileSync(join(root, "src", "content", "articles.ts"), SHIM_FIXTURE);
     const yamlPath = join(root, "input.yaml");
     writeFileSync(yamlPath, YAML.stringify(validInput()));
 
@@ -330,6 +357,7 @@ describe("runArticleAdd end to end", () => {
           "src",
           "content",
           "articles",
+          "commercial",
           "panasonic-ne-ms4c-vs-ne-bs5c.ts",
         ),
       ),

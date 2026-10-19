@@ -6,11 +6,10 @@
  *   pnpm article:add articles/new/panasonic-ne-ms4c-vs-ne-bs5c.yaml
  *   node scripts/article-add.mjs <input.yaml> [--check] [--root <dir>]
  *
- * YAML 1ファイルから次を生成する:
- *   - src/content/articles/<slug>.ts (defineArticleMetadata)
- *   - src/pages/articles/<slug>/index.astro (articleId 1行ページ)
- *   - src/content/articles/index.ts の export / import / 配列への登録
- *   - src/content/articles.ts (互換shim) への export 登録
+ * YAML 1ファイルから次を生成する (#1064 Phase 3b で seed 生成へ移行):
+ *   - src/content/articles/commercial/<slug>.ts (CommercialArticleSeed)
+ *   - src/pages/articles/<slug>/index.astro (CommercialArticlePage 1行ページ)
+ *   - src/content/articles/commercial/seeds.ts の import / 配列への登録
  *
  * 事実部分 (仕様差・おすすめ理由・FAQ回答) は生成しない。
  * YAMLに渡された検証済み情報だけを並べ替え、定型文はサイト標準の
@@ -32,14 +31,14 @@ function isNonEmptyString(value) {
   return typeof value === "string" && value.trim().length > 0;
 }
 
-/** slug から export const 名を導出する (例: panasonic-ne-ms4c-vs-ne-bs5c → panasonicNeMs4cVsNeBs5cArticle) */
-export function slugToConstName(slug) {
+/** slug から seed の export const 名を導出する (例: panasonic-ne-ms4c-vs-ne-bs5c → panasonicNeMs4cVsNeBs5cSeed) */
+export function slugToSeedName(slug) {
   const camel = slug
     .split("-")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join("");
   const head = camel.charAt(0).toLowerCase() + camel.slice(1);
-  return `${head}Article`;
+  return `${head}Seed`;
 }
 
 function isValidCalendarDate(value) {
@@ -128,8 +127,10 @@ export function validateInput(input, { root = process.cwd() } = {}) {
     errors.push("left.model and right.model must differ");
   }
 
-  if (!Array.isArray(input.differences) || input.differences.length === 0) {
-    errors.push("differences must contain at least one row");
+  // 商用ページは productInfoCheckedAt がある記事で比較行2件未満を拒否する
+  // （CommercialArticlePage の placeholder ガード）。生成段階で弾く。
+  if (!Array.isArray(input.differences) || input.differences.length < 2) {
+    errors.push("differences must contain at least two rows");
   } else {
     input.differences.forEach((row, index) => {
       if (!isPlainObject(row)) {
@@ -181,35 +182,40 @@ export function validateInput(input, { root = process.cwd() } = {}) {
 
   // 既存記事との重複チェック
   if (isNonEmptyString(input.slug)) {
-    const articleFile = path.join(
+    const seedFile = path.join(
       root,
       "src",
       "content",
       "articles",
+      "commercial",
       `${input.slug}.ts`,
     );
     const pageDir = path.join(root, "src", "pages", "articles", input.slug);
-    if (fs.existsSync(articleFile)) {
-      errors.push(`src/content/articles/${input.slug}.ts already exists`);
+    if (fs.existsSync(seedFile)) {
+      errors.push(
+        `src/content/articles/commercial/${input.slug}.ts already exists`,
+      );
     }
     if (fs.existsSync(pageDir)) {
       errors.push(`src/pages/articles/${input.slug}/ already exists`);
     }
-    const indexFile = path.join(root, "src", "content", "articles", "index.ts");
-    if (fs.existsSync(indexFile)) {
-      const indexSource = fs.readFileSync(indexFile, "utf-8");
-      if (indexSource.includes(`"/articles/${input.slug}/"`)) {
+    const seedName = slugToSeedName(input.slug);
+    const seedsFile = path.join(
+      root,
+      "src",
+      "content",
+      "articles",
+      "commercial",
+      "seeds.ts",
+    );
+    if (fs.existsSync(seedsFile)) {
+      const seedsSource = fs.readFileSync(seedsFile, "utf-8");
+      if (seedsSource.includes(seedName)) {
+        errors.push(`${seedName} is already registered in commercial seeds`);
+      } else if (seedsSource.includes(`from "./${input.slug}"`)) {
         errors.push(
-          `article path /articles/${input.slug}/ is already registered`,
+          `./${input.slug} is already registered in commercial seeds`,
         );
-      }
-    }
-    const constName = slugToConstName(input.slug);
-    const shimFile = path.join(root, "src", "content", "articles.ts");
-    if (fs.existsSync(shimFile)) {
-      const shimSource = fs.readFileSync(shimFile, "utf-8");
-      if (shimSource.includes(constName)) {
-        errors.push(`${constName} is already exported from articles.ts shim`);
       }
     }
   }
@@ -233,23 +239,6 @@ function jsString(value) {
   return JSON.stringify(value);
 }
 
-function renderSide(side, brand, productType) {
-  const guidePoints =
-    side.guidePoints.length === 1
-      ? `    guidePoints: [${jsString(side.guidePoints[0])}],`
-      : `    guidePoints: [\n${side.guidePoints.map((point) => `      ${jsString(point)},`).join("\n")}\n    ],`;
-  const lines = [
-    `    brand: ${jsString(brand)},`,
-    `    line: ${jsString(side.model)},`,
-    `    tagline: ${jsString(side.tagline)},`,
-    `    image: ${jsString(side.image)},`,
-    `    imageAlt: ${jsString(`${brand} ${productType} ${side.model}`)},`,
-    `    officialHref: ${jsString(side.officialUrl)},`,
-    guidePoints,
-  ];
-  return lines.join("\n");
-}
-
 function renderDiffRow(row) {
   const lines = [
     `    {`,
@@ -267,10 +256,13 @@ function renderDiffRow(row) {
   return lines.join("\n");
 }
 
-/** 検証済みYAMLから記事TSを描画する。事実はYAML由来のみ、定型文はボイラープレートのみ。 */
-export function renderArticleTs(input) {
+/**
+ * 検証済みYAMLから CommercialArticleSeed を描画する。
+ * 事実はYAML由来のみ、定型文はボイラープレートのみ。
+ */
+export function renderSeedTs(input) {
   const slug = input.slug;
-  const constName = slugToConstName(slug);
+  const seedName = slugToSeedName(slug);
   const brand = input.left.brand;
   const leftModel = input.left.model;
   const rightModel = input.right.model;
@@ -279,13 +271,15 @@ export function renderArticleTs(input) {
     : input.category;
   const labels = input.differences.map((row) => row.label).join("・");
   const uniqueTags = [...new Set([brand, input.category])];
+  const officialSources = [input.left, input.right].map(
+    (side) =>
+      `    { label: ${jsString(`${side.brand} ${side.model} 公式商品ページ`)}, url: ${jsString(side.officialUrl)} },`,
+  );
 
-  return `import { defineArticleMetadata } from "./types";
+  return `import type { CommercialArticleSeed } from "./types";
 
-export const ${constName} = defineArticleMetadata({
+export const ${seedName}: CommercialArticleSeed = {
   id: ${jsString(slug)},
-  productCount: 2,
-  path: "/articles/${slug}/",
   title: ${jsString(`${brand} ${leftModel}と${rightModel}、どっち？｜くらべる商品メモ`)},
   headline: ${jsString(`${brand}の${productType}「${leftModel}」と「${rightModel}」を比較`)},
   description: ${jsString(`${brand} ${leftModel}と${rightModel}を、公式の${labels}で比較`)},
@@ -294,26 +288,23 @@ export const ${constName} = defineArticleMetadata({
   audiences: [${jsString(`${input.category}を選びたい人`)}, ${jsString(`${leftModel}と${rightModel}を比べたい人`)}],
   uses: [${jsString("仕様で選ぶ")}, ${jsString(`${input.category}を比べる`)}],
   summary: ${jsString(`${leftModel}と${rightModel}を、${brand}公式の${labels}に分けて比較します。`)},
+  leftProduct: ${jsString(`${brand} ${leftModel}`)},
+  rightProduct: ${jsString(`${brand} ${rightModel}`)},
+  leftPoint: ${jsString(input.left.tagline)},
+  rightPoint: ${jsString(input.right.tagline)},
   publishedAt: ${jsString(input.checkedAt)},
   modifiedAt: ${jsString(input.checkedAt)},
   productInfoCheckedAt: ${jsString(input.checkedAt)},
   purchaseLinksCheckedAt: ${jsString(input.checkedAt)},
   purchaseLinkStatus: "unverified",
-  imagePath: ${jsString(input.left.image)},
-  aboutProductNames: [${jsString(`${brand} ${leftModel}`)}, ${jsString(`${brand} ${rightModel}`)}],
-  leftModel: {
-${renderSide(input.left, brand, productType)}
-  },
-  rightModel: {
-${renderSide(input.right, brand, productType)}
-  },
-  keyDiffRows: [
+  officialSources: [
+${officialSources.join("\n")}
+  ],
+  verifiedRows: [
 ${input.differences.map(renderDiffRow).join("\n")}
   ],
-  lead: ${jsString(`${brand}の${productType}「${leftModel}」と「${rightModel}」を、公式の商品・仕様ページで確認できる${labels}に分けて比較します。`)},
-  summaryParagraph: ${jsString(`違いを確認して重視するポイントに合う方を選んでください。価格・在庫は販売先でご確認ください。`)},
-  officialDescription: ${jsString(`比較の根拠は、${brand}公式の商品ページで確認した仕様です。`)},
-  socialProofQuery: ${jsString(`${brand} ${leftModel} ${rightModel} ${productType}`)},
+  leftImage: ${jsString(input.left.image)},
+  rightImage: ${jsString(input.right.image)},
   faqEntries: [
 ${input.faq
   .map(
@@ -322,13 +313,9 @@ ${input.faq
   )
   .join("\n")}
   ],
-  changeLog: [
-    {
-      date: ${jsString(input.checkedAt)},
-      summary: "初回公開。",
-    },
-  ],
-});
+  lead: ${jsString(`${brand}の${productType}「${leftModel}」と「${rightModel}」を、公式の商品・仕様ページで確認できる${labels}に分けて比較します。`)},
+  socialProofQuery: ${jsString(`${brand} ${leftModel} ${rightModel} ${productType}`)},
+};
 `;
 }
 
@@ -341,55 +328,40 @@ import CommercialArticlePage from '../../../components/CommercialArticlePage.ast
 `;
 }
 
-const INDEX_EXPORT_ANCHOR = "// Commercial article exports";
-const INDEX_IMPORT_ANCHOR =
-  'import { commercialArticleSeeds, createCommercialArticle } from "./commercial";';
-const INDEX_ARRAY_ANCHOR = "  ...additionalCommercialArticles,";
-const SHIM_ANCHOR = "  // Commercial article exports";
+const SEEDS_ARRAY_ANCHOR =
+  "export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [";
 
-/** index.ts の3箇所 (export/import/配列) に登録行を挿入する */
-export function applyIndexEdits(indexSource, { constName, slug }) {
-  if (indexSource.includes(constName)) {
-    throw new Error(`${constName} is already registered in articles index`);
+/** commercial/seeds.ts の import と配列に登録行を挿入する */
+export function applySeedsEdits(seedsSource, { seedName, slug }) {
+  if (
+    seedsSource.includes(seedName) ||
+    seedsSource.includes(`from "./${slug}"`)
+  ) {
+    throw new Error(`${seedName} is already registered in commercial seeds`);
   }
-  if (indexSource.includes(`/${slug}/`)) {
-    throw new Error(
-      `/articles/${slug}/ is already registered in articles index`,
-    );
+  const lines = seedsSource.split("\n");
+  const arrayLine = lines.indexOf(SEEDS_ARRAY_ANCHOR);
+  if (arrayLine === -1) {
+    throw new Error(`commercial seeds anchor not found: ${SEEDS_ARRAY_ANCHOR}`);
   }
-  for (const anchor of [
-    INDEX_EXPORT_ANCHOR,
-    INDEX_IMPORT_ANCHOR,
-    INDEX_ARRAY_ANCHOR,
-  ]) {
-    if (!indexSource.includes(anchor)) {
-      throw new Error(`articles index anchor not found: ${anchor}`);
-    }
+  let lastImport = -1;
+  for (let index = 0; index < arrayLine; index += 1) {
+    if (lines[index].startsWith("import ")) lastImport = index;
   }
-  let next = indexSource.replace(
-    INDEX_EXPORT_ANCHOR,
-    `export { ${constName} } from "./${slug}";\n\n${INDEX_EXPORT_ANCHOR}`,
-  );
-  next = next.replace(
-    INDEX_IMPORT_ANCHOR,
-    `import { ${constName} } from "./${slug}";\n${INDEX_IMPORT_ANCHOR}`,
-  );
-  next = next.replace(
-    INDEX_ARRAY_ANCHOR,
-    `  ${constName},\n${INDEX_ARRAY_ANCHOR}`,
-  );
-  return next;
-}
-
-/** 互換shim (src/content/articles.ts) に export を追加する */
-export function applyShimEdits(shimSource, { constName }) {
-  if (shimSource.includes(constName)) {
-    throw new Error(`${constName} is already exported from articles shim`);
+  if (lastImport === -1) {
+    throw new Error("commercial seeds import anchor not found");
   }
-  if (!shimSource.includes(SHIM_ANCHOR)) {
-    throw new Error(`articles shim anchor not found: ${SHIM_ANCHOR}`);
+  const arrayEnd = lines.indexOf("];", arrayLine);
+  if (arrayEnd === -1) {
+    throw new Error("commercial seeds array end not found");
   }
-  return shimSource.replace(SHIM_ANCHOR, `  ${constName},\n${SHIM_ANCHOR}`);
+  return [
+    ...lines.slice(0, lastImport + 1),
+    `import { ${seedName} } from "./${slug}";`,
+    ...lines.slice(lastImport + 1, arrayEnd),
+    `  ${seedName},`,
+    ...lines.slice(arrayEnd),
+  ].join("\n");
 }
 
 /** 生成TSを prettier で正規化する (format:check を素通しさせるため) */
@@ -423,9 +395,9 @@ export async function runArticleAdd({ root, yamlPath, check = false }) {
     : path.join(root, yamlPath);
   const raw = fs.readFileSync(absoluteYaml, "utf-8");
   const input = YAML.parse(raw);
-  const constName =
+  const seedName =
     isPlainObject(input) && isNonEmptyString(input.slug)
-      ? slugToConstName(input.slug)
+      ? slugToSeedName(input.slug)
       : "(unknown)";
 
   const { errors, warnings } = validateInput(input, { root });
@@ -439,20 +411,31 @@ export async function runArticleAdd({ root, yamlPath, check = false }) {
     );
   }
 
-  const rendered = renderArticleTs(input);
-  const { source: articleTs, formatted } = await formatTs(rendered);
+  const rendered = renderSeedTs(input);
+  const { source: seedTs, formatted } = await formatTs(rendered);
   if (!formatted) {
     warnings.push("prettier unavailable: generated TS left unformatted");
   }
   const pageAstro = renderPageAstro(input);
-  const indexFile = path.join(root, "src", "content", "articles", "index.ts");
-  const shimFile = path.join(root, "src", "content", "articles.ts");
-  const nextIndex = applyIndexEdits(fs.readFileSync(indexFile, "utf-8"), {
-    constName,
+  const seedFile = path.join(
+    root,
+    "src",
+    "content",
+    "articles",
+    "commercial",
+    `${input.slug}.ts`,
+  );
+  const seedsFile = path.join(
+    root,
+    "src",
+    "content",
+    "articles",
+    "commercial",
+    "seeds.ts",
+  );
+  const nextSeeds = applySeedsEdits(fs.readFileSync(seedsFile, "utf-8"), {
+    seedName,
     slug: input.slug,
-  });
-  const nextShim = applyShimEdits(fs.readFileSync(shimFile, "utf-8"), {
-    constName,
   });
 
   console.log(`article:add ${input.slug}`);
@@ -464,25 +447,22 @@ export async function runArticleAdd({ root, yamlPath, check = false }) {
     "left/right models OK",
     `${input.differences.length} difference rows`,
     `${input.faq.length} faq entries`,
-    "metadata validation PASS",
+    "seed validation PASS",
   ]);
   for (const warning of warnings) {
     console.log(`  ! ${warning}`);
   }
 
   const created = [
-    path.join("src", "content", "articles", `${input.slug}.ts`),
+    path.join("src", "content", "articles", "commercial", `${input.slug}.ts`),
     path.join("src", "pages", "articles", input.slug, "index.astro"),
   ];
   if (check) {
     console.log("check only: no files written");
-    return { constName, created, warnings };
+    return { seedName, created, warnings };
   }
 
-  fs.writeFileSync(
-    path.join(root, "src", "content", "articles", `${input.slug}.ts`),
-    articleTs,
-  );
+  fs.writeFileSync(seedFile, seedTs);
   fs.mkdirSync(path.join(root, "src", "pages", "articles", input.slug), {
     recursive: true,
   });
@@ -490,19 +470,17 @@ export async function runArticleAdd({ root, yamlPath, check = false }) {
     path.join(root, "src", "pages", "articles", input.slug, "index.astro"),
     pageAstro,
   );
-  fs.writeFileSync(indexFile, nextIndex);
-  fs.writeFileSync(shimFile, nextShim);
+  fs.writeFileSync(seedsFile, nextSeeds);
 
   console.log("Created:");
   for (const file of created) {
     console.log(`  ${file}`);
   }
   console.log("Updated:");
-  console.log("  src/content/articles/index.ts");
-  console.log("  src/content/articles.ts");
+  console.log("  src/content/articles/commercial/seeds.ts");
   console.log("Run:");
   console.log("  pnpm verify");
-  return { constName, created, warnings };
+  return { seedName, created, warnings };
 }
 
 const invokedAsCli =

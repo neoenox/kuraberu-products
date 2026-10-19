@@ -3,28 +3,7 @@ export interface ArticleChangeLogEntry {
   summary: string;
 }
 
-/**
- * 比較記事の片側商品情報。
- * purchaseHref は articlePurchaseLinks から自動解決するため不要。
- */
-export interface ComparisonSide {
-  brand: string;
-  line: string;
-  tagline: string;
-  image: string;
-  imageAlt: string;
-  officialHref: string;
-  guidePoints: readonly string[];
-  /** クリック計測用の商品ID（任意） */
-  productId?: string;
-  /**
-   * 確認済みのAmazon商品詳細URL（https://www.amazon.co.jp/dp/<ASIN>）。
-   * タグはビルド時に付与するため、ソースにはタグなしで書く。
-   */
-  amazonHref?: `https://www.amazon.co.jp/dp/${string}`;
-}
-
-/** 比較行（ verifiedRows / keyDiffRows 共通） */
+/** 比較行（比較軸は `verifiedRows` の1系統。商品情報は seed / 商品マスタから解決する） */
 export type ComparisonRow = {
   label: string;
   left: string;
@@ -79,12 +58,6 @@ export type ArticleMetadataBase = {
     url: `https://${string}`;
   }[];
   verifiedRows?: readonly ComparisonRow[];
-  /** 比較記事: 左側商品のモデル情報。 */
-  leftModel?: ComparisonSide;
-  /** 比較記事: 右側商品のモデル情報。 */
-  rightModel?: ComparisonSide;
-  /** 比較記事: ハイライト比較行。 */
-  keyDiffRows?: readonly ComparisonRow[];
   /** 比較記事: FAQ エントリ。 */
   faqEntries?: readonly { question: string; answer: string }[];
   /** 比較記事: リード文。 */
@@ -134,7 +107,8 @@ export type GuideArticleMetadata = ArticleMetadataBase & {
 
 /**
  * 比較記事（productCount = 2）。
- * leftModel/rightModel はオプション（宣言すると1行記事になる）。
+ * 比較軸は `verifiedRows` のみ。商品名・画像・購入先は `CommercialArticleSeed` の
+ * 登録と商品マスタから解決するため、この型では持たない。
  */
 export type ComparisonArticleMetadata = ArticleMetadataBase & {
   productCount: 2;
@@ -202,29 +176,8 @@ export function defineArticleMetadata(
       `aboutProductNames must have exactly ${metadata.productCount} non-empty entries (one per product)`,
     );
   }
-  // 比較記事の1行化: leftModel/rightModel は keyDiffRows/faqEntries とセットで宣言する必要がある
-  if (metadata.leftModel || metadata.rightModel) {
-    if (!metadata.leftModel || !metadata.rightModel) {
-      throw new TypeError(
-        "leftModel and rightModel must both be declared together",
-      );
-    }
-    if (!metadata.keyDiffRows || metadata.keyDiffRows.length === 0) {
-      throw new TypeError(
-        "keyDiffRows is required when leftModel/rightModel are declared",
-      );
-    }
-    if (!metadata.faqEntries || metadata.faqEntries.length === 0) {
-      throw new TypeError(
-        "faqEntries is required when leftModel/rightModel are declared",
-      );
-    }
-    if (!metadata.lead) {
-      throw new TypeError(
-        "lead is required when leftModel/rightModel are declared",
-      );
-    }
-  }
+  // 比較記事の「1行記事」分岐（leftModel/rightModel + keyDiffRows）は #1064 Phase 3b で
+  // 廃止した。比較記事は `CommercialArticleSeed` を登録し、商用ページが描画する。
 
   for (const [label, value] of [
     ["publishedAt", metadata.publishedAt],

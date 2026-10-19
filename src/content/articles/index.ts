@@ -9,7 +9,6 @@ export type {
   ArticleChangeLogEntry,
   ArticleMetadata,
   ArticleMetadataBase,
-  ComparisonSide,
   ComparisonRow,
   GuideArticleMetadata,
   ComparisonArticleMetadata,
