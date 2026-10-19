@@ -12,7 +12,6 @@ export {
   type ArticleChangeLogEntry,
   type ArticleMetadata,
   type ArticleMetadataBase,
-  type ComparisonSide,
   type ComparisonRow,
   type GuideArticleMetadata,
   type ComparisonArticleMetadata,

@@ -215,7 +215,7 @@ export function collectArticleClaims(articleId) {
   let officialUrls = extractOfficialUrls(text);
 
   // Data-driven pages may have spec claims in comparison-v2 entries,
-  // manual-seeds entries, or article metadata (leftModel/rightModel) rather than inline in the page.
+  // manual-seeds entries, or module article metadata rather than inline in the page.
   if (claims.length === 0 && officialUrls.length === 0) {
     // 1. comparison-v2 entry (spec rows, official hrefs)
     const compFile = `src/content/articles/comparison-v2/${articleId}.ts`;
@@ -227,7 +227,7 @@ export function collectArticleClaims(articleId) {
       // No comparison-v2 entry.
     }
 
-    // 2. article metadata (leftModel/rightModel with officialHref, keyDiffRows)
+    // 2. module article metadata (official sources and spec rows)
     if (claims.length === 0 && officialUrls.length === 0) {
       const articleFile = `src/content/articles/${articleId}.ts`;
       try {

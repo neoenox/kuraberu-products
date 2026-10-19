@@ -75,46 +75,50 @@ Amazonの商品詳細URL・ASINを確認できない、検索で商品を見つ�
 
 ## 5. 実装チェック
 
-### 5.1 比較記事（editorial）の新規作成 — メタ1本 + 1行ラッパ（推奨）
+### 5.1 比較記事の新規作成 — `CommercialArticleSeed` 1本 + 1行ラッパ（推奨）
 
-新規の比較記事は `src/pages/articles/<slug>/index.astro` に 50〜80 行を手書きしない。`src/content/articles/<slug>.ts` に全データを集約し、ページは 1 行ラッパにする（`combi-the-s-plus-vs-premium` 等が雛形）。
+新規の比較記事は `src/pages/articles/<slug>/index.astro` に 50〜80 行を手書きしない。`src/content/articles/commercial/<slug>.ts` に `CommercialArticleSeed` として全データを集約し、`src/content/articles/commercial/seeds.ts` に登録し、ページは 1 行ラッパにする（#1064 Phase 3b で `defineArticleMetadata` の旧「1行記事」ルートは廃止）。
 
 ```ts
-// src/content/articles/<slug>.ts
-export const fooBarArticle = defineArticleMetadata({
+// src/content/articles/commercial/<slug>.ts
+import type { CommercialArticleSeed } from "./types";
+
+export const fooBarSeed: CommercialArticleSeed = {
   id: "<slug>",
-  productCount: 2,
-  path: "/articles/<slug>/" /* title, headline, ... */,
-  leftModel: {
-    brand,
-    line,
-    tagline,
-    image,
-    imageAlt,
-    officialHref,
-    guidePoints,
-  },
-  rightModel: {
-    brand,
-    line,
-    tagline,
-    image,
-    imageAlt,
-    officialHref,
-    guidePoints,
-  },
-  keyDiffRows: [/* 比較行 */],
+  title,
+  headline,
+  description,
+  category,
+  tags,
+  audiences,
+  uses,
+  summary,
+  leftProduct: "<ブランド> <型番>",
+  rightProduct: "<ブランド> <型番>",
+  leftPoint: "左を選ぶ人向けのひとこと",
+  rightPoint: "右を選ぶ人向けのひとこと",
+  publishedAt: "<YYYY-MM-DD>",
+  modifiedAt: "<YYYY-MM-DD>",
+  productInfoCheckedAt: "<YYYY-MM-DD>",
+  purchaseLinksCheckedAt: "<YYYY-MM-DD>",
+  purchaseLinkStatus: "unverified",
+  officialSources: [{ label, url }],
+  verifiedRows: [{ label, left, right, highlight? }],
+  leftImage: "/products/<slug>-left.png",
+  rightImage: "/products/<slug>-right.png",
+  faqEntries: [{ question, answer }],
   lead: "...",
-  summaryParagraph: "..." /* optional */,
-  officialDescription: "..." /* optional, articleId ルートで優先表示 */,
-  officialSources: [
-    /* {label, url} 情報源一覧。checkedAt は productInfoCheckedAt から自動付与 */
-  ],
   socialProofQuery: "...",
-  faqEntries: [/* ... */],
-  purchaseWarning: "..." /* optional, article.purchaseWarning ?? default */,
-  disclaimer: "..." /* optional, article.disclaimer ?? default */,
-});
+};
+```
+
+```ts
+// src/content/articles/commercial/seeds.ts
+import { fooBarSeed } from "./<slug>";
+
+export const commercialArticleSeeds: readonly CommercialArticleSeed[] = [
+  fooBarSeed,
+];
 ```
 
 ```astro
@@ -125,13 +129,14 @@ import CommercialArticlePage from "../../../components/CommercialArticlePage.ast
 <CommercialArticlePage articleId="<slug>" />
 ```
 
-- [ ] メタ (`src/content/articles/<slug>.ts`) に `leftModel` / `rightModel` / `keyDiffRows` / `lead` / `faqEntries` を追加（`combi-the-s-plus-vs-premium.ts` を参照）
-- [ ] 必要に応じて `officialSources` / `purchaseWarning` / `disclaimer` / `officialDescription` / `summaryParagraph` / `socialProofQuery` を追加（`CommercialArticlePage` の `articleId` ルートで `article.* ?? default` される）
+- [ ] `pnpm article:add articles/new/<slug>.yaml` を使う場合、生成物は seed + 1行ラッパ + `commercial/seeds.ts` 登録（旧 `src/content/articles/<slug>.ts` と `articles/index.ts` への登録は行わない）
+- [ ] `verifiedRows` は2行以上（`CommercialArticlePage` は `productInfoCheckedAt` がある記事で2行未満を拒否する）
+- [ ] `officialSources` を左右2件そろえる（そろわないと比較ヒーローと目次を描画しない）
 - [ ] `src/lib/products.ts` の `articlePurchaseLinks["<slug>:left" | ":right"]` に左右の商品詳細成果URLを追加
 - [ ] `src/pages/articles/<slug>/index.astro` は `CommercialArticlePage` の1行ラッパのみ
-- [ ] CTAに商品画像を含めた（`leftModel.image` / `rightModel.image` は `purchaseHref` とともに自動で CTA へ渡る）
+- [ ] CTAに商品画像を含めた（`leftImage` / `rightImage` は `purchaseHref` とともに自動で CTA へ渡る）
 - [ ] 未確認商品はfail-closedでCTA非表示（`articlePurchaseLinks` 未登録 or 到達ホスト不正なら表示されない）
-- [ ] `articleMetadata` / canonical / sitemap / 一覧へ反映（`articles/index.ts` の re-export と `articleMetadata` 配列に追加）
+- [ ] `articleMetadata` / canonical / sitemap / 一覧へ反映（`commercialArticleSeeds` への登録だけで反映。公開可否は `config/article-template-policy.mjs` の `PUBLISHED_ARTICLE_PAGE_SLUGS`）
 - [ ] 価格・在庫・人気・口コミを公式根拠なしに記載していない
 - [ ] SNS情報を比較根拠にしていない
 

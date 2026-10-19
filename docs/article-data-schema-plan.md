@@ -127,7 +127,7 @@ type ArticleData = {
 | 0（本doc） | 調査・スキーマ確定                                                                                                                                                                                             | なし                     | -                         |
 | 1          | 商品マスタを新規追加（`src/data/products/*.json` 等）。`article-purchase-links.json` から機械変換＋手動補完。マスタ単体のスキーマ検証CLI（`check:product-master`）とテストを追加                               | なし                     | 新規テスト, 既存CI        |
 | 2          | 記事→マスタ参照の併走移行。seed に任意の `leftProductId/rightProductId` を追加可とし、マスタ解決を優先、無ければ従来フィールドへフォールバック。`check-purchase-link-consistency` を registry からマスタへ委譲 | 任意・後方互換           | 併走テスト, 既存CI        |
-| 3          | 比較軸の一本化。`keyDiffRows` / `leftModel` / `rightModel` のデッドコードを削除し `verifiedRows` に統一                                                                                                        | 型のみ（データ変更なし） | typecheck, 既存記事テスト |
+| 3          | 比較軸の一本化。`keyDiffRows` / `leftModel` / `rightModel` のデッドコードを削除し `verifiedRows` に統一（3a/3b 完了: A.11 / A.12）                                                                             | 型のみ（データ変更なし） | typecheck, 既存記事テスト |
 | 4          | 価格の一元化。手書き価格を軸/マスタへ移し、本文はテンプレート生成。本文直書き価格を検出する lint を追加                                                                                                        | 記事本文の一部整形       | check:price-claims 連携   |
 | 5          | 画像の一元化。`assets/products` と `public/products` の二重を解消し、マスタ `image` に寄せる                                                                                                                   | 参照パスのみ             | check:product-images      |
 
@@ -136,7 +136,7 @@ type ArticleData = {
 - Phase 2 までは registry とマスタを併存させ、どちらか一方が欠けても fail-closed にする。
 - 交友関係のない大規模差分を作らない（1 Phase = 1 目的 = 1 PR）。
 - 各Phaseで `pnpm verify` と既存の全チェックを green に保つ。
-- Phase 3 は 3a（未使用の互換レンダラ退役）と 3b（旧フィールドの削除と `verifiedRows` 一本化）に分割して実施する（A.11）。
+- Phase 3 は 3a（未使用の互換レンダラ退役）と 3b（旧フィールドの削除と `verifiedRows` 一本化）に分割して実施した（3a: A.11 / 3b: A.12）。
 
 ## 4. 参考: 調査の再現
 
@@ -291,7 +291,7 @@ seed の Amazon URL 出現は 137回 / ASIN ユニーク 95件（`/dp/`・`/gp/p
 
 ### A.11 Phase 3a（未使用の互換レンダラの退役）の実装記録（2026-10-19）
 
-Phase 3（比較軸の一本化）の前提として、互換レンダラ `src/components/ArticleComparisonPage.astro` を削除しました。実測で「このコンポーネントを使うページが 0 件」だったためです。メタデータの `keyDiffRows` / `leftModel` / `rightModel` の削除は 3b（別PR）で行います。
+Phase 3（比較軸の一本化）の前提として、互換レンダラ `src/components/ArticleComparisonPage.astro` を削除しました。実測で「このコンポーネントを使うページが 0 件」だったためです。メタデータの `keyDiffRows` / `leftModel` / `rightModel` の削除は 3b（A.12）で行いました。
 
 実測（2026-10-19・base `5332f22`・fresh `astro build`）:
 
@@ -323,4 +323,34 @@ Phase 3（比較軸の一本化）の前提として、互換レンダラ `src/c
 | CSS バンドル      | `BaseLayout.*.css` のみ変化し、消えた宣言は `.source-links{gap:.75rem;display:grid}` の1件                        |
 | `pnpm verify`     | exit 0（95ファイル / 1111 passed + 1 skipped、181ページ、post-deploy 58/59 passed・1 skipped・0 failed）          |
 
-Phase 3 の残り（3b）: メタデータから `keyDiffRows` / `leftModel` / `rightModel` を削除し、比較軸を `verifiedRows` に一本化する。`pnpm article:add`（`scripts/article-add.mjs`）はこの旧3フィールドを生成し、`CommercialArticlePage` の `fallbackSeed` がそれを描画するため、3b では `CommercialArticleSeed` の生成へ移行する。
+Phase 3 の残り（3b）は A.12 で完了しています。メタデータから `keyDiffRows` / `leftModel` / `rightModel` を削除して比較軸を `verifiedRows` に一本化し、`pnpm article:add`（`scripts/article-add.mjs`）は `CommercialArticleSeed` の生成へ移行しました。
+
+### A.12 Phase 3b（旧3フィールドの削除と `verifiedRows` 一本化）の実装記録（2026-10-19）
+
+比較軸を `verifiedRows` に一本化し、`ArticleMetadata` から `keyDiffRows` / `leftModel` / `rightModel`（および `ComparisonSide` 型）を削除しました。あわせて、この3フィールド専用だった経路を削除・移行しています。
+
+実施:
+
+- `src/content/articles/types.ts`: 旧3フィールドと `ComparisonSide`、`defineArticleMetadata` の「1行記事」検証分岐（leftModel/rightModel + keyDiffRows + faqEntries + lead の必須チェック）を削除
+- `src/components/CommercialArticlePage.astro`: `fallbackSeed` を削除。seed 未登録の商用ページは fail-closed（`Unknown commercial article`）で停止
+- `src/lib/memo-products.ts`: 比較行は `seed.verifiedRows ?? article.verifiedRows`、商品名は seed → `aboutProductNames`、出典は seed → `article.officialSources` に整理（`leftModel` フォールバックを削除）
+- `scripts/article-add.mjs`: `renderArticleTs` / `applyIndexEdits` / `applyShimEdits` を廃止し、`renderSeedTs` / `applySeedsEdits` へ移行。生成物は `src/content/articles/commercial/<slug>.ts`（`CommercialArticleSeed`）+ 1行ラッパ + `commercial/seeds.ts` 登録。`differences` は2行以上を必須にした（商用ページの placeholder ガードと一致）
+- `src/content/articles/index.ts` / `src/content/articles.ts`: `ComparisonSide` の再エクスポートを削除
+- `scripts/spec-claims.mjs` / `tools/production/Invoke-PostDeployVerification.ps1`: コメントの旧フィールド名を更新
+- tests: `tests/article-scaffold.test.ts` を seed 生成向けに書き直し、`tests/article-metadata.test.ts` の旧3フィールド fixture を削除
+- docs: `article-research-template.md` §5.1 を seed 手順へ更新（`article-data-schema-plan.md` は本記録）
+
+検証（2026-10-19・base `b731ef6`）:
+
+| 項目                            | 結果                                                                                            |
+| ------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 旧3フィールドの残存参照         | 0件（型・検証・レンダラ・memo・scaffold・tests を移行済み）                                     |
+| `pnpm article:add` の実生成     | 合成YAMLで seed + 1行ページ + `seeds.ts` 登録を生成。`astro check` 0 errors、`astro build` 成功 |
+| 生成ページの中身                | 左右商品名・比較行・ポイント・公式リンク・FAQ・noindex を確認（生成物は検証後に削除）           |
+| `pnpm verify`                   | exit 0（95ファイル / 1111 passed + 1 skipped、181ページ、v8 lines 76.78%）                      |
+| `check:product-master`          | `106 slots (explicit 106 / derived 0 / seller-state ok)`                                        |
+| `check-article-template-policy` | `2 custom pages are explicitly allowlisted`                                                     |
+| 購入リンク整合性                | exit 0（`verified CTA destination audit: 56 CTAs (56 resolved, 0 skipped)`）                    |
+| base との実ビルド突合           | `dist` 1800 / 1800、**差分0**（ファイル差0・内容差0、HTML 182件も完全一致）                     |
+
+`dist` の差分が0であることから、既存記事の出力は Phase 3b で変わっていません。生成経路の変更は `pnpm article:add` の次回実行分から効きます。

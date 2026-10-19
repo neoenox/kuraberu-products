@@ -26,19 +26,14 @@ export function buildMemoProducts(): MemoProduct[] {
     const seed = additionalCommercialArticleSeeds.find(
       (s) => s.id === article.id,
     );
-    const rows =
-      seed?.verifiedRows ?? article.keyDiffRows ?? article.verifiedRows ?? [];
+    const rows = seed?.verifiedRows ?? article.verifiedRows ?? [];
     const sides: readonly ("left" | "right")[] =
       article.productCount === 1 ? ["left"] : ["left", "right"];
     for (const side of sides) {
-      const model = side === "left" ? article.leftModel : article.rightModel;
+      // seed 未登録の記事（商品ガイド等）は aboutProductNames（productCount 順）で解決する。
       const name =
         (side === "left" ? seed?.leftProduct : seed?.rightProduct) ??
-        (model
-          ? `${model.brand} ${model.line}`
-          : side === "left"
-            ? article.aboutProductNames?.[0]
-            : undefined);
+        article.aboutProductNames?.[side === "left" ? 0 : 1];
       if (!name) continue;
       const id = memoProductId(name);
       const product = products.get(id) ?? { id, name, references: [] };
@@ -49,15 +44,8 @@ export function buildMemoProducts(): MemoProduct[] {
         checkedAt: article.productInfoCheckedAt ?? "未記録",
         reason:
           (side === "left" ? seed?.leftPoint : seed?.rightPoint) ??
-          model?.tagline ??
           "選ぶ理由は未記録",
-        sources: [
-          ...(seed?.officialSources ??
-            article.officialSources ??
-            (model?.officialHref
-              ? [{ label: `${name} 公式商品ページ`, url: model.officialHref }]
-              : [])),
-        ],
+        sources: [...(seed?.officialSources ?? article.officialSources ?? [])],
         specs: rows.map((row) => ({ label: row.label, value: row[side] })),
       });
       products.set(id, product);
