@@ -1,12 +1,26 @@
-import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { describe, expect, it } from "vitest";
+import { afterAll, describe, expect, it } from "vitest";
 import { checkImageBudget } from "../scripts/check-image-budget.mjs";
 
+const temporaryDirs: string[] = [];
+
+function makeTemporaryDir(prefix: string) {
+  const dir = mkdtempSync(path.join(tmpdir(), prefix));
+  temporaryDirs.push(dir);
+  return dir;
+}
+
+afterAll(() => {
+  for (const dir of temporaryDirs.splice(0)) {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 function catalog(files: Record<string, number>) {
-  const dir = mkdtempSync(path.join(tmpdir(), "image-budget-"));
+  const dir = makeTemporaryDir("image-budget-");
   for (const [name, size] of Object.entries(files)) {
     writeFileSync(path.join(dir, name), Buffer.alloc(size));
   }
@@ -37,7 +51,7 @@ describe("check-image-budget", () => {
   });
 
   it("checks nested product images but ignores other file types", async () => {
-    const dir = mkdtempSync(path.join(tmpdir(), "image-budget-nested-"));
+    const dir = makeTemporaryDir("image-budget-nested-");
     const nested = path.join(dir, "brand", "model");
     mkdirSync(nested, { recursive: true });
     writeFileSync(path.join(nested, "oversized.webp"), Buffer.alloc(110));
