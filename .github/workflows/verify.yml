@@ -35,10 +35,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Temporary formatting diagnostics (no push)
-        run: |
-          pnpm exec prettier --write scripts/update-stale-prs.mjs tests/update-stale-prs.test.ts
-          git diff -- scripts/update-stale-prs.mjs tests/update-stale-prs.test.ts
       - name: Lint, typecheck & test
         env:
           DEPLOYMENT_ENV: preview
