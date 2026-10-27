@@ -68,7 +68,7 @@ export function isRetryableGhApiError(error) {
     .filter(Boolean)
     .map(String)
     .join("\n");
-  return /(?:HTTP\\s+|["']status["']\\s*:\\s*["']?)(?:500|502|503|504)\\b/.test(details);
+  return /(?:HTTP\s+|["']status["']\s*:\s*["']?)(?:500|502|503|504)\b/.test(details);
 }
 
 /** Keep retries bounded; an exhausted API failure must still fail the workflow. */
