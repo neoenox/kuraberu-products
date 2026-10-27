@@ -101,7 +101,7 @@ describe("GitHub API transient failure retries", () => {
 
   it("retries transient 5xx errors and returns the successful result", () => {
     let calls = 0;
-    const delays = [];
+    const delays: number[] = [];
     const result = withGhApiRetries(
       () => {
         calls++;
