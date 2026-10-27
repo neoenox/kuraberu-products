@@ -62,8 +62,34 @@ export function buildComment(behindBy, headSha) {
   ].join("\n");
 }
 
+/** Retry only transient GitHub API 5xx responses; never retry auth/validation failures. */
+export function isRetryableGhApiError(error) {
+  const details = [error?.stderr, error?.stdout, error?.message]
+    .filter(Boolean)
+    .map(String)
+    .join("\n");
+  return /(?:HTTP\\s+|["']status["']\\s*:\\s*["']?)(?:500|502|503|504)\\b/.test(details);
+}
+
+/** Keep retries bounded; an exhausted API failure must still fail the workflow. */
+export function withGhApiRetries(operation, wait = (ms) => {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+}, maxAttempts = 3) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return operation();
+    } catch (error) {
+      if (!isRetryableGhApiError(error) || attempt === maxAttempts) throw error;
+      console.warn(`gh api transient 5xx; retrying (${attempt}/${maxAttempts - 1})`);
+      wait(1000 * attempt);
+    }
+  }
+}
+
 function ghJson(args) {
-  return JSON.parse(execFileSync("gh", ["api", ...args], { encoding: "utf8" }));
+  return withGhApiRetries(() =>
+    JSON.parse(execFileSync("gh", ["api", ...args], { encoding: "utf8" })),
+  );
 }
 
 function ghText(args) {
