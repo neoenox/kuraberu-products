@@ -54,7 +54,11 @@ export function flattenPullPages(pages) {
 
 /** 既定・定期実行は読み取り専用。将来の明示承認なしに更新しない。 */
 export function canApplyBranchUpdates(argv, env) {
-  return argv.includes("--apply") && env.ALLOW_STALE_PR_BRANCH_UPDATES === "true";
+  return (
+    argv.includes("--apply") &&
+    !argv.includes("--dry-run") &&
+    env.ALLOW_STALE_PR_BRANCH_UPDATES === "true"
+  );
 }
 
 /**
@@ -92,7 +96,9 @@ function ghText(args) {
 
 /** open PR の behind 数と head の年齢を収集する（API アクセスを伴う）。 */
 export async function collectOpenPrs(repo) {
-  const pulls = flattenPullPages(ghJson([apiEndpoints(repo, "", 0).pulls, "--paginate", "--slurp"]));
+  const pulls = flattenPullPages(
+    ghJson([apiEndpoints(repo, "", 0).pulls, "--paginate", "--slurp"]),
+  );
   const prs = [];
   for (const pr of pulls) {
     const endpoints = apiEndpoints(repo, pr.head.sha, pr.number);
@@ -100,9 +106,8 @@ export async function collectOpenPrs(repo) {
     const headCommit = ghJson([endpoints.commit]);
     const committerDate = headCommit.commit?.committer?.date;
     // REST list/compare API には mergeable がない。候補のみ個別 PR を読む。
-    const detail = !pr.draft && compare.behind_by > 0
-      ? ghJson([endpoints.pull])
-      : null;
+    const detail =
+      !pr.draft && compare.behind_by > 0 ? ghJson([endpoints.pull]) : null;
     prs.push({
       number: pr.number,
       title: pr.title,
@@ -119,7 +124,9 @@ async function main() {
   const applyRequested = process.argv.includes("--apply");
   const applyAllowed = canApplyBranchUpdates(process.argv, process.env);
   if (applyRequested && !applyAllowed) {
-    throw new Error("--apply requires explicit ALLOW_STALE_PR_BRANCH_UPDATES=true approval");
+    throw new Error(
+      "--apply requires explicit ALLOW_STALE_PR_BRANCH_UPDATES=true approval",
+    );
   }
   const dryRun = !applyAllowed;
   const repo = process.env.GITHUB_REPOSITORY ?? "kaenozu/kuraberu-products";
