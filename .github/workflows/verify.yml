@@ -35,6 +35,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Temporary targeted stale updater tests (remove before review)
+        run: pnpm exec vitest run tests/update-stale-prs.test.ts
       - name: Lint, typecheck & test
         env:
           DEPLOYMENT_ENV: preview
