@@ -89,23 +89,27 @@ describe("buildComment", () => {
   });
 });
 
-
 describe("GitHub API transient failure retries", () => {
   it("recognizes GitHub 500/503 responses but not permission errors", () => {
-    expect(isRetryableGhApiError(new Error("gh: Server Error (HTTP 500)"))).toBe(true);
+    const http500 = new Error("gh: Server Error (HTTP 500)");
+    const http403 = new Error("gh: Forbidden (HTTP 403)");
+    expect(isRetryableGhApiError(http500)).toBe(true);
     expect(isRetryableGhApiError({ stdout: '{"status":"503"}' })).toBe(true);
-    expect(isRetryableGhApiError(new Error("gh: Forbidden (HTTP 403)"))).toBe(false);
+    expect(isRetryableGhApiError(http403)).toBe(false);
     expect(isRetryableGhApiError(new Error("invalid JSON"))).toBe(false);
   });
 
   it("retries transient 5xx errors and returns the successful result", () => {
     let calls = 0;
     const delays = [];
-    const result = withGhApiRetries(() => {
-      calls++;
-      if (calls < 3) throw new Error("Server Error (HTTP 500)");
-      return { ok: true };
-    }, (ms) => delays.push(ms));
+    const result = withGhApiRetries(
+      () => {
+        calls++;
+        if (calls < 3) throw new Error("Server Error (HTTP 500)");
+        return { ok: true };
+      },
+      (ms) => delays.push(ms),
+    );
     expect(result).toEqual({ ok: true });
     expect(calls).toBe(3);
     expect(delays).toEqual([1000, 2000]);
@@ -113,19 +117,24 @@ describe("GitHub API transient failure retries", () => {
 
   it("does not retry non-transient errors", () => {
     let calls = 0;
-    expect(() => withGhApiRetries(() => {
+    const operation = () => {
       calls++;
       throw new Error("Forbidden (HTTP 403)");
-    }, () => { throw new Error("unexpected delay"); })).toThrow("HTTP 403");
+    };
+    const failIfCalled = () => {
+      throw new Error("unexpected delay");
+    };
+    expect(() => withGhApiRetries(operation, failIfCalled)).toThrow("HTTP 403");
     expect(calls).toBe(1);
   });
 
   it("fails after three transient attempts rather than reporting success", () => {
     let calls = 0;
-    expect(() => withGhApiRetries(() => {
+    const operation = () => {
       calls++;
       throw new Error("Server Error (HTTP 502)");
-    }, () => {})).toThrow("HTTP 502");
+    };
+    expect(() => withGhApiRetries(operation, () => {})).toThrow("HTTP 502");
     expect(calls).toBe(3);
   });
 });
