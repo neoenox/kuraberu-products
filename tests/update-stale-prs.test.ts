@@ -4,7 +4,9 @@ import {
   STALE_AFTER_MS,
   apiEndpoints,
   buildComment,
+  isRetryableGhApiError,
   selectStalePrs,
+  withGhApiRetries,
 } from "../scripts/update-stale-prs.mjs";
 
 const NOW = Date.parse("2026-09-06T12:00:00Z");
@@ -84,5 +86,55 @@ describe("buildComment", () => {
 
   it("is idempotent-friendly: same inputs produce the same body", () => {
     expect(buildComment(3, "deadbee")).toBe(buildComment(3, "deadbee"));
+  });
+});
+
+describe("GitHub API transient failure retries", () => {
+  it("recognizes GitHub 500/503 responses but not permission errors", () => {
+    const http500 = new Error("gh: Server Error (HTTP 500)");
+    const http403 = new Error("gh: Forbidden (HTTP 403)");
+    expect(isRetryableGhApiError(http500)).toBe(true);
+    expect(isRetryableGhApiError({ stdout: '{"status":"503"}' })).toBe(true);
+    expect(isRetryableGhApiError(http403)).toBe(false);
+    expect(isRetryableGhApiError(new Error("invalid JSON"))).toBe(false);
+  });
+
+  it("retries transient 5xx errors and returns the successful result", () => {
+    let calls = 0;
+    const delays: number[] = [];
+    const result = withGhApiRetries(
+      () => {
+        calls++;
+        if (calls < 3) throw new Error("Server Error (HTTP 500)");
+        return { ok: true };
+      },
+      (ms) => delays.push(ms),
+    );
+    expect(result).toEqual({ ok: true });
+    expect(calls).toBe(3);
+    expect(delays).toEqual([1000, 2000]);
+  });
+
+  it("does not retry non-transient errors", () => {
+    let calls = 0;
+    const operation = () => {
+      calls++;
+      throw new Error("Forbidden (HTTP 403)");
+    };
+    const failIfCalled = () => {
+      throw new Error("unexpected delay");
+    };
+    expect(() => withGhApiRetries(operation, failIfCalled)).toThrow("HTTP 403");
+    expect(calls).toBe(1);
+  });
+
+  it("fails after three transient attempts rather than reporting success", () => {
+    let calls = 0;
+    const operation = () => {
+      calls++;
+      throw new Error("Server Error (HTTP 502)");
+    };
+    expect(() => withGhApiRetries(operation, () => {})).toThrow("HTTP 502");
+    expect(calls).toBe(3);
   });
 });
