@@ -84,7 +84,9 @@ export function withGhApiRetries(
       return operation();
     } catch (error) {
       if (!isRetryableGhApiError(error) || attempt === maxAttempts) throw error;
-      console.warn(`gh api transient 5xx; retrying (${attempt}/${maxAttempts - 1})`);
+      console.warn(
+        `gh api transient 5xx; retrying (${attempt}/${maxAttempts - 1})`,
+      );
       wait(1000 * attempt);
     }
   }
