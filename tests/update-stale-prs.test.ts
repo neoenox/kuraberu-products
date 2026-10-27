@@ -4,6 +4,9 @@ import {
   STALE_AFTER_MS,
   apiEndpoints,
   buildComment,
+  canApplyBranchUpdates,
+  flattenPullPages,
+  normalizeMergeability,
   selectStalePrs,
 } from "../scripts/update-stale-prs.mjs";
 
@@ -84,5 +87,60 @@ describe("buildComment", () => {
 
   it("is idempotent-friendly: same inputs produce the same body", () => {
     expect(buildComment(3, "deadbee")).toBe(buildComment(3, "deadbee"));
+  });
+});
+
+describe("GitHub REST response normalization (#1199)", () => {
+  it("maps PR detail mergeable boolean to a conservative selection state", () => {
+    expect(normalizeMergeability(true)).toBe("MERGEABLE");
+    expect(normalizeMergeability(false)).toBe("CONFLICTING");
+    expect(normalizeMergeability(null)).toBe("UNKNOWN");
+    expect(normalizeMergeability(undefined)).toBe("UNKNOWN");
+    expect(normalizeMergeability("clean")).toBe("UNKNOWN");
+  });
+
+  it("never treats a list/compare payload with missing mergeable as eligible", () => {
+    const listPr = { number: 42, draft: false, head: { sha: "abc" } };
+    const compare = { behind_by: 3 };
+    const candidate = pr({
+      number: listPr.number,
+      behindBy: compare.behind_by,
+      mergeable: normalizeMergeability((listPr as { mergeable?: boolean }).mergeable),
+    });
+    expect(selectStalePrs([candidate], NOW)).toEqual([]);
+    expect(selectStalePrs([{
+      ...candidate,
+      mergeable: normalizeMergeability(true),
+    }], NOW)).toHaveLength(1);
+  });
+
+  it("flattens every paginated REST list page, including page 2 beyond 100", () => {
+    const first = Array.from({ length: 100 }, (_, i) => ({ number: i + 1 }));
+    const second = [{ number: 101 }, { number: 102 }];
+    const result = flattenPullPages([first, second]);
+    expect(result).toHaveLength(102);
+    expect(result.at(-1)).toEqual({ number: 102 });
+    expect(flattenPullPages([])).toEqual([]);
+    expect(() => flattenPullPages([{ number: 1 }])).toThrow(/paginated/);
+  });
+
+  it("rejects conflicting, unknown and draft PRs even if old and behind", () => {
+    const candidates = [
+      pr({ number: 1, mergeable: normalizeMergeability(false) }),
+      pr({ number: 2, mergeable: normalizeMergeability(null) }),
+      pr({ number: 3, isDraft: true }),
+      pr({ number: 4, mergeable: normalizeMergeability(true) }),
+    ];
+    expect(selectStalePrs(candidates, NOW).map((p) => p.number)).toEqual([4]);
+  });
+});
+
+describe("branch-update safety gate", () => {
+  it("never applies changes without both explicit --apply and opt-in environment", () => {
+    expect(canApplyBranchUpdates([], {})).toBe(false);
+    expect(canApplyBranchUpdates(["--dry-run"], { ALLOW_STALE_PR_BRANCH_UPDATES: "true" })).toBe(false);
+    expect(canApplyBranchUpdates(["--apply"], {})).toBe(false);
+    expect(canApplyBranchUpdates(["--apply"], { ALLOW_STALE_PR_BRANCH_UPDATES: "false" })).toBe(false);
+    expect(canApplyBranchUpdates(["--apply"], { ALLOW_STALE_PR_BRANCH_UPDATES: "true" })).toBe(true);
   });
 });
