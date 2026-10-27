@@ -35,6 +35,10 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Temporary Prettier diagnostic (remove before review)
+        run: |
+          pnpm exec prettier scripts/update-stale-prs.mjs > /tmp/update-stale-prs-formatted.mjs
+          diff -u scripts/update-stale-prs.mjs /tmp/update-stale-prs-formatted.mjs || true
       - name: Lint, typecheck & test
         env:
           DEPLOYMENT_ENV: preview
