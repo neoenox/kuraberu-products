@@ -105,13 +105,22 @@ describe("GitHub REST response normalization (#1199)", () => {
     const candidate = pr({
       number: listPr.number,
       behindBy: compare.behind_by,
-      mergeable: normalizeMergeability((listPr as { mergeable?: boolean }).mergeable),
+      mergeable: normalizeMergeability(
+        (listPr as { mergeable?: boolean }).mergeable,
+      ),
     });
     expect(selectStalePrs([candidate], NOW)).toEqual([]);
-    expect(selectStalePrs([{
-      ...candidate,
-      mergeable: normalizeMergeability(true),
-    }], NOW)).toHaveLength(1);
+    expect(
+      selectStalePrs(
+        [
+          {
+            ...candidate,
+            mergeable: normalizeMergeability(true),
+          },
+        ],
+        NOW,
+      ),
+    ).toHaveLength(1);
   });
 
   it("flattens every paginated REST list page, including page 2 beyond 100", () => {
@@ -138,9 +147,26 @@ describe("GitHub REST response normalization (#1199)", () => {
 describe("branch-update safety gate", () => {
   it("never applies changes without both explicit --apply and opt-in environment", () => {
     expect(canApplyBranchUpdates([], {})).toBe(false);
-    expect(canApplyBranchUpdates(["--dry-run"], { ALLOW_STALE_PR_BRANCH_UPDATES: "true" })).toBe(false);
+    expect(
+      canApplyBranchUpdates(["--dry-run"], {
+        ALLOW_STALE_PR_BRANCH_UPDATES: "true",
+      }),
+    ).toBe(false);
     expect(canApplyBranchUpdates(["--apply"], {})).toBe(false);
-    expect(canApplyBranchUpdates(["--apply"], { ALLOW_STALE_PR_BRANCH_UPDATES: "false" })).toBe(false);
-    expect(canApplyBranchUpdates(["--apply"], { ALLOW_STALE_PR_BRANCH_UPDATES: "true" })).toBe(true);
+    expect(
+      canApplyBranchUpdates(["--apply"], {
+        ALLOW_STALE_PR_BRANCH_UPDATES: "false",
+      }),
+    ).toBe(false);
+    expect(
+      canApplyBranchUpdates(["--apply"], {
+        ALLOW_STALE_PR_BRANCH_UPDATES: "true",
+      }),
+    ).toBe(true);
+    expect(
+      canApplyBranchUpdates(["--apply", "--dry-run"], {
+        ALLOW_STALE_PR_BRANCH_UPDATES: "true",
+      }),
+    ).toBe(false);
   });
 });
