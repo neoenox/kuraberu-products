@@ -1,10 +1,8 @@
 name: Stale PR updater
 
-# main に behind した PR を定期整備する:
-#   - 24h 以上 head が動かず behind し続けている open PR（draft と
-#     CONFLICTING を除く）のブランチを main で更新し、告知コメントを投稿する。
-#   - 長期間放置された behind PR が #614/#621/#620/#624 のように main の進化に
-#     取り残される（最悪の場合、内容を main に吸収されて陳腐化する）のを防ぐ。
+# main に behind した PR を毎日読み取り専用で報告する。
+# PR ブランチの自動更新（merge/rebase/push）とコメント投稿は禁止。
+# --apply はこの workflow では使用しない（別途個別承認が必要）。
 #
 # 詳細ロジックは scripts/update-stale-prs.mjs を参照（テスト:
 # tests/update-stale-prs.test.ts）。
@@ -17,8 +15,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # gh pr update-branch（main のマージコミットを push）
-  pull-requests: write # 告知コメントの投稿
+  contents: read
+  pull-requests: read
 
 concurrency:
   group: stale-pr-updater
@@ -37,7 +35,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # releases/v7.1.0
         with:
           node-version-file: .node-version
-      - name: Update stale PRs
+      - name: Report stale PR candidates (read-only)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: node scripts/update-stale-prs.mjs
+        run: node scripts/update-stale-prs.mjs --dry-run
