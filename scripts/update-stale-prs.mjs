@@ -72,9 +72,13 @@ export function isRetryableGhApiError(error) {
 }
 
 /** Keep retries bounded; an exhausted API failure must still fail the workflow. */
-export function withGhApiRetries(operation, wait = (ms) => {
-  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
-}, maxAttempts = 3) {
+export function withGhApiRetries(
+  operation,
+  wait = (ms) => {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+  },
+  maxAttempts = 3,
+) {
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       return operation();
