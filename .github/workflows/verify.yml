@@ -35,8 +35,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Temporary focused stale-updater regression (no push)
-        run: pnpm exec vitest run tests/update-stale-prs.test.ts
       - name: Lint, typecheck & test
         env:
           DEPLOYMENT_ENV: preview
