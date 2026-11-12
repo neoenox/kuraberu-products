@@ -102,7 +102,10 @@ jobs:
   e2e:
     # プライバシー契約（同意前のサードパーティリクエストゼロ）など
     # ネットワークレベルでしか検証できない挙動を CI で常時検証する。
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.0-noble
+      options: --ipc=host --init
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # releases/v7.0.1
@@ -116,8 +119,10 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium
+      - name: Verify preinstalled Playwright browser
+        run: |
+          node --version
+          pnpm exec playwright --version
       - name: Run E2E tests
         env:
           DEPLOYMENT_ENV: preview
