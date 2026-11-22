@@ -8,16 +8,16 @@
  *   - かつ PR head の最終コミット（pushProxy に使用）が 24 時間より前
  *     （= 24 時間以上新規 push がなく behind し続けている）
  *
- * 条件に合致した PR には:
- *   1. `gh pr update-branch` で main をマージして behind を解消
- *   2. 成功した場合のみ、告知コメントを 1 件投稿（コンフリクト等で失敗した
- *      場合はコメントしない = スパムにならず、次回 run で再試行）
+ * 既定は report-only: 対象候補を表示するだけで、ブランチを更新しない。
+ * 変更操作は別途承認された手動実行（--apply と環境変数の両方）のみ。
  *
  * mergeable=CONFLICTING の PR は更新せずスキップする（GitHub UI が
  * コンフリクトを表示するため、ここで毎日コメントするとノイズになる）。
  *
  * 使い方:
- *   node scripts/update-stale-prs.mjs [--dry-run]
+ *   node scripts/update-stale-prs.mjs [--dry-run]  # default: report only
+ *   ALLOW_STALE_PR_BRANCH_UPDATES=true node scripts/update-stale-prs.mjs --apply
+ *   # --apply は別途の明示承認を得た手動実行専用。
  *
  * 必要な環境変数: GH_TOKEN（Actions では github.token）、GITHUB_REPOSITORY。
  */
@@ -35,6 +35,30 @@ export function apiEndpoints(repo, headSha, prNumber) {
     commit: `repos/${repo}/commits/${headSha}`,
     pull: `repos/${repo}/pulls/${prNumber}`,
   };
+}
+
+/** GitHub REST GET /pulls/{n} は boolean/null を返す。UNKNOWN は必ず除外する。 */
+export function normalizeMergeability(value) {
+  if (value === true || value === "MERGEABLE") return "MERGEABLE";
+  if (value === false || value === "CONFLICTING") return "CONFLICTING";
+  return "UNKNOWN";
+}
+
+/** gh api --paginate --slurp はページごとの配列をネストして返す。 */
+export function flattenPullPages(pages) {
+  if (!Array.isArray(pages) || !pages.every(Array.isArray)) {
+    throw new Error("Unexpected paginated PR response shape");
+  }
+  return pages.flat();
+}
+
+/** 既定・定期実行は読み取り専用。将来の明示承認なしに更新しない。 */
+export function canApplyBranchUpdates(argv, env) {
+  return (
+    argv.includes("--apply") &&
+    !argv.includes("--dry-run") &&
+    env.ALLOW_STALE_PR_BRANCH_UPDATES === "true"
+  );
 }
 
 /**
@@ -62,8 +86,42 @@ export function buildComment(behindBy, headSha) {
   ].join("\n");
 }
 
+/** Retry only transient GitHub API 5xx responses; never retry auth/validation failures. */
+export function isRetryableGhApiError(error) {
+  const details = [error?.stderr, error?.stdout, error?.message]
+    .filter(Boolean)
+    .map(String)
+    .join("\n");
+  return /(?:HTTP\s+|["']status["']\s*:\s*["']?)(?:500|502|503|504)\b/.test(
+    details,
+  );
+}
+
+/** Keep retries bounded; an exhausted API failure must still fail the workflow. */
+export function withGhApiRetries(
+  operation,
+  wait = (ms) => {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+  },
+  maxAttempts = 3,
+) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return operation();
+    } catch (error) {
+      if (!isRetryableGhApiError(error) || attempt === maxAttempts) throw error;
+      console.warn(
+        `gh api transient 5xx; retrying (${attempt}/${maxAttempts - 1})`,
+      );
+      wait(1000 * attempt);
+    }
+  }
+}
+
 function ghJson(args) {
-  return JSON.parse(execFileSync("gh", ["api", ...args], { encoding: "utf8" }));
+  return withGhApiRetries(() =>
+    JSON.parse(execFileSync("gh", ["api", ...args], { encoding: "utf8" })),
+  );
 }
 
 function ghText(args) {
@@ -72,19 +130,24 @@ function ghText(args) {
 
 /** open PR の behind 数と head の年齢を収集する（API アクセスを伴う）。 */
 export async function collectOpenPrs(repo) {
-  const pulls = ghJson([apiEndpoints(repo, "", 0).pulls]);
+  const pulls = flattenPullPages(
+    ghJson([apiEndpoints(repo, "", 0).pulls, "--paginate", "--slurp"]),
+  );
   const prs = [];
   for (const pr of pulls) {
     const endpoints = apiEndpoints(repo, pr.head.sha, pr.number);
     const compare = ghJson([endpoints.compare]);
     const headCommit = ghJson([endpoints.commit]);
     const committerDate = headCommit.commit?.committer?.date;
+    // REST list/compare API には mergeable がない。候補のみ個別 PR を読む。
+    const detail =
+      !pr.draft && compare.behind_by > 0 ? ghJson([endpoints.pull]) : null;
     prs.push({
       number: pr.number,
       title: pr.title,
       behindBy: compare.behind_by ?? 0,
       headAgeMs: committerDate ? Date.parse(committerDate) : Date.now(),
-      mergeable: compare.mergeable ?? pr.mergeable ?? "UNKNOWN",
+      mergeable: normalizeMergeability(detail?.mergeable),
       isDraft: pr.draft === true,
     });
   }
@@ -92,7 +155,14 @@ export async function collectOpenPrs(repo) {
 }
 
 async function main() {
-  const dryRun = process.argv.includes("--dry-run");
+  const applyRequested = process.argv.includes("--apply");
+  const applyAllowed = canApplyBranchUpdates(process.argv, process.env);
+  if (applyRequested && !applyAllowed) {
+    throw new Error(
+      "--apply requires explicit ALLOW_STALE_PR_BRANCH_UPDATES=true approval",
+    );
+  }
+  const dryRun = !applyAllowed;
   const repo = process.env.GITHUB_REPOSITORY ?? "kaenozu/kuraberu-products";
   const prs = await collectOpenPrs(repo);
   const stale = selectStalePrs(prs);
