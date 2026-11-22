@@ -104,7 +104,7 @@ jobs:
     # ネットワークレベルでしか検証できない挙動を CI で常時検証する。
     runs-on: ubuntu-24.04
     container:
-      image: mcr.microsoft.com/playwright:v1.64.0-noble
+      image: mcr.microsoft.com/playwright:v1.65.0-noble
       options: --ipc=host --init
     timeout-minutes: 10
     steps:
