@@ -119,9 +119,9 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Verify preinstalled Playwright browser
       - name: Install matching Playwright browser
         run: pnpm exec playwright install chromium
+      - name: Verify Playwright version
         run: |
           node --version
           pnpm exec playwright --version
